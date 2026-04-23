@@ -5,7 +5,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-for phase in 00-apt.sh 01-venv.sh 02-deps.sh 03-clone-vjepa.sh 04-weights.sh 05-smoke-test.sh; do
+for phase in 00-apt.sh 01-venv.sh 02-deps.sh 03-clone-vjepa.sh 05-smoke-test.sh; do
     echo "========================================================================"
     echo "RUNNING $phase"
     echo "========================================================================"
