@@ -16,7 +16,8 @@ pip install \
     'torch_xla[tpu]==2.9.0' \
     timm==1.0.26 \
     einops==0.8.2 \
-    opencv-python==4.13.0.92
+    opencv-python==4.13.0.92 \
+    scikit-learn==1.8.0
 
 echo "[02-deps] Installed versions:"
 pip list | grep -E '^(torch|torch-xla|torchvision|timm|einops|opencv-python)' || true
