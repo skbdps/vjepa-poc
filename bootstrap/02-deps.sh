@@ -9,15 +9,17 @@ source ~/vjepa-env-py311/bin/activate
 echo "[02-deps] Installing pinned torch stack + V-JEPA deps..."
 # Install torch + torch_xla + torchvision together to prevent version drift.
 # timm/einops pulled in the same command to catch resolver conflicts up front.
+# opencv-python is needed for synthetic video generation (writing mp4).
 pip install \
     torch==2.9.0 \
     torchvision==0.24.0 \
     'torch_xla[tpu]==2.9.0' \
     timm==1.0.26 \
-    einops==0.8.2
+    einops==0.8.2 \
+    opencv-python==4.13.0.92
 
 echo "[02-deps] Installed versions:"
-pip list | grep -E '^(torch|torch-xla|torchvision|timm|einops)' || true
+pip list | grep -E '^(torch|torch-xla|torchvision|timm|einops|opencv-python)' || true
 
 echo "[02-deps] Smoke test: import torch_xla and get TPU device..."
 python -c "
