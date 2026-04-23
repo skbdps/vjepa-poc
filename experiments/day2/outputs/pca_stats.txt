@@ -1,0 +1,8 @@
+PCA stats for bounce-embeddings.pt
+===================================
+Features: (4608, 1024)
+Feature mean: -0.0335
+Feature std:  1.8280
+Explained variance ratio: [0.2519620656967163, 0.16730931401252747, 0.1101166307926178]
+Cumulative (top 3 PCs):   0.5294
+Singular values: [1002.213623046875, 816.6815795898438, 662.55078125]
