@@ -33,3 +33,16 @@ The runner sets the pinned source's checkpoint URL to Meta's official public end
 `manifest.json`, `results/results.json`, per-prediction `results/predictions.csv`, two annotated comparison videos, source inputs and reusable frozen feature caches. Preserve the run folder outside Colab's temporary runtime before disconnecting.
 
 The oracle fixtures in `--self-test` validate only the evaluator, not V-JEPA performance. Real model results are reported only after pretrained inference finishes.
+
+## Completed Colab run (2026-10-09 IST)
+
+The executed `VJEPA_Part_Consistency_Day3.ipynb` is included with saved outputs. It pins the experiment code to commit `461dd0264dfe023bc9639479a388fa2eda785692`. The live notebook is [available in Colab](https://colab.research.google.com/drive/1wipvFdtlDOuRwp6Cd9sQpQUCZQNxo2HP#scrollTo=2qUgyGzS0SBh). Aggregate results and environment metadata are in `run_2026-10-09/`.
+
+| Metric | V-JEPA | Lucas-Kanade optical flow |
+| --- | ---: | ---: |
+| Correct visible localization | 276/315 (87.6%) | 276/315 (87.6%) |
+| False presence while fully hidden (lower is better) | 6/36 | 36/36 |
+| Correct at first visible tubelet after full absence | 2/4 | 0/4 |
+| Second independently encoded window | 147/167 (88.0%) | 129/167 (77.2%) |
+
+The run used a Tesla T4 and peaked at 1.338 GiB of GPU allocation during inference. No training was performed. The comparison is a small diagnostic with six evaluation clips and only four recovery events. Cars remain in separate lanes with a fixed camera. Optical flow has no explicit occlusion/reidentification logic and receives frame 0, while V-JEPA initialization uses the first two-frame tubelet. These results do not establish real-video, face, camera-angle, or generative-editing consistency.
