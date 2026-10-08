@@ -36,7 +36,7 @@ The oracle fixtures in `--self-test` validate only the evaluator, not V-JEPA per
 
 ## Completed Colab run (2026-10-09 IST)
 
-The executed `VJEPA_Part_Consistency_Day3.ipynb` is included with saved outputs. It pins the experiment code to commit `461dd0264dfe023bc9639479a388fa2eda785692`. The live notebook is [available in Colab](https://colab.research.google.com/drive/1wipvFdtlDOuRwp6Cd9sQpQUCZQNxo2HP#scrollTo=2qUgyGzS0SBh). Aggregate results and environment metadata are in `run_2026-10-09/`.
+The replayable `VJEPA_Part_Consistency_Day3.ipynb` is included without cell outputs, following the repository policy. The executed outputs remain in Colab. It pins the experiment code to commit `461dd0264dfe023bc9639479a388fa2eda785692`. The live notebook is [available in Colab](https://colab.research.google.com/drive/1wipvFdtlDOuRwp6Cd9sQpQUCZQNxo2HP#scrollTo=2qUgyGzS0SBh). Aggregate results and environment metadata are in `run_2026-10-09/`.
 
 | Metric | V-JEPA | Lucas-Kanade optical flow |
 | --- | ---: | ---: |
