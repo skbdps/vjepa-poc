@@ -9,7 +9,7 @@ This stage tests whether one initial part annotation can remain attached to the 
 - Give every method only the first frame's part annotation. Later masks are restricted to evaluation, calibration, and diagnostic rendering. V-JEPA features can attend within each 16-frame input window, so this is offline tracking.
 - Compare initial V-JEPA global matching, a stronger image template/flow baseline, and persistent feature/motion tracking, with component ablations.
 - Report exact counts, per-condition results, and uncertainty resampled by clip. Avoid treating correlated frames as independent samples.
-- Evaluate a real car video separately. Establish first-frame door/window masks, propagate them, and compare against sparse human annotations when feasible. Record annotation provenance and do not claim performance on an unannotated clip.
+- Evaluate a real car video separately. Establish first-frame door/window masks, propagate them, and compare against sparse independently authored visual annotations when feasible. Record annotation provenance and do not claim performance on an unannotated clip.
 - Save failures and limitations along with successful demonstrations. Do not substitute ground-truth masks into an edit presented as tracked.
 
 ## Meaningful progress

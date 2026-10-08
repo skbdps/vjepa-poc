@@ -1,0 +1,654 @@
+{
+  "dataset": "DAVIS",
+  "sequence": "car-roundabout",
+  "source_page": "https://davischallenge.org/davis2016/browse.html",
+  "source_index_page": "https://davischallenge.org/json_data/global.js",
+  "frames_dir": "car-roundabout/frames",
+  "frame_count": 64,
+  "start": 0,
+  "stride": 1,
+  "frames": [
+    {
+      "frame_index": 0,
+      "source_index": 0,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00000.jpg",
+      "sha256": "fee22e5cbf368f7b24d89217ef792cb2d3810dd8654d445009fa672074a9426f",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 1,
+      "source_index": 1,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00001.jpg",
+      "sha256": "289f32746912bbf01599f9416f3f4ac690698fdefe53f9e53140b8aae39ff292",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 2,
+      "source_index": 2,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00002.jpg",
+      "sha256": "1c61ec4417ad1315605f000b6ce9b2204194c493b73a32ba75c9925cf35ffa52",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 3,
+      "source_index": 3,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00003.jpg",
+      "sha256": "6c9defc83b2821ef8ec07f5c4262b1932c92ea5c87bad0d8a6575494d5d2dcce",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 4,
+      "source_index": 4,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00004.jpg",
+      "sha256": "b60516e1f2dd6a92c75abf64af031254dfd279081ac4bf9d397289bcfad9a440",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 5,
+      "source_index": 5,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00005.jpg",
+      "sha256": "93b4d9642096a1ef87c95c009760e94e95e2f6b4835b11899507f10826082539",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 6,
+      "source_index": 6,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00006.jpg",
+      "sha256": "20c2e91f7c9233b9588e528a36817b9fddd571bf0693a3e016cdea86536cd310",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 7,
+      "source_index": 7,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00007.jpg",
+      "sha256": "2aa4c2cb402d2042a5ce2bba6f6901d213121f7fe60c70f76fa53d035b686145",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 8,
+      "source_index": 8,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00008.jpg",
+      "sha256": "5d16a71aaddb24adfec98adf3eae2360c001b30337420101c59449474f7e4713",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 9,
+      "source_index": 9,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00009.jpg",
+      "sha256": "1440fb4192515ae7fb1374f1585f04cd0a3accddda1a470568491e56d66647a7",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 10,
+      "source_index": 10,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00010.jpg",
+      "sha256": "5fc61feaa8aaed8e5d6cf31d6efe7bacd0d87bcd05ef2b1b7f0a62a87d60ecd0",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 11,
+      "source_index": 11,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00011.jpg",
+      "sha256": "15cfedeafb18ac1b4073278993b657ced0d4235084cb2e5946ed8c18c6331dd8",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 12,
+      "source_index": 12,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00012.jpg",
+      "sha256": "73ebf6df6a1d222e63bd3b30ddae84531f664be9617e4f0302bddbaa777475a3",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 13,
+      "source_index": 13,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00013.jpg",
+      "sha256": "3b407887d54bf5d4381d047adc24d441f98b6c5a6d0a0264d01092dcf43ec679",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 14,
+      "source_index": 14,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00014.jpg",
+      "sha256": "3b0afe6caec503eba9d8a6ce778a9125939600980a095a3528e49c57dea945c0",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 15,
+      "source_index": 15,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00015.jpg",
+      "sha256": "eaab97b02259814a65aa0470b63caa52612333c7b7621656fb7b2f51ce330847",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 16,
+      "source_index": 16,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00016.jpg",
+      "sha256": "9a219dff556dbadd907965f81682d13dbfd35730dc030ceed055e9618b6c2a67",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 17,
+      "source_index": 17,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00017.jpg",
+      "sha256": "2700e816332dfccb194e68769c3b827e4fe991a4a7eb0c08598734307942ce27",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 18,
+      "source_index": 18,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00018.jpg",
+      "sha256": "3bc231a62882fe8bc7065aaa507b219f38cb933c0131f8448fd489cadf625bf6",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 19,
+      "source_index": 19,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00019.jpg",
+      "sha256": "9a76d2d0b96853a1d6b71495a798d63395b75cc100684992e09131b09bb020c4",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 20,
+      "source_index": 20,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00020.jpg",
+      "sha256": "30cc68a8c320dc02f5254e5feaf4b352e9942751c6da023652968410b627721d",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 21,
+      "source_index": 21,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00021.jpg",
+      "sha256": "415e8de164a28e3ab552ca3b4e41a759df0621fb5201567bed0005ac5495e24e",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 22,
+      "source_index": 22,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00022.jpg",
+      "sha256": "333312b81fb0b95149747ca7c7fc04ce2da7b07812f8ffb5ccfa004fb23de7a7",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 23,
+      "source_index": 23,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00023.jpg",
+      "sha256": "b58a5079d0f3edead6b5a746f3cdccbcf61819f5056870ffc90c1825dcb0b91c",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 24,
+      "source_index": 24,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00024.jpg",
+      "sha256": "1f2cc1cefd5a2c63eb02d071fbe8d01002ea21782a12ace4e568466fd4bbab96",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 25,
+      "source_index": 25,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00025.jpg",
+      "sha256": "b59c59700bf55058dcd5e703e9dc0eb61ef0ccdd02fb4b210a558ad8e625a726",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 26,
+      "source_index": 26,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00026.jpg",
+      "sha256": "c5100affadaba3886639bb75ffe3a0996f63b41fdbacb496b034be10d10e9597",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 27,
+      "source_index": 27,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00027.jpg",
+      "sha256": "118019fbfbfd4aefdd8cf73b2148621451a56914905d3b0e20fdbaf7f05037d2",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 28,
+      "source_index": 28,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00028.jpg",
+      "sha256": "a0021d96f38a4839a11528daa2a2627f8445af0375e5832cb3ede1119e54c999",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 29,
+      "source_index": 29,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00029.jpg",
+      "sha256": "aab66adac85fde967b4164c9f9d674c3b805bc210b0f686182d1cfdfc41bed20",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 30,
+      "source_index": 30,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00030.jpg",
+      "sha256": "527cf79b7e7ab37854874e96ce47a86ca0e7c609960c7681d76dc8d29b663941",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 31,
+      "source_index": 31,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00031.jpg",
+      "sha256": "c10826c191faa7b7c0cda4ca69274ce817d26004e835362f2fc510b8b0d85632",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 32,
+      "source_index": 32,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00032.jpg",
+      "sha256": "73e03add3f3f45b2539a7be763f68f6b3911789f96166cd48126e07555ab0e55",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 33,
+      "source_index": 33,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00033.jpg",
+      "sha256": "9ff13980519b5537353ed7458fa08dfd1c28c2228c91cabc74d6f7851f850261",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 34,
+      "source_index": 34,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00034.jpg",
+      "sha256": "0acaa5106447ba2fdd207f762872b96b827295539332065a72e13064a0812a71",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 35,
+      "source_index": 35,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00035.jpg",
+      "sha256": "8c0420381407fc9cae11a9a26a449d56209d3c6af3bf0bbf53adb58ec8d2aa3e",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 36,
+      "source_index": 36,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00036.jpg",
+      "sha256": "d809d04722c522f9d95ff12bed8ea6a46de4aaec76aec10ddce3dbc139209da4",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 37,
+      "source_index": 37,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00037.jpg",
+      "sha256": "06bffc7bcb213878a4629a6bd9b62e29d0d33a63a42755debc0316b7561760b0",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 38,
+      "source_index": 38,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00038.jpg",
+      "sha256": "f2b62f3580ea2ae768e04d34e08ae28b120b7f0a09fb80a7e6876d7bb8d95955",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 39,
+      "source_index": 39,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00039.jpg",
+      "sha256": "e3568b66890e7b5fcd01fca81f8285783cf3f731ac485a24f2b8890b7f2b2140",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 40,
+      "source_index": 40,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00040.jpg",
+      "sha256": "49169b9c2804f4f205d3c82274484f9e9fc0674f34f9a324b61315a4047a3c49",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 41,
+      "source_index": 41,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00041.jpg",
+      "sha256": "45d360139b0784ff8bab3e5b8716c3dd612aaad546f45d6fa50a778054f39031",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 42,
+      "source_index": 42,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00042.jpg",
+      "sha256": "53ba6994f050f00339de0c2598c981084729e90db17622d9dbcb5be2238afc57",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 43,
+      "source_index": 43,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00043.jpg",
+      "sha256": "c793122fc3f023bab20c1b3e480f6b3f7b2c80323a9b1ce10c501f1b66fa4cac",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 44,
+      "source_index": 44,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00044.jpg",
+      "sha256": "d3d9ab85f883ceb6fa9535f6dbbefe19c1ea628fc5634c620b37cc47e2082e99",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 45,
+      "source_index": 45,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00045.jpg",
+      "sha256": "c6121d3e1ad484d20c9ad5f8cc4111c3898a5cb40751453364740c96db54d8a7",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 46,
+      "source_index": 46,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00046.jpg",
+      "sha256": "bcd9f7f5965070b80f0a95b28e5b99bf91fce9cef2b795f33a01a8f7f0dc3340",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 47,
+      "source_index": 47,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00047.jpg",
+      "sha256": "48cc048802cc43a6e95376b87e822d5b955a7d3127febb80833d6a01b6492a54",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 48,
+      "source_index": 48,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00048.jpg",
+      "sha256": "582008bf57a8106d90c794bd31d9cecbd7e7ca495ab110d8894a3665b0884047",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 49,
+      "source_index": 49,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00049.jpg",
+      "sha256": "1a0e0083e700a67b265992c7455dde264723617780300e85bae291f270806713",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 50,
+      "source_index": 50,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00050.jpg",
+      "sha256": "373a2bca447d26e4de4017b46809e6452ac84dc4ceea539b8ff7ab4e39410a50",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 51,
+      "source_index": 51,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00051.jpg",
+      "sha256": "499767cd5dad5df9a48417554ffaaf3de606e41c1d11e9d2399d30a33cc96339",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 52,
+      "source_index": 52,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00052.jpg",
+      "sha256": "0a113134965567d1ec1fceeda3e9e2520bbf2ff0bb312ab14ec1ed5ab253d00e",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 53,
+      "source_index": 53,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00053.jpg",
+      "sha256": "0f9a4a41ac9a54588eb5a78f98c0800e1027f0b27c5698b52ea56c0dd4de6dff",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 54,
+      "source_index": 54,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00054.jpg",
+      "sha256": "79ded88a220c73eb08ea9bedd6fab481272bea8ff55b4d20189c28c3d247e67d",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 55,
+      "source_index": 55,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00055.jpg",
+      "sha256": "f6a61a08b48544987ae3a1488b06b20fc284db7fcaeb091bf09da565bd5ead21",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 56,
+      "source_index": 56,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00056.jpg",
+      "sha256": "19daa1d89c797f30612191c9e812022b567546b45f39f55a2c3956b710985af1",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 57,
+      "source_index": 57,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00057.jpg",
+      "sha256": "86610eea329772124dc611129e29aedc401f1173aa99d4973823ca1cbbb24e6c",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 58,
+      "source_index": 58,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00058.jpg",
+      "sha256": "57dbbe63dba4be3a3bd4d15d7c178b68243e9633fc614be68de79e946f142582",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 59,
+      "source_index": 59,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00059.jpg",
+      "sha256": "ae103559ac894da75cc26dbd0f2fb2b1d124638c8d264356fbf709007e614eab",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 60,
+      "source_index": 60,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00060.jpg",
+      "sha256": "b42f18f462d3d21cf24f7bb73627ee0a72a3002e4e5bfeef68b8a66435200925",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 61,
+      "source_index": 61,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00061.jpg",
+      "sha256": "813d8a6f236604428ed4c2f5ff2b0a851e2a31d2d3f31c66046d882d635d1a7a",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 62,
+      "source_index": 62,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00062.jpg",
+      "sha256": "e181a18a1a044dccf90025c4edd8d7878a5a5e84526ba073b850f5ba3d356d48",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 63,
+      "source_index": 63,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-roundabout/00063.jpg",
+      "sha256": "a9647d038ff4dc65fdb2fe09d8fc04dd63075f6594541bc35313b8f3e0425f69",
+      "size_wh": [
+        854,
+        480
+      ]
+    }
+  ],
+  "licensing_note": "See ATTRIBUTION.md; footage rights are separate from SAM2 code/weights.",
+  "benchmark_note": "Exploratory part labels; these are not official DAVIS object annotations."
+}
