@@ -361,6 +361,7 @@ def render_comparison(frames_dir, predictions, ids, part_names, output, fps=12):
 
 def run(frames_dir, annotations_path, outfolder, checkpoint=None, predictor=None):
     from part_editor import edit_masks, replay
+    from classical_masks import run_shared_homography
     outfolder = Path(outfolder)
     outfolder.mkdir(parents=True, exist_ok=True)
     annotations = json.loads(Path(annotations_path).read_text())
@@ -369,7 +370,11 @@ def run(frames_dir, annotations_path, outfolder, checkpoint=None, predictor=None
     sam_masks, ids, timing = run_sam2(frames_dir, initial, outfolder, checkpoint, predictor)
     flow_masks, flow_ids = run_affine_lk(frames_dir, initial)
     assert ids == flow_ids
-    predictions = {"SAM2.1 tiny": sam_masks, "LK affine": flow_masks}
+    shared_masks, shared_ids, shared_diagnostics = run_shared_homography(frames_dir, initial)
+    assert ids == shared_ids
+    np.savez_compressed(outfolder / 'shared_homography_masks.npz', ids=np.asarray(ids), masks=shared_masks)
+    write_json(outfolder / 'shared_homography_diagnostics.json', shared_diagnostics)
+    predictions = {"SAM2.1 tiny": sam_masks, "LK affine": flow_masks, "Shared homography": shared_masks}
     results = {method: score_masks(masks, ids, annotations) for method, masks in predictions.items()}
     results['selective_edit'] = {method: score_masks(edit_masks(masks, ids, ids[0])[:, None], [ids[0]], annotations)
                                  for method, masks in predictions.items()}
@@ -385,7 +390,7 @@ def run(frames_dir, annotations_path, outfolder, checkpoint=None, predictor=None
                                 "SAM2 pretraining may include DAVIS; this is a pipeline demonstration."]}
     write_json(outfolder / "part_registry.json", registry)
     names = {int(p["id"]): p["name"] for p in annotations["parts"]}
-    render_comparison(frames_dir, predictions, ids, names, outfolder / "part_tracking_edit.mp4")
+    render_comparison(frames_dir, {m: predictions[m] for m in ('SAM2.1 tiny', 'Shared homography')}, ids, names, outfolder / "part_tracking_edit.mp4")
     replay(frames_dir, outfolder / 'sam2_masks.npz', outfolder / 'door_recolor.mp4', target_id=ids[0])
     print(json.dumps({name: {key: value for key, value in result.items() if key != "rows"}
                       for name, result in results.items() if name != 'selective_edit'}, indent=2))
