@@ -4,7 +4,13 @@ This experiment asks whether one image, one selected-object mask, and an
 explicit movement command can produce a sequence of controlled JEPA edits.
 It uses V-JEPA 2.1's native image input, without a source video or temporal
 background donors. The existing spatial-fill/token-copy operator and frozen
-coarse readout are reused; no new generative model is trained.
+coarse readout architecture are reused; no new generative model is trained.
+
+The [initial run](INITIAL_RESULTS.md) passed latent-distance and localization
+checks but failed color reconstruction, including on genuine reference images.
+The [native-image readout follow-up](native_readout_PROTOCOL.md) trains the same
+small probe on disjoint still-image data and reserves new images for testing.
+The JEPA encoder and edit operator remain unchanged. Both runs are retained.
 
 See the [fixed protocol](PROTOCOL.md) and [results](RESULTS.md). Four fresh
 images each have five nonzero movement commands plus an unchanged reference.
@@ -81,7 +87,7 @@ The required probe SHA-256 is
 `bf18fc7be331d56d9aafd3462111d3f9dac622e9177a3e3e1bfd91710ab07eab`.
 Day8's learned correction heads and training feature caches are not needed.
 
-## Native-image check and benchmark
+## Reproduce the initial failed readout-transfer run
 
 The separate calibration fixture uses seed 13000, frame 15, with a 48-pixel
 target displacement. It checks the native image interface and frozen readout
@@ -159,6 +165,60 @@ it does not independently repeat encoder inference or the remote publication
 chronology. Keep the published freeze, calibration report, and publication
 receipt at their original relative locations.
 
+## Reproduce the native-image readout follow-up
+
+The fixed training protocol uses 32 training scenes (64 genuine images), eight
+development scenes (16 genuine images), seed 1010, and the final checkpoint
+after 40 epochs. Development is a pass/fail gate, never checkpoint selection.
+Fresh test seeds are 13600–13603. Original test seeds 13200–13203 are not used
+for fitting, normalization, development or the new test.
+
+Restore the native readout archive listed in
+[the archive index](native_readout_run_2026-10-10/artifact_archives.json) over a
+copy of `experiments/day10/native_readout_run_2026-10-10`. Keep its relative
+paths: `training/probe.pt`, `features/cache/`, and `fresh_test/`. The Git copy
+supplies reports, hashes, source/target images and visual artifacts; the archive
+supplies the raw caches, readout checkpoint and predictions.
+
+```bash
+export DAY10_NATIVE_ROOT="$DAY10_ARTIFACTS/native_readout"
+export DAY10_NATIVE_PROBE="$DAY10_NATIVE_ROOT/training/probe.pt"
+
+python experiments/day10/audit_native_readout.py \
+  --run "$DAY10_NATIVE_ROOT" \
+  --freeze "$DAY10_NATIVE_ROOT/training_freeze.json" \
+  --publication "$DAY10_NATIVE_ROOT/training_publication.json" \
+  --out "$DAY10_NATIVE_ROOT/training/independent_audit_reproduction.json"
+
+python experiments/day10/audit_native_results.py \
+  --run "$DAY10_NATIVE_ROOT/fresh_test" \
+  --freeze "$DAY10_NATIVE_ROOT/test_freeze.json" \
+  --publication "$DAY10_NATIVE_ROOT/test_publication.json" \
+  --probe "$DAY10_NATIVE_PROBE" \
+  --out "$DAY10_NATIVE_ROOT/fresh_test/analysis/independent_audit_reproduction.json"
+
+python experiments/day10/visualize.py --run "$DAY10_NATIVE_ROOT/fresh_test"
+```
+
+Those commands use caches and need no encoder inference. To re-encode the
+published test using the exact archived probe:
+
+```bash
+python experiments/day10/native_readout.py test \
+  --out "$DAY10_NATIVE_ROOT/fresh_test_reproduction" \
+  --upstream "$DAY10_UPSTREAM" \
+  --probe "$DAY10_NATIVE_PROBE" \
+  --freeze "$DAY10_NATIVE_ROOT/test_freeze.json" \
+  --publication "$DAY10_NATIVE_ROOT/test_publication.json"
+```
+
+`native_readout.py make-training-freeze`, `prepare`, and `train` implement the
+complete fixed training pipeline. They require a verified pretraining receipt;
+the test requires a second freeze binding the final probe and passing
+development gate. A retrained checkpoint may differ bytewise and cannot be
+silently substituted under the original test freeze. Replaying disclosed
+scenes is reproduction, not new independent validation.
+
 ## Apply the operator to a supplied image
 
 Prepare an RGB image exactly 384×384 pixels and a matching grayscale PNG mask
@@ -174,7 +234,7 @@ python experiments/day10/animate.py image \
   --mask /absolute/path/selected_mask.png \
   --shifts 0 16 32 48 64 80 \
   --upstream "$DAY10_UPSTREAM" \
-  --probe "$DAY10_PROBE" \
+  --probe "$DAY10_NATIVE_PROBE" \
   --out "$DAY10_ARTIFACTS/my_image" \
   --device cpu --threads 4
 
@@ -185,7 +245,10 @@ This produces edited latent tensors and an optional diagnostic preview. The
 reusable Python API is `animate_image(encoder, source_rgb, selected_mask,
 shifts_px, probe=None, device='cpu')`; omit the probe to obtain features only.
 
-**The frozen probe was trained on controlled synthetic ball scenes. Its
+Use the archived native-image probe for this route; the initial video-trained
+probe is retained only to reproduce the disclosed failed transfer.
+
+**Both probes were trained on controlled synthetic ball scenes. Their
 outputs on photographs are unvalidated and must not be treated as an image
 decoder.** The method does not recover genuinely hidden background, predict
 natural motion, identify faces or parts, handle occlusion/rotation, or generate

@@ -1,0 +1,8 @@
+{
+  "freeze_sha256": "1d2b1eaabc8b14d7868976e281387959aa2d0b956aea84ec31ba607ea6554325",
+  "bytes_equal_to_GitHub": true,
+  "training_encoded_before_verification": false,
+  "commit": "305ebd66742410904c77ec108291169e99cac28c",
+  "verified_utc": "2026-10-09T23:08:19.963Z",
+  "repository_path": "experiments/day10/native_readout_run_2026-10-10/training_freeze.json"
+}

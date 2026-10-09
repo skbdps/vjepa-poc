@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "independent_implementation": true,
+  "imports_experiment_or_training_helpers": false,
+  "scope_limits": [
+    "Encoder inference and optimizer fitting are not independently rerun.",
+    "Remote publication chronology is attested, not independently queried."
+  ],
+  "train_scenes": 32,
+  "genuine_training_images": 64,
+  "normalization_tokens": 36864,
+  "train_only_normalization_bitwise_exact": true,
+  "development_scenes": 8,
+  "development_images": 16,
+  "development_readouts_bitwise_exact": true,
+  "development_gate": {
+    "version": "day10_native_image_readout_followup_v1",
+    "n_scenes": 8,
+    "n_genuine_images": 16,
+    "selected_centroid_mean_px": 0.8161289901063158,
+    "all_selected_centroids_present": true,
+    "coarse_color_accuracy": 1.0,
+    "coarse_color_eligible": 16,
+    "coarse_color_skipped": 0,
+    "selected_iou_mean": 0.9494047619047619,
+    "occupancy_mse_mean": 0.00016594252241799233,
+    "rgb_mse_mean": 0.001765180061415449,
+    "rule": "Final fixed-epoch model only; genuine mean selected centroid <16px, all present, eligible coarse-color accuracy>=.90",
+    "used_for_tuning": false,
+    "test_accessed": false,
+    "pass": true,
+    "probe_sha256": "38d6224ae94d5b9edc0a888854ab214bd20d999eebd4970bef48ff8442d160e9",
+    "training_history_sha256": "c191500b6c9747058414b68d470f76f746639c9e7dac5065ad04e254d49058e7",
+    "features_manifest_sha256": "07f29f2c5488b8d72a93d08d243abbf0028ec912605f69c51ac6053062ec1ca7"
+  },
+  "fresh_test_data_opened_by_auditor": false,
+  "checks": 4716,
+  "errors": [],
+  "max_metric_abs_difference": 0.0,
+  "auditor_sha256": "191a094635261319b11641f68f7ea7671a216a3a8398ec703ae1c01fd9d0b784",
+  "independent_base_auditor_sha256": "a1960fff2b4f98c0e1e20bc6c20bb57a0fef78faf19b97aec2dc7c5ab02c4243",
+  "training_freeze_sha256": "1d2b1eaabc8b14d7868976e281387959aa2d0b956aea84ec31ba607ea6554325"
+}

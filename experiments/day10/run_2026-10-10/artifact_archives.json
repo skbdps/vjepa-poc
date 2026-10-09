@@ -1,0 +1,21 @@
+{
+  "version": "day10_initial_archive_index_v1",
+  "archives": [
+    {
+      "name": "Day10_Initial_Image_Evidence.zip",
+      "bytes": 180289148,
+      "sha256": "8e8d6c203e8a3b8fa854e8e06616235170eed119c89812aecf7a4ad04eaba2e6",
+      "npz_files": 13,
+      "contents": "Initial failed color-transfer run: native calibration, all4 FP32source/target/edited caches and probe predictions. Git contains all matching metadata and visuals.",
+      "library_file_id": "libfile_d28a3445b8548191b16f749d65bd50cd",
+      "library_version": 1
+    }
+  ],
+  "restore": "Copy the matching Git run_2026-10-10 folder into a run directory, then extract this raw archive there.",
+  "probe_dependency": {
+    "prior_archive": "Day8_Trained_Operators.zip",
+    "member": "training/probe.pt",
+    "sha256": "bf18fc7be331d56d9aafd3462111d3f9dac622e9177a3e3e1bfd91710ab07eab"
+  },
+  "scope": "Code, reports, PNGinputs/targets, and visual artifacts are Git-backed. Only raw numerical caches are archived separately."
+}
