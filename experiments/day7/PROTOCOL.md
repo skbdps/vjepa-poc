@@ -112,6 +112,13 @@ identity switches, first-visible recovery after absence, and condition breakdown
 Reduced latent loss alone is not success. Compare future predictions with copying
 the immutable anchor and the last retrieved representation, where applicable.
 
+After the primary test is complete, descriptive checkpoint interventions replace
+queued forecasts with the immutable anchor or remove sibling context. These use
+every visual arm/seed, preserve the primary predictions, and first require normal
+forward parity. They measure reliance on these inputs, not a better selected
+method or proof that predictive training itself helped. Small task-metric changes
+can mask numerical effects, so prediction/logit/state sensitivity is also reported.
+
 ## Failure diagnosis and scope
 
 - Both learned visual arms beat frozen retrieval but do not differ: trained

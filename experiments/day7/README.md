@@ -19,10 +19,16 @@ discovery, or an established literature-novel method.
 
 ## Current execution status
 
-Implementation and fabricated-input checks are complete for the data layer and
-model. The GPU training/evaluation run is being prepared. No measured improvement
-or failure of this learned mechanism is claimed yet. Test scenes remain sealed
+All 45 training/development clips have been encoded on a Colab Tesla T4. The
+nine matched runs (three arms and three seeds, 30 epochs each) are training.
+No held-out improvement or failure is claimed yet. Test scenes remain sealed
 until all trained checkpoints and development selections are frozen.
+
+The clean [Colab notebook](Predictive_Part_JEPA_Colab.ipynb) provides the full
+workflow. `analyze.py` independently recomputes tracking metrics from saved
+predictions. `diagnose.py` performs separate, post-test interventions on forecast
+inputs and sibling context; these are descriptive reliance checks, not additional
+selected methods.
 
 ## Workflow
 
