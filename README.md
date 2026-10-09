@@ -1,6 +1,6 @@
 # V-JEPA 2.1 POC on Google TRC TPU
 
-Controllable AI video generation POC using V-JEPA 2.1 latent-space manipulation.
+Research toward controllable AI video generation, including V-JEPA 2.1 latent-space manipulation. The consistency experiments below measure the capabilities demonstrated so far.
 
 ## Current consistency experiments
 

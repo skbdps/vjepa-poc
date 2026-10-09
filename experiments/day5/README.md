@@ -74,9 +74,11 @@ The primary improvement is strictly fewer absolute wrong-car effective paint pix
 
 The editor exposes two cars and four independently controlled parts. Its stable car/part identities are assigned from frame-zero annotations, not automatically discovered. Recipes contain only enabled flags, RGB colors, strengths, sequence identity and the containment switch; they contain no model weights, executable code or masks.
 
-Build the standalone editor after the completed run is available:
+After the completed run is available, switch from the frozen experiment revision to the separately pinned artifact-helper revision. These helpers verify that the frozen source/configuration and cached predictions match; this switch does not rerun or alter inference. In a clean checkout:
 
 ```bash
+git fetch origin c55f436f9abce93b35b511e67f41e1140f271445
+git checkout c55f436f9abce93b35b511e67f41e1140f271445
 python experiments/day5/build_hierarchy_demo.py \
   --run-root /path/to/day5_parent_run \
   --scene test_crossing_6200 \

@@ -16,4 +16,4 @@ Runtime output was `/content/day5_parent_run`. [Parent_Constraint_Colab.ipynb](P
 
 One bounded [post-hoc other-parent veto](../day6/POSTHOC_DAY5_EXPLORATION.md) was evaluated on these completed caches as development data and also failed all four guards. No new GPU inference was used, and the candidate did not warrant a fresh validation run. Day 5 remains unchanged.
 
-Remaining packaging work: preserve the executed notebook and visual preview, and commit the completed artifacts. Do not modify the frozen policy in response to these test outcomes.
+Packaging is complete. Commit `d1bd22a0c6da845a280b9d46f305d7bb9a55b611` preserves the GPU archive, independent audits, screenshot, recipes, native replay videos and output-free source of the 23-cell research notebook. Its full executed copy was preserved separately with all outputs and zero error outputs. See [checkpoint_verification.json](run_2026-10-09/checkpoint_verification.json) for hashes and [browser_editor.jpg](run_2026-10-09/hierarchy/browser_editor.jpg) for the live editor proof. Do not modify the frozen policy in response to these test outcomes.
