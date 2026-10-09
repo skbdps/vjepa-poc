@@ -12,6 +12,13 @@ The [native-image readout follow-up](native_readout_PROTOCOL.md) trains the same
 small probe on disjoint still-image data and reserves new images for testing.
 The JEPA encoder and edit operator remain unchanged. Both runs are retained.
 
+The fresh native-readout run passes all predeclared gates on four new synthetic
+images: 1.50-pixel mean location error over 20 nonzero moves, correct coarse
+color at all 24 states, and an 86.94% reduction in balanced regional latent
+error versus no edit. Background RGB repair improves in 15/20 positions and
+worsens on average for one image; detailed texture remains unresolved.
+See the [fixed animation preview](native_readout_run_2026-10-10/fresh_test/analysis/image_13600_preview.gif).
+
 See the [fixed protocol](PROTOCOL.md) and [results](RESULTS.md). Four fresh
 images each have five nonzero movement commands plus an unchanged reference.
 Correct target images are independently encoded scoring references only.
