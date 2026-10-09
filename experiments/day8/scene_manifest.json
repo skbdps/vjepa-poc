@@ -1,0 +1,370 @@
+{
+  "data_version": "day8_paired_latent_translation_v1",
+  "frames": 32,
+  "resolution": 384,
+  "patch": 16,
+  "tubelet": 2,
+  "encoding_block_frames": 16,
+  "specs": {
+    "train": [
+      {
+        "name": "train_11000_dx+32",
+        "seed": 11000,
+        "dx": 32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11001_dx-32",
+        "seed": 11001,
+        "dx": -32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11002_dx+64",
+        "seed": 11002,
+        "dx": 64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11003_dx-64",
+        "seed": 11003,
+        "dx": -64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11004_dx+32",
+        "seed": 11004,
+        "dx": 32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11005_dx-32",
+        "seed": 11005,
+        "dx": -32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11006_dx+64",
+        "seed": 11006,
+        "dx": 64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11007_dx-64",
+        "seed": 11007,
+        "dx": -64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11008_dx+32",
+        "seed": 11008,
+        "dx": 32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11009_dx-32",
+        "seed": 11009,
+        "dx": -32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11010_dx+64",
+        "seed": 11010,
+        "dx": 64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11011_dx-64",
+        "seed": 11011,
+        "dx": -64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11012_dx+32",
+        "seed": 11012,
+        "dx": 32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11013_dx-32",
+        "seed": 11013,
+        "dx": -32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11014_dx+64",
+        "seed": 11014,
+        "dx": 64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11015_dx-64",
+        "seed": 11015,
+        "dx": -64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11016_dx+32",
+        "seed": 11016,
+        "dx": 32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11017_dx-32",
+        "seed": 11017,
+        "dx": -32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11018_dx+64",
+        "seed": 11018,
+        "dx": 64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11019_dx-64",
+        "seed": 11019,
+        "dx": -64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11020_dx+32",
+        "seed": 11020,
+        "dx": 32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11021_dx-32",
+        "seed": 11021,
+        "dx": -32,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11022_dx+64",
+        "seed": 11022,
+        "dx": 64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "train_11023_dx-64",
+        "seed": 11023,
+        "dx": -64,
+        "split": "train",
+        "shift_regime": "seen_magnitude"
+      }
+    ],
+    "dev": [
+      {
+        "name": "dev_11100_dx+32",
+        "seed": 11100,
+        "dx": 32,
+        "split": "dev",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "dev_11101_dx-32",
+        "seed": 11101,
+        "dx": -32,
+        "split": "dev",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "dev_11102_dx+64",
+        "seed": 11102,
+        "dx": 64,
+        "split": "dev",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "dev_11103_dx-64",
+        "seed": 11103,
+        "dx": -64,
+        "split": "dev",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "dev_11104_dx+32",
+        "seed": 11104,
+        "dx": 32,
+        "split": "dev",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "dev_11105_dx-32",
+        "seed": 11105,
+        "dx": -32,
+        "split": "dev",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "dev_11106_dx+64",
+        "seed": 11106,
+        "dx": 64,
+        "split": "dev",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "dev_11107_dx-64",
+        "seed": 11107,
+        "dx": -64,
+        "split": "dev",
+        "shift_regime": "seen_magnitude"
+      }
+    ],
+    "test": [
+      {
+        "name": "test_11200_dx+32",
+        "seed": 11200,
+        "dx": 32,
+        "split": "test",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "test_11201_dx-32",
+        "seed": 11201,
+        "dx": -32,
+        "split": "test",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "test_11202_dx+64",
+        "seed": 11202,
+        "dx": 64,
+        "split": "test",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "test_11203_dx-64",
+        "seed": 11203,
+        "dx": -64,
+        "split": "test",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "test_11204_dx+32",
+        "seed": 11204,
+        "dx": 32,
+        "split": "test",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "test_11205_dx-32",
+        "seed": 11205,
+        "dx": -32,
+        "split": "test",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "test_11206_dx+64",
+        "seed": 11206,
+        "dx": 64,
+        "split": "test",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "test_11207_dx-64",
+        "seed": 11207,
+        "dx": -64,
+        "split": "test",
+        "shift_regime": "seen_magnitude"
+      },
+      {
+        "name": "test_11208_dx+48",
+        "seed": 11208,
+        "dx": 48,
+        "split": "test",
+        "shift_regime": "heldout_magnitude"
+      },
+      {
+        "name": "test_11209_dx-48",
+        "seed": 11209,
+        "dx": -48,
+        "split": "test",
+        "shift_regime": "heldout_magnitude"
+      },
+      {
+        "name": "test_11210_dx+80",
+        "seed": 11210,
+        "dx": 80,
+        "split": "test",
+        "shift_regime": "heldout_magnitude"
+      },
+      {
+        "name": "test_11211_dx-80",
+        "seed": 11211,
+        "dx": -80,
+        "split": "test",
+        "shift_regime": "heldout_magnitude"
+      },
+      {
+        "name": "test_11212_dx+48",
+        "seed": 11212,
+        "dx": 48,
+        "split": "test",
+        "shift_regime": "heldout_magnitude"
+      },
+      {
+        "name": "test_11213_dx-48",
+        "seed": 11213,
+        "dx": -48,
+        "split": "test",
+        "shift_regime": "heldout_magnitude"
+      },
+      {
+        "name": "test_11214_dx+80",
+        "seed": 11214,
+        "dx": 80,
+        "split": "test",
+        "shift_regime": "heldout_magnitude"
+      },
+      {
+        "name": "test_11215_dx-80",
+        "seed": 11215,
+        "dx": -80,
+        "split": "test",
+        "shift_regime": "heldout_magnitude"
+      }
+    ]
+  },
+  "train_shift_pixels": [
+    32,
+    -32,
+    64,
+    -64
+  ],
+  "heldout_shift_pixels": [
+    48,
+    -48,
+    80,
+    -80
+  ],
+  "geometry": "Moving reflected trajectories; randomized separate vertical lanes; no occlusion or crop",
+  "identity": "Per-scene textured circles, constant radii and object-coordinate texture across frames",
+  "source_inputs": "Source RGB-derived features, full oracle source masks, requested signed dx",
+  "supervision_only": "Target video/features, target masks, exact trajectories, seed and renderer metadata",
+  "optional_oracle": "frames_empty retains distractor and background, removes selected ball",
+  "scope": "Unseen scene seeds in the same procedural 2-D family; test half held-out shift magnitudes; no real-video or pixel-generation claim"
+}
