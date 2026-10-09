@@ -6,6 +6,8 @@ Research toward controllable AI video generation, including V-JEPA 2.1 latent-sp
 
 The ongoing work on `experiment/part-consistency-colab` tests persistent object-part identity and selective video edits on a Colab T4.
 
+The active research focus is now [Day 7: a learned predictive JEPA part representation](experiments/day7/README.md). It trains a new recurrent identity/prediction head and measures what future-latent learning adds over the same architecture trained only for retrieval. The earlier SAM2/editor experiments remain comparison evidence and infrastructure; they do not establish the proposed JEPA mechanism.
+
 - [Day 3: initial part-localization diagnostic](experiments/day3/README.md)
 - [Day 5: completed whole-car constraint experiment](experiments/day5/README.md) — all twelve held-out clips and an independent numerical audit completed; unconditional containment fails all four accuracy guardrails ([results](experiments/day5/RESULTS.md)).
 - [Two-car, four-part hierarchy editor](experiments/day5/run_2026-10-09/hierarchy/interactive_hierarchy_editor.html) — independent stable car/part controls and portable recipes; containment stays off by default. Browser controls, recipe export/import and both containment-mode native replays are verified ([validation](experiments/day5/EDITOR_VALIDATION.md)).
