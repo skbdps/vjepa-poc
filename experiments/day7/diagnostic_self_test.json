@@ -1,0 +1,17 @@
+{
+  "normal_replay_exact": true,
+  "forecast_prefix_exact": true,
+  "forecast_intervention_changes_later_retrieval": true,
+  "unique_owners_zero_context": true,
+  "owner_intervention_changes_retrieval": true,
+  "held_out_data_accessed": false,
+  "diagnostic_source_sha256": "869c532cd62be5fd8d13d9faea79c57f42f007c8e22510e91b40176f4a40ab82",
+  "torch": "2.14.1+cpu",
+  "incomplete_run_rejected_before_features_or_test_loading": true,
+  "created_at_utc": "2026-10-09T06:15:22.328175+00:00",
+  "device": "cpu",
+  "seconds": 0.0210390889988048,
+  "training_performed": false,
+  "real_model_results": false,
+  "completion_guard_source_sha256": "715f67c8abfec365dcb36645349b6e7fda324d681930efb744b7e281e6fee346"
+}
