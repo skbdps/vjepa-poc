@@ -1,0 +1,1107 @@
+{
+  "arm": "predictive",
+  "seed": 1701,
+  "epoch": 28,
+  "development": {
+    "overall": {
+      "localization_accuracy_given_visible": {
+        "numerator": 888,
+        "denominator": 964,
+        "rate": 0.921161825726141
+      },
+      "wrong_car_given_visible": {
+        "numerator": 32,
+        "denominator": 964,
+        "rate": 0.03319502074688797
+      },
+      "wrong_part_given_visible": {
+        "numerator": 0,
+        "denominator": 964,
+        "rate": 0.0
+      },
+      "presence_recall_given_visible": {
+        "numerator": 922,
+        "denominator": 964,
+        "rate": 0.9564315352697096
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 126,
+        "rate": 0.0
+      },
+      "recovery_accuracy": {
+        "numerator": 1,
+        "denominator": 9,
+        "rate": 0.1111111111111111
+      },
+      "identity_switches": 29,
+      "balanced_localization_and_absence": 0.9605809128630705,
+      "clips": 9,
+      "ambiguous_samples_skipped": 26,
+      "uniform_patch_chance_given_visible": 0.012621023513139694
+    },
+    "utility": 0.9605809128630705,
+    "by_condition": {
+      "long_occlusion": {
+        "localization_accuracy_given_visible": {
+          "numerator": 216,
+          "denominator": 240,
+          "rate": 0.9
+        },
+        "wrong_car_given_visible": {
+          "numerator": 0,
+          "denominator": 240,
+          "rate": 0.0
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 240,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 216,
+          "denominator": 240,
+          "rate": 0.9
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 120,
+          "rate": 0.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 6,
+          "rate": 0.0
+        },
+        "identity_switches": 0,
+        "balanced_localization_and_absence": 0.95,
+        "clips": 3,
+        "ambiguous_samples_skipped": 12,
+        "uniform_patch_chance_given_visible": 0.012152777777777778
+      },
+      "crossing": {
+        "localization_accuracy_given_visible": {
+          "numerator": 325,
+          "denominator": 352,
+          "rate": 0.9232954545454546
+        },
+        "wrong_car_given_visible": {
+          "numerator": 7,
+          "denominator": 352,
+          "rate": 0.019886363636363636
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 352,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 334,
+          "denominator": 352,
+          "rate": 0.9488636363636364
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 6,
+          "rate": 0.0
+        },
+        "recovery_accuracy": {
+          "numerator": 1,
+          "denominator": 3,
+          "rate": 0.3333333333333333
+        },
+        "identity_switches": 7,
+        "balanced_localization_and_absence": 0.9616477272727273,
+        "clips": 3,
+        "ambiguous_samples_skipped": 14,
+        "uniform_patch_chance_given_visible": 0.012276081123737374
+      },
+      "scale_camera": {
+        "localization_accuracy_given_visible": {
+          "numerator": 347,
+          "denominator": 372,
+          "rate": 0.9327956989247311
+        },
+        "wrong_car_given_visible": {
+          "numerator": 25,
+          "denominator": 372,
+          "rate": 0.06720430107526881
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 372,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 372,
+          "denominator": 372,
+          "rate": 1.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "identity_switches": 22,
+        "balanced_localization_and_absence": null,
+        "clips": 3,
+        "ambiguous_samples_skipped": 0,
+        "uniform_patch_chance_given_visible": 0.013249514635603346
+      }
+    },
+    "future": {
+      "targets": 724,
+      "forecast_mean_cosine": 0.8628233580628811,
+      "anchor_copy_mean_cosine": 0.728787988794772,
+      "last_retrieved_copy_mean_cosine": 0.70714966109465,
+      "own_future_part_retrieval": {
+        "forecast": {
+          "all_visible_targets": {
+            "hits": 633,
+            "targets": 724
+          },
+          "at_least_two_candidates": {
+            "hits": 633,
+            "targets": 724
+          }
+        },
+        "anchor": {
+          "all_visible_targets": {
+            "hits": 542,
+            "targets": 724
+          },
+          "at_least_two_candidates": {
+            "hits": 542,
+            "targets": 724
+          }
+        },
+        "last_retrieved": {
+          "all_visible_targets": {
+            "hits": 501,
+            "targets": 724
+          },
+          "at_least_two_candidates": {
+            "hits": 501,
+            "targets": 724
+          }
+        }
+      },
+      "note": "scoring labels only; all visible future targets at horizon8"
+    }
+  },
+  "last_epoch_development": {
+    "overall": {
+      "localization_accuracy_given_visible": {
+        "numerator": 827,
+        "denominator": 964,
+        "rate": 0.8578838174273858
+      },
+      "wrong_car_given_visible": {
+        "numerator": 73,
+        "denominator": 964,
+        "rate": 0.07572614107883817
+      },
+      "wrong_part_given_visible": {
+        "numerator": 0,
+        "denominator": 964,
+        "rate": 0.0
+      },
+      "presence_recall_given_visible": {
+        "numerator": 901,
+        "denominator": 964,
+        "rate": 0.9346473029045643
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 126,
+        "rate": 0.0
+      },
+      "recovery_accuracy": {
+        "numerator": 0,
+        "denominator": 9,
+        "rate": 0.0
+      },
+      "identity_switches": 34,
+      "balanced_localization_and_absence": 0.928941908713693,
+      "clips": 9,
+      "ambiguous_samples_skipped": 26,
+      "uniform_patch_chance_given_visible": 0.012621023513139694
+    },
+    "utility": 0.928941908713693,
+    "by_condition": {
+      "long_occlusion": {
+        "localization_accuracy_given_visible": {
+          "numerator": 216,
+          "denominator": 240,
+          "rate": 0.9
+        },
+        "wrong_car_given_visible": {
+          "numerator": 0,
+          "denominator": 240,
+          "rate": 0.0
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 240,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 216,
+          "denominator": 240,
+          "rate": 0.9
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 120,
+          "rate": 0.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 6,
+          "rate": 0.0
+        },
+        "identity_switches": 0,
+        "balanced_localization_and_absence": 0.95,
+        "clips": 3,
+        "ambiguous_samples_skipped": 12,
+        "uniform_patch_chance_given_visible": 0.012152777777777778
+      },
+      "crossing": {
+        "localization_accuracy_given_visible": {
+          "numerator": 284,
+          "denominator": 352,
+          "rate": 0.8068181818181818
+        },
+        "wrong_car_given_visible": {
+          "numerator": 28,
+          "denominator": 352,
+          "rate": 0.07954545454545454
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 352,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 313,
+          "denominator": 352,
+          "rate": 0.8892045454545454
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 6,
+          "rate": 0.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "identity_switches": 14,
+        "balanced_localization_and_absence": 0.9034090909090908,
+        "clips": 3,
+        "ambiguous_samples_skipped": 14,
+        "uniform_patch_chance_given_visible": 0.012276081123737374
+      },
+      "scale_camera": {
+        "localization_accuracy_given_visible": {
+          "numerator": 327,
+          "denominator": 372,
+          "rate": 0.8790322580645161
+        },
+        "wrong_car_given_visible": {
+          "numerator": 45,
+          "denominator": 372,
+          "rate": 0.12096774193548387
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 372,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 372,
+          "denominator": 372,
+          "rate": 1.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "identity_switches": 20,
+        "balanced_localization_and_absence": null,
+        "clips": 3,
+        "ambiguous_samples_skipped": 0,
+        "uniform_patch_chance_given_visible": 0.013249514635603346
+      }
+    },
+    "future": {
+      "targets": 724,
+      "forecast_mean_cosine": 0.8504231878818728,
+      "anchor_copy_mean_cosine": 0.728787988794772,
+      "last_retrieved_copy_mean_cosine": 0.7217588569063343,
+      "own_future_part_retrieval": {
+        "forecast": {
+          "all_visible_targets": {
+            "hits": 597,
+            "targets": 724
+          },
+          "at_least_two_candidates": {
+            "hits": 597,
+            "targets": 724
+          }
+        },
+        "anchor": {
+          "all_visible_targets": {
+            "hits": 542,
+            "targets": 724
+          },
+          "at_least_two_candidates": {
+            "hits": 542,
+            "targets": 724
+          }
+        },
+        "last_retrieved": {
+          "all_visible_targets": {
+            "hits": 494,
+            "targets": 724
+          },
+          "at_least_two_candidates": {
+            "hits": 494,
+            "targets": 724
+          }
+        }
+      },
+      "note": "scoring labels only; all visible future targets at horizon8"
+    }
+  },
+  "training_config": {
+    "policy": {
+      "version": "day7_supervised_jepa_head_v1",
+      "epochs": 30,
+      "batch_scenes": 2,
+      "optimizer": "AdamW",
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "precision": "float32",
+      "seeds": [
+        1701,
+        1702,
+        1703
+      ],
+      "input_dim": 256,
+      "hidden_dim": 128,
+      "horizon": 8,
+      "future_lambda": {
+        "retrieval_only": 0.0,
+        "predictive": 1.0,
+        "coordinate_only": 0.0
+      },
+      "infonce_weight": 0.2,
+      "infonce_temperature": 0.1,
+      "retrieval_loss": "batchwise mean of available visible multi-positive CE and absent null CE class means; equal if both present; exclude t0 and ambiguous",
+      "future_target": "stop-gradient unit mean of centered-unit JEPA patch tokens on positive future GT cells",
+      "future_validity": "future target visible at t+8; future absent/ambiguous ignored; t0 forecast included",
+      "future_negatives": "other visible parts in the same scene and future step; one target yields zero NCE",
+      "selection": "best dev mean(visible localization, absent specificity); earliest epoch on ties",
+      "learned_presence": "factorized visibility>=0.5 then spatial argmax; same fixed cutoff for all arms",
+      "baseline_threshold": "best dev utility on201score quantiles plus finite outside endpoints; higher threshold tie",
+      "coordinate_control": "fixed 2D sine/cosine256position vectors, grid-centered and normalized, repeated every step; no RGB",
+      "test_scope": "all nine arm/seed checkpoints retained; no test winner selection"
+    },
+    "source_digest": "63109e546db67ed77b21ec134cd30de3f27b0e32be109e7fc57cc26d7ba085a1",
+    "source_hashes": {
+      "day7/train.py": "7322f772c6cd92636c4c3e2425fcf38d7cd58878b029f770ae128e4ad488bdcd",
+      "day7/model.py": "fd90d08a5f0d0a7255f938ecaa059d3cea0cc1bd8409de43e0f089ad06091c30",
+      "day7/data.py": "845353a84577e3f30aa5c4ca6adf4cf7d9c742c413e5566d2b6bcad22ab5c7f3",
+      "day4/benchmark.py": "292c7c26dfb2c2772fbc4f16e61abbb20a1b9df2c5132a8b1bc737d6ca8d9281"
+    },
+    "data": {
+      "data_version": "day7_supervised_prompt_parts_v1",
+      "split_seeds": {
+        "train": {
+          "long_occlusion": [
+            7100,
+            7101,
+            7102,
+            7103,
+            7104,
+            7105,
+            7106,
+            7107,
+            7108,
+            7109,
+            7110,
+            7111
+          ],
+          "crossing": [
+            7200,
+            7201,
+            7202,
+            7203,
+            7204,
+            7205,
+            7206,
+            7207,
+            7208,
+            7209,
+            7210,
+            7211
+          ],
+          "scale_camera": [
+            7300,
+            7301,
+            7302,
+            7303,
+            7304,
+            7305,
+            7306,
+            7307,
+            7308,
+            7309,
+            7310,
+            7311
+          ]
+        },
+        "dev": {
+          "long_occlusion": [
+            9100,
+            9101,
+            9102
+          ],
+          "crossing": [
+            9200,
+            9201,
+            9202
+          ],
+          "scale_camera": [
+            9300,
+            9301,
+            9302
+          ]
+        },
+        "test": {
+          "long_occlusion": [
+            10100,
+            10101,
+            10102,
+            10103,
+            10104,
+            10105
+          ],
+          "crossing": [
+            10200,
+            10201,
+            10202,
+            10203,
+            10204,
+            10205
+          ],
+          "scale_camera": [
+            10300,
+            10301,
+            10302,
+            10303,
+            10304,
+            10305
+          ]
+        }
+      },
+      "n_clips": {
+        "train": 36,
+        "dev": 9,
+        "test": 18
+      },
+      "frames": 64,
+      "resolution": 384,
+      "tubelet": 2,
+      "grid": 24,
+      "transform_salt": "vjepa-poc/day7/spatial-and-parent-permutation/v1",
+      "transforms": "SHA256 bits independently select horizontal flip, vertical flip, and coherent A/B part-group permutation",
+      "sibling_groups_zero_based": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "inference_inputs": "Frozen RGB-derived features; normalized part prompts from frame zero; sibling-group relation",
+      "forbidden_inference_inputs": "Later masks; owner masks; seed; condition; motion parameters; transform metadata",
+      "learning": "Supervised learned head over frozen JEPA features; not self-supervised training",
+      "visibility": "Day4 >=70% pair coverage and >=65% each frame; absent iff zero target pixels in both frames",
+      "exclusions": "Tubelet zero and ambiguous visible slivers",
+      "scope": "Held-out seeds in the same three 2-D procedural trajectory families; no real-video/OOD claim"
+    },
+    "feature_binding": {
+      "clips": [
+        {
+          "name": "train_long_occlusion_7100",
+          "split": "train",
+          "seed": 7100,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7100.npz",
+          "sha256": "3c83a143239ea2771827cc38cfa548e8ca368a75c52d5f0a506ac1d7232da389",
+          "rgb_sha256": "6e145b3f989a7b6c5190dea9b11a8247c6f74d005047a61b034ce1dfd4758299"
+        },
+        {
+          "name": "train_long_occlusion_7101",
+          "split": "train",
+          "seed": 7101,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7101.npz",
+          "sha256": "62bd46e31fcd1787639f754e4ae0729c073d276f80826efa684f482c3a85031a",
+          "rgb_sha256": "5cc6706447d0ac98e825ebede6a86c476c8415e1b8841e1be9fcd29f8a32833e"
+        },
+        {
+          "name": "train_long_occlusion_7102",
+          "split": "train",
+          "seed": 7102,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7102.npz",
+          "sha256": "5c5b0313bed302dfaa7535f960764aa7e2987837863704eea048b5bebc048095",
+          "rgb_sha256": "2b0d9201402ec475c2599b775f8f9128ec24181c01d434735a40eceb105ad193"
+        },
+        {
+          "name": "train_long_occlusion_7103",
+          "split": "train",
+          "seed": 7103,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7103.npz",
+          "sha256": "ddfed371e75daa49fc6ed8528da5b76dff20c424ca0bc441e4a3deb56799f58d",
+          "rgb_sha256": "d099c46c31f739fab74b2c844fd1149c5a270f6849bff61911f4776393daa774"
+        },
+        {
+          "name": "train_long_occlusion_7104",
+          "split": "train",
+          "seed": 7104,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7104.npz",
+          "sha256": "5ecd6e38d1d68c1d802171531d4876f5983b5f6d68a6f48767d6cfa79821963c",
+          "rgb_sha256": "48e1d8c49c1983116c12a0bbbe39d62250258fb6e02e604fbdb13de1b5b9c7f9"
+        },
+        {
+          "name": "train_long_occlusion_7105",
+          "split": "train",
+          "seed": 7105,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7105.npz",
+          "sha256": "f4e02d1d44ab769ee81f5008ad9b8a14657cd6d630211627899173bcbf3af69b",
+          "rgb_sha256": "55d3906accba7372aafd2ca141d9f16c95ed29894970feec5f8d390571dcdb0e"
+        },
+        {
+          "name": "train_long_occlusion_7106",
+          "split": "train",
+          "seed": 7106,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7106.npz",
+          "sha256": "100e7d4a91d5469da2147da3cf95ffbf8cc005f88bb0fcf2c03b20012cb47e5a",
+          "rgb_sha256": "0b035dd0016929c15c25e65ed435392969d681f4f273046c4f9e6860516031f5"
+        },
+        {
+          "name": "train_long_occlusion_7107",
+          "split": "train",
+          "seed": 7107,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7107.npz",
+          "sha256": "bcc1fff50089cd052262508d0bb09bed4caa873851b66aa098b1e520bfe68bc4",
+          "rgb_sha256": "ade8005a58abd627e955a25292e3c1b332c28afdf6929708292cff9ff79fe509"
+        },
+        {
+          "name": "train_long_occlusion_7108",
+          "split": "train",
+          "seed": 7108,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7108.npz",
+          "sha256": "d8940711be2e61b3eb7efc7d5f5e2b918b813858c63ab601587378ce1d9395b0",
+          "rgb_sha256": "2c8a2335bffb25946138d5f9ee1d19f95fcb80cbd0a3ffe7a036f4022c11ffa3"
+        },
+        {
+          "name": "train_long_occlusion_7109",
+          "split": "train",
+          "seed": 7109,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7109.npz",
+          "sha256": "ae2d24434efa369bad8ac9fc743518a8a9eacea9b1cc13e51afe183e62dc5128",
+          "rgb_sha256": "f30b2dd7417281e014b852b389a4d9865f92d99de43a71a3630538c2be330a1d"
+        },
+        {
+          "name": "train_long_occlusion_7110",
+          "split": "train",
+          "seed": 7110,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7110.npz",
+          "sha256": "ae780ccb6e589025d3d742d77466a8a44187f5dfe45871a49a0377676229b308",
+          "rgb_sha256": "3f0eb9e13066adcb67b4b6180f9ce6eed4693b835bd82945b8c9cc971b4db529"
+        },
+        {
+          "name": "train_long_occlusion_7111",
+          "split": "train",
+          "seed": 7111,
+          "condition": "long_occlusion",
+          "path": "cache/train_long_occlusion_7111.npz",
+          "sha256": "ecda3efac6e6ea1a9538b0d44c1b0ef51f29fdbc4d4906bd5c2b1f09d7336b74",
+          "rgb_sha256": "0ee4afb35e2ab6fad4c10ec11d34255037f05f085cd7456ed2bdcb8be45039e7"
+        },
+        {
+          "name": "train_crossing_7200",
+          "split": "train",
+          "seed": 7200,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7200.npz",
+          "sha256": "c5fc8b232a8192b985e6b187bd6d676ee8064dd5cdd87b70792a72b49c975e9b",
+          "rgb_sha256": "a7f87e1c5ac68ed3c84f4d74fc1f21a58fb973742f1812c35ff8aec8f4c49eb2"
+        },
+        {
+          "name": "train_crossing_7201",
+          "split": "train",
+          "seed": 7201,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7201.npz",
+          "sha256": "4901f2b43af4999d55cef283ebb023eaa34bfffbe9a66fe8cb28bae26b2d3eb1",
+          "rgb_sha256": "afd8dd231ae54063a396d27ed656cb5d479a7f2de05396bdfc6f2d2ae8260be3"
+        },
+        {
+          "name": "train_crossing_7202",
+          "split": "train",
+          "seed": 7202,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7202.npz",
+          "sha256": "ff2aa2421808d3808ecbdbf341ed4c2f3159ae05d2c6df3dd16fcf56112561cf",
+          "rgb_sha256": "d6e3655f9d5ec4d720568d2232dfcb78519aa93b898f99d2e700486070ee137f"
+        },
+        {
+          "name": "train_crossing_7203",
+          "split": "train",
+          "seed": 7203,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7203.npz",
+          "sha256": "5e0fadc90f518a63e1fc4e1da4ee5d26e8804ea6c88a564115e86bf0a9ca6e59",
+          "rgb_sha256": "41c4baddff44b75bb7fb021c9446d18ce086825227e0feb9170376ae7ef28974"
+        },
+        {
+          "name": "train_crossing_7204",
+          "split": "train",
+          "seed": 7204,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7204.npz",
+          "sha256": "e7f31dff04390495a5dbd4de6a15b525d4505f2532a02bd2b2190c767f51a722",
+          "rgb_sha256": "dd9fea2333e683e8eff4ac81dbf828d9663ed944312be274559ad42da5b4e3ed"
+        },
+        {
+          "name": "train_crossing_7205",
+          "split": "train",
+          "seed": 7205,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7205.npz",
+          "sha256": "a9a11cf023347719727bcb58e131ac1354b55fddbe4920788685c291d7ce6b45",
+          "rgb_sha256": "91277c0522eb364b87c803e4268f4d565673ce3a74fc506b4eee0e35bd00d1d5"
+        },
+        {
+          "name": "train_crossing_7206",
+          "split": "train",
+          "seed": 7206,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7206.npz",
+          "sha256": "be277933150207ce6ec0a9cad926f865becc467afff8a2e6cd2c383e0199881e",
+          "rgb_sha256": "81839aaf3656108163cdb74e180c911943a05274608e4121fb343fdf2151a0b2"
+        },
+        {
+          "name": "train_crossing_7207",
+          "split": "train",
+          "seed": 7207,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7207.npz",
+          "sha256": "b7b2a78f07aa0405193763abced2d3b5d0d00738ee147d36d4bb0c3d13641fef",
+          "rgb_sha256": "247101cbcfb457a3da8478d87ede0391c5d87fb2e70fd93ce23a0a6b83bba264"
+        },
+        {
+          "name": "train_crossing_7208",
+          "split": "train",
+          "seed": 7208,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7208.npz",
+          "sha256": "830540c01f83e455f6a2f1faf3af877b977ccb847122992a0523d68a057dde33",
+          "rgb_sha256": "496f650d6e97dba3bb3a8deaceccc86bea3ab29e0eebc603de71a80027ce329f"
+        },
+        {
+          "name": "train_crossing_7209",
+          "split": "train",
+          "seed": 7209,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7209.npz",
+          "sha256": "fbabb6b97570b269202bf21a2ea44f23c0293efb28f18e3eab317ed7afff5fb2",
+          "rgb_sha256": "682ea8b1624e69f65855326afbece5807280444a7cea66783abbe19ed44386db"
+        },
+        {
+          "name": "train_crossing_7210",
+          "split": "train",
+          "seed": 7210,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7210.npz",
+          "sha256": "151b6cc8d0425741c3414691ec5cff3ef673c9e1b193e81714ef8767a9126d9e",
+          "rgb_sha256": "45dd40f8a06572fcbe6471d0c1d854d851c41f8dce9acb59426de6562adc43f3"
+        },
+        {
+          "name": "train_crossing_7211",
+          "split": "train",
+          "seed": 7211,
+          "condition": "crossing",
+          "path": "cache/train_crossing_7211.npz",
+          "sha256": "f44080856574a6dafb5a44a1b601d9cdb54ff88032507535c45847e439f3a9ce",
+          "rgb_sha256": "ab6d2b4d1b4720b76283f7d377d7269239f4d274cac78769ada98ca628425f78"
+        },
+        {
+          "name": "train_scale_camera_7300",
+          "split": "train",
+          "seed": 7300,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7300.npz",
+          "sha256": "ba27c7df5d4acdd7e3665ee760664b4c847e86616cc9df3655101e8fc626533d",
+          "rgb_sha256": "1dd96a287f2201cba893e07fc46dc320ccc397ae593f0fa6d626372475ef4bf3"
+        },
+        {
+          "name": "train_scale_camera_7301",
+          "split": "train",
+          "seed": 7301,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7301.npz",
+          "sha256": "40a9922842d023d659b7199604efc1887fcb873fe3b281819fbd6d6a98e61397",
+          "rgb_sha256": "f89abe9ad0b68926ed5af50fccb4edf9fd12fef9b7668776622809522808d4ff"
+        },
+        {
+          "name": "train_scale_camera_7302",
+          "split": "train",
+          "seed": 7302,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7302.npz",
+          "sha256": "55aa571522783bd9a9963e65efd08976a52862483536e27da6cccaf80293af51",
+          "rgb_sha256": "45c7f9c9b84f9117556f7e5146d9bd8d1abdcbbfbeaef3cb65efb323d34ce97c"
+        },
+        {
+          "name": "train_scale_camera_7303",
+          "split": "train",
+          "seed": 7303,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7303.npz",
+          "sha256": "bf477f22092378c6fb1fa220778075e514a613f38626db77ca0e77c9ff89727a",
+          "rgb_sha256": "84669d31722c4e1da02f8ecb6440967dea102d3e676760b1ba29bb792e5326ef"
+        },
+        {
+          "name": "train_scale_camera_7304",
+          "split": "train",
+          "seed": 7304,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7304.npz",
+          "sha256": "d137ac5cf41ccebb343aa6bd5f19eb46803e2746cd28c1585045cb5237ebbc4c",
+          "rgb_sha256": "1caf0882235ae0dcb0b8bb492e6acc2f877fddb4c22f0a293195ec049c4903e8"
+        },
+        {
+          "name": "train_scale_camera_7305",
+          "split": "train",
+          "seed": 7305,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7305.npz",
+          "sha256": "d8a6f60cb8be38167e585d9d6bf8d447a6032d9b7cef0f4fae7e7b8cf28dfb08",
+          "rgb_sha256": "22012e38b053c773828b797248b316f8d5fda67053c84d20312e6ee408d71d28"
+        },
+        {
+          "name": "train_scale_camera_7306",
+          "split": "train",
+          "seed": 7306,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7306.npz",
+          "sha256": "b3a9c78f19de7ff80fd925ea2e49249801a9e5885da8eeeebdf69eb3ee46532f",
+          "rgb_sha256": "dd3e806beb747f25a2f37a411eec0cc3484b2187d3a4bdf223453cf74f258a0b"
+        },
+        {
+          "name": "train_scale_camera_7307",
+          "split": "train",
+          "seed": 7307,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7307.npz",
+          "sha256": "ff5396523185cc810c9dad1a691d308a78de2ed0c6065fb05dc5b03df1cd215c",
+          "rgb_sha256": "972da62afc6284cf60cd3ed67a06e3ba333765e05a9c45b48879837515af0c54"
+        },
+        {
+          "name": "train_scale_camera_7308",
+          "split": "train",
+          "seed": 7308,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7308.npz",
+          "sha256": "fbab9d210e1254f80f2a70b1d2f0b2d812684ed33a6af4f4006847fc6dad01d8",
+          "rgb_sha256": "3de1819bc60c7bed6de3fbb6ba65381eb6fef23ff841beadac9e29ff4d208264"
+        },
+        {
+          "name": "train_scale_camera_7309",
+          "split": "train",
+          "seed": 7309,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7309.npz",
+          "sha256": "dfa77f60cff27b294eac2543598b9dbc39331f720f56dd9e8b93c6073d86c8a2",
+          "rgb_sha256": "5fea4f96f8bdbcdf65b67e82a987580528a9e829d23b72dbaed9e2ea46c253c9"
+        },
+        {
+          "name": "train_scale_camera_7310",
+          "split": "train",
+          "seed": 7310,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7310.npz",
+          "sha256": "d30fcf1a3e8f2b7c0852fc6890919bb198a1c80430d37126e31a1b90f914cc1f",
+          "rgb_sha256": "94b8e5e8460c0445d3a2f19583c433e285d2517f2ba7c57921f3e25bee8b9053"
+        },
+        {
+          "name": "train_scale_camera_7311",
+          "split": "train",
+          "seed": 7311,
+          "condition": "scale_camera",
+          "path": "cache/train_scale_camera_7311.npz",
+          "sha256": "dccedc0cfacc45ece30d367627bd794d16bed9b99be9940522cec6ac1157e2ef",
+          "rgb_sha256": "57176c2854836e66667fd61244e70e9fbe121d56960e3da8fee902914b09bea9"
+        },
+        {
+          "name": "dev_long_occlusion_9100",
+          "split": "dev",
+          "seed": 9100,
+          "condition": "long_occlusion",
+          "path": "cache/dev_long_occlusion_9100.npz",
+          "sha256": "2b7b8da8f53eb3ca08010e5a7b11b5a5a0d92452c4a25ec082323f77d2fb99b7",
+          "rgb_sha256": "796498c87928c9c1e35458ab064133723d29ecd839c4fb5132e3bfc1dce729fa"
+        },
+        {
+          "name": "dev_long_occlusion_9101",
+          "split": "dev",
+          "seed": 9101,
+          "condition": "long_occlusion",
+          "path": "cache/dev_long_occlusion_9101.npz",
+          "sha256": "c9cc38adb318d7060a433322622bec244e3886e0cd3ea8db4ef50a29c8af001b",
+          "rgb_sha256": "fe541a004a3f45119881d08eb8ea2eeee27c28a370a5686ff59774c3b04eb211"
+        },
+        {
+          "name": "dev_long_occlusion_9102",
+          "split": "dev",
+          "seed": 9102,
+          "condition": "long_occlusion",
+          "path": "cache/dev_long_occlusion_9102.npz",
+          "sha256": "7fc6179dc7692efa49f1329750b8a061a2b60d72a969550fd689fb0b528f4554",
+          "rgb_sha256": "838f8ad406f9894d17f37cf539160102cb367d3a3999d616596b3513c70df6fa"
+        },
+        {
+          "name": "dev_crossing_9200",
+          "split": "dev",
+          "seed": 9200,
+          "condition": "crossing",
+          "path": "cache/dev_crossing_9200.npz",
+          "sha256": "9b8147f851e66845d365fe6cbf5166e3eef6888de061ccc218012cfc55215a87",
+          "rgb_sha256": "14a9ccc06248a5982ed4321050e88ee26120058ed5f4302fe4d70b694d57e8ef"
+        },
+        {
+          "name": "dev_crossing_9201",
+          "split": "dev",
+          "seed": 9201,
+          "condition": "crossing",
+          "path": "cache/dev_crossing_9201.npz",
+          "sha256": "fa7928fb51fc7bb6cd7dbcf2c18c4ae00de13f5ddbf128bd40802cb68bc5ab60",
+          "rgb_sha256": "58dcef18ddb7965549effd9ba29065c13cbb8c8a081c0480fb86934da2721277"
+        },
+        {
+          "name": "dev_crossing_9202",
+          "split": "dev",
+          "seed": 9202,
+          "condition": "crossing",
+          "path": "cache/dev_crossing_9202.npz",
+          "sha256": "06e6bbe1bc2d3cb274dcc5d597318d13e93de5cb1a44aab163feb60cb65c4ceb",
+          "rgb_sha256": "893af82436ff79145541c3850968dc68712d97c1c631695132a8527ac9fd16e3"
+        },
+        {
+          "name": "dev_scale_camera_9300",
+          "split": "dev",
+          "seed": 9300,
+          "condition": "scale_camera",
+          "path": "cache/dev_scale_camera_9300.npz",
+          "sha256": "627aa40d2b857e39ac29eac43b2e8dcce0f42b438fddbb88b7b85bca62a67521",
+          "rgb_sha256": "bd123d9031f5ff0ff3f01ab7760b4a552621b578d81ac28cd28683b732754ff4"
+        },
+        {
+          "name": "dev_scale_camera_9301",
+          "split": "dev",
+          "seed": 9301,
+          "condition": "scale_camera",
+          "path": "cache/dev_scale_camera_9301.npz",
+          "sha256": "463aba49a4ea99ce5c2113b0868468eb96686c303853f482d22ea2787d74a683",
+          "rgb_sha256": "984affc7a93bb3359767fdf0b731af47a39bded50be2e6606034809c11152047"
+        },
+        {
+          "name": "dev_scale_camera_9302",
+          "split": "dev",
+          "seed": 9302,
+          "condition": "scale_camera",
+          "path": "cache/dev_scale_camera_9302.npz",
+          "sha256": "72a2dbf969c4d677886e475e56975f2f2edbb9a776398fa66f0a4c9fa48b3a62",
+          "rgb_sha256": "056fd52c506ad10997a0db1e7b739f52e2a63b49d9c09d95be2be7651035e75b"
+        }
+      ],
+      "mean": {
+        "path": "mean.npy",
+        "sha256": "5e4755346ca4f60acc54f7ba9b6bd5bb73b2684af92a095c2f887b2d070176ac",
+        "fit_split": "train",
+        "fit_clips": 36
+      },
+      "projection_sha256": "8436fbc5b4f159cdda2e43cfe1afc3d99acbf51a9d8bbfb4372f7e19ad3db844",
+      "extractor_provenance": {
+        "extractor_sources": {
+          "experiments/day7/extract.py": "2b8f546c605c5dfc021752a9adf562556074f173ebb45ffe0e133627a71acd24",
+          "experiments/day7/data.py": "845353a84577e3f30aa5c4ca6adf4cf7d9c742c413e5566d2b6bcad22ab5c7f3",
+          "experiments/day4/benchmark.py": "292c7c26dfb2c2772fbc4f16e61abbb20a1b9df2c5132a8b1bc737d6ca8d9281",
+          "experiments/day4/tracking.py": "2e86c05fddca804e2c30fa97461cb391900a56634273c9cc66aae09ab41c5200",
+          "experiments/day4/run_experiment.py": "4aa5aaf9747f30e0de79cf0f739c7c72f4a8644c03c4ef6250d6f3a108e55a51"
+        },
+        "model": "vjepa2_1_vit_large_384",
+        "upstream_revision": "204698b45b3712590f06245fbfba32d3be539812",
+        "encoder_context": "Four independent 16-frame blocks; offline within each block",
+        "projection_seed": 77001,
+        "projection_dim": 256,
+        "data": {
+          "data_version": "day7_supervised_prompt_parts_v1",
+          "split_seeds": {
+            "train": {
+              "long_occlusion": [
+                7100,
+                7101,
+                7102,
+                7103,
+                7104,
+                7105,
+                7106,
+                7107,
+                7108,
+                7109,
+                7110,
+                7111
+              ],
+              "crossing": [
+                7200,
+                7201,
+                7202,
+                7203,
+                7204,
+                7205,
+                7206,
+                7207,
+                7208,
+                7209,
+                7210,
+                7211
+              ],
+              "scale_camera": [
+                7300,
+                7301,
+                7302,
+                7303,
+                7304,
+                7305,
+                7306,
+                7307,
+                7308,
+                7309,
+                7310,
+                7311
+              ]
+            },
+            "dev": {
+              "long_occlusion": [
+                9100,
+                9101,
+                9102
+              ],
+              "crossing": [
+                9200,
+                9201,
+                9202
+              ],
+              "scale_camera": [
+                9300,
+                9301,
+                9302
+              ]
+            },
+            "test": {
+              "long_occlusion": [
+                10100,
+                10101,
+                10102,
+                10103,
+                10104,
+                10105
+              ],
+              "crossing": [
+                10200,
+                10201,
+                10202,
+                10203,
+                10204,
+                10205
+              ],
+              "scale_camera": [
+                10300,
+                10301,
+                10302,
+                10303,
+                10304,
+                10305
+              ]
+            }
+          },
+          "n_clips": {
+            "train": 36,
+            "dev": 9,
+            "test": 18
+          },
+          "frames": 64,
+          "resolution": 384,
+          "tubelet": 2,
+          "grid": 24,
+          "transform_salt": "vjepa-poc/day7/spatial-and-parent-permutation/v1",
+          "transforms": "SHA256 bits independently select horizontal flip, vertical flip, and coherent A/B part-group permutation",
+          "sibling_groups_zero_based": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "inference_inputs": "Frozen RGB-derived features; normalized part prompts from frame zero; sibling-group relation",
+          "forbidden_inference_inputs": "Later masks; owner masks; seed; condition; motion parameters; transform metadata",
+          "learning": "Supervised learned head over frozen JEPA features; not self-supervised training",
+          "visibility": "Day4 >=70% pair coverage and >=65% each frame; absent iff zero target pixels in both frames",
+          "exclusions": "Tubelet zero and ambiguous visible slivers",
+          "scope": "Held-out seeds in the same three 2-D procedural trajectory families; no real-video/OOD claim"
+        }
+      }
+    },
+    "batch_scenes": 2,
+    "oom_fallback_note": null,
+    "torch": "2.11.0+cu130",
+    "device": "cuda"
+  },
+  "initial_state_sha256": "3d49dc28c122addef637a7018fac8adde2ea115770d1d3afdea20c4ec10d1d74",
+  "checkpoint_sha256": "84bc96ca3ddbc043126653dc4165710dd301ce83ae2d4001705c8d44d191c8e2",
+  "curves_sha256": "c156c87e0c775edff6a604ad6cce5b846de90fed24d8375844c62a61f2e6f978",
+  "training_seconds": 153.40193354599978
+}
