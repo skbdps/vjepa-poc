@@ -131,6 +131,8 @@ def build_demo(frames_dir, masks_file, registry_file, output, fps=12, results_fi
     html = re.sub(r'id="([^"]+)"', lambda m: (f'id="{payload["editorId"]}"' if m[1] == "__ROOT_ID__"
                   else f'id="{payload["editorId"]}-{m[1]}" data-control="{m[1]}"'), html)
     html = re.sub(r'for="([^"]+)"', lambda m: f'for="{payload["editorId"]}-{m[1]}"', html)
+    # CSS must not recolor neighboring Colab cells or another embedded editor.
+    html = html.replace("__SCOPE__", "#" + payload["editorId"])
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(html)
     return {"output": str(output), "bytes": output.stat().st_size,
@@ -142,21 +144,65 @@ HTML = r'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Persistent part editor · VJEPA research</title>
 <style>
-:root{color-scheme:dark;--bg:#111720;--card:#192330;--line:#2b394b;--text:#edf3fa;--muted:#a6b7cc;--accent:#8ccebc}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,sans-serif}
-main{max-width:1420px;margin:0 auto;padding:28px 30px 34px}header{display:flex;justify-content:space-between;gap:20px;align-items:start;margin-bottom:24px}
-.eyebrow{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}h1{font-size:29px;line-height:1.2;margin:7px 0 8px;letter-spacing:-.025em}
-p{margin:0;color:var(--muted)}.badge{padding:6px 11px;border:1px solid var(--line);border-radius:30px;font-size:12px;white-space:nowrap;color:var(--muted)}
-.views{display:grid;grid-template-columns:1fr 1fr;gap:18px}.view{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#080d13}
-figcaption{padding:10px 14px;font-size:13px;display:flex;justify-content:space-between;background:var(--card);border-bottom:1px solid var(--line)}figcaption span{color:var(--muted)}
-video,canvas{width:100%;height:auto;display:block;aspect-ratio:854/480}.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:18px;padding:18px}
-.controls{display:grid;grid-template-columns:1.15fr .65fr 1fr 1fr;gap:24px;align-items:center}label,.control-title{display:block;font-size:12px;color:var(--muted);margin-bottom:7px}
-select,button,input[type=color]{font:inherit;color:var(--text);background:#222f3f;border:1px solid #40516a;border-radius:7px;min-height:38px}select{padding:7px 12px;width:100%}button{padding:7px 14px;cursor:pointer}button:hover{background:#304258}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-input[type=color]{padding:3px;width:100%;max-width:116px;cursor:pointer}input[type=range]{accent-color:var(--accent);width:100%;cursor:pointer}.strength-label{display:flex;justify-content:space-between}.toggles label{display:flex;gap:9px;align-items:center;margin:3px 0;font-size:13px;color:var(--text)}.toggles input{accent-color:var(--accent)}
-.transport{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);margin-top:17px;padding-top:17px}.transport>input{flex:1;min-width:80px}.transport output{font:12px ui-monospace,monospace;min-width:103px;color:var(--muted)}[data-control="play"]{background:#345e55;border-color:#54887b;min-width:83px}.step{padding:6px 11px}.status{display:flex;justify-content:space-between;gap:16px;margin-top:13px;font-size:12px;color:var(--muted)}[data-control="selection"]{color:var(--accent)}
-.enable-label{display:flex;align-items:center;gap:8px;margin:8px 0 0;color:var(--text);font-size:12px}.enable-label input{accent-color:var(--accent)}.recipe-bar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px}.recipe-bar button{min-height:33px;font-size:12px;padding:5px 11px}.recipe-bar span{font-size:12px;color:var(--muted);margin-left:4px}input:disabled{opacity:.5}[data-control="recipe-file"]{display:none}
-footer{margin-top:22px;font-size:12px;color:var(--muted);display:grid;grid-template-columns:1fr 1fr;gap:28px}footer b{font-weight:650;color:#d7e3f1}footer p+p{margin-top:7px}a{color:#b2d7ee}[data-control="error"]{display:none;background:#56362b;color:#ffe7df;padding:12px;margin-top:15px;border-radius:8px}.metrics{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:8px}.metric strong{color:var(--text);font-size:20px;display:block;font-variant-numeric:tabular-nums}.metric span{font-size:11px}.sr-only{position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden}
-@media(max-width:850px){main{padding:20px 15px}.views{grid-template-columns:1fr}.controls{grid-template-columns:1fr 1fr;gap:16px}footer{grid-template-columns:1fr;gap:16px}header{display:block}.badge{display:inline-block;margin-top:12px}.transport{gap:8px}.transport output{min-width:78px;font-size:11px}.step{display:none}.status{display:block}.status span{display:block}} 
+__SCOPE__{color-scheme:dark;--bg:#111720;--card:#192330;--line:#2b394b;--text:#edf3fa;--muted:#a6b7cc;--accent:#8ccebc;box-sizing:border-box;max-width:1420px;margin:0 auto;padding:28px 30px 34px;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,sans-serif}
+__SCOPE__ *{box-sizing:border-box}
+__SCOPE__ header{display:flex;justify-content:space-between;gap:20px;align-items:start;margin-bottom:24px}
+__SCOPE__ .eyebrow{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+__SCOPE__ h1{color:var(--text);font-size:29px;line-height:1.2;margin:7px 0 8px;letter-spacing:-.025em}
+__SCOPE__ p{margin:0;color:var(--muted)}
+__SCOPE__ .badge{padding:6px 11px;border:1px solid var(--line);border-radius:30px;font-size:12px;white-space:nowrap;color:var(--muted)}
+__SCOPE__ .views{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+__SCOPE__ .view{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#080d13}
+__SCOPE__ figcaption{padding:10px 14px;font-size:13px;display:flex;justify-content:space-between;background:var(--card);border-bottom:1px solid var(--line)}
+__SCOPE__ figcaption span{color:var(--muted)}
+__SCOPE__ video,__SCOPE__ canvas{width:100%;height:auto;display:block;aspect-ratio:854/480}
+__SCOPE__ .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:18px;padding:18px}
+__SCOPE__ .controls{display:grid;grid-template-columns:1.15fr .65fr 1fr 1fr;gap:24px;align-items:center}
+__SCOPE__ label,__SCOPE__ .control-title{display:block;font-size:12px;color:var(--muted);margin-bottom:7px}
+__SCOPE__ select,__SCOPE__ button,__SCOPE__ input[type=color]{font:inherit;color:var(--text);background:#222f3f;border:1px solid #40516a;border-radius:7px;min-height:38px}
+__SCOPE__ select{padding:7px 12px;width:100%}
+__SCOPE__ button{padding:7px 14px;cursor:pointer}
+__SCOPE__ button:hover{background:#304258}
+__SCOPE__ button:focus-visible,__SCOPE__ input:focus-visible,__SCOPE__ select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+__SCOPE__ input[type=color]{padding:3px;width:100%;max-width:116px;cursor:pointer}
+__SCOPE__ input[type=range]{accent-color:var(--accent);width:100%;cursor:pointer}
+__SCOPE__ .strength-label{display:flex;justify-content:space-between}
+__SCOPE__ .toggles label{display:flex;gap:9px;align-items:center;margin:3px 0;font-size:13px;color:var(--text)}
+__SCOPE__ .toggles input{accent-color:var(--accent)}
+__SCOPE__ .transport{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);margin-top:17px;padding-top:17px}
+__SCOPE__ .transport>input{flex:1;min-width:80px}
+__SCOPE__ .transport output{font:12px ui-monospace,monospace;min-width:103px;color:var(--muted)}
+__SCOPE__ [data-control="play"]{background:#345e55;border-color:#54887b;min-width:83px}
+__SCOPE__ .step{padding:6px 11px}
+__SCOPE__ .status{display:flex;justify-content:space-between;gap:16px;margin-top:13px;font-size:12px;color:var(--muted)}
+__SCOPE__ [data-control="selection"]{color:var(--accent)}
+__SCOPE__ .enable-label{display:flex;align-items:center;gap:8px;margin:8px 0 0;color:var(--text);font-size:12px}
+__SCOPE__ .enable-label input{accent-color:var(--accent)}
+__SCOPE__ .recipe-bar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px}
+__SCOPE__ .recipe-bar button{min-height:33px;font-size:12px;padding:5px 11px}
+__SCOPE__ .recipe-bar span{font-size:12px;color:var(--muted);margin-left:4px}
+__SCOPE__ input:disabled{opacity:.5}
+__SCOPE__ [data-control="recipe-file"]{display:none}
+__SCOPE__ footer{margin-top:22px;font-size:12px;color:var(--muted);display:grid;grid-template-columns:1fr 1fr;gap:28px}
+__SCOPE__ footer b{font-weight:650;color:#d7e3f1}
+__SCOPE__ footer p+p{margin-top:7px}
+__SCOPE__ a{color:#b2d7ee}
+__SCOPE__ [data-control="error"]{display:none;background:#56362b;color:#ffe7df;padding:12px;margin-top:15px;border-radius:8px}
+__SCOPE__ .metrics{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+__SCOPE__ .metric strong{color:var(--text);font-size:20px;display:block;font-variant-numeric:tabular-nums}
+__SCOPE__ .metric span{font-size:11px}
+__SCOPE__ .sr-only{position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden}
+@media(max-width:850px){__SCOPE__{padding:20px 15px}
+__SCOPE__ .views{grid-template-columns:1fr}
+__SCOPE__ .controls{grid-template-columns:1fr 1fr;gap:16px}
+__SCOPE__ footer{grid-template-columns:1fr;gap:16px}
+__SCOPE__ header{display:block}
+__SCOPE__ .badge{display:inline-block;margin-top:12px}
+__SCOPE__ .transport{gap:8px}
+__SCOPE__ .transport output{min-width:78px;font-size:11px}
+__SCOPE__ .step{display:none}
+__SCOPE__ .status{display:block}
+__SCOPE__ .status span{display:block}} 
 </style></head><body><main id="__ROOT_ID__">
 <header><div><div class="eyebrow">VJEPA research / Day 4</div><h1>Choose a part. Keep the edit.</h1><p>Give the door and window their own colors, then keep both edits through the clip.</p></div><span class="badge">Offline research prototype · SAM 2.1 masks</span></header>
 <section class="views" aria-label="Original and edited video comparison">
@@ -318,7 +364,7 @@ $('scrub').addEventListener('input',()=>seek(Number($('scrub').value)));
 $('previous').addEventListener('click',()=>seek(shownFrame-1));$('next').addEventListener('click',()=>seek(shownFrame+1));
 $('play').addEventListener('click',async()=>{try{if(video.paused){if(video.ended||shownFrame===D.count-1)video.currentTime=0;await video.play();}else video.pause();}catch(error){showError(error);}});
 video.addEventListener('play',()=>{$('play').textContent='Pause';});video.addEventListener('pause',()=>{$('play').textContent=video.ended?'Replay':'Play';});video.addEventListener('ended',()=>{$('play').textContent='Replay';safeRender(video.currentTime);});
-video.addEventListener('loadeddata',()=>safeRender(video.currentTime));video.addEventListener('seeked',()=>safeRender(video.currentTime));video.addEventListener('error',()=>showError('The embedded MP4 could not be decoded. Try a browser with H.264 support.'));
+video.addEventListener('loadeddata',()=>safeRender(video.currentTime));video.addEventListener('seeked',()=>{$('play').textContent=video.paused?(video.ended?'Replay':'Play'):'Pause';safeRender(video.currentTime);});video.addEventListener('error',()=>showError('The embedded MP4 could not be decoded. Try a browser with H.264 support.'));
 // Colab may execute this script after the first decoded frame is already ready.
 if(video.readyState>=2)safeRender(video.currentTime);
 if('requestVideoFrameCallback' in video){

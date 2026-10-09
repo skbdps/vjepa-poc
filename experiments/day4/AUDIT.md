@@ -1,6 +1,6 @@
 # Day 4 result audit
 
-Audited 2026-10-09 from the saved V-JEPA calibration/development freeze, the 18-clip synthetic test CSV and JSON, both real-car run records, and the inference/scoring source. The SAM2 synthetic test is pending in this version of the audit; its calibration results must not be presented as test performance.
+Audited 2026-10-09 from the saved V-JEPA calibration/development freeze, the completed V-JEPA and SAM2 18-clip synthetic test records, both real-car run records, and the inference/scoring source. SAM2 test results below are from the held-out split; its calibration results are kept separate.
 
 ## Validity checks
 
@@ -8,6 +8,7 @@ Audited 2026-10-09 from the saved V-JEPA calibration/development freeze, the 18-
 - The SAM2 comparator source matches its calibration freeze: `491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4`. Its mask-to-patch readout and threshold are frozen before its test. The threshold is maximum predicted patch coverage, not a calibrated model probability.
 - Inference receives RGB/features and frame-zero annotations. Later target masks enter calibration or scoring, not the tracking entrypoints. This checks the code's information boundary; files alone cannot independently establish when an annotator viewed predictions.
 - Independent aggregation of all 13,392 synthetic test CSV rows reproduced visible localization, hidden false presence, and recovery numerators/denominators for all six methods. Saved paired localization intervals were also reproduced.
+- SAM2 adds 2,232 test CSV rows with exactly the same evaluation keys and labels as each V-JEPA/baseline method. Independent CSV aggregation reproduced its patch outcomes, all dense report sums from 4,536 part-frame rows, and all 33 paired metric estimates and bootstrap intervals in the final comparison. The calibration and test freezes are identical as parsed JSON, the CSV threshold is exactly `0.9404296875`, and all 18 test manifests match the frozen source/checkpoint/readout and frame-zero-only prompts. Every saved mask archive hash matches its manifest.
 - Both real-car sequences' scores were recomputed from all three saved tracker-mask arrays and exactly matched the reported tracking and selective-mask scores.
 - No material inference or scoring bug was identified in these checks. No frozen inference or scoring file was changed for this audit.
 
@@ -49,22 +50,65 @@ Visible localization for selected V-JEPA over windows 1–4 is 77.52%, 57.45%, 3
 
 Bootstrap samples preserve whole clips rather than treating correlated frames as independent. They describe variation under this small renderer family, not real-video generalization. Six clips per condition and 18 reappearance events remain limited evidence. Zero-observed-error bootstrap intervals can collapse to zero and do not prove zero future risk. Intervals are descriptive and are not corrected for multiple comparisons.
 
+## Completed SAM2 specialist test
+
+SAM2.1 Tiny was evaluated with the frozen calibration threshold and mask-to-patch readout. The comparison script validates all 18 held-out clip names, all 2,232 target-tubelet keys per method, identical ground-truth labels, consistent boolean/outcome fields, and the frozen V-JEPA thresholds. SAM2's source and threshold freeze were checked separately. Neither model selection nor threshold fitting is performed by the comparison.
+
+| Common patch metric | SAM2.1 Tiny | Selected V-JEPA (`no_memory`) | Template + flow |
+|---|---:|---:|---:|
+| Visible localization | 1,826/1,922 (95.01%) | 1,026/1,922 (53.38%) | 1,215/1,922 (63.22%) |
+| False presence when fully hidden | 11/260 (4.23%) | 14/260 (5.38%) | 63/260 (24.23%) |
+| First-reappearance localization | 6/18 (33.33%) | 5/18 (27.78%) | 0/18 (0%) |
+| Wrong car on visible targets | 55/1,922 (2.86%) | 183/1,922 (9.52%) | 26/1,922 (1.35%) |
+| Defined car-identity transitions | 4 | 60 | 18 |
+
+Differences below are SAM2 minus the named comparator, with 2,000 paired whole-clip bootstrap draws and seed 914. Values and intervals are percentage points. Negative hidden false-presence differences favor SAM2.
+
+| Comparator | Visible localization difference [95% interval] | Hidden false-presence difference [95% interval] | Immediate recovery difference [95% interval] |
+|---|---:|---:|---:|
+| Selected V-JEPA | +41.62 [+30.94, +50.10] | -1.15 [-5.80, +3.41] | +5.56 [-12.50, +27.78] |
+| Initial global V-JEPA | +39.65 [+30.08, +47.19] | -16.15 [-26.52, -5.88] | -5.56 [-33.33, +25.00] |
+| Template + flow | +31.79 [+22.60, +40.09] | -20.00 [-27.06, -8.60] | +33.33 [+11.11, +57.14] |
+
+The specialist has substantially better visible patch localization on this renderer family. The hidden-presence and immediate-recovery intervals against selected V-JEPA include zero, so this test does not establish a difference on those two outcomes. The earlier V-JEPA-versus-template tradeoff is unchanged by adding SAM2.
+
+By condition, SAM2 visible localization is 638/702 (90.88%) on crossing, 444/476 (93.28%) on long occlusion, and 744/744 (100%) on scale/camera. All 55 wrong-car checks and all four defined identity transitions occur in crossing; its 2/6 immediate recoveries and long-occlusion's 4/12 remain weak despite high overall localization. Scale/camera contains no absence or recovery events. The wrong-car check count and transition count measure different things: a sustained wrong identity can generate many wrong-car checks after one switch.
+
+### Separate raw dense-mask readout
+
+Dense scores use every source frame after frame zero and count any nonempty ground-truth part as visible. They apply no calibrated patch-presence gate. There are 3,997 visible and 539 absent part-frames, totaling 4,536 across 18 clips; these are not the patch table's 1,922 visible and 260 absent two-frame target-tubelets. The dense table includes thin visibility excluded as ambiguous from the patch readout.
+
+| Dense SAM2 metric | Test result |
+|---|---:|
+| Mean visible part-frame IoU | 94.42% over 3,997 visible part-frames |
+| Pooled visible-pixel precision | 9,884,807/10,491,554 (94.22%) |
+| Pooled visible-pixel recall | 9,884,807/10,394,102 (95.10%) |
+| Pooled precision including predictions on hidden targets | 9,884,807/10,566,570 (93.55%) |
+| Nonempty raw mask when the part is absent | 60/539 (11.13%) |
+| Predicted pixels on absent parts | 75,016 |
+
+Thus the 4.23% patch false-presence rate cannot be described as the raw dense-mask false-presence rate; the latter is 11.13% under a different temporal unit, visibility rule, and ungated readout. Dense mean IoU is 91.13% on crossing, 94.00% on long occlusion, and 97.92% on scale/camera. No cross-method dense-IoU comparison is possible here because the V-JEPA benchmark predicts patch locations rather than masks.
+
+Full counts, all six SAM2-versus-baseline comparisons, paired intervals, validation flags, and input hashes are saved in `run_2026-10-09/comparison/comparison.json`; a compact table is in `comparison.md`. These descriptive synthetic intervals do not remove the small-sample, renderer-family, training-objective, JPEG-input, temporal-processing, or compute mismatch limitations stated below.
+
 ## Supplementary recovery timing
 
 The frozen recovery metric measures only the first unambiguous visible tubelet. A separate `recovery_analysis.py` was proposed after V-JEPA test results but before SAM2 held-out scores were viewed, then applied to saved CSV predictions without model reruns or changes to frozen scoring. Its horizon-zero counts exactly reproduce every method's primary result. This is a post-hoc descriptive outcome, not a replacement primary outcome.
 
 Events come only from existing recovery labels. Latency is the offset in source-frame indices between two-frame tubelets; it is not exact per-frame timing, wall-clock latency, or causal detection delay. A new fully absent tubelet ends the episode, and missing rows or clip end truncate follow-up. Ambiguous tubelets cannot be hits and are recorded explicitly. The implementation was checked with fabricated trajectories containing delayed recovery, intervening ambiguity, renewed absence, missing rows, and clip-end censoring.
 
-| Horizon after first visible tubelet | Fully observed events | Selected V-JEPA observed successes | Global V-JEPA observed successes | Template observed successes |
-|---|---:|---:|---:|---:|
-| 0 source frames | 18/18 | 5/18 | 7/18 | 0/18 |
-| 2 source frames | 18/18 | 11/18 | 12/18 | 0/18 |
-| 4 source frames | 18/18 | 12/18 | 12/18 | 2/18 |
-| 8 source frames | 6/18 | 12 known | 12 known | 16 known |
+| Horizon after first visible tubelet | Fully observed events | Selected V-JEPA observed successes | Global V-JEPA observed successes | Template observed successes | SAM2 observed successes |
+|---|---:|---:|---:|---:|---:|
+| 0 source frames | 18/18 | 5/18 | 7/18 | 0/18 | 6/18 |
+| 2 source frames | 18/18 | 11/18 | 12/18 | 0/18 | 8/18 |
+| 4 source frames | 18/18 | 12/18 | 12/18 | 2/18 | 8/18 |
+| 8 source frames | 6/18 | 12 known | 12 known | 16 known | 8 known |
 
 At the eight-frame horizon, 12 events reach clip end before the complete horizon. A hit observed before clip end remains a known success. Selected V-JEPA has one unresolved censored event, giving 12–13 possible successes among 18; global V-JEPA and template have no unresolved events because their censored trajectories already contain hits. Among the six fully observed eight-frame horizons, selected V-JEPA recovers on 1/6, global V-JEPA on 0/6, and template on 4/6. No intervening ambiguous or renewed-absence tubelets occur in these actual evaluated follow-up paths; the analyzer nevertheless handles and reports both.
 
 The template's immediate 0/18 score therefore does **not** mean it cannot recover: it often recovers later. Saved details are in `run_2026-10-09/vjepa_recovery_analysis.json`, including complete-horizon denominators, every event trajectory, censor reasons, and exact immediate-metric verification.
+
+Applying the same supplementary analyzer to the completed SAM2 CSV exactly reproduces its primary 6/18 immediate count. SAM2 reaches 8/18 by two source frames and remains at 8/18 by four. At eight source frames, 12 events reach clip end early: six already recovered and six are unresolved. This gives eight known successes and an 8–14/18 bound allowing unknown censored outcomes; among the six complete eight-frame horizons, SAM2 recovers on 2/6. There are no ambiguous follow-up tubelets or renewed absences in the evaluated paths. These results are in `run_2026-10-09/sam2_recovery_analysis.json` and do not replace the primary recovery metric.
 
 ## Real-car demonstration
 

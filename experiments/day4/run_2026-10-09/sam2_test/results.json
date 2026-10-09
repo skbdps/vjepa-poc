@@ -1,0 +1,2191 @@
+{
+  "split": "test",
+  "frozen_config": {
+    "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+    "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+    "method": "sam2_1_tiny",
+    "threshold": 0.9404296875,
+    "calibration": {
+      "balanced_presence_accuracy": 0.9741428368188931,
+      "visible_samples": 639,
+      "absent_samples": 88,
+      "objective": "mean(visible presence recall, absent specificity); highest-threshold tie break"
+    },
+    "calibration_scenes": [
+      "calibration_long_occlusion_1000",
+      "calibration_long_occlusion_1001",
+      "calibration_crossing_1100",
+      "calibration_crossing_1101",
+      "calibration_scale_camera_1200",
+      "calibration_scale_camera_1201"
+    ],
+    "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+    "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "checkpoint_url": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+    "model_config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+    "postprocessing": false,
+    "precision": "float32",
+    "jpeg": {
+      "format": "JPEG",
+      "quality": 100,
+      "subsampling": 0
+    },
+    "model_parameter_selection": "none",
+    "threshold_selection": "calibration clips only; same presence objective as V-JEPA",
+    "comparison_status": "added after V-JEPA development results and first real-video demo; fixed before SAM2 test; V-JEPA held-out results not viewed when comparator designed"
+  },
+  "benchmark": {
+    "protocol": "day4_v1",
+    "resolution": 384,
+    "frames": 64,
+    "tubelet_frames": 2,
+    "patch_size": 16,
+    "parts": {
+      "1": "car_A.front_door",
+      "2": "car_A.window",
+      "3": "car_B.front_door",
+      "4": "car_B.window"
+    },
+    "split_seeds": {
+      "calibration": {
+        "long_occlusion": [
+          1000,
+          1001
+        ],
+        "crossing": [
+          1100,
+          1101
+        ],
+        "scale_camera": [
+          1200,
+          1201
+        ]
+      },
+      "development": {
+        "long_occlusion": [
+          2000,
+          2001
+        ],
+        "crossing": [
+          2100,
+          2101
+        ],
+        "scale_camera": [
+          2200,
+          2201
+        ]
+      },
+      "test": {
+        "long_occlusion": [
+          3000,
+          3001,
+          3002,
+          3003,
+          3004,
+          3005
+        ],
+        "crossing": [
+          3100,
+          3101,
+          3102,
+          3103,
+          3104,
+          3105
+        ],
+        "scale_camera": [
+          3200,
+          3201,
+          3202,
+          3203,
+          3204,
+          3205
+        ]
+      }
+    },
+    "annotation": "frame-zero mask only",
+    "test_policy": "Freeze thresholds and algorithm configuration before opening sealed-test metrics",
+    "visibility": "at least one patch >=70% target over pair and >=65% each frame; absence requires zero target pixels both frames",
+    "exclusions": "first tubelet and visible slivers with no eligible patch",
+    "identity_switch": "transition between predicted car IDs on unambiguous visible targets, initialized to true source ID; last ID retained over missing outputs",
+    "conditions": {
+      "long_occlusion": "stationary foreground wall hides A for extended interval; return and reappearance; B moves separately",
+      "crossing": "two distinct-bodied cars exchange diagonal positions; foreground B occludes A; visible context resolves identity",
+      "scale_camera": "up to 15% sprite scale, 8-degree in-plane rotation, global camera translation, moving repeated-colour distractors"
+    },
+    "limitations": "2-D rendered sprites, fixed same-colour target appearance; no 3-D viewpoint change, real faces, generative rendering or causal encoder claim"
+  },
+  "python": "3.13.15",
+  "numpy": "2.1.3",
+  "clips": [
+    {
+      "scene": "test_long_occlusion_3000",
+      "original_rgb_sha256": "7ad934b838711ca5451ca0a7a1136a8cfeb329029909e3a849046dc5dd3d1cf3",
+      "initial_mask_sha256": "f8c29b6e1e66261a8da8bafa178338b8f50b97d52ba5518a4b08aa551d7e553d",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "4ecd3ab5eda4b39d417a13b330468a45460ea46c71cd11151770af4e5c84d37e",
+        "rgb_mean_absolute_error_0_255": 0.34319277162905093,
+        "rgb_max_absolute_error_0_255": 4,
+        "rgb_changed_channel_fraction": 0.34059697610360606,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.20331201499994,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "fe7a2fa65c70237218697bdccb3bbc2254a38f021e5f33a51a04f4e1a26a6a21",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_long_occlusion_3001",
+      "original_rgb_sha256": "d96a0c461ca53ca726b316a17d198ed22b5fd3ebc4164d92d1b7ab9a7c8d4a3f",
+      "initial_mask_sha256": "9c54e38bb4f02ad8b114977e31ba471b258a54ec756c387f5adae7e12acd12e1",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "c589cf972c78a1dfb630239d55318b240aeebb96e60f86cf5466601a8b8ea709",
+        "rgb_mean_absolute_error_0_255": 0.34885116859718607,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.34615555515995733,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.8313639160001,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "7bacc698639ead9302d26def5e06d0a4f4a5372222aca4d1bd72cb8d1efd65b6",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_long_occlusion_3002",
+      "original_rgb_sha256": "736f9ffe311a839997f301bcbcff271cb31d767bb1a9bab771ba862ebc19d2c5",
+      "initial_mask_sha256": "934c9bec6acfa79665bd0ddddf36d006005c3bb5d0ebdc2d9189ac2e2c6d331f",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "551a71cdb13f6b722fcd11aa2ac5b0685728db941f68646bd003332f92e50f97",
+        "rgb_mean_absolute_error_0_255": 0.3479338398686162,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.34520301112422236,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.37584768599982,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "f3a03f38d93b9692f0044dd6a73270cc49b1ba6aaca9bdc90f9c284aabb14b0a",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_long_occlusion_3003",
+      "original_rgb_sha256": "ac5327295c61dd559325fe3cb99f922b0cbc52a9746efcb9bf9c53ee62042def",
+      "initial_mask_sha256": "2fee6c462a0cd354f17782fcdeee50986fc2c0e2bd42556758263b1b8d42fce2",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "d8ac2f692a862f8ab3488b62aa1e840ab3b2913cdffb9af9bc17debb0621c3e5",
+        "rgb_mean_absolute_error_0_255": 0.33512889014350045,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.33267738201000074,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.29685256500034,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "a2f59fef65e096925c9d12ab465c2cbc0552316acf62d57f5e4f5f7781b57a54",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_long_occlusion_3004",
+      "original_rgb_sha256": "3190b623f5b4b59edad78da38307914e405b5d8e9c2595b4f8416e2ab40038f7",
+      "initial_mask_sha256": "b3583d398d8b205ddb866f4409928631b16163909e7434f3f015d9aae59bc201",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "1ab11f64d6fdc774fa15d66ec54f4c467913d4cbc6aa09b6ed360345f9ce6522",
+        "rgb_mean_absolute_error_0_255": 0.36070032472963687,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.3577231654414424,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.3246316499999,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "691fd1c753f83aca154ab9d1f00c4965dacf87864ad38113bce8485699f9b016",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_long_occlusion_3005",
+      "original_rgb_sha256": "8211e4504bdb2101166a25171092a642a02bb672d5fe1c1f7dd5459dbbcfbdef",
+      "initial_mask_sha256": "d41f55ecfc7f7bb3d0d1dc89b343160542c16f1cffac1d2f97b61001bdda7d59",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "058dc95960a74bd294d437cc10275cb6540c30073a551b095b07f0ac40ad4197",
+        "rgb_mean_absolute_error_0_255": 0.3482060255827727,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.3455485944394712,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.70616031899999,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "e8ec8105156ed3385530576b18e2cad1a1d6c61b4b3498a1dbe435b5c4197afb",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_crossing_3100",
+      "original_rgb_sha256": "994f13783d3a2fb9a1697afd7f89ad2fe7ebd55722629ef88df31ab951055d21",
+      "initial_mask_sha256": "c3f53b56a4df50ff407d504c484aa7556315ae75ba56e3310d05d630b964d15c",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "0ab50e36469bdc25db768fbeb1732fb8263b4eb36038d522c39689427ac88d31",
+        "rgb_mean_absolute_error_0_255": 0.33579045754891856,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.33277935451931423,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.30391549999968,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "425c98a62a8b59d590743d90b501f66b3b28fa6a77130b2f94d128a8bd1c32c2",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_crossing_3101",
+      "original_rgb_sha256": "7e46493defd4965b33082753f976da21621983a32e57c344ea7854a3374a5b55",
+      "initial_mask_sha256": "73a180386ae16d9c3a89c7fbd5f8facb943b67bdb2bedfd7dbf6264691e11677",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "8446ec3898f4fc6876dd3b94b67cfbd116821fd5d13ec44d1a39eaf6a3b0623b",
+        "rgb_mean_absolute_error_0_255": 0.36122428046332467,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.35833817941171153,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.27889853599982,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "29cd97021ee8d5f837d5f963148646fcaf7d3f51146f0649a7cb6db7f43a2076",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_crossing_3102",
+      "original_rgb_sha256": "98106d11ae7a27b3be833e5fb9f7d398c5e7260ae0b7457a84200535ad870fcf",
+      "initial_mask_sha256": "7e1bf3c3c312b05694000af8b5467cec35a54a307bbe7f110c91019850651510",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "991abd1700c3aa343f3bd40a024529c3af69f5cda166f81f39c38377840839b0",
+        "rgb_mean_absolute_error_0_255": 0.33600729483145253,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.3330921243738245,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 88.2661582249998,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "cf26858ea0f28b0aedd978b978a51d549f1317462ee922180f0ab79bb9020685",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_crossing_3103",
+      "original_rgb_sha256": "02b654050560c06266f7f8888f3264ab1b31cd191f1974f78e4e6ed50b44da41",
+      "initial_mask_sha256": "38b4f6a043d7f1b348a6fe0b36ee3b50d61f6a39538989532ac9d91e87b74398",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "f4e6b6e3f9b169b996732d80e87a9501fdee4abef79844440dcb90a1c2b85838",
+        "rgb_mean_absolute_error_0_255": 0.35988828870985246,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.35669037147804544,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.26922702600041,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "c60a55b68d14926b4458004cbd1984d0945358bd181e69f875f876cf63bddd77",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_crossing_3104",
+      "original_rgb_sha256": "f358457be4c9c0843a87402cda19f12233596bdb4e499e34aa2d87cd67632aea",
+      "initial_mask_sha256": "b42f3c2a92971cd8f7a9e9f049a38291ed5696beb9ed04afdbd01dcc4d8d8bab",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "34165a82a7d7bd35cf29a2a9ffa7b17ba44c95f6114cb33ac27a0ac5b324c43d",
+        "rgb_mean_absolute_error_0_255": 0.34836112128363717,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.34541589242440685,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.36402832500062,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "db2964dff2f763bf6de7debc4faae1a41e85359626991c19470e91e7a0e0c235",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_crossing_3105",
+      "original_rgb_sha256": "dad6395969ddfe2b96506ec053ecfe87ca771eaa98990e1ab4c505be6800394e",
+      "initial_mask_sha256": "7ea7dd7f0fd85ce612db390cc86f6e9a1691565241f857a50d7c5680667b92e0",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "6b90c3b9348e36cf558190e4dcf7b8939482ab16f5c3f1061cf2c127ad62ddfb",
+        "rgb_mean_absolute_error_0_255": 0.3609773847791884,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.3577771716647678,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.37801232199945,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "ce8b6b1123d6e138057c3a41268e22c50a8f4b165419919ed16650c5ce52ef74",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_scale_camera_3200",
+      "original_rgb_sha256": "44ae0707d44acf7d995533bf8b8c66cd9b7fa0d1818bfe022269665e30796fe0",
+      "initial_mask_sha256": "84e448719301d9bbda34455cdcfeb944372e6be2ea299e50b50bdf19a052894d",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "dbbe2d315dba88e8f34ed361526ca32f48632c5f872eacb5dbb39fd7133315e7",
+        "rgb_mean_absolute_error_0_255": 0.36168479919433594,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.3546764585706923,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.49644040399926,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "a26fe36ea09d8d1bb800a081d9469197471568505a83f5471453e6836e572f59",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_scale_camera_3201",
+      "original_rgb_sha256": "fc9135fb708bde8005d226ac31c4b699784bb14671e6f1f56a545b3141c9fa13",
+      "initial_mask_sha256": "f20403c7c7c640570ab9316344db33166f85ee992fdb933050ddfda0a90218e6",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "2e4a4731b5195a095c7cb9be12a439628024c0a1cb27c3adca335fdab828e093",
+        "rgb_mean_absolute_error_0_255": 0.34574752383761936,
+        "rgb_max_absolute_error_0_255": 6,
+        "rgb_changed_channel_fraction": 0.3392057418823242,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.15398292400005,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "731684cd1b691fe123d2a6c285ce72528a395e3b297d86a700ca8057a9398784",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_scale_camera_3202",
+      "original_rgb_sha256": "cc1636f3515cf0199edb0fede9f9b6e6f25d1bc72baa9cfc3f7a255c7d78c702",
+      "initial_mask_sha256": "4a82c04749a98bc93d7b5b4636ee3b109d7c8bffc0492f998f3c42f0fd5c2cf0",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "458e9baa7b633a253cc8fe93682d8427bf5340e79338d590445c4d6db1d82217",
+        "rgb_mean_absolute_error_0_255": 0.3616951483267325,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.35490696518509474,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.16236814500007,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "5af616d129466fa7e271fa1fb7c96a6b41f3d127c1af9c1213003822d65bea5b",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_scale_camera_3203",
+      "original_rgb_sha256": "0e38e9b577a61c312ffe6920481fb7aad43f169ae2153934452425017e04bee8",
+      "initial_mask_sha256": "08a08a08206d72babd4a2017e3181ec7111fdae2e942d7554328fbe194601677",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "69c1c06571399b08f2c2c6d523b2457081e852ad3f3f79d21fea15c28629cda4",
+        "rgb_mean_absolute_error_0_255": 0.35402548754656754,
+        "rgb_max_absolute_error_0_255": 6,
+        "rgb_changed_channel_fraction": 0.3471120904993128,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.54471582599945,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "0996c05b46e4cddee1508a8a0054444396e973e0b5a276a2b21a839af1213df9",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_scale_camera_3204",
+      "original_rgb_sha256": "bc50fc0e3a5706fc5f460015098f2d3823a1132e88ca1beb19a7da8aaff7f682",
+      "initial_mask_sha256": "58177180ccb0c97d6f1049f49d6bb31039e21d5c66b7be89e4cd6eb521ee336b",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "f19fee0f6c1c6254c4bca4b28cbab41c7ab9de387eea7497a4c3723e902a7a02",
+        "rgb_mean_absolute_error_0_255": 0.37080563439263237,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.36351645434344254,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.16725649199998,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "20a201e3aa07e822e3565c1224ca05b1ff8f8c39f21106eea09a172ee5943b03",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "test_scale_camera_3205",
+      "original_rgb_sha256": "2a4552c14a708e2c152bdf092382871fb86ec78be33b5ce982bacf16453b0878",
+      "initial_mask_sha256": "0e91ad0ff60477c8af5047e6004c2cb973211288b70658184672ca44aec6cd7e",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "65385b797be4841dc006146adb6d3a4f5ac624de219980e5c275367dee2ca539",
+        "rgb_mean_absolute_error_0_255": 0.37825280648690685,
+        "rgb_max_absolute_error_0_255": 6,
+        "rgb_changed_channel_fraction": 0.3707632135461878,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.14672613600032,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "5d6cf37bc0e3f8dea539886574d5562a53ef010f1c32cc184f3cf4bc560715d2",
+      "prompt_frames": [
+        0
+      ]
+    }
+  ],
+  "dense_masks": {
+    "readout": "raw SAM2 logits>0 masks; no calibrated patch threshold applied",
+    "unit": "part-frame, every frame after frame0; any nonempty GT part is visible",
+    "aggregation": "IoU averaged over visible part-frames; pixel precision/recall pooled over stated pixels",
+    "comparability": "Dense denominators differ from the two-frame patch benchmark, which excludes ambiguous slivers.",
+    "overall": {
+      "mean_iou_given_visible": {
+        "numerator": 3773.955707391062,
+        "denominator": 3997,
+        "rate": 0.9441970746537558
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 9884807,
+        "denominator": 10491554,
+        "rate": 0.9421680525115727
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 9884807,
+        "denominator": 10394102,
+        "rate": 0.951001539142102
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 9884807,
+        "denominator": 10566570,
+        "rate": 0.9354792520183939
+      },
+      "false_presence_given_absent": {
+        "numerator": 60,
+        "denominator": 539,
+        "rate": 0.11131725417439703
+      },
+      "absent_predicted_pixels": 75016,
+      "visible_part_frames": 3997,
+      "absent_part_frames": 539,
+      "scored_part_frames": 4536,
+      "clips": 18
+    },
+    "by_condition": {
+      "crossing": {
+        "mean_iou_given_visible": {
+          "numerator": 1349.630483159916,
+          "denominator": 1481,
+          "rate": 0.9112967475759054
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 3401908,
+          "denominator": 3811371,
+          "rate": 0.8925680549072762
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 3401908,
+          "denominator": 3771016,
+          "rate": 0.9021197470389942
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 3401908,
+          "denominator": 3818272,
+          "rate": 0.8909548612566103
+        },
+        "false_presence_given_absent": {
+          "numerator": 6,
+          "denominator": 31,
+          "rate": 0.1935483870967742
+        },
+        "absent_predicted_pixels": 6901,
+        "visible_part_frames": 1481,
+        "absent_part_frames": 31,
+        "scored_part_frames": 1512,
+        "clips": 6
+      },
+      "long_occlusion": {
+        "mean_iou_given_visible": {
+          "numerator": 943.7781392654551,
+          "denominator": 1004,
+          "rate": 0.9400180669974653
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 2426996,
+          "denominator": 2564297,
+          "rate": 0.9464566701906995
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 2426996,
+          "denominator": 2545984,
+          "rate": 0.9532644352831754
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 2426996,
+          "denominator": 2632412,
+          "rate": 0.9219666222460617
+        },
+        "false_presence_given_absent": {
+          "numerator": 54,
+          "denominator": 508,
+          "rate": 0.1062992125984252
+        },
+        "absent_predicted_pixels": 68115,
+        "visible_part_frames": 1004,
+        "absent_part_frames": 508,
+        "scored_part_frames": 1512,
+        "clips": 6
+      },
+      "scale_camera": {
+        "mean_iou_given_visible": {
+          "numerator": 1480.5470849656908,
+          "denominator": 1512,
+          "rate": 0.9791978075169913
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 4055903,
+          "denominator": 4115886,
+          "rate": 0.9854264671081755
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 4055903,
+          "denominator": 4077102,
+          "rate": 0.9948004734735604
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 4055903,
+          "denominator": 4115886,
+          "rate": 0.9854264671081755
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 1512,
+        "absent_part_frames": 0,
+        "scored_part_frames": 1512,
+        "clips": 6
+      }
+    },
+    "by_part": {
+      "car_A.front_door": {
+        "mean_iou_given_visible": {
+          "numerator": 680.0528862435654,
+          "denominator": 848,
+          "rate": 0.8019491583060913
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 2157287,
+          "denominator": 2677855,
+          "rate": 0.8056026185136984
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 2157287,
+          "denominator": 2617786,
+          "rate": 0.8240883708599557
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 2157287,
+          "denominator": 2731852,
+          "rate": 0.7896793091280201
+        },
+        "false_presence_given_absent": {
+          "numerator": 36,
+          "denominator": 286,
+          "rate": 0.1258741258741259
+        },
+        "absent_predicted_pixels": 53997,
+        "visible_part_frames": 848,
+        "absent_part_frames": 286,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "car_A.window": {
+        "mean_iou_given_visible": {
+          "numerator": 845.187334461214,
+          "denominator": 881,
+          "rate": 0.9593499823623315
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 1654459,
+          "denominator": 1704237,
+          "rate": 0.9707916211184242
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 1654459,
+          "denominator": 1688629,
+          "rate": 0.97976464931018
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 1654459,
+          "denominator": 1725256,
+          "rate": 0.9589643507977946
+        },
+        "false_presence_given_absent": {
+          "numerator": 24,
+          "denominator": 253,
+          "rate": 0.09486166007905138
+        },
+        "absent_predicted_pixels": 21019,
+        "visible_part_frames": 881,
+        "absent_part_frames": 253,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "car_B.front_door": {
+        "mean_iou_given_visible": {
+          "numerator": 1125.2424726143608,
+          "denominator": 1134,
+          "rate": 0.9922773127110766
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 3749376,
+          "denominator": 3771951,
+          "rate": 0.994015033599323
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 3749376,
+          "denominator": 3755811,
+          "rate": 0.9982866549994129
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 3749376,
+          "denominator": 3771951,
+          "rate": 0.994015033599323
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 1134,
+        "absent_part_frames": 0,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "car_B.window": {
+        "mean_iou_given_visible": {
+          "numerator": 1123.4730140719219,
+          "denominator": 1134,
+          "rate": 0.9907169436260334
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 2323685,
+          "denominator": 2337511,
+          "rate": 0.9940851615243735
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 2323685,
+          "denominator": 2331876,
+          "rate": 0.9964873775449467
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 2323685,
+          "denominator": 2337511,
+          "rate": 0.9940851615243735
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 1134,
+        "absent_part_frames": 0,
+        "scored_part_frames": 1134,
+        "clips": 18
+      }
+    },
+    "per_clip": {
+      "test_crossing_3100": {
+        "mean_iou_given_visible": {
+          "numerator": 210.5619712513626,
+          "denominator": 246,
+          "rate": 0.8559429725665146
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 524720,
+          "denominator": 633700,
+          "rate": 0.8280258797538267
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 524720,
+          "denominator": 626255,
+          "rate": 0.8378695579276813
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 524720,
+          "denominator": 637103,
+          "rate": 0.8236030908659981
+        },
+        "false_presence_given_absent": {
+          "numerator": 3,
+          "denominator": 6,
+          "rate": 0.5
+        },
+        "absent_predicted_pixels": 3403,
+        "visible_part_frames": 246,
+        "absent_part_frames": 6,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_crossing_3101": {
+        "mean_iou_given_visible": {
+          "numerator": 219.28329487371622,
+          "denominator": 247,
+          "rate": 0.887786618921928
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 549850,
+          "denominator": 637847,
+          "rate": 0.8620405834000944
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 549850,
+          "denominator": 630819,
+          "rate": 0.8716446397461078
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 549850,
+          "denominator": 637847,
+          "rate": 0.8620405834000944
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_crossing_3102": {
+        "mean_iou_given_visible": {
+          "numerator": 245.57392385065233,
+          "denominator": 247,
+          "rate": 0.9942264123508192
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 628984,
+          "denominator": 630647,
+          "rate": 0.9973630255911786
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 628984,
+          "denominator": 629702,
+          "rate": 0.9988597781172681
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 628984,
+          "denominator": 630739,
+          "rate": 0.9972175495728027
+        },
+        "false_presence_given_absent": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "absent_predicted_pixels": 92,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_crossing_3103": {
+        "mean_iou_given_visible": {
+          "numerator": 216.69753279654518,
+          "denominator": 247,
+          "rate": 0.8773179465447173
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 542105,
+          "denominator": 639785,
+          "rate": 0.8473237103089319
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 542105,
+          "denominator": 629577,
+          "rate": 0.8610622687931738
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 542105,
+          "denominator": 643191,
+          "rate": 0.8428367312353562
+        },
+        "false_presence_given_absent": {
+          "numerator": 2,
+          "denominator": 5,
+          "rate": 0.4
+        },
+        "absent_predicted_pixels": 3406,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_crossing_3104": {
+        "mean_iou_given_visible": {
+          "numerator": 214.39698334700108,
+          "denominator": 247,
+          "rate": 0.8680039811619477
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 531798,
+          "denominator": 636434,
+          "rate": 0.835590179028776
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 531798,
+          "denominator": 627242,
+          "rate": 0.847835444692798
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 531798,
+          "denominator": 636434,
+          "rate": 0.835590179028776
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_crossing_3105": {
+        "mean_iou_given_visible": {
+          "numerator": 243.11677704063854,
+          "denominator": 247,
+          "rate": 0.9842784495572411
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 624451,
+          "denominator": 632958,
+          "rate": 0.986559929726775
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 624451,
+          "denominator": 627421,
+          "rate": 0.9952663363196322
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 624451,
+          "denominator": 632958,
+          "rate": 0.986559929726775
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_long_occlusion_3000": {
+        "mean_iou_given_visible": {
+          "numerator": 157.8561780901723,
+          "denominator": 168,
+          "rate": 0.939620107679597
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 403545,
+          "denominator": 431171,
+          "rate": 0.9359279728924255
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 403545,
+          "denominator": 428348,
+          "rate": 0.9420961461241794
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 403545,
+          "denominator": 442601,
+          "rate": 0.9117579942205282
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 84,
+          "rate": 0.10714285714285714
+        },
+        "absent_predicted_pixels": 11430,
+        "visible_part_frames": 168,
+        "absent_part_frames": 84,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_long_occlusion_3001": {
+        "mean_iou_given_visible": {
+          "numerator": 167.68026883201242,
+          "denominator": 170,
+          "rate": 0.9863545225412496
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 428773,
+          "denominator": 433591,
+          "rate": 0.9888881457410325
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 428773,
+          "denominator": 429432,
+          "rate": 0.9984654147804541
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 428773,
+          "denominator": 444495,
+          "rate": 0.9646295233917141
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 82,
+          "rate": 0.10975609756097561
+        },
+        "absent_predicted_pixels": 10904,
+        "visible_part_frames": 170,
+        "absent_part_frames": 82,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_long_occlusion_3002": {
+        "mean_iou_given_visible": {
+          "numerator": 149.82034844897373,
+          "denominator": 168,
+          "rate": 0.8917877883867484
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 389849,
+          "denominator": 427388,
+          "rate": 0.9121664623246324
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 389849,
+          "denominator": 426100,
+          "rate": 0.914923726824689
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 389849,
+          "denominator": 439267,
+          "rate": 0.8874989471096167
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 84,
+          "rate": 0.10714285714285714
+        },
+        "absent_predicted_pixels": 11879,
+        "visible_part_frames": 168,
+        "absent_part_frames": 84,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_long_occlusion_3003": {
+        "mean_iou_given_visible": {
+          "numerator": 147.58963772385076,
+          "denominator": 166,
+          "rate": 0.8890942031557274
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 386501,
+          "denominator": 424684,
+          "rate": 0.9100907969219467
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 386501,
+          "denominator": 421480,
+          "rate": 0.9170091107525862
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 386501,
+          "denominator": 436288,
+          "rate": 0.8858850117353675
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 86,
+          "rate": 0.10465116279069768
+        },
+        "absent_predicted_pixels": 11604,
+        "visible_part_frames": 166,
+        "absent_part_frames": 86,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_long_occlusion_3004": {
+        "mean_iou_given_visible": {
+          "numerator": 156.82977601849862,
+          "denominator": 166,
+          "rate": 0.9447576868584254
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 399053,
+          "denominator": 423900,
+          "rate": 0.941384760556735
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 399053,
+          "denominator": 420912,
+          "rate": 0.9480675295548713
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 399053,
+          "denominator": 434470,
+          "rate": 0.9184822887656224
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 86,
+          "rate": 0.10465116279069768
+        },
+        "absent_predicted_pixels": 10570,
+        "visible_part_frames": 166,
+        "absent_part_frames": 86,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_long_occlusion_3005": {
+        "mean_iou_given_visible": {
+          "numerator": 164.0019301519473,
+          "denominator": 166,
+          "rate": 0.987963434650285
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 419275,
+          "denominator": 423563,
+          "rate": 0.9898763584165756
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 419275,
+          "denominator": 419712,
+          "rate": 0.9989588098505642
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 419275,
+          "denominator": 435291,
+          "rate": 0.9632062229634888
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 86,
+          "rate": 0.10465116279069768
+        },
+        "absent_predicted_pixels": 11728,
+        "visible_part_frames": 166,
+        "absent_part_frames": 86,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_scale_camera_3200": {
+        "mean_iou_given_visible": {
+          "numerator": 246.5678561018776,
+          "denominator": 252,
+          "rate": 0.9784438734201492
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 677038,
+          "denominator": 687584,
+          "rate": 0.9846622376320566
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 677038,
+          "denominator": 680410,
+          "rate": 0.9950441645478462
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 677038,
+          "denominator": 687584,
+          "rate": 0.9846622376320566
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_scale_camera_3201": {
+        "mean_iou_given_visible": {
+          "numerator": 247.1226321532979,
+          "denominator": 252,
+          "rate": 0.9806453656876901
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 674863,
+          "denominator": 683868,
+          "rate": 0.9868322541777068
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 674863,
+          "denominator": 678474,
+          "rate": 0.994677762154482
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 674863,
+          "denominator": 683868,
+          "rate": 0.9868322541777068
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_scale_camera_3202": {
+        "mean_iou_given_visible": {
+          "numerator": 246.42931289876125,
+          "denominator": 252,
+          "rate": 0.9778940988046082
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 676263,
+          "denominator": 686832,
+          "rate": 0.9846119575092599
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 676263,
+          "denominator": 680072,
+          "rate": 0.9943991224458587
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 676263,
+          "denominator": 686832,
+          "rate": 0.9846119575092599
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_scale_camera_3203": {
+        "mean_iou_given_visible": {
+          "numerator": 247.15068863107075,
+          "denominator": 252,
+          "rate": 0.9807567009169474
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 675007,
+          "denominator": 684244,
+          "rate": 0.9865004296712868
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 675007,
+          "denominator": 678450,
+          "rate": 0.994925197140541
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 675007,
+          "denominator": 684244,
+          "rate": 0.9865004296712868
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_scale_camera_3204": {
+        "mean_iou_given_visible": {
+          "numerator": 246.73776013047342,
+          "denominator": 252,
+          "rate": 0.9791180957558469
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 675888,
+          "denominator": 686026,
+          "rate": 0.9852221344380534
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 675888,
+          "denominator": 679320,
+          "rate": 0.9949478890655361
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 675888,
+          "denominator": 686026,
+          "rate": 0.9852221344380534
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "test_scale_camera_3205": {
+        "mean_iou_given_visible": {
+          "numerator": 246.53883505020997,
+          "denominator": 252,
+          "rate": 0.9783287105167062
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 676844,
+          "denominator": 687332,
+          "rate": 0.9847409985276402
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 676844,
+          "denominator": 680376,
+          "rate": 0.9948087528072713
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 676844,
+          "denominator": 687332,
+          "rate": 0.9847409985276402
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      }
+    }
+  },
+  "comparison_limitations": [
+    "Fixed specialist tracker with dense initial masks; same frame-zero masks are available to V-JEPA.",
+    "SAM2 masks reduced to maximum-coverage patch; V-JEPA directly matches patch features.",
+    "SAM2 is sequential with memory; V-JEPA uses offline attention within independent16-frame windows.",
+    "SAM2 receives quality100 JPEG frames; V-JEPA receives original rendered RGB; per-clip conversion errors recorded.",
+    "Same fixed synthetic benchmark; specialist comparator added after V-JEPA development and a real-video demo, before V-JEPA held-out results were viewed.",
+    "Dense raw-mask metrics use every frame afterframe0, and are independent of the calibrated patch readout."
+  ],
+  "methods": {
+    "sam2_1_tiny": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1826,
+          "denominator": 1922,
+          "rate": 0.9500520291363164
+        },
+        "wrong_car_given_visible": {
+          "numerator": 55,
+          "denominator": 1922,
+          "rate": 0.02861602497398543
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1905,
+          "denominator": 1922,
+          "rate": 0.9911550468262227
+        },
+        "false_presence_given_absent": {
+          "numerator": 11,
+          "denominator": 260,
+          "rate": 0.04230769230769231
+        },
+        "recovery_accuracy": {
+          "numerator": 6,
+          "denominator": 18,
+          "rate": 0.3333333333333333
+        },
+        "identity_switches": 4,
+        "balanced_localization_and_absence": 0.953872168414312,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074
+      },
+      "by_condition": {
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 638,
+            "denominator": 702,
+            "rate": 0.9088319088319088
+          },
+          "wrong_car_given_visible": {
+            "numerator": 55,
+            "denominator": 702,
+            "rate": 0.07834757834757834
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 702,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 693,
+            "denominator": 702,
+            "rate": 0.9871794871794872
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 2,
+            "denominator": 6,
+            "rate": 0.3333333333333333
+          },
+          "identity_switches": 4,
+          "balanced_localization_and_absence": 0.9544159544159544,
+          "clips": 6,
+          "ambiguous_samples_skipped": 30,
+          "uniform_patch_chance_given_visible": 0.012372883032605255
+        },
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 444,
+            "denominator": 476,
+            "rate": 0.9327731092436975
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 468,
+            "denominator": 476,
+            "rate": 0.9831932773109243
+          },
+          "false_presence_given_absent": {
+            "numerator": 11,
+            "denominator": 248,
+            "rate": 0.04435483870967742
+          },
+          "recovery_accuracy": {
+            "numerator": 4,
+            "denominator": 12,
+            "rate": 0.3333333333333333
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.94420913526701,
+          "clips": 6,
+          "ambiguous_samples_skipped": 20,
+          "uniform_patch_chance_given_visible": 0.012674340569561156
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 744,
+            "denominator": 744,
+            "rate": 1.0
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 744,
+            "denominator": 744,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013202844982078852
+        }
+      },
+      "by_window": {
+        "1": {
+          "localization_accuracy_given_visible": {
+            "numerator": 470,
+            "denominator": 476,
+            "rate": 0.9873949579831933
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 470,
+            "denominator": 476,
+            "rate": 0.9873949579831933
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 19,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.9936974789915967,
+          "clips": 18,
+          "ambiguous_samples_skipped": 9,
+          "uniform_patch_chance_given_visible": 0.012911414565826331
+        },
+        "2": {
+          "localization_accuracy_given_visible": {
+            "numerator": 458,
+            "denominator": 463,
+            "rate": 0.9892008639308856
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 463,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 463,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 458,
+            "denominator": 463,
+            "rate": 0.9892008639308856
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 102,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.9946004319654428,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.01252024838012959
+        },
+        "3": {
+          "localization_accuracy_given_visible": {
+            "numerator": 428,
+            "denominator": 455,
+            "rate": 0.9406593406593406
+          },
+          "wrong_car_given_visible": {
+            "numerator": 23,
+            "denominator": 455,
+            "rate": 0.05054945054945055
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 455,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 451,
+            "denominator": 455,
+            "rate": 0.9912087912087912
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 102,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 2,
+            "denominator": 6,
+            "rate": 0.3333333333333333
+          },
+          "identity_switches": 4,
+          "balanced_localization_and_absence": 0.9703296703296703,
+          "clips": 18,
+          "ambiguous_samples_skipped": 19,
+          "uniform_patch_chance_given_visible": 0.01243131868131868
+        },
+        "4": {
+          "localization_accuracy_given_visible": {
+            "numerator": 470,
+            "denominator": 528,
+            "rate": 0.8901515151515151
+          },
+          "wrong_car_given_visible": {
+            "numerator": 32,
+            "denominator": 528,
+            "rate": 0.06060606060606061
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 528,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 526,
+            "denominator": 528,
+            "rate": 0.9962121212121212
+          },
+          "false_presence_given_absent": {
+            "numerator": 11,
+            "denominator": 37,
+            "rate": 0.2972972972972973
+          },
+          "recovery_accuracy": {
+            "numerator": 4,
+            "denominator": 12,
+            "rate": 0.3333333333333333
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.7964271089271089,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.013149068813131314
+        }
+      },
+      "window_boundaries": {
+        "localization_accuracy_given_visible": {
+          "numerator": 165,
+          "denominator": 171,
+          "rate": 0.9649122807017544
+        },
+        "wrong_car_given_visible": {
+          "numerator": 5,
+          "denominator": 171,
+          "rate": 0.029239766081871343
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 171,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 170,
+          "denominator": 171,
+          "rate": 0.9941520467836257
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 40,
+          "rate": 0.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "identity_switches": 1,
+        "balanced_localization_and_absence": 0.9824561403508771,
+        "clips": 18,
+        "ambiguous_samples_skipped": 5,
+        "uniform_patch_chance_given_visible": 0.012558885640025993
+      },
+      "uncertainty": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1826,
+          "denominator": 1922,
+          "rate": 0.9500520291363164,
+          "clip_bootstrap_95ci": [
+            0.9209437153248814,
+            0.9747600772632542
+          ]
+        },
+        "wrong_car_given_visible": {
+          "numerator": 55,
+          "denominator": 1922,
+          "rate": 0.02861602497398543,
+          "clip_bootstrap_95ci": [
+            0.00708036843000692,
+            0.05505322469855746
+          ]
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1905,
+          "denominator": 1922,
+          "rate": 0.9911550468262227,
+          "clip_bootstrap_95ci": [
+            0.984736807493462,
+            0.9960227555123802
+          ]
+        },
+        "false_presence_given_absent": {
+          "numerator": 11,
+          "denominator": 260,
+          "rate": 0.04230769230769231,
+          "clip_bootstrap_95ci": [
+            0.03125,
+            0.04736842105263158
+          ]
+        },
+        "recovery_accuracy": {
+          "numerator": 6,
+          "denominator": 18,
+          "rate": 0.3333333333333333,
+          "clip_bootstrap_95ci": [
+            0.1111111111111111,
+            0.5714285714285714
+          ]
+        },
+        "identity_switches": 4,
+        "balanced_localization_and_absence": 0.953872168414312,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074,
+        "bootstrap": {
+          "unit": "clip",
+          "resamples": 2000,
+          "seed": 914,
+          "interpretation": "descriptive interval over generated clips, not real-video generalization"
+        }
+      }
+    }
+  }
+}

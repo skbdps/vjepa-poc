@@ -1,0 +1,2219 @@
+{
+  "analysis": "supplementary post-hoc recovery latency",
+  "version": 1,
+  "status": "Proposed after V-JEPA test, before SAM2 held-out scores were viewed; not a new primary outcome.",
+  "definition": {
+    "event": "Existing recovery/is_recovery label only: first unambiguous visible tubelet after absence.",
+    "horizons_source_frames": [
+      0,
+      2,
+      4,
+      8
+    ],
+    "tubelet_frames": 2,
+    "latency": "Difference between tubelet first-frame indices; two-frame resolution, not exact per-frame recovery time, wall-clock latency, or causal detection delay. V-JEPA predictions are offline within encoder windows.",
+    "hit": "Saved correct localization hit on a visible target; later hits after renewed absence belong to another episode.",
+    "ambiguity": "Observed but unscorable tubelets; never hits; retained and reported, not silently excluded.",
+    "censoring": "New full absence, clip end, or missing row truncates follow-up. Success before censoring stays known. New absence is a known episode interruption, not unknown recovery; only clip end/missing rows leave an unrecovered outcome unresolved.",
+    "fully_observed": "Every expected tubelet through the horizon is present before renewed absence; ambiguous states may occur.",
+    "rates": "Complete-horizon rates use their explicit denominator. Overall bounds leave unresolved censored outcomes unknown; no imputation.",
+    "limits": "Descriptive analysis of saved predictions, with repeated parts/events within clips; no frame-independent inference or model rerun."
+  },
+  "input_rows": 2232,
+  "event_count_across_methods": 18,
+  "methods": {
+    "sam2_1_tiny": {
+      "overall": {
+        "0": {
+          "events": 18,
+          "fully_observed_horizons": 18,
+          "censored_horizons": 0,
+          "observed_recovered_within_horizon": 6,
+          "recovered_within_fully_observed_horizons": {
+            "numerator": 6,
+            "denominator": 18,
+            "rate": 0.3333333333333333
+          },
+          "recovered_before_censoring": 0,
+          "fully_observed_without_recovery": 12,
+          "interrupted_by_absence_without_recovery": 0,
+          "unresolved_censored_events": 0,
+          "observed_success_fraction_lower_bound": 0.3333333333333333,
+          "success_fraction_upper_bound_allowing_censored_recovery": 0.3333333333333333,
+          "events_with_ambiguous_tubelets": 0,
+          "fully_observed_without_ambiguity": 18,
+          "censor_reasons": {}
+        },
+        "2": {
+          "events": 18,
+          "fully_observed_horizons": 18,
+          "censored_horizons": 0,
+          "observed_recovered_within_horizon": 8,
+          "recovered_within_fully_observed_horizons": {
+            "numerator": 8,
+            "denominator": 18,
+            "rate": 0.4444444444444444
+          },
+          "recovered_before_censoring": 0,
+          "fully_observed_without_recovery": 10,
+          "interrupted_by_absence_without_recovery": 0,
+          "unresolved_censored_events": 0,
+          "observed_success_fraction_lower_bound": 0.4444444444444444,
+          "success_fraction_upper_bound_allowing_censored_recovery": 0.4444444444444444,
+          "events_with_ambiguous_tubelets": 0,
+          "fully_observed_without_ambiguity": 18,
+          "censor_reasons": {}
+        },
+        "4": {
+          "events": 18,
+          "fully_observed_horizons": 18,
+          "censored_horizons": 0,
+          "observed_recovered_within_horizon": 8,
+          "recovered_within_fully_observed_horizons": {
+            "numerator": 8,
+            "denominator": 18,
+            "rate": 0.4444444444444444
+          },
+          "recovered_before_censoring": 0,
+          "fully_observed_without_recovery": 10,
+          "interrupted_by_absence_without_recovery": 0,
+          "unresolved_censored_events": 0,
+          "observed_success_fraction_lower_bound": 0.4444444444444444,
+          "success_fraction_upper_bound_allowing_censored_recovery": 0.4444444444444444,
+          "events_with_ambiguous_tubelets": 0,
+          "fully_observed_without_ambiguity": 18,
+          "censor_reasons": {}
+        },
+        "8": {
+          "events": 18,
+          "fully_observed_horizons": 6,
+          "censored_horizons": 12,
+          "observed_recovered_within_horizon": 8,
+          "recovered_within_fully_observed_horizons": {
+            "numerator": 2,
+            "denominator": 6,
+            "rate": 0.3333333333333333
+          },
+          "recovered_before_censoring": 6,
+          "fully_observed_without_recovery": 4,
+          "interrupted_by_absence_without_recovery": 0,
+          "unresolved_censored_events": 6,
+          "observed_success_fraction_lower_bound": 0.4444444444444444,
+          "success_fraction_upper_bound_allowing_censored_recovery": 0.7777777777777778,
+          "events_with_ambiguous_tubelets": 0,
+          "fully_observed_without_ambiguity": 6,
+          "censor_reasons": {
+            "clip_end": 12
+          }
+        }
+      },
+      "by_condition": {
+        "crossing": {
+          "0": {
+            "events": 6,
+            "fully_observed_horizons": 6,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 2,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 2,
+              "denominator": 6,
+              "rate": 0.3333333333333333
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 4,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": 0.3333333333333333,
+            "success_fraction_upper_bound_allowing_censored_recovery": 0.3333333333333333,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 6,
+            "censor_reasons": {}
+          },
+          "2": {
+            "events": 6,
+            "fully_observed_horizons": 6,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 2,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 2,
+              "denominator": 6,
+              "rate": 0.3333333333333333
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 4,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": 0.3333333333333333,
+            "success_fraction_upper_bound_allowing_censored_recovery": 0.3333333333333333,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 6,
+            "censor_reasons": {}
+          },
+          "4": {
+            "events": 6,
+            "fully_observed_horizons": 6,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 2,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 2,
+              "denominator": 6,
+              "rate": 0.3333333333333333
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 4,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": 0.3333333333333333,
+            "success_fraction_upper_bound_allowing_censored_recovery": 0.3333333333333333,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 6,
+            "censor_reasons": {}
+          },
+          "8": {
+            "events": 6,
+            "fully_observed_horizons": 6,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 2,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 2,
+              "denominator": 6,
+              "rate": 0.3333333333333333
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 4,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": 0.3333333333333333,
+            "success_fraction_upper_bound_allowing_censored_recovery": 0.3333333333333333,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 6,
+            "censor_reasons": {}
+          }
+        },
+        "long_occlusion": {
+          "0": {
+            "events": 12,
+            "fully_observed_horizons": 12,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 4,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 4,
+              "denominator": 12,
+              "rate": 0.3333333333333333
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 8,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": 0.3333333333333333,
+            "success_fraction_upper_bound_allowing_censored_recovery": 0.3333333333333333,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 12,
+            "censor_reasons": {}
+          },
+          "2": {
+            "events": 12,
+            "fully_observed_horizons": 12,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 6,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 6,
+              "denominator": 12,
+              "rate": 0.5
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 6,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": 0.5,
+            "success_fraction_upper_bound_allowing_censored_recovery": 0.5,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 12,
+            "censor_reasons": {}
+          },
+          "4": {
+            "events": 12,
+            "fully_observed_horizons": 12,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 6,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 6,
+              "denominator": 12,
+              "rate": 0.5
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 6,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": 0.5,
+            "success_fraction_upper_bound_allowing_censored_recovery": 0.5,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 12,
+            "censor_reasons": {}
+          },
+          "8": {
+            "events": 12,
+            "fully_observed_horizons": 0,
+            "censored_horizons": 12,
+            "observed_recovered_within_horizon": 6,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "recovered_before_censoring": 6,
+            "fully_observed_without_recovery": 0,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 6,
+            "observed_success_fraction_lower_bound": 0.5,
+            "success_fraction_upper_bound_allowing_censored_recovery": 1.0,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 0,
+            "censor_reasons": {
+              "clip_end": 12
+            }
+          }
+        },
+        "scale_camera": {
+          "0": {
+            "events": 0,
+            "fully_observed_horizons": 0,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 0,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 0,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": null,
+            "success_fraction_upper_bound_allowing_censored_recovery": null,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 0,
+            "censor_reasons": {}
+          },
+          "2": {
+            "events": 0,
+            "fully_observed_horizons": 0,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 0,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 0,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": null,
+            "success_fraction_upper_bound_allowing_censored_recovery": null,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 0,
+            "censor_reasons": {}
+          },
+          "4": {
+            "events": 0,
+            "fully_observed_horizons": 0,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 0,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 0,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": null,
+            "success_fraction_upper_bound_allowing_censored_recovery": null,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 0,
+            "censor_reasons": {}
+          },
+          "8": {
+            "events": 0,
+            "fully_observed_horizons": 0,
+            "censored_horizons": 0,
+            "observed_recovered_within_horizon": 0,
+            "recovered_within_fully_observed_horizons": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "recovered_before_censoring": 0,
+            "fully_observed_without_recovery": 0,
+            "interrupted_by_absence_without_recovery": 0,
+            "unresolved_censored_events": 0,
+            "observed_success_fraction_lower_bound": null,
+            "success_fraction_upper_bound_allowing_censored_recovery": null,
+            "events_with_ambiguous_tubelets": 0,
+            "fully_observed_without_ambiguity": 0,
+            "censor_reasons": {}
+          }
+        }
+      }
+    }
+  },
+  "events": [
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_crossing_3100",
+      "target": "car_A.front_door",
+      "condition": "crossing",
+      "event_first_frame": 32,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 8,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_crossing_3101",
+      "target": "car_A.front_door",
+      "condition": "crossing",
+      "event_first_frame": 40,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 8,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_crossing_3102",
+      "target": "car_A.front_door",
+      "condition": "crossing",
+      "event_first_frame": 38,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 8,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_crossing_3103",
+      "target": "car_A.front_door",
+      "condition": "crossing",
+      "event_first_frame": 36,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 8,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_crossing_3104",
+      "target": "car_A.front_door",
+      "condition": "crossing",
+      "event_first_frame": 34,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 8,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_crossing_3105",
+      "target": "car_A.front_door",
+      "condition": "crossing",
+      "event_first_frame": 38,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 8,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3000",
+      "target": "car_A.front_door",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "censored_unresolved",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3000",
+      "target": "car_A.window",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3001",
+      "target": "car_A.front_door",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3001",
+      "target": "car_A.window",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3002",
+      "target": "car_A.front_door",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "censored_unresolved",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3002",
+      "target": "car_A.window",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "censored_unresolved",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3003",
+      "target": "car_A.front_door",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "censored_unresolved",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3003",
+      "target": "car_A.window",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "censored_unresolved",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3004",
+      "target": "car_A.front_door",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "censored_unresolved",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3004",
+      "target": "car_A.window",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "recovered",
+          "first_hit_offset_frames": 0,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3005",
+      "target": "car_A.front_door",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 2,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 2,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "recovered",
+          "first_hit_offset_frames": 2,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    },
+    {
+      "method": "sam2_1_tiny",
+      "scene": "test_long_occlusion_3005",
+      "target": "car_A.window",
+      "condition": "long_occlusion",
+      "event_first_frame": 56,
+      "horizons": {
+        "0": {
+          "horizon_frames": 0,
+          "fully_observed": true,
+          "status": "not_recovered",
+          "first_hit_offset_frames": null,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            }
+          ],
+          "censor": null
+        },
+        "2": {
+          "horizon_frames": 2,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 2,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "4": {
+          "horizon_frames": 4,
+          "fully_observed": true,
+          "status": "recovered",
+          "first_hit_offset_frames": 2,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": null
+        },
+        "8": {
+          "horizon_frames": 8,
+          "fully_observed": false,
+          "status": "recovered",
+          "first_hit_offset_frames": 2,
+          "ambiguous_offsets_frames": [],
+          "observed_states": [
+            {
+              "offset_frames": 0,
+              "state": "visible",
+              "hit": false
+            },
+            {
+              "offset_frames": 2,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 4,
+              "state": "visible",
+              "hit": true
+            },
+            {
+              "offset_frames": 6,
+              "state": "visible",
+              "hit": true
+            }
+          ],
+          "censor": {
+            "reason": "clip_end",
+            "offset_frames": 8
+          }
+        }
+      }
+    }
+  ],
+  "source_predictions": "/workspace/scratch/8e9e8b29a938/day4_downloads/sam2_complete/test/predictions.csv",
+  "primary_immediate_count_verification": {
+    "sam2_1_tiny": {
+      "numerator": 6,
+      "denominator": 18
+    }
+  }
+}

@@ -12,6 +12,10 @@ The ongoing work on `experiment/part-consistency-colab` tests persistent object-
 - [Real-car two-part edit preview](experiments/day4/run_2026-10-09/car_roundabout/dual_part_edit.mp4)
 - [Reproduction notebook for Colab T4](experiments/day4/Part_Consistency_Colab.ipynb)
 - [Results and limitations](experiments/day4/RESULTS.md)
+- [Completed held-out specialist comparison](experiments/day4/run_2026-10-09/comparison/comparison.md)
+- [Crossing and identity failure gallery](experiments/day4/run_2026-10-09/failures/README.md)
+
+On eighteen held-out synthetic clips, SAM2.1 Tiny reaches 95.01% visible patch localization versus 53.38% for the selected V-JEPA tracker, a paired difference of +41.62 percentage points [95% interval +30.94, +50.10]. Its separate raw dense-mask mean IoU is 94.42%; raw masks remain the editing default because the supplementary presence gate suppresses thin visible parts. Identity recovery after occlusion remains unresolved, and the two real-car clips demonstrate localized recoloring rather than unseen-video or generative consistency.
 
 Run metadata, frozen configurations, metrics, small predicted masks, and selected previews are saved with the experiment. Full executed outputs stay in Colab; repository notebooks are kept without cell outputs.
 

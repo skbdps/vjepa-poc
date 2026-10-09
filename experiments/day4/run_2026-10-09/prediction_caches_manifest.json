@@ -1,0 +1,7 @@
+{
+  "archive": "prediction_caches.zip",
+  "sha256": "f6dac8729dbf05b33edeadce96dcf2083735a2ddc0774c70707da7dada262a6a",
+  "bytes": 418051,
+  "contents": "SAM2 masks, readouts and manifests for all 6 calibration + 18 test clips; VJEPA variant readouts for all 6 calibration + 6 development + 18 test clips. No weights, input JPEGs or feature caches.",
+  "paths": "Unzip into a temporary directory. sam2/clips and vjepa/predictions preserve original run layouts."
+}

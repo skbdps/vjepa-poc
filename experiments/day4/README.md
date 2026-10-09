@@ -2,6 +2,8 @@
 
 This stage builds on the Day 3 localization diagnostic. The practical prototype initializes a front-door panel and front window once, preserves their IDs, and applies an edit to a selected predicted part throughout a video. The edit is deterministic recoloring, not generative video synthesis.
 
+The completed eighteen-clip test gives SAM2.1 Tiny 95.01% visible patch localization (1,826/1,922), versus 53.38% for the development-selected V-JEPA tracker. The paired difference is +41.62 percentage points [95% interval +30.94, +50.10]. SAM2's separate raw dense masks achieve 94.42% mean visible IoU, with nonempty predictions on 60/539 absent part-frames (11.13%); its patch false-presence rate is 11/260 (4.23%) under a different readout. Occlusion recovery and crossing identity failures remain unresolved. The supplementary presence gate halves hidden dense-mask reports but severely harms thin visibility, so raw masks remain the default. See the [results](RESULTS.md), [frozen comparison](run_2026-10-09/comparison/comparison.md), and [failure gallery](run_2026-10-09/failures/README.md).
+
 ## Try the working control layer
 
 Download either self-contained HTML editor and open it in a browser. It needs no GPU, server, or network connection:
@@ -10,7 +12,7 @@ Download either self-contained HTML editor and open it in a browser. It needs no
 - [Car-shadow interactive editor](run_2026-10-09/car_shadow/interactive_part_editor.html)
 - [Two-part video preview](run_2026-10-09/car_roundabout/dual_part_edit.mp4)
 
-Select a tagged part to adjust its independent color, strength, and enabled state. Enabling the window preserves the door's settings. Play or scrub the clip, show predicted outlines, save a frame, or export the controls as JSON. Importing that recipe restores the same settings; a wrong sequence or part registry is rejected. Reset disables all edits.
+Select a tagged part to adjust its independent color, strength, and enabled state. Enabling the window preserves the door's settings. Play or scrub the clip, show predicted outlines, save a frame, or export the controls as JSON. Importing that recipe restores the same settings; a wrong sequence or part registry is rejected. Reset disables all edits. See [editor validation](EDITOR_VALIDATION.md): browser recipe export and controls were exercised; the Colab file-picker import remains unverified.
 
 For model execution, open [Part_Consistency_Colab.ipynb](Part_Consistency_Colab.ipynb) in Colab and select a T4 GPU. The notebook downloads the pinned model and source frames, runs both clips, saves masks and scores, and builds the editors. Its repository copy has empty outputs; the executed research history is in the separate live Colab notebook below.
 
@@ -32,11 +34,19 @@ The code and intermediate freezes are committed as the experiment progresses on 
 - [Protocol declared before new tests](PROTOCOL.md)
 - [V-JEPA calibration/development freeze](run_2026-10-09/frozen_config.json)
 - [Development results](run_2026-10-09/development_results.json)
+- [SAM2 calibration freeze](run_2026-10-09/sam2_frozen_config.json)
+- [Completed synthetic comparison and paired intervals](run_2026-10-09/comparison/comparison.md)
+- [SAM2 held-out raw dense-mask results](run_2026-10-09/sam2_test/dense_results.json)
+- [Supplementary presence-gate tradeoff](run_2026-10-09/presence_gate/test/presence_gate_results.md)
+- [Post-test failure gallery](run_2026-10-09/failures/README.md)
 - [First real-car results](run_2026-10-09/car_roundabout/results.json)
 - [First door-edit video](run_2026-10-09/car_roundabout/door_recolor.mp4)
 - [Second real-car results](run_2026-10-09/car_shadow/results.json)
 - [Results and interpretation](RESULTS.md)
 - [Independent result audit](AUDIT.md)
+- [Editor validation and remaining UI limitations](EDITOR_VALIDATION.md)
+- [Saved prediction caches](run_2026-10-09/prediction_caches.zip) with [manifest/checksum](run_2026-10-09/prediction_caches_manifest.json)
+- [Executed research notebook source, with outputs stripped](VJEPA_Persistent_Parts_Research.ipynb)
 - [Visual comparison of both real clips](run_2026-10-09/two_clip_part_tracking_comparison.png)
 - [Footage/model attribution](ATTRIBUTION.md)
 
@@ -102,6 +112,17 @@ python experiments/day4/sam2_benchmark.py --stage test --out /content/day4_sam2_
 ```
 
 The specialist was added after the V-JEPA development run and the first real-video demonstration. Its algorithm and mask-to-patch readout were fixed before its test. It uses the same synthetic scenes and frame-zero annotations, with different model objectives and temporal processing. High-quality JPEG conversion for SAM2 is measured and reported. Dense-mask results are separate from the calibrated patch-localization readout.
+
+Rebuild the saved comparison without inference or tuning:
+
+```bash
+python experiments/day4/compare_results.py \
+  --vjepa-csv experiments/day4/run_2026-10-09/synthetic_test/predictions.csv \
+  --sam2-csv experiments/day4/run_2026-10-09/sam2_test/predictions.csv \
+  --frozen-config experiments/day4/run_2026-10-09/frozen_config.json \
+  --sam2-dense experiments/day4/run_2026-10-09/sam2_test/dense_results.json \
+  --out /content/day4_comparison
+```
 
 ## Interpretation limits
 
