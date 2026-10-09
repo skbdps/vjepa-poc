@@ -1,0 +1,62 @@
+/tmp/vjepa-day9-deps/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Error importing huggingface_hub.hf_api: No module named 'requests'
+{
+  "seed": 13000,
+  "frame_index": 15,
+  "dx": 48,
+  "precision": "float32",
+  "device": "cpu",
+  "torch": "2.9.0+cpu",
+  "numpy": "2.3.5",
+  "test_images_accessed": false,
+  "probe_sha256": "bf18fc7be331d56d9aafd3462111d3f9dac622e9177a3e3e1bfd91710ab07eab",
+  "cache_sha256": "c0b4bfc6443a1016b80b20af91d57d6f4d068e1bb0608f965df329941d5d4f54",
+  "rows": [
+    {
+      "name": "source",
+      "seconds": 2.1295603189973917,
+      "input_shape": [
+        1,
+        3,
+        1,
+        384,
+        384
+      ],
+      "output_shape": [
+        1,
+        576,
+        1024
+      ],
+      "selected_centroid_error_px": 0.8325869850521709,
+      "selected_iou": 0.5,
+      "centroid_present": true,
+      "source_rgb_sha256": "818aa7610778eb126e6bf4e6757bba5c794ae01d9cfdf83271f9773a914ec3c5"
+    },
+    {
+      "name": "target",
+      "seconds": 1.8318365449995326,
+      "input_shape": [
+        1,
+        3,
+        1,
+        384,
+        384
+      ],
+      "output_shape": [
+        1,
+        576,
+        1024
+      ],
+      "selected_centroid_error_px": 1.4374421787658989,
+      "selected_iou": 0.5,
+      "centroid_present": true,
+      "source_rgb_sha256": "f3ae8bee04b34f665a9ca331790d8bc5ba6b5b6797f2adc6a54d3d144117e74f"
+    }
+  ],
+  "native_image_interface_pass": true,
+  "selected_localization_pass": true,
+  "scope": "Engineering interface and frozen-readout localization check only. IoU is descriptive; this is not a held-out edit result."
+}
