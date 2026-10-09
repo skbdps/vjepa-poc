@@ -1,3 +1,5 @@
+> Historical tracking experiment. The active latent-edit research is [Day 8](../day8/README.md); tracking results below do not establish representation editability.
+
 # Learned persistent-part JEPA prototype
 
 This is the active research direction. It trains a new part-conditioned latent

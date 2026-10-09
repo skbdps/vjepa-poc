@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "fixture": "analytic masks and errors only; no experimental scene access",
+  "checks": [
+    "no-op ratio exactly one",
+    "perfect intervention ratio zero",
+    "degenerate denominator recorded",
+    "known 48px centroid displacement",
+    "missing prediction penalty",
+    "fixed-region IoU/RGB/ghost scoring",
+    "correct color identity passes and swapped identity fails",
+    "identity ties fail",
+    "ineligible color/core cases explicitly skipped",
+    "exact outside-support preservation",
+    "seed averaging before scene bootstrap"
+  ]
+}
