@@ -90,7 +90,8 @@ def validate_binding(features, run):
     if sha256(binding_path) != frozen["feature_binding_sha256"]:
         raise ValueError("Training feature-binding file changed")
     binding = json.loads(binding_path.read_text())
-    for field in ("model", "upstream", "encoder_context", "oracle_budget"):
+    for field in ("model", "upstream", "encoder_context", "oracle_budget",
+                  "extraction_device", "inference_precision", "cache_precision", "weights"):
         if binding[field] != manifest[field]:
             raise ValueError("Train/test extraction differs: " + field)
     if binding["extractor_source_hashes"] != manifest["source_hashes"]:

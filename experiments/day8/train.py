@@ -83,6 +83,9 @@ def cache_root(features):
 def bind_features(features):
     root = cache_root(features)
     manifest = json.loads((root / "manifest.json").read_text())
+    required_provenance = ("extraction_device", "inference_precision", "cache_precision", "weights")
+    if any(field not in manifest for field in required_provenance) or not manifest["weights"]:
+        raise ValueError("Extraction must finish and record its precision/checkpoint provenance before training")
     if any(row["spec"]["split"] == "test" for row in manifest["clips"]):
         raise ValueError("Refusing a fresh pretest training run after test caches exist")
     indexed = {row["spec"]["name"]: row for row in manifest["clips"]}
@@ -101,7 +104,8 @@ def bind_features(features):
     binding = {"model": manifest["model"], "upstream": manifest["upstream"],
                "extractor_source_hashes": manifest["source_hashes"],
                "encoder_context": manifest["encoder_context"],
-               "oracle_budget": manifest["oracle_budget"], "clips": records}
+               "oracle_budget": manifest["oracle_budget"], "clips": records,
+               **{field: manifest[field] for field in required_provenance}}
     return root, indexed, binding
 
 

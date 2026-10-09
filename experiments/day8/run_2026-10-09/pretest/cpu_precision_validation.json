@@ -1,0 +1,47 @@
+{
+  "scene": {
+    "name": "train_11000_dx+32",
+    "seed": 11000,
+    "dx": 32,
+    "split": "train",
+    "shift_regime": "seen_magnitude"
+  },
+  "reference": "Colab torch2.11.0+cpu FP32, cached float16",
+  "local_torch": "2.9.0+cpu",
+  "threads": 8,
+  "checkpoint_sha256": "7ea9b7cb4a75d10644a8a8d42cff9e177b10dca8f02173f0eaf2b0bed82838c6",
+  "source_hashes": {
+    "data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+    "extract.py": "de2b366a53cae32f13741570f6dcefd525e45bfe04a2fda5b909d54579f1982f"
+  },
+  "precisions": {
+    "bfloat16": {
+      "seconds": 62.138017565001064,
+      "metrics": {
+        "global": {
+          "source_precision_mse": 0.0018877229886129498,
+          "target_precision_mse": 0.0019369676010683179,
+          "true_edit_mse": 0.23961922526359558,
+          "source_ratio": 0.007878011401365398,
+          "target_ratio": 0.008083523343911728
+        },
+        "source_hole": {
+          "source_precision_mse": 0.0009212066070176661,
+          "target_precision_mse": 0.00187691708561033,
+          "true_edit_mse": 5.707324504852295,
+          "source_ratio": 0.0001614077850724044,
+          "target_ratio": 0.00032886111242046937
+        },
+        "destination": {
+          "source_precision_mse": 0.0013985014520585537,
+          "target_precision_mse": 0.0008690451504662633,
+          "true_edit_mse": 4.454372882843018,
+          "source_ratio": 0.00031396146861552277,
+          "target_ratio": 0.00019509932673431518
+        }
+      },
+      "passes_1pct_signal_tolerance": true
+    }
+  },
+  "chosen_precision": "bfloat16"
+}
