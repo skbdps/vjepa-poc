@@ -12,6 +12,8 @@ The notebook pins experiment revision `de419ad916e57e04271c14fd830a8a52022b764e`
 
 The notebook has empty outputs and has not been separately executed end to end on a clean GPU runtime. It packages the commands used by the research Colab; recorded run artifacts are the evidence for execution and results.
 
+After all twelve test clips finish, an optional cell fetches the separately pinned editor/replay helper revision `c55f436f9abce93b35b511e67f41e1140f271445`, verifies that the frozen experiment files still match, builds the standalone hierarchy editor and displays it in Colab. The measured experiment remains pinned to `de419ad`; the later helper revision only creates replay artifacts. The exported run manifest records both roles explicitly, and the archive preserves the helper sources under `artifact_helpers/` separately from frozen experiment source. Set `BUILD_EDITOR = False` to skip that cell's work. This helper cell shares the notebook's clean-runtime execution caveat above.
+
 ## Command line
 
 Use a CUDA environment with compatible PyTorch and torchvision, Python, NumPy, Pillow, OpenCV and ffmpeg. Check out the pinned revision before running:
