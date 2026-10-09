@@ -151,7 +151,7 @@ footer{margin-top:22px;font-size:12px;color:var(--muted);display:grid;grid-templ
 </style></head><body><main>
 <header><div><div class="eyebrow">VJEPA research / Day 4</div><h1>Choose a part. Keep the edit.</h1><p>Change the door or window once, then follow the same tagged part through the clip.</p></div><span class="badge">Offline research prototype · SAM 2.1 masks</span></header>
 <section class="views" aria-label="Original and edited video comparison">
-<figure class="view"><figcaption>Original <span>DAVIS · car-roundabout</span></figcaption><video id="source" muted playsinline preload="auto" aria-label="Original car video" src="data:video/mp4;base64,__VIDEO__"></video></figure>
+<figure class="view"><figcaption>Original <span id="sequence-label">DAVIS</span></figcaption><video id="source" muted playsinline preload="auto" aria-label="Original car video" src="data:video/mp4;base64,__VIDEO__"></video></figure>
 <figure class="view"><figcaption>Editable preview <span id="preview-label">car_1 / front_door_panel</span></figcaption><canvas id="preview" width="854" height="480" aria-label="Recolored video preview"></canvas></figure>
 </section>
 <section class="panel" aria-label="Part editing controls">
@@ -160,11 +160,12 @@ footer{margin-top:22px;font-size:12px;color:var(--muted);display:grid;grid-templ
 <div class="status"><span id="selection" aria-live="polite">Preparing predicted masks…</span><span id="frame-status">64 frames · 12 fps · native 854 × 480</span></div>
 </section>
 <div id="error" role="alert"></div>
-<footer><div><div class="metrics" id="metrics"></div><p><b>Scope of this result.</b> Sparse scores use 16 part–frame pairs on one clip, against approximate assistant-authored polygons. The initial frame alone prompts tracking; there are no later corrections. Masks can include nearby pixels. SAM 2 may have seen DAVIS in training.</p><p>The selected predicted mask is edited only after subtracting every unselected predicted mask. This protects predicted regions, not anatomical truth. This is deterministic recoloring, not generative video editing or a face-identity result.</p></div><div><p><b>Provenance.</b> Video: DAVIS authors, <a href="https://davischallenge.org/" target="_blank" rel="noopener">car-roundabout</a>, using <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a> terms. Preview modifications: MP4 compression, new part tags and optional recoloring. No endorsement is implied. Perazzi et al., CVPR 2016.</p><p>Predictions: <a href="https://github.com/facebookresearch/sam2" target="_blank" rel="noopener">SAM 2.1 Hiera Tiny</a> (Apache 2.0; Ravi et al., 2024). All frames and masks are embedded. Controls require no model rerun or internet. The PNG saves the edited frame without diagnostic overlays.</p></div></footer>
-</main><script id="demo-data" type="application/json">__DATA__</script>
-<script>
+<footer><div><div class="metrics" id="metrics"></div><p><b>Scope of this result.</b> <span id="score-scope">Sparse scores compare predicted parts with approximate assistant-authored polygons.</span> The initial frame alone prompts tracking; there are no later corrections. Masks can include nearby pixels. SAM 2 may have seen DAVIS in training.</p><p>The selected predicted mask is edited only after subtracting every unselected predicted mask. This protects predicted regions, not anatomical truth. This is deterministic recoloring, not generative video editing or a face-identity result.</p></div><div><p><b>Provenance.</b> Video: DAVIS authors, <a id="sequence-credit" href="https://davischallenge.org/" target="_blank" rel="noopener">DAVIS car sequence</a>, using <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a> terms. Preview modifications: MP4 compression, new part tags and optional recoloring. No endorsement is implied. Perazzi et al., CVPR 2016.</p><p>Predictions: <a href="https://github.com/facebookresearch/sam2" target="_blank" rel="noopener">SAM 2.1 Hiera Tiny</a> (Apache 2.0; Ravi et al., 2024). All frames and masks are embedded. Controls require no model rerun or internet. The PNG saves the edited frame without diagnostic overlays.</p></div></footer>
+</main><script>
 'use strict';
-const D=JSON.parse(document.getElementById('demo-data').textContent), $=id=>document.getElementById(id);
+// Colab may remove inert application/json script elements from displayed HTML.
+// Inline, HTML-escaped JSON keeps the same payload available offline and there.
+const D=__DATA__, $=id=>document.getElementById(id);
 const video=$('source'), canvas=$('preview'), ctx=canvas.getContext('2d',{willReadFrequently:true});
 canvas.width=D.width;canvas.height=D.height;video.width=D.width;video.height=D.height;
 const clean=document.createElement('canvas');clean.width=D.width;clean.height=D.height;
@@ -175,6 +176,12 @@ const clampFrame=seconds=>Math.max(0,Math.min(D.count-1,Math.floor(Math.max(0,se
 const niceName=p=>p.name.replaceAll('_',' ');
 for(const p of D.parts){const option=document.createElement('option');option.value=p.id;option.textContent=`${niceName(p)} · ID ${p.id}`;$('part').append(option);}
 $('scrub').max=D.count-1;
+$('clock').textContent=`00 / ${D.count-1}`;
+$('frame-status').textContent=`${D.count} frames · ${D.fps} fps · native ${D.width} × ${D.height}`;
+$('sequence-label').textContent=`DAVIS · ${D.registry.sequence}`;
+$('sequence-credit').textContent=D.registry.sequence;
+const scored=D.metrics['SAM2.1 tiny']?.scored_part_frames;
+if(Number.isInteger(scored))$('score-scope').textContent=`Sparse scores use ${scored} part–frame pairs on this clip, against approximate assistant-authored polygons.`;
 for(const [name,score] of Object.entries(D.metrics)){
  const box=document.createElement('div');box.className='metric';const value=document.createElement('strong'),label=document.createElement('span');
  value.textContent=`${(100*score.mean_iou).toFixed(1)}%`;label.textContent=`${name} · mean IoU`;box.append(value,label);$('metrics').append(box);
