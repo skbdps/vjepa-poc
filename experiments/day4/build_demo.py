@@ -10,6 +10,7 @@ import argparse
 import base64
 import hashlib
 import json
+import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -120,9 +121,16 @@ def build_demo(frames_dir, masks_file, registry_file, output, fps=12, results_fi
                        "embedded_video_sha256": hashlib.sha256(video_bytes).hexdigest()},
         "validation": {"rle_exact_roundtrips": count * len(ids), "frame_index_bounds": "passed"},
     }
+    sequence_key = re.sub(r"[^a-zA-Z0-9_-]", "-", registry["sequence"])
+    payload["editorId"] = f"part-editor-{sequence_key}-{payload['provenance']['masks_sha256'][:10]}"
     # '<' is escaped so a user-supplied registry name cannot close the JSON script.
     html = HTML.replace("__DATA__", json.dumps(payload, separators=(",", ":")).replace("<", "\\u003c"))
     html = html.replace("__VIDEO__", base64.b64encode(video_bytes).decode("ascii"))
+    # Unique IDs preserve label associations when multiple editors share a Colab
+    # output document. JavaScript also queries only its own root container.
+    html = re.sub(r'id="([^"]+)"', lambda m: (f'id="{payload["editorId"]}"' if m[1] == "__ROOT_ID__"
+                  else f'id="{payload["editorId"]}-{m[1]}" data-control="{m[1]}"'), html)
+    html = re.sub(r'for="([^"]+)"', lambda m: f'for="{payload["editorId"]}-{m[1]}"', html)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(html)
     return {"output": str(output), "bytes": output.stat().st_size,
@@ -145,27 +153,31 @@ video,canvas{width:100%;height:auto;display:block;aspect-ratio:854/480}.panel{ba
 .controls{display:grid;grid-template-columns:1.15fr .65fr 1fr 1fr;gap:24px;align-items:center}label,.control-title{display:block;font-size:12px;color:var(--muted);margin-bottom:7px}
 select,button,input[type=color]{font:inherit;color:var(--text);background:#222f3f;border:1px solid #40516a;border-radius:7px;min-height:38px}select{padding:7px 12px;width:100%}button{padding:7px 14px;cursor:pointer}button:hover{background:#304258}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 input[type=color]{padding:3px;width:100%;max-width:116px;cursor:pointer}input[type=range]{accent-color:var(--accent);width:100%;cursor:pointer}.strength-label{display:flex;justify-content:space-between}.toggles label{display:flex;gap:9px;align-items:center;margin:3px 0;font-size:13px;color:var(--text)}.toggles input{accent-color:var(--accent)}
-.transport{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);margin-top:17px;padding-top:17px}.transport>input{flex:1;min-width:80px}.transport output{font:12px ui-monospace,monospace;min-width:103px;color:var(--muted)}#play{background:#345e55;border-color:#54887b;min-width:83px}.step{padding:6px 11px}.status{display:flex;justify-content:space-between;gap:16px;margin-top:13px;font-size:12px;color:var(--muted)}#selection{color:var(--accent)}
-footer{margin-top:22px;font-size:12px;color:var(--muted);display:grid;grid-template-columns:1fr 1fr;gap:28px}footer b{font-weight:650;color:#d7e3f1}footer p+p{margin-top:7px}a{color:#b2d7ee}#error{display:none;background:#56362b;color:#ffe7df;padding:12px;margin-top:15px;border-radius:8px}.metrics{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:8px}.metric strong{color:var(--text);font-size:20px;display:block;font-variant-numeric:tabular-nums}.metric span{font-size:11px}.sr-only{position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden}
+.transport{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);margin-top:17px;padding-top:17px}.transport>input{flex:1;min-width:80px}.transport output{font:12px ui-monospace,monospace;min-width:103px;color:var(--muted)}[data-control="play"]{background:#345e55;border-color:#54887b;min-width:83px}.step{padding:6px 11px}.status{display:flex;justify-content:space-between;gap:16px;margin-top:13px;font-size:12px;color:var(--muted)}[data-control="selection"]{color:var(--accent)}
+.enable-label{display:flex;align-items:center;gap:8px;margin:8px 0 0;color:var(--text);font-size:12px}.enable-label input{accent-color:var(--accent)}.recipe-bar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px}.recipe-bar button{min-height:33px;font-size:12px;padding:5px 11px}.recipe-bar span{font-size:12px;color:var(--muted);margin-left:4px}input:disabled{opacity:.5}[data-control="recipe-file"]{display:none}
+footer{margin-top:22px;font-size:12px;color:var(--muted);display:grid;grid-template-columns:1fr 1fr;gap:28px}footer b{font-weight:650;color:#d7e3f1}footer p+p{margin-top:7px}a{color:#b2d7ee}[data-control="error"]{display:none;background:#56362b;color:#ffe7df;padding:12px;margin-top:15px;border-radius:8px}.metrics{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:8px}.metric strong{color:var(--text);font-size:20px;display:block;font-variant-numeric:tabular-nums}.metric span{font-size:11px}.sr-only{position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden}
 @media(max-width:850px){main{padding:20px 15px}.views{grid-template-columns:1fr}.controls{grid-template-columns:1fr 1fr;gap:16px}footer{grid-template-columns:1fr;gap:16px}header{display:block}.badge{display:inline-block;margin-top:12px}.transport{gap:8px}.transport output{min-width:78px;font-size:11px}.step{display:none}.status{display:block}.status span{display:block}} 
-</style></head><body><main>
-<header><div><div class="eyebrow">VJEPA research / Day 4</div><h1>Choose a part. Keep the edit.</h1><p>Change the door or window once, then follow the same tagged part through the clip.</p></div><span class="badge">Offline research prototype · SAM 2.1 masks</span></header>
+</style></head><body><main id="__ROOT_ID__">
+<header><div><div class="eyebrow">VJEPA research / Day 4</div><h1>Choose a part. Keep the edit.</h1><p>Give the door and window their own colors, then keep both edits through the clip.</p></div><span class="badge">Offline research prototype · SAM 2.1 masks</span></header>
 <section class="views" aria-label="Original and edited video comparison">
 <figure class="view"><figcaption>Original <span id="sequence-label">DAVIS</span></figcaption><video id="source" muted playsinline preload="auto" aria-label="Original car video" src="data:video/mp4;base64,__VIDEO__"></video></figure>
 <figure class="view"><figcaption>Editable preview <span id="preview-label">car_1 / front_door_panel</span></figcaption><canvas id="preview" width="854" height="480" aria-label="Recolored video preview"></canvas></figure>
 </section>
 <section class="panel" aria-label="Part editing controls">
-<div class="controls"><div><label for="part">Tagged part · car_1</label><select id="part"></select></div><div><label for="color">Edit color</label><input id="color" type="color" value="#238cf0"></div><div><label class="strength-label" for="strength"><span>Strength</span><output id="strength-value">75%</output></label><input id="strength" type="range" min="0" max="100" value="75"></div><div class="toggles"><label><input id="outlines" type="checkbox">Show predicted outlines</label><label><input id="tags" type="checkbox">Show stable part tags</label></div></div>
+<div class="controls"><div><label for="part">Adjust settings for · car_1</label><select id="part"></select><label class="enable-label"><input id="enabled" type="checkbox" checked>Enable edit for this part</label></div><div><label for="color">Part color</label><input id="color" type="color" value="#238cf0"></div><div><label class="strength-label" for="strength"><span>Part strength</span><output id="strength-value">75%</output></label><input id="strength" type="range" min="0" max="100" step="0.1" value="75"></div><div class="toggles"><label><input id="outlines" type="checkbox">Show predicted outlines</label><label><input id="tags" type="checkbox">Show stable part tags</label></div></div>
+<div class="recipe-bar"><button id="reset" type="button">Reset all edits</button><button id="export-recipe" type="button">Export recipe</button><button id="import-recipe" type="button">Import recipe</button><input id="recipe-file" type="file" accept="application/json,.json" aria-label="Import edit recipe JSON"><span id="recipe-status" aria-live="polite">Settings stay with each part ID.</span></div>
 <div class="transport"><button id="play" type="button">Play</button><button id="previous" class="step" type="button" aria-label="Previous frame">←</button><button id="next" class="step" type="button" aria-label="Next frame">→</button><label for="scrub" class="sr-only">Video frame</label><input id="scrub" type="range" min="0" max="63" value="0" step="1"><output id="clock">00 / 63</output><button id="save" type="button">Save frame</button></div>
 <div class="status"><span id="selection" aria-live="polite">Preparing predicted masks…</span><span id="frame-status">64 frames · 12 fps · native 854 × 480</span></div>
 </section>
 <div id="error" role="alert"></div>
-<footer><div><div class="metrics" id="metrics"></div><p><b>Scope of this result.</b> <span id="score-scope">Sparse scores compare predicted parts with approximate assistant-authored polygons.</span> The initial frame alone prompts tracking; there are no later corrections. Masks can include nearby pixels. SAM 2 may have seen DAVIS in training.</p><p>The selected predicted mask is edited only after subtracting every unselected predicted mask. This protects predicted regions, not anatomical truth. This is deterministic recoloring, not generative video editing or a face-identity result.</p></div><div><p><b>Provenance.</b> Video: DAVIS authors, <a id="sequence-credit" href="https://davischallenge.org/" target="_blank" rel="noopener">DAVIS car sequence</a>, using <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a> terms. Preview modifications: MP4 compression, new part tags and optional recoloring. No endorsement is implied. Perazzi et al., CVPR 2016.</p><p>Predictions: <a href="https://github.com/facebookresearch/sam2" target="_blank" rel="noopener">SAM 2.1 Hiera Tiny</a> (Apache 2.0; Ravi et al., 2024). All frames and masks are embedded. Controls require no model rerun or internet. The PNG saves the edited frame without diagnostic overlays.</p></div></footer>
+<footer><div><div class="metrics" id="metrics"></div><p><b>Scope of this result.</b> <span id="score-scope">Sparse scores compare predicted parts with approximate assistant-authored polygons.</span> The initial frame alone prompts tracking; there are no later corrections. Masks can include nearby pixels. SAM 2 may have seen DAVIS in training.</p><p>Each enabled part is edited after subtracting every other predicted mask. Overlap pixels and disabled parts stay unchanged. This protects predicted regions, not anatomical truth. This is deterministic recoloring, not generative video editing or a face-identity result.</p></div><div><p><b>Provenance.</b> Video: DAVIS authors, <a id="sequence-credit" href="https://davischallenge.org/" target="_blank" rel="noopener">DAVIS car sequence</a>, using <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a> terms. Preview modifications: MP4 compression, new part tags and optional recoloring. No endorsement is implied. Perazzi et al., CVPR 2016.</p><p>Predictions: <a href="https://github.com/facebookresearch/sam2" target="_blank" rel="noopener">SAM 2.1 Hiera Tiny</a> (Apache 2.0; Ravi et al., 2024). Controls require no model rerun or internet. Recipe JSON saves part settings only. PNG saves the edited frame without overlays. Browser preview uses compressed video; native replay uses original JPEG frames.</p></div></footer>
 </main><script>
 'use strict';
+(()=>{
 // Colab may remove inert application/json script elements from displayed HTML.
 // Inline, HTML-escaped JSON keeps the same payload available offline and there.
-const D=__DATA__, $=id=>document.getElementById(id);
+const D=__DATA__;
+const root=document.getElementById(D.editorId),$=id=>root.querySelector(`[data-control="${id}"]`);
 const video=$('source'), canvas=$('preview'), ctx=canvas.getContext('2d',{willReadFrequently:true});
 canvas.width=D.width;canvas.height=D.height;video.width=D.width;video.height=D.height;
 const clean=document.createElement('canvas');clean.width=D.width;clean.height=D.height;
@@ -175,6 +187,40 @@ const cleanCtx=clean.getContext('2d');let shownFrame=0,lastMediaTime=0;
 const clampFrame=seconds=>Math.max(0,Math.min(D.count-1,Math.floor(Math.max(0,seconds)*D.fps+1e-5)));
 const niceName=p=>p.name.replaceAll('_',' ');
 for(const p of D.parts){const option=document.createElement('option');option.value=p.id;option.textContent=`${niceName(p)} · ID ${p.id}`;$('part').append(option);}
+const RECIPE_SCHEMA='vjepa.part-edit-recipe',RECIPE_VERSION=1;
+function defaultRecipe(registry=D.registry){
+ const door=registry.parts.find(p=>p.name==='front_door_panel');
+ return {schema:RECIPE_SCHEMA,version:RECIPE_VERSION,sequence:registry.sequence,
+  parts:registry.parts.map(p=>({id:p.id,name:p.name,enabled:p.id===door?.id,
+   color:p.name==='front_window'?[240,180,35]:[35,140,240],strength:.75}))};
+}
+function validateRecipe(recipe,registry=D.registry){
+ const keys=(value,expected)=>value!==null&&typeof value==='object'&&!Array.isArray(value)&&Object.keys(value).sort().join(',')===expected.slice().sort().join(',');
+ if(!keys(recipe,['schema','version','sequence','parts']))throw Error('Recipe needs exactly schema, version, sequence and parts.');
+ if(recipe.schema!==RECIPE_SCHEMA||recipe.version!==RECIPE_VERSION)throw Error('Unsupported recipe schema/version.');
+ if(recipe.sequence!==registry.sequence)throw Error('Recipe belongs to a different video sequence.');
+ if(!Array.isArray(recipe.parts)||recipe.parts.length!==registry.parts.length)throw Error('Recipe must contain every registered part exactly once.');
+ const expected=new Map(registry.parts.map(p=>[p.id,p.name])),normalized=new Map();
+ for(const part of recipe.parts){
+  if(!keys(part,['id','name','enabled','color','strength']))throw Error('Unexpected or missing part controls.');
+  if(!Number.isInteger(part.id)||!expected.has(part.id)||normalized.has(part.id))throw Error('Unknown or duplicate part ID.');
+  if(part.name!==expected.get(part.id))throw Error('Part name does not match its stable ID.');
+  if(typeof part.enabled!=='boolean')throw Error('enabled must be true or false.');
+  if(!Array.isArray(part.color)||part.color.length!==3||part.color.some(c=>!Number.isInteger(c)||c<0||c>255))throw Error('Color needs three integer RGB channels from 0 to 255.');
+  if(typeof part.strength!=='number'||!Number.isFinite(part.strength)||part.strength<0||part.strength>1)throw Error('Strength must be a finite number from 0 to 1.');
+  normalized.set(part.id,{id:part.id,name:part.name,enabled:part.enabled,color:part.color.slice(),strength:part.strength});
+ }
+ return {schema:RECIPE_SCHEMA,version:RECIPE_VERSION,sequence:registry.sequence,parts:registry.parts.map(p=>normalized.get(p.id))};
+}
+let editRecipe=validateRecipe(defaultRecipe());
+function selectedControls(){return editRecipe.parts.find(p=>p.id===Number($('part').value));}
+function loadControls(){
+ const part=selectedControls();$('enabled').checked=part.enabled;
+ $('color').value='#'+part.color.map(c=>c.toString(16).padStart(2,'0')).join('');
+ $('strength').value=part.strength*100;$('strength-value').textContent=`${Number((part.strength*100).toFixed(2))}%`;
+ for(const option of $('part').options){const p=editRecipe.parts.find(p=>p.id===Number(option.value));option.textContent=`${niceName(p)} · ${p.enabled?'on':'off'}`;}
+}
+loadControls();
 $('scrub').max=D.count-1;
 $('clock').textContent=`00 / ${D.count-1}`;
 $('frame-status').textContent=`${D.count} frames · ${D.fps} fps · native ${D.width} × ${D.height}`;
@@ -201,11 +247,22 @@ function compositePixels(pixels,masks,selected,color,strength){
    if(!target[p])continue;let protectedPixel=false;
    for(let j=0;j<masks.length;j++){if(j!==selected&&masks[j][p]){protectedPixel=true;break;}}
    if(protectedPixel){protectedCount++;continue;}
-   const i=p*4,gray=Math.round(.299*pixels[i]+.587*pixels[i+1]+.114*pixels[i+2])/255,shade=.35+.65*gray;
-   for(let c=0;c<3;c++)pixels[i+c]=Math.floor(Math.max(0,Math.min(255,(1-strength)*pixels[i+c]+strength*color[c]*shade)));
+   // Match the native OpenCV RGB-to-gray coefficients and NumPy float32 tint.
+   const i=p*4,gray=(9798*pixels[i]+19235*pixels[i+1]+3735*pixels[i+2]+16384)>>15;
+   const f=Math.fround,shade=f(f(.35)+f(f(.65)*f(gray/255)));
+   for(let c=0;c<3;c++)pixels[i+c]=Math.floor(Math.max(0,Math.min(255,(1-strength)*pixels[i+c]+f(f(strength)*f(color[c]*shade)))));
    changed++;
  }
  return {permitted:changed,protectedOverlap:protectedCount};
+}
+function compositeRecipePixels(pixels,masks,recipe,ids=D.ids){
+ let permitted=0,active=0;
+ for(const part of recipe.parts){
+  if(!part.enabled||part.strength===0)continue;
+  const index=ids.indexOf(part.id);if(index<0)throw Error('Recipe part has no predicted mask.');
+  permitted+=compositePixels(pixels,masks,index,part.color,part.strength).permitted;active++;
+ }
+ return {permitted,active};
 }
 function drawOverlays(masks,selected){
  if(!$('outlines').checked&&!$('tags').checked)return;
@@ -221,21 +278,42 @@ function drawOverlays(masks,selected){
 function render(mediaTime=lastMediaTime){
  if(video.readyState<2||video.seeking)return;
  lastMediaTime=mediaTime;shownFrame=clampFrame(mediaTime);
- const selected=D.ids.indexOf(Number($('part').value)),masks=masksAt(shownFrame),hex=$('color').value;
- const color=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)),strength=Number($('strength').value)/100;
+ const selected=D.ids.indexOf(Number($('part').value)),masks=masksAt(shownFrame);
  ctx.drawImage(video,0,0,D.width,D.height);const frame=ctx.getImageData(0,0,D.width,D.height);
- const stats=compositePixels(frame.data,masks,selected,color,strength);ctx.putImageData(frame,0,0);cleanCtx.putImageData(frame,0,0);
+ const stats=compositeRecipePixels(frame.data,masks,editRecipe);ctx.putImageData(frame,0,0);cleanCtx.putImageData(frame,0,0);
  drawOverlays(masks,selected);$('scrub').value=shownFrame;$('clock').textContent=`${String(shownFrame).padStart(2,'0')} / ${D.count-1}`;
- const p=D.parts[selected];$('preview-label').textContent=`${p.parent} / ${p.name}`;$('strength-value').textContent=`${Math.round(strength*100)}%`;
- const other=D.parts.filter((_,j)=>j!==selected).map(niceName).join(', ');
- $('selection').textContent=`Editing ${niceName(p)} · protecting ${other}`;
+ const p=D.parts[selected];$('preview-label').textContent=`${stats.active} active ${stats.active===1?'edit':'edits'} · ${p.parent}`;
+ const enabled=editRecipe.parts.filter(p=>p.enabled&&p.strength>0).map(niceName);
+ $('selection').textContent=enabled.length?`Enabled: ${enabled.join(' + ')}`:'No active edits · original pixels';
  $('frame-status').textContent=`${stats.permitted.toLocaleString()} permitted pixels · frame ${shownFrame} · ${D.fps} fps`;
 }
 function showError(error){$('error').textContent=String(error.message||error);$('error').style.display='block';}
+function clearError(){$('error').textContent='';$('error').style.display='none';}
 function safeRender(time){try{render(time);}catch(error){video.pause();showError(error);}}
 function seek(frame){video.pause();video.currentTime=(Math.max(0,Math.min(D.count-1,frame))+.15)/D.fps;}
-$('part').addEventListener('change',()=>safeRender(lastMediaTime));
-for(const id of ['color','strength','outlines','tags'])$(id).addEventListener('input',()=>safeRender(lastMediaTime));
+$('part').addEventListener('change',()=>{loadControls();safeRender(lastMediaTime);});
+for(const id of ['color','strength','enabled'])$(id).addEventListener('input',()=>{
+ const part=selectedControls();
+ if(id==='color')part.color=[1,3,5].map(i=>parseInt($('color').value.slice(i,i+2),16));
+ if(id==='strength')part.strength=Number($('strength').value)/100;
+ if(id==='enabled')part.enabled=$('enabled').checked;
+ loadControls();clearError();$('recipe-status').textContent='Settings stay with each part ID.';safeRender(lastMediaTime);
+});
+for(const id of ['outlines','tags'])$(id).addEventListener('input',()=>safeRender(lastMediaTime));
+$('reset').addEventListener('click',()=>{editRecipe=defaultRecipe();editRecipe.parts.forEach(p=>p.enabled=false);loadControls();clearError();$('recipe-status').textContent='All edits reset and disabled.';safeRender(lastMediaTime);});
+function downloadBlob(blob,filename){const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=filename;root.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+$('export-recipe').addEventListener('click',()=>{
+ const recipe=validateRecipe(editRecipe);
+ downloadBlob(new Blob([JSON.stringify(recipe,null,2)+'\n'],{type:'application/json'}),`${D.registry.sequence}_part_edits.recipe.json`);
+ $('recipe-status').textContent='Recipe exported · part controls only.';
+});
+$('import-recipe').addEventListener('click',()=>$('recipe-file').click());
+$('recipe-file').addEventListener('change',async()=>{
+ const file=$('recipe-file').files[0];if(!file)return;
+ try{if(file.size>65536)throw Error('Recipe exceeds the 64 KB controls-only limit.');const candidate=validateRecipe(JSON.parse(await file.text()));editRecipe=candidate;loadControls();clearError();$('recipe-status').textContent='Recipe imported · settings restored by part ID.';safeRender(lastMediaTime);}
+ catch(error){showError(error);$('recipe-status').textContent='Import rejected; previous settings retained.';}
+ finally{$('recipe-file').value='';}
+});
 $('scrub').addEventListener('input',()=>seek(Number($('scrub').value)));
 $('previous').addEventListener('click',()=>seek(shownFrame-1));$('next').addEventListener('click',()=>seek(shownFrame+1));
 $('play').addEventListener('click',async()=>{try{if(video.paused){if(video.ended||shownFrame===D.count-1)video.currentTime=0;await video.play();}else video.pause();}catch(error){showError(error);}});
@@ -246,9 +324,11 @@ if('requestVideoFrameCallback' in video){
 }else{
  const tick=()=>{if(!video.paused&&!video.seeking)safeRender(video.currentTime);requestAnimationFrame(tick);};requestAnimationFrame(tick);
 }
-$('save').addEventListener('click',()=>{if(video.readyState<2)return;const link=document.createElement('a');link.download=`car_1_${D.parts[D.ids.indexOf(Number($('part').value))].name}_frame_${String(shownFrame).padStart(3,'0')}.png`;link.href=clean.toDataURL('image/png');link.click();});
+$('save').addEventListener('click',()=>{if(video.readyState<2)return;const link=document.createElement('a');link.download=`${D.registry.sequence}_edits_frame_${String(shownFrame).padStart(3,'0')}.png`;link.href=clean.toDataURL('image/png');root.append(link);link.click();link.remove();});
 // Pure functions exposed only for local verification; no network or model calls.
-window.partEditorTest={decodeRLE,clampFrame,compositePixels};
+window.partEditorTests=window.partEditorTests||{};
+window.partEditorTests[D.editorId]={decodeRLE,clampFrame,compositePixels,compositeRecipePixels,defaultRecipe,validateRecipe};
+})();
 </script></body></html>'''
 
 

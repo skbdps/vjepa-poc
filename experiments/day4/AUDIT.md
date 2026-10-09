@@ -49,6 +49,23 @@ Visible localization for selected V-JEPA over windows 1–4 is 77.52%, 57.45%, 3
 
 Bootstrap samples preserve whole clips rather than treating correlated frames as independent. They describe variation under this small renderer family, not real-video generalization. Six clips per condition and 18 reappearance events remain limited evidence. Zero-observed-error bootstrap intervals can collapse to zero and do not prove zero future risk. Intervals are descriptive and are not corrected for multiple comparisons.
 
+## Supplementary recovery timing
+
+The frozen recovery metric measures only the first unambiguous visible tubelet. A separate `recovery_analysis.py` was proposed after V-JEPA test results but before SAM2 held-out scores were viewed, then applied to saved CSV predictions without model reruns or changes to frozen scoring. Its horizon-zero counts exactly reproduce every method's primary result. This is a post-hoc descriptive outcome, not a replacement primary outcome.
+
+Events come only from existing recovery labels. Latency is the offset in source-frame indices between two-frame tubelets; it is not exact per-frame timing, wall-clock latency, or causal detection delay. A new fully absent tubelet ends the episode, and missing rows or clip end truncate follow-up. Ambiguous tubelets cannot be hits and are recorded explicitly. The implementation was checked with fabricated trajectories containing delayed recovery, intervening ambiguity, renewed absence, missing rows, and clip-end censoring.
+
+| Horizon after first visible tubelet | Fully observed events | Selected V-JEPA observed successes | Global V-JEPA observed successes | Template observed successes |
+|---|---:|---:|---:|---:|
+| 0 source frames | 18/18 | 5/18 | 7/18 | 0/18 |
+| 2 source frames | 18/18 | 11/18 | 12/18 | 0/18 |
+| 4 source frames | 18/18 | 12/18 | 12/18 | 2/18 |
+| 8 source frames | 6/18 | 12 known | 12 known | 16 known |
+
+At the eight-frame horizon, 12 events reach clip end before the complete horizon. A hit observed before clip end remains a known success. Selected V-JEPA has one unresolved censored event, giving 12–13 possible successes among 18; global V-JEPA and template have no unresolved events because their censored trajectories already contain hits. Among the six fully observed eight-frame horizons, selected V-JEPA recovers on 1/6, global V-JEPA on 0/6, and template on 4/6. No intervening ambiguous or renewed-absence tubelets occur in these actual evaluated follow-up paths; the analyzer nevertheless handles and reports both.
+
+The template's immediate 0/18 score therefore does **not** mean it cannot recover: it often recovers later. Saved details are in `run_2026-10-09/vjepa_recovery_analysis.json`, including complete-horizon denominators, every event trajectory, censor reasons, and exact immediate-metric verification.
+
 ## Real-car demonstration
 
 The real-video methods are SAM2.1 Tiny and classical geometry/flow; these are not real-video V-JEPA results. Named part IDs are supplied in the first-frame annotation and retained by the pipeline, rather than discovered semantically by the model.
