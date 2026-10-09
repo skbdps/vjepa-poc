@@ -12,6 +12,8 @@ Validated on 2026-10-09 with the two completed SAM2 mask sequences and in the ex
 - Browser recipe export produces exactly the same parsed JSON as `run_2026-10-09/car_roundabout/dual_part_edit.recipe.json`. The downloaded export is preserved as `browser_export.recipe.json`.
 - The Colab embedded file chooser did not open through the automation interface, so browser recipe import is **not end-to-end verified in Colab**. Validation and native replay of the exported recipe passed; no successful browser import is claimed.
 
+The final browser pass used commit `66a91f969f583a245cf3e9f66977f24ae940bb55`. It confirmed readable headings, isolated editor styles, two enabled parts with stable tags at frame 32, and independent state on the second clip. The exported research notebook has 16 valid Python code cells, 102 output blocks, and no cell-error outputs; the GitHub copy strips outputs and execution counts.
+
 ## Array-level verification
 
 The build checks exact RLE mask roundtrips (208 part-frame masks across both clips) and frame bounds. The compositing checks cover outside-mask and overlapping-mask preservation. All 104 native replay frames report zero modifications outside enabled, nonoverlapping predicted regions. Invalid recipe schemas, wrong sequence/part IDs, and invalid control values are rejected by the recipe validator. JavaScript/Python color arithmetic was compared on random RGB inputs at multiple strengths.

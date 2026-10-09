@@ -50,7 +50,7 @@ The code and intermediate freezes are committed as the experiment progresses on 
 - [Visual comparison of both real clips](run_2026-10-09/two_clip_part_tracking_comparison.png)
 - [Footage/model attribution](ATTRIBUTION.md)
 
-The executed notebook is saved in [Google Colab](https://colab.research.google.com/drive/1wipvFdtlDOuRwp6Cd9sQpQUCZQNxo2HP).
+The final cell displays saved results and both editors without model inference. The executed notebook is saved in [Google Colab](https://colab.research.google.com/drive/1wipvFdtlDOuRwp6Cd9sQpQUCZQNxo2HP#scrollTo=49JjG5hTIDiv).
 
 ## Reproduce the synthetic V-JEPA experiment
 
