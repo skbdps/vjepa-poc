@@ -7,6 +7,7 @@ Controllable AI video generation POC using V-JEPA 2.1 latent-space manipulation.
 The ongoing work on `experiment/part-consistency-colab` tests persistent object-part identity and selective video edits on a Colab T4.
 
 - [Day 3: initial part-localization diagnostic](experiments/day3/README.md)
+- [Day 5: fixed whole-car constraints for door/window edits](experiments/day5/README.md) — source frozen; GPU execution in progress ([checkpoint](experiments/day5/PROGRESS.md)).
 - [Day 4: stronger benchmarks, real-car part masks, and selective editing](experiments/day4/README.md)
 - [Offline interactive part editor](experiments/day4/run_2026-10-09/car_roundabout/interactive_part_editor.html) — download and open the HTML; control door/window colors independently, save a recipe, and replay it without another model run.
 - [Real-car two-part edit preview](experiments/day4/run_2026-10-09/car_roundabout/dual_part_edit.mp4)
