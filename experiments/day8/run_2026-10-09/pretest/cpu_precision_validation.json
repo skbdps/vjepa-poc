@@ -43,5 +43,12 @@
       "passes_1pct_signal_tolerance": true
     }
   },
-  "chosen_precision": "bfloat16"
+  "chosen_precision": "bfloat16",
+  "production_repeat": {
+    "scene": "train_11000_dx+32",
+    "source_and_target_bitwise_equal_to_validated_bfloat16_cache": true,
+    "production_pair_seconds_including_render_and_save": 62.11140096499912,
+    "note": "Timing sourced from production feature manifest; compare exact record below.",
+    "cache_sha256": "963388316dd58e08a76649399d93267ea5d4273c7b43029b140d2883e1ffd5ba"
+  }
 }
