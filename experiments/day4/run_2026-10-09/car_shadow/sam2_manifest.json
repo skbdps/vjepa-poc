@@ -1,0 +1,15 @@
+{
+  "seconds": 27.669966084999942,
+  "peak_gpu_gib": 1.8996896743774414,
+  "precision": "float32",
+  "gpu": "Tesla T4",
+  "torch": "2.11.0+cu130",
+  "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+  "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+  "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+  "postprocessing": false,
+  "prompt_frames": [
+    0
+  ],
+  "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+}

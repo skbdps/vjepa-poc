@@ -1,0 +1,2802 @@
+{
+  "split": "test",
+  "frozen_config": {
+    "source_digest": "aae772368b244728f8085a1ed3ddf1967872ead4c4321a0ae1bfc17e26199b00",
+    "thresholds": {
+      "global_vjepa": 0.7884913682937622,
+      "template_flow": 0.8655714392662048,
+      "persistent_vjepa": 0.7734082937240601,
+      "no_motion": 0.7749285697937012,
+      "no_context": 0.7973771691322327,
+      "no_memory": 0.7668800354003906
+    },
+    "selected_method": "no_memory",
+    "selection_rule": "maximize mean(visible localization, absent specificity) on development only; prefer full method on ties",
+    "development_utilities": {
+      "global_vjepa": 0.6424590734935562,
+      "template_flow": 0.678944618599791,
+      "persistent_vjepa": 0.6621212121212121,
+      "no_motion": 0.6629745733194009,
+      "no_context": 0.6406826889585511,
+      "no_memory": 0.694949494949495
+    },
+    "manifest": {
+      "model": "vjepa2_1_vit_large_384",
+      "upstream_commit": "204698b45b3712590f06245fbfba32d3be539812",
+      "source_digest": "aae772368b244728f8085a1ed3ddf1967872ead4c4321a0ae1bfc17e26199b00",
+      "benchmark": {
+        "protocol": "day4_v1",
+        "resolution": 384,
+        "frames": 64,
+        "tubelet_frames": 2,
+        "patch_size": 16,
+        "parts": {
+          "1": "car_A.front_door",
+          "2": "car_A.window",
+          "3": "car_B.front_door",
+          "4": "car_B.window"
+        },
+        "split_seeds": {
+          "calibration": {
+            "long_occlusion": [
+              1000,
+              1001
+            ],
+            "crossing": [
+              1100,
+              1101
+            ],
+            "scale_camera": [
+              1200,
+              1201
+            ]
+          },
+          "development": {
+            "long_occlusion": [
+              2000,
+              2001
+            ],
+            "crossing": [
+              2100,
+              2101
+            ],
+            "scale_camera": [
+              2200,
+              2201
+            ]
+          },
+          "test": {
+            "long_occlusion": [
+              3000,
+              3001,
+              3002,
+              3003,
+              3004,
+              3005
+            ],
+            "crossing": [
+              3100,
+              3101,
+              3102,
+              3103,
+              3104,
+              3105
+            ],
+            "scale_camera": [
+              3200,
+              3201,
+              3202,
+              3203,
+              3204,
+              3205
+            ]
+          }
+        },
+        "annotation": "frame-zero mask only",
+        "test_policy": "Freeze thresholds and algorithm configuration before opening sealed-test metrics",
+        "visibility": "at least one patch >=70% target over pair and >=65% each frame; absence requires zero target pixels both frames",
+        "exclusions": "first tubelet and visible slivers with no eligible patch",
+        "identity_switch": "transition between predicted car IDs on unambiguous visible targets, initialized to true source ID; last ID retained over missing outputs",
+        "conditions": {
+          "long_occlusion": "stationary foreground wall hides A for extended interval; return and reappearance; B moves separately",
+          "crossing": "two distinct-bodied cars exchange diagonal positions; foreground B occludes A; visible context resolves identity",
+          "scale_camera": "up to 15% sprite scale, 8-degree in-plane rotation, global camera translation, moving repeated-colour distractors"
+        },
+        "limitations": "2-D rendered sprites, fixed same-colour target appearance; no 3-D viewpoint change, real faces, generative rendering or causal encoder claim"
+      },
+      "python": "3.13.15",
+      "torch": "2.11.0+cu130",
+      "numpy": "2.1.3",
+      "gpu": "Tesla T4",
+      "cuda": "13.0",
+      "peak_gpu_allocated_gib": 1.365,
+      "annotation": "frame0 pixel masks only for every method",
+      "features": "frozen FP16; four disjoint16frame windows; offline attention within each window",
+      "configs": {
+        "persistent_vjepa": {
+          "context_weight": 0.15,
+          "motion_weight": 0.035,
+          "memory_weight": 0.2,
+          "update_rate": 0.1,
+          "state_threshold": 0.79,
+          "update_margin": 0.01,
+          "motion_sigma": 2.0,
+          "fb_error": 1.5
+        },
+        "no_motion": {
+          "context_weight": 0.15,
+          "motion_weight": 0.0,
+          "memory_weight": 0.2,
+          "update_rate": 0.1,
+          "state_threshold": 0.79,
+          "update_margin": 0.01,
+          "motion_sigma": 2.0,
+          "fb_error": 1.5
+        },
+        "no_context": {
+          "context_weight": 0.0,
+          "motion_weight": 0.035,
+          "memory_weight": 0.2,
+          "update_rate": 0.1,
+          "state_threshold": 0.79,
+          "update_margin": 0.01,
+          "motion_sigma": 2.0,
+          "fb_error": 1.5
+        },
+        "no_memory": {
+          "context_weight": 0.15,
+          "motion_weight": 0.035,
+          "memory_weight": 0.0,
+          "update_rate": 0.1,
+          "state_threshold": 0.79,
+          "update_margin": 0.01,
+          "motion_sigma": 2.0,
+          "fb_error": 1.5
+        }
+      },
+      "template_config": {
+        "context_px": 12,
+        "scales": [
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2
+        ],
+        "motion_weight": 0.08,
+        "state_threshold": 0.6,
+        "update_margin": 0.02,
+        "motion_sigma": 2.0,
+        "fb_error": 1.5
+      }
+    },
+    "calibration_scenes": [
+      "calibration_long_occlusion_1000",
+      "calibration_long_occlusion_1001",
+      "calibration_crossing_1100",
+      "calibration_crossing_1101",
+      "calibration_scale_camera_1200",
+      "calibration_scale_camera_1201"
+    ],
+    "development_scenes": [
+      "development_long_occlusion_2000",
+      "development_long_occlusion_2001",
+      "development_crossing_2100",
+      "development_crossing_2101",
+      "development_scale_camera_2200",
+      "development_scale_camera_2201"
+    ]
+  },
+  "manifest": {
+    "model": "vjepa2_1_vit_large_384",
+    "upstream_commit": "204698b45b3712590f06245fbfba32d3be539812",
+    "source_digest": "aae772368b244728f8085a1ed3ddf1967872ead4c4321a0ae1bfc17e26199b00",
+    "benchmark": {
+      "protocol": "day4_v1",
+      "resolution": 384,
+      "frames": 64,
+      "tubelet_frames": 2,
+      "patch_size": 16,
+      "parts": {
+        "1": "car_A.front_door",
+        "2": "car_A.window",
+        "3": "car_B.front_door",
+        "4": "car_B.window"
+      },
+      "split_seeds": {
+        "calibration": {
+          "long_occlusion": [
+            1000,
+            1001
+          ],
+          "crossing": [
+            1100,
+            1101
+          ],
+          "scale_camera": [
+            1200,
+            1201
+          ]
+        },
+        "development": {
+          "long_occlusion": [
+            2000,
+            2001
+          ],
+          "crossing": [
+            2100,
+            2101
+          ],
+          "scale_camera": [
+            2200,
+            2201
+          ]
+        },
+        "test": {
+          "long_occlusion": [
+            3000,
+            3001,
+            3002,
+            3003,
+            3004,
+            3005
+          ],
+          "crossing": [
+            3100,
+            3101,
+            3102,
+            3103,
+            3104,
+            3105
+          ],
+          "scale_camera": [
+            3200,
+            3201,
+            3202,
+            3203,
+            3204,
+            3205
+          ]
+        }
+      },
+      "annotation": "frame-zero mask only",
+      "test_policy": "Freeze thresholds and algorithm configuration before opening sealed-test metrics",
+      "visibility": "at least one patch >=70% target over pair and >=65% each frame; absence requires zero target pixels both frames",
+      "exclusions": "first tubelet and visible slivers with no eligible patch",
+      "identity_switch": "transition between predicted car IDs on unambiguous visible targets, initialized to true source ID; last ID retained over missing outputs",
+      "conditions": {
+        "long_occlusion": "stationary foreground wall hides A for extended interval; return and reappearance; B moves separately",
+        "crossing": "two distinct-bodied cars exchange diagonal positions; foreground B occludes A; visible context resolves identity",
+        "scale_camera": "up to 15% sprite scale, 8-degree in-plane rotation, global camera translation, moving repeated-colour distractors"
+      },
+      "limitations": "2-D rendered sprites, fixed same-colour target appearance; no 3-D viewpoint change, real faces, generative rendering or causal encoder claim"
+    },
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "numpy": "2.1.3",
+    "gpu": "Tesla T4",
+    "cuda": "13.0",
+    "peak_gpu_allocated_gib": 1.365,
+    "annotation": "frame0 pixel masks only for every method",
+    "features": "frozen FP16; four disjoint16frame windows; offline attention within each window",
+    "configs": {
+      "persistent_vjepa": {
+        "context_weight": 0.15,
+        "motion_weight": 0.035,
+        "memory_weight": 0.2,
+        "update_rate": 0.1,
+        "state_threshold": 0.79,
+        "update_margin": 0.01,
+        "motion_sigma": 2.0,
+        "fb_error": 1.5
+      },
+      "no_motion": {
+        "context_weight": 0.15,
+        "motion_weight": 0.0,
+        "memory_weight": 0.2,
+        "update_rate": 0.1,
+        "state_threshold": 0.79,
+        "update_margin": 0.01,
+        "motion_sigma": 2.0,
+        "fb_error": 1.5
+      },
+      "no_context": {
+        "context_weight": 0.0,
+        "motion_weight": 0.035,
+        "memory_weight": 0.2,
+        "update_rate": 0.1,
+        "state_threshold": 0.79,
+        "update_margin": 0.01,
+        "motion_sigma": 2.0,
+        "fb_error": 1.5
+      },
+      "no_memory": {
+        "context_weight": 0.15,
+        "motion_weight": 0.035,
+        "memory_weight": 0.0,
+        "update_rate": 0.1,
+        "state_threshold": 0.79,
+        "update_margin": 0.01,
+        "motion_sigma": 2.0,
+        "fb_error": 1.5
+      }
+    },
+    "template_config": {
+      "context_px": 12,
+      "scales": [
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2
+      ],
+      "motion_weight": 0.08,
+      "state_threshold": 0.6,
+      "update_margin": 0.02,
+      "motion_sigma": 2.0,
+      "fb_error": 1.5
+    }
+  },
+  "paired_comparisons": {
+    "no_memory_minus_global_vjepa": {
+      "metric": "localization_accuracy_given_visible",
+      "difference_a_minus_b": -0.019771071800208095,
+      "clip_bootstrap_95ci": [
+        -0.039067118733214674,
+        0.0026192754044601246
+      ],
+      "resamples": 2000,
+      "seed": 914,
+      "unit": "paired clip"
+    },
+    "no_memory_minus_template_flow": {
+      "metric": "localization_accuracy_given_visible",
+      "difference_a_minus_b": -0.09833506763787725,
+      "clip_bootstrap_95ci": [
+        -0.1602903783966281,
+        -0.03705299180040237
+      ],
+      "resamples": 2000,
+      "seed": 914,
+      "unit": "paired clip"
+    }
+  },
+  "methods": {
+    "global_vjepa": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1064,
+          "denominator": 1922,
+          "rate": 0.5535900104058272
+        },
+        "wrong_car_given_visible": {
+          "numerator": 221,
+          "denominator": 1922,
+          "rate": 0.1149843912591051
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1360,
+          "denominator": 1922,
+          "rate": 0.7075962539021852
+        },
+        "false_presence_given_absent": {
+          "numerator": 53,
+          "denominator": 260,
+          "rate": 0.20384615384615384
+        },
+        "recovery_accuracy": {
+          "numerator": 7,
+          "denominator": 18,
+          "rate": 0.3888888888888889
+        },
+        "identity_switches": 93,
+        "balanced_localization_and_absence": 0.6748719282798367,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074
+      },
+      "by_condition": {
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 284,
+            "denominator": 702,
+            "rate": 0.4045584045584046
+          },
+          "wrong_car_given_visible": {
+            "numerator": 186,
+            "denominator": 702,
+            "rate": 0.26495726495726496
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 702,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 528,
+            "denominator": 702,
+            "rate": 0.7521367521367521
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 38,
+          "balanced_localization_and_absence": 0.7022792022792023,
+          "clips": 6,
+          "ambiguous_samples_skipped": 30,
+          "uniform_patch_chance_given_visible": 0.012372883032605255
+        },
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 408,
+            "denominator": 476,
+            "rate": 0.8571428571428571
+          },
+          "wrong_car_given_visible": {
+            "numerator": 6,
+            "denominator": 476,
+            "rate": 0.012605042016806723
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 418,
+            "denominator": 476,
+            "rate": 0.8781512605042017
+          },
+          "false_presence_given_absent": {
+            "numerator": 53,
+            "denominator": 248,
+            "rate": 0.21370967741935484
+          },
+          "recovery_accuracy": {
+            "numerator": 7,
+            "denominator": 12,
+            "rate": 0.5833333333333334
+          },
+          "identity_switches": 8,
+          "balanced_localization_and_absence": 0.8217165898617512,
+          "clips": 6,
+          "ambiguous_samples_skipped": 20,
+          "uniform_patch_chance_given_visible": 0.012674340569561156
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 372,
+            "denominator": 744,
+            "rate": 0.5
+          },
+          "wrong_car_given_visible": {
+            "numerator": 29,
+            "denominator": 744,
+            "rate": 0.038978494623655914
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 414,
+            "denominator": 744,
+            "rate": 0.5564516129032258
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 47,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013202844982078852
+        }
+      },
+      "by_window": {
+        "1": {
+          "localization_accuracy_given_visible": {
+            "numerator": 379,
+            "denominator": 476,
+            "rate": 0.7962184873949579
+          },
+          "wrong_car_given_visible": {
+            "numerator": 7,
+            "denominator": 476,
+            "rate": 0.014705882352941176
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 400,
+            "denominator": 476,
+            "rate": 0.8403361344537815
+          },
+          "false_presence_given_absent": {
+            "numerator": 7,
+            "denominator": 19,
+            "rate": 0.3684210526315789
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 10,
+          "balanced_localization_and_absence": 0.7138987173816894,
+          "clips": 18,
+          "ambiguous_samples_skipped": 9,
+          "uniform_patch_chance_given_visible": 0.012911414565826331
+        },
+        "2": {
+          "localization_accuracy_given_visible": {
+            "numerator": 277,
+            "denominator": 463,
+            "rate": 0.5982721382289417
+          },
+          "wrong_car_given_visible": {
+            "numerator": 6,
+            "denominator": 463,
+            "rate": 0.012958963282937365
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 463,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 311,
+            "denominator": 463,
+            "rate": 0.67170626349892
+          },
+          "false_presence_given_absent": {
+            "numerator": 19,
+            "denominator": 102,
+            "rate": 0.18627450980392157
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 11,
+          "balanced_localization_and_absence": 0.7059988142125101,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.01252024838012959
+        },
+        "3": {
+          "localization_accuracy_given_visible": {
+            "numerator": 174,
+            "denominator": 455,
+            "rate": 0.3824175824175824
+          },
+          "wrong_car_given_visible": {
+            "numerator": 67,
+            "denominator": 455,
+            "rate": 0.14725274725274726
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 455,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 257,
+            "denominator": 455,
+            "rate": 0.5648351648351648
+          },
+          "false_presence_given_absent": {
+            "numerator": 17,
+            "denominator": 102,
+            "rate": 0.16666666666666666
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 35,
+          "balanced_localization_and_absence": 0.6078754578754578,
+          "clips": 18,
+          "ambiguous_samples_skipped": 19,
+          "uniform_patch_chance_given_visible": 0.01243131868131868
+        },
+        "4": {
+          "localization_accuracy_given_visible": {
+            "numerator": 234,
+            "denominator": 528,
+            "rate": 0.4431818181818182
+          },
+          "wrong_car_given_visible": {
+            "numerator": 141,
+            "denominator": 528,
+            "rate": 0.26704545454545453
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 528,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 392,
+            "denominator": 528,
+            "rate": 0.7424242424242424
+          },
+          "false_presence_given_absent": {
+            "numerator": 10,
+            "denominator": 37,
+            "rate": 0.2702702702702703
+          },
+          "recovery_accuracy": {
+            "numerator": 7,
+            "denominator": 12,
+            "rate": 0.5833333333333334
+          },
+          "identity_switches": 37,
+          "balanced_localization_and_absence": 0.5864557739557739,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.013149068813131314
+        }
+      },
+      "window_boundaries": {
+        "localization_accuracy_given_visible": {
+          "numerator": 107,
+          "denominator": 171,
+          "rate": 0.6257309941520468
+        },
+        "wrong_car_given_visible": {
+          "numerator": 10,
+          "denominator": 171,
+          "rate": 0.05847953216374269
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 171,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 127,
+          "denominator": 171,
+          "rate": 0.7426900584795322
+        },
+        "false_presence_given_absent": {
+          "numerator": 6,
+          "denominator": 40,
+          "rate": 0.15
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "identity_switches": 8,
+        "balanced_localization_and_absence": 0.7378654970760234,
+        "clips": 18,
+        "ambiguous_samples_skipped": 5,
+        "uniform_patch_chance_given_visible": 0.012558885640025993
+      },
+      "uncertainty": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1064,
+          "denominator": 1922,
+          "rate": 0.5535900104058272,
+          "clip_bootstrap_95ci": [
+            0.48051653174741127,
+            0.6451975479335829
+          ]
+        },
+        "wrong_car_given_visible": {
+          "numerator": 221,
+          "denominator": 1922,
+          "rate": 0.1149843912591051,
+          "clip_bootstrap_95ci": [
+            0.060648935062129414,
+            0.17302804624496926
+          ]
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1360,
+          "denominator": 1922,
+          "rate": 0.7075962539021852,
+          "clip_bootstrap_95ci": [
+            0.6432457199885929,
+            0.7770959868604801
+          ]
+        },
+        "false_presence_given_absent": {
+          "numerator": 53,
+          "denominator": 260,
+          "rate": 0.20384615384615384,
+          "clip_bootstrap_95ci": [
+            0.10204081632653061,
+            0.3070602260685268
+          ]
+        },
+        "recovery_accuracy": {
+          "numerator": 7,
+          "denominator": 18,
+          "rate": 0.3888888888888889,
+          "clip_bootstrap_95ci": [
+            0.13333333333333333,
+            0.6
+          ]
+        },
+        "identity_switches": 93,
+        "balanced_localization_and_absence": 0.6748719282798367,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074,
+        "bootstrap": {
+          "unit": "clip",
+          "resamples": 2000,
+          "seed": 914,
+          "interpretation": "descriptive interval over generated clips, not real-video generalization"
+        }
+      }
+    },
+    "no_context": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1100,
+          "denominator": 1922,
+          "rate": 0.5723204994797086
+        },
+        "wrong_car_given_visible": {
+          "numerator": 208,
+          "denominator": 1922,
+          "rate": 0.10822060353798127
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1391,
+          "denominator": 1922,
+          "rate": 0.7237252861602498
+        },
+        "false_presence_given_absent": {
+          "numerator": 65,
+          "denominator": 260,
+          "rate": 0.25
+        },
+        "recovery_accuracy": {
+          "numerator": 2,
+          "denominator": 18,
+          "rate": 0.1111111111111111
+        },
+        "identity_switches": 65,
+        "balanced_localization_and_absence": 0.6611602497398543,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074
+      },
+      "by_condition": {
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 287,
+            "denominator": 702,
+            "rate": 0.40883190883190884
+          },
+          "wrong_car_given_visible": {
+            "numerator": 186,
+            "denominator": 702,
+            "rate": 0.26495726495726496
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 702,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 534,
+            "denominator": 702,
+            "rate": 0.7606837606837606
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 36,
+          "balanced_localization_and_absence": 0.7044159544159544,
+          "clips": 6,
+          "ambiguous_samples_skipped": 30,
+          "uniform_patch_chance_given_visible": 0.012372883032605255
+        },
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 418,
+            "denominator": 476,
+            "rate": 0.8781512605042017
+          },
+          "wrong_car_given_visible": {
+            "numerator": 7,
+            "denominator": 476,
+            "rate": 0.014705882352941176
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 430,
+            "denominator": 476,
+            "rate": 0.9033613445378151
+          },
+          "false_presence_given_absent": {
+            "numerator": 65,
+            "denominator": 248,
+            "rate": 0.2620967741935484
+          },
+          "recovery_accuracy": {
+            "numerator": 2,
+            "denominator": 12,
+            "rate": 0.16666666666666666
+          },
+          "identity_switches": 12,
+          "balanced_localization_and_absence": 0.8080272431553266,
+          "clips": 6,
+          "ambiguous_samples_skipped": 20,
+          "uniform_patch_chance_given_visible": 0.012674340569561156
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 395,
+            "denominator": 744,
+            "rate": 0.5309139784946236
+          },
+          "wrong_car_given_visible": {
+            "numerator": 15,
+            "denominator": 744,
+            "rate": 0.020161290322580645
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 427,
+            "denominator": 744,
+            "rate": 0.5739247311827957
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 17,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013202844982078852
+        }
+      },
+      "by_window": {
+        "1": {
+          "localization_accuracy_given_visible": {
+            "numerator": 373,
+            "denominator": 476,
+            "rate": 0.7836134453781513
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 385,
+            "denominator": 476,
+            "rate": 0.8088235294117647
+          },
+          "false_presence_given_absent": {
+            "numerator": 7,
+            "denominator": 19,
+            "rate": 0.3684210526315789
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.7075961963732861,
+          "clips": 18,
+          "ambiguous_samples_skipped": 9,
+          "uniform_patch_chance_given_visible": 0.012911414565826331
+        },
+        "2": {
+          "localization_accuracy_given_visible": {
+            "numerator": 298,
+            "denominator": 463,
+            "rate": 0.6436285097192225
+          },
+          "wrong_car_given_visible": {
+            "numerator": 3,
+            "denominator": 463,
+            "rate": 0.0064794816414686825
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 463,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 324,
+            "denominator": 463,
+            "rate": 0.6997840172786177
+          },
+          "false_presence_given_absent": {
+            "numerator": 20,
+            "denominator": 102,
+            "rate": 0.19607843137254902
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 3,
+          "balanced_localization_and_absence": 0.7237750391733367,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.01252024838012959
+        },
+        "3": {
+          "localization_accuracy_given_visible": {
+            "numerator": 198,
+            "denominator": 455,
+            "rate": 0.4351648351648352
+          },
+          "wrong_car_given_visible": {
+            "numerator": 61,
+            "denominator": 455,
+            "rate": 0.13406593406593406
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 455,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 284,
+            "denominator": 455,
+            "rate": 0.6241758241758242
+          },
+          "false_presence_given_absent": {
+            "numerator": 27,
+            "denominator": 102,
+            "rate": 0.2647058823529412
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 30,
+          "balanced_localization_and_absence": 0.585229476405947,
+          "clips": 18,
+          "ambiguous_samples_skipped": 19,
+          "uniform_patch_chance_given_visible": 0.01243131868131868
+        },
+        "4": {
+          "localization_accuracy_given_visible": {
+            "numerator": 231,
+            "denominator": 528,
+            "rate": 0.4375
+          },
+          "wrong_car_given_visible": {
+            "numerator": 144,
+            "denominator": 528,
+            "rate": 0.2727272727272727
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 528,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 398,
+            "denominator": 528,
+            "rate": 0.7537878787878788
+          },
+          "false_presence_given_absent": {
+            "numerator": 11,
+            "denominator": 37,
+            "rate": 0.2972972972972973
+          },
+          "recovery_accuracy": {
+            "numerator": 2,
+            "denominator": 12,
+            "rate": 0.16666666666666666
+          },
+          "identity_switches": 32,
+          "balanced_localization_and_absence": 0.5701013513513513,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.013149068813131314
+        }
+      },
+      "window_boundaries": {
+        "localization_accuracy_given_visible": {
+          "numerator": 109,
+          "denominator": 171,
+          "rate": 0.6374269005847953
+        },
+        "wrong_car_given_visible": {
+          "numerator": 12,
+          "denominator": 171,
+          "rate": 0.07017543859649122
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 171,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 130,
+          "denominator": 171,
+          "rate": 0.7602339181286549
+        },
+        "false_presence_given_absent": {
+          "numerator": 6,
+          "denominator": 40,
+          "rate": 0.15
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "identity_switches": 4,
+        "balanced_localization_and_absence": 0.7437134502923977,
+        "clips": 18,
+        "ambiguous_samples_skipped": 5,
+        "uniform_patch_chance_given_visible": 0.012558885640025993
+      },
+      "uncertainty": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1100,
+          "denominator": 1922,
+          "rate": 0.5723204994797086,
+          "clip_bootstrap_95ci": [
+            0.4967961877754793,
+            0.6632611399955344
+          ]
+        },
+        "wrong_car_given_visible": {
+          "numerator": 208,
+          "denominator": 1922,
+          "rate": 0.10822060353798127,
+          "clip_bootstrap_95ci": [
+            0.050727927895164324,
+            0.16856010873311816
+          ]
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1391,
+          "denominator": 1922,
+          "rate": 0.7237252861602498,
+          "clip_bootstrap_95ci": [
+            0.6620392312570204,
+            0.7925468446087777
+          ]
+        },
+        "false_presence_given_absent": {
+          "numerator": 65,
+          "denominator": 260,
+          "rate": 0.25,
+          "clip_bootstrap_95ci": [
+            0.12721010332950633,
+            0.36747159090909065
+          ]
+        },
+        "recovery_accuracy": {
+          "numerator": 2,
+          "denominator": 18,
+          "rate": 0.1111111111111111,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.3333333333333333
+          ]
+        },
+        "identity_switches": 65,
+        "balanced_localization_and_absence": 0.6611602497398543,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074,
+        "bootstrap": {
+          "unit": "clip",
+          "resamples": 2000,
+          "seed": 914,
+          "interpretation": "descriptive interval over generated clips, not real-video generalization"
+        }
+      }
+    },
+    "no_memory": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1026,
+          "denominator": 1922,
+          "rate": 0.5338189386056191
+        },
+        "wrong_car_given_visible": {
+          "numerator": 183,
+          "denominator": 1922,
+          "rate": 0.09521331945889698
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1254,
+          "denominator": 1922,
+          "rate": 0.6524453694068678
+        },
+        "false_presence_given_absent": {
+          "numerator": 14,
+          "denominator": 260,
+          "rate": 0.05384615384615385
+        },
+        "recovery_accuracy": {
+          "numerator": 5,
+          "denominator": 18,
+          "rate": 0.2777777777777778
+        },
+        "identity_switches": 60,
+        "balanced_localization_and_absence": 0.7399863923797326,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074
+      },
+      "by_condition": {
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 271,
+            "denominator": 702,
+            "rate": 0.38603988603988604
+          },
+          "wrong_car_given_visible": {
+            "numerator": 173,
+            "denominator": 702,
+            "rate": 0.24643874643874644
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 702,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 473,
+            "denominator": 702,
+            "rate": 0.6737891737891738
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 42,
+          "balanced_localization_and_absence": 0.6930199430199431,
+          "clips": 6,
+          "ambiguous_samples_skipped": 30,
+          "uniform_patch_chance_given_visible": 0.012372883032605255
+        },
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 413,
+            "denominator": 476,
+            "rate": 0.8676470588235294
+          },
+          "wrong_car_given_visible": {
+            "numerator": 2,
+            "denominator": 476,
+            "rate": 0.004201680672268907
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 422,
+            "denominator": 476,
+            "rate": 0.8865546218487395
+          },
+          "false_presence_given_absent": {
+            "numerator": 14,
+            "denominator": 248,
+            "rate": 0.056451612903225805
+          },
+          "recovery_accuracy": {
+            "numerator": 5,
+            "denominator": 12,
+            "rate": 0.4166666666666667
+          },
+          "identity_switches": 4,
+          "balanced_localization_and_absence": 0.9055977229601518,
+          "clips": 6,
+          "ambiguous_samples_skipped": 20,
+          "uniform_patch_chance_given_visible": 0.012674340569561156
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 342,
+            "denominator": 744,
+            "rate": 0.4596774193548387
+          },
+          "wrong_car_given_visible": {
+            "numerator": 8,
+            "denominator": 744,
+            "rate": 0.010752688172043012
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 359,
+            "denominator": 744,
+            "rate": 0.4825268817204301
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 14,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013202844982078852
+        }
+      },
+      "by_window": {
+        "1": {
+          "localization_accuracy_given_visible": {
+            "numerator": 369,
+            "denominator": 476,
+            "rate": 0.7752100840336135
+          },
+          "wrong_car_given_visible": {
+            "numerator": 1,
+            "denominator": 476,
+            "rate": 0.0021008403361344537
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 378,
+            "denominator": 476,
+            "rate": 0.7941176470588235
+          },
+          "false_presence_given_absent": {
+            "numerator": 2,
+            "denominator": 19,
+            "rate": 0.10526315789473684
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 1,
+          "balanced_localization_and_absence": 0.8349734630694383,
+          "clips": 18,
+          "ambiguous_samples_skipped": 9,
+          "uniform_patch_chance_given_visible": 0.012911414565826331
+        },
+        "2": {
+          "localization_accuracy_given_visible": {
+            "numerator": 266,
+            "denominator": 463,
+            "rate": 0.5745140388768899
+          },
+          "wrong_car_given_visible": {
+            "numerator": 4,
+            "denominator": 463,
+            "rate": 0.008639308855291577
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 463,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 280,
+            "denominator": 463,
+            "rate": 0.6047516198704104
+          },
+          "false_presence_given_absent": {
+            "numerator": 5,
+            "denominator": 102,
+            "rate": 0.049019607843137254
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 6,
+          "balanced_localization_and_absence": 0.7627472155168763,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.01252024838012959
+        },
+        "3": {
+          "localization_accuracy_given_visible": {
+            "numerator": 166,
+            "denominator": 455,
+            "rate": 0.3648351648351648
+          },
+          "wrong_car_given_visible": {
+            "numerator": 48,
+            "denominator": 455,
+            "rate": 0.1054945054945055
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 455,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 223,
+            "denominator": 455,
+            "rate": 0.4901098901098901
+          },
+          "false_presence_given_absent": {
+            "numerator": 5,
+            "denominator": 102,
+            "rate": 0.049019607843137254
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 33,
+          "balanced_localization_and_absence": 0.6579077784960138,
+          "clips": 18,
+          "ambiguous_samples_skipped": 19,
+          "uniform_patch_chance_given_visible": 0.01243131868131868
+        },
+        "4": {
+          "localization_accuracy_given_visible": {
+            "numerator": 225,
+            "denominator": 528,
+            "rate": 0.42613636363636365
+          },
+          "wrong_car_given_visible": {
+            "numerator": 130,
+            "denominator": 528,
+            "rate": 0.24621212121212122
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 528,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 373,
+            "denominator": 528,
+            "rate": 0.7064393939393939
+          },
+          "false_presence_given_absent": {
+            "numerator": 2,
+            "denominator": 37,
+            "rate": 0.05405405405405406
+          },
+          "recovery_accuracy": {
+            "numerator": 5,
+            "denominator": 12,
+            "rate": 0.4166666666666667
+          },
+          "identity_switches": 20,
+          "balanced_localization_and_absence": 0.6860411547911549,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.013149068813131314
+        }
+      },
+      "window_boundaries": {
+        "localization_accuracy_given_visible": {
+          "numerator": 95,
+          "denominator": 171,
+          "rate": 0.5555555555555556
+        },
+        "wrong_car_given_visible": {
+          "numerator": 11,
+          "denominator": 171,
+          "rate": 0.06432748538011696
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 171,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 109,
+          "denominator": 171,
+          "rate": 0.6374269005847953
+        },
+        "false_presence_given_absent": {
+          "numerator": 1,
+          "denominator": 40,
+          "rate": 0.025
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "identity_switches": 4,
+        "balanced_localization_and_absence": 0.7652777777777778,
+        "clips": 18,
+        "ambiguous_samples_skipped": 5,
+        "uniform_patch_chance_given_visible": 0.012558885640025993
+      },
+      "uncertainty": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1026,
+          "denominator": 1922,
+          "rate": 0.5338189386056191,
+          "clip_bootstrap_95ci": [
+            0.45227787182742746,
+            0.6332206911166667
+          ]
+        },
+        "wrong_car_given_visible": {
+          "numerator": 183,
+          "denominator": 1922,
+          "rate": 0.09521331945889698,
+          "clip_bootstrap_95ci": [
+            0.040012924193809925,
+            0.1530371586370071
+          ]
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1254,
+          "denominator": 1922,
+          "rate": 0.6524453694068678,
+          "clip_bootstrap_95ci": [
+            0.5775368537207259,
+            0.7371185190621931
+          ]
+        },
+        "false_presence_given_absent": {
+          "numerator": 14,
+          "denominator": 260,
+          "rate": 0.05384615384615385,
+          "clip_bootstrap_95ci": [
+            0.01,
+            0.0917454596517506
+          ]
+        },
+        "recovery_accuracy": {
+          "numerator": 5,
+          "denominator": 18,
+          "rate": 0.2777777777777778,
+          "clip_bootstrap_95ci": [
+            0.06666666666666667,
+            0.4762422360248444
+          ]
+        },
+        "identity_switches": 60,
+        "balanced_localization_and_absence": 0.7399863923797326,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074,
+        "bootstrap": {
+          "unit": "clip",
+          "resamples": 2000,
+          "seed": 914,
+          "interpretation": "descriptive interval over generated clips, not real-video generalization"
+        }
+      }
+    },
+    "no_motion": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1069,
+          "denominator": 1922,
+          "rate": 0.5561914672216441
+        },
+        "wrong_car_given_visible": {
+          "numerator": 199,
+          "denominator": 1922,
+          "rate": 0.10353798126951093
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1321,
+          "denominator": 1922,
+          "rate": 0.6873048907388137
+        },
+        "false_presence_given_absent": {
+          "numerator": 26,
+          "denominator": 260,
+          "rate": 0.1
+        },
+        "recovery_accuracy": {
+          "numerator": 5,
+          "denominator": 18,
+          "rate": 0.2777777777777778
+        },
+        "identity_switches": 90,
+        "balanced_localization_and_absence": 0.728095733610822,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074
+      },
+      "by_condition": {
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 291,
+            "denominator": 702,
+            "rate": 0.41452991452991456
+          },
+          "wrong_car_given_visible": {
+            "numerator": 176,
+            "denominator": 702,
+            "rate": 0.25071225071225073
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 702,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 506,
+            "denominator": 702,
+            "rate": 0.7207977207977208
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 50,
+          "balanced_localization_and_absence": 0.7072649572649573,
+          "clips": 6,
+          "ambiguous_samples_skipped": 30,
+          "uniform_patch_chance_given_visible": 0.012372883032605255
+        },
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 429,
+            "denominator": 476,
+            "rate": 0.9012605042016807
+          },
+          "wrong_car_given_visible": {
+            "numerator": 4,
+            "denominator": 476,
+            "rate": 0.008403361344537815
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 439,
+            "denominator": 476,
+            "rate": 0.9222689075630253
+          },
+          "false_presence_given_absent": {
+            "numerator": 26,
+            "denominator": 248,
+            "rate": 0.10483870967741936
+          },
+          "recovery_accuracy": {
+            "numerator": 5,
+            "denominator": 12,
+            "rate": 0.4166666666666667
+          },
+          "identity_switches": 8,
+          "balanced_localization_and_absence": 0.8982108972621307,
+          "clips": 6,
+          "ambiguous_samples_skipped": 20,
+          "uniform_patch_chance_given_visible": 0.012674340569561156
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 349,
+            "denominator": 744,
+            "rate": 0.46908602150537637
+          },
+          "wrong_car_given_visible": {
+            "numerator": 19,
+            "denominator": 744,
+            "rate": 0.025537634408602152
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 376,
+            "denominator": 744,
+            "rate": 0.5053763440860215
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 32,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013202844982078852
+        }
+      },
+      "by_window": {
+        "1": {
+          "localization_accuracy_given_visible": {
+            "numerator": 365,
+            "denominator": 476,
+            "rate": 0.7668067226890757
+          },
+          "wrong_car_given_visible": {
+            "numerator": 2,
+            "denominator": 476,
+            "rate": 0.004201680672268907
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 377,
+            "denominator": 476,
+            "rate": 0.792016806722689
+          },
+          "false_presence_given_absent": {
+            "numerator": 4,
+            "denominator": 19,
+            "rate": 0.21052631578947367
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 3,
+          "balanced_localization_and_absence": 0.778140203449801,
+          "clips": 18,
+          "ambiguous_samples_skipped": 9,
+          "uniform_patch_chance_given_visible": 0.012911414565826331
+        },
+        "2": {
+          "localization_accuracy_given_visible": {
+            "numerator": 282,
+            "denominator": 463,
+            "rate": 0.6090712742980562
+          },
+          "wrong_car_given_visible": {
+            "numerator": 3,
+            "denominator": 463,
+            "rate": 0.0064794816414686825
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 463,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 300,
+            "denominator": 463,
+            "rate": 0.6479481641468683
+          },
+          "false_presence_given_absent": {
+            "numerator": 7,
+            "denominator": 102,
+            "rate": 0.06862745098039216
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 5,
+          "balanced_localization_and_absence": 0.770221911658832,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.01252024838012959
+        },
+        "3": {
+          "localization_accuracy_given_visible": {
+            "numerator": 185,
+            "denominator": 455,
+            "rate": 0.4065934065934066
+          },
+          "wrong_car_given_visible": {
+            "numerator": 57,
+            "denominator": 455,
+            "rate": 0.12527472527472527
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 455,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 252,
+            "denominator": 455,
+            "rate": 0.5538461538461539
+          },
+          "false_presence_given_absent": {
+            "numerator": 8,
+            "denominator": 102,
+            "rate": 0.0784313725490196
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 42,
+          "balanced_localization_and_absence": 0.6640810170221935,
+          "clips": 18,
+          "ambiguous_samples_skipped": 19,
+          "uniform_patch_chance_given_visible": 0.01243131868131868
+        },
+        "4": {
+          "localization_accuracy_given_visible": {
+            "numerator": 237,
+            "denominator": 528,
+            "rate": 0.44886363636363635
+          },
+          "wrong_car_given_visible": {
+            "numerator": 137,
+            "denominator": 528,
+            "rate": 0.25946969696969696
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 528,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 392,
+            "denominator": 528,
+            "rate": 0.7424242424242424
+          },
+          "false_presence_given_absent": {
+            "numerator": 7,
+            "denominator": 37,
+            "rate": 0.1891891891891892
+          },
+          "recovery_accuracy": {
+            "numerator": 5,
+            "denominator": 12,
+            "rate": 0.4166666666666667
+          },
+          "identity_switches": 40,
+          "balanced_localization_and_absence": 0.6298372235872235,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.013149068813131314
+        }
+      },
+      "window_boundaries": {
+        "localization_accuracy_given_visible": {
+          "numerator": 101,
+          "denominator": 171,
+          "rate": 0.5906432748538012
+        },
+        "wrong_car_given_visible": {
+          "numerator": 9,
+          "denominator": 171,
+          "rate": 0.05263157894736842
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 171,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 114,
+          "denominator": 171,
+          "rate": 0.6666666666666666
+        },
+        "false_presence_given_absent": {
+          "numerator": 5,
+          "denominator": 40,
+          "rate": 0.125
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "identity_switches": 8,
+        "balanced_localization_and_absence": 0.7328216374269005,
+        "clips": 18,
+        "ambiguous_samples_skipped": 5,
+        "uniform_patch_chance_given_visible": 0.012558885640025993
+      },
+      "uncertainty": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1069,
+          "denominator": 1922,
+          "rate": 0.5561914672216441,
+          "clip_bootstrap_95ci": [
+            0.47407067782067785,
+            0.6594663512255023
+          ]
+        },
+        "wrong_car_given_visible": {
+          "numerator": 199,
+          "denominator": 1922,
+          "rate": 0.10353798126951093,
+          "clip_bootstrap_95ci": [
+            0.05022927504080787,
+            0.1597135470609793
+          ]
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1321,
+          "denominator": 1922,
+          "rate": 0.6873048907388137,
+          "clip_bootstrap_95ci": [
+            0.609279203364761,
+            0.7756215087933995
+          ]
+        },
+        "false_presence_given_absent": {
+          "numerator": 26,
+          "denominator": 260,
+          "rate": 0.1,
+          "clip_bootstrap_95ci": [
+            0.017241379310344827,
+            0.18182570740517756
+          ]
+        },
+        "recovery_accuracy": {
+          "numerator": 5,
+          "denominator": 18,
+          "rate": 0.2777777777777778,
+          "clip_bootstrap_95ci": [
+            0.06666666666666667,
+            0.4762422360248444
+          ]
+        },
+        "identity_switches": 90,
+        "balanced_localization_and_absence": 0.728095733610822,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074,
+        "bootstrap": {
+          "unit": "clip",
+          "resamples": 2000,
+          "seed": 914,
+          "interpretation": "descriptive interval over generated clips, not real-video generalization"
+        }
+      }
+    },
+    "persistent_vjepa": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1082,
+          "denominator": 1922,
+          "rate": 0.562955254942768
+        },
+        "wrong_car_given_visible": {
+          "numerator": 197,
+          "denominator": 1922,
+          "rate": 0.10249739854318418
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1332,
+          "denominator": 1922,
+          "rate": 0.6930280957336108
+        },
+        "false_presence_given_absent": {
+          "numerator": 29,
+          "denominator": 260,
+          "rate": 0.11153846153846154
+        },
+        "recovery_accuracy": {
+          "numerator": 5,
+          "denominator": 18,
+          "rate": 0.2777777777777778
+        },
+        "identity_switches": 60,
+        "balanced_localization_and_absence": 0.7257083967021531,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074
+      },
+      "by_condition": {
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 290,
+            "denominator": 702,
+            "rate": 0.4131054131054131
+          },
+          "wrong_car_given_visible": {
+            "numerator": 183,
+            "denominator": 702,
+            "rate": 0.2606837606837607
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 702,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 510,
+            "denominator": 702,
+            "rate": 0.7264957264957265
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 38,
+          "balanced_localization_and_absence": 0.7065527065527065,
+          "clips": 6,
+          "ambiguous_samples_skipped": 30,
+          "uniform_patch_chance_given_visible": 0.012372883032605255
+        },
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 432,
+            "denominator": 476,
+            "rate": 0.907563025210084
+          },
+          "wrong_car_given_visible": {
+            "numerator": 2,
+            "denominator": 476,
+            "rate": 0.004201680672268907
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 441,
+            "denominator": 476,
+            "rate": 0.9264705882352942
+          },
+          "false_presence_given_absent": {
+            "numerator": 29,
+            "denominator": 248,
+            "rate": 0.11693548387096774
+          },
+          "recovery_accuracy": {
+            "numerator": 5,
+            "denominator": 12,
+            "rate": 0.4166666666666667
+          },
+          "identity_switches": 4,
+          "balanced_localization_and_absence": 0.8953137706695581,
+          "clips": 6,
+          "ambiguous_samples_skipped": 20,
+          "uniform_patch_chance_given_visible": 0.012674340569561156
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 360,
+            "denominator": 744,
+            "rate": 0.4838709677419355
+          },
+          "wrong_car_given_visible": {
+            "numerator": 12,
+            "denominator": 744,
+            "rate": 0.016129032258064516
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 381,
+            "denominator": 744,
+            "rate": 0.5120967741935484
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 18,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013202844982078852
+        }
+      },
+      "by_window": {
+        "1": {
+          "localization_accuracy_given_visible": {
+            "numerator": 370,
+            "denominator": 476,
+            "rate": 0.7773109243697479
+          },
+          "wrong_car_given_visible": {
+            "numerator": 1,
+            "denominator": 476,
+            "rate": 0.0021008403361344537
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 378,
+            "denominator": 476,
+            "rate": 0.7941176470588235
+          },
+          "false_presence_given_absent": {
+            "numerator": 4,
+            "denominator": 19,
+            "rate": 0.21052631578947367
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 1,
+          "balanced_localization_and_absence": 0.7833923042901371,
+          "clips": 18,
+          "ambiguous_samples_skipped": 9,
+          "uniform_patch_chance_given_visible": 0.012911414565826331
+        },
+        "2": {
+          "localization_accuracy_given_visible": {
+            "numerator": 284,
+            "denominator": 463,
+            "rate": 0.6133909287257019
+          },
+          "wrong_car_given_visible": {
+            "numerator": 3,
+            "denominator": 463,
+            "rate": 0.0064794816414686825
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 463,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 302,
+            "denominator": 463,
+            "rate": 0.652267818574514
+          },
+          "false_presence_given_absent": {
+            "numerator": 9,
+            "denominator": 102,
+            "rate": 0.08823529411764706
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 5,
+          "balanced_localization_and_absence": 0.7625778173040275,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.01252024838012959
+        },
+        "3": {
+          "localization_accuracy_given_visible": {
+            "numerator": 186,
+            "denominator": 455,
+            "rate": 0.4087912087912088
+          },
+          "wrong_car_given_visible": {
+            "numerator": 57,
+            "denominator": 455,
+            "rate": 0.12527472527472527
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 455,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 256,
+            "denominator": 455,
+            "rate": 0.5626373626373626
+          },
+          "false_presence_given_absent": {
+            "numerator": 9,
+            "denominator": 102,
+            "rate": 0.08823529411764706
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 29,
+          "balanced_localization_and_absence": 0.6602779573367809,
+          "clips": 18,
+          "ambiguous_samples_skipped": 19,
+          "uniform_patch_chance_given_visible": 0.01243131868131868
+        },
+        "4": {
+          "localization_accuracy_given_visible": {
+            "numerator": 242,
+            "denominator": 528,
+            "rate": 0.4583333333333333
+          },
+          "wrong_car_given_visible": {
+            "numerator": 136,
+            "denominator": 528,
+            "rate": 0.25757575757575757
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 528,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 396,
+            "denominator": 528,
+            "rate": 0.75
+          },
+          "false_presence_given_absent": {
+            "numerator": 7,
+            "denominator": 37,
+            "rate": 0.1891891891891892
+          },
+          "recovery_accuracy": {
+            "numerator": 5,
+            "denominator": 12,
+            "rate": 0.4166666666666667
+          },
+          "identity_switches": 25,
+          "balanced_localization_and_absence": 0.634572072072072,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.013149068813131314
+        }
+      },
+      "window_boundaries": {
+        "localization_accuracy_given_visible": {
+          "numerator": 99,
+          "denominator": 171,
+          "rate": 0.5789473684210527
+        },
+        "wrong_car_given_visible": {
+          "numerator": 11,
+          "denominator": 171,
+          "rate": 0.06432748538011696
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 171,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 115,
+          "denominator": 171,
+          "rate": 0.672514619883041
+        },
+        "false_presence_given_absent": {
+          "numerator": 5,
+          "denominator": 40,
+          "rate": 0.125
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "identity_switches": 4,
+        "balanced_localization_and_absence": 0.7269736842105263,
+        "clips": 18,
+        "ambiguous_samples_skipped": 5,
+        "uniform_patch_chance_given_visible": 0.012558885640025993
+      },
+      "uncertainty": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1082,
+          "denominator": 1922,
+          "rate": 0.562955254942768,
+          "clip_bootstrap_95ci": [
+            0.4820134114930278,
+            0.6635250576395693
+          ]
+        },
+        "wrong_car_given_visible": {
+          "numerator": 197,
+          "denominator": 1922,
+          "rate": 0.10249739854318418,
+          "clip_bootstrap_95ci": [
+            0.044635990412981094,
+            0.16198834936213685
+          ]
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1332,
+          "denominator": 1922,
+          "rate": 0.6930280957336108,
+          "clip_bootstrap_95ci": [
+            0.6157222026819404,
+            0.779606183033086
+          ]
+        },
+        "false_presence_given_absent": {
+          "numerator": 29,
+          "denominator": 260,
+          "rate": 0.11153846153846154,
+          "clip_bootstrap_95ci": [
+            0.017241379310344827,
+            0.19928336466165394
+          ]
+        },
+        "recovery_accuracy": {
+          "numerator": 5,
+          "denominator": 18,
+          "rate": 0.2777777777777778,
+          "clip_bootstrap_95ci": [
+            0.06666666666666667,
+            0.4762422360248444
+          ]
+        },
+        "identity_switches": 60,
+        "balanced_localization_and_absence": 0.7257083967021531,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074,
+        "bootstrap": {
+          "unit": "clip",
+          "resamples": 2000,
+          "seed": 914,
+          "interpretation": "descriptive interval over generated clips, not real-video generalization"
+        }
+      }
+    },
+    "template_flow": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1215,
+          "denominator": 1922,
+          "rate": 0.6321540062434964
+        },
+        "wrong_car_given_visible": {
+          "numerator": 26,
+          "denominator": 1922,
+          "rate": 0.013527575442247659
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1241,
+          "denominator": 1922,
+          "rate": 0.645681581685744
+        },
+        "false_presence_given_absent": {
+          "numerator": 63,
+          "denominator": 260,
+          "rate": 0.2423076923076923
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 18,
+          "rate": 0.0
+        },
+        "identity_switches": 18,
+        "balanced_localization_and_absence": 0.694923156967902,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074
+      },
+      "by_condition": {
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 430,
+            "denominator": 702,
+            "rate": 0.6125356125356125
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 702,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 702,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 430,
+            "denominator": 702,
+            "rate": 0.6125356125356125
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.8062678062678063,
+          "clips": 6,
+          "ambiguous_samples_skipped": 30,
+          "uniform_patch_chance_given_visible": 0.012372883032605255
+        },
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 416,
+            "denominator": 476,
+            "rate": 0.8739495798319328
+          },
+          "wrong_car_given_visible": {
+            "numerator": 26,
+            "denominator": 476,
+            "rate": 0.0546218487394958
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 442,
+            "denominator": 476,
+            "rate": 0.9285714285714286
+          },
+          "false_presence_given_absent": {
+            "numerator": 63,
+            "denominator": 248,
+            "rate": 0.2540322580645161
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "identity_switches": 18,
+          "balanced_localization_and_absence": 0.8099586608837084,
+          "clips": 6,
+          "ambiguous_samples_skipped": 20,
+          "uniform_patch_chance_given_visible": 0.012674340569561156
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 369,
+            "denominator": 744,
+            "rate": 0.4959677419354839
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 369,
+            "denominator": 744,
+            "rate": 0.4959677419354839
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013202844982078852
+        }
+      },
+      "by_window": {
+        "1": {
+          "localization_accuracy_given_visible": {
+            "numerator": 363,
+            "denominator": 476,
+            "rate": 0.7626050420168067
+          },
+          "wrong_car_given_visible": {
+            "numerator": 9,
+            "denominator": 476,
+            "rate": 0.018907563025210083
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 372,
+            "denominator": 476,
+            "rate": 0.7815126050420168
+          },
+          "false_presence_given_absent": {
+            "numerator": 8,
+            "denominator": 19,
+            "rate": 0.42105263157894735
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 6,
+          "balanced_localization_and_absence": 0.6707762052189297,
+          "clips": 18,
+          "ambiguous_samples_skipped": 9,
+          "uniform_patch_chance_given_visible": 0.012911414565826331
+        },
+        "2": {
+          "localization_accuracy_given_visible": {
+            "numerator": 237,
+            "denominator": 463,
+            "rate": 0.5118790496760259
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 463,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 463,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 237,
+            "denominator": 463,
+            "rate": 0.5118790496760259
+          },
+          "false_presence_given_absent": {
+            "numerator": 27,
+            "denominator": 102,
+            "rate": 0.2647058823529412
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.6235865836615424,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.01252024838012959
+        },
+        "3": {
+          "localization_accuracy_given_visible": {
+            "numerator": 231,
+            "denominator": 455,
+            "rate": 0.5076923076923077
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 455,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 455,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 231,
+            "denominator": 455,
+            "rate": 0.5076923076923077
+          },
+          "false_presence_given_absent": {
+            "numerator": 14,
+            "denominator": 102,
+            "rate": 0.13725490196078433
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.6852187028657617,
+          "clips": 18,
+          "ambiguous_samples_skipped": 19,
+          "uniform_patch_chance_given_visible": 0.01243131868131868
+        },
+        "4": {
+          "localization_accuracy_given_visible": {
+            "numerator": 384,
+            "denominator": 528,
+            "rate": 0.7272727272727273
+          },
+          "wrong_car_given_visible": {
+            "numerator": 17,
+            "denominator": 528,
+            "rate": 0.032196969696969696
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 528,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 401,
+            "denominator": 528,
+            "rate": 0.759469696969697
+          },
+          "false_presence_given_absent": {
+            "numerator": 14,
+            "denominator": 37,
+            "rate": 0.3783783783783784
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "identity_switches": 12,
+          "balanced_localization_and_absence": 0.6744471744471745,
+          "clips": 18,
+          "ambiguous_samples_skipped": 11,
+          "uniform_patch_chance_given_visible": 0.013149068813131314
+        }
+      },
+      "window_boundaries": {
+        "localization_accuracy_given_visible": {
+          "numerator": 95,
+          "denominator": 171,
+          "rate": 0.5555555555555556
+        },
+        "wrong_car_given_visible": {
+          "numerator": 0,
+          "denominator": 171,
+          "rate": 0.0
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 171,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 95,
+          "denominator": 171,
+          "rate": 0.5555555555555556
+        },
+        "false_presence_given_absent": {
+          "numerator": 11,
+          "denominator": 40,
+          "rate": 0.275
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "identity_switches": 0,
+        "balanced_localization_and_absence": 0.6402777777777777,
+        "clips": 18,
+        "ambiguous_samples_skipped": 5,
+        "uniform_patch_chance_given_visible": 0.012558885640025993
+      },
+      "uncertainty": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1215,
+          "denominator": 1922,
+          "rate": 0.6321540062434964,
+          "clip_bootstrap_95ci": [
+            0.5625582020057307,
+            0.7096986823331769
+          ]
+        },
+        "wrong_car_given_visible": {
+          "numerator": 26,
+          "denominator": 1922,
+          "rate": 0.013527575442247659,
+          "clip_bootstrap_95ci": [
+            0.004278771829373033,
+            0.02600523439072255
+          ]
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1922,
+          "rate": 0.0,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1241,
+          "denominator": 1922,
+          "rate": 0.645681581685744,
+          "clip_bootstrap_95ci": [
+            0.5689821435569707,
+            0.7326870721458303
+          ]
+        },
+        "false_presence_given_absent": {
+          "numerator": 63,
+          "denominator": 260,
+          "rate": 0.2423076923076923,
+          "clip_bootstrap_95ci": [
+            0.11824655725334843,
+            0.31765161878704967
+          ]
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 18,
+          "rate": 0.0,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "identity_switches": 18,
+        "balanced_localization_and_absence": 0.694923156967902,
+        "clips": 18,
+        "ambiguous_samples_skipped": 50,
+        "uniform_patch_chance_given_visible": 0.012768817204301074,
+        "bootstrap": {
+          "unit": "clip",
+          "resamples": 2000,
+          "seed": 914,
+          "interpretation": "descriptive interval over generated clips, not real-video generalization"
+        }
+      }
+    }
+  }
+}
