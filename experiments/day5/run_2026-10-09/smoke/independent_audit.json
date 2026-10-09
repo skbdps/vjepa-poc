@@ -1,0 +1,1304 @@
+{
+  "status": "passed",
+  "stage": "smoke",
+  "audited_result_sha256": "1788f87dcec5312d7caa58260b2f269e59b2269be875d6637a7809e1f5574588",
+  "frozen_config_sha256": "4a905a01f42ab220d05ed914e5772d264f0e4b46ed1413adcad3c102c01021cf",
+  "frozen_source_digest": "fea39b4e91e3e02177503b1f3c0444c54f62966e8cf4a9844ae76833cbfc6314",
+  "audit_source_sha256": "577b12c2fc16c21d004ea9d07f907ffdf433ea2c6996d8fd386728a3f5f1a183",
+  "clips": 3,
+  "dense_csv_rows_checked": 3024,
+  "parent_csv_rows_checked": 378,
+  "scored_part_frames_per_arm_representation": 756,
+  "visible_part_frames": 669,
+  "absent_part_frames": 87,
+  "checks": {
+    "complete_seed_set": true,
+    "frozen_sources_and_policy": true,
+    "cache_prompt_RGB_and_truth_hashes": true,
+    "independent_dense_rows_equal_csv": true,
+    "independent_parent_rows_equal_csv": true,
+    "pixel_ownership_partition": true,
+    "original_overlap_protection": true,
+    "gated_edit_subset": true,
+    "all_aggregates_conditions_clips_and_slivers": true,
+    "four_success_guards": true,
+    "independent_paired_bootstrap": true
+  },
+  "success": {
+    "wrong_car_effective_paint_strictly_lower": true,
+    "wrong_car_pixel_difference_parent_minus_raw": -215,
+    "relative_wrong_car_effective_pixel_reduction": {
+      "numerator": 215,
+      "denominator": 221,
+      "rate": 0.9728506787330317
+    },
+    "guardrails": {
+      "raw_mask.mean_iou_given_visible": {
+        "loss_raw_minus_parent": 0.03883747500699297,
+        "max_allowed_loss": 0.01,
+        "passed": false
+      },
+      "raw_mask.visible_micro_pixel_recall": {
+        "loss_raw_minus_parent": 0.03816322553160667,
+        "max_allowed_loss": 0.01,
+        "passed": false
+      },
+      "effective_edit.mean_iou_given_visible": {
+        "loss_raw_minus_parent": 0.037542440998850846,
+        "max_allowed_loss": 0.01,
+        "passed": false
+      },
+      "effective_edit.visible_micro_pixel_recall": {
+        "loss_raw_minus_parent": 0.037812529284573904,
+        "max_allowed_loss": 0.01,
+        "passed": false
+      }
+    },
+    "passed": false,
+    "meaning": "fixed synthetic criterion only; uncertainty descriptive; no real-video/face/generative claim"
+  },
+  "effective_raw": {
+    "overall": {
+      "scored_part_frames": 756,
+      "visible_part_frames": 669,
+      "absent_part_frames": 87,
+      "mean_iou_given_visible": {
+        "numerator": 647.2953638142571,
+        "denominator": 669,
+        "rate": 0.9675565976296818
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 1705962,
+        "denominator": 1739397,
+        "rate": 0.9807778212794434
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 1705962,
+        "denominator": 1723721,
+        "rate": 0.9896972885983288
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 1705962,
+        "denominator": 1737837,
+        "rate": 0.9816582337699106
+      },
+      "wrong_car_pixels": 221,
+      "wrong_car_pixel_fraction_of_predictions": {
+        "numerator": 221,
+        "denominator": 1737837,
+        "rate": 0.000127169579195287
+      },
+      "wrong_car_pixel_fraction_of_false_positives": {
+        "numerator": 221,
+        "denominator": 31875,
+        "rate": 0.006933333333333333
+      },
+      "wrong_car_part_frame_rate": {
+        "numerator": 15,
+        "denominator": 756,
+        "rate": 0.01984126984126984
+      },
+      "false_presence_given_absent": {
+        "numerator": 13,
+        "denominator": 87,
+        "rate": 0.14942528735632185
+      },
+      "absent_predicted_pixels": 14116,
+      "predicted_pixels": 1737837,
+      "false_positive_pixels": 31875,
+      "same_car_other_pixels": 31541,
+      "background_pixels": 113,
+      "predicted_part_frame_coverage": {
+        "numerator": 682,
+        "denominator": 756,
+        "rate": 0.9021164021164021
+      },
+      "predicted_image_pixel_coverage": {
+        "numerator": 1737837,
+        "denominator": 111476736,
+        "rate": 0.015589234690186839
+      },
+      "visible_predicted_to_truth_area_ratio": {
+        "numerator": 1723721,
+        "denominator": 1739397,
+        "rate": 0.9909876813631391
+      },
+      "clips": 3
+    },
+    "visible_without_eligible_gt_patch_in_pair": {
+      "scored_part_frames": 17,
+      "visible_part_frames": 17,
+      "absent_part_frames": 0,
+      "mean_iou_given_visible": {
+        "numerator": 10.15872138466593,
+        "denominator": 17,
+        "rate": 0.5975718461568194
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 7043,
+        "denominator": 9840,
+        "rate": 0.7157520325203252
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 7043,
+        "denominator": 12651,
+        "rate": 0.5567148841988776
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 7043,
+        "denominator": 12651,
+        "rate": 0.5567148841988776
+      },
+      "wrong_car_pixels": 97,
+      "wrong_car_pixel_fraction_of_predictions": {
+        "numerator": 97,
+        "denominator": 12651,
+        "rate": 0.0076673780728796145
+      },
+      "wrong_car_pixel_fraction_of_false_positives": {
+        "numerator": 97,
+        "denominator": 5608,
+        "rate": 0.017296718972895864
+      },
+      "wrong_car_part_frame_rate": {
+        "numerator": 6,
+        "denominator": 17,
+        "rate": 0.35294117647058826
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "predicted_pixels": 12651,
+      "false_positive_pixels": 5608,
+      "same_car_other_pixels": 5511,
+      "background_pixels": 0,
+      "predicted_part_frame_coverage": {
+        "numerator": 17,
+        "denominator": 17,
+        "rate": 1.0
+      },
+      "predicted_image_pixel_coverage": {
+        "numerator": 12651,
+        "denominator": 2506752,
+        "rate": 0.005046769684436275
+      },
+      "visible_predicted_to_truth_area_ratio": {
+        "numerator": 12651,
+        "denominator": 9840,
+        "rate": 1.285670731707317
+      },
+      "clips": 2
+    },
+    "by_condition": {
+      "crossing": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "mean_iou_given_visible": {
+          "numerator": 232.24390282393642,
+          "denominator": 247,
+          "rate": 0.9402587158863823
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 597147,
+          "denominator": 626809,
+          "rate": 0.9526777694640632
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 597147,
+          "denominator": 599300,
+          "rate": 0.9964074753879526
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 597147,
+          "denominator": 599415,
+          "rate": 0.9962163109031306
+        },
+        "wrong_car_pixels": 221,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 221,
+          "denominator": 599415,
+          "rate": 0.0003686928088219347
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 221,
+          "denominator": 2268,
+          "rate": 0.0974426807760141
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 15,
+          "denominator": 252,
+          "rate": 0.05952380952380952
+        },
+        "false_presence_given_absent": {
+          "numerator": 2,
+          "denominator": 5,
+          "rate": 0.4
+        },
+        "absent_predicted_pixels": 115,
+        "predicted_pixels": 599415,
+        "false_positive_pixels": 2268,
+        "same_car_other_pixels": 1986,
+        "background_pixels": 61,
+        "predicted_part_frame_coverage": {
+          "numerator": 249,
+          "denominator": 252,
+          "rate": 0.9880952380952381
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 599415,
+          "denominator": 37158912,
+          "rate": 0.01613112353773975
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 599300,
+          "denominator": 626809,
+          "rate": 0.9561126276106438
+        },
+        "clips": 1
+      },
+      "long_occlusion": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 170,
+        "absent_part_frames": 82,
+        "mean_iou_given_visible": {
+          "numerator": 168.2639766611314,
+          "denominator": 170,
+          "rate": 0.9897880980066553
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 431386,
+          "denominator": 431880,
+          "rate": 0.9988561637491896
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 431386,
+          "denominator": 436927,
+          "rate": 0.9873182476706636
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 431386,
+          "denominator": 450928,
+          "rate": 0.956662704467232
+        },
+        "wrong_car_pixels": 0,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 0,
+          "denominator": 450928,
+          "rate": 0.0
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 0,
+          "denominator": 19542,
+          "rate": 0.0
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 0,
+          "denominator": 252,
+          "rate": 0.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 11,
+          "denominator": 82,
+          "rate": 0.13414634146341464
+        },
+        "absent_predicted_pixels": 14001,
+        "predicted_pixels": 450928,
+        "false_positive_pixels": 19542,
+        "same_car_other_pixels": 19542,
+        "background_pixels": 0,
+        "predicted_part_frame_coverage": {
+          "numerator": 181,
+          "denominator": 252,
+          "rate": 0.7182539682539683
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 450928,
+          "denominator": 37158912,
+          "rate": 0.012135123870149912
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 436927,
+          "denominator": 431880,
+          "rate": 1.0116861165138464
+        },
+        "clips": 1
+      },
+      "scale_camera": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "mean_iou_given_visible": {
+          "numerator": 246.78748432918934,
+          "denominator": 252,
+          "rate": 0.9793154140047196
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 677429,
+          "denominator": 680708,
+          "rate": 0.995182956568749
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 677429,
+          "denominator": 687494,
+          "rate": 0.9853598722316123
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 677429,
+          "denominator": 687494,
+          "rate": 0.9853598722316123
+        },
+        "wrong_car_pixels": 0,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 0,
+          "denominator": 687494,
+          "rate": 0.0
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 0,
+          "denominator": 10065,
+          "rate": 0.0
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 0,
+          "denominator": 252,
+          "rate": 0.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "predicted_pixels": 687494,
+        "false_positive_pixels": 10065,
+        "same_car_other_pixels": 10013,
+        "background_pixels": 52,
+        "predicted_part_frame_coverage": {
+          "numerator": 252,
+          "denominator": 252,
+          "rate": 1.0
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 687494,
+          "denominator": 37158912,
+          "rate": 0.018501456662670855
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 687494,
+          "denominator": 680708,
+          "rate": 1.0099690322429
+        },
+        "clips": 1
+      }
+    },
+    "per_clip": {
+      "smoke_crossing_5200": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "mean_iou_given_visible": {
+          "numerator": 232.24390282393642,
+          "denominator": 247,
+          "rate": 0.9402587158863823
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 597147,
+          "denominator": 626809,
+          "rate": 0.9526777694640632
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 597147,
+          "denominator": 599300,
+          "rate": 0.9964074753879526
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 597147,
+          "denominator": 599415,
+          "rate": 0.9962163109031306
+        },
+        "wrong_car_pixels": 221,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 221,
+          "denominator": 599415,
+          "rate": 0.0003686928088219347
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 221,
+          "denominator": 2268,
+          "rate": 0.0974426807760141
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 15,
+          "denominator": 252,
+          "rate": 0.05952380952380952
+        },
+        "false_presence_given_absent": {
+          "numerator": 2,
+          "denominator": 5,
+          "rate": 0.4
+        },
+        "absent_predicted_pixels": 115,
+        "predicted_pixels": 599415,
+        "false_positive_pixels": 2268,
+        "same_car_other_pixels": 1986,
+        "background_pixels": 61,
+        "predicted_part_frame_coverage": {
+          "numerator": 249,
+          "denominator": 252,
+          "rate": 0.9880952380952381
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 599415,
+          "denominator": 37158912,
+          "rate": 0.01613112353773975
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 599300,
+          "denominator": 626809,
+          "rate": 0.9561126276106438
+        },
+        "clips": 1
+      },
+      "smoke_long_occlusion_5100": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 170,
+        "absent_part_frames": 82,
+        "mean_iou_given_visible": {
+          "numerator": 168.2639766611314,
+          "denominator": 170,
+          "rate": 0.9897880980066553
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 431386,
+          "denominator": 431880,
+          "rate": 0.9988561637491896
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 431386,
+          "denominator": 436927,
+          "rate": 0.9873182476706636
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 431386,
+          "denominator": 450928,
+          "rate": 0.956662704467232
+        },
+        "wrong_car_pixels": 0,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 0,
+          "denominator": 450928,
+          "rate": 0.0
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 0,
+          "denominator": 19542,
+          "rate": 0.0
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 0,
+          "denominator": 252,
+          "rate": 0.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 11,
+          "denominator": 82,
+          "rate": 0.13414634146341464
+        },
+        "absent_predicted_pixels": 14001,
+        "predicted_pixels": 450928,
+        "false_positive_pixels": 19542,
+        "same_car_other_pixels": 19542,
+        "background_pixels": 0,
+        "predicted_part_frame_coverage": {
+          "numerator": 181,
+          "denominator": 252,
+          "rate": 0.7182539682539683
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 450928,
+          "denominator": 37158912,
+          "rate": 0.012135123870149912
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 436927,
+          "denominator": 431880,
+          "rate": 1.0116861165138464
+        },
+        "clips": 1
+      },
+      "smoke_scale_camera_5300": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "mean_iou_given_visible": {
+          "numerator": 246.78748432918934,
+          "denominator": 252,
+          "rate": 0.9793154140047196
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 677429,
+          "denominator": 680708,
+          "rate": 0.995182956568749
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 677429,
+          "denominator": 687494,
+          "rate": 0.9853598722316123
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 677429,
+          "denominator": 687494,
+          "rate": 0.9853598722316123
+        },
+        "wrong_car_pixels": 0,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 0,
+          "denominator": 687494,
+          "rate": 0.0
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 0,
+          "denominator": 10065,
+          "rate": 0.0
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 0,
+          "denominator": 252,
+          "rate": 0.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "predicted_pixels": 687494,
+        "false_positive_pixels": 10065,
+        "same_car_other_pixels": 10013,
+        "background_pixels": 52,
+        "predicted_part_frame_coverage": {
+          "numerator": 252,
+          "denominator": 252,
+          "rate": 1.0
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 687494,
+          "denominator": 37158912,
+          "rate": 0.018501456662670855
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 687494,
+          "denominator": 680708,
+          "rate": 1.0099690322429
+        },
+        "clips": 1
+      }
+    }
+  },
+  "effective_parent": {
+    "overall": {
+      "scored_part_frames": 756,
+      "visible_part_frames": 669,
+      "absent_part_frames": 87,
+      "mean_iou_given_visible": {
+        "numerator": 622.179470786026,
+        "denominator": 669,
+        "rate": 0.930014156630831
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 1640191,
+        "denominator": 1739397,
+        "rate": 0.9429652919948694
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 1640191,
+        "denominator": 1657642,
+        "rate": 0.9894723951251235
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 1640191,
+        "denominator": 1671641,
+        "rate": 0.981186151811304
+      },
+      "wrong_car_pixels": 6,
+      "wrong_car_pixel_fraction_of_predictions": {
+        "numerator": 6,
+        "denominator": 1671641,
+        "rate": 3.5892874127877937e-06
+      },
+      "wrong_car_pixel_fraction_of_false_positives": {
+        "numerator": 6,
+        "denominator": 31450,
+        "rate": 0.00019077901430842608
+      },
+      "wrong_car_part_frame_rate": {
+        "numerator": 4,
+        "denominator": 756,
+        "rate": 0.005291005291005291
+      },
+      "false_presence_given_absent": {
+        "numerator": 11,
+        "denominator": 87,
+        "rate": 0.12643678160919541
+      },
+      "absent_predicted_pixels": 13999,
+      "predicted_pixels": 1671641,
+      "false_positive_pixels": 31450,
+      "same_car_other_pixels": 31412,
+      "background_pixels": 32,
+      "predicted_part_frame_coverage": {
+        "numerator": 664,
+        "denominator": 756,
+        "rate": 0.8783068783068783
+      },
+      "predicted_image_pixel_coverage": {
+        "numerator": 1671641,
+        "denominator": 111476736,
+        "rate": 0.014995424695606444
+      },
+      "visible_predicted_to_truth_area_ratio": {
+        "numerator": 1657642,
+        "denominator": 1739397,
+        "rate": 0.9529980792194076
+      },
+      "clips": 3
+    },
+    "visible_without_eligible_gt_patch_in_pair": {
+      "scored_part_frames": 17,
+      "visible_part_frames": 17,
+      "absent_part_frames": 0,
+      "mean_iou_given_visible": {
+        "numerator": 8.305632336048285,
+        "denominator": 17,
+        "rate": 0.4885666080028403
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 5837,
+        "denominator": 9840,
+        "rate": 0.5931910569105691
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 5837,
+        "denominator": 11342,
+        "rate": 0.5146358666901781
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 5837,
+        "denominator": 11342,
+        "rate": 0.5146358666901781
+      },
+      "wrong_car_pixels": 0,
+      "wrong_car_pixel_fraction_of_predictions": {
+        "numerator": 0,
+        "denominator": 11342,
+        "rate": 0.0
+      },
+      "wrong_car_pixel_fraction_of_false_positives": {
+        "numerator": 0,
+        "denominator": 5505,
+        "rate": 0.0
+      },
+      "wrong_car_part_frame_rate": {
+        "numerator": 0,
+        "denominator": 17,
+        "rate": 0.0
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "predicted_pixels": 11342,
+      "false_positive_pixels": 5505,
+      "same_car_other_pixels": 5505,
+      "background_pixels": 0,
+      "predicted_part_frame_coverage": {
+        "numerator": 14,
+        "denominator": 17,
+        "rate": 0.8235294117647058
+      },
+      "predicted_image_pixel_coverage": {
+        "numerator": 11342,
+        "denominator": 2506752,
+        "rate": 0.004524580014297386
+      },
+      "visible_predicted_to_truth_area_ratio": {
+        "numerator": 11342,
+        "denominator": 9840,
+        "rate": 1.1526422764227642
+      },
+      "clips": 2
+    },
+    "by_condition": {
+      "crossing": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "mean_iou_given_visible": {
+          "numerator": 207.18880663961346,
+          "denominator": 247,
+          "rate": 0.8388210795126051
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 531543,
+          "denominator": 626809,
+          "rate": 0.8480143073886942
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 531543,
+          "denominator": 533428,
+          "rate": 0.9964662522402273
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 531543,
+          "denominator": 533428,
+          "rate": 0.9964662522402273
+        },
+        "wrong_car_pixels": 6,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 6,
+          "denominator": 533428,
+          "rate": 1.124800347938241e-05
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 6,
+          "denominator": 1885,
+          "rate": 0.003183023872679045
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 4,
+          "denominator": 252,
+          "rate": 0.015873015873015872
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "predicted_pixels": 533428,
+        "false_positive_pixels": 1885,
+        "same_car_other_pixels": 1879,
+        "background_pixels": 0,
+        "predicted_part_frame_coverage": {
+          "numerator": 231,
+          "denominator": 252,
+          "rate": 0.9166666666666666
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 533428,
+          "denominator": 37158912,
+          "rate": 0.014355318045910493
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 533428,
+          "denominator": 626809,
+          "rate": 0.8510216030720682
+        },
+        "clips": 1
+      },
+      "long_occlusion": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 170,
+        "absent_part_frames": 82,
+        "mean_iou_given_visible": {
+          "numerator": 168.2415595071353,
+          "denominator": 170,
+          "rate": 0.9896562323949135
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 431340,
+          "denominator": 431880,
+          "rate": 0.9987496526813003
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 431340,
+          "denominator": 436881,
+          "rate": 0.9873169123857526
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 431340,
+          "denominator": 450880,
+          "rate": 0.9566625266146203
+        },
+        "wrong_car_pixels": 0,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 0,
+          "denominator": 450880,
+          "rate": 0.0
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 0,
+          "denominator": 19540,
+          "rate": 0.0
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 0,
+          "denominator": 252,
+          "rate": 0.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 11,
+          "denominator": 82,
+          "rate": 0.13414634146341464
+        },
+        "absent_predicted_pixels": 13999,
+        "predicted_pixels": 450880,
+        "false_positive_pixels": 19540,
+        "same_car_other_pixels": 19540,
+        "background_pixels": 0,
+        "predicted_part_frame_coverage": {
+          "numerator": 181,
+          "denominator": 252,
+          "rate": 0.7182539682539683
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 450880,
+          "denominator": 37158912,
+          "rate": 0.012133832120811287
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 436881,
+          "denominator": 431880,
+          "rate": 1.0115796054459572
+        },
+        "clips": 1
+      },
+      "scale_camera": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "mean_iou_given_visible": {
+          "numerator": 246.74910463927716,
+          "denominator": 252,
+          "rate": 0.9791631136479253
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 677308,
+          "denominator": 680708,
+          "rate": 0.9950052004677483
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 677308,
+          "denominator": 687333,
+          "rate": 0.9854146389013768
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 677308,
+          "denominator": 687333,
+          "rate": 0.9854146389013768
+        },
+        "wrong_car_pixels": 0,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 0,
+          "denominator": 687333,
+          "rate": 0.0
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 0,
+          "denominator": 10025,
+          "rate": 0.0
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 0,
+          "denominator": 252,
+          "rate": 0.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "predicted_pixels": 687333,
+        "false_positive_pixels": 10025,
+        "same_car_other_pixels": 9993,
+        "background_pixels": 32,
+        "predicted_part_frame_coverage": {
+          "numerator": 252,
+          "denominator": 252,
+          "rate": 1.0
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 687333,
+          "denominator": 37158912,
+          "rate": 0.018497123920097554
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 687333,
+          "denominator": 680708,
+          "rate": 1.009732513794461
+        },
+        "clips": 1
+      }
+    },
+    "per_clip": {
+      "smoke_crossing_5200": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "mean_iou_given_visible": {
+          "numerator": 207.18880663961346,
+          "denominator": 247,
+          "rate": 0.8388210795126051
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 531543,
+          "denominator": 626809,
+          "rate": 0.8480143073886942
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 531543,
+          "denominator": 533428,
+          "rate": 0.9964662522402273
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 531543,
+          "denominator": 533428,
+          "rate": 0.9964662522402273
+        },
+        "wrong_car_pixels": 6,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 6,
+          "denominator": 533428,
+          "rate": 1.124800347938241e-05
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 6,
+          "denominator": 1885,
+          "rate": 0.003183023872679045
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 4,
+          "denominator": 252,
+          "rate": 0.015873015873015872
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "predicted_pixels": 533428,
+        "false_positive_pixels": 1885,
+        "same_car_other_pixels": 1879,
+        "background_pixels": 0,
+        "predicted_part_frame_coverage": {
+          "numerator": 231,
+          "denominator": 252,
+          "rate": 0.9166666666666666
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 533428,
+          "denominator": 37158912,
+          "rate": 0.014355318045910493
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 533428,
+          "denominator": 626809,
+          "rate": 0.8510216030720682
+        },
+        "clips": 1
+      },
+      "smoke_long_occlusion_5100": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 170,
+        "absent_part_frames": 82,
+        "mean_iou_given_visible": {
+          "numerator": 168.2415595071353,
+          "denominator": 170,
+          "rate": 0.9896562323949135
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 431340,
+          "denominator": 431880,
+          "rate": 0.9987496526813003
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 431340,
+          "denominator": 436881,
+          "rate": 0.9873169123857526
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 431340,
+          "denominator": 450880,
+          "rate": 0.9566625266146203
+        },
+        "wrong_car_pixels": 0,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 0,
+          "denominator": 450880,
+          "rate": 0.0
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 0,
+          "denominator": 19540,
+          "rate": 0.0
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 0,
+          "denominator": 252,
+          "rate": 0.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 11,
+          "denominator": 82,
+          "rate": 0.13414634146341464
+        },
+        "absent_predicted_pixels": 13999,
+        "predicted_pixels": 450880,
+        "false_positive_pixels": 19540,
+        "same_car_other_pixels": 19540,
+        "background_pixels": 0,
+        "predicted_part_frame_coverage": {
+          "numerator": 181,
+          "denominator": 252,
+          "rate": 0.7182539682539683
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 450880,
+          "denominator": 37158912,
+          "rate": 0.012133832120811287
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 436881,
+          "denominator": 431880,
+          "rate": 1.0115796054459572
+        },
+        "clips": 1
+      },
+      "smoke_scale_camera_5300": {
+        "scored_part_frames": 252,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "mean_iou_given_visible": {
+          "numerator": 246.74910463927716,
+          "denominator": 252,
+          "rate": 0.9791631136479253
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 677308,
+          "denominator": 680708,
+          "rate": 0.9950052004677483
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 677308,
+          "denominator": 687333,
+          "rate": 0.9854146389013768
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 677308,
+          "denominator": 687333,
+          "rate": 0.9854146389013768
+        },
+        "wrong_car_pixels": 0,
+        "wrong_car_pixel_fraction_of_predictions": {
+          "numerator": 0,
+          "denominator": 687333,
+          "rate": 0.0
+        },
+        "wrong_car_pixel_fraction_of_false_positives": {
+          "numerator": 0,
+          "denominator": 10025,
+          "rate": 0.0
+        },
+        "wrong_car_part_frame_rate": {
+          "numerator": 0,
+          "denominator": 252,
+          "rate": 0.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "predicted_pixels": 687333,
+        "false_positive_pixels": 10025,
+        "same_car_other_pixels": 9993,
+        "background_pixels": 32,
+        "predicted_part_frame_coverage": {
+          "numerator": 252,
+          "denominator": 252,
+          "rate": 1.0
+        },
+        "predicted_image_pixel_coverage": {
+          "numerator": 687333,
+          "denominator": 37158912,
+          "rate": 0.018497123920097554
+        },
+        "visible_predicted_to_truth_area_ratio": {
+          "numerator": 687333,
+          "denominator": 680708,
+          "rate": 1.009732513794461
+        },
+        "clips": 1
+      }
+    }
+  },
+  "paired_comparison": {
+    "raw_mask": {
+      "configuration": {
+        "unit": "paired clip",
+        "resamples": 2000,
+        "seed": 9514,
+        "interpretation": "descriptive; pooled ratios recomputed; no tuning"
+      },
+      "clips": [
+        "smoke_crossing_5200",
+        "smoke_long_occlusion_5100",
+        "smoke_scale_camera_5300"
+      ],
+      "metrics": {
+        "wrong_car_pixels": {
+          "difference_parent_minus_raw": -23433.0,
+          "paired_clip_bootstrap_95ci": [
+            -70299.0,
+            0.0
+          ],
+          "valid_resamples": 2000
+        },
+        "mean_iou_given_visible": {
+          "difference_parent_minus_raw": -0.03883747500699308,
+          "paired_clip_bootstrap_95ci": [
+            -0.10494523860635652,
+            -0.00013186561174183264
+          ],
+          "valid_resamples": 2000
+        },
+        "visible_micro_pixel_recall": {
+          "difference_parent_minus_raw": -0.03816322553160667,
+          "paired_clip_bootstrap_95ci": [
+            -0.10563664529386152,
+            -0.00010651106788928111
+          ],
+          "valid_resamples": 2000
+        },
+        "wrong_car_pixel_fraction_of_predictions": {
+          "difference_parent_minus_raw": -0.013108718337193284,
+          "paired_clip_bootstrap_95ci": [
+            -0.03608428843111649,
+            0.0
+          ],
+          "valid_resamples": 2000
+        },
+        "wrong_car_part_frame_rate": {
+          "difference_parent_minus_raw": -0.022486772486772486,
+          "paired_clip_bootstrap_95ci": [
+            -0.06746031746031746,
+            0.0
+          ],
+          "valid_resamples": 2000
+        },
+        "false_presence_given_absent": {
+          "difference_parent_minus_raw": -0.022988505747126436,
+          "paired_clip_bootstrap_95ci": [
+            -0.4,
+            0.0
+          ],
+          "valid_resamples": 1925
+        }
+      }
+    },
+    "effective_edit": {
+      "configuration": {
+        "unit": "paired clip",
+        "resamples": 2000,
+        "seed": 9514,
+        "interpretation": "descriptive; pooled ratios recomputed; no tuning"
+      },
+      "clips": [
+        "smoke_crossing_5200",
+        "smoke_long_occlusion_5100",
+        "smoke_scale_camera_5300"
+      ],
+      "metrics": {
+        "wrong_car_pixels": {
+          "difference_parent_minus_raw": -215.0,
+          "paired_clip_bootstrap_95ci": [
+            -645.0,
+            0.0
+          ],
+          "valid_resamples": 2000
+        },
+        "mean_iou_given_visible": {
+          "difference_parent_minus_raw": -0.03754244099885096,
+          "paired_clip_bootstrap_95ci": [
+            -0.10143763637377712,
+            -0.00013186561174183264
+          ],
+          "valid_resamples": 2000
+        },
+        "visible_micro_pixel_recall": {
+          "difference_parent_minus_raw": -0.037812529284573904,
+          "paired_clip_bootstrap_95ci": [
+            -0.10466346207536903,
+            -0.00010651106788928111
+          ],
+          "valid_resamples": 2000
+        },
+        "wrong_car_pixel_fraction_of_predictions": {
+          "difference_parent_minus_raw": -0.0001235802917824992,
+          "paired_clip_bootstrap_95ci": [
+            -0.0003574448053425523,
+            0.0
+          ],
+          "valid_resamples": 2000
+        },
+        "wrong_car_part_frame_rate": {
+          "difference_parent_minus_raw": -0.01455026455026455,
+          "paired_clip_bootstrap_95ci": [
+            -0.04365079365079365,
+            0.0
+          ],
+          "valid_resamples": 2000
+        },
+        "false_presence_given_absent": {
+          "difference_parent_minus_raw": -0.022988505747126436,
+          "paired_clip_bootstrap_95ci": [
+            -0.4,
+            0.0
+          ],
+          "valid_resamples": 1925
+        }
+      }
+    }
+  },
+  "clip_invariants": [
+    {
+      "scene": "smoke_long_occlusion_5100",
+      "source_and_cache_hashes": true,
+      "ground_truth_hashes": true,
+      "original_overlap_protection": true,
+      "gated_edit_subset": true,
+      "effective_added_pixels": 0
+    },
+    {
+      "scene": "smoke_crossing_5200",
+      "source_and_cache_hashes": true,
+      "ground_truth_hashes": true,
+      "original_overlap_protection": true,
+      "gated_edit_subset": true,
+      "effective_added_pixels": 0
+    },
+    {
+      "scene": "smoke_scale_camera_5300",
+      "source_and_cache_hashes": true,
+      "ground_truth_hashes": true,
+      "original_overlap_protection": true,
+      "gated_edit_subset": true,
+      "effective_added_pixels": 0
+    }
+  ],
+  "limits": [
+    "Reuses the frozen renderer; independently verifies scoring, not renderer realism.",
+    "Cache hashes and manifests establish artifact consistency, not independent observation of model execution.",
+    "Secondary patch readout is outside this dense-edit audit.",
+    "This audit does not prove generalization outside the twelve fixed synthetic scenes."
+  ]
+}

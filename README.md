@@ -7,7 +7,8 @@ Controllable AI video generation POC using V-JEPA 2.1 latent-space manipulation.
 The ongoing work on `experiment/part-consistency-colab` tests persistent object-part identity and selective video edits on a Colab T4.
 
 - [Day 3: initial part-localization diagnostic](experiments/day3/README.md)
-- [Day 5: fixed whole-car constraints for door/window edits](experiments/day5/README.md) — source frozen; GPU execution in progress ([checkpoint](experiments/day5/PROGRESS.md)).
+- [Day 5: completed whole-car constraint experiment](experiments/day5/README.md) — all twelve held-out clips and an independent numerical audit completed; unconditional containment fails all four accuracy guardrails ([results](experiments/day5/RESULTS.md)).
+- [Two-car, four-part hierarchy editor](experiments/day5/run_2026-10-09/hierarchy/interactive_hierarchy_editor.html) — independent stable car/part controls and portable recipes; containment stays off by default. Browser controls, recipe export/import and both containment-mode native replays are verified ([validation](experiments/day5/EDITOR_VALIDATION.md)).
 - [Day 4: stronger benchmarks, real-car part masks, and selective editing](experiments/day4/README.md)
 - [Offline interactive part editor](experiments/day4/run_2026-10-09/car_roundabout/interactive_part_editor.html) — download and open the HTML; control door/window colors independently, save a recipe, and replay it without another model run.
 - [Real-car two-part edit preview](experiments/day4/run_2026-10-09/car_roundabout/dual_part_edit.mp4)
@@ -17,6 +18,8 @@ The ongoing work on `experiment/part-consistency-colab` tests persistent object-
 - [Crossing and identity failure gallery](experiments/day4/run_2026-10-09/failures/README.md)
 
 On eighteen held-out synthetic clips, SAM2.1 Tiny reaches 95.01% visible patch localization versus 53.38% for the selected V-JEPA tracker, a paired difference of +41.62 percentage points [95% interval +30.94, +50.10]. Its separate raw dense-mask mean IoU is 94.42%; raw masks remain the editing default because the supplementary presence gate suppresses thin visible parts. Identity recovery after occlusion remains unresolved, and the two real-car clips demonstrate localized recoloring rather than unseen-video or generative consistency.
+
+The subsequent Day 5 experiment tests independent parent-car masks on twelve new synthetic clips. Parent intersection reduces effective wrong-car paint from 839 to 70 pixels, but removes 122,251 correctly covered pixels and drops effective visible IoU from 93.03% to 90.50%. All four frozen accuracy guards fail. This is a documented negative result for unconditional containment; the useful artifact is the reusable four-part control/replay pipeline. It does not establish face, 3-D or generative consistency. A bounded [Day 6 post-hoc other-parent veto](experiments/day6/POSTHOC_DAY5_EXPLORATION.md) also failed all four guards using these caches as development data, so it was not promoted to a new GPU validation run.
 
 Run metadata, frozen configurations, metrics, small predicted masks, and selected previews are saved with the experiment. Full executed outputs stay in Colab; repository notebooks are kept without cell outputs.
 

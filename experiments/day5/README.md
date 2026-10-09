@@ -4,6 +4,14 @@ Day 5 tests whether a separately tracked whole car can prevent a tagged door or 
 
 Read [PROTOCOL.md](PROTOCOL.md) for the frozen seeds, outcomes, limitations and success criterion. Day 4 source and results remain unchanged. This is a new-seed experiment in the same synthetic 2-D renderer, with additional parent annotations and inference cost.
 
+## Completed finding
+
+**Keep containment off by default.** The complete, independently audited twelve-clip test reduces wrong-car effective paint **839 → 70 pixels**, but loses **122,251 correctly covered pixels**. Effective visible IoU falls **93.03% → 90.50%** and pooled recall **93.07% → 91.30%**. All four frozen accuracy guardrails fail; the large relative wrong-car reduction starts from an already tiny absolute area after existing overlap protection. The largest regressions occur during crossing and on thin visible parts.
+
+Read [RESULTS.md](RESULTS.md) for exact denominators, raw-mask versus effective-edit metrics, condition-level regressions, uncertainty and cost. [Test JSON](run_2026-10-09/test/results.json), [independent audit](run_2026-10-09/independent_audit.md), and the [original complete GPU archive](run_2026-10-09/gpu_run.zip) preserve the evidence. Both smoke and test finished without policy changes. The four-control hierarchy artifact passed browser interaction and actual browser-export → native-replay checks in both containment modes; see [EDITOR_VALIDATION.md](EDITOR_VALIDATION.md). PNG export was not verified.
+
+One bounded [Day 6 post-hoc other-parent veto](../day6/POSTHOC_DAY5_EXPLORATION.md) also failed all four guards on these same caches used as development data. It did not justify a new GPU validation run and is not a fresh held-out comparison.
+
 ## Run in Colab
 
 [Open Parent_Constraint_Colab.ipynb](https://colab.research.google.com/github/skbdps/vjepa-poc/blob/experiment/part-consistency-colab/experiments/day5/Parent_Constraint_Colab.ipynb). Select a T4 GPU and run the cells in order.

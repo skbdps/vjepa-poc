@@ -1,0 +1,130 @@
+{
+  "schema": "vjepa.scene-part-hierarchy",
+  "version": 1,
+  "sequence": "test_crossing_6200",
+  "width": 384,
+  "height": 384,
+  "frames": 64,
+  "cars": [
+    {
+      "id": "car_A",
+      "parent_mask_id": 101,
+      "parts": [
+        "car_A.front_door",
+        "car_A.window"
+      ]
+    },
+    {
+      "id": "car_B",
+      "parent_mask_id": 102,
+      "parts": [
+        "car_B.front_door",
+        "car_B.window"
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": "car_A.front_door",
+      "car": "car_A",
+      "label": "Front door",
+      "mask_id": 1,
+      "parent_mask_id": 101
+    },
+    {
+      "id": "car_A.window",
+      "car": "car_A",
+      "label": "Window",
+      "mask_id": 2,
+      "parent_mask_id": 101
+    },
+    {
+      "id": "car_B.front_door",
+      "car": "car_B",
+      "label": "Front door",
+      "mask_id": 3,
+      "parent_mask_id": 102
+    },
+    {
+      "id": "car_B.window",
+      "car": "car_B",
+      "label": "Window",
+      "mask_id": 4,
+      "parent_mask_id": 102
+    }
+  ],
+  "provenance": {
+    "clip_manifest_sha256": "86f75c55066d86ef7df6dc5aa5426fe6e877ee6a3ce8f4e8b73a4b905d57aeaf",
+    "report_sha256": "176e4033511061d0f628cdd3fd1109bbdde30205e3c33190f8eb8538d73c8e04",
+    "prediction_archives": {
+      "children": {
+        "path": "clips/test_crossing_6200/children/sam2_masks.npz",
+        "sha256": "3e3fc3552cad5dd0335b1b90e459365f2d35b88963b882e5911557f89449cb96"
+      },
+      "parents": {
+        "path": "clips/test_crossing_6200/parents/sam2_masks.npz",
+        "sha256": "13c6d25959844587687175185e5bcd3cf4fe43d86305cd28228f089d5a0e17d9"
+      }
+    },
+    "rgb_sha256": "8c00c1e4be0fbca7bb0cf659b4c6971dc7a9220c8d2b3f6d0941e3319925b48f",
+    "source_digest": "fea39b4e91e3e02177503b1f3c0444c54f62966e8cf4a9844ae76833cbfc6314",
+    "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+    "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "builder_sha256": "c4de97c9210923f65d1e3d7843445a86c0cf6fd8612e822a3e2456e79c9b64c0",
+    "embedded_video_sha256": "c1a84a2dc13aeb199b40e3bbd9e82147459d442357610abd27d563a8f97bc267"
+  },
+  "annotations": {
+    "frames": [
+      0
+    ],
+    "source": "Exact synthetic renderer labels at frame zero only",
+    "rle_encoding": "Base64 unsigned-LEB128 foreground gap,length pairs; row-major 384x384",
+    "children": [
+      {
+        "id": "car_A.front_door",
+        "mask_id": 1,
+        "pixels": 3304,
+        "mask_rle": "4P8BO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCOw=="
+      },
+      {
+        "id": "car_A.window",
+        "mask_id": 2,
+        "pixels": 2052,
+        "mask_rle": "3oQBOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOQ=="
+      },
+      {
+        "id": "car_B.front_door",
+        "mask_id": 3,
+        "pixels": 3304,
+        "mask_rle": "osQGO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCO8UCOw=="
+      },
+      {
+        "id": "car_B.window",
+        "mask_id": 4,
+        "pixels": 2052,
+        "mask_rle": "oMkFOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOccCOQ=="
+      }
+    ],
+    "parents": [
+      {
+        "id": "car_A",
+        "mask_id": 101,
+        "pixels": 17123,
+        "mask_rle": "tHhZpgJbpQJbpAJdowJlmgJmmgJmmQJnmAJomAJojwJxjwJxjwJxjwJxjwJxjwJxjwJyjgJyjgJzjQJ0jAJ0jAJ1iwJ2igJ2igJ3iQJ4hwJ5hgJ7hQJ8gwJ98QGXAecBmwHkAZ0B4QGhAd8BoQHeAaMB3AGlAdsBpQHaAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2gGlAdsBpQHcAaMB3gGhAd8BoQHhAZ0B5AGbAecBlwHuASNFI/UBI0Uj9QEjRSP1ASNFI/UBI0Uj9QEjRSP2ASFHIfcBIUch+AEfSR/5AR9JH/oBHUsd+wEdSx38ARtNG/4BGU8ZgAIXUReCAhVTFYUCEVcRiQINWw2NAglfCQ=="
+      },
+      {
+        "id": "car_B",
+        "mask_id": 102,
+        "pixels": 17123,
+        "mask_rle": "9rwFWaYCW6UCW6QCXaMCZZoCZpoCZpkCZ5gCaJgCaI8CcY8CcY8CcY8CcY8CcY8CcY8Cco4Cco4Cc40CdIwCdIwCdYsCdooCdooCd4kCeIcCeYYCe4UCfIMCffEBlwHnAZsB5AGdAeEBoQHfAaEB3gGjAdwBpQHbAaUB2gGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdkBpwHZAacB2QGnAdoBpQHbAaUB3AGjAd4BoQHfAaEB4QGdAeQBmwHnAZcB7gEjRSP1ASNFI/UBI0Uj9QEjRSP1ASNFI/UBI0Uj9gEhRyH3ASFHIfgBH0kf+QEfSR/6AR1LHfsBHUsd/AEbTRv+ARlPGYACF1EXggIVUxWFAhFXEYkCDVsNjQIJXwk="
+      }
+    ]
+  },
+  "policy": {
+    "raw_effective": "M_i minus union(all other RAW child masks), including disabled parts",
+    "contained_effective": "raw_effective_i intersect independently predicted parent_i",
+    "default_containment": false,
+    "extra_parent_prompts": 2
+  },
+  "scope": "Synthetic two-dimensional scene; identities are assigned at frame0, not discovered. No faces or generation."
+}
