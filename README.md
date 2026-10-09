@@ -8,8 +8,10 @@ The ongoing work on `experiment/part-consistency-colab` tests persistent object-
 
 - [Day 3: initial part-localization diagnostic](experiments/day3/README.md)
 - [Day 4: stronger benchmarks, real-car part masks, and selective editing](experiments/day4/README.md)
-- [Offline interactive part editor](experiments/day4/run_2026-10-09/car_roundabout/interactive_part_editor.html) — download the HTML file and open it locally; switch between door and window without rerunning a model.
-- [Real-car door-edit preview](experiments/day4/run_2026-10-09/car_roundabout/door_recolor.mp4)
+- [Offline interactive part editor](experiments/day4/run_2026-10-09/car_roundabout/interactive_part_editor.html) — download and open the HTML; control door/window colors independently, save a recipe, and replay it without another model run.
+- [Real-car two-part edit preview](experiments/day4/run_2026-10-09/car_roundabout/dual_part_edit.mp4)
+- [Reproduction notebook for Colab T4](experiments/day4/Part_Consistency_Colab.ipynb)
+- [Results and limitations](experiments/day4/RESULTS.md)
 
 Run metadata, frozen configurations, metrics, small predicted masks, and selected previews are saved with the experiment. Full executed outputs stay in Colab; repository notebooks are kept without cell outputs.
 

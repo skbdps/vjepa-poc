@@ -2,6 +2,8 @@
 
 This experiment produced a usable part-controlled video prototype: initialize a named door and window once, propagate their masks, then change either part's color throughout the clip. The saved mask registry keeps the same IDs, and the offline editor reuses them without model inference. This is deterministic compositing on tracked masks; it does not generate new video or solve face identity.
 
+The editor keeps independent settings for each part, supports simultaneous edits, and exports/imports a validated JSON recipe. A native replay command applies that recipe to the saved masks. The committed two-part previews color the door blue and window amber on both real clips; all 104 frames pass the prediction-relative outside-region and overlap-preservation checks.
+
 The most useful evidence is the combination of a real editing demonstration and a harder held-out tracking test. The results do not establish that frozen V-JEPA is the best component for this task.
 
 ## Real video evidence
@@ -37,6 +39,8 @@ The selected tracker reduces hidden-part false presence substantially but loses 
 Paired resampling of the eighteen clips puts the selected tracker's visible-localization difference versus the template at −9.83 percentage points (95% interval −16.03 to −3.71), and its hidden false-presence difference at −18.85 points (−27.48 to −3.67). Lower false presence is better. Its balanced-objective advantage is +4.51 points, with an interval from −3.53 to +9.85; this does not establish a clear overall winner.
 
 The crossing condition is the sharpest failure: selected V-JEPA localizes 271/702 visible samples correctly (38.60%) versus the template's 430/702 (61.25%), and assigns 173/702 to the wrong car. On long occlusion, visible localization is nearly tied, while the selected tracker's hidden false-presence rate is much lower. [The independent audit](AUDIT.md) preserves the exact condition counts and checks.
+
+A supplementary recovery-delay analysis prevents an overstatement: zero immediate template recoveries does not mean it never recovers. Within four source frames of first scored reappearance, selected V-JEPA has 12/18 successes and the template 2/18. At an eight-frame horizon, the template has 16 known successes versus 12 for selected V-JEPA, but only six event horizons are fully observed before clip end; one V-JEPA outcome remains unresolved. This analysis was added after the V-JEPA results, is explicitly post-hoc, and does not replace the frozen primary metric.
 
 V-JEPA uses offline attention inside each independent 16-frame window. The synthetic cars are 2-D sprites, and their first four frames are stationary. Frames are correlated; uncertainty must be resampled by clip, not by individual frame.
 

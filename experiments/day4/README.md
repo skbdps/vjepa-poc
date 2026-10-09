@@ -2,6 +2,18 @@
 
 This stage builds on the Day 3 localization diagnostic. The practical prototype initializes a front-door panel and front window once, preserves their IDs, and applies an edit to a selected predicted part throughout a video. The edit is deterministic recoloring, not generative video synthesis.
 
+## Try the working control layer
+
+Download either self-contained HTML editor and open it in a browser. It needs no GPU, server, or network connection:
+
+- [Car-roundabout interactive editor](run_2026-10-09/car_roundabout/interactive_part_editor.html)
+- [Car-shadow interactive editor](run_2026-10-09/car_shadow/interactive_part_editor.html)
+- [Two-part video preview](run_2026-10-09/car_roundabout/dual_part_edit.mp4)
+
+Select a tagged part to adjust its independent color, strength, and enabled state. Enabling the window preserves the door's settings. Play or scrub the clip, show predicted outlines, save a frame, or export the controls as JSON. Importing that recipe restores the same settings; a wrong sequence or part registry is rejected. Reset disables all edits.
+
+For model execution, open [Part_Consistency_Colab.ipynb](Part_Consistency_Colab.ipynb) in Colab and select a T4 GPU. The notebook downloads the pinned model and source frames, runs both clips, saves masks and scores, and builds the editors. Its repository copy has empty outputs; the executed research history is in the separate live Colab notebook below.
+
 ## What is implemented
 
 - A 64-frame synthetic benchmark with prolonged occlusion, crossing cars, and scale/camera transformations. Separate calibration, development, and test seeds; four tagged parts per clip.
@@ -10,6 +22,7 @@ This stage builds on the Day 3 localization diagnostic. The practical prototype 
 - Two real DAVIS car sequences with independently authored sparse part polygons. Only frame-zero masks initialize each tracker.
 - SAM2 mask propagation, per-part affine flow, and a stronger shared-plane homography/SIFT comparator.
 - A reusable edit API that selects a stable part ID and protects all unselected predicted masks, including overlap pixels. Saved masks allow new colors and part choices without another model run.
+- Independent simultaneous part controls, portable JSON recipes, and native-frame recipe replay. Ambiguous overlaps between predicted parts remain unchanged, even if both parts are enabled.
 - A standalone offline interactive editor built from the actual tracked masks.
 
 ## Run records
@@ -21,6 +34,10 @@ The code and intermediate freezes are committed as the experiment progresses on 
 - [Development results](run_2026-10-09/development_results.json)
 - [First real-car results](run_2026-10-09/car_roundabout/results.json)
 - [First door-edit video](run_2026-10-09/car_roundabout/door_recolor.mp4)
+- [Second real-car results](run_2026-10-09/car_shadow/results.json)
+- [Results and interpretation](RESULTS.md)
+- [Independent result audit](AUDIT.md)
+- [Visual comparison of both real clips](run_2026-10-09/two_clip_part_tracking_comparison.png)
 - [Footage/model attribution](ATTRIBUTION.md)
 
 The executed notebook is saved in [Google Colab](https://colab.research.google.com/drive/1wipvFdtlDOuRwp6Cd9sQpQUCZQNxo2HP).
@@ -61,6 +78,19 @@ Replay an edit from saved masks:
 python experiments/day4/part_editor.py --frames-dir /content/car-roundabout/frames --masks /content/real_roundabout/sam2_masks.npz --target-id 1 --color 35 140 240 --out /content/door_blue.mp4
 python experiments/day4/part_editor.py --frames-dir /content/car-roundabout/frames --masks /content/real_roundabout/sam2_masks.npz --target-id 2 --color 240 180 35 --out /content/window_amber.mp4
 ```
+
+Replay simultaneous edits from an editor-exported recipe:
+
+```bash
+python experiments/day4/replay_recipe.py \
+  --frames-dir /content/car-roundabout/frames \
+  --masks experiments/day4/run_2026-10-09/car_roundabout/sam2_masks.npz \
+  --registry experiments/day4/run_2026-10-09/car_roundabout/part_registry.json \
+  --recipe experiments/day4/run_2026-10-09/car_roundabout/dual_part_edit.recipe.json \
+  --out /content/dual_part_edit.mp4
+```
+
+The recipe stores controls only. Native replay uses original input JPEG pixels; the browser preview uses a compressed embedded MP4, so those rendered pixels are not expected to be identical. Both paths use the same native-resolution masks and protect overlapping predictions.
 
 ## Reproduce the specialist synthetic comparison
 
