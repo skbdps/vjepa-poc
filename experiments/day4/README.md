@@ -12,7 +12,7 @@ Download either self-contained HTML editor and open it in a browser. It needs no
 - [Car-shadow interactive editor](run_2026-10-09/car_shadow/interactive_part_editor.html)
 - [Two-part video preview](run_2026-10-09/car_roundabout/dual_part_edit.mp4)
 
-Select a tagged part to adjust its independent color, strength, and enabled state. Enabling the window preserves the door's settings. Play or scrub the clip, show predicted outlines, save a frame, or export the controls as JSON. Importing that recipe restores the same settings; a wrong sequence or part registry is rejected. Reset disables all edits. See [editor validation](EDITOR_VALIDATION.md): browser recipe export and controls were exercised; the Colab file-picker import remains unverified.
+Select a tagged part to adjust its independent color, strength, and enabled state. Enabling the window preserves the door's settings. Play or scrub the clip, show predicted outlines, save a frame, or export the controls as JSON. Importing that recipe restores the same settings; a wrong sequence or part registry is rejected. Reset disables all edits. **Paste a recipe → Apply recipe** restores exported JSON without opening a file picker. See [editor validation](EDITOR_VALIDATION.md): the export/reset/paste/apply round trip and invalid-schema rejection were verified live in Colab; the native file-picker import remains unverified.
 
 For model execution, open [Part_Consistency_Colab.ipynb](Part_Consistency_Colab.ipynb) in Colab and select a T4 GPU. The notebook downloads the pinned model and source frames, runs both clips, saves masks and scores, and builds the editors. Its repository copy has empty outputs; the executed research history is in the separate live Colab notebook below.
 
