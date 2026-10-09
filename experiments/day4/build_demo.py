@@ -163,7 +163,7 @@ __SCOPE__ select,__SCOPE__ button,__SCOPE__ input[type=color]{font:inherit;color
 __SCOPE__ select{padding:7px 12px;width:100%}
 __SCOPE__ button{padding:7px 14px;cursor:pointer}
 __SCOPE__ button:hover{background:#304258}
-__SCOPE__ button:focus-visible,__SCOPE__ input:focus-visible,__SCOPE__ select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+__SCOPE__ button:focus-visible,__SCOPE__ input:focus-visible,__SCOPE__ select:focus-visible,__SCOPE__ textarea:focus-visible,__SCOPE__ summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 __SCOPE__ input[type=color]{padding:3px;width:100%;max-width:116px;cursor:pointer}
 __SCOPE__ input[type=range]{accent-color:var(--accent);width:100%;cursor:pointer}
 __SCOPE__ .strength-label{display:flex;justify-content:space-between}
@@ -181,6 +181,11 @@ __SCOPE__ .enable-label input{accent-color:var(--accent)}
 __SCOPE__ .recipe-bar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px}
 __SCOPE__ .recipe-bar button{min-height:33px;font-size:12px;padding:5px 11px}
 __SCOPE__ .recipe-bar span{font-size:12px;color:var(--muted);margin-left:4px}
+__SCOPE__ .recipe-paste{margin-top:12px;font-size:12px;color:var(--muted)}
+__SCOPE__ .recipe-paste summary{cursor:pointer;color:var(--text);width:fit-content;padding:4px 0}
+__SCOPE__ .recipe-paste label{margin:10px 0 6px}
+__SCOPE__ .recipe-paste textarea{display:block;width:100%;min-height:130px;resize:vertical;margin-bottom:9px;padding:10px 12px;border:1px solid #40516a;border-radius:7px;background:#111b28;color:var(--text);font:12px/1.5 ui-monospace,monospace}
+__SCOPE__ .recipe-paste button{min-height:33px;font-size:12px;padding:5px 11px}
 __SCOPE__ input:disabled{opacity:.5}
 __SCOPE__ [data-control="recipe-file"]{display:none}
 __SCOPE__ footer{margin-top:22px;font-size:12px;color:var(--muted);display:grid;grid-template-columns:1fr 1fr;gap:28px}
@@ -212,6 +217,7 @@ __SCOPE__ .status span{display:block}}
 <section class="panel" aria-label="Part editing controls">
 <div class="controls"><div><label for="part">Adjust settings for · car_1</label><select id="part"></select><label class="enable-label"><input id="enabled" type="checkbox" checked>Enable edit for this part</label></div><div><label for="color">Part color</label><input id="color" type="color" value="#238cf0"></div><div><label class="strength-label" for="strength"><span>Part strength</span><output id="strength-value">75%</output></label><input id="strength" type="range" min="0" max="100" step="0.1" value="75"></div><div class="toggles"><label><input id="outlines" type="checkbox">Show predicted outlines</label><label><input id="tags" type="checkbox">Show stable part tags</label></div></div>
 <div class="recipe-bar"><button id="reset" type="button">Reset all edits</button><button id="export-recipe" type="button">Export recipe</button><button id="import-recipe" type="button">Import recipe</button><input id="recipe-file" type="file" accept="application/json,.json" aria-label="Import edit recipe JSON"><span id="recipe-status" aria-live="polite">Settings stay with each part ID.</span></div>
+<details class="recipe-paste"><summary>Paste a recipe</summary><label for="recipe-text">Recipe JSON for this video. Applying a valid recipe restores every part setting.</label><textarea id="recipe-text" rows="6" spellcheck="false" autocomplete="off" placeholder="Paste the contents of an exported recipe JSON file"></textarea><button id="apply-recipe" type="button">Apply recipe</button></details>
 <div class="transport"><button id="play" type="button">Play</button><button id="previous" class="step" type="button" aria-label="Previous frame">←</button><button id="next" class="step" type="button" aria-label="Next frame">→</button><label for="scrub" class="sr-only">Video frame</label><input id="scrub" type="range" min="0" max="63" value="0" step="1"><output id="clock">00 / 63</output><button id="save" type="button">Save frame</button></div>
 <div class="status"><span id="selection" aria-live="polite">Preparing predicted masks…</span><span id="frame-status">64 frames · 12 fps · native 854 × 480</span></div>
 </section>
@@ -257,6 +263,11 @@ function validateRecipe(recipe,registry=D.registry){
   normalized.set(part.id,{id:part.id,name:part.name,enabled:part.enabled,color:part.color.slice(),strength:part.strength});
  }
  return {schema:RECIPE_SCHEMA,version:RECIPE_VERSION,sequence:registry.sequence,parts:registry.parts.map(p=>normalized.get(p.id))};
+}
+function parseRecipeText(text,registry=D.registry){
+ if(new TextEncoder().encode(text).byteLength>65536)throw Error('Recipe exceeds the 64 KB controls-only limit.');
+ let recipe;try{recipe=JSON.parse(text);}catch(error){throw Error('Recipe is not valid JSON. Paste the complete exported recipe.');}
+ return validateRecipe(recipe,registry);
 }
 let editRecipe=validateRecipe(defaultRecipe());
 function selectedControls(){return editRecipe.parts.find(p=>p.id===Number($('part').value));}
@@ -350,14 +361,22 @@ $('reset').addEventListener('click',()=>{editRecipe=defaultRecipe();editRecipe.p
 function downloadBlob(blob,filename){const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=filename;root.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 $('export-recipe').addEventListener('click',()=>{
  const recipe=validateRecipe(editRecipe);
- downloadBlob(new Blob([JSON.stringify(recipe,null,2)+'\n'],{type:'application/json'}),`${D.registry.sequence}_part_edits.recipe.json`);
+ const text=JSON.stringify(recipe,null,2)+'\n';$('recipe-text').value=text;
+ downloadBlob(new Blob([text],{type:'application/json'}),`${D.registry.sequence}_part_edits.recipe.json`);
  $('recipe-status').textContent='Recipe exported · part controls only.';
 });
+function importRecipeText(text){
+ // Parse and validate the entire candidate before replacing any active setting.
+ const candidate=parseRecipeText(text);editRecipe=candidate;loadControls();clearError();
+ $('recipe-status').textContent='Recipe imported · settings restored by part ID.';safeRender(lastMediaTime);
+}
+function rejectRecipe(error){showError(error);$('recipe-status').textContent='Import rejected; previous settings retained.';}
+$('apply-recipe').addEventListener('click',()=>{try{importRecipeText($('recipe-text').value);}catch(error){rejectRecipe(error);}});
 $('import-recipe').addEventListener('click',()=>$('recipe-file').click());
 $('recipe-file').addEventListener('change',async()=>{
  const file=$('recipe-file').files[0];if(!file)return;
- try{if(file.size>65536)throw Error('Recipe exceeds the 64 KB controls-only limit.');const candidate=validateRecipe(JSON.parse(await file.text()));editRecipe=candidate;loadControls();clearError();$('recipe-status').textContent='Recipe imported · settings restored by part ID.';safeRender(lastMediaTime);}
- catch(error){showError(error);$('recipe-status').textContent='Import rejected; previous settings retained.';}
+ try{if(file.size>65536)throw Error('Recipe exceeds the 64 KB controls-only limit.');importRecipeText(await file.text());}
+ catch(error){rejectRecipe(error);}
  finally{$('recipe-file').value='';}
 });
 $('scrub').addEventListener('input',()=>seek(Number($('scrub').value)));
@@ -375,7 +394,7 @@ if('requestVideoFrameCallback' in video){
 $('save').addEventListener('click',()=>{if(video.readyState<2)return;const link=document.createElement('a');link.download=`${D.registry.sequence}_edits_frame_${String(shownFrame).padStart(3,'0')}.png`;link.href=clean.toDataURL('image/png');root.append(link);link.click();link.remove();});
 // Pure functions exposed only for local verification; no network or model calls.
 window.partEditorTests=window.partEditorTests||{};
-window.partEditorTests[D.editorId]={decodeRLE,clampFrame,compositePixels,compositeRecipePixels,defaultRecipe,validateRecipe};
+window.partEditorTests[D.editorId]={decodeRLE,clampFrame,compositePixels,compositeRecipePixels,defaultRecipe,validateRecipe,parseRecipeText};
 })();
 </script></body></html>'''
 
