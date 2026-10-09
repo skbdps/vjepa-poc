@@ -6,7 +6,7 @@ Research toward controllable AI video generation, including V-JEPA 2.1 latent-sp
 
 The ongoing work on `experiment/part-consistency-colab` tests persistent object-part identity and selective video edits on a Colab T4.
 
-The active research focus is now [Day 7: a learned predictive JEPA part representation](experiments/day7/README.md). It trains a new recurrent identity/prediction head and measures what future-latent learning adds over the same architecture trained only for retrieval. The earlier SAM2/editor experiments remain comparison evidence and infrastructure; they do not establish the proposed JEPA mechanism.
+The active research focus is [Day 7: a learned predictive JEPA part representation](experiments/day7/README.md). Nine custom heads were trained and tested on 18 unseen synthetic videos. Visible part localization improved from 46.21% with frozen JEPA matching to 92.87%, but the matched retrieval-only head already reached 92.63%: the extra future-prediction objective did not establish an overall tracking gain. Immediate recovery after occlusion remains unreliable. [Results and failure diagnosis](experiments/day7/RESULTS.md) explain the distinction. The earlier SAM2/editor experiments remain historical comparison evidence and infrastructure.
 
 - [Day 3: initial part-localization diagnostic](experiments/day3/README.md)
 - [Day 5: completed whole-car constraint experiment](experiments/day5/README.md) — all twelve held-out clips and an independent numerical audit completed; unconditional containment fails all four accuracy guardrails ([results](experiments/day5/RESULTS.md)).

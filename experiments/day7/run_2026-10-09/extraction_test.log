@@ -1,0 +1,23 @@
+/usr/local/lib/python3.13/dist-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/usr/lib/python3.13/contextlib.py:109: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+FEATURE_DONE test_long_occlusion_10100 10.35
+FEATURE_DONE test_long_occlusion_10101 8.01
+FEATURE_DONE test_long_occlusion_10102 7.02
+FEATURE_DONE test_long_occlusion_10103 7.95
+FEATURE_DONE test_long_occlusion_10104 7.79
+FEATURE_DONE test_long_occlusion_10105 7.39
+FEATURE_DONE test_crossing_10200 7.14
+FEATURE_DONE test_crossing_10201 7.42
+FEATURE_DONE test_crossing_10202 6.77
+FEATURE_DONE test_crossing_10203 7.71
+FEATURE_DONE test_crossing_10204 7.36
+FEATURE_DONE test_crossing_10205 7.09
+FEATURE_DONE test_scale_camera_10300 7.78
+FEATURE_DONE test_scale_camera_10301 8.14
+FEATURE_DONE test_scale_camera_10302 8.32
+FEATURE_DONE test_scale_camera_10303 7.77
+FEATURE_DONE test_scale_camera_10304 8.17
+FEATURE_DONE test_scale_camera_10305 8.35
+EXTRACTION_COMPLETE 63

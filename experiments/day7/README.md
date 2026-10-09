@@ -17,12 +17,20 @@ for primary-source context. This is supervised training of a custom predictive
 head over a frozen backbone. It is not end-to-end JEPA pretraining, automatic part
 discovery, or an established literature-novel method.
 
-## Current execution status
+## Completed result
 
-All 45 training/development clips have been encoded on a Colab Tesla T4. The
-nine matched runs (three arms and three seeds, 30 epochs each) are training.
-No held-out improvement or failure is claimed yet. Test scenes remain sealed
-until all trained checkpoints and development selections are frozen.
+All nine heads completed training on a Colab Tesla T4 and were evaluated on 18
+unseen synthetic clips after the development checkpoint freeze was committed.
+Visible localization was 46.21% for frozen JEPA matching, 92.63% for the trained
+retrieval-only head and 92.87% with predictive supervision. The predictive
+addition's balanced-score effect was −0.008 percentage points, with a paired
+95% interval of [−3.118, +4.131]: no demonstrated added tracking benefit.
+
+The forecast learned its future-feature target, but recovery after occlusion is
+still fragile. All 43 missed predictive recoveries across repeated seed/event
+evaluations were non-emissions. See [RESULTS.md](RESULTS.md) for the complete
+evidence and [PROGRESS.md](PROGRESS.md) for the completed checkpoint. The next
+research target is visibility reopening while preserving part identity.
 
 The clean [Colab notebook](Predictive_Part_JEPA_Colab.ipynb) provides the full
 workflow. `analyze.py` independently recomputes tracking metrics from saved
@@ -43,5 +51,7 @@ selected methods.
 All test-time inputs are RGB-derived tokens and frame-zero part annotations.
 Later labels are restricted to training losses or evaluation. Learned weights are
 preserved separately from this repository's source/results, following its existing
-no-model-weights policy. Curves, checkpoint hashes, raw predictions and reports
-will be saved with the run.
+no-model-weights policy. [Compact evidence](run_2026-10-09/compact_evidence.zip)
+contains all scores, cells, eligibility, CSV rows, curves, reports and source.
+The full archive preserves all nine weights and original internal predictions;
+its SHA-256 and replay requirements are recorded in the export manifest.

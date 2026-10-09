@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "prediction_rows": 26784,
+  "independent_clips": 18,
+  "primary_decision": {
+    "positive_mean_and_interval_excluding_zero": false,
+    "visible_loss_no_more_than_one_percentage_point": true,
+    "absent_specificity_loss_no_more_than_one_percentage_point": true,
+    "predictive_addition_supported_by_prespecified_rule": false,
+    "guard_type": "mean effect across predetermined training seeds; not a confidence-bound noninferiority claim"
+  },
+  "output": "/content/day7_jepa_run/analysis"
+}
