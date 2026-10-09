@@ -1,0 +1,22 @@
+Error importing huggingface_hub.hf_api: No module named 'httpcore2'
+/workspace/scratch/8e9e8b29a938/day8_torch_deps/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+FEATURE_DONE test_11200_dx+32 62.08
+FEATURE_DONE test_11201_dx-32 62.1
+FEATURE_DONE test_11202_dx+64 62.24
+FEATURE_DONE test_11203_dx-64 61.97
+FEATURE_DONE test_11204_dx+32 62.22
+FEATURE_DONE test_11205_dx-32 62.16
+FEATURE_DONE test_11206_dx+64 62.32
+FEATURE_DONE test_11207_dx-64 62.45
+FEATURE_DONE test_11208_dx+48 62.34
+FEATURE_DONE test_11209_dx-48 61.73
+FEATURE_DONE test_11210_dx+80 61.87
+FEATURE_DONE test_11211_dx-80 62.69
+FEATURE_DONE test_11212_dx+48 61.64
+FEATURE_DONE test_11213_dx-48 61.55
+FEATURE_DONE test_11214_dx+80 61.95
+FEATURE_DONE test_11215_dx-80 61.66
+EXTRACTION_COMPLETE 48

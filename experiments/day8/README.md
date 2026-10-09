@@ -6,8 +6,30 @@ representation of a video containing that exact intended change. The earlier
 Day3–7 tracking work is supporting research, not evidence of latent editing.
 
 See [PROTOCOL.md](PROTOCOL.md) for the fixed paired-video design, information
-budget, controls and decision rules. Current status: implementation and runtime
-verification; no pretrained editing result has yet been established.
+budget, controls and decision rules. **Completed:** 24 training, 8 development
+and 16 held-out paired videos, with six trained correction heads and a frozen
+independent coarse readout. [Results and failure diagnosis](RESULTS.md) report
+support for the original copying idea and a negative result for our learned
+addition: direct token copying reaches a normalized regional latent error of
+0.1187 versus 0.1499 for learned correction (no edit = 1; lower is better).
+
+The held-out comparison uses independently encoded genuine target videos.
+The coarse readout places the copied object within 1.33 pixels on average,
+but source-hole artifacts remain. This does not establish full video
+reconstruction, automatic part discovery or propagation from one edited frame.
+The [numerical audit](run_2026-10-09/analysis/independent_audit.json) reproduces
+all scores, with two incomplete training-curve CSV tails documented alongside
+the complete 30-epoch training log.
+
+- [Frozen evaluation summary](run_2026-10-09/test/summary.json)
+- [Per-clip scores](run_2026-10-09/test/per_clip.csv) and [per-tubelet scores](run_2026-10-09/test/per_tubelet.csv)
+- [Fixed familiar-shift preview](run_2026-10-09/analysis/test_11200_dx+32_comparison.mp4)
+- [Fixed unseen-shift preview](run_2026-10-09/analysis/test_11208_dx+48_comparison.mp4)
+- [Reproduction notebook](Day8_Direct_Latent_Edit.ipynb) and [raw artifact checksums](run_2026-10-09/artifact_archives.json)
+
+Preview model panels are 24×24 diagnostic probe outputs, not generated RGB videos.
+The actual full run used local CPU bfloat16 after validation against a completed
+Colab CPU float32 reference; Colab GPU and TPU quota was unavailable.
 
 ## Implementation
 

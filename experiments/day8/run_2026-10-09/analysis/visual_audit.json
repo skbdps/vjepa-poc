@@ -1,0 +1,120 @@
+{
+  "audit_version": "day8_display_audit_v1",
+  "completed_utc": "2026-10-09T10:27:19.557228+00:00",
+  "scope": "Read-only artifact integrity, visual readability, and video validity. No numerical evaluation rerun.",
+  "numerical_pipeline_modified": false,
+  "artifact_integrity_checks": [
+    {
+      "file": "test_summary.png",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    {
+      "file": "test_11200_dx+32_comparison.png",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    {
+      "file": "test_11200_dx+32_comparison.mp4",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    {
+      "file": "test_11200_dx+32_occupancy.png",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    {
+      "file": "test_11208_dx+48_comparison.png",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    {
+      "file": "test_11208_dx+48_comparison.mp4",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    {
+      "file": "test_11208_dx+48_occupancy.png",
+      "sha256_matches": true,
+      "bytes_match": true
+    }
+  ],
+  "videos": [
+    {
+      "file": "test_11200_dx+32_comparison.mp4",
+      "codec_name": "h264",
+      "width": 1000,
+      "height": 924,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "8/1",
+      "avg_frame_rate": "8/1",
+      "duration": "4.000000",
+      "nb_frames": "32",
+      "nb_read_frames": "32",
+      "full_ffmpeg_decode_exit_code": 0,
+      "full_decode_stderr": "",
+      "visually_sampled_zero_based_frames": [
+        0,
+        15,
+        31
+      ]
+    },
+    {
+      "file": "test_11208_dx+48_comparison.mp4",
+      "codec_name": "h264",
+      "width": 1000,
+      "height": 924,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "8/1",
+      "avg_frame_rate": "8/1",
+      "duration": "4.000000",
+      "nb_frames": "32",
+      "nb_read_frames": "32",
+      "full_ffmpeg_decode_exit_code": 0,
+      "full_decode_stderr": "",
+      "visually_sampled_zero_based_frames": [
+        0,
+        15,
+        31
+      ]
+    }
+  ],
+  "fixed_selection_verified": {
+    "scenes": [
+      11200,
+      11208
+    ],
+    "shifts_pixels": [
+      32,
+      48
+    ],
+    "learned_seed": 1801,
+    "still_frame_zero_based": 15
+  },
+  "visual_inspection": {
+    "pngs_inspected": [
+      "test_11200_dx+32_comparison.png",
+      "test_11200_dx+32_occupancy.png",
+      "test_11208_dx+48_comparison.png",
+      "test_11208_dx+48_occupancy.png",
+      "test_summary.png"
+    ],
+    "blocking_display_defects": [],
+    "labels": "Source/target RGB distinguished from coarse frozen-probe outputs; model seed, requested displacement, frame/tubelet, and no-generation qualification readable.",
+    "nonblocking_display_notes": [
+      "The full position-error axis includes the wrong-direction control and therefore visually compresses differences among low-error methods. Exact numeric labels remain readable.",
+      "Summary whiskers show min/max seed means, not scene-bootstrap confidence intervals. This is explicitly labeled.",
+      "The summary chart has three original metrics and does not display the subsequently added coarse colour-identity result; consult evaluation tables for that result.",
+      "Predetermined videos show six panels and omit residual transport; each accompanying comparison PNG includes it."
+    ]
+  },
+  "evidence_limits": [
+    "The fixed examples visually show the selected warm-colour blob displaced into the intended region, but this is a coarse readout of edited latents.",
+    "Local source-hole/background RGB artifacts and faint vacated-area occupancy responses remain visible in the fixed examples.",
+    "Even the genuine-target readout does not reproduce stripe/checkerboard detail. These visuals cannot establish detailed identity or texture preservation.",
+    "Source/target RGB panels are renderer ground truth, not video generated from edited features.",
+    "Two predetermined positive shifts illustrate the run; aggregate metrics cover all sixteen scenes and both signs.",
+    "Playback is eight frames per second for inspection; each probe output covers a two-frame tubelet."
+  ]
+}
