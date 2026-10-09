@@ -59,3 +59,34 @@ Do not regenerate `frozen_config.json` or change the policy after viewing test r
 - `test/test_crossing_6200_comparison.mp4`: fixed first-crossing diagnostic; magenta identifies paint on the other car's full visible body.
 
 The primary improvement is strictly fewer absolute wrong-car effective paint pixels. A pass additionally requires no more than one percentage point loss in visible mean IoU and pooled recall for both raw masks and effective edits. An intersection can suppress an unsafe edit; it cannot reconstruct a missing part or recover a lost identity. No face, generative-video or real-video generalization claim follows from this test.
+
+## Hierarchy editor and replay without a GPU
+
+The editor exposes two cars and four independently controlled parts. Its stable car/part identities are assigned from frame-zero annotations, not automatically discovered. Recipes contain only enabled flags, RGB colors, strengths, sequence identity and the containment switch; they contain no model weights, executable code or masks.
+
+Build the standalone editor after the completed run is available:
+
+```bash
+python experiments/day5/build_hierarchy_demo.py \
+  --run-root /path/to/day5_parent_run \
+  --scene test_crossing_6200 \
+  --out /path/to/hierarchy/interactive_hierarchy_editor.html
+```
+
+Saved-run artifact locations are [interactive_hierarchy_editor.html](run_2026-10-09/hierarchy/interactive_hierarchy_editor.html), [scene_registry.json](run_2026-10-09/hierarchy/scene_registry.json), and [browser_replay.mp4](run_2026-10-09/hierarchy/browser_replay.mp4). The editor includes its own compressed preview and predicted masks and can run offline after download. The registry records stable hierarchy IDs, frame-zero annotations and source hashes. These are replay artifacts, not an additional inference method.
+
+After the complete test results and all twelve prediction caches are downloaded, export a JSON recipe from the hierarchy editor and run:
+
+```bash
+python experiments/day5/replay_hierarchy.py \
+  --run-root /path/to/day5_parent_run \
+  --scene test_crossing_6200 \
+  --recipe /path/to/browser_export.recipe.json \
+  --out /path/to/hierarchy_edit.mp4
+```
+
+This reuses saved child and parent masks and regenerates the exact synthetic source RGB after checking completed-run provenance. It writes the MP4, a normalized `.recipe.json`, and a per-frame `.audit.json`. No model executes. Every part keeps its stable string ID, independent color, strength and enabled state; the global containment toggle adds the predicted-parent intersection. Disabled parts and original child-mask overlaps remain protected in both modes.
+
+The CLI imports the editor builder's validator and compositor, so exported controls use one schema and one native implementation. Both use `floor((1-strength)*RGB + strength*color)` per permitted channel. Browser preview uses compressed video RGB; native replay uses original rendered RGB, so their actual images need not be bit-identical. Protection checks apply before lossy MP4 encoding.
+
+Run `python experiments/day5/replay_hierarchy.py --self-test` for fabricated CPU-only behavior checks. `--default-recipe --scene test_crossing_6200` prints a controls template without loading or generating the scene.
