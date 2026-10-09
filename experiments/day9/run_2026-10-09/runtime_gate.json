@@ -1,0 +1,88 @@
+{
+  "version": "day9_protocol_precision_gate_v1",
+  "pass": true,
+  "criterion": "The unchanged Day8/Day9 protocol: all six errors relative to original Colab FP32 edit signal strictly below 1%. Bitwise equality to prior BF16 is diagnostic only.",
+  "comparison_to_colab_fp32": {
+    "metrics": {
+      "global": {
+        "source_precision_mse": 0.0019230917096138,
+        "target_precision_mse": 0.001931111211888492,
+        "true_edit_mse": 0.23961922526359558,
+        "source_ratio": 0.00802561525477884,
+        "target_ratio": 0.00805908294613737,
+        "tokens": 9216,
+        "denominator_floored": false
+      },
+      "source_hole": {
+        "source_precision_mse": 0.0009271502494812012,
+        "target_precision_mse": 0.001871971064247191,
+        "true_edit_mse": 5.707324504852295,
+        "source_ratio": 0.000162449191156548,
+        "target_ratio": 0.0003279945029681885,
+        "tokens": 149,
+        "denominator_floored": false
+      },
+      "destination": {
+        "source_precision_mse": 0.0014589735073968768,
+        "target_precision_mse": 0.0008962088613770902,
+        "true_edit_mse": 4.454372882843018,
+        "source_ratio": 0.00032753735391494263,
+        "target_ratio": 0.00020119753890138675,
+        "tokens": 290,
+        "denominator_floored": false
+      }
+    },
+    "passed_checks": 6,
+    "total_checks": 6,
+    "passes_1pct_signal_tolerance": true,
+    "tolerance": 0.01,
+    "ratio_floor": 1e-12
+  },
+  "comparison_to_previous_bfloat16": {
+    "metrics": {
+      "global": {
+        "source_precision_mse": 0.0007729645585641265,
+        "target_precision_mse": 0.000691140303388238,
+        "true_edit_mse": 0.24125954508781433,
+        "source_ratio": 0.00320387140862253,
+        "target_ratio": 0.0028647169302117134,
+        "tokens": 9216,
+        "denominator_floored": false
+      },
+      "source_hole": {
+        "source_precision_mse": 0.0006252879975363612,
+        "target_precision_mse": 0.0006598569452762604,
+        "true_edit_mse": 5.700958251953125,
+        "source_ratio": 0.00010968120970227068,
+        "target_ratio": 0.0001157449179793934,
+        "tokens": 149,
+        "denominator_floored": false
+      },
+      "destination": {
+        "source_precision_mse": 0.0006897447165101767,
+        "target_precision_mse": 0.0006217008922249079,
+        "true_edit_mse": 4.452956676483154,
+        "source_ratio": 0.00015489589650688487,
+        "target_ratio": 0.00013961530223462974,
+        "tokens": 290,
+        "denominator_floored": false
+      }
+    },
+    "passed_checks": 6,
+    "total_checks": 6,
+    "passes_1pct_signal_tolerance": true,
+    "tolerance": 0.01,
+    "ratio_floor": 1e-12
+  },
+  "bitwise_equal_to_previous_bfloat16": {
+    "source": false,
+    "target": false
+  },
+  "precision_report_sha256": "a646d450ad8f659cfe686723083c588548623156284cc5e0a53f2733a8866711",
+  "reference_sha256": "92806392a95ecdcc98a36750ec0c533aa78dafb05351054cac95a20217ea6d14",
+  "candidate_sha256": "559d25f928cd1d1e13c0bb55407f85fb8a5e165124fcd879c86d19fbf86a68eb",
+  "previous_production_sha256": "963388316dd58e08a76649399d93267ea5d4273c7b43029b140d2883e1ffd5ba",
+  "checkpoint_sha256": "7ea9b7cb4a75d10644a8a8d42cff9e177b10dca8f02173f0eaf2b0bed82838c6",
+  "chosen_precision": "bfloat16",
+  "test_data_opened": false
+}
