@@ -120,6 +120,7 @@ def _numeric(value):
 def summary_plots(test: Path, out: Path, summary: dict) -> list[dict]:
     """Use evaluator's authoritative scene means and percentile 95% CIs."""
     plt = _plot_modules()
+    from matplotlib.ticker import MaxNLocator
     with (test / "per_clip.csv").open(newline="") as stream:
         rows = list(csv.DictReader(stream))
     figures = []
@@ -157,6 +158,8 @@ def summary_plots(test: Path, out: Path, summary: dict) -> list[dict]:
             axis.set_yticks(y, [LABELS[arm] for arm in arms], fontsize=10)
             axis.set_title(title, fontsize=12, fontweight="bold", loc="left", pad=12)
             axis.set_xlabel(("Difference vs naive\n" if paired else "") + xlabel, fontsize=10)
+            # Four intervals keep small paired RGB-error tick labels legible.
+            axis.xaxis.set_major_locator(MaxNLocator(nbins=4, min_n_ticks=3))
             axis.axvline(0, color="#67778b", linewidth=1)
             axis.grid(axis="x", color="#dde3e9", linewidth=.7)
             axis.set_axisbelow(True)

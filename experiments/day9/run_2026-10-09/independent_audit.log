@@ -1,0 +1,30 @@
+AUDIT_DEV dev_11100_dx+32
+AUDIT_DEV dev_11101_dx-32
+AUDIT_DEV dev_11102_dx+64
+AUDIT_DEV dev_11103_dx-64
+AUDIT_DEV dev_11104_dx+32
+AUDIT_DEV dev_11105_dx-32
+AUDIT_DEV dev_11106_dx+64
+AUDIT_DEV dev_11107_dx-64
+AUDIT_TEST test_12200_dx+32 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12201_dx-32 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12202_dx+64 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12203_dx-64 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12204_dx+32 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12205_dx-32 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12206_dx+64 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12207_dx-64 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12208_dx+48 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12209_dx-48 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12210_dx+80 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12211_dx-80 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12212_dx+48 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12213_dx-48 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12214_dx+80 all full tensor hashes, readouts and rows checked
+AUDIT_TEST test_12215_dx-80 all full tensor hashes, readouts and rows checked
+{
+  "status": "passed",
+  "check_count": 255709,
+  "errors": [],
+  "out": "/workspace/scratch/8e9e8b29a938/day9_compute/analysis/independent_audit.json"
+}
