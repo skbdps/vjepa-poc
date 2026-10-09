@@ -319,6 +319,8 @@ $('previous').addEventListener('click',()=>seek(shownFrame-1));$('next').addEven
 $('play').addEventListener('click',async()=>{try{if(video.paused){if(video.ended||shownFrame===D.count-1)video.currentTime=0;await video.play();}else video.pause();}catch(error){showError(error);}});
 video.addEventListener('play',()=>{$('play').textContent='Pause';});video.addEventListener('pause',()=>{$('play').textContent=video.ended?'Replay':'Play';});video.addEventListener('ended',()=>{$('play').textContent='Replay';safeRender(video.currentTime);});
 video.addEventListener('loadeddata',()=>safeRender(video.currentTime));video.addEventListener('seeked',()=>safeRender(video.currentTime));video.addEventListener('error',()=>showError('The embedded MP4 could not be decoded. Try a browser with H.264 support.'));
+// Colab may execute this script after the first decoded frame is already ready.
+if(video.readyState>=2)safeRender(video.currentTime);
 if('requestVideoFrameCallback' in video){
  const onFrame=(_,metadata)=>{safeRender(metadata.mediaTime);video.requestVideoFrameCallback(onFrame);};video.requestVideoFrameCallback(onFrame);
 }else{
