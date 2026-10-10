@@ -1,0 +1,2972 @@
+{
+  "version": "day11_vace_render_v1",
+  "created_utc": "2026-10-10T01:13:44.499474+00:00",
+  "bindings": {
+    "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+    "model_revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+    "model_files": {
+      "transformer/config.json": {
+        "sha256": "58a07adcbe6ae67624d66918ca2ba65615f931c4a26d8f384ae8ac1e68de0608",
+        "bytes": 662
+      },
+      "transformer/diffusion_pytorch_model-00001-of-00002.safetensors": {
+        "sha256": "192804a4e10b5bb0a13f5c224bc4ec9707b3b8cc0def8eea005dbce7c9d6752a",
+        "bytes": 4999964504
+      },
+      "transformer/diffusion_pytorch_model-00002-of-00002.safetensors": {
+        "sha256": "dadaf1d5e9ccf826e2c497aa9fc2756a044f606d0aa919e5405a734a121bcf7e",
+        "bytes": 2146103400
+      },
+      "transformer/diffusion_pytorch_model.safetensors.index.json": {
+        "sha256": "2ed4b491e7a7f3e8185526d5d9a259944871a122a1eec86808bac9194a965d83",
+        "bytes": 114130
+      },
+      "vae/config.json": {
+        "sha256": "7a3afcf422b9a9d63e0b6ca7e0d3b5193220a61f5b203bb8417900bc090705e8",
+        "bytes": 724
+      },
+      "vae/diffusion_pytorch_model.safetensors": {
+        "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793",
+        "bytes": 507591892
+      },
+      "scheduler/scheduler_config.json": {
+        "sha256": "070dc020808eec985634b83015c1596425c264d8fa80afe22aa1e02e9e903e6c",
+        "bytes": 751
+      }
+    },
+    "settings": {
+      "height": 384,
+      "width": 384,
+      "num_frames": 1,
+      "num_inference_steps": 20,
+      "guidance_scale": 5.0,
+      "conditioning_scale": 1.0,
+      "seed": 1111
+    },
+    "scheduler_class": "FlowMatchEulerDiscreteScheduler",
+    "transformer_dtype": "float16",
+    "vae_dtype": "float32",
+    "attention": "Diffusers native PyTorch SDPA",
+    "parity_max_abs_tolerance": 0.0001,
+    "prompt": "Two patterned colored balls on a textured background. Static camera, simple geometric scene.",
+    "negative_prompt": "text, watermark, blurry, distorted, extra objects",
+    "max_sequence_length": 128,
+    "prompt_cache_sha256": "499bd027b2596ef4711de7e8eebfc26b5ed58078c18fa37c6e32448adcd3a7f1",
+    "prompt_metadata_sha256": "38332f17275e4fb8ceaab71f7619af82301cdad0892441ebd0ac73d0397d83a2",
+    "evaluation_manifest_sha256": "562ed2d226786a04b6264fba8a04568be1562b89a2b246705fdaf9148d39e7aa",
+    "bundles": {
+      "13500": {
+        "sha256": "4edcfd06ccb90cedf9009eb78fb1ab69f82d16bdda62a9b1202b1445b8ca1b5f",
+        "metadata": {
+          "arms": {
+            "absolute_copy_repair": {
+              "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+              "oracle": false,
+              "route": "F(z)"
+            },
+            "absolute_genuine_target": {
+              "input": "independently encoded genuine target JEPA; privileged diagnostic",
+              "oracle": true,
+              "route": "F(z)"
+            },
+            "absolute_shuffled": {
+              "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+              "oracle": false,
+              "route": "F(z)"
+            },
+            "absolute_source": {
+              "input": "unchanged source JEPA",
+              "oracle": false,
+              "route": "F(z)"
+            },
+            "absolute_wrong_direction": {
+              "input": "matched source-only JEPA edit with the opposite displacement",
+              "oracle": false,
+              "route": "F(z)"
+            },
+            "residual_copy_repair": {
+              "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+              "oracle": false,
+              "route": "A(source) + (F(z) - F(source))"
+            },
+            "residual_genuine_target": {
+              "input": "independently encoded genuine target JEPA; privileged diagnostic",
+              "oracle": true,
+              "route": "A(source) + (F(z) - F(source))"
+            },
+            "residual_shuffled": {
+              "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+              "oracle": false,
+              "route": "A(source) + (F(z) - F(source))"
+            },
+            "residual_source": {
+              "input": "unchanged source JEPA",
+              "oracle": false,
+              "route": "A(source) + (F(z) - F(source))"
+            },
+            "residual_wrong_direction": {
+              "input": "matched source-only JEPA edit with the opposite displacement",
+              "oracle": false,
+              "route": "A(source) + (F(z) - F(source))"
+            },
+            "true_source": {
+              "input": "source RGB through frozen Wan VAE",
+              "oracle": false,
+              "route": "true source latent; no-edit baseline"
+            },
+            "true_target": {
+              "input": "genuine target RGB through frozen Wan VAE",
+              "oracle": true,
+              "route": "privileged renderer-interface/decoder-ceiling diagnostic"
+            }
+          },
+          "checkpoint_sha256": "60421e8eb63c939d0de460950f80f89fe6de2670df73880cec4f0bc15baf5c71",
+          "frame_index": 15,
+          "fresh_test_accessed": false,
+          "jepa_manifest_sha256": "07f29f2c5488b8d72a93d08d243abbf0028ec912605f69c51ac6053062ec1ca7",
+          "latent_regions": "Day8 fixed regions from any-coverage24x24 masks, nearest expanded2x; background excludes one-patch dilation of source/destination union and distractor patches",
+          "latent_sha256": {
+            "absolute_copy_repair": "9c7928157fcbdf59fef218fdbb0a315f930f9d14a67e18c921e8d8643350d5a5",
+            "absolute_genuine_target": "c3147f2296e20a674030d99aad0be06936f9845fa34617de08aa80207a34a49f",
+            "absolute_shuffled": "fe4db4ff11493289c58cc060ef2b373da413fbefe29b6f84dacd9bc2bccf1851",
+            "absolute_source": "34d375f5752b3a458f8a3bae5582aaa1564e09d70e3a47b9f2774eff6e0f059a",
+            "absolute_wrong_direction": "2804d0713f56ef25e4a15ffa453b612a3f23ff6b827e7803f7be7db813d927ac",
+            "residual_copy_repair": "29d5af2f9100c937d095baa0c4772646319d6408cba3d133e553b2e3c0f4fdb0",
+            "residual_genuine_target": "f249a5b8dc54f64b8e93b2593789e9a6535f2ad2beb38190b31521c004c3925e",
+            "residual_shuffled": "bf23eef52b5a7112c94ee9e7994f7d8129103c80e86aaf8962be9a225a14141f",
+            "residual_source": "50776eb397ce9094cdb0dc095e13e9aa487965858d638d3e8bcc07ff04089945",
+            "residual_wrong_direction": "3054feec94184d50bca05c99bba8d49cb8dec9cb054ac8606ac708a26284cc01",
+            "true_source": "50776eb397ce9094cdb0dc095e13e9aa487965858d638d3e8bcc07ff04089945",
+            "true_target": "bf75b0fd51ecbfa5d9bf0e83be1e35095a09ceafeab9b4953c42e44f26570fca"
+          },
+          "operator_invariants": [
+            {
+              "copy_repair_sha256": "10b7f41a84f2a58cdb2a1ff4abc5032056df5902fcafe5c5cdebf417076c1dbf",
+              "day8_naive_equivalent": true,
+              "destination_copy_exact": true,
+              "outside_union_exact": true,
+              "shift_px": 0,
+              "uncovered_background_fixed": true,
+              "wrong_direction_sha256": "10b7f41a84f2a58cdb2a1ff4abc5032056df5902fcafe5c5cdebf417076c1dbf",
+              "zero_shift_identity": true
+            },
+            {
+              "copy_repair_sha256": "d2beab84f326a6115a0597c65aea1cb647b1e20d6b9beb23e5946807d5ca5c69",
+              "day8_naive_equivalent": true,
+              "destination_copy_exact": true,
+              "outside_union_exact": true,
+              "shift_px": 16,
+              "uncovered_background_fixed": true,
+              "wrong_direction_sha256": "300cba7da507ddeb54a49bd8de7a256cd59d83291536e076c3c52295a1ff230d",
+              "zero_shift_identity": false
+            }
+          ],
+          "renderer_bundle": true,
+          "residual_zero_exact": true,
+          "rgb_regions": "Exact renderer source hole/destination/distractor masks; protected background expands the same conservative coarse background mask16x",
+          "scene": "dev_13500",
+          "seed": 13500,
+          "shift_px": 16,
+          "shuffle_policy": "One common permutation of all576 copy/repair feature vectors; channels preserved; coordinates remain destination coordinates",
+          "source_rgb_sha256": "6b34e44710a59147c49daa59b36ee227263da42d125ea63ed74627be655fb95b",
+          "target_manifest_sha256": "89a07786aa58341557aec5486c0afec32161b2aadb03a39a8f664ed5f2d36382",
+          "target_rgb_sha256": "cf73c9dfb79a36de5f098a3cbac97bee20afcd4455500efda4c5f6ebb82150d6",
+          "translator_arm": "linear",
+          "vae": {
+            "class": "AutoencoderKLWan",
+            "files": {
+              "config.json": {
+                "bytes": 724,
+                "sha256": "7a3afcf422b9a9d63e0b6ca7e0d3b5193220a61f5b203bb8417900bc090705e8"
+              },
+              "diffusion_pytorch_model.safetensors": {
+                "bytes": 507591892,
+                "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793"
+              }
+            },
+            "input": "[1,3,1,384,384] RGB in [-1,1]",
+            "latents_mean": [
+              -0.7571,
+              -0.7089,
+              -0.9113,
+              0.1075,
+              -0.1745,
+              0.9653,
+              -0.1517,
+              1.5508,
+              0.4134,
+              -0.0715,
+              0.5517,
+              -0.3632,
+              -0.1922,
+              -0.9497,
+              0.2503,
+              -0.2921
+            ],
+            "latents_std": [
+              2.8184,
+              1.4541,
+              2.3275,
+              2.6558,
+              1.2196,
+              1.7708,
+              2.6052,
+              2.0743,
+              3.2687,
+              2.1526,
+              2.8652,
+              1.5579,
+              1.6382,
+              1.1253,
+              2.8251,
+              1.916
+            ],
+            "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+            "normalization": "(posterior_mode - latents_mean) / latents_std",
+            "output": "[16,48,48]",
+            "posterior": "mode",
+            "precision": "float32",
+            "revision": "ec4d2cb062b548996b179d493fdd05340de702a1"
+          },
+          "version": "day11_development_bridge_evaluation_v1"
+        }
+      },
+      "13501": {
+        "sha256": "67d2ca3b63e2166f3a4affd168489a1b96b5a81f98dbc2a6d97a0b3e817884a7",
+        "metadata": {
+          "arms": {
+            "absolute_copy_repair": {
+              "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+              "oracle": false,
+              "route": "F(z)"
+            },
+            "absolute_genuine_target": {
+              "input": "independently encoded genuine target JEPA; privileged diagnostic",
+              "oracle": true,
+              "route": "F(z)"
+            },
+            "absolute_shuffled": {
+              "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+              "oracle": false,
+              "route": "F(z)"
+            },
+            "absolute_source": {
+              "input": "unchanged source JEPA",
+              "oracle": false,
+              "route": "F(z)"
+            },
+            "absolute_wrong_direction": {
+              "input": "matched source-only JEPA edit with the opposite displacement",
+              "oracle": false,
+              "route": "F(z)"
+            },
+            "residual_copy_repair": {
+              "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+              "oracle": false,
+              "route": "A(source) + (F(z) - F(source))"
+            },
+            "residual_genuine_target": {
+              "input": "independently encoded genuine target JEPA; privileged diagnostic",
+              "oracle": true,
+              "route": "A(source) + (F(z) - F(source))"
+            },
+            "residual_shuffled": {
+              "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+              "oracle": false,
+              "route": "A(source) + (F(z) - F(source))"
+            },
+            "residual_source": {
+              "input": "unchanged source JEPA",
+              "oracle": false,
+              "route": "A(source) + (F(z) - F(source))"
+            },
+            "residual_wrong_direction": {
+              "input": "matched source-only JEPA edit with the opposite displacement",
+              "oracle": false,
+              "route": "A(source) + (F(z) - F(source))"
+            },
+            "true_source": {
+              "input": "source RGB through frozen Wan VAE",
+              "oracle": false,
+              "route": "true source latent; no-edit baseline"
+            },
+            "true_target": {
+              "input": "genuine target RGB through frozen Wan VAE",
+              "oracle": true,
+              "route": "privileged renderer-interface/decoder-ceiling diagnostic"
+            }
+          },
+          "checkpoint_sha256": "60421e8eb63c939d0de460950f80f89fe6de2670df73880cec4f0bc15baf5c71",
+          "frame_index": 15,
+          "fresh_test_accessed": false,
+          "jepa_manifest_sha256": "07f29f2c5488b8d72a93d08d243abbf0028ec912605f69c51ac6053062ec1ca7",
+          "latent_regions": "Day8 fixed regions from any-coverage24x24 masks, nearest expanded2x; background excludes one-patch dilation of source/destination union and distractor patches",
+          "latent_sha256": {
+            "absolute_copy_repair": "af9bfef4cfa08192a332c0b92ee55139d14f8a17aacdc01762989e97ae21f6ad",
+            "absolute_genuine_target": "c732d3d93d3e136d7222680a3d013fff0bcd11f2f80af0c0149fa2e58f0ed20d",
+            "absolute_shuffled": "7aac8bf9d3c27bb0120eb49b5caab38717db0655add972c1e5a88eb6d448da55",
+            "absolute_source": "f4924e7b2e0ec71c57256956e76a084c68bafd3d8f3ef6c17c5b4438088595ae",
+            "absolute_wrong_direction": "16f24a76300451f1be790cfc4cd1cc07c0e1ca493ef8d5c32570375de0f99385",
+            "residual_copy_repair": "96f446d4fdacb9f4e98b7d431fba1580835ce8929d98050ed4fbc0814d5d2332",
+            "residual_genuine_target": "540ca8db495e8f0cd73fc00013954557c701c4cda129a92cd0e1d18e6c3c6b81",
+            "residual_shuffled": "00966d2f99bf6a5ea1b0f32fbf11363890ced184759e467c9c4198ec741a5d31",
+            "residual_source": "11ffaaf2165517b18cdd1ed2c83c650c5b3d606536dddf7da19638a969c3b10b",
+            "residual_wrong_direction": "0198cd7b7b2a9a58cf28953613a9b68d572212e9522b673dec385e2140c5acad",
+            "true_source": "11ffaaf2165517b18cdd1ed2c83c650c5b3d606536dddf7da19638a969c3b10b",
+            "true_target": "0924872a314d3bd46f637c88459d6a39e69389807863e62ab320366314d7d3fb"
+          },
+          "operator_invariants": [
+            {
+              "copy_repair_sha256": "a032389155026902aecf53b4cfca3bd42a6f4ac7a6fab4bd854c795aee64e74d",
+              "day8_naive_equivalent": true,
+              "destination_copy_exact": true,
+              "outside_union_exact": true,
+              "shift_px": 0,
+              "uncovered_background_fixed": true,
+              "wrong_direction_sha256": "a032389155026902aecf53b4cfca3bd42a6f4ac7a6fab4bd854c795aee64e74d",
+              "zero_shift_identity": true
+            },
+            {
+              "copy_repair_sha256": "5a190d9468422c1b6fd60b7809c19b27676e81e476cce1edc1116ddc689e2439",
+              "day8_naive_equivalent": true,
+              "destination_copy_exact": true,
+              "outside_union_exact": true,
+              "shift_px": -16,
+              "uncovered_background_fixed": true,
+              "wrong_direction_sha256": "e1b044925cb9f2d2bb4604fd3ec42f2e1552a8b13ad39171b18ffcb351ec4cf3",
+              "zero_shift_identity": false
+            }
+          ],
+          "renderer_bundle": true,
+          "residual_zero_exact": true,
+          "rgb_regions": "Exact renderer source hole/destination/distractor masks; protected background expands the same conservative coarse background mask16x",
+          "scene": "dev_13501",
+          "seed": 13501,
+          "shift_px": -16,
+          "shuffle_policy": "One common permutation of all576 copy/repair feature vectors; channels preserved; coordinates remain destination coordinates",
+          "source_rgb_sha256": "1bcd05ba990c61b547cbf3107e658f6d7d416d6a80dcfdb0a1d6f89ad3f0403c",
+          "target_manifest_sha256": "89a07786aa58341557aec5486c0afec32161b2aadb03a39a8f664ed5f2d36382",
+          "target_rgb_sha256": "e3160a77fb9bd378e606e7468eee861520a2517122f5fef580b1f7dfe805a5fd",
+          "translator_arm": "linear",
+          "vae": {
+            "class": "AutoencoderKLWan",
+            "files": {
+              "config.json": {
+                "bytes": 724,
+                "sha256": "7a3afcf422b9a9d63e0b6ca7e0d3b5193220a61f5b203bb8417900bc090705e8"
+              },
+              "diffusion_pytorch_model.safetensors": {
+                "bytes": 507591892,
+                "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793"
+              }
+            },
+            "input": "[1,3,1,384,384] RGB in [-1,1]",
+            "latents_mean": [
+              -0.7571,
+              -0.7089,
+              -0.9113,
+              0.1075,
+              -0.1745,
+              0.9653,
+              -0.1517,
+              1.5508,
+              0.4134,
+              -0.0715,
+              0.5517,
+              -0.3632,
+              -0.1922,
+              -0.9497,
+              0.2503,
+              -0.2921
+            ],
+            "latents_std": [
+              2.8184,
+              1.4541,
+              2.3275,
+              2.6558,
+              1.2196,
+              1.7708,
+              2.6052,
+              2.0743,
+              3.2687,
+              2.1526,
+              2.8652,
+              1.5579,
+              1.6382,
+              1.1253,
+              2.8251,
+              1.916
+            ],
+            "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+            "normalization": "(posterior_mode - latents_mean) / latents_std",
+            "output": "[16,48,48]",
+            "posterior": "mode",
+            "precision": "float32",
+            "revision": "ec4d2cb062b548996b179d493fdd05340de702a1"
+          },
+          "version": "day11_development_bridge_evaluation_v1"
+        }
+      }
+    },
+    "source_files": {
+      "render.py": "45c19c41bdc0ee6c84f71ba264a1ddf635c3400f0bee54bf404313b6f6c4575c",
+      "vace_bridge.py": "37ea481d279b0fbe18b001f988c77d84bfc1f4e2bb76d2427a8443115083989b"
+    },
+    "runtime": {
+      "python": "3.13.15",
+      "torch": "2.11.0+cu130",
+      "diffusers": "0.35.1",
+      "transformers": "4.57.6",
+      "gpu": "Tesla T4",
+      "compute_capability": [
+        7,
+        5
+      ],
+      "threads": 2
+    }
+  },
+  "upstream_interface_smoke_test": {
+    "actual_upstream_call": true,
+    "original_conflicts_reproduced": true,
+    "cached_RGB_and_direct_paths": true,
+    "CFG_and_control_payload_checked": true,
+    "denoising_steps_per_path": 2,
+    "real_weights_or_GPU_tested": false
+  },
+  "prompt_metadata": {
+    "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+    "revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+    "positive_prompt": "Two patterned colored balls on a textured background. Static camera, simple geometric scene.",
+    "negative_prompt": "text, watermark, blurry, distorted, extra objects",
+    "max_sequence_length": 128,
+    "shapes": {
+      "prompt_embeds": [
+        1,
+        128,
+        4096
+      ],
+      "negative_prompt_embeds": [
+        1,
+        128,
+        4096
+      ]
+    },
+    "dtypes": {
+      "prompt_embeds": "torch.float16",
+      "negative_prompt_embeds": "torch.float16"
+    },
+    "finite": {
+      "prompt_embeds": true,
+      "negative_prompt_embeds": true
+    },
+    "sha256": "499bd027b2596ef4711de7e8eebfc26b5ed58078c18fa37c6e32448adcd3a7f1",
+    "seconds_including_dependency_recovery": 160.00674861000016,
+    "gpu_peak_allocated_gib": 12.534629821777344,
+    "packages": {
+      "torch": "2.11.0+cu130",
+      "diffusers": "0.35.1",
+      "transformers": "4.57.6",
+      "ftfy": "6.3.1"
+    },
+    "pilot_guidance": 5.0,
+    "pilot_steps": 20,
+    "pilot_seed": 1111,
+    "pilot_frames_height_width": [
+      1,
+      384,
+      384
+    ],
+    "same_prompt_for_all_arms": true,
+    "recovery_note": "Installed missing optional ftfy; reused loaded frozen T5 and upstream method unchanged."
+  },
+  "parity": {
+    "dev_13500/source": {
+      "cached_vs_live_teacher_max_abs": 3.635883331298828e-06,
+      "tolerance": 0.0001,
+      "passed": true,
+      "denoised_latent_max_abs": 0.0,
+      "denoised_latent_mean_abs": 0.0
+    },
+    "dev_13500/target": {
+      "cached_vs_live_teacher_max_abs": 4.604458808898926e-06,
+      "tolerance": 0.0001,
+      "passed": true,
+      "denoised_latent_max_abs": 0.0,
+      "denoised_latent_mean_abs": 0.0
+    },
+    "dev_13501/source": {
+      "cached_vs_live_teacher_max_abs": 3.635883331298828e-06,
+      "tolerance": 0.0001,
+      "passed": true,
+      "denoised_latent_max_abs": 0.0,
+      "denoised_latent_mean_abs": 0.0
+    },
+    "dev_13501/target": {
+      "cached_vs_live_teacher_max_abs": 3.635883331298828e-06,
+      "tolerance": 0.0001,
+      "passed": true,
+      "denoised_latent_max_abs": 0.0,
+      "denoised_latent_mean_abs": 0.0
+    }
+  },
+  "renders": {
+    "dev_13500/parity_source_RGB": {
+      "route": "official_RGB",
+      "denoise_seconds": 9.293659123999987,
+      "total_seconds": 10.125013743000181,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": null,
+      "input_rgb_sha256": "6b34e44710a59147c49daa59b36ee227263da42d125ea63ed74627be655fb95b",
+      "files": {
+        "png": {
+          "path": "dev_13500/parity_source_RGB.png",
+          "sha256": "2ae8c75cee850335e22f17d39f95eaf143101ffe2b2cf2eee0e10a7bdf3bf73e"
+        },
+        "latent": {
+          "path": "dev_13500/parity_source_RGB.npy",
+          "sha256": "214f1a23bf67e1e440398fe763935162a44e4dc7d35f2142359ef650553e48f6"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.0033970782981909927,
+            "target_rgb": 0.1142510547727998
+          },
+          "destination": {
+            "source_rgb": 0.002798019572375209,
+            "target_rgb": 0.0644275346411996
+          },
+          "distractor": {
+            "source_rgb": 0.003757838207538217,
+            "target_rgb": 0.003757838207538217
+          },
+          "background": {
+            "source_rgb": 0.00019722782904011278,
+            "target_rgb": 0.00019722782904011278
+          },
+          "global": {
+            "source_rgb": 0.0003190434081732276,
+            "target_rgb": 0.0018189691233984969
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1798,
+          "centroid_xy": [
+            202.50611790878753,
+            286.81924360400444
+          ],
+          "centroid_error_to_source_px": 0.5374274018774685,
+          "centroid_error_to_target_px": 15.494936435206432,
+          "iou_to_target": 0.3936699857752489,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.1928580125024206
+        }
+      }
+    },
+    "dev_13500/parity_source_direct": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 8.665173933999995,
+      "total_seconds": 9.494099694999932,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "0d1b37aff0492b17e13e3493321f61a6ba5bd8f65b424d09234b4ff455915f27",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/parity_source_direct.png",
+          "sha256": "2ae8c75cee850335e22f17d39f95eaf143101ffe2b2cf2eee0e10a7bdf3bf73e"
+        },
+        "latent": {
+          "path": "dev_13500/parity_source_direct.npy",
+          "sha256": "214f1a23bf67e1e440398fe763935162a44e4dc7d35f2142359ef650553e48f6"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.0033970782981909927,
+            "target_rgb": 0.1142510547727998
+          },
+          "destination": {
+            "source_rgb": 0.002798019572375209,
+            "target_rgb": 0.0644275346411996
+          },
+          "distractor": {
+            "source_rgb": 0.003757838207538217,
+            "target_rgb": 0.003757838207538217
+          },
+          "background": {
+            "source_rgb": 0.00019722782904011278,
+            "target_rgb": 0.00019722782904011278
+          },
+          "global": {
+            "source_rgb": 0.0003190434081732276,
+            "target_rgb": 0.0018189691233984969
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1798,
+          "centroid_xy": [
+            202.50611790878753,
+            286.81924360400444
+          ],
+          "centroid_error_to_source_px": 0.5374274018774685,
+          "centroid_error_to_target_px": 15.494936435206432,
+          "iou_to_target": 0.3936699857752489,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.1928580125024206
+        }
+      }
+    },
+    "dev_13500/parity_target_RGB": {
+      "route": "official_RGB",
+      "denoise_seconds": 9.937617582999792,
+      "total_seconds": 10.78605992599978,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": null,
+      "input_rgb_sha256": "cf73c9dfb79a36de5f098a3cbac97bee20afcd4455500efda4c5f6ebb82150d6",
+      "files": {
+        "png": {
+          "path": "dev_13500/parity_target_RGB.png",
+          "sha256": "eb17ab969a89db0d8d02a67bcfe155c971f0a607c228761253a6a1ddd7f96788"
+        },
+        "latent": {
+          "path": "dev_13500/parity_target_RGB.npy",
+          "sha256": "91d1cea86d3d949ecb4d4ecfae2c8f538920d128acd3d86eebf70ff5538d1cab"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.10779267275281253,
+            "target_rgb": 0.0003868547290760467
+          },
+          "destination": {
+            "source_rgb": 0.06419141612079592,
+            "target_rgb": 0.003863722671492722
+          },
+          "distractor": {
+            "source_rgb": 0.003771579827789683,
+            "target_rgb": 0.003771579827789683
+          },
+          "background": {
+            "source_rgb": 0.0001958125311147586,
+            "target_rgb": 0.0001958125311147586
+          },
+          "global": {
+            "source_rgb": 0.0017790502695722446,
+            "target_rgb": 0.00031693149981488604
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1790,
+          "centroid_xy": [
+            218.52625698324022,
+            286.8569832402235
+          ],
+          "centroid_error_to_source_px": 16.526875798821536,
+          "centroid_error_to_target_px": 0.545344117036268,
+          "iou_to_target": 0.8430725730442978,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.0253139271124295
+        }
+      }
+    },
+    "dev_13500/parity_target_direct": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.106420768000135,
+      "total_seconds": 9.98791945200037,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "f8fbafc5ac469bffc3cc4566267735bb1b6a61a1d73e5163620c9c36a7e24d52",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/parity_target_direct.png",
+          "sha256": "eb17ab969a89db0d8d02a67bcfe155c971f0a607c228761253a6a1ddd7f96788"
+        },
+        "latent": {
+          "path": "dev_13500/parity_target_direct.npy",
+          "sha256": "91d1cea86d3d949ecb4d4ecfae2c8f538920d128acd3d86eebf70ff5538d1cab"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.10779267275281253,
+            "target_rgb": 0.0003868547290760467
+          },
+          "destination": {
+            "source_rgb": 0.06419141612079592,
+            "target_rgb": 0.003863722671492722
+          },
+          "distractor": {
+            "source_rgb": 0.003771579827789683,
+            "target_rgb": 0.003771579827789683
+          },
+          "background": {
+            "source_rgb": 0.0001958125311147586,
+            "target_rgb": 0.0001958125311147586
+          },
+          "global": {
+            "source_rgb": 0.0017790502695722446,
+            "target_rgb": 0.00031693149981488604
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1790,
+          "centroid_xy": [
+            218.52625698324022,
+            286.8569832402235
+          ],
+          "centroid_error_to_source_px": 16.526875798821536,
+          "centroid_error_to_target_px": 0.545344117036268,
+          "iou_to_target": 0.8430725730442978,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.0253139271124295
+        }
+      }
+    },
+    "dev_13501/parity_source_RGB": {
+      "route": "official_RGB",
+      "denoise_seconds": 10.889437863999774,
+      "total_seconds": 11.809802909000155,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": null,
+      "input_rgb_sha256": "1bcd05ba990c61b547cbf3107e658f6d7d416d6a80dcfdb0a1d6f89ad3f0403c",
+      "files": {
+        "png": {
+          "path": "dev_13501/parity_source_RGB.png",
+          "sha256": "c29d60bec7e2fb272cdb9ea0b782a21166bbe6e87ae39a2f0bc733d545a2e5b1"
+        },
+        "latent": {
+          "path": "dev_13501/parity_source_RGB.npy",
+          "sha256": "614e39787a4ce0559a70fdbab920e9549cec947e4e20ed79dd1db33a43800c13"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.004549337896521515,
+            "target_rgb": 0.10734959546874573
+          },
+          "destination": {
+            "source_rgb": 0.003749114684869664,
+            "target_rgb": 0.09783278272443938
+          },
+          "distractor": {
+            "source_rgb": 0.005165305018446041,
+            "target_rgb": 0.005165305018446041
+          },
+          "background": {
+            "source_rgb": 0.0002531091192717116,
+            "target_rgb": 0.0002531091192717116
+          },
+          "global": {
+            "source_rgb": 0.00043203059225573867,
+            "target_rgb": 0.0030272328164937445
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 2800,
+          "centroid_xy": [
+            154.46178571428572,
+            289.5464285714286
+          ],
+          "centroid_error_to_source_px": 0.6472813041751612,
+          "centroid_error_to_target_px": 16.468033153472756,
+          "iou_to_target": 0.46749304325828483,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.12883993138622077
+        }
+      }
+    },
+    "dev_13501/parity_source_direct": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 10.180522845000269,
+      "total_seconds": 11.121065011000155,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "b842084fbaa2d1ca5e58f78d4869fcc7ff6a1a9b07cadc3fb52a0baf991969f2",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/parity_source_direct.png",
+          "sha256": "c29d60bec7e2fb272cdb9ea0b782a21166bbe6e87ae39a2f0bc733d545a2e5b1"
+        },
+        "latent": {
+          "path": "dev_13501/parity_source_direct.npy",
+          "sha256": "614e39787a4ce0559a70fdbab920e9549cec947e4e20ed79dd1db33a43800c13"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.004549337896521515,
+            "target_rgb": 0.10734959546874573
+          },
+          "destination": {
+            "source_rgb": 0.003749114684869664,
+            "target_rgb": 0.09783278272443938
+          },
+          "distractor": {
+            "source_rgb": 0.005165305018446041,
+            "target_rgb": 0.005165305018446041
+          },
+          "background": {
+            "source_rgb": 0.0002531091192717116,
+            "target_rgb": 0.0002531091192717116
+          },
+          "global": {
+            "source_rgb": 0.00043203059225573867,
+            "target_rgb": 0.0030272328164937445
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 2800,
+          "centroid_xy": [
+            154.46178571428572,
+            289.5464285714286
+          ],
+          "centroid_error_to_source_px": 0.6472813041751612,
+          "centroid_error_to_target_px": 16.468033153472756,
+          "iou_to_target": 0.46749304325828483,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.12883993138622077
+        }
+      }
+    },
+    "dev_13501/parity_target_RGB": {
+      "route": "official_RGB",
+      "denoise_seconds": 11.406901701000152,
+      "total_seconds": 12.32093712699998,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": null,
+      "input_rgb_sha256": "e3160a77fb9bd378e606e7468eee861520a2517122f5fef580b1f7dfe805a5fd",
+      "files": {
+        "png": {
+          "path": "dev_13501/parity_target_RGB.png",
+          "sha256": "8e41c45def5609481abc439fe1d7153dda68a4a4cd3de4b6de80e2ae5654940c"
+        },
+        "latent": {
+          "path": "dev_13501/parity_target_RGB.npy",
+          "sha256": "085190b8a6001a449f6ed2e0d3dfcabd483b25ca78a2c39bfbe2ffa6fc5d958e"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.08565985549904093,
+            "target_rgb": 0.0006627442576730683
+          },
+          "destination": {
+            "source_rgb": 0.10577185450977232,
+            "target_rgb": 0.005067883946412326
+          },
+          "distractor": {
+            "source_rgb": 0.005189476381592132,
+            "target_rgb": 0.005189476381592132
+          },
+          "background": {
+            "source_rgb": 0.0002518244074558443,
+            "target_rgb": 0.0002518244074558443
+          },
+          "global": {
+            "source_rgb": 0.0030459602418207205,
+            "target_rgb": 0.000433860386730264
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 2793,
+          "centroid_xy": [
+            138.50519155030435,
+            289.55388471177946
+          ],
+          "centroid_error_to_source_px": 15.501229233294499,
+          "centroid_error_to_target_px": 0.6739713294221081,
+          "iou_to_target": 0.927478376580173,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.05815582657294934
+        }
+      }
+    },
+    "dev_13501/parity_target_direct": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.718090697000207,
+      "total_seconds": 10.611869825000213,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "f0f84960f062f86959f938e2afe724942342fe81f3816ba5e8a5958f149744ec",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/parity_target_direct.png",
+          "sha256": "8e41c45def5609481abc439fe1d7153dda68a4a4cd3de4b6de80e2ae5654940c"
+        },
+        "latent": {
+          "path": "dev_13501/parity_target_direct.npy",
+          "sha256": "085190b8a6001a449f6ed2e0d3dfcabd483b25ca78a2c39bfbe2ffa6fc5d958e"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.08565985549904093,
+            "target_rgb": 0.0006627442576730683
+          },
+          "destination": {
+            "source_rgb": 0.10577185450977232,
+            "target_rgb": 0.005067883946412326
+          },
+          "distractor": {
+            "source_rgb": 0.005189476381592132,
+            "target_rgb": 0.005189476381592132
+          },
+          "background": {
+            "source_rgb": 0.0002518244074558443,
+            "target_rgb": 0.0002518244074558443
+          },
+          "global": {
+            "source_rgb": 0.0030459602418207205,
+            "target_rgb": 0.000433860386730264
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 2793,
+          "centroid_xy": [
+            138.50519155030435,
+            289.55388471177946
+          ],
+          "centroid_error_to_source_px": 15.501229233294499,
+          "centroid_error_to_target_px": 0.6739713294221081,
+          "iou_to_target": 0.927478376580173,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.05815582657294934
+        }
+      }
+    },
+    "dev_13500/true_source": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.389674585000193,
+      "total_seconds": 10.271198593000008,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "8716bef15d7c1d8051dc9b96a0b5f2d574de3b74772da864de2bb19706a51c83",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/true_source.png",
+          "sha256": "2ec79b14809d54d65e01527b0ad459dbadb8f62fc73faed258865f433cd11855"
+        },
+        "latent": {
+          "path": "dev_13500/true_source.npy",
+          "sha256": "bb69f452f964474224fcdae437e6a2c5ad4002fa78e5770d9eb5329c3acd4f5b"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.003386706470362078,
+            "target_rgb": 0.11430972376134871
+          },
+          "destination": {
+            "source_rgb": 0.002809584413156535,
+            "target_rgb": 0.06452313974188653
+          },
+          "distractor": {
+            "source_rgb": 0.003749995450999652,
+            "target_rgb": 0.003749995450999652
+          },
+          "background": {
+            "source_rgb": 0.00019713810455051803,
+            "target_rgb": 0.00019713810455051803
+          },
+          "global": {
+            "source_rgb": 0.00031899859673807787,
+            "target_rgb": 0.0018205152048223977
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1792,
+          "centroid_xy": [
+            202.47488839285714,
+            286.8482142857143
+          ],
+          "centroid_error_to_source_px": 0.49855580302676566,
+          "centroid_error_to_target_px": 15.525853577736177,
+          "iou_to_target": 0.3915362731152205,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.19298794984470355
+        }
+      },
+      "arm_metadata": {
+        "input": "source RGB through frozen Wan VAE",
+        "oracle": false,
+        "route": "true source latent; no-edit baseline"
+      }
+    },
+    "dev_13500/true_target": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.259631938999973,
+      "total_seconds": 10.1311572110003,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "4cfbc8a7a81f50bb54be161450c6deee9cf1843aff3d9361c8a0dd084fd225a3",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/true_target.png",
+          "sha256": "b46ffa0d3401ee382e5b8497c00f5e93d889c9afd5eeb401f5ebe959fc97afa7"
+        },
+        "latent": {
+          "path": "dev_13500/true_target.npy",
+          "sha256": "0ec928e361845a63f7eec40ad28811fe60e47843b7d7cd2285c19ed5f3102a90"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.10783113206835983,
+            "target_rgb": 0.0003834372400760894,
+            "rendered_true_source": 0.11380881033689906
+          },
+          "destination": {
+            "source_rgb": 0.06432163840319881,
+            "target_rgb": 0.0038735062609353155,
+            "rendered_true_source": 0.06658676896414857
+          },
+          "distractor": {
+            "source_rgb": 0.003764758286836951,
+            "target_rgb": 0.003764758286836951,
+            "rendered_true_source": 6.3602023328169574e-06
+          },
+          "background": {
+            "source_rgb": 0.00019574448683445226,
+            "target_rgb": 0.00019574448683445226,
+            "rendered_true_source": 3.3865796192785813e-06
+          },
+          "global": {
+            "source_rgb": 0.0017809694088011024,
+            "target_rgb": 0.00031688651455725726,
+            "rendered_true_source": 0.0015962677282241869
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1796,
+          "centroid_xy": [
+            218.58184855233853,
+            286.8596881959911
+          ],
+          "centroid_error_to_source_px": 16.582442184884457,
+          "centroid_error_to_target_px": 0.5985274765645009,
+          "iou_to_target": 0.8459000942507069,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.025491387947305454
+        }
+      },
+      "arm_metadata": {
+        "input": "genuine target RGB through frozen Wan VAE",
+        "oracle": true,
+        "route": "privileged renderer-interface/decoder-ceiling diagnostic"
+      }
+    },
+    "dev_13500/absolute_source": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.440234509999755,
+      "total_seconds": 10.320305981999809,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "5eb55c1ec66aefec8e855422e3f39baa377d3c4fdec834b2e490719a54aba1f1",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/absolute_source.png",
+          "sha256": "c33ed4ee86173df982b7f0a494805d406022bc9af5a034d6138d4f5a79f8c728"
+        },
+        "latent": {
+          "path": "dev_13500/absolute_source.npy",
+          "sha256": "b2ef13a3c2c13a1f9932112e07cefb8806d01f274a311b2e9998224235ee3899"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.03941667734631979,
+            "target_rgb": 0.05070487595268788,
+            "rendered_true_source": 0.040570620148610514
+          },
+          "destination": {
+            "source_rgb": 0.02330428286416273,
+            "target_rgb": 0.059453836194845934,
+            "rendered_true_source": 0.02504318295837932
+          },
+          "distractor": {
+            "source_rgb": 0.03615063310607367,
+            "target_rgb": 0.03615063310607367,
+            "rendered_true_source": 0.040119952520193784
+          },
+          "background": {
+            "source_rgb": 0.0016029972831578584,
+            "target_rgb": 0.0016029972831578584,
+            "rendered_true_source": 0.0017405529354464263
+          },
+          "global": {
+            "source_rgb": 0.0027753030323762595,
+            "target_rgb": 0.003357743710796774,
+            "rendered_true_source": 0.002984492823829333
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1567,
+          "centroid_xy": [
+            204.12125079770263,
+            285.87109125717933
+          ],
+          "centroid_error_to_source_px": 2.40294400608316,
+          "centroid_error_to_target_px": 13.924586685783058,
+          "iou_to_target": 0.42229078287697647,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.2269439949204027
+        }
+      },
+      "arm_metadata": {
+        "input": "unchanged source JEPA",
+        "oracle": false,
+        "route": "F(z)"
+      }
+    },
+    "dev_13500/absolute_genuine_target": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.547465898000155,
+      "total_seconds": 10.435434269000325,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "20b785cff17beb2be2a8de6b9b1789c4aa35624a9810a0907c43606d830179bf",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/absolute_genuine_target.png",
+          "sha256": "2bfafff19055f0e83dd2c53556aaad3fb946f159f14c5c463bc88c77099b8b7c"
+        },
+        "latent": {
+          "path": "dev_13500/absolute_genuine_target.npy",
+          "sha256": "a2a666943b4b447ec4688e925b70514df7100cc4beaa60802478cbaccea1648e"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.08659623749538262,
+            "target_rgb": 0.003755405789125851,
+            "rendered_true_source": 0.09177383384470025
+          },
+          "destination": {
+            "source_rgb": 0.05780268629378454,
+            "target_rgb": 0.03559465124301193,
+            "rendered_true_source": 0.06043207671126864
+          },
+          "distractor": {
+            "source_rgb": 0.03627711827070578,
+            "target_rgb": 0.03627711827070578,
+            "rendered_true_source": 0.040160570474317134
+          },
+          "background": {
+            "source_rgb": 0.0015853017268999106,
+            "target_rgb": 0.0015853017268999106,
+            "rendered_true_source": 0.001728646110593559
+          },
+          "global": {
+            "source_rgb": 0.003525696309212002,
+            "target_rgb": 0.002747827921252243,
+            "rendered_true_source": 0.00377497477905355
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1584,
+          "centroid_xy": [
+            220.5044191919192,
+            286.2771464646465
+          ],
+          "centroid_error_to_source_px": 18.518532524577658,
+          "centroid_error_to_target_px": 2.606651630430559,
+          "iou_to_target": 0.7256637168141593,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.13697820081000003
+        }
+      },
+      "arm_metadata": {
+        "input": "independently encoded genuine target JEPA; privileged diagnostic",
+        "oracle": true,
+        "route": "F(z)"
+      }
+    },
+    "dev_13500/absolute_copy_repair": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.994934635999925,
+      "total_seconds": 10.899204851999912,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "cbb8e360251d9e606cf36751177fa323cd00109f8fe9d1e3f5ceb9a54269b3da",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/absolute_copy_repair.png",
+          "sha256": "f88ab4c126bcafb310e51076b09afb9e3662a3bd5fdfbd2dad2c69ebda533fb3"
+        },
+        "latent": {
+          "path": "dev_13500/absolute_copy_repair.npy",
+          "sha256": "9ce80e28764898470ce5e505bd9bb303f8c75bfe9a03287e0c79919526c3c1d7"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.07996876515568421,
+            "target_rgb": 0.0061622666495792225,
+            "rendered_true_source": 0.08489871919548288
+          },
+          "destination": {
+            "source_rgb": 0.05595641323895118,
+            "target_rgb": 0.03537401534957692,
+            "rendered_true_source": 0.05855762749889533
+          },
+          "distractor": {
+            "source_rgb": 0.03622738775908516,
+            "target_rgb": 0.03622738775908516,
+            "rendered_true_source": 0.04014991489590179
+          },
+          "background": {
+            "source_rgb": 0.0016219682364524495,
+            "target_rgb": 0.0016219682364524495,
+            "rendered_true_source": 0.001760890858668756
+          },
+          "global": {
+            "source_rgb": 0.003500755216954928,
+            "target_rgb": 0.00279626459802898,
+            "rendered_true_source": 0.003746848841802744
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1590,
+          "centroid_xy": [
+            219.96477987421383,
+            285.9622641509434
+          ],
+          "centroid_error_to_source_px": 17.994727328341924,
+          "centroid_error_to_target_px": 2.2219936198227437,
+          "iou_to_target": 0.7268496975337366,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.14017670004334976
+        }
+      },
+      "arm_metadata": {
+        "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+        "oracle": false,
+        "route": "F(z)"
+      }
+    },
+    "dev_13500/absolute_wrong_direction": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.728097302000151,
+      "total_seconds": 10.627405540999916,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "0e2127b40955dedabc2807c9dce52bd4564b98ac485f855f45905082ad272ed6",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/absolute_wrong_direction.png",
+          "sha256": "5cd832001954ddea838a1c6a2110c87c328c93d77b1a92df51e28c7372ec9334"
+        },
+        "latent": {
+          "path": "dev_13500/absolute_wrong_direction.npy",
+          "sha256": "40f63d9d8d4068415538091a8daa34c19b91f88f50f21ac5acdaa31f4ce4428f"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.04170407686334818,
+            "target_rgb": 0.08787384439871039,
+            "rendered_true_source": 0.042167686887647535
+          },
+          "destination": {
+            "source_rgb": 0.04434703392347253,
+            "target_rgb": 0.08550076274173252,
+            "rendered_true_source": 0.047584186330974505
+          },
+          "distractor": {
+            "source_rgb": 0.03623580830865255,
+            "target_rgb": 0.03623580830865255,
+            "rendered_true_source": 0.040254553661323814
+          },
+          "background": {
+            "source_rgb": 0.00156189149082207,
+            "target_rgb": 0.00156189149082207,
+            "rendered_true_source": 0.0016975877282159714
+          },
+          "global": {
+            "source_rgb": 0.003275605636453927,
+            "target_rgb": 0.004123055649558751,
+            "rendered_true_source": 0.003495902684330813
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1580,
+          "centroid_xy": [
+            188.16582278481013,
+            286.0354430379747
+          ],
+          "centroid_error_to_source_px": 13.867762233117137,
+          "centroid_error_to_target_px": 29.849765497242114,
+          "iou_to_target": 0.16237437185929648,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.366510683681701
+        }
+      },
+      "arm_metadata": {
+        "input": "matched source-only JEPA edit with the opposite displacement",
+        "oracle": false,
+        "route": "F(z)"
+      }
+    },
+    "dev_13500/absolute_shuffled": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.729495522999969,
+      "total_seconds": 10.62072133599986,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "d9eafa54150d197d1ace2768018222e4616b5b7ff27a0cd1ac45b7be034d7313",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/absolute_shuffled.png",
+          "sha256": "bbf5ad8bc61d68805b5bbf7ce53b35b926a8f5170ec3b7a50c2422ed2ebed604"
+        },
+        "latent": {
+          "path": "dev_13500/absolute_shuffled.npy",
+          "sha256": "c596917dc3ff06f3545222127ea92bfab9103431bc73d50b462a06172955ba78"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.09409214153430177,
+            "target_rgb": 0.003747496563664553,
+            "rendered_true_source": 0.09959613321171093
+          },
+          "destination": {
+            "source_rgb": 0.07185099989649649,
+            "target_rgb": 0.10225823878592614,
+            "rendered_true_source": 0.07589088518342689
+          },
+          "distractor": {
+            "source_rgb": 0.12363883523867862,
+            "target_rgb": 0.12363883523867862,
+            "rendered_true_source": 0.13842358018140796
+          },
+          "background": {
+            "source_rgb": 0.005537648241800492,
+            "target_rgb": 0.005537648241800492,
+            "rendered_true_source": 0.0056659030457959945
+          },
+          "global": {
+            "source_rgb": 0.00871521763519996,
+            "target_rgb": 0.00865263980444665,
+            "rendered_true_source": 0.009172170512120516
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1145,
+          "centroid_xy": [
+            171.3755458515284,
+            174.44279475982532
+          ],
+          "centroid_error_to_source_px": 116.64896760524992,
+          "centroid_error_to_target_px": 121.83170431427831,
+          "iou_to_target": 0.0,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.46353262037316695
+        }
+      },
+      "arm_metadata": {
+        "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+        "oracle": false,
+        "route": "F(z)"
+      }
+    },
+    "dev_13500/residual_source": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.58149275300002,
+      "total_seconds": 10.471354738000173,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "8716bef15d7c1d8051dc9b96a0b5f2d574de3b74772da864de2bb19706a51c83",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/residual_source.png",
+          "sha256": "2ec79b14809d54d65e01527b0ad459dbadb8f62fc73faed258865f433cd11855"
+        },
+        "latent": {
+          "path": "dev_13500/residual_source.npy",
+          "sha256": "bb69f452f964474224fcdae437e6a2c5ad4002fa78e5770d9eb5329c3acd4f5b"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.003386706470362078,
+            "target_rgb": 0.11430972376134871,
+            "rendered_true_source": 0.0
+          },
+          "destination": {
+            "source_rgb": 0.002809584413156535,
+            "target_rgb": 0.06452313974188653,
+            "rendered_true_source": 0.0
+          },
+          "distractor": {
+            "source_rgb": 0.003749995450999652,
+            "target_rgb": 0.003749995450999652,
+            "rendered_true_source": 0.0
+          },
+          "background": {
+            "source_rgb": 0.00019713810455051803,
+            "target_rgb": 0.00019713810455051803,
+            "rendered_true_source": 0.0
+          },
+          "global": {
+            "source_rgb": 0.00031899859673807787,
+            "target_rgb": 0.0018205152048223977,
+            "rendered_true_source": 0.0
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1792,
+          "centroid_xy": [
+            202.47488839285714,
+            286.8482142857143
+          ],
+          "centroid_error_to_source_px": 0.49855580302676566,
+          "centroid_error_to_target_px": 15.525853577736177,
+          "iou_to_target": 0.3915362731152205,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.19298794984470355
+        }
+      },
+      "arm_metadata": {
+        "input": "unchanged source JEPA",
+        "oracle": false,
+        "route": "A(source) + (F(z) - F(source))"
+      }
+    },
+    "dev_13500/residual_genuine_target": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.466452044000107,
+      "total_seconds": 10.345135001000017,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "c621807315056137376d7e5618c38600bfed01f5216220cef54a8e68f8f9e2a8",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/residual_genuine_target.png",
+          "sha256": "b673cc92e4a25caf82011a5e4cb5bab5f84c88ad9f97a6527a247f49ac513484"
+        },
+        "latent": {
+          "path": "dev_13500/residual_genuine_target.npy",
+          "sha256": "643eee661a675c37a3e13c2fc87248671ea86ccce294c43b543bc4492932d663"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.04669778843230231,
+            "target_rgb": 0.01834935909516953,
+            "rendered_true_source": 0.050343068151264096
+          },
+          "destination": {
+            "source_rgb": 0.034208093297933076,
+            "target_rgb": 0.0392538224548,
+            "rendered_true_source": 0.0330737697266184
+          },
+          "distractor": {
+            "source_rgb": 0.003849828232546242,
+            "target_rgb": 0.003849828232546242,
+            "rendered_true_source": 5.42677545524016e-05
+          },
+          "background": {
+            "source_rgb": 0.00019501371359881305,
+            "target_rgb": 0.00019501371359881305,
+            "rendered_true_source": 7.372541934068749e-06
+          },
+          "global": {
+            "source_rgb": 0.001035148845162384,
+            "target_rgb": 0.0009508502964604958,
+            "rendered_true_source": 0.0007914199708512217
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1437,
+          "centroid_xy": [
+            214.9471120389701,
+            286.13709116214335
+          ],
+          "centroid_error_to_source_px": 12.975836073721622,
+          "centroid_error_to_target_px": 3.172496897563885,
+          "iou_to_target": 0.5422626788036411,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.10631001294837968
+        }
+      },
+      "arm_metadata": {
+        "input": "independently encoded genuine target JEPA; privileged diagnostic",
+        "oracle": true,
+        "route": "A(source) + (F(z) - F(source))"
+      }
+    },
+    "dev_13500/residual_copy_repair": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.439845611000237,
+      "total_seconds": 10.326777496000432,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "20a7fd4e1a47596c0734b5498d1a14c88425ddabf666f10224765bb99b53b344",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/residual_copy_repair.png",
+          "sha256": "db70f2dc8f97496c3c7f2f4c8cbdb7da918c88ac07dbb6f9497e606f59a42510"
+        },
+        "latent": {
+          "path": "dev_13500/residual_copy_repair.npy",
+          "sha256": "3a8a988ad66a2495276b5080eebc4596d4494b144ba6d27d522e0b9e43bcac18"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.04090450379818722,
+            "target_rgb": 0.021753341474998304,
+            "rendered_true_source": 0.04436103007139034
+          },
+          "destination": {
+            "source_rgb": 0.03287037595943919,
+            "target_rgb": 0.03951274437599194,
+            "rendered_true_source": 0.0317877400965779
+          },
+          "distractor": {
+            "source_rgb": 0.003747829846895485,
+            "target_rgb": 0.003747829846895485,
+            "rendered_true_source": 7.576255102788654e-06
+          },
+          "background": {
+            "source_rgb": 0.00019521792345646152,
+            "target_rgb": 0.00019521792345646152,
+            "rendered_true_source": 2.5309237571348297e-06
+          },
+          "global": {
+            "source_rgb": 0.0009753047900691683,
+            "target_rgb": 0.0009648685579442378,
+            "rendered_true_source": 0.0007290080710366027
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1463,
+          "centroid_xy": [
+            213.94258373205741,
+            286.203007518797
+          ],
+          "centroid_error_to_source_px": 11.969147973531639,
+          "centroid_error_to_target_px": 4.134951485381571,
+          "iou_to_target": 0.5303159692570453,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.10886103979736152
+        }
+      },
+      "arm_metadata": {
+        "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+        "oracle": false,
+        "route": "A(source) + (F(z) - F(source))"
+      }
+    },
+    "dev_13500/residual_wrong_direction": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.492731903999811,
+      "total_seconds": 10.38045880799973,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "f556b2f8cdffb8281ab958b5867e11fec437cc8f615bfb73d08cee8d3b613a64",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/residual_wrong_direction.png",
+          "sha256": "67c43acfde640046e2056f5652df06d8ee72e5d1d3e92c1fb9062a99ded0eba6"
+        },
+        "latent": {
+          "path": "dev_13500/residual_wrong_direction.npy",
+          "sha256": "7924bcd3ef61774da2d748a43705c482f27d686f4a2c98f1ee8e373bec893ffc"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.02563029428098293,
+            "target_rgb": 0.16786558965505977,
+            "rendered_true_source": 0.024073929584649444
+          },
+          "destination": {
+            "source_rgb": 0.025269109434148777,
+            "target_rgb": 0.08365319423138008,
+            "rendered_true_source": 0.026087786567419304
+          },
+          "distractor": {
+            "source_rgb": 0.003745265610391585,
+            "target_rgb": 0.003745265610391585,
+            "rendered_true_source": 7.793487365564441e-06
+          },
+          "background": {
+            "source_rgb": 0.0001976996720319601,
+            "target_rgb": 0.0001976996720319601,
+            "rendered_true_source": 3.209556667060992e-06
+          },
+          "global": {
+            "source_rgb": 0.0009550965015125061,
+            "target_rgb": 0.0025819997464138628,
+            "rendered_true_source": 0.0006962417341153509
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 979,
+          "centroid_xy": [
+            193.74872318692545,
+            286.67109295199185
+          ],
+          "centroid_error_to_source_px": 8.257829550929905,
+          "centroid_error_to_target_px": 24.2535071053775,
+          "iou_to_target": 0.18910625239739165,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.33320233936822014
+        }
+      },
+      "arm_metadata": {
+        "input": "matched source-only JEPA edit with the opposite displacement",
+        "oracle": false,
+        "route": "A(source) + (F(z) - F(source))"
+      }
+    },
+    "dev_13500/residual_shuffled": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.56132301300022,
+      "total_seconds": 10.450634925000031,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "3501948e226e99f2b5cfa2e58f6b692549f0d4d58b284778599e52a56ea16d35",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13500/residual_shuffled.png",
+          "sha256": "a063783db7ae3bd2b2c7957a5dbc7c68d9692866044090057d6f044a984ba984"
+        },
+        "latent": {
+          "path": "dev_13500/residual_shuffled.npy",
+          "sha256": "95c2558ed3ed9d4dfbe16712a371fd1112b1bcf8d8f3757b296848b69be35a1b"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.053170324133754485,
+            "target_rgb": 0.016728790837108903,
+            "rendered_true_source": 0.05762299819325398
+          },
+          "destination": {
+            "source_rgb": 0.05122816736004352,
+            "target_rgb": 0.0921109284542998,
+            "rendered_true_source": 0.053618763754773896
+          },
+          "distractor": {
+            "source_rgb": 0.08328304014536196,
+            "target_rgb": 0.08328304014536196,
+            "rendered_true_source": 0.09458359458592257
+          },
+          "background": {
+            "source_rgb": 0.0044999666517562265,
+            "target_rgb": 0.0044999666517562265,
+            "rendered_true_source": 0.004417951382727549
+          },
+          "global": {
+            "source_rgb": 0.006597510176541339,
+            "target_rgb": 0.006983903711635569,
+            "rendered_true_source": 0.006770186261772091
+          }
+        },
+        "region_pixels": {
+          "source_hole": 816,
+          "destination": 2121,
+          "distractor": 2289,
+          "background": 133120,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 915,
+          "centroid_xy": [
+            181.08524590163935,
+            208.2087431693989
+          ],
+          "centroid_error_to_source_px": 81.51986930767639,
+          "centroid_error_to_target_px": 87.01012138302175,
+          "iou_to_target": 0.038303693570451436,
+          "source_selected_mean_rgb_01": [
+            0.24997642621404914,
+            0.4951216130016447,
+            0.7416239102901928
+          ],
+          "target_region_mean_rgb_error": 0.4355677380309972
+        }
+      },
+      "arm_metadata": {
+        "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+        "oracle": false,
+        "route": "A(source) + (F(z) - F(source))"
+      }
+    },
+    "dev_13501/true_source": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.574276737999753,
+      "total_seconds": 10.46729997600005,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "81b4022a7cdbffd6cd0ce38f0bec1bfcf16d44399bcda2ca667501a6f0e942cc",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/true_source.png",
+          "sha256": "93ebf0c08aeb4eb4538cbd59cf6407ecbd2f2241386c55bd5b93037f9c904e00"
+        },
+        "latent": {
+          "path": "dev_13501/true_source.npy",
+          "sha256": "c31345cc5aef7181bb25bd7f84e796b10a8bf6294afb2490509f9eaf6b9fb1bf"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.004567085379099674,
+            "target_rgb": 0.10743500293077693
+          },
+          "destination": {
+            "source_rgb": 0.0037537626293392824,
+            "target_rgb": 0.09781450012625549
+          },
+          "distractor": {
+            "source_rgb": 0.005163122562599534,
+            "target_rgb": 0.005163122562599534
+          },
+          "background": {
+            "source_rgb": 0.00025313860394397065,
+            "target_rgb": 0.00025313860394397065
+          },
+          "global": {
+            "source_rgb": 0.00043230019092104914,
+            "target_rgb": 0.0030274835728023052
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 2801,
+          "centroid_xy": [
+            154.44626918957516,
+            289.54194930382005
+          ],
+          "centroid_error_to_source_px": 0.6395049881236355,
+          "centroid_error_to_target_px": 16.452646616767776,
+          "iou_to_target": 0.4677460156842904,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.12879293194336763
+        }
+      },
+      "arm_metadata": {
+        "input": "source RGB through frozen Wan VAE",
+        "oracle": false,
+        "route": "true source latent; no-edit baseline"
+      }
+    },
+    "dev_13501/true_target": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.648651119000078,
+      "total_seconds": 10.547838028000115,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "d2eed1a56b10f0152a0f42950ee75489913e3b058f9db664853447600d55ba58",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/true_target.png",
+          "sha256": "48c22e8b9527c7d66ce33aa44706c3f7acfbda33d8fe5b84d853042fdfacba78"
+        },
+        "latent": {
+          "path": "dev_13501/true_target.npy",
+          "sha256": "8786826ac08caf3605987a31e32992f5d6d5e880aeec9941a98bf3f70714cd11"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.08563130405917857,
+            "target_rgb": 0.0006678284728656275,
+            "rendered_true_source": 0.10465974625144177
+          },
+          "destination": {
+            "source_rgb": 0.10575850853765136,
+            "target_rgb": 0.0050693683505814175,
+            "rendered_true_source": 0.10736035657813751
+          },
+          "distractor": {
+            "source_rgb": 0.0051921422163636695,
+            "target_rgb": 0.0051921422163636695,
+            "rendered_true_source": 1.143916226081882e-05
+          },
+          "background": {
+            "source_rgb": 0.00025153263533811453,
+            "target_rgb": 0.00025153263533811453,
+            "rendered_true_source": 3.527438972089273e-06
+          },
+          "global": {
+            "source_rgb": 0.0030452356801982322,
+            "target_rgb": 0.00043366028229215617,
+            "rendered_true_source": 0.0028956738824966726
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 2792,
+          "centroid_xy": [
+            138.512893982808,
+            289.57521489971344
+          ],
+          "centroid_error_to_source_px": 15.492930490038669,
+          "centroid_error_to_target_px": 0.6659599229879541,
+          "iou_to_target": 0.9271457085828343,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.05806253018603505
+        }
+      },
+      "arm_metadata": {
+        "input": "genuine target RGB through frozen Wan VAE",
+        "oracle": true,
+        "route": "privileged renderer-interface/decoder-ceiling diagnostic"
+      }
+    },
+    "dev_13501/absolute_source": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.666210362000129,
+      "total_seconds": 10.557533323999905,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "e4756880dc5b6288d2cd2c4dcc9b0dd4e7168b2506c75879201a3ee99137ef2b",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/absolute_source.png",
+          "sha256": "8dcb21e49a2ef1b4c25569ebfb474507bfd627313e96ad068b3b79ab88aa7769"
+        },
+        "latent": {
+          "path": "dev_13501/absolute_source.npy",
+          "sha256": "1e516b82fb56a8b0c44cb503847d12a434e094b6939758eb0a3e4e51e5d82c22"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.035989620427620314,
+            "target_rgb": 0.034390466676330875,
+            "rendered_true_source": 0.04536848479882684
+          },
+          "destination": {
+            "source_rgb": 0.031497577188482985,
+            "target_rgb": 0.06744470455680905,
+            "rendered_true_source": 0.03643325008968987
+          },
+          "distractor": {
+            "source_rgb": 0.03868216645358719,
+            "target_rgb": 0.03868216645358719,
+            "rendered_true_source": 0.040372559472677094
+          },
+          "background": {
+            "source_rgb": 0.001070697401110617,
+            "target_rgb": 0.001070697401110617,
+            "rendered_true_source": 0.0011535807857315126
+          },
+          "global": {
+            "source_rgb": 0.0025126671393525635,
+            "target_rgb": 0.0032336724234446864,
+            "rendered_true_source": 0.0027801410682056047
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1840,
+          "centroid_xy": [
+            153.17228260869564,
+            290.2657608695652
+          ],
+          "centroid_error_to_source_px": 0.8693359072647092,
+          "centroid_error_to_target_px": 15.174609991624832,
+          "iou_to_target": 0.4035952449985503,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.25357423731743595
+        }
+      },
+      "arm_metadata": {
+        "input": "unchanged source JEPA",
+        "oracle": false,
+        "route": "F(z)"
+      }
+    },
+    "dev_13501/absolute_genuine_target": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.679322694000348,
+      "total_seconds": 10.575723673000084,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "8f4587105451456233c4cebfba4527615e034bcd00bbe5c5902527d53e9dd733",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/absolute_genuine_target.png",
+          "sha256": "2b902599c4986029414eca1a33f32f08d03c31d63470f126dc99434da54c38c7"
+        },
+        "latent": {
+          "path": "dev_13501/absolute_genuine_target.npy",
+          "sha256": "ad30bf582d66ef28153704a5492bfc8393ac612a3d93d475085d7969690a5b78"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.07234622875186718,
+            "target_rgb": 0.002915797412932815,
+            "rendered_true_source": 0.0903261040835492
+          },
+          "destination": {
+            "source_rgb": 0.051435752352701605,
+            "target_rgb": 0.04182480076379342,
+            "rendered_true_source": 0.056291045366013454
+          },
+          "distractor": {
+            "source_rgb": 0.03906212404071187,
+            "target_rgb": 0.03906212404071187,
+            "rendered_true_source": 0.04068528871890869
+          },
+          "background": {
+            "source_rgb": 0.0010405587052123096,
+            "target_rgb": 0.0010405587052123096,
+            "rendered_true_source": 0.001118865816423322
+          },
+          "global": {
+            "source_rgb": 0.003149005927318731,
+            "target_rgb": 0.002493850716916215,
+            "rendered_true_source": 0.003468381371191814
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1837,
+          "centroid_xy": [
+            137.3462166575939,
+            290.5492651061513
+          ],
+          "centroid_error_to_source_px": 16.662838646900408,
+          "centroid_error_to_target_px": 0.8538880580281584,
+          "iou_to_target": 0.6099833610648918,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.19026919629713449
+        }
+      },
+      "arm_metadata": {
+        "input": "independently encoded genuine target JEPA; privileged diagnostic",
+        "oracle": true,
+        "route": "F(z)"
+      }
+    },
+    "dev_13501/absolute_copy_repair": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.678712659000212,
+      "total_seconds": 10.576422025000284,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "dadb7a51e1a98d51e1d71a68d219f844280c4d94d169baee58901cd5e2d51ec9",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/absolute_copy_repair.png",
+          "sha256": "2493e1e1f9311f04f64a369d45b0612a69f304d15219c2c49cd6dbb6d447f787"
+        },
+        "latent": {
+          "path": "dev_13501/absolute_copy_repair.npy",
+          "sha256": "0d9753e0fa7c0b6e667feca80cf581c0829fdf78c4e1240a2e2fa8173ee7ab76"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.07125811215946788,
+            "target_rgb": 0.0030704457932321113,
+            "rendered_true_source": 0.0890397556215243
+          },
+          "destination": {
+            "source_rgb": 0.05125309889654878,
+            "target_rgb": 0.041364647428600736,
+            "rendered_true_source": 0.056186001137730035
+          },
+          "distractor": {
+            "source_rgb": 0.03883282358004571,
+            "target_rgb": 0.03883282358004571,
+            "rendered_true_source": 0.04051759006844827
+          },
+          "background": {
+            "source_rgb": 0.0010684739887798053,
+            "target_rgb": 0.0010684739887798053,
+            "rendered_true_source": 0.001154718704874261
+          },
+          "global": {
+            "source_rgb": 0.0031637341145722077,
+            "target_rgb": 0.002511157039181866,
+            "rendered_true_source": 0.00349138003200781
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1862,
+          "centroid_xy": [
+            137.06229860365198,
+            290.38184747583244
+          ],
+          "centroid_error_to_source_px": 16.942005078698603,
+          "centroid_error_to_target_px": 1.0124679765368543,
+          "iou_to_target": 0.6172264715663452,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.18789503585901549
+        }
+      },
+      "arm_metadata": {
+        "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+        "oracle": false,
+        "route": "F(z)"
+      }
+    },
+    "dev_13501/absolute_wrong_direction": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.666307013000278,
+      "total_seconds": 10.560757801999898,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "01adc6de317a028730990ce07174bb90de786d8634f61a41c0b0b3a9614ffc8c",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/absolute_wrong_direction.png",
+          "sha256": "82d158b14bcd69d2212084c3343418417bc4acb435c5f2f6a5a927ee971c8ef8"
+        },
+        "latent": {
+          "path": "dev_13501/absolute_wrong_direction.npy",
+          "sha256": "186465458d7cf8bbfdd59a5d9365967e61f0c5d099188b6a7d5af187094d3527"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.040739474939231024,
+            "target_rgb": 0.06625742410968459,
+            "rendered_true_source": 0.045413612460949236
+          },
+          "destination": {
+            "source_rgb": 0.052996337715272235,
+            "target_rgb": 0.09501308269963239,
+            "rendered_true_source": 0.06286150675649448
+          },
+          "distractor": {
+            "source_rgb": 0.03864719882215057,
+            "target_rgb": 0.03864719882215057,
+            "rendered_true_source": 0.04034766545803809
+          },
+          "background": {
+            "source_rgb": 0.0010674212913769283,
+            "target_rgb": 0.0010674212913769283,
+            "rendered_true_source": 0.0011575370926637343
+          },
+          "global": {
+            "source_rgb": 0.0031652153602113493,
+            "target_rgb": 0.0041892345258501,
+            "rendered_true_source": 0.003493516101690767
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1826,
+          "centroid_xy": [
+            169.20481927710844,
+            290.2667031763417
+          ],
+          "centroid_error_to_source_px": 15.207158177443912,
+          "centroid_error_to_target_px": 31.205958993456193,
+          "iou_to_target": 0.178466796875,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.38057620758356686
+        }
+      },
+      "arm_metadata": {
+        "input": "matched source-only JEPA edit with the opposite displacement",
+        "oracle": false,
+        "route": "F(z)"
+      }
+    },
+    "dev_13501/absolute_shuffled": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.605151793999994,
+      "total_seconds": 10.495736523000232,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "2a90c5211ef2b1d01652b8767a06b210fa78645db734c38edd65d2da929d4896",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/absolute_shuffled.png",
+          "sha256": "2163582b0a63c5cd10f13d8387d6870b77643ca0bfa83c56bf9ddb6fb88962f8"
+        },
+        "latent": {
+          "path": "dev_13501/absolute_shuffled.npy",
+          "sha256": "d8b79c85fe613996c37dc3046f906adb00013c49edd3109823fc633816cf8a98"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.09517481191555159,
+            "target_rgb": 0.003268850988375636,
+            "rendered_true_source": 0.11496212574818848
+          },
+          "destination": {
+            "source_rgb": 0.09188828381056116,
+            "target_rgb": 0.12103059841260141,
+            "rendered_true_source": 0.10751355255454813
+          },
+          "distractor": {
+            "source_rgb": 0.13976893158091555,
+            "target_rgb": 0.13976893158091555,
+            "rendered_true_source": 0.14115325389846614
+          },
+          "background": {
+            "source_rgb": 0.005010355269172668,
+            "target_rgb": 0.005010355269172668,
+            "rendered_true_source": 0.005326210766780596
+          },
+          "global": {
+            "source_rgb": 0.009297113136796565,
+            "target_rgb": 0.009281894144390688,
+            "rendered_true_source": 0.010078039687927188
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 719,
+          "centroid_xy": [
+            181.49095966620305,
+            125.73713490959666
+          ],
+          "centroid_error_to_source_px": 166.54741580425934,
+          "centroid_error_to_target_px": 169.9227837001129,
+          "iou_to_target": 0.0,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.5238704415992836
+        }
+      },
+      "arm_metadata": {
+        "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+        "oracle": false,
+        "route": "F(z)"
+      }
+    },
+    "dev_13501/residual_source": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.542040453000027,
+      "total_seconds": 10.429659106000145,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "81b4022a7cdbffd6cd0ce38f0bec1bfcf16d44399bcda2ca667501a6f0e942cc",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/residual_source.png",
+          "sha256": "93ebf0c08aeb4eb4538cbd59cf6407ecbd2f2241386c55bd5b93037f9c904e00"
+        },
+        "latent": {
+          "path": "dev_13501/residual_source.npy",
+          "sha256": "c31345cc5aef7181bb25bd7f84e796b10a8bf6294afb2490509f9eaf6b9fb1bf"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.004567085379099674,
+            "target_rgb": 0.10743500293077693,
+            "rendered_true_source": 0.0
+          },
+          "destination": {
+            "source_rgb": 0.0037537626293392824,
+            "target_rgb": 0.09781450012625549,
+            "rendered_true_source": 0.0
+          },
+          "distractor": {
+            "source_rgb": 0.005163122562599534,
+            "target_rgb": 0.005163122562599534,
+            "rendered_true_source": 0.0
+          },
+          "background": {
+            "source_rgb": 0.00025313860394397065,
+            "target_rgb": 0.00025313860394397065,
+            "rendered_true_source": 0.0
+          },
+          "global": {
+            "source_rgb": 0.00043230019092104914,
+            "target_rgb": 0.0030274835728023052,
+            "rendered_true_source": 0.0
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 2801,
+          "centroid_xy": [
+            154.44626918957516,
+            289.54194930382005
+          ],
+          "centroid_error_to_source_px": 0.6395049881236355,
+          "centroid_error_to_target_px": 16.452646616767776,
+          "iou_to_target": 0.4677460156842904,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.12879293194336763
+        }
+      },
+      "arm_metadata": {
+        "input": "unchanged source JEPA",
+        "oracle": false,
+        "route": "A(source) + (F(z) - F(source))"
+      }
+    },
+    "dev_13501/residual_genuine_target": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.496024400999886,
+      "total_seconds": 10.3832621749998,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "468ea0b455a0f4ebcffd3c3d38d20fb9f7498b1ab15fce2807d181b3256202c6",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/residual_genuine_target.png",
+          "sha256": "52f13200fd90249a9593fe01f7d76cdf1e31327bc02fb6b04bf892d8e2eefb3e"
+        },
+        "latent": {
+          "path": "dev_13501/residual_genuine_target.npy",
+          "sha256": "64d5c9ee0b933366e0d0f6543b4ec8823aa2b0465e90d75d9f76df0013631c65"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.034862715685224054,
+            "target_rgb": 0.018889361594846873,
+            "rendered_true_source": 0.04601364964715126
+          },
+          "destination": {
+            "source_rgb": 0.02715486311261191,
+            "target_rgb": 0.0722177250242059,
+            "rendered_true_source": 0.024948659302467546
+          },
+          "distractor": {
+            "source_rgb": 0.005427724186160583,
+            "target_rgb": 0.005427724186160583,
+            "rendered_true_source": 9.277008329162676e-05
+          },
+          "background": {
+            "source_rgb": 0.0002747974213809346,
+            "target_rgb": 0.0002747974213809346,
+            "rendered_true_source": 1.1197119634483407e-05
+          },
+          "global": {
+            "source_rgb": 0.0012307773544296531,
+            "target_rgb": 0.0020421628185985263,
+            "rendered_true_source": 0.0009332217768473129
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1874,
+          "centroid_xy": [
+            145.0368196371398,
+            290.47385272145146
+          ],
+          "centroid_error_to_source_px": 8.975697110463868,
+          "centroid_error_to_target_px": 7.0527559866525555,
+          "iou_to_target": 0.5234375,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.09087392304420994
+        }
+      },
+      "arm_metadata": {
+        "input": "independently encoded genuine target JEPA; privileged diagnostic",
+        "oracle": true,
+        "route": "A(source) + (F(z) - F(source))"
+      }
+    },
+    "dev_13501/residual_copy_repair": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.539974219999749,
+      "total_seconds": 10.41999027499969,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "eef94a1e309803ddecb4a0650fb213c4e042b2c7859c66ce84abfe314b10cb3d",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/residual_copy_repair.png",
+          "sha256": "b0deb3e607584bcf4f07c4712dcbe619b596c6aca7306f16600cc0530d47e360"
+        },
+        "latent": {
+          "path": "dev_13501/residual_copy_repair.npy",
+          "sha256": "68256d0f96850a37131135164dbedd1edd7891b9ff9b1402f513a03730802ea1"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.03343627293411739,
+            "target_rgb": 0.019998587134414464,
+            "rendered_true_source": 0.04434250277846057
+          },
+          "destination": {
+            "source_rgb": 0.027091643551854623,
+            "target_rgb": 0.07172698339734933,
+            "rendered_true_source": 0.02485954722341901
+          },
+          "distractor": {
+            "source_rgb": 0.0052240983970973575,
+            "target_rgb": 0.0052240983970973575,
+            "rendered_true_source": 2.4084354939585785e-05
+          },
+          "background": {
+            "source_rgb": 0.0002616916816518177,
+            "target_rgb": 0.0002616916816518177,
+            "rendered_true_source": 6.8999651607851214e-06
+          },
+          "global": {
+            "source_rgb": 0.001201172987463867,
+            "target_rgb": 0.0020206409883306996,
+            "rendered_true_source": 0.0009093865084387059
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 1946,
+          "centroid_xy": [
+            144.82374100719426,
+            290.1891058581706
+          ],
+          "centroid_error_to_source_px": 9.178207348313869,
+          "centroid_error_to_target_px": 6.826360843001118,
+          "iou_to_target": 0.5273232479160235,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.08554765560995843
+        }
+      },
+      "arm_metadata": {
+        "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+        "oracle": false,
+        "route": "A(source) + (F(z) - F(source))"
+      }
+    },
+    "dev_13501/residual_wrong_direction": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.49343131600017,
+      "total_seconds": 10.38057337600003,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "e89de27fb34af233380cd3edea27649bd86c5b4a006729d1994c2db272e5cbf0",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/residual_wrong_direction.png",
+          "sha256": "aed3e381e2c9709805a3ff99cae4361025a3c61d725246781db7438500106093"
+        },
+        "latent": {
+          "path": "dev_13501/residual_wrong_direction.npy",
+          "sha256": "0bc3f2564b985a6f8565a90b1bb8b6d5ed0b11b28d1253675dcb8f62492d42b0"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.024960276942663916,
+            "target_rgb": 0.14198880527245722,
+            "rendered_true_source": 0.018909199488217017
+          },
+          "destination": {
+            "source_rgb": 0.02232660880308896,
+            "target_rgb": 0.11078760324370496,
+            "rendered_true_source": 0.027021029301053608
+          },
+          "distractor": {
+            "source_rgb": 0.0052019958957503915,
+            "target_rgb": 0.0052019958957503915,
+            "rendered_true_source": 2.338103860366813e-05
+          },
+          "background": {
+            "source_rgb": 0.00025651203674692053,
+            "target_rgb": 0.00025651203674692053,
+            "rendered_true_source": 6.321900028860291e-06
+          },
+          "global": {
+            "source_rgb": 0.0012369253859915877,
+            "target_rgb": 0.003811871729078115,
+            "rendered_true_source": 0.0009540087204373855
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 2120,
+          "centroid_xy": [
+            163.92735849056604,
+            288.5240566037736
+          ],
+          "centroid_error_to_source_px": 10.036476249614596,
+          "centroid_error_to_target_px": 25.96933436203537,
+          "iou_to_target": 0.2663204747774481,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.29579200801414746
+        }
+      },
+      "arm_metadata": {
+        "input": "matched source-only JEPA edit with the opposite displacement",
+        "oracle": false,
+        "route": "A(source) + (F(z) - F(source))"
+      }
+    },
+    "dev_13501/residual_shuffled": {
+      "route": "direct_normalized_VACE_condition",
+      "denoise_seconds": 9.535456500999771,
+      "total_seconds": 10.42579795399979,
+      "peak_cuda_allocated_bytes": 5883817472,
+      "peak_cuda_reserved_bytes": 6308233216,
+      "input_condition_sha256": "dfb53eae2553584201bb736dac031a1116b0c69ece90c703385fdc7f143f7e94",
+      "input_rgb_sha256": null,
+      "files": {
+        "png": {
+          "path": "dev_13501/residual_shuffled.png",
+          "sha256": "55cd7476d0830207819323a93b0c6ee1a0a80908bd774ffd8c1972e3ecd99645"
+        },
+        "latent": {
+          "path": "dev_13501/residual_shuffled.npy",
+          "sha256": "1eeaf6a31af74c16143caee1d988f41bcb275aaa1f1c6e3ae58ed4faf41f0fa7"
+        }
+      },
+      "metrics": {
+        "rgb_mse": {
+          "source_hole": {
+            "source_rgb": 0.05591801072727387,
+            "target_rgb": 0.010316476638871558,
+            "rendered_true_source": 0.06987470665969162
+          },
+          "destination": {
+            "source_rgb": 0.062143254995141735,
+            "target_rgb": 0.11638228326898425,
+            "rendered_true_source": 0.0742309477514928
+          },
+          "distractor": {
+            "source_rgb": 0.10115271976475398,
+            "target_rgb": 0.10115271976475398,
+            "rendered_true_source": 0.10196433956571908
+          },
+          "background": {
+            "source_rgb": 0.00551874386340404,
+            "target_rgb": 0.00551874386340404,
+            "rendered_true_source": 0.00567420558201923
+          },
+          "global": {
+            "source_rgb": 0.00847378085362912,
+            "target_rgb": 0.00927581147008095,
+            "rendered_true_source": 0.008977382538833888
+          }
+        },
+        "region_pixels": {
+          "source_hole": 976,
+          "destination": 3001,
+          "distractor": 2121,
+          "background": 130048,
+          "global": 147456
+        },
+        "selected_color_diagnostic": {
+          "method": "nearest source object palette versus distractor/background; RGB distance<=0.35 and saturation>=0.15",
+          "general_detector": false,
+          "pixels": 811,
+          "centroid_xy": [
+            184.12083847102343,
+            135.02836004932183
+          ],
+          "centroid_error_to_source_px": 157.87170138818456,
+          "centroid_error_to_target_px": 161.6890253859948,
+          "iou_to_target": 0.0,
+          "source_selected_mean_rgb_01": [
+            0.7218548065677302,
+            0.2481486563302488,
+            0.3478657440983839
+          ],
+          "target_region_mean_rgb_error": 0.4756025536806811
+        }
+      },
+      "arm_metadata": {
+        "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+        "oracle": false,
+        "route": "A(source) + (F(z) - F(source))"
+      }
+    }
+  },
+  "complete": true,
+  "scheduler_config": {
+    "num_train_timesteps": 1000,
+    "shift": 1.0,
+    "use_dynamic_shifting": false,
+    "base_shift": 0.5,
+    "max_shift": 1.15,
+    "base_image_seq_len": 256,
+    "max_image_seq_len": 4096,
+    "invert_sigmas": false,
+    "shift_terminal": null,
+    "use_karras_sigmas": false,
+    "use_exponential_sigmas": false,
+    "use_beta_sigmas": false,
+    "time_shift_type": "exponential",
+    "stochastic_sampling": false,
+    "_use_default_values": [
+      "shift",
+      "base_image_seq_len",
+      "time_shift_type",
+      "max_image_seq_len",
+      "shift_terminal",
+      "max_shift",
+      "stochastic_sampling",
+      "invert_sigmas",
+      "base_shift",
+      "use_dynamic_shifting"
+    ],
+    "_class_name": "FlowMatchEulerDiscreteScheduler",
+    "_diffusers_version": "0.34.0.dev0",
+    "beta_end": 0.02,
+    "beta_schedule": "linear",
+    "beta_start": 0.0001,
+    "disable_corrector": [],
+    "dynamic_thresholding_ratio": 0.995,
+    "final_sigmas_type": "zero",
+    "flow_shift": 3.0,
+    "lower_order_final": true,
+    "predict_x0": true,
+    "prediction_type": "flow_prediction",
+    "rescale_betas_zero_snr": false,
+    "sample_max_value": 1.0,
+    "solver_order": 2,
+    "solver_p": null,
+    "solver_type": "bh2",
+    "steps_offset": 0,
+    "thresholding": false,
+    "timestep_spacing": "linspace",
+    "trained_betas": null,
+    "use_flow_sigmas": true
+  },
+  "completed_utc": "2026-10-10T01:20:07.461809+00:00"
+}
