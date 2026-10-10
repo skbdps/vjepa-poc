@@ -31,6 +31,8 @@ The residual inference arm additionally uses the legitimate source VAE latent.
   method; a passing gate is required before opening new scenes.
 - `prepare_fresh.py`, `evaluate_fresh.py`, `render_fresh.py`: separately guarded
   eight-scene evaluation with frozen code, checkpoints, prompt, noise and arms.
+- `assess_fresh.py`: the frozen per-scene engineering assessment; all eight
+  scenes must pass individually, with separate learned/no-F comparisons.
 - `run_2026-10-10/`: weights, learning curves, manifests, measured outputs,
   independent audits, runtime evidence and readable figures.
 
@@ -89,12 +91,20 @@ work and requires a new untouched holdout for a fresh-test claim.
 
 ## Saved evidence archives
 
-Large evidence archives are split into numbered `.part-*` files to fit the
-transfer limit. Their `archive_manifest.json` records each part hash, the full
-archive hash, and the hashes of every original enclosed file. Concatenate the
-parts in the manifest's listed order, verify `archive_sha256`, then extract the
-resulting `.tar.xz`. This is lossless packaging; rendered images and arrays are
-retained byte-for-byte. Smaller runs use ordinary complete ZIP archives.
+Large evidence archives are split into numbered `.part*` files to fit the
+transfer limit. Their manifests record each part hash, the full archive hash,
+and every original enclosed file hash. Concatenate parts in the manifest's
+listed order and verify the full archive SHA256 before extracting. Newer
+manifests use `archive.sha256`; the first transport archive uses
+`archive_sha256`. This is lossless packaging; images and arrays are retained
+byte-for-byte. Smaller runs use ordinary complete ZIP archives.
+
+The four-thread development repeat reuses the published two-thread image/array
+payloads because all 124 files are byte-identical. Its separate runtime archive
+and equivalence manifest retain the new run's full execution evidence.
+`fresh_features/` preserves all eight native JEPA/pixel pairs;
+`fresh_evaluation/` preserves both translators, all 27 arms, real Wan targets
+and metrics. The latter extracts directly to the fresh renderer's bundle root.
 
 ## Code review findings addressed before training
 

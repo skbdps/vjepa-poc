@@ -1,13 +1,12 @@
 # Day11 progress: trained direct JEPA → Wan bridge
 
-Status: training, eight-scene development latent evaluation, and the initial
-CNN's full-resolution VAE diagnostics are complete. Both initial translators
-have completed real VACE rendering on the two fixed development scenes.
-The appearance-transport GPU follow-up completed all 62 calls and passed every
-image/latent accuracy criterion. Its qualification found a CPU-thread mismatch
-(two executed versus four declared), so the full comparison is being repeated
-with explicit four-thread execution before accessing fresh scenes.
-No fresh 140xx scene or temporal-video test has been accessed. This is a progress
+Status: training and development are complete. The full 62-call, four-thread
+transport repeat passed all 47 fixed qualification checks. Its 62 images and
+62 denoised arrays exactly match the first run; the original configuration
+failure remains in the record. The eight-scene test was published and
+byte-verified before extraction. Both translators have now completed all 27
+latent arms on all eight fresh scenes; the 104-call actual-generator test is
+running on Colab. No temporal-video test has been performed. This is a progress
 record, not a claim that the broad consistency problem has been solved.
 
 ## What was implemented and trained
@@ -105,8 +104,8 @@ These ratios average hole and destination source-relative errors across all
 eight development scenes. An independent implementation reproduced every
 transport tensor exactly. The no-F comparator is strong: most improvement is
 from explicit source appearance transport. A smaller learned contribution
-remains to be assessed on untouched scenes. Decoded examples show removal of
-most stationary ghosting; actual generator qualification remains pending.
+is assessed separately below. Decoded examples show removal of most stationary
+ghosting; the corrected development generator run passed its fixed gate.
 
 The subsets must be kept separate. On the same two decoded scenes, no-F local
 fill beats the learned transported residual in both latent MSE (0.000407776
@@ -126,8 +125,35 @@ The original 62-call transport run passed 46 of 47 checks. The sole failure
 was its two CPU threads versus the declared four. The source, prompts, noise,
 model, precision and all numerical accuracy checks matched. The original
 failed gate is retained as `run_2026-10-10/development_gate.json`; its criteria
-are unchanged. A complete four-thread rerun in a separate output directory
-will resolve the configuration mismatch. No holdout has been opened.
+are unchanged. The complete four-thread repeat passed 47/47 checks, recorded
+in `development_gate_threads4.json`. All 124 output payloads are byte-identical;
+new runtime evidence and the exact equivalence manifest are retained separately.
+
+## Frozen fresh test: latent results
+
+`PRETEST.json` was published at commit
+`1bd6221bdea2dcce50697603806ab18e648eff36` and fetched back byte-for-byte before
+the eight seeds 14000–14007 were generated or encoded. The scene shifts are
++32, -32, +48, -48, +64, -64, +80 and -80 pixels. No source, parameter,
+checkpoint, prompt, threshold or arm was changed after test access.
+
+An independent implementation reconstructed the scoring masks and reproduced
+all 432 latent metric rows (13,392 values) exactly. Every CNN primary case
+passed both regional latent limits; the worst source-hole ratio was 0.285088
+and worst destination ratio 0.134896, against the fixed 0.5 limit.
+
+| Frozen method | Mean balanced latent-region ratio | Paired wins against no-F |
+|---|---:|---:|
+| Source appearance copy with local fill, no F | 0.084357 | — |
+| CNN transported residual | 0.080892 | 5/8 |
+| Linear transported residual | 0.089459 | 3/8 |
+
+The CNN's average advantage is small (about 4.1% on this balanced ratio).
+Destination reconstruction improves; source-hole MSE slightly worsens on
+average. Cases 14001, 14004 and 14007 favor no-F on balanced and global latent
+error. These results do not establish a consistent learned advantage or JEPA
+necessity. Actual generated-image assessment remains pending, using all eight
+scenes and the already-published criteria without adaptation.
 
 ## Execution and audit
 
