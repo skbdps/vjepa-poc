@@ -1,4 +1,4 @@
-# Day12 status: partial completion; Colab GPU usage limit
+# Day12 status: partial completion; GPU access pending
 
 The main 20-clip Wan/VACE generator comparison has **not run**. Google sign-in
 succeeded on 2026-10-10 at approximately 22:25 UTC: the target Colab notebook
@@ -11,6 +11,30 @@ The existing notebook still contains the earlier Day11 output showing 43/104
 fresh renders and all 16 parity checks passed. That is saved notebook output,
 not a live runtime result. The runtime filesystem and any later completion
 could not be verified because GPU connection was refused.
+
+## Kaggle migration check
+
+On 2026-10-10 at approximately 22:47 UTC, Google authentication to Kaggle
+succeeded and a notebook named `VJEPA Day12 GPU Preflight` was created.
+The accelerator menu showed `GPU T4 x2`, but it and Internet access were
+disabled. Kaggle explicitly requires phone verification to enable these
+features. The verification dialog includes a reCAPTCHA and phone-number entry;
+the user must complete the secure browser handoff. No Kaggle GPU allocation,
+runtime preflight, model download or generation has run yet.
+
+The code/input migration was audited against GitHub checkpoint
+`eeaa0f946317f4313c76063dc17034fc0f1132f2`: all 30 Day12 files match, and the
+Day11 bridge, requirements and trained CNN remain available. Recovered guides
+and video-VAE evidence total approximately 39 MB compressed. Core scripts
+accept path arguments and do not depend on Colab APIs. A Kaggle launcher can
+reuse them without retraining or repeating guide preparation.
+
+Kaggle's saved-output folder must not hold the large model cache. Pinned
+upstream downloads total approximately 19.04 GB; FP32 text-encoder disk
+offload needs additional temporary space. The Kaggle notebook uses temporary
+storage for models and prompt processing, retaining only small prompt caches,
+generated outputs and metrics in `/kaggle/working`. Actual GPU memory fit and
+free temporary disk still require live preflight after verification.
 
 The CPU stages completed before the interruption:
 
