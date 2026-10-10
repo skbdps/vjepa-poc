@@ -4,11 +4,26 @@ Reviewed 2026-10-10. Research-only update; no model download, installation, trai
 
 ## Decision
 
-Do not begin by assuming that a new small adapter will solve the interface. Audit existing reconstruction and conditioning bridges first. Prioritize VideoRAE's released spatial decoder for compatibility assessment; keep the published JEPA-to-Cosmos bridge as a semantic-conditioning comparison. Investigate Crosscoders as a possible way to transfer edit directions rather than reconstruct every generator feature.
+Do not begin by assuming that a new small adapter will solve the interface. The user has identified ControlNet as the intended reference. Assess a ControlNet-style spatial conditioning branch for the direct JEPA-to-generator connection. Separately, VideoRAE's released decoder is a candidate for testing whether our edits can be reconstructed before attempting a larger generator integration. The published JEPA-to-Cosmos bridge remains a semantic-conditioning comparison; Crosscoders is an alternative research direction.
 
-The earlier discussion search did not identify the user's forgotten open-source name beginning with C. Crosscoders is a strong functional candidate, with CycleGAN and ControlNet also plausible. These are candidates, not recovered memories.
+The initial search could not recover the remembered name. During this review the user explicitly confirmed it was ControlNet. Crosscoders and CycleGAN below are comparison methods, not the user's recalled reference.
 
-## Relevant C-named approaches
+## ControlNet: the confirmed reference
+
+The [original paper](https://arxiv.org/abs/2302.05543) supplies an established spatial-conditioning architecture: preserve a pretrained diffusion backbone and learn an additional branch connected through zero-initialized convolutions. Its released controls include edges, depth and poses. This is a concrete mechanism to build on, not a pretrained interpreter of arbitrary JEPA features.
+
+Our proposed direct application is to adapt the conditioning input to dense edited JEPA features with explicit destination coordinates and retain source appearance through a separate compatible reference path. The branch learns how to affect denoising; it need not reconstruct the entire generator latent from JEPA alone. This is a design hypothesis, not an implemented result.
+
+Two distinct tests must stay separate:
+
+- Direct JEPA conditioning: train/adapt the control branch for the actual feature tensor, spatial grid and encoder. Supervise first on genuine target encodings; then evaluate edited states against independent target renders. Include fixed-caption tests so language cannot carry the edit instead.
+- Decoded-guide baseline: convert our JEPA state into supported layout/depth/edge guides and use a pretrained controller. This tests an indirect interface and requires an equal-guide non-JEPA baseline.
+
+Frozen generator weights do not imply unchanged output pixels. Source identity, unaffected regions and temporal consistency remain separate requirements. Original ControlNet is an image architecture; an image pilot can isolate the interface, but frame-independent success cannot establish video consistency.
+
+The [official training guide](https://github.com/lllyasviel/ControlNet/blob/main/docs/train.md) illustrates learning custom controls and discusses memory constraints. Neither that guide nor our prior T4 runs benchmarks a dense JEPA-conditioned video branch.
+
+## Comparison with other alignment approaches
 
 | Approach | Established function | Implication for this project |
 |---|---|---|
