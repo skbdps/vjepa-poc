@@ -1,0 +1,10 @@
+{
+  "released_unused_t5_models": 1,
+  "gpu_allocated_gib": 0.0079345703125,
+  "gpu_reserved_gib": 12.45703125,
+  "gpu_free_total_bytes": [
+    2122121216,
+    15637086208
+  ],
+  "vae_deleted": true
+}
