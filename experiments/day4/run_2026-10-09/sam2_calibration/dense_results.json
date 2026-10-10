@@ -1,0 +1,460 @@
+{
+  "readout": "raw SAM2 logits>0 masks; no calibrated patch threshold applied",
+  "unit": "part-frame, every frame after frame0; any nonempty GT part is visible",
+  "aggregation": "IoU averaged over visible part-frames; pixel precision/recall pooled over stated pixels",
+  "comparability": "Dense denominators differ from the two-frame patch benchmark, which excludes ambiguous slivers.",
+  "overall": {
+    "mean_iou_given_visible": {
+      "numerator": 1255.488843017104,
+      "denominator": 1332,
+      "rate": 0.9425591914542824
+    },
+    "visible_micro_pixel_precision": {
+      "numerator": 3307589,
+      "denominator": 3499487,
+      "rate": 0.9451639626036616
+    },
+    "visible_micro_pixel_recall": {
+      "numerator": 3307589,
+      "denominator": 3465648,
+      "rate": 0.9543926561497301
+    },
+    "all_frame_micro_pixel_precision": {
+      "numerator": 3307589,
+      "denominator": 3527779,
+      "rate": 0.9375839586323292
+    },
+    "false_presence_given_absent": {
+      "numerator": 22,
+      "denominator": 180,
+      "rate": 0.12222222222222222
+    },
+    "absent_predicted_pixels": 28292,
+    "visible_part_frames": 1332,
+    "absent_part_frames": 180,
+    "scored_part_frames": 1512,
+    "clips": 6
+  },
+  "by_condition": {
+    "crossing": {
+      "mean_iou_given_visible": {
+        "numerator": 458.3449735895019,
+        "denominator": 494,
+        "rate": 0.9278238331771294
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 1160137,
+        "denominator": 1274271,
+        "rate": 0.9104319253910668
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 1160137,
+        "denominator": 1257790,
+        "rate": 0.9223614434842065
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 1160137,
+        "denominator": 1277681,
+        "rate": 0.9080020756354676
+      },
+      "false_presence_given_absent": {
+        "numerator": 2,
+        "denominator": 10,
+        "rate": 0.2
+      },
+      "absent_predicted_pixels": 3410,
+      "visible_part_frames": 494,
+      "absent_part_frames": 10,
+      "scored_part_frames": 504,
+      "clips": 2
+    },
+    "long_occlusion": {
+      "mean_iou_given_visible": {
+        "numerator": 304.1078597925819,
+        "denominator": 334,
+        "rate": 0.9105025742292872
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 795210,
+        "denominator": 852216,
+        "rate": 0.9331085077022727
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 795210,
+        "denominator": 848080,
+        "rate": 0.9376591830959343
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 795210,
+        "denominator": 877098,
+        "rate": 0.9066375707161571
+      },
+      "false_presence_given_absent": {
+        "numerator": 20,
+        "denominator": 170,
+        "rate": 0.11764705882352941
+      },
+      "absent_predicted_pixels": 24882,
+      "visible_part_frames": 334,
+      "absent_part_frames": 170,
+      "scored_part_frames": 504,
+      "clips": 2
+    },
+    "scale_camera": {
+      "mean_iou_given_visible": {
+        "numerator": 493.0360096350204,
+        "denominator": 504,
+        "rate": 0.9782460508631357
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 1352242,
+        "denominator": 1373000,
+        "rate": 0.9848812818645303
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 1352242,
+        "denominator": 1359778,
+        "rate": 0.9944579188661679
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 1352242,
+        "denominator": 1373000,
+        "rate": 0.9848812818645303
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 504,
+      "absent_part_frames": 0,
+      "scored_part_frames": 504,
+      "clips": 2
+    }
+  },
+  "by_part": {
+    "car_A.front_door": {
+      "mean_iou_given_visible": {
+        "numerator": 236.5601090971897,
+        "denominator": 283,
+        "rate": 0.8359014455731084
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 752269,
+        "denominator": 899218,
+        "rate": 0.8365813406760096
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 752269,
+        "denominator": 873008,
+        "rate": 0.8616977164012243
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 752269,
+        "denominator": 919462,
+        "rate": 0.8181621426442854
+      },
+      "false_presence_given_absent": {
+        "numerator": 13,
+        "denominator": 95,
+        "rate": 0.1368421052631579
+      },
+      "absent_predicted_pixels": 20244,
+      "visible_part_frames": 283,
+      "absent_part_frames": 95,
+      "scored_part_frames": 378,
+      "clips": 6
+    },
+    "car_A.window": {
+      "mean_iou_given_visible": {
+        "numerator": 269.2330880310464,
+        "denominator": 293,
+        "rate": 0.918884259491626
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 530882,
+        "denominator": 564508,
+        "rate": 0.9404330850935682
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 530882,
+        "denominator": 563039,
+        "rate": 0.9428867272071739
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 530882,
+        "denominator": 572556,
+        "rate": 0.9272141065677418
+      },
+      "false_presence_given_absent": {
+        "numerator": 9,
+        "denominator": 85,
+        "rate": 0.10588235294117647
+      },
+      "absent_predicted_pixels": 8048,
+      "visible_part_frames": 293,
+      "absent_part_frames": 85,
+      "scored_part_frames": 378,
+      "clips": 6
+    },
+    "car_B.front_door": {
+      "mean_iou_given_visible": {
+        "numerator": 375.1962926997495,
+        "denominator": 378,
+        "rate": 0.9925827849199722
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 1249824,
+        "denominator": 1256592,
+        "rate": 0.9946140035906643
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 1249824,
+        "denominator": 1252257,
+        "rate": 0.9980571080856405
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 1249824,
+        "denominator": 1256592,
+        "rate": 0.9946140035906643
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 378,
+      "absent_part_frames": 0,
+      "scored_part_frames": 378,
+      "clips": 6
+    },
+    "car_B.window": {
+      "mean_iou_given_visible": {
+        "numerator": 374.4993531891186,
+        "denominator": 378,
+        "rate": 0.9907390296008429
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 774614,
+        "denominator": 779169,
+        "rate": 0.9941540282018407
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 774614,
+        "denominator": 777344,
+        "rate": 0.9964880413304792
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 774614,
+        "denominator": 779169,
+        "rate": 0.9941540282018407
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 378,
+      "absent_part_frames": 0,
+      "scored_part_frames": 378,
+      "clips": 6
+    }
+  },
+  "per_clip": {
+    "calibration_crossing_1100": {
+      "mean_iou_given_visible": {
+        "numerator": 213.7733211558284,
+        "denominator": 247,
+        "rate": 0.8654790330195482
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 530451,
+        "denominator": 638154,
+        "rate": 0.8312272586240939
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 530451,
+        "denominator": 627179,
+        "rate": 0.8457728973706071
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 530451,
+        "denominator": 641564,
+        "rate": 0.8268091725844966
+      },
+      "false_presence_given_absent": {
+        "numerator": 2,
+        "denominator": 5,
+        "rate": 0.4
+      },
+      "absent_predicted_pixels": 3410,
+      "visible_part_frames": 247,
+      "absent_part_frames": 5,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "calibration_crossing_1101": {
+      "mean_iou_given_visible": {
+        "numerator": 244.5716524336735,
+        "denominator": 247,
+        "rate": 0.9901686333347105
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 629686,
+        "denominator": 636117,
+        "rate": 0.9898902245970475
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 629686,
+        "denominator": 630611,
+        "rate": 0.998533168625349
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 629686,
+        "denominator": 636117,
+        "rate": 0.9898902245970475
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 5,
+        "rate": 0.0
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 247,
+      "absent_part_frames": 5,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "calibration_long_occlusion_1000": {
+      "mean_iou_given_visible": {
+        "numerator": 156.20287813917088,
+        "denominator": 168,
+        "rate": 0.9297790365426838
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 410663,
+        "denominator": 430281,
+        "rate": 0.9544065389826648
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 410663,
+        "denominator": 426984,
+        "rate": 0.9617760852865681
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 410663,
+        "denominator": 443939,
+        "rate": 0.9250437560115241
+      },
+      "false_presence_given_absent": {
+        "numerator": 11,
+        "denominator": 84,
+        "rate": 0.13095238095238096
+      },
+      "absent_predicted_pixels": 13658,
+      "visible_part_frames": 168,
+      "absent_part_frames": 84,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "calibration_long_occlusion_1001": {
+      "mean_iou_given_visible": {
+        "numerator": 147.90498165341103,
+        "denominator": 166,
+        "rate": 0.8909938653819941
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 384547,
+        "denominator": 421935,
+        "rate": 0.91138919501819
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 384547,
+        "denominator": 421096,
+        "rate": 0.9132050648783175
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 384547,
+        "denominator": 433159,
+        "rate": 0.887773311878548
+      },
+      "false_presence_given_absent": {
+        "numerator": 9,
+        "denominator": 86,
+        "rate": 0.10465116279069768
+      },
+      "absent_predicted_pixels": 11224,
+      "visible_part_frames": 166,
+      "absent_part_frames": 86,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "calibration_scale_camera_1200": {
+      "mean_iou_given_visible": {
+        "numerator": 246.15429799956834,
+        "denominator": 252,
+        "rate": 0.9768027698395569
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 677809,
+        "denominator": 688743,
+        "rate": 0.9841247025378116
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 677809,
+        "denominator": 681836,
+        "rate": 0.9940938876797353
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 677809,
+        "denominator": 688743,
+        "rate": 0.9841247025378116
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 252,
+      "absent_part_frames": 0,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "calibration_scale_camera_1201": {
+      "mean_iou_given_visible": {
+        "numerator": 246.881711635452,
+        "denominator": 252,
+        "rate": 0.9796893318867144
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 674433,
+        "denominator": 684257,
+        "rate": 0.9856428213375968
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 674433,
+        "denominator": 677942,
+        "rate": 0.9948240409946574
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 674433,
+        "denominator": 684257,
+        "rate": 0.9856428213375968
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 252,
+      "absent_part_frames": 0,
+      "scored_part_frames": 252,
+      "clips": 1
+    }
+  }
+}

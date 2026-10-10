@@ -1,0 +1,16 @@
+{
+  "observed_at_utc": "2026-10-10T22:26:46Z",
+  "target": "https://colab.research.google.com/drive/1wipvFdtlDOuRwp6Cd9sQpQUCZQNxo2HP",
+  "authentication": "verified signed-in account control on target notebook",
+  "requested_runtime": "T4",
+  "allocation_result": "refused",
+  "visible_message": "You cannot currently connect to a GPU due to usage limits in Colab.",
+  "day12_generator_calls_started": 0,
+  "earlier_live_runtime_inspected": false,
+  "compute_purchase_made": false,
+  "screenshot": {
+    "path": "colab_gpu_usage_limit_2026-10-10.jpg",
+    "sha256": "a35d4f3f80039eb80f3acf6a8c7f0051fd859e7bfb22a6ee52de19a63b89e1b8"
+  },
+  "limitation": "Earlier notebook output is historical, not verification of a live runtime or completion of Day11 fresh generation."
+}

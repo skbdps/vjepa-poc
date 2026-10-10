@@ -1,0 +1,3082 @@
+{
+  "status": "passed",
+  "audit_source_sha256": "715f67c8abfec365dcb36645349b6e7fda324d681930efb744b7e281e6fee346",
+  "source_files": {
+    "test/results.json": "3cf9bf39dfee609c203a060c4b177e4224471755036b2a5bb071624e4c1d24c4",
+    "test/prediction_rows.csv": "bc580a9d1c14b7b06b06f4ddf84cf0e7cbea0330f2db51acd842fe6abb34ea6e",
+    "test/future_rows.csv": "756314cc1bcaa5f9985c94071650bcdede2f703b0a8b3ce8df0eabf9419438b9",
+    "checkpoint_freeze.json": "d22db32b2fe60d648170ed38970b6dcb274f322cc5630b020db6d996f319dd62",
+    "training_config.json": "e4f137817fab91844113bd56e7c848ff3be11e725e950623cdf316cf92b0cd0e",
+    "models/retrieval_only/1701/selected.json": "eeae462d44d9f91223ebde4d860471055f48b57ee88c408fc8e8123f37035e0c",
+    "models/retrieval_only/1701/curves.csv": "82da8966ffcd4f514f881da49e72f09597d7a4b230c5a84f525ad6bf7f905ba4",
+    "models/predictive/1701/selected.json": "022767b575716879271b5db7421f2f736412a1dd09d6990a726d5cdabc2d3c2b",
+    "models/predictive/1701/curves.csv": "c156c87e0c775edff6a604ad6cce5b846de90fed24d8375844c62a61f2e6f978",
+    "models/coordinate_only/1701/selected.json": "15e3abffee451bdb065dff2f1ad244a46741ecae25c0b1d7b19390f41e30d348",
+    "models/coordinate_only/1701/curves.csv": "23a09b7b693f008019398d5bcf2ce0c12de61b32bcf07993d331b0461bdad780",
+    "models/retrieval_only/1702/selected.json": "dcdb779f9e94ab7845faa40694daa83b63fe6cf64274dd50d06c67ebc84dbb0f",
+    "models/retrieval_only/1702/curves.csv": "7003b7d9e6093f05028cbf688c539a027a5101062da9f30697c3c6759977201f",
+    "models/predictive/1702/selected.json": "1d1d09f99bf275294d4316226f6f8137fd5fba914434071d6e9a4985841f16a9",
+    "models/predictive/1702/curves.csv": "576b502753d551b794774b4f6768b58168e7bbf414def56961d98048e5b975d9",
+    "models/coordinate_only/1702/selected.json": "493ef1d456faa691bc785f74eefcee814685f88e0e5ee78db51812b7b4ae1588",
+    "models/coordinate_only/1702/curves.csv": "39b1cc9f2bf74e8362626067a89b5131c11261fd49aebc31a41378ff388358b3",
+    "models/retrieval_only/1703/selected.json": "9b17fcc406d0c1f8c2fea3ad0665ad3edeebb25f22c61a5578a7af9a9dd0437c",
+    "models/retrieval_only/1703/curves.csv": "cb357c04e546d43bc0c546bb4ebd908a4c4681774be83b9e03dbc94e79ef936b",
+    "models/predictive/1703/selected.json": "d919536bc10be308ddaa08d5bd252cae8c674acb75bccb5fbec8ecfba202d0ca",
+    "models/predictive/1703/curves.csv": "7b462251d7735e4182a543f9a5ad2ecce671d3e5adf590eb8854663c14377d42",
+    "models/coordinate_only/1703/selected.json": "cb855f46b8e778d57d06afbe9d42db5cfc0bdb293f5717174d3e2147caeba1b8",
+    "models/coordinate_only/1703/curves.csv": "2cd80fd5f816a240bc60ebb77a82b0737816904dddda45e609e60b7bd03158ef",
+    "test/predictions/global_full/test_long_occlusion_10100.npz": "453237523e38bab2dbfd42a664bde17b37ee282a95a279032bd0c9f56474d5da",
+    "test/predictions/global_full/test_long_occlusion_10101.npz": "0e597019c879f22db74dc54b8b0fceaf7adfd336c836f0639a482ccdcc49efa7",
+    "test/predictions/global_full/test_long_occlusion_10102.npz": "bc420a37ba4a0853368b0a224ac0174873327763cb33804a7acf87e076aca34d",
+    "test/predictions/global_full/test_long_occlusion_10103.npz": "a84828741cd307b3dfee634715eda873138768c70e8be937a524ca1ab8d38f93",
+    "test/predictions/global_full/test_long_occlusion_10104.npz": "2813d9556505b90f763665274d5657b4acf509cea0ee38b85f003bc12780772b",
+    "test/predictions/global_full/test_long_occlusion_10105.npz": "c2c846e34b2714d3f49e9ed3e6712a7d7f062b95dac7f1ffff0418bf5a4ed82f",
+    "test/predictions/global_full/test_crossing_10200.npz": "e7c8ee17a480f5ed98053188befb7d9981f404f8df45d71328050b78f3cc55ec",
+    "test/predictions/global_full/test_crossing_10201.npz": "b97d7b9cf58b8ec92f1e6000520bfb11773fa4a6e7785cffc70bf9751281f300",
+    "test/predictions/global_full/test_crossing_10202.npz": "b503da95bcdddad1c6014bd3696bc48b160cea732f8f8945e23cb23ae2277055",
+    "test/predictions/global_full/test_crossing_10203.npz": "29aca8d567f47ea5be9fbb6559ee4920df3da89d0f4c409474a4f83b7917ba37",
+    "test/predictions/global_full/test_crossing_10204.npz": "5f75aa12c02a234d3838a5ceeb1952325ef3f22a7a7c74a0026681c7f0565832",
+    "test/predictions/global_full/test_crossing_10205.npz": "c8e5e9e53ef8d04d8237060eaa0d8c0bdccab814947cef7ccdd52f33ac53b28d",
+    "test/predictions/global_full/test_scale_camera_10300.npz": "dec43ac7f125e1dbcd711ebe3a3d7a21a6a967e70f1445a7921bfc6b81cea024",
+    "test/predictions/global_full/test_scale_camera_10301.npz": "88adeaf86958c77c14f7af14af630b1b68b8927775dd46fded1121b5ea904ea8",
+    "test/predictions/global_full/test_scale_camera_10302.npz": "0072df5a446d77c87e91cad665b60e7ea6dc62e3c170ddfad5475025b0f4db7d",
+    "test/predictions/global_full/test_scale_camera_10303.npz": "34e616269c18e1d566f12069f0c28f3735a69abfc9839fe8b5571c659a034c86",
+    "test/predictions/global_full/test_scale_camera_10304.npz": "24f470e7f99e0b38aed76a55b39e2a245fcf20699c2d0d57a94b83511372bfb5",
+    "test/predictions/global_full/test_scale_camera_10305.npz": "1c72048f9f388a652fa782b6c9cf4f253fe84c75c3ea813bf7de4c16833d47ff",
+    "test/predictions/selected_day4/test_long_occlusion_10100.npz": "e46785db6b2afe33810eac7c0f5fe83be1903ca60d73b98a1b49d13c490844b0",
+    "test/predictions/selected_day4/test_long_occlusion_10101.npz": "e23953a44087fc82858ea9d9f02763733969b35f92e83442c590ca2a3bfc7d12",
+    "test/predictions/selected_day4/test_long_occlusion_10102.npz": "a85487daa53c43823bc13407bf3cf221a97b677aa7e80210e07bbd9e5735b67a",
+    "test/predictions/selected_day4/test_long_occlusion_10103.npz": "60cbc59053b22ba32338f08f69b8579703055547e547cb7c53e4e43d83945b2a",
+    "test/predictions/selected_day4/test_long_occlusion_10104.npz": "1ea70f47a8b76deb5abe7516547b1588a16c3dcc903d526ba2984d12d7aeb14c",
+    "test/predictions/selected_day4/test_long_occlusion_10105.npz": "eae15aadf652b92ddf44b5d49375f46c8e5ac941ba5bb4fb4e2d81c5bfc232bb",
+    "test/predictions/selected_day4/test_crossing_10200.npz": "b06ad04c3bba0caecfeac87fa92515c38fed93e8a581f2c38b1798fd744bc9db",
+    "test/predictions/selected_day4/test_crossing_10201.npz": "2f3507569cccc28837d0048da70cfbce08a6b74682bf1bdd045794ddfe071b6e",
+    "test/predictions/selected_day4/test_crossing_10202.npz": "89bd7a6c16411d30584d157876171643dd2939a217ae160a272ca26f929af92f",
+    "test/predictions/selected_day4/test_crossing_10203.npz": "35e203ec664bf2fcce6ba50a425b197e6e5e0da0098a0040cf2adb13be8ab0f4",
+    "test/predictions/selected_day4/test_crossing_10204.npz": "9f38107c6717071742ee4738511175596cf921b5535479eb457b2424d6b9fd2c",
+    "test/predictions/selected_day4/test_crossing_10205.npz": "dcfc213af873989e1ce942ac036b83287e3045169602ce623a84bf40045e6200",
+    "test/predictions/selected_day4/test_scale_camera_10300.npz": "0510d0765997d7102234880fe9024efcacb42e68c1fe23ed2ee31d8312286569",
+    "test/predictions/selected_day4/test_scale_camera_10301.npz": "f00c0d4d0e7a63e43851ef3613a1007b3be824ae79d45886c3c291c721a2a2e6",
+    "test/predictions/selected_day4/test_scale_camera_10302.npz": "72a3ed6efd54dc24691ac4b9168222ce54ec9dbed84c8f7c12ad106b0fbd3f56",
+    "test/predictions/selected_day4/test_scale_camera_10303.npz": "5855b662822219f0e111be532ff80df2d697bfb5ef63d85c8484847c11749357",
+    "test/predictions/selected_day4/test_scale_camera_10304.npz": "82369ca5da83d99006a386618c3dd4b803177146fd88d19a472551e0c54da42f",
+    "test/predictions/selected_day4/test_scale_camera_10305.npz": "a3afa31a97fe22ec2282239b04ea4d21e963924aab902e94c72fc185321792c5",
+    "test/predictions/global_projected_centered/test_long_occlusion_10100.npz": "b1a689dbcc733895c921d53fe816c012e0e69f83e304592992e47c103de0a4f6",
+    "test/predictions/global_projected_centered/test_long_occlusion_10101.npz": "5acf80d4f54087c0c087c685de203350899062f385d6f83cc7e3f29bf2b0e47b",
+    "test/predictions/global_projected_centered/test_long_occlusion_10102.npz": "f2d2c8a817d1bafc84f7f441cf21a5cd7730cde416aae6fa163e110b1ff2a725",
+    "test/predictions/global_projected_centered/test_long_occlusion_10103.npz": "bdbe0c031f34dce49fc5eb898300bbc3e85908a868de65624ee1d6fa572c746f",
+    "test/predictions/global_projected_centered/test_long_occlusion_10104.npz": "b034c78f25575d5a453ce22f239f4ff8406c50a77e008f0db869284d23e3a30d",
+    "test/predictions/global_projected_centered/test_long_occlusion_10105.npz": "5366aef6b3a26a8cd1d637f0c9a1c4c6f744164e94098acd16cac74443815858",
+    "test/predictions/global_projected_centered/test_crossing_10200.npz": "ddffd98db59bec205cff9eaa6636da752d2eefe73b3d921584a8536330c5e30e",
+    "test/predictions/global_projected_centered/test_crossing_10201.npz": "b9cc85c94939ef175271ce4c9f0668753074b0f03d2965e03f1225169c46c947",
+    "test/predictions/global_projected_centered/test_crossing_10202.npz": "ddbd95766d746ce6a53eb0aaf2999baf29032f3953e1659eafdd7caa8a847a34",
+    "test/predictions/global_projected_centered/test_crossing_10203.npz": "0b8d6b9751a97390d7e6437390cdbbab1402c9c5b5f56dad30446f59ef7e4dd9",
+    "test/predictions/global_projected_centered/test_crossing_10204.npz": "be569adc78b54515883f35362525b625f2f09b654c97a2ae913f932769d7c28c",
+    "test/predictions/global_projected_centered/test_crossing_10205.npz": "d33c5b52e185efe31e96e6e2a4270ec27ab26acb9f7384558379647a8097cdf6",
+    "test/predictions/global_projected_centered/test_scale_camera_10300.npz": "7b02dcc08f2b3e9b2d00fc4c0423aa91cd1baa7427d8f32b8bd5d0be20b5aeaf",
+    "test/predictions/global_projected_centered/test_scale_camera_10301.npz": "2dc28f5b92f87674c231c082c965d4b9a3b333fd126ca5e1dc01dc424f87b16d",
+    "test/predictions/global_projected_centered/test_scale_camera_10302.npz": "9d0b9404012e9b9e6939ce618bb8c381db3964ceb455efb5a0e994472786f40e",
+    "test/predictions/global_projected_centered/test_scale_camera_10303.npz": "52657ac7a8b9ef8185449e38c34e84c2c4b08fdd127ec241e88c16b00a7cfcbe",
+    "test/predictions/global_projected_centered/test_scale_camera_10304.npz": "4aaa4eb9772d60b34eca308bb8d8054231afb71160ab3a884dcbabaf6bba3ab0",
+    "test/predictions/global_projected_centered/test_scale_camera_10305.npz": "ddc377a0ca55ecd32045a07b708e9c4e1e2fdd505bb4d41b6a4c3d54f91ba376",
+    "test/predictions/retrieval_only_seed1701/test_long_occlusion_10100.npz": "dc395558be481c3fad18b2615d7087644b4fac3a78460403b4e261c094fb9de7",
+    "test/predictions/retrieval_only_seed1701/test_long_occlusion_10101.npz": "1bf2da6d91f597a7e417a6637eddc0ae296a68f6bca535311a31ccb953750722",
+    "test/predictions/retrieval_only_seed1701/test_long_occlusion_10102.npz": "e031699482ac3e15a76768a6967552ec292d353892bb71d1b9f935cafa07111c",
+    "test/predictions/retrieval_only_seed1701/test_long_occlusion_10103.npz": "7f395aad878d473f54ed7f13e3f67a4e91730783713dfc0e9cc78f94eb4dfab6",
+    "test/predictions/retrieval_only_seed1701/test_long_occlusion_10104.npz": "8494f1644806fcc973d7542617b9a1374532d1218b77ab97a4cd0a13ef7415b0",
+    "test/predictions/retrieval_only_seed1701/test_long_occlusion_10105.npz": "fd3d3323d33eead48c96f7c65206113b6bf36abebc59779c99f8aa98d80bfe03",
+    "test/predictions/retrieval_only_seed1701/test_crossing_10200.npz": "c8b0f4401739c4954bab760407688e1e1efc9e8fccbaf1eac73a3eb96c0e07c1",
+    "test/predictions/retrieval_only_seed1701/test_crossing_10201.npz": "b0f1fb90059a7124bfd26427c136d5f60afa5cdd3dd2649ee378a0bcc4f093ef",
+    "test/predictions/retrieval_only_seed1701/test_crossing_10202.npz": "ae49d9da508d1d2a5495b81b35eb63174d3dfcfbbf44ba3b15aeaa50b209a4dc",
+    "test/predictions/retrieval_only_seed1701/test_crossing_10203.npz": "fa212a0173df5cf8bea35626c3c2af08ae0cddd53a19083b5af9d2f74fb70194",
+    "test/predictions/retrieval_only_seed1701/test_crossing_10204.npz": "36cfcffca9cfc9034851f20c39fd0290d6266489a59ec46f75acee36dde6d8dd",
+    "test/predictions/retrieval_only_seed1701/test_crossing_10205.npz": "9a74cb7c176961559c4c28e5c75ddb5771b1d587c47089dc7402334426e8818c",
+    "test/predictions/retrieval_only_seed1701/test_scale_camera_10300.npz": "db7d03d9e13a0a5863be5fa0c422eb2890bc138461ee37e593dbfadd2aa9e912",
+    "test/predictions/retrieval_only_seed1701/test_scale_camera_10301.npz": "70fcc65bfb7d9318622ac6ef1ec4736e7f7a54062713568c2b1133b8f4811649",
+    "test/predictions/retrieval_only_seed1701/test_scale_camera_10302.npz": "c1813993dcc1defc0a823ab17b8cf0f05501128486add1927d0e1b14cc80912b",
+    "test/predictions/retrieval_only_seed1701/test_scale_camera_10303.npz": "2983219df29fea555127314d75a670a0482a40cfd762afb8b1ceb4d1e1961470",
+    "test/predictions/retrieval_only_seed1701/test_scale_camera_10304.npz": "60e1b7a5e85420cc79ba267db5575a0a3d5ca16effd7972ae06c6fa8969e6d29",
+    "test/predictions/retrieval_only_seed1701/test_scale_camera_10305.npz": "e4dba927329a283dd9a24b6f17edbca799ccaae76a54366d571d4481522f26c8",
+    "test/predictions/retrieval_only_seed1702/test_long_occlusion_10100.npz": "b1fc789fbd1d891969762da16084b773cc7794fbb2a75e7c541ed4d3b0e8c75b",
+    "test/predictions/retrieval_only_seed1702/test_long_occlusion_10101.npz": "56270d7a9c491b1b479a93edbffcc290a934dbd32c6438a0f39c3edaece6a5ae",
+    "test/predictions/retrieval_only_seed1702/test_long_occlusion_10102.npz": "23ce0d059bbe4dc620f009f4bf2ce8757068cac83c89802aab0f4ec2ab782b08",
+    "test/predictions/retrieval_only_seed1702/test_long_occlusion_10103.npz": "e4b2b8a9f3cec0303381b5d3ca662bd69994788dce50666e366b6696a630bef9",
+    "test/predictions/retrieval_only_seed1702/test_long_occlusion_10104.npz": "4564ff4dbfe56c0b248345905da1a998ed79f6ee7f80e6fb97412762635671e0",
+    "test/predictions/retrieval_only_seed1702/test_long_occlusion_10105.npz": "beaee767fe09bd7b5b07bb9c0db2d515e115f2671dfe08024b7fde919100c5fa",
+    "test/predictions/retrieval_only_seed1702/test_crossing_10200.npz": "41b4ae9e9d5db7512cbd2c1f415a2444899bfc7f9fe7d70a639de9abd4d93109",
+    "test/predictions/retrieval_only_seed1702/test_crossing_10201.npz": "17381fedb2ef62156e10d16e72ba3c57bdeb4bb0838303fc09bd8c97bf1fd1e2",
+    "test/predictions/retrieval_only_seed1702/test_crossing_10202.npz": "3f22147780bbf8207e4ed63840f80b86af5ffbdd3d253953cff8974c0389626a",
+    "test/predictions/retrieval_only_seed1702/test_crossing_10203.npz": "e6d173563425ac7a63f92f61bc01530b6497f4bf9c71a87c6751365df20a36b5",
+    "test/predictions/retrieval_only_seed1702/test_crossing_10204.npz": "ae9d255dbcfeeb1d4ee4da937d33028f965575dfa69f703b1d4e3c371616aab6",
+    "test/predictions/retrieval_only_seed1702/test_crossing_10205.npz": "457b7a8fd7517a0e022c2c84f513e9bd4d308c544e88841d1fd69c974b50b0bc",
+    "test/predictions/retrieval_only_seed1702/test_scale_camera_10300.npz": "44b90e5535ca0b17028190612014320ea69ad8c70a3130c3d45ba2a73aaa08a8",
+    "test/predictions/retrieval_only_seed1702/test_scale_camera_10301.npz": "dda215743e205137bc9924300c6f01e8dcf37ea9aaab1715aed4db73db2c002d",
+    "test/predictions/retrieval_only_seed1702/test_scale_camera_10302.npz": "d3f89584b5dca2425db552fd908d32037d588c0c9f852ded89cb00c56e5a445e",
+    "test/predictions/retrieval_only_seed1702/test_scale_camera_10303.npz": "84142e4f942da01e08d7d2433fb7c0e23ecb97ad8617af001861a4b2e8ef2840",
+    "test/predictions/retrieval_only_seed1702/test_scale_camera_10304.npz": "972ebc2e5b6ba35a4864ef9a901331e7f7022ab8e0f86064c2d6922498f48f5b",
+    "test/predictions/retrieval_only_seed1702/test_scale_camera_10305.npz": "5f84d1ab71adcbbef353604e13f24161bce901e7884bc646e723441b495927a7",
+    "test/predictions/retrieval_only_seed1703/test_long_occlusion_10100.npz": "c7e5aaec96ef7380e1f233ceb3eb217c9538e3152a7d8613b164f4e660a45abd",
+    "test/predictions/retrieval_only_seed1703/test_long_occlusion_10101.npz": "5c16ddb55613552559cb27e525a491300e0697959ddf9d01471900bdb2a9c50d",
+    "test/predictions/retrieval_only_seed1703/test_long_occlusion_10102.npz": "b895428d5a50245e1fd44a0feb5f56ea2db027657a8e8096e6ffd34e07f1ee19",
+    "test/predictions/retrieval_only_seed1703/test_long_occlusion_10103.npz": "4eb13a177a7aa905eb2050086abb2d52791fb6db1206e61b57bbcead205f3dd8",
+    "test/predictions/retrieval_only_seed1703/test_long_occlusion_10104.npz": "93987d8d5fe77df0a345b63a7dafba9b1f450be6bc2dffa9aae6cb8779d37c62",
+    "test/predictions/retrieval_only_seed1703/test_long_occlusion_10105.npz": "ec527c0f670646f78a38ff158c2d27332fd0895132246e3283c371c94471932d",
+    "test/predictions/retrieval_only_seed1703/test_crossing_10200.npz": "6d335f0000bccad092883656b1366da3b79fcb15103459ed02ed47415f5f374c",
+    "test/predictions/retrieval_only_seed1703/test_crossing_10201.npz": "1238c4f3b8a3f291dd3a097604b451bf4298015543f786e1ee0ababc80de7050",
+    "test/predictions/retrieval_only_seed1703/test_crossing_10202.npz": "1dd27b51d493438402e223b98c068ea1b13edb043ee82c52e7c1b6d73d1956b4",
+    "test/predictions/retrieval_only_seed1703/test_crossing_10203.npz": "7a952bb665d552764110e29c2840474f390c3b872a212c00d3cbe81cc1e45423",
+    "test/predictions/retrieval_only_seed1703/test_crossing_10204.npz": "947b3c29c8f5c8203f74d889c03410ab99b9a8bc286d1659c7b9f16af8acfac0",
+    "test/predictions/retrieval_only_seed1703/test_crossing_10205.npz": "8fde55fbd71724c077472a13349b3b74d6bb3885dc6ca93a38aa93269dc8710c",
+    "test/predictions/retrieval_only_seed1703/test_scale_camera_10300.npz": "6533eda062a02599bafaa42ec64c83e30506843f3129ccf75251c2997c03165d",
+    "test/predictions/retrieval_only_seed1703/test_scale_camera_10301.npz": "4bd66b78fef68e76f39319813bd8c947de4f042d7af807c556cb87587aad8baf",
+    "test/predictions/retrieval_only_seed1703/test_scale_camera_10302.npz": "f963c44307332c3a8abbece58d8f7862a93a2d86346392fb0edec6315606756d",
+    "test/predictions/retrieval_only_seed1703/test_scale_camera_10303.npz": "a14228e0be492ffaf757fee6d0a3b099d228c8ccd9dbfa9299bf01dd865bf151",
+    "test/predictions/retrieval_only_seed1703/test_scale_camera_10304.npz": "329ee0a6630f7c5e8fdc9faab5ab80c63e8c56f8d99fdb60bc4d45b18cad81ab",
+    "test/predictions/retrieval_only_seed1703/test_scale_camera_10305.npz": "1a08f1b6aeef122e5d94bfd0aee7cf30b9e3dab554b6b4a04bbb3130991b6e12",
+    "test/predictions/predictive_seed1701/test_long_occlusion_10100.npz": "0a7b84fb8ab214852cf0ed074bda92128fee49a3cbadd1b24f975a6f68dff464",
+    "test/predictions/predictive_seed1701/test_long_occlusion_10101.npz": "90bca4791d67343592d3f2cdfdd51c17117aa96584afde84c45463bb965ddd94",
+    "test/predictions/predictive_seed1701/test_long_occlusion_10102.npz": "b9d22c3e0ef737dbbc444722e578d803f2f4b977f91b48e8fe19208f0d67f9e6",
+    "test/predictions/predictive_seed1701/test_long_occlusion_10103.npz": "7c96ba12dbe9bfafdb55671cf0c09dcf6bf7d78f36bf8f895a45879286aaa2dd",
+    "test/predictions/predictive_seed1701/test_long_occlusion_10104.npz": "d7e96de83de1bab4b5dce827e128fe1feb40a559844cf899e04fb4a2a96ab8a0",
+    "test/predictions/predictive_seed1701/test_long_occlusion_10105.npz": "be8784bfb3253b1aa7175400cfdd401c5ffa64cac57441452d986f22575ce605",
+    "test/predictions/predictive_seed1701/test_crossing_10200.npz": "60e5296dddb7fe675c34e0690930d0fb03497341ec199fae5b8633ff934e542b",
+    "test/predictions/predictive_seed1701/test_crossing_10201.npz": "1942fd690b9c5cbd4969d286c2a12cb075ed61b70f5a27985ef981cfc92abcee",
+    "test/predictions/predictive_seed1701/test_crossing_10202.npz": "53947dd7bf351d83b608f85b1c721e1678e7463b19cb8b49505a9e75e86431be",
+    "test/predictions/predictive_seed1701/test_crossing_10203.npz": "ca930d594acec62aad7561761ee9769009250d5135334143c64db24f4d1c4b13",
+    "test/predictions/predictive_seed1701/test_crossing_10204.npz": "aa1194496577c59b557a358f9d025a89c27d3f803a8ab5989986867184e12bf8",
+    "test/predictions/predictive_seed1701/test_crossing_10205.npz": "0d7c7ed28ddc80f93510c9e68c8796bca28077d3deabbec7cc6b62cc928e7dc4",
+    "test/predictions/predictive_seed1701/test_scale_camera_10300.npz": "c6db0ccb922d35451996393a24eb5d30af3dc104ddecec5f4523c1ab02288243",
+    "test/predictions/predictive_seed1701/test_scale_camera_10301.npz": "a93bdba8e8ba7ea9a821859883707f28fca4228c2f053236be412f5c936136d6",
+    "test/predictions/predictive_seed1701/test_scale_camera_10302.npz": "392d46dd5c2842cfd43feeedd75931b9ab1aeff24fe6d5038fac206b60cc7045",
+    "test/predictions/predictive_seed1701/test_scale_camera_10303.npz": "d25610a0eac20c19db402ba5e2504be092075fdbeec2a58fdeea6f7345fd2ba6",
+    "test/predictions/predictive_seed1701/test_scale_camera_10304.npz": "575fb884be8604c6d8d6823b6c5c047c79a1db61f511aa0f2fbf9122699ef986",
+    "test/predictions/predictive_seed1701/test_scale_camera_10305.npz": "61283a4ca9a96e39ddba59a0830221d7d2fa402a98297ca4b641b073487fe17c",
+    "test/predictions/predictive_seed1702/test_long_occlusion_10100.npz": "4e6e6cbd621bd336a1e13e7c55a443b002bcf4367b959c0b13552d5be9a5b777",
+    "test/predictions/predictive_seed1702/test_long_occlusion_10101.npz": "b33d1c7b7d3c8b2cd6aebb1b0db72919003bbfd3b04cb7d7a7219d67706a5dcf",
+    "test/predictions/predictive_seed1702/test_long_occlusion_10102.npz": "ad606b655a4722be371c92241956d64cdc02cc6b332052fa30c79312b27622a7",
+    "test/predictions/predictive_seed1702/test_long_occlusion_10103.npz": "6d01e0211e623545ec015532d1abf12977e5b96e30a5b137131dc90f1de621bb",
+    "test/predictions/predictive_seed1702/test_long_occlusion_10104.npz": "b7e4adf4155aec13a4e599017b9401de62c79f9ccf321464b61be03c5059c815",
+    "test/predictions/predictive_seed1702/test_long_occlusion_10105.npz": "397cd1ef86503b887c5b906d579f027eab6754a7e192cfb5f3a1791cff580f3e",
+    "test/predictions/predictive_seed1702/test_crossing_10200.npz": "70c5896103514aa299476a997efdbdf7ebbb06f6cc0e2bc08402eca798b8fe6c",
+    "test/predictions/predictive_seed1702/test_crossing_10201.npz": "eca06c803e8c8eeb2aa9734366adbd5deeac3712055a22bf1d6bc1bfd4d6d06b",
+    "test/predictions/predictive_seed1702/test_crossing_10202.npz": "5470d4af9d146223d36bce3acc9dc57332086678c46c73fb0a03cf225e320d72",
+    "test/predictions/predictive_seed1702/test_crossing_10203.npz": "d19a65fad4c219f5ab264a2754b8d47da01b1897fe7895c8c08fc384f5583ec0",
+    "test/predictions/predictive_seed1702/test_crossing_10204.npz": "a0dd2c1044a5c5842025c610f630f77d8db057150798d2e5cdd61df563c61adf",
+    "test/predictions/predictive_seed1702/test_crossing_10205.npz": "d197c53530156fbb12e01c3c61899b05b701e7e1acded84302bec9df9f4b33dd",
+    "test/predictions/predictive_seed1702/test_scale_camera_10300.npz": "f99afec58e9b97753168eb79bcd3ede89c4ce52ff1d79d9f75e2100314790877",
+    "test/predictions/predictive_seed1702/test_scale_camera_10301.npz": "2db85adf8776dec5fed46f9ff80ed183623f1c73fa7e148ebdb4822e35af87c0",
+    "test/predictions/predictive_seed1702/test_scale_camera_10302.npz": "3f82dbc8cb409823dc55df55502a914b9bcb00fe14f272917da23341ae3eca40",
+    "test/predictions/predictive_seed1702/test_scale_camera_10303.npz": "f5bb51d7038f4cc17c58cdf6aac12c42571a32525163a08b512324555bfbc587",
+    "test/predictions/predictive_seed1702/test_scale_camera_10304.npz": "a7de64de0470ccbd8576acbf725c3d0b12fe096a3ae163d4c21c42f400444876",
+    "test/predictions/predictive_seed1702/test_scale_camera_10305.npz": "7c90a0315a73a13e6281f255477f6cb364ebcd99563346f856fdbca1b384861b",
+    "test/predictions/predictive_seed1703/test_long_occlusion_10100.npz": "1f800a3fa737e7413162087a862feac1b8e15541f4a56d1795ba7cc66ae70828",
+    "test/predictions/predictive_seed1703/test_long_occlusion_10101.npz": "93ddb186b61fbb5405bdedc4e7ea1f763fc62bcc5716d06d8772c4f33d7f07f1",
+    "test/predictions/predictive_seed1703/test_long_occlusion_10102.npz": "e2d2a652b27c5f71bfef8eca22f13daee79ce67648b512dd2cb97088615a368f",
+    "test/predictions/predictive_seed1703/test_long_occlusion_10103.npz": "603f9eadb748f9fffa3fda51bdbfa38e2f143e97324ccbbe64924cd492c70077",
+    "test/predictions/predictive_seed1703/test_long_occlusion_10104.npz": "27362e428675b9d4d9cdc5e668a1fd7d9f61a1451848132dd19ef0ed4a9feafe",
+    "test/predictions/predictive_seed1703/test_long_occlusion_10105.npz": "ccb06c41c7e28b140d61954508fc0bc7177fcb1ae7fd695782ee6e6fcb5aef32",
+    "test/predictions/predictive_seed1703/test_crossing_10200.npz": "3a920572eec258d98494d9ee922449393386ddb1b241c240afb7e850c2dbac8f",
+    "test/predictions/predictive_seed1703/test_crossing_10201.npz": "b4bbefbf5c96ea832fb59ef3e5fe0b83e97d559b14c0bbd67bf67ca28c1a5756",
+    "test/predictions/predictive_seed1703/test_crossing_10202.npz": "357a2ff2a39d50dfa2fd305ef6a260853303d6135d1999f0728b0e4e254fa936",
+    "test/predictions/predictive_seed1703/test_crossing_10203.npz": "5ca32ed69c8c3d2cc9174756059c9d261aaa6521c17d94474dca632bb5f91d8f",
+    "test/predictions/predictive_seed1703/test_crossing_10204.npz": "ac3e01355108fc812dd8efd229f32c7254924139c8ee20336d5a76c3eaf7cdea",
+    "test/predictions/predictive_seed1703/test_crossing_10205.npz": "efc97a5488507408c38178f40b3cfdef39a5a62ecfda33b2d0a90970469356f0",
+    "test/predictions/predictive_seed1703/test_scale_camera_10300.npz": "34c5ff6e539571d65f68bfd44b9681a997cf9f7df022d93f2b5dd5a8f037c76c",
+    "test/predictions/predictive_seed1703/test_scale_camera_10301.npz": "03ca396564708b076f6c7d9391a1a0307c98ab566283141ac04db79a6c53a5b1",
+    "test/predictions/predictive_seed1703/test_scale_camera_10302.npz": "5453966614f2d37bf0986b28fcfb173b1d2dc39d06a16c6f937d5f36ede20577",
+    "test/predictions/predictive_seed1703/test_scale_camera_10303.npz": "1161bd8772b9932ad8ebf5dd4ef42b38dc2fcf791088a4b1daa90e98c193a66a",
+    "test/predictions/predictive_seed1703/test_scale_camera_10304.npz": "3e5e8b2deb80a63898e699141f4ee79b7bbf8547dfc871cc53ebee248b51d650",
+    "test/predictions/predictive_seed1703/test_scale_camera_10305.npz": "8bd5aba6842c2e8105b6d105ce577b9be40401608a5c16ec3e08cc39678120ad",
+    "test/predictions/coordinate_only_seed1701/test_long_occlusion_10100.npz": "d87d81767fd4b33efc4bb4e5a991693d0f9ba19c26b86e317b1a1d6b3ff3d5c6",
+    "test/predictions/coordinate_only_seed1701/test_long_occlusion_10101.npz": "856f4e3024447c3c831fc5edd016b1016708acdd0b1a084acb0123f9758f73a3",
+    "test/predictions/coordinate_only_seed1701/test_long_occlusion_10102.npz": "57ee91b55fa7612e6e65d2c90adbe37ce8edd7330ce6a086f3ab2ab62e050129",
+    "test/predictions/coordinate_only_seed1701/test_long_occlusion_10103.npz": "c2852b38296b523679239ca5908c11bc252f420123c7c1db21b1c164c7bb31e4",
+    "test/predictions/coordinate_only_seed1701/test_long_occlusion_10104.npz": "01d6fcae4259e068d8af0283d56cd4cae4ffb7502d9f1d247ad45846338ea85d",
+    "test/predictions/coordinate_only_seed1701/test_long_occlusion_10105.npz": "1a50abefc682ecca9e06701b066e017b8b4585048674bcee9713a7dc6c917537",
+    "test/predictions/coordinate_only_seed1701/test_crossing_10200.npz": "13074c45b009fc2d9ed23ee193c49fb9fd4ee572c579818b1583889107dfef94",
+    "test/predictions/coordinate_only_seed1701/test_crossing_10201.npz": "d2c21592e561982314431110a777e570ddf56e49a9a4f0b598daf85de2151974",
+    "test/predictions/coordinate_only_seed1701/test_crossing_10202.npz": "7b3cf03491f3313ef413e2ececef9f1f7a7623f8eeddf829309f6e9d1a49938d",
+    "test/predictions/coordinate_only_seed1701/test_crossing_10203.npz": "4b1455d6885b623302571a77b8dc19d2217e9671b565bdaea3d4ce54de94c558",
+    "test/predictions/coordinate_only_seed1701/test_crossing_10204.npz": "f70e5caf96b06c2d640b105f13f2a2ca9e3c7a466c4582552b033c1c424ccdf9",
+    "test/predictions/coordinate_only_seed1701/test_crossing_10205.npz": "9ecc1dae8f1a124ff99dff7b6daf465d486f321b648adda3cc4b7c3e121ab630",
+    "test/predictions/coordinate_only_seed1701/test_scale_camera_10300.npz": "db2e00d72ac6865348f83a9e0f5270e9958ae18c8b043068570e8851c038f888",
+    "test/predictions/coordinate_only_seed1701/test_scale_camera_10301.npz": "158d50d22c4dd035846da1df83eb69ebeb5e8b88dc908398f8d74b4511272e32",
+    "test/predictions/coordinate_only_seed1701/test_scale_camera_10302.npz": "db2e00d72ac6865348f83a9e0f5270e9958ae18c8b043068570e8851c038f888",
+    "test/predictions/coordinate_only_seed1701/test_scale_camera_10303.npz": "4a3cd7b74c2b501c6901c222332ec254a35e7bf3fd233ed9e403125e82ae0530",
+    "test/predictions/coordinate_only_seed1701/test_scale_camera_10304.npz": "0ac217f5a1e1c9a6be27a77e1d6969288bc3a540cc63c69c5c8d23f3d72a7915",
+    "test/predictions/coordinate_only_seed1701/test_scale_camera_10305.npz": "e34d9b6bc3b7e053b2e90b97ca9bcc967bce3d799476f9d6945e2ee1cabadde0",
+    "test/predictions/coordinate_only_seed1702/test_long_occlusion_10100.npz": "ee777af4e77b77640b8cb22a667249656cd591b88a0f776f1ece47022f078fe6",
+    "test/predictions/coordinate_only_seed1702/test_long_occlusion_10101.npz": "70e1fd7502ea7b58395fc2dd43047050a1045ec3c6c4ef89842ba86917c3ba5b",
+    "test/predictions/coordinate_only_seed1702/test_long_occlusion_10102.npz": "ba303f81c48eb598eb37fa0d26e953f6ddbcdf4644ab62998ae612d2586f4cc0",
+    "test/predictions/coordinate_only_seed1702/test_long_occlusion_10103.npz": "42d31d43bbe67fec0b8049569c64b54847489b243f79e2053fa61569756711c5",
+    "test/predictions/coordinate_only_seed1702/test_long_occlusion_10104.npz": "a1694ba04a010e33ea3fef0b85a589344b2e39a8c9fedddb3b3ad84138744a36",
+    "test/predictions/coordinate_only_seed1702/test_long_occlusion_10105.npz": "d16478e376ede191ced318fa0d0bcca75d58028b3d1ddd0209030b6ccdacb87e",
+    "test/predictions/coordinate_only_seed1702/test_crossing_10200.npz": "d9aee344793d9f7357edcdf1daa015ee53286077476a9c0f51d87abccc3bad09",
+    "test/predictions/coordinate_only_seed1702/test_crossing_10201.npz": "98a35dce12a1d9e9c31f640ff69202826547700ab24193b657c204b7a891e30b",
+    "test/predictions/coordinate_only_seed1702/test_crossing_10202.npz": "bfd425e06c0d44622c1c5b633418757d07052d29a93e6377054c3abdb43f6549",
+    "test/predictions/coordinate_only_seed1702/test_crossing_10203.npz": "0c4d765c20a6c3812f3570f4ba28b68c0c6db7cab1d1305045f7e0169cb968c9",
+    "test/predictions/coordinate_only_seed1702/test_crossing_10204.npz": "d12e919552a64cbee8ca80f50c9d660118b3d8b4f63862a4b27e43382152dc52",
+    "test/predictions/coordinate_only_seed1702/test_crossing_10205.npz": "c68188893f5fbc47a05c368887bded1de0566782495b434d1bb961d3ceb6b906",
+    "test/predictions/coordinate_only_seed1702/test_scale_camera_10300.npz": "91db9856059d26512097e04a1f3ce798a9eef61dde490d02f964b9cc5091dba9",
+    "test/predictions/coordinate_only_seed1702/test_scale_camera_10301.npz": "a7fc656bf39ac2bcf516f4fe16e4d0f75ad3d0e021687ddb449fafb3f250e330",
+    "test/predictions/coordinate_only_seed1702/test_scale_camera_10302.npz": "91db9856059d26512097e04a1f3ce798a9eef61dde490d02f964b9cc5091dba9",
+    "test/predictions/coordinate_only_seed1702/test_scale_camera_10303.npz": "2ec30677d97a536fd91896f4b6be91bc8174aa311b4d1aaa02dfbda756232bf8",
+    "test/predictions/coordinate_only_seed1702/test_scale_camera_10304.npz": "96f0541e52f1d455296c0d685781a0d5adc3976e7d897a17e6060a63c0723550",
+    "test/predictions/coordinate_only_seed1702/test_scale_camera_10305.npz": "3cd331c66b3eafaf30c6420d9c7375b446fd22e04a681a01f0b1a41074909152",
+    "test/predictions/coordinate_only_seed1703/test_long_occlusion_10100.npz": "fababc5ace1cfa7f6d1bd42d118105bb738551f9c52b9d8383b4b989c0465722",
+    "test/predictions/coordinate_only_seed1703/test_long_occlusion_10101.npz": "a0e9004612ed3818e5d82d4083ff323172a393f3e0d69e31658bdbad2311a3c3",
+    "test/predictions/coordinate_only_seed1703/test_long_occlusion_10102.npz": "9547919279beb223fba8122c368565964a86ab7fd2c39c3a531e03c48efbc5c9",
+    "test/predictions/coordinate_only_seed1703/test_long_occlusion_10103.npz": "7e13827745998410d3795bb0450ab9c4f7c6733a829f36703e4dbe86dfe604a5",
+    "test/predictions/coordinate_only_seed1703/test_long_occlusion_10104.npz": "4903b26d8d6726996ac51e919f05ae74f39bfc0f97810938e5e305438d23ecaa",
+    "test/predictions/coordinate_only_seed1703/test_long_occlusion_10105.npz": "8e552b04dcbfa86fb31f622efaad5be16ecee57566bfe62706eba075755a3fd0",
+    "test/predictions/coordinate_only_seed1703/test_crossing_10200.npz": "0771e1cfffdac5cefc0eb23b80aca912eb8a17de03fb6107f8f2f0440d20e0e3",
+    "test/predictions/coordinate_only_seed1703/test_crossing_10201.npz": "73213a05ea833dfd3744d60e5d142b6e2343dfa22e82d2f369e0988620f994c3",
+    "test/predictions/coordinate_only_seed1703/test_crossing_10202.npz": "d0abcf0ef24fdaa54e7cbda47da705e33e008388c859f8e90e2e8e63049b8e71",
+    "test/predictions/coordinate_only_seed1703/test_crossing_10203.npz": "24d1dd960f8c176d0ab6f78be086d9e15460e1daf36a510a134d3019daddf783",
+    "test/predictions/coordinate_only_seed1703/test_crossing_10204.npz": "ad71ddbc9aa60567e331dbe5f6b7559aec5356403fb43fa52608f1b4e1786b86",
+    "test/predictions/coordinate_only_seed1703/test_crossing_10205.npz": "504457f32b30a2ba81a7daf2705612e167d6566c5378c4fcff7f7815aef6700c",
+    "test/predictions/coordinate_only_seed1703/test_scale_camera_10300.npz": "16141d6e90cf935fa44566eb7e8fe744d4aa7673bc695f0fc12d99589425f6e6",
+    "test/predictions/coordinate_only_seed1703/test_scale_camera_10301.npz": "36e3d54044426bb84904817603a3ee2240941963bf558c17afe26e7d2dee7255",
+    "test/predictions/coordinate_only_seed1703/test_scale_camera_10302.npz": "16141d6e90cf935fa44566eb7e8fe744d4aa7673bc695f0fc12d99589425f6e6",
+    "test/predictions/coordinate_only_seed1703/test_scale_camera_10303.npz": "c12d5f4c26859ed127ecf6f94094927f699e64a675271e5cdd1b3dc0520211d5",
+    "test/predictions/coordinate_only_seed1703/test_scale_camera_10304.npz": "dde7fce655bd9db26c1e9c072365108e7d01eb4d4fdcce5855d522df1586d5a9",
+    "test/predictions/coordinate_only_seed1703/test_scale_camera_10305.npz": "dc7ec01977500f8e242285f5f37c5e6a05fdb91a3505de78568016a33676e4a0"
+  },
+  "checkpoint_files": {
+    "models/retrieval_only/1701/best.pt": "present, checksum verified",
+    "models/predictive/1701/best.pt": "present, checksum verified",
+    "models/coordinate_only/1701/best.pt": "present, checksum verified",
+    "models/retrieval_only/1702/best.pt": "present, checksum verified",
+    "models/predictive/1702/best.pt": "present, checksum verified",
+    "models/coordinate_only/1702/best.pt": "present, checksum verified",
+    "models/retrieval_only/1703/best.pt": "present, checksum verified",
+    "models/predictive/1703/best.pt": "present, checksum verified",
+    "models/coordinate_only/1703/best.pt": "present, checksum verified"
+  },
+  "independent_prediction_rows": 26784,
+  "independent_clips": 18,
+  "training_seeds": [
+    1701,
+    1702,
+    1703
+  ],
+  "methods": {
+    "global_full": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 890,
+          "denominator": 1926,
+          "rate": 0.4620976116303219
+        },
+        "wrong_car_given_visible": {
+          "numerator": 170,
+          "denominator": 1926,
+          "rate": 0.08826583592938733
+        },
+        "wrong_part_given_visible": {
+          "numerator": 1,
+          "denominator": 1926,
+          "rate": 0.0005192107995846313
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1112,
+          "denominator": 1926,
+          "rate": 0.5773624091381101
+        },
+        "false_presence_given_absent": {
+          "numerator": 13,
+          "denominator": 259,
+          "rate": 0.05019305019305019
+        },
+        "recovery_accuracy": {
+          "numerator": 4,
+          "denominator": 18,
+          "rate": 0.2222222222222222
+        },
+        "identity_switches": 68,
+        "balanced_localization_and_absence": 0.7059522807186359,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 318,
+            "denominator": 476,
+            "rate": 0.6680672268907563
+          },
+          "wrong_car_given_visible": {
+            "numerator": 2,
+            "denominator": 476,
+            "rate": 0.004201680672268907
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 323,
+            "denominator": 476,
+            "rate": 0.6785714285714286
+          },
+          "false_presence_given_absent": {
+            "numerator": 10,
+            "denominator": 246,
+            "rate": 0.04065040650406504
+          },
+          "recovery_accuracy": {
+            "numerator": 3,
+            "denominator": 12,
+            "rate": 0.25
+          },
+          "identity_switches": 3,
+          "balanced_localization_and_absence": 0.8137084101933456,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 249,
+            "denominator": 706,
+            "rate": 0.3526912181303116
+          },
+          "wrong_car_given_visible": {
+            "numerator": 160,
+            "denominator": 706,
+            "rate": 0.22662889518413598
+          },
+          "wrong_part_given_visible": {
+            "numerator": 1,
+            "denominator": 706,
+            "rate": 0.00141643059490085
+          },
+          "presence_recall_given_visible": {
+            "numerator": 445,
+            "denominator": 706,
+            "rate": 0.6303116147308782
+          },
+          "false_presence_given_absent": {
+            "numerator": 3,
+            "denominator": 13,
+            "rate": 0.23076923076923078
+          },
+          "recovery_accuracy": {
+            "numerator": 1,
+            "denominator": 6,
+            "rate": 0.16666666666666666
+          },
+          "identity_switches": 50,
+          "balanced_localization_and_absence": 0.5609609936805404,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 323,
+            "denominator": 744,
+            "rate": 0.43413978494623656
+          },
+          "wrong_car_given_visible": {
+            "numerator": 8,
+            "denominator": 744,
+            "rate": 0.010752688172043012
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 344,
+            "denominator": 744,
+            "rate": 0.46236559139784944
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 15,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "selected_day4": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 946,
+          "denominator": 1926,
+          "rate": 0.49117341640706125
+        },
+        "wrong_car_given_visible": {
+          "numerator": 157,
+          "denominator": 1926,
+          "rate": 0.08151609553478713
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1926,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1153,
+          "denominator": 1926,
+          "rate": 0.59865005192108
+        },
+        "false_presence_given_absent": {
+          "numerator": 26,
+          "denominator": 259,
+          "rate": 0.10038610038610038
+        },
+        "recovery_accuracy": {
+          "numerator": 3,
+          "denominator": 18,
+          "rate": 0.16666666666666666
+        },
+        "identity_switches": 37,
+        "balanced_localization_and_absence": 0.6953936580104804,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 342,
+            "denominator": 476,
+            "rate": 0.7184873949579832
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 343,
+            "denominator": 476,
+            "rate": 0.7205882352941176
+          },
+          "false_presence_given_absent": {
+            "numerator": 25,
+            "denominator": 246,
+            "rate": 0.1016260162601626
+          },
+          "recovery_accuracy": {
+            "numerator": 2,
+            "denominator": 12,
+            "rate": 0.16666666666666666
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.8084306893489104,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 261,
+            "denominator": 706,
+            "rate": 0.3696883852691218
+          },
+          "wrong_car_given_visible": {
+            "numerator": 155,
+            "denominator": 706,
+            "rate": 0.21954674220963172
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 706,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 455,
+            "denominator": 706,
+            "rate": 0.6444759206798867
+          },
+          "false_presence_given_absent": {
+            "numerator": 1,
+            "denominator": 13,
+            "rate": 0.07692307692307693
+          },
+          "recovery_accuracy": {
+            "numerator": 1,
+            "denominator": 6,
+            "rate": 0.16666666666666666
+          },
+          "identity_switches": 34,
+          "balanced_localization_and_absence": 0.6463826541730224,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 343,
+            "denominator": 744,
+            "rate": 0.46102150537634407
+          },
+          "wrong_car_given_visible": {
+            "numerator": 2,
+            "denominator": 744,
+            "rate": 0.002688172043010753
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 355,
+            "denominator": 744,
+            "rate": 0.4771505376344086
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 3,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "global_projected_centered": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 757,
+          "denominator": 1926,
+          "rate": 0.39304257528556596
+        },
+        "wrong_car_given_visible": {
+          "numerator": 134,
+          "denominator": 1926,
+          "rate": 0.0695742471443406
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1926,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 921,
+          "denominator": 1926,
+          "rate": 0.4781931464174455
+        },
+        "false_presence_given_absent": {
+          "numerator": 32,
+          "denominator": 259,
+          "rate": 0.12355212355212356
+        },
+        "recovery_accuracy": {
+          "numerator": 5,
+          "denominator": 18,
+          "rate": 0.2777777777777778
+        },
+        "identity_switches": 56,
+        "balanced_localization_and_absence": 0.6347452258667212,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 274,
+            "denominator": 476,
+            "rate": 0.5756302521008403
+          },
+          "wrong_car_given_visible": {
+            "numerator": 3,
+            "denominator": 476,
+            "rate": 0.0063025210084033615
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 277,
+            "denominator": 476,
+            "rate": 0.5819327731092437
+          },
+          "false_presence_given_absent": {
+            "numerator": 32,
+            "denominator": 246,
+            "rate": 0.13008130081300814
+          },
+          "recovery_accuracy": {
+            "numerator": 5,
+            "denominator": 12,
+            "rate": 0.4166666666666667
+          },
+          "identity_switches": 6,
+          "balanced_localization_and_absence": 0.7227744756439161,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 202,
+            "denominator": 706,
+            "rate": 0.28611898016997167
+          },
+          "wrong_car_given_visible": {
+            "numerator": 120,
+            "denominator": 706,
+            "rate": 0.16997167138810199
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 706,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 343,
+            "denominator": 706,
+            "rate": 0.48583569405099153
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 13,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 39,
+          "balanced_localization_and_absence": 0.6430594900849859,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 281,
+            "denominator": 744,
+            "rate": 0.37768817204301075
+          },
+          "wrong_car_given_visible": {
+            "numerator": 11,
+            "denominator": 744,
+            "rate": 0.01478494623655914
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 301,
+            "denominator": 744,
+            "rate": 0.40456989247311825
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 11,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "retrieval_only_seed1701": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1755,
+          "denominator": 1926,
+          "rate": 0.9112149532710281
+        },
+        "wrong_car_given_visible": {
+          "numerator": 83,
+          "denominator": 1926,
+          "rate": 0.043094496365524405
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1926,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1839,
+          "denominator": 1926,
+          "rate": 0.9548286604361371
+        },
+        "false_presence_given_absent": {
+          "numerator": 1,
+          "denominator": 259,
+          "rate": 0.003861003861003861
+        },
+        "recovery_accuracy": {
+          "numerator": 1,
+          "denominator": 18,
+          "rate": 0.05555555555555555
+        },
+        "identity_switches": 42,
+        "balanced_localization_and_absence": 0.9536769747050121,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 428,
+            "denominator": 476,
+            "rate": 0.8991596638655462
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 428,
+            "denominator": 476,
+            "rate": 0.8991596638655462
+          },
+          "false_presence_given_absent": {
+            "numerator": 1,
+            "denominator": 246,
+            "rate": 0.0040650406504065045
+          },
+          "recovery_accuracy": {
+            "numerator": 1,
+            "denominator": 12,
+            "rate": 0.08333333333333333
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.9475473116075698,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 643,
+            "denominator": 706,
+            "rate": 0.9107648725212465
+          },
+          "wrong_car_given_visible": {
+            "numerator": 23,
+            "denominator": 706,
+            "rate": 0.032577903682719546
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 706,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 667,
+            "denominator": 706,
+            "rate": 0.9447592067988668
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 13,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 20,
+          "balanced_localization_and_absence": 0.9553824362606232,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 684,
+            "denominator": 744,
+            "rate": 0.9193548387096774
+          },
+          "wrong_car_given_visible": {
+            "numerator": 60,
+            "denominator": 744,
+            "rate": 0.08064516129032258
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 744,
+            "denominator": 744,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 22,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "retrieval_only_seed1702": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1791,
+          "denominator": 1926,
+          "rate": 0.9299065420560748
+        },
+        "wrong_car_given_visible": {
+          "numerator": 77,
+          "denominator": 1926,
+          "rate": 0.03997923156801662
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1926,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1870,
+          "denominator": 1926,
+          "rate": 0.9709241952232607
+        },
+        "false_presence_given_absent": {
+          "numerator": 13,
+          "denominator": 259,
+          "rate": 0.05019305019305019
+        },
+        "recovery_accuracy": {
+          "numerator": 1,
+          "denominator": 18,
+          "rate": 0.05555555555555555
+        },
+        "identity_switches": 66,
+        "balanced_localization_and_absence": 0.9398567459315124,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 420,
+            "denominator": 476,
+            "rate": 0.8823529411764706
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 420,
+            "denominator": 476,
+            "rate": 0.8823529411764706
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 246,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.9411764705882353,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 658,
+            "denominator": 706,
+            "rate": 0.9320113314447592
+          },
+          "wrong_car_given_visible": {
+            "numerator": 46,
+            "denominator": 706,
+            "rate": 0.06515580736543909
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 706,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 706,
+            "denominator": 706,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 13,
+            "denominator": 13,
+            "rate": 1.0
+          },
+          "recovery_accuracy": {
+            "numerator": 1,
+            "denominator": 6,
+            "rate": 0.16666666666666666
+          },
+          "identity_switches": 38,
+          "balanced_localization_and_absence": 0.46600566572237967,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 713,
+            "denominator": 744,
+            "rate": 0.9583333333333334
+          },
+          "wrong_car_given_visible": {
+            "numerator": 31,
+            "denominator": 744,
+            "rate": 0.041666666666666664
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 744,
+            "denominator": 744,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 28,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "retrieval_only_seed1703": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1806,
+          "denominator": 1926,
+          "rate": 0.9376947040498442
+        },
+        "wrong_car_given_visible": {
+          "numerator": 67,
+          "denominator": 1926,
+          "rate": 0.0347871235721703
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1926,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1875,
+          "denominator": 1926,
+          "rate": 0.9735202492211839
+        },
+        "false_presence_given_absent": {
+          "numerator": 13,
+          "denominator": 259,
+          "rate": 0.05019305019305019
+        },
+        "recovery_accuracy": {
+          "numerator": 2,
+          "denominator": 18,
+          "rate": 0.1111111111111111
+        },
+        "identity_switches": 53,
+        "balanced_localization_and_absence": 0.9437508269283971,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 424,
+            "denominator": 476,
+            "rate": 0.8907563025210085
+          },
+          "wrong_car_given_visible": {
+            "numerator": 1,
+            "denominator": 476,
+            "rate": 0.0021008403361344537
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 425,
+            "denominator": 476,
+            "rate": 0.8928571428571429
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 246,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "identity_switches": 1,
+          "balanced_localization_and_absence": 0.9453781512605042,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 685,
+            "denominator": 706,
+            "rate": 0.9702549575070821
+          },
+          "wrong_car_given_visible": {
+            "numerator": 19,
+            "denominator": 706,
+            "rate": 0.026912181303116147
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 706,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 706,
+            "denominator": 706,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 13,
+            "denominator": 13,
+            "rate": 1.0
+          },
+          "recovery_accuracy": {
+            "numerator": 2,
+            "denominator": 6,
+            "rate": 0.3333333333333333
+          },
+          "identity_switches": 25,
+          "balanced_localization_and_absence": 0.4851274787535411,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 697,
+            "denominator": 744,
+            "rate": 0.9368279569892473
+          },
+          "wrong_car_given_visible": {
+            "numerator": 47,
+            "denominator": 744,
+            "rate": 0.06317204301075269
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 744,
+            "denominator": 744,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 27,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "predictive_seed1701": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1762,
+          "denominator": 1926,
+          "rate": 0.9148494288681205
+        },
+        "wrong_car_given_visible": {
+          "numerator": 84,
+          "denominator": 1926,
+          "rate": 0.04361370716510903
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1926,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1849,
+          "denominator": 1926,
+          "rate": 0.9600207684319834
+        },
+        "false_presence_given_absent": {
+          "numerator": 5,
+          "denominator": 259,
+          "rate": 0.019305019305019305
+        },
+        "recovery_accuracy": {
+          "numerator": 1,
+          "denominator": 18,
+          "rate": 0.05555555555555555
+        },
+        "identity_switches": 45,
+        "balanced_localization_and_absence": 0.9477722047815506,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 432,
+            "denominator": 476,
+            "rate": 0.907563025210084
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 432,
+            "denominator": 476,
+            "rate": 0.907563025210084
+          },
+          "false_presence_given_absent": {
+            "numerator": 5,
+            "denominator": 246,
+            "rate": 0.02032520325203252
+          },
+          "recovery_accuracy": {
+            "numerator": 1,
+            "denominator": 12,
+            "rate": 0.08333333333333333
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.9436189109790257,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 665,
+            "denominator": 706,
+            "rate": 0.9419263456090652
+          },
+          "wrong_car_given_visible": {
+            "numerator": 5,
+            "denominator": 706,
+            "rate": 0.007082152974504249
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 706,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 673,
+            "denominator": 706,
+            "rate": 0.953257790368272
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 13,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 8,
+          "balanced_localization_and_absence": 0.9709631728045326,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 665,
+            "denominator": 744,
+            "rate": 0.8938172043010753
+          },
+          "wrong_car_given_visible": {
+            "numerator": 79,
+            "denominator": 744,
+            "rate": 0.10618279569892473
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 744,
+            "denominator": 744,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 37,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "predictive_seed1702": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1846,
+          "denominator": 1926,
+          "rate": 0.9584631360332295
+        },
+        "wrong_car_given_visible": {
+          "numerator": 53,
+          "denominator": 1926,
+          "rate": 0.027518172377985463
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1926,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1900,
+          "denominator": 1926,
+          "rate": 0.9865005192107996
+        },
+        "false_presence_given_absent": {
+          "numerator": 22,
+          "denominator": 259,
+          "rate": 0.08494208494208494
+        },
+        "recovery_accuracy": {
+          "numerator": 9,
+          "denominator": 18,
+          "rate": 0.5
+        },
+        "identity_switches": 47,
+        "balanced_localization_and_absence": 0.9367605255455723,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 465,
+            "denominator": 476,
+            "rate": 0.976890756302521
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 465,
+            "denominator": 476,
+            "rate": 0.976890756302521
+          },
+          "false_presence_given_absent": {
+            "numerator": 22,
+            "denominator": 246,
+            "rate": 0.08943089430894309
+          },
+          "recovery_accuracy": {
+            "numerator": 8,
+            "denominator": 12,
+            "rate": 0.6666666666666666
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.943729930996789,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 667,
+            "denominator": 706,
+            "rate": 0.9447592067988668
+          },
+          "wrong_car_given_visible": {
+            "numerator": 23,
+            "denominator": 706,
+            "rate": 0.032577903682719546
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 706,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 691,
+            "denominator": 706,
+            "rate": 0.9787535410764873
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 13,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 1,
+            "denominator": 6,
+            "rate": 0.16666666666666666
+          },
+          "identity_switches": 26,
+          "balanced_localization_and_absence": 0.9723796033994334,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 714,
+            "denominator": 744,
+            "rate": 0.9596774193548387
+          },
+          "wrong_car_given_visible": {
+            "numerator": 30,
+            "denominator": 744,
+            "rate": 0.04032258064516129
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 744,
+            "denominator": 744,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 21,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "predictive_seed1703": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1758,
+          "denominator": 1926,
+          "rate": 0.9127725856697819
+        },
+        "wrong_car_given_visible": {
+          "numerator": 85,
+          "denominator": 1926,
+          "rate": 0.044132917964693666
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 1926,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1846,
+          "denominator": 1926,
+          "rate": 0.9584631360332295
+        },
+        "false_presence_given_absent": {
+          "numerator": 2,
+          "denominator": 259,
+          "rate": 0.007722007722007722
+        },
+        "recovery_accuracy": {
+          "numerator": 1,
+          "denominator": 18,
+          "rate": 0.05555555555555555
+        },
+        "identity_switches": 32,
+        "balanced_localization_and_absence": 0.9525252889738871,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 431,
+            "denominator": 476,
+            "rate": 0.9054621848739496
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 431,
+            "denominator": 476,
+            "rate": 0.9054621848739496
+          },
+          "false_presence_given_absent": {
+            "numerator": 2,
+            "denominator": 246,
+            "rate": 0.008130081300813009
+          },
+          "recovery_accuracy": {
+            "numerator": 1,
+            "denominator": 12,
+            "rate": 0.08333333333333333
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.9486660517865683,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 658,
+            "denominator": 706,
+            "rate": 0.9320113314447592
+          },
+          "wrong_car_given_visible": {
+            "numerator": 10,
+            "denominator": 706,
+            "rate": 0.014164305949008499
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 706,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 671,
+            "denominator": 706,
+            "rate": 0.9504249291784702
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 13,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 13,
+          "balanced_localization_and_absence": 0.9660056657223797,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 669,
+            "denominator": 744,
+            "rate": 0.8991935483870968
+          },
+          "wrong_car_given_visible": {
+            "numerator": 75,
+            "denominator": 744,
+            "rate": 0.10080645161290322
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 744,
+            "denominator": 744,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 19,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "coordinate_only_seed1701": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 743,
+          "denominator": 1926,
+          "rate": 0.3857736240913811
+        },
+        "wrong_car_given_visible": {
+          "numerator": 43,
+          "denominator": 1926,
+          "rate": 0.02232606438213915
+        },
+        "wrong_part_given_visible": {
+          "numerator": 28,
+          "denominator": 1926,
+          "rate": 0.014537902388369679
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1424,
+          "denominator": 1926,
+          "rate": 0.7393561786085151
+        },
+        "false_presence_given_absent": {
+          "numerator": 5,
+          "denominator": 259,
+          "rate": 0.019305019305019305
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 18,
+          "rate": 0.0
+        },
+        "identity_switches": 19,
+        "balanced_localization_and_absence": 0.683234302393181,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 290,
+            "denominator": 476,
+            "rate": 0.6092436974789915
+          },
+          "wrong_car_given_visible": {
+            "numerator": 13,
+            "denominator": 476,
+            "rate": 0.0273109243697479
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 458,
+            "denominator": 476,
+            "rate": 0.9621848739495799
+          },
+          "false_presence_given_absent": {
+            "numerator": 5,
+            "denominator": 246,
+            "rate": 0.02032520325203252
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "identity_switches": 5,
+          "balanced_localization_and_absence": 0.7944592471134796,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 205,
+            "denominator": 706,
+            "rate": 0.29036827195467424
+          },
+          "wrong_car_given_visible": {
+            "numerator": 10,
+            "denominator": 706,
+            "rate": 0.014164305949008499
+          },
+          "wrong_part_given_visible": {
+            "numerator": 28,
+            "denominator": 706,
+            "rate": 0.039660056657223795
+          },
+          "presence_recall_given_visible": {
+            "numerator": 482,
+            "denominator": 706,
+            "rate": 0.6827195467422096
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 13,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 9,
+          "balanced_localization_and_absence": 0.6451841359773371,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 248,
+            "denominator": 744,
+            "rate": 0.3333333333333333
+          },
+          "wrong_car_given_visible": {
+            "numerator": 20,
+            "denominator": 744,
+            "rate": 0.026881720430107527
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 484,
+            "denominator": 744,
+            "rate": 0.6505376344086021
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 5,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "coordinate_only_seed1702": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 751,
+          "denominator": 1926,
+          "rate": 0.3899273104880582
+        },
+        "wrong_car_given_visible": {
+          "numerator": 65,
+          "denominator": 1926,
+          "rate": 0.03374870197300104
+        },
+        "wrong_part_given_visible": {
+          "numerator": 20,
+          "denominator": 1926,
+          "rate": 0.010384215991692628
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1492,
+          "denominator": 1926,
+          "rate": 0.77466251298027
+        },
+        "false_presence_given_absent": {
+          "numerator": 22,
+          "denominator": 259,
+          "rate": 0.08494208494208494
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 18,
+          "rate": 0.0
+        },
+        "identity_switches": 18,
+        "balanced_localization_and_absence": 0.6524926127729865,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 258,
+            "denominator": 476,
+            "rate": 0.542016806722689
+          },
+          "wrong_car_given_visible": {
+            "numerator": 13,
+            "denominator": 476,
+            "rate": 0.0273109243697479
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 469,
+            "denominator": 476,
+            "rate": 0.9852941176470589
+          },
+          "false_presence_given_absent": {
+            "numerator": 22,
+            "denominator": 246,
+            "rate": 0.08943089430894309
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "identity_switches": 6,
+          "balanced_localization_and_absence": 0.726292956206873,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 222,
+            "denominator": 706,
+            "rate": 0.31444759206798867
+          },
+          "wrong_car_given_visible": {
+            "numerator": 16,
+            "denominator": 706,
+            "rate": 0.0226628895184136
+          },
+          "wrong_part_given_visible": {
+            "numerator": 20,
+            "denominator": 706,
+            "rate": 0.028328611898016998
+          },
+          "presence_recall_given_visible": {
+            "numerator": 511,
+            "denominator": 706,
+            "rate": 0.7237960339943342
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 13,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 7,
+          "balanced_localization_and_absence": 0.6572237960339944,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 271,
+            "denominator": 744,
+            "rate": 0.364247311827957
+          },
+          "wrong_car_given_visible": {
+            "numerator": 36,
+            "denominator": 744,
+            "rate": 0.04838709677419355
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 512,
+            "denominator": 744,
+            "rate": 0.6881720430107527
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 5,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    },
+    "coordinate_only_seed1703": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 686,
+          "denominator": 1926,
+          "rate": 0.3561786085150571
+        },
+        "wrong_car_given_visible": {
+          "numerator": 32,
+          "denominator": 1926,
+          "rate": 0.016614745586708203
+        },
+        "wrong_part_given_visible": {
+          "numerator": 21,
+          "denominator": 1926,
+          "rate": 0.010903426791277258
+        },
+        "presence_recall_given_visible": {
+          "numerator": 1350,
+          "denominator": 1926,
+          "rate": 0.7009345794392523
+        },
+        "false_presence_given_absent": {
+          "numerator": 21,
+          "denominator": 259,
+          "rate": 0.08108108108108109
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 18,
+          "rate": 0.0
+        },
+        "identity_switches": 8,
+        "balanced_localization_and_absence": 0.637548763716988,
+        "clips": 18,
+        "ambiguous_samples_skipped": 47,
+        "uniform_patch_chance_given_visible": 0.012741396965501325
+      },
+      "by_condition": {
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 251,
+            "denominator": 476,
+            "rate": 0.5273109243697479
+          },
+          "wrong_car_given_visible": {
+            "numerator": 3,
+            "denominator": 476,
+            "rate": 0.0063025210084033615
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 476,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 428,
+            "denominator": 476,
+            "rate": 0.8991596638655462
+          },
+          "false_presence_given_absent": {
+            "numerator": 21,
+            "denominator": 246,
+            "rate": 0.08536585365853659
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 12,
+            "rate": 0.0
+          },
+          "identity_switches": 1,
+          "balanced_localization_and_absence": 0.7209725353556056,
+          "clips": 6,
+          "ambiguous_samples_skipped": 22,
+          "uniform_patch_chance_given_visible": 0.01280564309056956
+        },
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 185,
+            "denominator": 706,
+            "rate": 0.26203966005665724
+          },
+          "wrong_car_given_visible": {
+            "numerator": 3,
+            "denominator": 706,
+            "rate": 0.00424929178470255
+          },
+          "wrong_part_given_visible": {
+            "numerator": 21,
+            "denominator": 706,
+            "rate": 0.029745042492917848
+          },
+          "presence_recall_given_visible": {
+            "numerator": 460,
+            "denominator": 706,
+            "rate": 0.6515580736543909
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 13,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 6,
+            "rate": 0.0
+          },
+          "identity_switches": 3,
+          "balanced_localization_and_absence": 0.6310198300283286,
+          "clips": 6,
+          "ambiguous_samples_skipped": 25,
+          "uniform_patch_chance_given_visible": 0.012329831602140384
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 250,
+            "denominator": 744,
+            "rate": 0.33602150537634407
+          },
+          "wrong_car_given_visible": {
+            "numerator": 26,
+            "denominator": 744,
+            "rate": 0.03494623655913978
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 744,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 462,
+            "denominator": 744,
+            "rate": 0.6209677419354839
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 4,
+          "balanced_localization_and_absence": null,
+          "clips": 6,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      }
+    }
+  },
+  "seed_summary": {
+    "retrieval_only": {
+      "localization_accuracy_given_visible": {
+        "values": [
+          0.9112149532710281,
+          0.9299065420560748,
+          0.9376947040498442
+        ],
+        "mean": 0.9262720664589823,
+        "between_seed_sample_std": 0.01360887063559827
+      },
+      "false_presence_given_absent": {
+        "values": [
+          0.003861003861003861,
+          0.05019305019305019,
+          0.05019305019305019
+        ],
+        "mean": 0.03474903474903474,
+        "between_seed_sample_std": 0.02674981942191316
+      },
+      "wrong_car_given_visible": {
+        "values": [
+          0.043094496365524405,
+          0.03997923156801662,
+          0.0347871235721703
+        ],
+        "mean": 0.039286950501903777,
+        "between_seed_sample_std": 0.00419673092868887
+      },
+      "recovery_accuracy": {
+        "values": [
+          0.05555555555555555,
+          0.05555555555555555,
+          0.1111111111111111
+        ],
+        "mean": 0.07407407407407407,
+        "between_seed_sample_std": 0.032075014954979206
+      },
+      "balanced_utility": {
+        "values": [
+          0.9536769747050121,
+          0.9398567459315124,
+          0.9437508269283971
+        ],
+        "mean": 0.9457615158549738,
+        "between_seed_sample_std": 0.007126137334318045
+      },
+      "identity_switches": {
+        "values": [
+          42,
+          66,
+          53
+        ],
+        "mean": 53.666666666666664
+      }
+    },
+    "predictive": {
+      "localization_accuracy_given_visible": {
+        "values": [
+          0.9148494288681205,
+          0.9584631360332295,
+          0.9127725856697819
+        ],
+        "mean": 0.9286950501903773,
+        "between_seed_sample_std": 0.025800824027115588
+      },
+      "false_presence_given_absent": {
+        "values": [
+          0.019305019305019305,
+          0.08494208494208494,
+          0.007722007722007722
+        ],
+        "mean": 0.03732303732303732,
+        "between_seed_sample_std": 0.04164398889926238
+      },
+      "wrong_car_given_visible": {
+        "values": [
+          0.04361370716510903,
+          0.027518172377985463,
+          0.044132917964693666
+        ],
+        "mean": 0.03842159916926272,
+        "between_seed_sample_std": 0.009446212564205737
+      },
+      "recovery_accuracy": {
+        "values": [
+          0.05555555555555555,
+          0.5,
+          0.05555555555555555
+        ],
+        "mean": 0.20370370370370372,
+        "between_seed_sample_std": 0.2566001196398337
+      },
+      "balanced_utility": {
+        "values": [
+          0.9477722047815506,
+          0.9367605255455723,
+          0.9525252889738871
+        ],
+        "mean": 0.94568600643367,
+        "between_seed_sample_std": 0.008086786082722081
+      },
+      "identity_switches": {
+        "values": [
+          45,
+          47,
+          32
+        ],
+        "mean": 41.333333333333336
+      }
+    },
+    "coordinate_only": {
+      "localization_accuracy_given_visible": {
+        "values": [
+          0.3857736240913811,
+          0.3899273104880582,
+          0.3561786085150571
+        ],
+        "mean": 0.3772931810314988,
+        "between_seed_sample_std": 0.018403319186617965
+      },
+      "false_presence_given_absent": {
+        "values": [
+          0.019305019305019305,
+          0.08494208494208494,
+          0.08108108108108109
+        ],
+        "mean": 0.061776061776061784,
+        "between_seed_sample_std": 0.03683162939833767
+      },
+      "wrong_car_given_visible": {
+        "values": [
+          0.02232606438213915,
+          0.03374870197300104,
+          0.016614745586708203
+        ],
+        "mean": 0.024229837313949464,
+        "between_seed_sample_std": 0.008724183566028772
+      },
+      "recovery_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "between_seed_sample_std": 0.0
+      },
+      "balanced_utility": {
+        "values": [
+          0.683234302393181,
+          0.6524926127729865,
+          0.637548763716988
+        ],
+        "mean": 0.6577585596277186,
+        "between_seed_sample_std": 0.02329355615274591
+      },
+      "identity_switches": {
+        "values": [
+          19,
+          18,
+          8
+        ],
+        "mean": 15.0
+      }
+    }
+  },
+  "primary_contrast": {
+    "balanced_utility": {
+      "mean_difference": -7.550942130381728e-05,
+      "clip_bootstrap_95ci": [
+        -0.031179312215227455,
+        0.041306942820302964
+      ],
+      "per_seed_differences": [
+        -0.00590476992346145,
+        -0.0030962203859401516,
+        0.00877446204549015
+      ],
+      "between_seed_sample_std": 0.007791885769727268
+    },
+    "visible_localization": {
+      "mean_difference": 0.0024229837313949343,
+      "clip_bootstrap_95ci": [
+        -0.013054857187998604,
+        0.016123979225928183
+      ],
+      "per_seed_differences": [
+        0.0036344755970924014,
+        0.02855659397715471,
+        -0.024922118380062308
+      ],
+      "between_seed_sample_std": 0.026759931861870975
+    },
+    "absent_specificity": {
+      "mean_difference": -0.0025740025740025687,
+      "clip_bootstrap_95ci": [
+        -0.06607118988424629,
+        0.08637724740842219
+      ],
+      "per_seed_differences": [
+        -0.015444015444015413,
+        -0.03474903474903479,
+        0.0424710424710425
+      ],
+      "between_seed_sample_std": 0.040186602306296025
+    },
+    "bootstrap": {
+      "resamples": 2000,
+      "valid_resamples": 2000,
+      "seed": 914,
+      "independent_clips": 18,
+      "paired_training_seeds": 3,
+      "unit": "paired whole clip, same draw shared across training seeds",
+      "interpretation": "descriptive clip interval conditional on the three trained seeds; seeds are not independent videos"
+    }
+  },
+  "primary_decision": {
+    "positive_mean_and_interval_excluding_zero": false,
+    "visible_loss_no_more_than_one_percentage_point": true,
+    "absent_specificity_loss_no_more_than_one_percentage_point": true,
+    "predictive_addition_supported_by_prespecified_rule": false,
+    "guard_type": "mean effect across predetermined training seeds; not a confidence-bound noninferiority claim"
+  },
+  "comparisons": {
+    "predictive_minus_retrieval_only": {
+      "balanced_utility": {
+        "mean_difference": -7.550942130381728e-05,
+        "clip_bootstrap_95ci": [
+          -0.031179312215227455,
+          0.041306942820302964
+        ],
+        "per_seed_differences": [
+          -0.00590476992346145,
+          -0.0030962203859401516,
+          0.00877446204549015
+        ],
+        "between_seed_sample_std": 0.007791885769727268
+      },
+      "visible_localization": {
+        "mean_difference": 0.0024229837313949343,
+        "clip_bootstrap_95ci": [
+          -0.013054857187998604,
+          0.016123979225928183
+        ],
+        "per_seed_differences": [
+          0.0036344755970924014,
+          0.02855659397715471,
+          -0.024922118380062308
+        ],
+        "between_seed_sample_std": 0.026759931861870975
+      },
+      "absent_specificity": {
+        "mean_difference": -0.0025740025740025687,
+        "clip_bootstrap_95ci": [
+          -0.06607118988424629,
+          0.08637724740842219
+        ],
+        "per_seed_differences": [
+          -0.015444015444015413,
+          -0.03474903474903479,
+          0.0424710424710425
+        ],
+        "between_seed_sample_std": 0.040186602306296025
+      },
+      "bootstrap": {
+        "resamples": 2000,
+        "valid_resamples": 2000,
+        "seed": 914,
+        "independent_clips": 18,
+        "paired_training_seeds": 3,
+        "unit": "paired whole clip, same draw shared across training seeds",
+        "interpretation": "descriptive clip interval conditional on the three trained seeds; seeds are not independent videos"
+      }
+    },
+    "predictive_minus_coordinate_only": {
+      "balanced_utility": {
+        "mean_difference": 0.28792744680595145,
+        "clip_bootstrap_95ci": [
+          0.2552879433563465,
+          0.31894789889213965
+        ],
+        "per_seed_differences": [
+          0.2645379023883697,
+          0.28426791277258556,
+          0.3149765252568991
+        ],
+        "between_seed_sample_std": 0.025417667304936872
+      },
+      "visible_localization": {
+        "mean_difference": 0.5514018691588786,
+        "clip_bootstrap_95ci": [
+          0.487757002357848,
+          0.603678142559149
+        ],
+        "per_seed_differences": [
+          0.5290758047767394,
+          0.5685358255451713,
+          0.5565939771547248
+        ],
+        "between_seed_sample_std": 0.0202359037070665
+      },
+      "absent_specificity": {
+        "mean_difference": 0.02445302445302448,
+        "clip_bootstrap_95ci": [
+          -0.022727272727272707,
+          0.06629171785421788
+        ],
+        "per_seed_differences": [
+          0.0,
+          0.0,
+          0.07335907335907343
+        ],
+        "between_seed_sample_std": 0.04235388075136255
+      },
+      "bootstrap": {
+        "resamples": 2000,
+        "valid_resamples": 2000,
+        "seed": 914,
+        "independent_clips": 18,
+        "paired_training_seeds": 3,
+        "unit": "paired whole clip, same draw shared across training seeds",
+        "interpretation": "descriptive clip interval conditional on the three trained seeds; seeds are not independent videos"
+      }
+    },
+    "retrieval_only_minus_coordinate_only": {
+      "balanced_utility": {
+        "mean_difference": 0.2880029562272553,
+        "clip_bootstrap_95ci": [
+          0.25297626279506125,
+          0.3107702577341251
+        ],
+        "per_seed_differences": [
+          0.27044267231183117,
+          0.2873641331585257,
+          0.30620206321140897
+        ],
+        "between_seed_sample_std": 0.017888252585483516
+      },
+      "visible_localization": {
+        "mean_difference": 0.5489788854274835,
+        "clip_bootstrap_95ci": [
+          0.4765025570968194,
+          0.6049076871457694
+        ],
+        "per_seed_differences": [
+          0.5254413291796469,
+          0.5399792315680166,
+          0.5815160955347871
+        ],
+        "between_seed_sample_std": 0.02910051859741599
+      },
+      "absent_specificity": {
+        "mean_difference": 0.027027027027027046,
+        "clip_bootstrap_95ci": [
+          -0.06472716648687528,
+          0.07126314896504912
+        ],
+        "per_seed_differences": [
+          0.015444015444015413,
+          0.03474903474903479,
+          0.030888030888030937
+        ],
+        "between_seed_sample_std": 0.010215256027276454
+      },
+      "bootstrap": {
+        "resamples": 2000,
+        "valid_resamples": 2000,
+        "seed": 914,
+        "independent_clips": 18,
+        "paired_training_seeds": 3,
+        "unit": "paired whole clip, same draw shared across training seeds",
+        "interpretation": "descriptive clip interval conditional on the three trained seeds; seeds are not independent videos"
+      }
+    },
+    "retrieval_only_minus_global_full": {
+      "balanced_utility": {
+        "mean_difference": 0.239809235136338,
+        "clip_bootstrap_95ci": [
+          0.19984652361364974,
+          0.27139580303692085
+        ],
+        "per_seed_differences": [
+          0.2477246939863763,
+          0.23390446521287656,
+          0.23779854620976115
+        ],
+        "between_seed_sample_std": 0.0071261373343180605
+      },
+      "visible_localization": {
+        "mean_difference": 0.46417445482866043,
+        "clip_bootstrap_95ci": [
+          0.3763245959535515,
+          0.5356344840722839
+        ],
+        "per_seed_differences": [
+          0.44911734164070616,
+          0.4678089304257529,
+          0.4755970924195223
+        ],
+        "between_seed_sample_std": 0.01360887063559827
+      },
+      "absent_specificity": {
+        "mean_difference": 0.01544401544401545,
+        "clip_bootstrap_95ci": [
+          -0.05116005998358948,
+          0.05384171757668314
+        ],
+        "per_seed_differences": [
+          0.04633204633204635,
+          0.0,
+          0.0
+        ],
+        "between_seed_sample_std": 0.026749819421913176
+      },
+      "bootstrap": {
+        "resamples": 2000,
+        "valid_resamples": 2000,
+        "seed": 914,
+        "independent_clips": 18,
+        "paired_training_seeds": 3,
+        "unit": "paired whole clip, same draw shared across training seeds",
+        "interpretation": "descriptive clip interval conditional on the three trained seeds; seeds are not independent videos"
+      }
+    },
+    "retrieval_only_minus_selected_day4": {
+      "balanced_utility": {
+        "mean_difference": 0.25036785784449334,
+        "clip_bootstrap_95ci": [
+          0.19372215797951764,
+          0.3051735915716844
+        ],
+        "per_seed_differences": [
+          0.25828331669453164,
+          0.24446308792103189,
+          0.24835716891791648
+        ],
+        "between_seed_sample_std": 0.0071261373343180605
+      },
+      "visible_localization": {
+        "mean_difference": 0.43509865005192117,
+        "clip_bootstrap_95ci": [
+          0.345269069964235,
+          0.5079894812600343
+        ],
+        "per_seed_differences": [
+          0.42004153686396684,
+          0.43873312564901357,
+          0.446521287642783
+        ],
+        "between_seed_sample_std": 0.01360887063559827
+      },
+      "absent_specificity": {
+        "mean_difference": 0.06563706563706566,
+        "clip_bootstrap_95ci": [
+          -0.04956081081081078,
+          0.1611947652571355
+        ],
+        "per_seed_differences": [
+          0.09652509652509655,
+          0.050193050193050204,
+          0.050193050193050204
+        ],
+        "between_seed_sample_std": 0.026749819421913176
+      },
+      "bootstrap": {
+        "resamples": 2000,
+        "valid_resamples": 2000,
+        "seed": 914,
+        "independent_clips": 18,
+        "paired_training_seeds": 3,
+        "unit": "paired whole clip, same draw shared across training seeds",
+        "interpretation": "descriptive clip interval conditional on the three trained seeds; seeds are not independent videos"
+      }
+    },
+    "retrieval_only_minus_global_projected_centered": {
+      "balanced_utility": {
+        "mean_difference": 0.3110162899882526,
+        "clip_bootstrap_95ci": [
+          0.26081273596607324,
+          0.35642487661382294
+        ],
+        "per_seed_differences": [
+          0.3189317488382909,
+          0.30511152006479114,
+          0.30900560106167574
+        ],
+        "between_seed_sample_std": 0.0071261373343180605
+      },
+      "visible_localization": {
+        "mean_difference": 0.5332294911734164,
+        "clip_bootstrap_95ci": [
+          0.44004702877380303,
+          0.6170196670217382
+        ],
+        "per_seed_differences": [
+          0.5181723779854621,
+          0.5368639667705088,
+          0.5446521287642783
+        ],
+        "between_seed_sample_std": 0.01360887063559827
+      },
+      "absent_specificity": {
+        "mean_difference": 0.08880308880308878,
+        "clip_bootstrap_95ci": [
+          -0.03658731214257207,
+          0.16855381782528633
+        ],
+        "per_seed_differences": [
+          0.11969111969111967,
+          0.07335907335907332,
+          0.07335907335907332
+        ],
+        "between_seed_sample_std": 0.026749819421913176
+      },
+      "bootstrap": {
+        "resamples": 2000,
+        "valid_resamples": 2000,
+        "seed": 914,
+        "independent_clips": 18,
+        "paired_training_seeds": 3,
+        "unit": "paired whole clip, same draw shared across training seeds",
+        "interpretation": "descriptive clip interval conditional on the three trained seeds; seeds are not independent videos"
+      }
+    },
+    "predictive_minus_global_full": {
+      "balanced_utility": {
+        "mean_difference": 0.23973372571503418,
+        "clip_bootstrap_95ci": [
+          0.18224087242723253,
+          0.29851731045943725
+        ],
+        "per_seed_differences": [
+          0.24181992406291486,
+          0.2308082448269364,
+          0.2465730082552513
+        ],
+        "between_seed_sample_std": 0.008086786082722156
+      },
+      "visible_localization": {
+        "mean_difference": 0.46659743856005537,
+        "clip_bootstrap_95ci": [
+          0.3793912382075524,
+          0.5395234261456215
+        ],
+        "per_seed_differences": [
+          0.45275181723779856,
+          0.4963655244029076,
+          0.45067497403946
+        ],
+        "between_seed_sample_std": 0.02580082402711559
+      },
+      "absent_specificity": {
+        "mean_difference": 0.012870012870012881,
+        "clip_bootstrap_95ci": [
+          -0.06272934055192123,
+          0.09217435083309446
+        ],
+        "per_seed_differences": [
+          0.030888030888030937,
+          -0.03474903474903479,
+          0.0424710424710425
+        ],
+        "between_seed_sample_std": 0.04164398889926243
+      },
+      "bootstrap": {
+        "resamples": 2000,
+        "valid_resamples": 2000,
+        "seed": 914,
+        "independent_clips": 18,
+        "paired_training_seeds": 3,
+        "unit": "paired whole clip, same draw shared across training seeds",
+        "interpretation": "descriptive clip interval conditional on the three trained seeds; seeds are not independent videos"
+      }
+    },
+    "predictive_minus_selected_day4": {
+      "balanced_utility": {
+        "mean_difference": 0.25029234842318954,
+        "clip_bootstrap_95ci": [
+          0.17951577948555367,
+          0.3272682374524188
+        ],
+        "per_seed_differences": [
+          0.2523785467710702,
+          0.24136686753509173,
+          0.25713163096340663
+        ],
+        "between_seed_sample_std": 0.008086786082722156
+      },
+      "visible_localization": {
+        "mean_difference": 0.43752163378331604,
+        "clip_bootstrap_95ci": [
+          0.3464578580649724,
+          0.5110954662918823
+        ],
+        "per_seed_differences": [
+          0.42367601246105924,
+          0.4672897196261683,
+          0.4215991692627207
+        ],
+        "between_seed_sample_std": 0.02580082402711559
+      },
+      "absent_specificity": {
+        "mean_difference": 0.06306306306306309,
+        "clip_bootstrap_95ci": [
+          -0.04905906732747876,
+          0.18982722991157247
+        ],
+        "per_seed_differences": [
+          0.08108108108108114,
+          0.015444015444015413,
+          0.0926640926640927
+        ],
+        "between_seed_sample_std": 0.04164398889926243
+      },
+      "bootstrap": {
+        "resamples": 2000,
+        "valid_resamples": 2000,
+        "seed": 914,
+        "independent_clips": 18,
+        "paired_training_seeds": 3,
+        "unit": "paired whole clip, same draw shared across training seeds",
+        "interpretation": "descriptive clip interval conditional on the three trained seeds; seeds are not independent videos"
+      }
+    },
+    "predictive_minus_global_projected_centered": {
+      "balanced_utility": {
+        "mean_difference": 0.3109407805669488,
+        "clip_bootstrap_95ci": [
+          0.25306394766547996,
+          0.3669797739446503
+        ],
+        "per_seed_differences": [
+          0.31302697891482945,
+          0.302015299678851,
+          0.3177800631071659
+        ],
+        "between_seed_sample_std": 0.008086786082722156
+      },
+      "visible_localization": {
+        "mean_difference": 0.5356524749048114,
+        "clip_bootstrap_95ci": [
+          0.44172934972671035,
+          0.6215148161562504
+        ],
+        "per_seed_differences": [
+          0.5218068535825545,
+          0.5654205607476636,
+          0.519730010384216
+        ],
+        "between_seed_sample_std": 0.025800824027115588
+      },
+      "absent_specificity": {
+        "mean_difference": 0.0862290862290862,
+        "clip_bootstrap_95ci": [
+          -0.00741452991452996,
+          0.17861717433304555
+        ],
+        "per_seed_differences": [
+          0.10424710424710426,
+          0.03861003861003853,
+          0.11583011583011582
+        ],
+        "between_seed_sample_std": 0.04164398889926243
+      },
+      "bootstrap": {
+        "resamples": 2000,
+        "valid_resamples": 2000,
+        "seed": 914,
+        "independent_clips": 18,
+        "paired_training_seeds": 3,
+        "unit": "paired whole clip, same draw shared across training seeds",
+        "interpretation": "descriptive clip interval conditional on the three trained seeds; seeds are not independent videos"
+      }
+    }
+  },
+  "future_diagnostics": {
+    "source": "saved future_rows.csv only; no feature recomputation",
+    "distinct_scored_targets_per_seed": 1450,
+    "note": "Repeated training seeds share the same target videos. Cosine/latent identity diagnostics alone are not tracking success.",
+    "methods": {
+      "retrieval_only_seed1701": {
+        "targets": 1450,
+        "forecast_mean_cosine": 0.16288737183308294,
+        "anchor_copy_mean_cosine": 0.7348402200896165,
+        "last_retrieved_copy_mean_cosine": 0.7715457125573323,
+        "own_future_part_retrieval": {
+          "forecast": {
+            "all_visible_targets": {
+              "hits": 613,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 613,
+              "targets": 1450
+            }
+          },
+          "anchor": {
+            "all_visible_targets": {
+              "hits": 1078,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1078,
+              "targets": 1450
+            }
+          },
+          "last_retrieved": {
+            "all_visible_targets": {
+              "hits": 1003,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1003,
+              "targets": 1450
+            }
+          }
+        }
+      },
+      "retrieval_only_seed1702": {
+        "targets": 1450,
+        "forecast_mean_cosine": -0.37383456980359964,
+        "anchor_copy_mean_cosine": 0.7348402200896165,
+        "last_retrieved_copy_mean_cosine": 0.7741360154234129,
+        "own_future_part_retrieval": {
+          "forecast": {
+            "all_visible_targets": {
+              "hits": 554,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 554,
+              "targets": 1450
+            }
+          },
+          "anchor": {
+            "all_visible_targets": {
+              "hits": 1078,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1078,
+              "targets": 1450
+            }
+          },
+          "last_retrieved": {
+            "all_visible_targets": {
+              "hits": 1002,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1002,
+              "targets": 1450
+            }
+          }
+        }
+      },
+      "retrieval_only_seed1703": {
+        "targets": 1450,
+        "forecast_mean_cosine": 0.01955093342682411,
+        "anchor_copy_mean_cosine": 0.7348402200896165,
+        "last_retrieved_copy_mean_cosine": 0.7682619585045453,
+        "own_future_part_retrieval": {
+          "forecast": {
+            "all_visible_targets": {
+              "hits": 532,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 532,
+              "targets": 1450
+            }
+          },
+          "anchor": {
+            "all_visible_targets": {
+              "hits": 1078,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1078,
+              "targets": 1450
+            }
+          },
+          "last_retrieved": {
+            "all_visible_targets": {
+              "hits": 981,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 981,
+              "targets": 1450
+            }
+          }
+        }
+      },
+      "predictive_seed1701": {
+        "targets": 1450,
+        "forecast_mean_cosine": 0.8666955738437587,
+        "anchor_copy_mean_cosine": 0.7348402200896165,
+        "last_retrieved_copy_mean_cosine": 0.7105489411269282,
+        "own_future_part_retrieval": {
+          "forecast": {
+            "all_visible_targets": {
+              "hits": 1255,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1255,
+              "targets": 1450
+            }
+          },
+          "anchor": {
+            "all_visible_targets": {
+              "hits": 1078,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1078,
+              "targets": 1450
+            }
+          },
+          "last_retrieved": {
+            "all_visible_targets": {
+              "hits": 994,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 994,
+              "targets": 1450
+            }
+          }
+        }
+      },
+      "predictive_seed1702": {
+        "targets": 1450,
+        "forecast_mean_cosine": 0.862205984612991,
+        "anchor_copy_mean_cosine": 0.7348402200896165,
+        "last_retrieved_copy_mean_cosine": 0.7183456368192003,
+        "own_future_part_retrieval": {
+          "forecast": {
+            "all_visible_targets": {
+              "hits": 1246,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1246,
+              "targets": 1450
+            }
+          },
+          "anchor": {
+            "all_visible_targets": {
+              "hits": 1078,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1078,
+              "targets": 1450
+            }
+          },
+          "last_retrieved": {
+            "all_visible_targets": {
+              "hits": 1015,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1015,
+              "targets": 1450
+            }
+          }
+        }
+      },
+      "predictive_seed1703": {
+        "targets": 1450,
+        "forecast_mean_cosine": 0.8693576885913981,
+        "anchor_copy_mean_cosine": 0.7348402200896165,
+        "last_retrieved_copy_mean_cosine": 0.7492767326906323,
+        "own_future_part_retrieval": {
+          "forecast": {
+            "all_visible_targets": {
+              "hits": 1267,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1267,
+              "targets": 1450
+            }
+          },
+          "anchor": {
+            "all_visible_targets": {
+              "hits": 1078,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1078,
+              "targets": 1450
+            }
+          },
+          "last_retrieved": {
+            "all_visible_targets": {
+              "hits": 1016,
+              "targets": 1450
+            },
+            "at_least_two_candidates": {
+              "hits": 1016,
+              "targets": 1450
+            }
+          }
+        }
+      }
+    },
+    "seed_summary": {
+      "retrieval_only": {
+        "forecast_mean_cosine": {
+          "per_seed": [
+            0.16288737183308294,
+            -0.37383456980359964,
+            0.01955093342682411
+          ],
+          "mean": -0.06379875484789753,
+          "between_seed_sample_std": 0.27789924174092767
+        },
+        "anchor_copy_mean_cosine": {
+          "per_seed": [
+            0.7348402200896165,
+            0.7348402200896165,
+            0.7348402200896165
+          ],
+          "mean": 0.7348402200896165,
+          "between_seed_sample_std": 0.0
+        },
+        "last_retrieved_copy_mean_cosine": {
+          "per_seed": [
+            0.7715457125573323,
+            0.7741360154234129,
+            0.7682619585045453
+          ],
+          "mean": 0.7713145621617635,
+          "between_seed_sample_std": 0.002943842565517555
+        }
+      },
+      "predictive": {
+        "forecast_mean_cosine": {
+          "per_seed": [
+            0.8666955738437587,
+            0.862205984612991,
+            0.8693576885913981
+          ],
+          "mean": 0.8660864156827159,
+          "between_seed_sample_std": 0.003614557054130494
+        },
+        "anchor_copy_mean_cosine": {
+          "per_seed": [
+            0.7348402200896165,
+            0.7348402200896165,
+            0.7348402200896165
+          ],
+          "mean": 0.7348402200896165,
+          "between_seed_sample_std": 0.0
+        },
+        "last_retrieved_copy_mean_cosine": {
+          "per_seed": [
+            0.7105489411269282,
+            0.7183456368192003,
+            0.7492767326906323
+          ],
+          "mean": 0.7260571035455868,
+          "between_seed_sample_std": 0.02048317600262601
+        }
+      }
+    }
+  },
+  "audited": "Saved predictions recomputed with frozen Day4 scorer; every CSV row and method/condition result matched; future CSV aggregate bookkeeping matched",
+  "not_audited": "No model inference or future feature/cosine recomputation; missing checkpoints, if any, are explicitly listed",
+  "scope": "Supervised head over frozen JEPA features on18 same-family2-D clips; three trained seeds are not54 independent videos",
+  "plots": [
+    "learning_curves.png",
+    "test_summary.png"
+  ],
+  "fixed_comparison_video": {
+    "path": "test_crossing_10200_fixed_comparison.mp4",
+    "scene": {
+      "name": "test_crossing_10200",
+      "seed": 10200,
+      "condition": "crossing"
+    },
+    "methods": [
+      "global_projected_centered",
+      "retrieval_only_seed1701",
+      "predictive_seed1701",
+      "coordinate_only_seed1701"
+    ],
+    "selection": "first predeclared crossing test seed and training seed1701, fixed before results; no best-case selection"
+  }
+}

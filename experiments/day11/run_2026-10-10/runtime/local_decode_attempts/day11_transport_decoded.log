@@ -1,0 +1,11 @@
+Cannot initialize model with low cpu memory usage because `accelerate` was not found in the environment. Defaulting to `low_cpu_mem_usage=False`. It is strongly recommended to install `accelerate` for faster and less memory-intense model loading. You can do so with: 
+```
+pip install accelerate
+```
+.
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 654a89f8-6291-442e-8e59-f6f40a69b7d7)')' thrown while requesting HEAD https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B-diffusers/resolve/ec4d2cb062b548996b179d493fdd05340de702a1/vae/diffusion_pytorch_model.safetensors.index.json
+Retrying in 1s [Retry 1/5].
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 1c263dc1-ee60-4878-9ef9-4ed25bf69a99)')' thrown while requesting HEAD https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B-diffusers/resolve/ec4d2cb062b548996b179d493fdd05340de702a1/vae/diffusion_pytorch_model.safetensors.index.json
+Retrying in 2s [Retry 2/5].
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: ea3a03e2-3789-45eb-9622-69e314e8f3c3)')' thrown while requesting HEAD https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B-diffusers/resolve/ec4d2cb062b548996b179d493fdd05340de702a1/vae/diffusion_pytorch_model.safetensors.index.json
+Retrying in 4s [Retry 3/5].

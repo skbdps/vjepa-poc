@@ -1,0 +1,403 @@
+{
+  "sequence": "car-shadow",
+  "annotation_provenance": "assistant visually authored approximate polygons before model predictions; not human ground truth or official DAVIS labels",
+  "annotation_policy": "Independent raw-frame visual inspection of frames 0, 8, 16, 24, 32 and 39, with enlarged coordinate-grid crops, before any model predictions for this sequence. The same near-side front door panel and front side-window aperture are followed throughout. The panel includes its handle and protective side trim, but excludes the mirror, wheel, fender and rear door. The window aperture includes visible interior because whether glass is open or closed is unclear; it excludes surrounding trim and the external mirror. Only the visible surface is labeled; no amodal area is included. Targets remain at least partly visible throughout these six samples. Shrinking size, blur, reflections and bright sun make boundaries approximate, especially at the last two frames; uncertainty is several native pixels. This is an untuned exploratory second-clip replication, not benchmark-quality ground truth.",
+  "image_size": [
+    854,
+    480
+  ],
+  "parts": [
+    {
+      "id": 1,
+      "name": "front_door_panel",
+      "parent": "car_1"
+    },
+    {
+      "id": 2,
+      "name": "front_window",
+      "parent": "car_1"
+    }
+  ],
+  "frames": {
+    "0": {
+      "1": {
+        "polygon": [
+          [
+            389,
+            179
+          ],
+          [
+            478,
+            172
+          ],
+          [
+            477,
+            237
+          ],
+          [
+            471,
+            242
+          ],
+          [
+            395,
+            241
+          ],
+          [
+            389,
+            225
+          ],
+          [
+            385,
+            197
+          ],
+          [
+            385,
+            180
+          ]
+        ],
+        "visible": true
+      },
+      "2": {
+        "polygon": [
+          [
+            407,
+            156
+          ],
+          [
+            427,
+            140
+          ],
+          [
+            448,
+            129
+          ],
+          [
+            474,
+            122
+          ],
+          [
+            469,
+            168
+          ],
+          [
+            409,
+            174
+          ],
+          [
+            406,
+            166
+          ]
+        ],
+        "visible": true
+      }
+    },
+    "8": {
+      "1": {
+        "polygon": [
+          [
+            324,
+            190
+          ],
+          [
+            398,
+            183
+          ],
+          [
+            400,
+            242
+          ],
+          [
+            329,
+            242
+          ],
+          [
+            323,
+            225
+          ],
+          [
+            320,
+            198
+          ]
+        ],
+        "visible": true
+      },
+      "2": {
+        "polygon": [
+          [
+            340,
+            164
+          ],
+          [
+            358,
+            151
+          ],
+          [
+            378,
+            142
+          ],
+          [
+            397,
+            136
+          ],
+          [
+            392,
+            179
+          ],
+          [
+            338,
+            183
+          ],
+          [
+            335,
+            178
+          ]
+        ],
+        "visible": true
+      }
+    },
+    "16": {
+      "1": {
+        "polygon": [
+          [
+            311,
+            196
+          ],
+          [
+            367,
+            190
+          ],
+          [
+            370,
+            241
+          ],
+          [
+            315,
+            241
+          ],
+          [
+            308,
+            224
+          ],
+          [
+            305,
+            201
+          ]
+        ],
+        "visible": true
+      },
+      "2": {
+        "polygon": [
+          [
+            322,
+            172
+          ],
+          [
+            341,
+            158
+          ],
+          [
+            367,
+            151
+          ],
+          [
+            360,
+            185
+          ],
+          [
+            318,
+            190
+          ],
+          [
+            316,
+            184
+          ]
+        ],
+        "visible": true
+      }
+    },
+    "24": {
+      "1": {
+        "polygon": [
+          [
+            316,
+            203
+          ],
+          [
+            360,
+            198
+          ],
+          [
+            360,
+            242
+          ],
+          [
+            319,
+            242
+          ],
+          [
+            313,
+            229
+          ],
+          [
+            309,
+            207
+          ]
+        ],
+        "visible": true
+      },
+      "2": {
+        "polygon": [
+          [
+            328,
+            177
+          ],
+          [
+            343,
+            168
+          ],
+          [
+            362,
+            162
+          ],
+          [
+            354,
+            193
+          ],
+          [
+            321,
+            197
+          ],
+          [
+            318,
+            190
+          ]
+        ],
+        "visible": true
+      }
+    },
+    "32": {
+      "1": {
+        "polygon": [
+          [
+            331,
+            208
+          ],
+          [
+            368,
+            203
+          ],
+          [
+            368,
+            244
+          ],
+          [
+            333,
+            243
+          ],
+          [
+            328,
+            228
+          ],
+          [
+            327,
+            210
+          ]
+        ],
+        "visible": true
+      },
+      "2": {
+        "polygon": [
+          [
+            338,
+            188
+          ],
+          [
+            348,
+            180
+          ],
+          [
+            370,
+            173
+          ],
+          [
+            363,
+            199
+          ],
+          [
+            335,
+            203
+          ],
+          [
+            333,
+            196
+          ]
+        ],
+        "visible": true
+      }
+    },
+    "39": {
+      "1": {
+        "polygon": [
+          [
+            347,
+            210
+          ],
+          [
+            375,
+            204
+          ],
+          [
+            375,
+            243
+          ],
+          [
+            349,
+            243
+          ],
+          [
+            344,
+            229
+          ],
+          [
+            343,
+            213
+          ]
+        ],
+        "visible": true
+      },
+      "2": {
+        "polygon": [
+          [
+            352,
+            194
+          ],
+          [
+            363,
+            185
+          ],
+          [
+            379,
+            180
+          ],
+          [
+            372,
+            200
+          ],
+          [
+            350,
+            203
+          ],
+          [
+            348,
+            200
+          ]
+        ],
+        "visible": true
+      }
+    }
+  },
+  "annotation_boundary_uncertainty_pixels": 4,
+  "frame_count": 40,
+  "frame_count_source": "https://davischallenge.org/json_data/global.js",
+  "model_predictions_viewed_before_annotation": false
+}

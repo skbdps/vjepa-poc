@@ -1,0 +1,187 @@
+{
+  "source_digest": "aae772368b244728f8085a1ed3ddf1967872ead4c4321a0ae1bfc17e26199b00",
+  "thresholds": {
+    "global_vjepa": 0.7884913682937622,
+    "template_flow": 0.8655714392662048,
+    "persistent_vjepa": 0.7734082937240601,
+    "no_motion": 0.7749285697937012,
+    "no_context": 0.7973771691322327,
+    "no_memory": 0.7668800354003906
+  },
+  "selected_method": "no_memory",
+  "selection_rule": "maximize mean(visible localization, absent specificity) on development only; prefer full method on ties",
+  "development_utilities": {
+    "global_vjepa": 0.6424590734935562,
+    "template_flow": 0.678944618599791,
+    "persistent_vjepa": 0.6621212121212121,
+    "no_motion": 0.6629745733194009,
+    "no_context": 0.6406826889585511,
+    "no_memory": 0.694949494949495
+  },
+  "manifest": {
+    "model": "vjepa2_1_vit_large_384",
+    "upstream_commit": "204698b45b3712590f06245fbfba32d3be539812",
+    "source_digest": "aae772368b244728f8085a1ed3ddf1967872ead4c4321a0ae1bfc17e26199b00",
+    "benchmark": {
+      "protocol": "day4_v1",
+      "resolution": 384,
+      "frames": 64,
+      "tubelet_frames": 2,
+      "patch_size": 16,
+      "parts": {
+        "1": "car_A.front_door",
+        "2": "car_A.window",
+        "3": "car_B.front_door",
+        "4": "car_B.window"
+      },
+      "split_seeds": {
+        "calibration": {
+          "long_occlusion": [
+            1000,
+            1001
+          ],
+          "crossing": [
+            1100,
+            1101
+          ],
+          "scale_camera": [
+            1200,
+            1201
+          ]
+        },
+        "development": {
+          "long_occlusion": [
+            2000,
+            2001
+          ],
+          "crossing": [
+            2100,
+            2101
+          ],
+          "scale_camera": [
+            2200,
+            2201
+          ]
+        },
+        "test": {
+          "long_occlusion": [
+            3000,
+            3001,
+            3002,
+            3003,
+            3004,
+            3005
+          ],
+          "crossing": [
+            3100,
+            3101,
+            3102,
+            3103,
+            3104,
+            3105
+          ],
+          "scale_camera": [
+            3200,
+            3201,
+            3202,
+            3203,
+            3204,
+            3205
+          ]
+        }
+      },
+      "annotation": "frame-zero mask only",
+      "test_policy": "Freeze thresholds and algorithm configuration before opening sealed-test metrics",
+      "visibility": "at least one patch >=70% target over pair and >=65% each frame; absence requires zero target pixels both frames",
+      "exclusions": "first tubelet and visible slivers with no eligible patch",
+      "identity_switch": "transition between predicted car IDs on unambiguous visible targets, initialized to true source ID; last ID retained over missing outputs",
+      "conditions": {
+        "long_occlusion": "stationary foreground wall hides A for extended interval; return and reappearance; B moves separately",
+        "crossing": "two distinct-bodied cars exchange diagonal positions; foreground B occludes A; visible context resolves identity",
+        "scale_camera": "up to 15% sprite scale, 8-degree in-plane rotation, global camera translation, moving repeated-colour distractors"
+      },
+      "limitations": "2-D rendered sprites, fixed same-colour target appearance; no 3-D viewpoint change, real faces, generative rendering or causal encoder claim"
+    },
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "numpy": "2.1.3",
+    "gpu": "Tesla T4",
+    "cuda": "13.0",
+    "peak_gpu_allocated_gib": 1.365,
+    "annotation": "frame0 pixel masks only for every method",
+    "features": "frozen FP16; four disjoint16frame windows; offline attention within each window",
+    "configs": {
+      "persistent_vjepa": {
+        "context_weight": 0.15,
+        "motion_weight": 0.035,
+        "memory_weight": 0.2,
+        "update_rate": 0.1,
+        "state_threshold": 0.79,
+        "update_margin": 0.01,
+        "motion_sigma": 2.0,
+        "fb_error": 1.5
+      },
+      "no_motion": {
+        "context_weight": 0.15,
+        "motion_weight": 0.0,
+        "memory_weight": 0.2,
+        "update_rate": 0.1,
+        "state_threshold": 0.79,
+        "update_margin": 0.01,
+        "motion_sigma": 2.0,
+        "fb_error": 1.5
+      },
+      "no_context": {
+        "context_weight": 0.0,
+        "motion_weight": 0.035,
+        "memory_weight": 0.2,
+        "update_rate": 0.1,
+        "state_threshold": 0.79,
+        "update_margin": 0.01,
+        "motion_sigma": 2.0,
+        "fb_error": 1.5
+      },
+      "no_memory": {
+        "context_weight": 0.15,
+        "motion_weight": 0.035,
+        "memory_weight": 0.0,
+        "update_rate": 0.1,
+        "state_threshold": 0.79,
+        "update_margin": 0.01,
+        "motion_sigma": 2.0,
+        "fb_error": 1.5
+      }
+    },
+    "template_config": {
+      "context_px": 12,
+      "scales": [
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2
+      ],
+      "motion_weight": 0.08,
+      "state_threshold": 0.6,
+      "update_margin": 0.02,
+      "motion_sigma": 2.0,
+      "fb_error": 1.5
+    }
+  },
+  "calibration_scenes": [
+    "calibration_long_occlusion_1000",
+    "calibration_long_occlusion_1001",
+    "calibration_crossing_1100",
+    "calibration_crossing_1101",
+    "calibration_scale_camera_1200",
+    "calibration_scale_camera_1201"
+  ],
+  "development_scenes": [
+    "development_long_occlusion_2000",
+    "development_long_occlusion_2001",
+    "development_crossing_2100",
+    "development_crossing_2101",
+    "development_scale_camera_2200",
+    "development_scale_camera_2201"
+  ]
+}

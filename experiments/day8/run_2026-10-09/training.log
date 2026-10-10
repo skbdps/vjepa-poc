@@ -1,0 +1,214 @@
+TRAIN_INPUT_READY train train_11000_dx+32 870
+TRAIN_INPUT_READY train train_11001_dx-32 792
+TRAIN_INPUT_READY train train_11002_dx+64 1032
+TRAIN_INPUT_READY train train_11003_dx-64 1150
+TRAIN_INPUT_READY train train_11004_dx+32 911
+TRAIN_INPUT_READY train train_11005_dx-32 755
+TRAIN_INPUT_READY train train_11006_dx+64 968
+TRAIN_INPUT_READY train train_11007_dx-64 1098
+TRAIN_INPUT_READY train train_11008_dx+32 772
+TRAIN_INPUT_READY train train_11009_dx-32 799
+TRAIN_INPUT_READY train train_11010_dx+64 1165
+TRAIN_INPUT_READY train train_11011_dx-64 1076
+TRAIN_INPUT_READY train train_11012_dx+32 800
+TRAIN_INPUT_READY train train_11013_dx-32 775
+TRAIN_INPUT_READY train train_11014_dx+64 1068
+TRAIN_INPUT_READY train train_11015_dx-64 1018
+TRAIN_INPUT_READY train train_11016_dx+32 887
+TRAIN_INPUT_READY train train_11017_dx-32 837
+TRAIN_INPUT_READY train train_11018_dx+64 1224
+TRAIN_INPUT_READY train train_11019_dx-64 1176
+TRAIN_INPUT_READY train train_11020_dx+32 895
+TRAIN_INPUT_READY train train_11021_dx-32 850
+TRAIN_INPUT_READY train train_11022_dx+64 1156
+TRAIN_INPUT_READY train train_11023_dx-64 1179
+TRAIN_INPUT_READY dev dev_11100_dx+32 826
+TRAIN_INPUT_READY dev dev_11101_dx-32 842
+TRAIN_INPUT_READY dev dev_11102_dx+64 1201
+TRAIN_INPUT_READY dev dev_11103_dx-64 1158
+TRAIN_INPUT_READY dev dev_11104_dx+32 917
+TRAIN_INPUT_READY dev dev_11105_dx-32 761
+TRAIN_INPUT_READY dev dev_11106_dx+64 1133
+TRAIN_INPUT_READY dev dev_11107_dx-64 1015
+EDIT_EPOCH learned_residual 1801 1 train 0.8037398 dev_ratio 0.198775 best 1
+EDIT_EPOCH learned_residual 1801 2 train 0.7419294 dev_ratio 0.186862 best 2
+EDIT_EPOCH learned_residual 1801 3 train 0.708234 dev_ratio 0.179965 best 3
+EDIT_EPOCH learned_residual 1801 4 train 0.6894877 dev_ratio 0.175545 best 4
+EDIT_EPOCH learned_residual 1801 5 train 0.6712878 dev_ratio 0.171308 best 5
+EDIT_EPOCH learned_residual 1801 6 train 0.6524294 dev_ratio 0.165973 best 6
+EDIT_EPOCH learned_residual 1801 7 train 0.6356992 dev_ratio 0.163541 best 7
+EDIT_EPOCH learned_residual 1801 8 train 0.6233609 dev_ratio 0.161935 best 8
+EDIT_EPOCH learned_residual 1801 9 train 0.6150559 dev_ratio 0.158158 best 9
+EDIT_EPOCH learned_residual 1801 10 train 0.6044232 dev_ratio 0.156864 best 10
+EDIT_EPOCH learned_residual 1801 11 train 0.5948324 dev_ratio 0.156151 best 11
+EDIT_EPOCH learned_residual 1801 12 train 0.5881916 dev_ratio 0.153807 best 12
+EDIT_EPOCH learned_residual 1801 13 train 0.5815871 dev_ratio 0.154806 best 12
+EDIT_EPOCH learned_residual 1801 14 train 0.5744444 dev_ratio 0.151667 best 14
+EDIT_EPOCH learned_residual 1801 15 train 0.5705146 dev_ratio 0.150537 best 15
+EDIT_EPOCH learned_residual 1801 16 train 0.5650656 dev_ratio 0.150466 best 16
+EDIT_EPOCH learned_residual 1801 17 train 0.5599251 dev_ratio 0.153287 best 16
+EDIT_EPOCH learned_residual 1801 18 train 0.5589252 dev_ratio 0.149758 best 18
+EDIT_EPOCH learned_residual 1801 19 train 0.5526022 dev_ratio 0.149347 best 19
+EDIT_EPOCH learned_residual 1801 20 train 0.543516 dev_ratio 0.148522 best 20
+EDIT_EPOCH learned_residual 1801 21 train 0.5387412 dev_ratio 0.148389 best 21
+EDIT_EPOCH learned_residual 1801 22 train 0.535764 dev_ratio 0.147521 best 22
+EDIT_EPOCH learned_residual 1801 23 train 0.5281652 dev_ratio 0.147537 best 22
+EDIT_EPOCH learned_residual 1801 24 train 0.5264245 dev_ratio 0.147988 best 22
+EDIT_EPOCH learned_residual 1801 25 train 0.5240722 dev_ratio 0.148133 best 22
+EDIT_EPOCH learned_residual 1801 26 train 0.5193414 dev_ratio 0.150328 best 22
+EDIT_EPOCH learned_residual 1801 27 train 0.521352 dev_ratio 0.146665 best 27
+EDIT_EPOCH learned_residual 1801 28 train 0.5158455 dev_ratio 0.14727 best 27
+EDIT_EPOCH learned_residual 1801 29 train 0.5174663 dev_ratio 0.146727 best 27
+EDIT_EPOCH learned_residual 1801 30 train 0.5103073 dev_ratio 0.146906 best 27
+EDIT_EPOCH geometry_only 1801 1 train 0.8275331 dev_ratio 0.217924 best 1
+EDIT_EPOCH geometry_only 1801 2 train 0.8269767 dev_ratio 0.217755 best 2
+EDIT_EPOCH geometry_only 1801 3 train 0.8264087 dev_ratio 0.217665 best 3
+EDIT_EPOCH geometry_only 1801 4 train 0.8257939 dev_ratio 0.217609 best 4
+EDIT_EPOCH geometry_only 1801 5 train 0.8255471 dev_ratio 0.217599 best 5
+EDIT_EPOCH geometry_only 1801 6 train 0.8253019 dev_ratio 0.217585 best 6
+EDIT_EPOCH geometry_only 1801 7 train 0.8250371 dev_ratio 0.217611 best 6
+EDIT_EPOCH geometry_only 1801 8 train 0.8252219 dev_ratio 0.217596 best 6
+EDIT_EPOCH geometry_only 1801 9 train 0.8250121 dev_ratio 0.217616 best 6
+EDIT_EPOCH geometry_only 1801 10 train 0.8247846 dev_ratio 0.21759 best 6
+EDIT_EPOCH geometry_only 1801 11 train 0.8247445 dev_ratio 0.217593 best 6
+EDIT_EPOCH geometry_only 1801 12 train 0.8245515 dev_ratio 0.217641 best 6
+EDIT_EPOCH geometry_only 1801 13 train 0.8246102 dev_ratio 0.217675 best 6
+EDIT_EPOCH geometry_only 1801 14 train 0.8244962 dev_ratio 0.217656 best 6
+EDIT_EPOCH geometry_only 1801 15 train 0.8244346 dev_ratio 0.217663 best 6
+EDIT_EPOCH geometry_only 1801 16 train 0.8247203 dev_ratio 0.217846 best 6
+EDIT_EPOCH geometry_only 1801 17 train 0.8246353 dev_ratio 0.217639 best 6
+EDIT_EPOCH geometry_only 1801 18 train 0.8243816 dev_ratio 0.217724 best 6
+EDIT_EPOCH geometry_only 1801 19 train 0.8241035 dev_ratio 0.21769 best 6
+EDIT_EPOCH geometry_only 1801 20 train 0.8241013 dev_ratio 0.217786 best 6
+EDIT_EPOCH geometry_only 1801 21 train 0.8240478 dev_ratio 0.217729 best 6
+EDIT_EPOCH geometry_only 1801 22 train 0.8239446 dev_ratio 0.217685 best 6
+EDIT_EPOCH geometry_only 1801 23 train 0.8238637 dev_ratio 0.21772 best 6
+EDIT_EPOCH geometry_only 1801 24 train 0.8237453 dev_ratio 0.217765 best 6
+EDIT_EPOCH geometry_only 1801 25 train 0.8239813 dev_ratio 0.217748 best 6
+EDIT_EPOCH geometry_only 1801 26 train 0.8237435 dev_ratio 0.217727 best 6
+EDIT_EPOCH geometry_only 1801 27 train 0.8235732 dev_ratio 0.217724 best 6
+EDIT_EPOCH geometry_only 1801 28 train 0.8235441 dev_ratio 0.217737 best 6
+EDIT_EPOCH geometry_only 1801 29 train 0.8237154 dev_ratio 0.217771 best 6
+EDIT_EPOCH geometry_only 1801 30 train 0.8233969 dev_ratio 0.217821 best 6
+EDIT_EPOCH learned_residual 1802 1 train 0.8032155 dev_ratio 0.200761 best 1
+EDIT_EPOCH learned_residual 1802 2 train 0.7490974 dev_ratio 0.19021 best 2
+EDIT_EPOCH learned_residual 1802 3 train 0.717306 dev_ratio 0.180769 best 3
+EDIT_EPOCH learned_residual 1802 4 train 0.6947826 dev_ratio 0.176961 best 4
+EDIT_EPOCH learned_residual 1802 5 train 0.6768943 dev_ratio 0.171622 best 5
+EDIT_EPOCH learned_residual 1802 6 train 0.6561142 dev_ratio 0.168228 best 6
+EDIT_EPOCH learned_residual 1802 7 train 0.6422692 dev_ratio 0.16514 best 7
+EDIT_EPOCH learned_residual 1802 8 train 0.6281641 dev_ratio 0.162011 best 8
+EDIT_EPOCH learned_residual 1802 9 train 0.6197918 dev_ratio 0.160486 best 9
+EDIT_EPOCH learned_residual 1802 10 train 0.6069069 dev_ratio 0.15814 best 10
+EDIT_EPOCH learned_residual 1802 11 train 0.5953482 dev_ratio 0.15536 best 11
+EDIT_EPOCH learned_residual 1802 12 train 0.5892774 dev_ratio 0.155152 best 12
+EDIT_EPOCH learned_residual 1802 13 train 0.5833425 dev_ratio 0.154368 best 13
+EDIT_EPOCH learned_residual 1802 14 train 0.5789706 dev_ratio 0.152808 best 14
+EDIT_EPOCH learned_residual 1802 15 train 0.5758561 dev_ratio 0.153781 best 14
+EDIT_EPOCH learned_residual 1802 16 train 0.5720318 dev_ratio 0.152783 best 16
+EDIT_EPOCH learned_residual 1802 17 train 0.5616834 dev_ratio 0.150582 best 17
+EDIT_EPOCH learned_residual 1802 18 train 0.5552188 dev_ratio 0.150462 best 18
+EDIT_EPOCH learned_residual 1802 19 train 0.5475318 dev_ratio 0.149919 best 19
+EDIT_EPOCH learned_residual 1802 20 train 0.5460408 dev_ratio 0.149183 best 20
+EDIT_EPOCH learned_residual 1802 21 train 0.5423432 dev_ratio 0.148953 best 21
+EDIT_EPOCH learned_residual 1802 22 train 0.5358005 dev_ratio 0.148206 best 22
+EDIT_EPOCH learned_residual 1802 23 train 0.531428 dev_ratio 0.147462 best 23
+EDIT_EPOCH learned_residual 1802 24 train 0.5264677 dev_ratio 0.148277 best 23
+EDIT_EPOCH learned_residual 1802 25 train 0.5245782 dev_ratio 0.147181 best 25
+EDIT_EPOCH learned_residual 1802 26 train 0.5217719 dev_ratio 0.146346 best 26
+EDIT_EPOCH learned_residual 1802 27 train 0.5162698 dev_ratio 0.146099 best 27
+EDIT_EPOCH learned_residual 1802 28 train 0.5158441 dev_ratio 0.146249 best 27
+EDIT_EPOCH learned_residual 1802 29 train 0.5297512 dev_ratio 0.148043 best 27
+EDIT_EPOCH learned_residual 1802 30 train 0.5205134 dev_ratio 0.150078 best 27
+EDIT_EPOCH geometry_only 1802 1 train 0.8276029 dev_ratio 0.217957 best 1
+EDIT_EPOCH geometry_only 1802 2 train 0.8271143 dev_ratio 0.2178 best 2
+EDIT_EPOCH geometry_only 1802 3 train 0.8263606 dev_ratio 0.217702 best 3
+EDIT_EPOCH geometry_only 1802 4 train 0.8259451 dev_ratio 0.217655 best 4
+EDIT_EPOCH geometry_only 1802 5 train 0.8258823 dev_ratio 0.21758 best 5
+EDIT_EPOCH geometry_only 1802 6 train 0.8256504 dev_ratio 0.217598 best 5
+EDIT_EPOCH geometry_only 1802 7 train 0.8253799 dev_ratio 0.217627 best 5
+EDIT_EPOCH geometry_only 1802 8 train 0.8251442 dev_ratio 0.217624 best 5
+EDIT_EPOCH geometry_only 1802 9 train 0.8249629 dev_ratio 0.21763 best 5
+EDIT_EPOCH geometry_only 1802 10 train 0.8248087 dev_ratio 0.217649 best 5
+EDIT_EPOCH geometry_only 1802 11 train 0.8246767 dev_ratio 0.217683 best 5
+EDIT_EPOCH geometry_only 1802 12 train 0.8247428 dev_ratio 0.217685 best 5
+EDIT_EPOCH geometry_only 1802 13 train 0.8245621 dev_ratio 0.217674 best 5
+EDIT_EPOCH geometry_only 1802 14 train 0.8245408 dev_ratio 0.217683 best 5
+EDIT_EPOCH geometry_only 1802 15 train 0.8243275 dev_ratio 0.217734 best 5
+EDIT_EPOCH geometry_only 1802 16 train 0.8245551 dev_ratio 0.217737 best 5
+EDIT_EPOCH geometry_only 1802 17 train 0.8241885 dev_ratio 0.217763 best 5
+EDIT_EPOCH geometry_only 1802 18 train 0.8241788 dev_ratio 0.217709 best 5
+EDIT_EPOCH geometry_only 1802 19 train 0.8241367 dev_ratio 0.217724 best 5
+EDIT_EPOCH geometry_only 1802 20 train 0.8240556 dev_ratio 0.217814 best 5
+EDIT_EPOCH geometry_only 1802 21 train 0.8242155 dev_ratio 0.217782 best 5
+EDIT_EPOCH geometry_only 1802 22 train 0.8238775 dev_ratio 0.217741 best 5
+EDIT_EPOCH geometry_only 1802 23 train 0.8238607 dev_ratio 0.217786 best 5
+EDIT_EPOCH geometry_only 1802 24 train 0.8237939 dev_ratio 0.217799 best 5
+EDIT_EPOCH geometry_only 1802 25 train 0.8237334 dev_ratio 0.217914 best 5
+EDIT_EPOCH geometry_only 1802 26 train 0.8236451 dev_ratio 0.217733 best 5
+EDIT_EPOCH geometry_only 1802 27 train 0.8235556 dev_ratio 0.217775 best 5
+EDIT_EPOCH geometry_only 1802 28 train 0.8237608 dev_ratio 0.217815 best 5
+EDIT_EPOCH geometry_only 1802 29 train 0.8234663 dev_ratio 0.218124 best 5
+EDIT_EPOCH geometry_only 1802 30 train 0.8241839 dev_ratio 0.217813 best 5
+EDIT_EPOCH learned_residual 1803 1 train 0.8094957 dev_ratio 0.20463 best 1
+EDIT_EPOCH learned_residual 1803 2 train 0.7554464 dev_ratio 0.189044 best 2
+EDIT_EPOCH learned_residual 1803 3 train 0.7188888 dev_ratio 0.183489 best 3
+EDIT_EPOCH learned_residual 1803 4 train 0.6943843 dev_ratio 0.176382 best 4
+EDIT_EPOCH learned_residual 1803 5 train 0.67075 dev_ratio 0.17079 best 5
+EDIT_EPOCH learned_residual 1803 6 train 0.6518612 dev_ratio 0.16643 best 6
+EDIT_EPOCH learned_residual 1803 7 train 0.6385344 dev_ratio 0.164177 best 7
+EDIT_EPOCH learned_residual 1803 8 train 0.628369 dev_ratio 0.162445 best 8
+EDIT_EPOCH learned_residual 1803 9 train 0.6163975 dev_ratio 0.158258 best 9
+EDIT_EPOCH learned_residual 1803 10 train 0.6050305 dev_ratio 0.156724 best 10
+EDIT_EPOCH learned_residual 1803 11 train 0.5975289 dev_ratio 0.155279 best 11
+EDIT_EPOCH learned_residual 1803 12 train 0.5887296 dev_ratio 0.153669 best 12
+EDIT_EPOCH learned_residual 1803 13 train 0.579089 dev_ratio 0.152282 best 13
+EDIT_EPOCH learned_residual 1803 14 train 0.5703099 dev_ratio 0.15145 best 14
+EDIT_EPOCH learned_residual 1803 15 train 0.5648293 dev_ratio 0.150811 best 15
+EDIT_EPOCH learned_residual 1803 16 train 0.5599299 dev_ratio 0.150695 best 16
+EDIT_EPOCH learned_residual 1803 17 train 0.5597119 dev_ratio 0.149699 best 17
+EDIT_EPOCH learned_residual 1803 18 train 0.5555642 dev_ratio 0.149198 best 18
+EDIT_EPOCH learned_residual 1803 19 train 0.546828 dev_ratio 0.151244 best 18
+EDIT_EPOCH learned_residual 1803 20 train 0.5426101 dev_ratio 0.146538 best 20
+EDIT_EPOCH learned_residual 1803 21 train 0.5337734 dev_ratio 0.148145 best 20
+EDIT_EPOCH learned_residual 1803 22 train 0.5330885 dev_ratio 0.148134 best 20
+EDIT_EPOCH learned_residual 1803 23 train 0.530636 dev_ratio 0.145997 best 23
+EDIT_EPOCH learned_residual 1803 24 train 0.5294946 dev_ratio 0.146242 best 23
+EDIT_EPOCH learned_residual 1803 25 train 0.5286471 dev_ratio 0.147593 best 23
+EDIT_EPOCH learned_residual 1803 26 train 0.5292934 dev_ratio 0.146551 best 23
+EDIT_EPOCH learned_residual 1803 27 train 0.51784 dev_ratio 0.146247 best 23
+EDIT_EPOCH learned_residual 1803 28 train 0.5171012 dev_ratio 0.145416 best 28
+EDIT_EPOCH learned_residual 1803 29 train 0.5179792 dev_ratio 0.144992 best 29
+EDIT_EPOCH learned_residual 1803 30 train 0.5130592 dev_ratio 0.14703 best 29
+EDIT_EPOCH geometry_only 1803 1 train 0.8276845 dev_ratio 0.217931 best 1
+EDIT_EPOCH geometry_only 1803 2 train 0.8270667 dev_ratio 0.217809 best 2
+EDIT_EPOCH geometry_only 1803 3 train 0.8263929 dev_ratio 0.217704 best 3
+EDIT_EPOCH geometry_only 1803 4 train 0.8260304 dev_ratio 0.217623 best 4
+EDIT_EPOCH geometry_only 1803 5 train 0.8257456 dev_ratio 0.217579 best 5
+EDIT_EPOCH geometry_only 1803 6 train 0.8255151 dev_ratio 0.217642 best 5
+EDIT_EPOCH geometry_only 1803 7 train 0.8252889 dev_ratio 0.217603 best 5
+EDIT_EPOCH geometry_only 1803 8 train 0.8251312 dev_ratio 0.2176 best 5
+EDIT_EPOCH geometry_only 1803 9 train 0.8247928 dev_ratio 0.217644 best 5
+EDIT_EPOCH geometry_only 1803 10 train 0.8247296 dev_ratio 0.217668 best 5
+EDIT_EPOCH geometry_only 1803 11 train 0.8247038 dev_ratio 0.217682 best 5
+EDIT_EPOCH geometry_only 1803 12 train 0.8246195 dev_ratio 0.217641 best 5
+EDIT_EPOCH geometry_only 1803 13 train 0.8246378 dev_ratio 0.217722 best 5
+EDIT_EPOCH geometry_only 1803 14 train 0.8244354 dev_ratio 0.217629 best 5
+EDIT_EPOCH geometry_only 1803 15 train 0.8244412 dev_ratio 0.217702 best 5
+EDIT_EPOCH geometry_only 1803 16 train 0.8243176 dev_ratio 0.217725 best 5
+EDIT_EPOCH geometry_only 1803 17 train 0.8243256 dev_ratio 0.217687 best 5
+EDIT_EPOCH geometry_only 1803 18 train 0.8241258 dev_ratio 0.217709 best 5
+EDIT_EPOCH geometry_only 1803 19 train 0.8241748 dev_ratio 0.217746 best 5
+EDIT_EPOCH geometry_only 1803 20 train 0.8240489 dev_ratio 0.217742 best 5
+EDIT_EPOCH geometry_only 1803 21 train 0.824165 dev_ratio 0.217702 best 5
+EDIT_EPOCH geometry_only 1803 22 train 0.8239646 dev_ratio 0.217798 best 5
+EDIT_EPOCH geometry_only 1803 23 train 0.8238118 dev_ratio 0.217745 best 5
+EDIT_EPOCH geometry_only 1803 24 train 0.8237643 dev_ratio 0.217806 best 5
+EDIT_EPOCH geometry_only 1803 25 train 0.8236462 dev_ratio 0.217718 best 5
+EDIT_EPOCH geometry_only 1803 26 train 0.823586 dev_ratio 0.217839 best 5
+EDIT_EPOCH geometry_only 1803 27 train 0.8233907 dev_ratio 0.21784 best 5
+EDIT_EPOCH geometry_only 1803 28 train 0.8235939 dev_ratio 0.21791 best 5
+EDIT_EPOCH geometry_only 1803 29 train 0.8233064 dev_ratio 0.217768 best 5
+EDIT_EPOCH geometry_only 1803 30 train 0.8231447 dev_ratio 0.217789 best 5
+PROBE_FIT_STARTED
+TRAINING_FROZEN /workspace/scratch/8e9e8b29a938/day8_compute/training/checkpoint_freeze.json 9b6b16e4122394b7bad17ce46f0bf7ae6ab8fe95c137b6dbf81b9b452b16dba5

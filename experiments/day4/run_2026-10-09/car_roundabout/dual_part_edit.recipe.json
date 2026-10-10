@@ -1,0 +1,29 @@
+{
+  "schema": "vjepa.part-edit-recipe",
+  "version": 1,
+  "sequence": "car-roundabout",
+  "parts": [
+    {
+      "id": 1,
+      "name": "front_door_panel",
+      "enabled": true,
+      "color": [
+        35,
+        140,
+        240
+      ],
+      "strength": 0.75
+    },
+    {
+      "id": 2,
+      "name": "front_window",
+      "enabled": true,
+      "color": [
+        240,
+        180,
+        35
+      ],
+      "strength": 0.45
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "model": "vjepa2_1_vit_large_384",
+  "upstream_commit": "204698b45b3712590f06245fbfba32d3be539812",
+  "python": "3.13.15",
+  "torch": "2.11.0+cu130",
+  "numpy": "2.1.3",
+  "cuda": "13.0",
+  "gpu": "Tesla T4",
+  "peak_gpu_allocated_gib": 1.338,
+  "calibration_seeds": [
+    100,
+    101,
+    102
+  ],
+  "evaluation_seeds": [
+    200,
+    201,
+    202,
+    203,
+    204,
+    205
+  ],
+  "input": "32 RGB frames per scene, two disjoint 16-frame windows, 384x384, ImageNet normalization",
+  "inference": "frozen eval mode, no gradients, CUDA fp16 autocast; cached features fp16",
+  "scope": "Small synthetic diagnostic; offline within-window features can attend to future frames. Not an editing, face, or real-video benchmark.",
+  "experiment_commit": "461dd0264dfe023bc9639479a388fa2eda785692",
+  "run_date_IST": "2026-10-09"
+}

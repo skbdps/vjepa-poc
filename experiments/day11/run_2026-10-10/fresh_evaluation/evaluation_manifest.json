@@ -1,0 +1,583 @@
+{
+  "version": "day11_fresh_bridge_evaluation_v1",
+  "split": "fresh held-out test",
+  "fresh_test_accessed": true,
+  "test_freeze_sha256": "29c1143a32efa105e7a37b2e6d524f9007316e17847dd6df675c3401b3b79be7",
+  "test_publication_sha256": "05a891885b34094875528eb59fd724754346b76f2cf83db627060b422e31a01e",
+  "trained_checkpoint_freeze_sha256": "22dc5a4b749d8ec724ca2a08334cc8c9958fdebad1d24dd0d9c6f25f8459689e",
+  "feature_manifest_sha256": "1d982deeae11422ec43f8d2c629aebd14f33841a458be2b752f12ccccba6443e",
+  "target_manifest_sha256": "717ae3dbcc695f36db820d338446731a23e7d06d31d46e18ad7d680613d87e3d",
+  "checkpoint_sha256_by_translator": {
+    "cnn": "a3abb9b3d224881c8125499ed43c65d7b0dae8975538ce0716ca47e75e3bc365",
+    "linear": "60421e8eb63c939d0de460950f80f89fe6de2670df73880cec4f0bc15baf5c71"
+  },
+  "vae": {
+    "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+    "revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+    "files": {
+      "config.json": {
+        "sha256": "7a3afcf422b9a9d63e0b6ca7e0d3b5193220a61f5b203bb8417900bc090705e8",
+        "bytes": 724
+      },
+      "diffusion_pytorch_model.safetensors": {
+        "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793",
+        "bytes": 507591892
+      }
+    },
+    "class": "AutoencoderKLWan",
+    "precision": "float32",
+    "posterior": "mode",
+    "normalization": "(posterior_mode - latents_mean) / latents_std",
+    "latents_mean": [
+      -0.7571,
+      -0.7089,
+      -0.9113,
+      0.1075,
+      -0.1745,
+      0.9653,
+      -0.1517,
+      1.5508,
+      0.4134,
+      -0.0715,
+      0.5517,
+      -0.3632,
+      -0.1922,
+      -0.9497,
+      0.2503,
+      -0.2921
+    ],
+    "latents_std": [
+      2.8184,
+      1.4541,
+      2.3275,
+      2.6558,
+      1.2196,
+      1.7708,
+      2.6052,
+      2.0743,
+      3.2687,
+      2.1526,
+      2.8652,
+      1.5579,
+      1.6382,
+      1.1253,
+      2.8251,
+      1.916
+    ],
+    "input": "[1,3,1,384,384] RGB in [-1,1]",
+    "output": "[16,48,48]"
+  },
+  "source_hashes": {
+    "experiments/day10/animate.py": "e2329583f9a6ae4df0f846140e618743883b7e94d4189932dc23a28050c4e451",
+    "experiments/day11/PROTOCOL.md": "3b2d40677cf8d2da3e9de45d9406b48bb061859aeaf01a6195d269540a98fc64",
+    "experiments/day11/assess_fresh.py": "a6d5e82ed580574603799475d32642f753dd075f4a855a3f8c0b04c3668f6490",
+    "experiments/day11/data.py": "9e217690b35fde7a7b91ac36eab5e6bf4584a54fab330783ee63c22f9553edbf",
+    "experiments/day11/evaluate.py": "98412b56a20669125dd18d22971d9a139a4ba0389dedd81c6693f53c554d6119",
+    "experiments/day11/evaluate_fresh.py": "220df2143b445060e67eb0c6ddbfc52c996fd23f6739e3d055569389ea0540eb",
+    "experiments/day11/model.py": "a34c7348ccaaa4bd65cff51366fe66e69c8eda581585e9bae3034b34b3f5628f",
+    "experiments/day11/prepare_fresh.py": "8dd153da31daf9f5f6a3c63b0068e7d04201596cc15f84ccf1ab75cc8f550b8f",
+    "experiments/day11/qualify_development.py": "dca51ecb8d307c00d05c20a737561d61a056a550c95af32784b46d5418a1ebc8",
+    "experiments/day11/render.py": "45c19c41bdc0ee6c84f71ba264a1ddf635c3400f0bee54bf404313b6f6c4575c",
+    "experiments/day11/render_fresh.py": "31c4b35584d5236747cb1555487b0839ba1dfd3acc575862acb934a5b85f7411",
+    "experiments/day11/render_transport.py": "8aacf67c2a94f8c0821e4c826512385439d18cf965543159d68626d85a2b6508",
+    "experiments/day11/train.py": "366fadd762ee7ac25fc90b313bca192b5b71a2a8cb18d34bd46e54e86e528648",
+    "experiments/day11/transport.py": "407a745c704c4720a3907adfef017786f6a265e3ae52ef8a56c0e6b407b74c51",
+    "experiments/day11/vace_bridge.py": "37ea481d279b0fbe18b001f988c77d84bfc1f4e2bb76d2427a8443115083989b",
+    "experiments/day11/vae_targets.py": "65843b11b9b26f9184c6eadf277b647578d8ad664f5f41491d8c3b930d04c8c8",
+    "experiments/day8/data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+    "experiments/day8/evaluate.py": "fec3a0489c846c96c0b58e8725ab22a20923eed57ac0cce65abfa073b8b0929c",
+    "experiments/day8/extract.py": "de2b366a53cae32f13741570f6dcefd525e45bfe04a2fda5b909d54579f1982f",
+    "experiments/day8/operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+    "experiments/day8/probe.py": "9a736ddd5bb64c19a5205f12d606bcd1f1bc562367effcbba96dd8c0a1b8790d"
+  },
+  "evaluation": {
+    "device": "cpu",
+    "threads": 4,
+    "precision": "float32",
+    "decode": false,
+    "translator_arms": [
+      "cnn",
+      "linear"
+    ],
+    "arms": [
+      "true_source",
+      "true_target",
+      "absolute_source",
+      "absolute_genuine_target",
+      "absolute_copy_repair",
+      "absolute_wrong_direction",
+      "absolute_shuffled",
+      "residual_source",
+      "residual_genuine_target",
+      "residual_copy_repair",
+      "residual_wrong_direction",
+      "residual_shuffled",
+      "provenance_copy_source",
+      "provenance_copy_genuine_target",
+      "provenance_copy_copy_repair",
+      "provenance_copy_wrong_direction",
+      "provenance_copy_shuffled",
+      "provenance_local_source",
+      "provenance_local_genuine_target",
+      "provenance_local_copy_repair",
+      "provenance_local_wrong_direction",
+      "provenance_local_shuffled",
+      "provenance_residual_source",
+      "provenance_residual_genuine_target",
+      "provenance_residual_copy_repair",
+      "provenance_residual_wrong_direction",
+      "provenance_residual_shuffled"
+    ],
+    "shuffle_seed": 1111,
+    "local_radius": 2
+  },
+  "arms": {
+    "true_source": {
+      "oracle": false,
+      "input": "source RGB through frozen Wan VAE",
+      "route": "true source latent; no-edit baseline"
+    },
+    "true_target": {
+      "oracle": true,
+      "input": "genuine target RGB through frozen Wan VAE",
+      "route": "privileged renderer-interface/decoder-ceiling diagnostic"
+    },
+    "absolute_source": {
+      "oracle": false,
+      "input": "unchanged source JEPA",
+      "route": "F(z)"
+    },
+    "absolute_genuine_target": {
+      "oracle": true,
+      "input": "independently encoded genuine target JEPA; privileged diagnostic",
+      "route": "F(z)"
+    },
+    "absolute_copy_repair": {
+      "oracle": false,
+      "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+      "route": "F(z)"
+    },
+    "absolute_wrong_direction": {
+      "oracle": false,
+      "input": "matched source-only JEPA edit with the opposite displacement",
+      "route": "F(z)"
+    },
+    "absolute_shuffled": {
+      "oracle": false,
+      "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+      "route": "F(z)"
+    },
+    "residual_source": {
+      "oracle": false,
+      "input": "unchanged source JEPA",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_genuine_target": {
+      "oracle": true,
+      "input": "independently encoded genuine target JEPA; privileged diagnostic",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_copy_repair": {
+      "oracle": false,
+      "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_wrong_direction": {
+      "oracle": false,
+      "input": "matched source-only JEPA edit with the opposite displacement",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_shuffled": {
+      "oracle": false,
+      "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "provenance_copy_source": {
+      "oracle": false,
+      "route": "exact inferred source Wan tile copy; frozen F(edit) at unmatched changed cells",
+      "input": "source JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_copy_genuine_target": {
+      "oracle": true,
+      "route": "exact inferred source Wan tile copy; frozen F(edit) at unmatched changed cells",
+      "input": "genuine_target JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_copy_copy_repair": {
+      "oracle": false,
+      "route": "exact inferred source Wan tile copy; frozen F(edit) at unmatched changed cells",
+      "input": "copy_repair JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_copy_wrong_direction": {
+      "oracle": false,
+      "route": "exact inferred source Wan tile copy; frozen F(edit) at unmatched changed cells",
+      "input": "wrong_direction JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_copy_shuffled": {
+      "oracle": false,
+      "route": "exact inferred source Wan tile copy; frozen F(edit) at unmatched changed cells",
+      "input": "shuffled JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_local_source": {
+      "oracle": false,
+      "route": "same inferred source Wan tile copy; deterministic source-only local tile mean at unmatched cells; no F values",
+      "input": "source JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_local_genuine_target": {
+      "oracle": true,
+      "route": "same inferred source Wan tile copy; deterministic source-only local tile mean at unmatched cells; no F values",
+      "input": "genuine_target JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_local_copy_repair": {
+      "oracle": false,
+      "route": "same inferred source Wan tile copy; deterministic source-only local tile mean at unmatched cells; no F values",
+      "input": "copy_repair JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_local_wrong_direction": {
+      "oracle": false,
+      "route": "same inferred source Wan tile copy; deterministic source-only local tile mean at unmatched cells; no F values",
+      "input": "wrong_direction JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_local_shuffled": {
+      "oracle": false,
+      "route": "same inferred source Wan tile copy; deterministic source-only local tile mean at unmatched cells; no F values",
+      "input": "shuffled JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_residual_source": {
+      "oracle": false,
+      "route": "F(edit)+transport[A(source)-F(source)] at copied cells; F(edit) unmatched; exact source unchanged",
+      "input": "source JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_residual_genuine_target": {
+      "oracle": true,
+      "route": "F(edit)+transport[A(source)-F(source)] at copied cells; F(edit) unmatched; exact source unchanged",
+      "input": "genuine_target JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_residual_copy_repair": {
+      "oracle": false,
+      "route": "F(edit)+transport[A(source)-F(source)] at copied cells; F(edit) unmatched; exact source unchanged",
+      "input": "copy_repair JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_residual_wrong_direction": {
+      "oracle": false,
+      "route": "F(edit)+transport[A(source)-F(source)] at copied cells; F(edit) unmatched; exact source unchanged",
+      "input": "wrong_direction JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_residual_shuffled": {
+      "oracle": false,
+      "route": "F(edit)+transport[A(source)-F(source)] at copied cells; F(edit) unmatched; exact source unchanged",
+      "input": "shuffled JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    }
+  },
+  "translator_arms": [
+    "cnn",
+    "linear"
+  ],
+  "test_specs": [
+    {
+      "name": "test_14000_dx+32",
+      "seed": 14000,
+      "dx": 32,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14001_dx-32",
+      "seed": 14001,
+      "dx": -32,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14002_dx+48",
+      "seed": 14002,
+      "dx": 48,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14003_dx-48",
+      "seed": 14003,
+      "dx": -48,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14004_dx+64",
+      "seed": 14004,
+      "dx": 64,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14005_dx-64",
+      "seed": 14005,
+      "dx": -64,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14006_dx+80",
+      "seed": 14006,
+      "dx": 80,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14007_dx-80",
+      "seed": 14007,
+      "dx": -80,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    }
+  ],
+  "decoded": false,
+  "runtime": {
+    "device": "cpu",
+    "threads": 4,
+    "precision": "float32",
+    "python": "3.12.14",
+    "torch": "2.9.0+cpu",
+    "numpy": "2.3.5"
+  },
+  "aggregation": "Equal means over all eight predeclared test scenes; every arm retained; no adaptation or selection",
+  "latent_regions": "Day8 fixed any-coverage24x24 regions expanded2x; protected background excludes one-patch union halo and distractor patches",
+  "rgb_regions": "Exact source hole/destination/distractor; conservative protected background from coarse regions expanded16x",
+  "rgb_metric_space": null,
+  "complete": true,
+  "scenes": [
+    {
+      "scene": "test_14000_dx+32",
+      "seed": 14000,
+      "shift_px": 32,
+      "bundles": {
+        "cnn": {
+          "path": "cnn/scenes/test_14000_dx+32.npz",
+          "sha256": "ff47c7bfaa10fe17f6f75949eeae197a26f8e67e57906e094dcadad18fd429d8",
+          "metrics_path": "cnn/scenes/test_14000_dx+32_metrics.json",
+          "metrics_sha256": "02b662d7d2ea5052cf4b6978a054fe8ae81926af2a0c268c75e218680923bf50",
+          "counts_path": "cnn/scenes/test_14000_dx+32_counts.json",
+          "counts_sha256": "49d0aaf28913158bbf98eaf3d0fee0af515925e42d69dda618d4cef20d4d338e"
+        },
+        "linear": {
+          "path": "linear/scenes/test_14000_dx+32.npz",
+          "sha256": "4a1e1f3acd9e31ae003d618d37b89c2426267b48a2d8d334e3e24fa5067a1199",
+          "metrics_path": "linear/scenes/test_14000_dx+32_metrics.json",
+          "metrics_sha256": "e733f3e6de304e5981fc8063ec87925ae5bec012b3c1b6d2497f20528fdb3600",
+          "counts_path": "linear/scenes/test_14000_dx+32_counts.json",
+          "counts_sha256": "a8af5a01a2792b054a162ce166b27aac4ec7ce1b476eb9a7f84ef51c1030b395"
+        }
+      }
+    },
+    {
+      "scene": "test_14001_dx-32",
+      "seed": 14001,
+      "shift_px": -32,
+      "bundles": {
+        "cnn": {
+          "path": "cnn/scenes/test_14001_dx-32.npz",
+          "sha256": "bec0fdad1bf3ba31bea76e5da8d0c01faef9964f69f64fadf6f95dbff99ad0c0",
+          "metrics_path": "cnn/scenes/test_14001_dx-32_metrics.json",
+          "metrics_sha256": "73cda03972a342dd34760f66e0bdef9f34674af22a2b518e96c293feb0f7fd3a",
+          "counts_path": "cnn/scenes/test_14001_dx-32_counts.json",
+          "counts_sha256": "eb23fa7f345c4bd24e2128ba30e15f4ba6447655074bec367f663cad7dac7530"
+        },
+        "linear": {
+          "path": "linear/scenes/test_14001_dx-32.npz",
+          "sha256": "4ca9a08aa68aa49e6dc8a863267b7b53637a84e89a4d940cc7fbe1964002a1c1",
+          "metrics_path": "linear/scenes/test_14001_dx-32_metrics.json",
+          "metrics_sha256": "e9a6c1076b8433a9dee11327ee5385087b5818aa1d4ac755e6a1af7c5cf62863",
+          "counts_path": "linear/scenes/test_14001_dx-32_counts.json",
+          "counts_sha256": "9c7922b24c6a6cb3661125af22d2b6d82be374a4621a37c6ef2c790435f6f851"
+        }
+      }
+    },
+    {
+      "scene": "test_14002_dx+48",
+      "seed": 14002,
+      "shift_px": 48,
+      "bundles": {
+        "cnn": {
+          "path": "cnn/scenes/test_14002_dx+48.npz",
+          "sha256": "f6979f2a060867ea4df7c2be1d53e13c4b914bb1e83d55825377e8cf781dab63",
+          "metrics_path": "cnn/scenes/test_14002_dx+48_metrics.json",
+          "metrics_sha256": "21f53ad957eccd3225f3a97456cee62f2bd39541db0eb4e0c86e12bcac4239ab",
+          "counts_path": "cnn/scenes/test_14002_dx+48_counts.json",
+          "counts_sha256": "bd63291933ceb22fac1cf847169da20205af42f586034dfedfedb39591f6eb14"
+        },
+        "linear": {
+          "path": "linear/scenes/test_14002_dx+48.npz",
+          "sha256": "2ba74919adc5d374b0d28bfb1da603b745bad89cd1476f4c91bcf3a14619f7b0",
+          "metrics_path": "linear/scenes/test_14002_dx+48_metrics.json",
+          "metrics_sha256": "7efef4adc8d33d7fba22d018c0497163b1dfd4b477fd011c9308b383b841a831",
+          "counts_path": "linear/scenes/test_14002_dx+48_counts.json",
+          "counts_sha256": "99a3d15f96d957ce7ca51ac51f01099528988702af80eb3e8e93e10a58e86270"
+        }
+      }
+    },
+    {
+      "scene": "test_14003_dx-48",
+      "seed": 14003,
+      "shift_px": -48,
+      "bundles": {
+        "cnn": {
+          "path": "cnn/scenes/test_14003_dx-48.npz",
+          "sha256": "3628e433f30548b939814938f59fce2e9af9ae707b462e7bab19762b238527d8",
+          "metrics_path": "cnn/scenes/test_14003_dx-48_metrics.json",
+          "metrics_sha256": "0044fb4af4ee3cf6077834fe62bb5eaa222436138bc1190e8326e8798a1cbebd",
+          "counts_path": "cnn/scenes/test_14003_dx-48_counts.json",
+          "counts_sha256": "f682029fcb58d18f2f15ae60bc40207ab5a795297ae2425285c38b9571b0723b"
+        },
+        "linear": {
+          "path": "linear/scenes/test_14003_dx-48.npz",
+          "sha256": "e016d8c458a761f9c599b37d82d8437ce0e593d1da88f031601be4b32de0e7c9",
+          "metrics_path": "linear/scenes/test_14003_dx-48_metrics.json",
+          "metrics_sha256": "72d6e657a104d1e640e9ed30bfa43514425b546622a28845c967610bc70ac0ce",
+          "counts_path": "linear/scenes/test_14003_dx-48_counts.json",
+          "counts_sha256": "81d1602b9b3bd9f23348b8f66dc6af64e1b7c9b4c5e53df9bf96689199ab03d4"
+        }
+      }
+    },
+    {
+      "scene": "test_14004_dx+64",
+      "seed": 14004,
+      "shift_px": 64,
+      "bundles": {
+        "cnn": {
+          "path": "cnn/scenes/test_14004_dx+64.npz",
+          "sha256": "7ed181098abfed562834ee51aecd0853de824b3bcb8f47ba53639cfa8b7ef858",
+          "metrics_path": "cnn/scenes/test_14004_dx+64_metrics.json",
+          "metrics_sha256": "de33e88b94edf62517cdfcb6461b074d1fc7061216f24bba2e4fcd2e1a4f2c2a",
+          "counts_path": "cnn/scenes/test_14004_dx+64_counts.json",
+          "counts_sha256": "687ebddbe887ad6b5721bc5e1f3dee8a389206f2e060e33bfa1fe5687fb290d7"
+        },
+        "linear": {
+          "path": "linear/scenes/test_14004_dx+64.npz",
+          "sha256": "a4c905940ed5b96e9b693b4c1a0c1cdd73437d4ed6caa7b14a921896c48fee66",
+          "metrics_path": "linear/scenes/test_14004_dx+64_metrics.json",
+          "metrics_sha256": "9df1fb1bec2b8459550bbff6ebee6c9a7871da4ab5487b3a5606e9f887e5b447",
+          "counts_path": "linear/scenes/test_14004_dx+64_counts.json",
+          "counts_sha256": "0c4d8fbc888f6bc995af29349bea46ad784cf97f2eecf5e8fd8b0e89bf68e12a"
+        }
+      }
+    },
+    {
+      "scene": "test_14005_dx-64",
+      "seed": 14005,
+      "shift_px": -64,
+      "bundles": {
+        "cnn": {
+          "path": "cnn/scenes/test_14005_dx-64.npz",
+          "sha256": "176b676bae51f32dd6994bf9abb1a006aac246c677edfa48bfcc35d083a49214",
+          "metrics_path": "cnn/scenes/test_14005_dx-64_metrics.json",
+          "metrics_sha256": "b600f7c968e3016fbb127c189970339b45fde63e8f9a101d2ae173c04f45daaa",
+          "counts_path": "cnn/scenes/test_14005_dx-64_counts.json",
+          "counts_sha256": "7b85811cf145dfa507bf984e2a135bdbca3a2fbf96dcd41ece0e6e039a35da7d"
+        },
+        "linear": {
+          "path": "linear/scenes/test_14005_dx-64.npz",
+          "sha256": "2279c5dcfbf48fe28c4c8a715b7c09fbf7f5b5274cab70c811c2d2360c0c6b63",
+          "metrics_path": "linear/scenes/test_14005_dx-64_metrics.json",
+          "metrics_sha256": "03a3b65d73595449caeac066335644dc4835f5eb6bc81df2d0caab12a5fe1998",
+          "counts_path": "linear/scenes/test_14005_dx-64_counts.json",
+          "counts_sha256": "a72e2f2a08b9f6c019fb4df4fcea48cb4864175882f323992fc170707b372b94"
+        }
+      }
+    },
+    {
+      "scene": "test_14006_dx+80",
+      "seed": 14006,
+      "shift_px": 80,
+      "bundles": {
+        "cnn": {
+          "path": "cnn/scenes/test_14006_dx+80.npz",
+          "sha256": "2440f957dbdae75f61783243ea2fce71eb1a1a42de7a310dc17ac1312f3f78e2",
+          "metrics_path": "cnn/scenes/test_14006_dx+80_metrics.json",
+          "metrics_sha256": "e08e60c0b7b0488e20e26462084e798165dd60de1f4c656909c721aecfbd978b",
+          "counts_path": "cnn/scenes/test_14006_dx+80_counts.json",
+          "counts_sha256": "c55e8005548c895e9e8c4bc8484bb6875a999317d1ecc9b2b6b2a9c2527dd97f"
+        },
+        "linear": {
+          "path": "linear/scenes/test_14006_dx+80.npz",
+          "sha256": "d75526944a8826126990559b82ca932300e258711d933119fa45b71cc4d7789f",
+          "metrics_path": "linear/scenes/test_14006_dx+80_metrics.json",
+          "metrics_sha256": "6fb3957d1751e34227cff445e01fafc9eb3348d9a4459926cf05ed9ddf562529",
+          "counts_path": "linear/scenes/test_14006_dx+80_counts.json",
+          "counts_sha256": "841ff0b04e40b08b1f1631003e89e4c2fe3c2f0de118a121a154c829c8d8f176"
+        }
+      }
+    },
+    {
+      "scene": "test_14007_dx-80",
+      "seed": 14007,
+      "shift_px": -80,
+      "bundles": {
+        "cnn": {
+          "path": "cnn/scenes/test_14007_dx-80.npz",
+          "sha256": "f0ebae8bbd5ef65b897c6913fd93b7dc4b464b4bd0753b57cc6061320db34d7c",
+          "metrics_path": "cnn/scenes/test_14007_dx-80_metrics.json",
+          "metrics_sha256": "39f285f5d47e16c67db79a03b0297c61c91cc79058a5c8b40be00f9b22cb6e6b",
+          "counts_path": "cnn/scenes/test_14007_dx-80_counts.json",
+          "counts_sha256": "8671a7ae9f97d9967ca94e72832ef47b048110b3d02d2f95d7cd5c46c51ed9fc"
+        },
+        "linear": {
+          "path": "linear/scenes/test_14007_dx-80.npz",
+          "sha256": "6a3c75b50ee52bc560dab01d8e44fed80e12888b80c6fe024983635c723b224d",
+          "metrics_path": "linear/scenes/test_14007_dx-80_metrics.json",
+          "metrics_sha256": "49743f91cf4cfeb40f9c9bba0084aadde0124f3e7bf94f37fbe978f7989735bc",
+          "counts_path": "linear/scenes/test_14007_dx-80_counts.json",
+          "counts_sha256": "69edbc657316f880497d1c4973226d0c22eead4d18f5b4a982cd8a7ec1fc3110"
+        }
+      }
+    }
+  ],
+  "metrics_sha256": "2b2805d27e8b1c1d4219874eb9528a7e2fa53b480d16f90e1335f45b2ace219a",
+  "summary_sha256": "c79f22f1588ff07bf971cac2d7018aa83970e0e3875e545a4733c56f44b488ab",
+  "provenance_counts_sha256": "d51d91dd25bceb8ee4728d0c92202075fc4e491e110ce26ea6bb3d90939657b6"
+}

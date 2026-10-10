@@ -1,0 +1,44 @@
+{
+  "record": {
+    "arm": "learned_residual",
+    "seed": 1802,
+    "path": "learned_residual/1802/best.pt",
+    "sha256": "5a2205f81184797d8a87ea646e1fc0d0cd492e748ff6e2eab95cfb7ab3810ccf",
+    "epoch": 27,
+    "dev_score": 0.1460991861608602,
+    "initialization_sha256": "a0d64de92016e948b28eed05fb35d4251fa8be7f9836551be6297d3ee2f4eeff"
+  },
+  "policy": {
+    "version": "day8_direct_latent_intervention_v1",
+    "arms": [
+      "learned_residual",
+      "geometry_only"
+    ],
+    "seeds": [
+      1801,
+      1802,
+      1803
+    ],
+    "epochs": 30,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_scenes": 1,
+    "precision": "float32",
+    "gradient_clip_norm": 5.0,
+    "train_loss": "mean of nonempty source-hole, destination, halo raw MSE means; equal scene weighting",
+    "selection": "lowest dev mean of source-hole and destination no-op-normalized MSE; equal scenes; earliest epoch on ties",
+    "normalization_floor": "per-role max(1e-8,0.01*median training no-op role MSE)",
+    "halo": "trained as separate equally weighted role; reported separately at dev; not included in selection",
+    "probe_seed": 1800,
+    "probe_policy": "fit genuine train videos, select epoch on genuine dev videos; frozen before any test or edited tokens",
+    "test_policy": "never opened in this module; all six predeclared checkpoints retained"
+  },
+  "source_hashes": {
+    "train.py": "caa464d453dcd4ccbf3614477b9e01d294862bce47106dc9e056f547ad0f891e",
+    "operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+    "probe.py": "9a736ddd5bb64c19a5205f12d606bcd1f1bc562367effcbba96dd8c0a1b8790d",
+    "data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d"
+  },
+  "feature_binding_sha256": "dbdbed6a1b84a6474d41f05b3d3a4d30a57f46e1a5b242a4f8efbfad146126cb"
+}

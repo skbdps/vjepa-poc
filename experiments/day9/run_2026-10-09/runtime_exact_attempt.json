@@ -1,0 +1,47 @@
+{
+  "version": "day9_restored_runtime_v1",
+  "fixture": {
+    "name": "train_11000_dx+32",
+    "seed": 11000,
+    "dx": 32,
+    "split": "train",
+    "shift_regime": "seen_magnitude"
+  },
+  "reference_cache_sha256": "963388316dd58e08a76649399d93267ea5d4273c7b43029b140d2883e1ffd5ba",
+  "checkpoint_sha256": "7ea9b7cb4a75d10644a8a8d42cff9e177b10dca8f02173f0eaf2b0bed82838c6",
+  "checks": {
+    "source": {
+      "bitwise_equal": false,
+      "max_abs_difference": 0.875,
+      "sha256": "16e0a9109c97fbd297b8ffb5a2612939ca6a007dded1063683559af8568f3f55",
+      "shape": [
+        16,
+        24,
+        24,
+        1024
+      ]
+    },
+    "target": {
+      "bitwise_equal": false,
+      "max_abs_difference": 1.3125,
+      "sha256": "c7cf177dcdb9d0310473cb4e774af5e337c674cd06465a51a0a05d7b8c361b4e",
+      "shape": [
+        16,
+        24,
+        24,
+        1024
+      ]
+    }
+  },
+  "pass": false,
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.9.0+cpu",
+    "numpy": "2.3.5",
+    "device": "cpu",
+    "precision": "bfloat16",
+    "threads": 8
+  },
+  "seconds": 54.10924938799997,
+  "scope": "One old training fixture, never new held-out data. Exact agreement with production BF16 features previously validated against Colab FP32."
+}

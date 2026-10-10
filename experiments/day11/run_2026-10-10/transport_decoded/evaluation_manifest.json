@@ -1,0 +1,343 @@
+{
+  "version": "day11_development_provenance_transport_v1",
+  "complete": true,
+  "split": "existing eight development scenes only",
+  "fresh_test_accessed": false,
+  "checkpoint_sha256": "a3abb9b3d224881c8125499ed43c65d7b0dae8975538ce0716ca47e75e3bc365",
+  "jepa_manifest_sha256": "07f29f2c5488b8d72a93d08d243abbf0028ec912605f69c51ac6053062ec1ca7",
+  "target_manifest_sha256": "89a07786aa58341557aec5486c0afec32161b2aadb03a39a8f664ed5f2d36382",
+  "vae": {
+    "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+    "revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+    "files": {
+      "config.json": {
+        "sha256": "7a3afcf422b9a9d63e0b6ca7e0d3b5193220a61f5b203bb8417900bc090705e8",
+        "bytes": 724
+      },
+      "diffusion_pytorch_model.safetensors": {
+        "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793",
+        "bytes": 507591892
+      }
+    },
+    "class": "AutoencoderKLWan",
+    "precision": "float32",
+    "posterior": "mode",
+    "normalization": "(posterior_mode - latents_mean) / latents_std",
+    "latents_mean": [
+      -0.7571,
+      -0.7089,
+      -0.9113,
+      0.1075,
+      -0.1745,
+      0.9653,
+      -0.1517,
+      1.5508,
+      0.4134,
+      -0.0715,
+      0.5517,
+      -0.3632,
+      -0.1922,
+      -0.9497,
+      0.2503,
+      -0.2921
+    ],
+    "latents_std": [
+      2.8184,
+      1.4541,
+      2.3275,
+      2.6558,
+      1.2196,
+      1.7708,
+      2.6052,
+      2.0743,
+      3.2687,
+      2.1526,
+      2.8652,
+      1.5579,
+      1.6382,
+      1.1253,
+      2.8251,
+      1.916
+    ],
+    "input": "[1,3,1,384,384] RGB in [-1,1]",
+    "output": "[16,48,48]"
+  },
+  "source_hashes": {
+    "experiments/day11/evaluate.py": "98412b56a20669125dd18d22971d9a139a4ba0389dedd81c6693f53c554d6119",
+    "experiments/day11/data.py": "9e217690b35fde7a7b91ac36eab5e6bf4584a54fab330783ee63c22f9553edbf",
+    "experiments/day11/model.py": "a34c7348ccaaa4bd65cff51366fe66e69c8eda581585e9bae3034b34b3f5628f",
+    "experiments/day11/vace_bridge.py": "37ea481d279b0fbe18b001f988c77d84bfc1f4e2bb76d2427a8443115083989b",
+    "experiments/day10/animate.py": "e2329583f9a6ae4df0f846140e618743883b7e94d4189932dc23a28050c4e451",
+    "experiments/day8/data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+    "experiments/day8/operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+    "experiments/day8/extract.py": "de2b366a53cae32f13741570f6dcefd525e45bfe04a2fda5b909d54579f1982f",
+    "experiments/day8/evaluate.py": "fec3a0489c846c96c0b58e8725ab22a20923eed57ac0cce65abfa073b8b0929c",
+    "experiments/day8/probe.py": "9a736ddd5bb64c19a5205f12d606bcd1f1bc562367effcbba96dd8c0a1b8790d",
+    "experiments/day11/transport.py": "407a745c704c4720a3907adfef017786f6a265e3ae52ef8a56c0e6b407b74c51"
+  },
+  "initial_evaluation_manifest_sha256": "1482e41792e61e5aeb847fe48aceea1e4cf5fb69c80f6ebfed952f7d94619b34",
+  "initial_metrics_sha256": "f8489bf6824318bdd7413e6063b0d84d2ba0db880c9bb8ff04a820d4aa8482a1",
+  "arms": {
+    "true_source": {
+      "oracle": false,
+      "input": "source RGB through frozen Wan VAE",
+      "route": "true source latent; no-edit baseline"
+    },
+    "true_target": {
+      "oracle": true,
+      "input": "genuine target RGB through frozen Wan VAE",
+      "route": "privileged renderer-interface/decoder-ceiling diagnostic"
+    },
+    "absolute_source": {
+      "oracle": false,
+      "input": "unchanged source JEPA",
+      "route": "F(z)"
+    },
+    "absolute_genuine_target": {
+      "oracle": true,
+      "input": "independently encoded genuine target JEPA; privileged diagnostic",
+      "route": "F(z)"
+    },
+    "absolute_copy_repair": {
+      "oracle": false,
+      "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+      "route": "F(z)"
+    },
+    "absolute_wrong_direction": {
+      "oracle": false,
+      "input": "matched source-only JEPA edit with the opposite displacement",
+      "route": "F(z)"
+    },
+    "absolute_shuffled": {
+      "oracle": false,
+      "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+      "route": "F(z)"
+    },
+    "residual_source": {
+      "oracle": false,
+      "input": "unchanged source JEPA",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_genuine_target": {
+      "oracle": true,
+      "input": "independently encoded genuine target JEPA; privileged diagnostic",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_copy_repair": {
+      "oracle": false,
+      "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_wrong_direction": {
+      "oracle": false,
+      "input": "matched source-only JEPA edit with the opposite displacement",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_shuffled": {
+      "oracle": false,
+      "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "provenance_copy_source": {
+      "oracle": false,
+      "route": "exact inferred source Wan tile copy; frozen F(edit) at unmatched changed cells",
+      "input": "source JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_copy_genuine_target": {
+      "oracle": true,
+      "route": "exact inferred source Wan tile copy; frozen F(edit) at unmatched changed cells",
+      "input": "genuine_target JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_copy_copy_repair": {
+      "oracle": false,
+      "route": "exact inferred source Wan tile copy; frozen F(edit) at unmatched changed cells",
+      "input": "copy_repair JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_copy_wrong_direction": {
+      "oracle": false,
+      "route": "exact inferred source Wan tile copy; frozen F(edit) at unmatched changed cells",
+      "input": "wrong_direction JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_copy_shuffled": {
+      "oracle": false,
+      "route": "exact inferred source Wan tile copy; frozen F(edit) at unmatched changed cells",
+      "input": "shuffled JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_local_source": {
+      "oracle": false,
+      "route": "same inferred source Wan tile copy; deterministic source-only local tile mean at unmatched cells; no F values",
+      "input": "source JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_local_genuine_target": {
+      "oracle": true,
+      "route": "same inferred source Wan tile copy; deterministic source-only local tile mean at unmatched cells; no F values",
+      "input": "genuine_target JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_local_copy_repair": {
+      "oracle": false,
+      "route": "same inferred source Wan tile copy; deterministic source-only local tile mean at unmatched cells; no F values",
+      "input": "copy_repair JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_local_wrong_direction": {
+      "oracle": false,
+      "route": "same inferred source Wan tile copy; deterministic source-only local tile mean at unmatched cells; no F values",
+      "input": "wrong_direction JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_local_shuffled": {
+      "oracle": false,
+      "route": "same inferred source Wan tile copy; deterministic source-only local tile mean at unmatched cells; no F values",
+      "input": "shuffled JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_residual_source": {
+      "oracle": false,
+      "route": "F(edit)+transport[A(source)-F(source)] at copied cells; F(edit) unmatched; exact source unchanged",
+      "input": "source JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_residual_genuine_target": {
+      "oracle": true,
+      "route": "F(edit)+transport[A(source)-F(source)] at copied cells; F(edit) unmatched; exact source unchanged",
+      "input": "genuine_target JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_residual_copy_repair": {
+      "oracle": false,
+      "route": "F(edit)+transport[A(source)-F(source)] at copied cells; F(edit) unmatched; exact source unchanged",
+      "input": "copy_repair JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_residual_wrong_direction": {
+      "oracle": false,
+      "route": "F(edit)+transport[A(source)-F(source)] at copied cells; F(edit) unmatched; exact source unchanged",
+      "input": "wrong_direction JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    },
+    "provenance_residual_shuffled": {
+      "oracle": false,
+      "route": "F(edit)+transport[A(source)-F(source)] at copied cells; F(edit) unmatched; exact source unchanged",
+      "input": "shuffled JEPA plus source JEPA and source Wan latent",
+      "scope": "exact token provenance; genuine encodings may fall back almost everywhere"
+    }
+  },
+  "renderer_seeds": [
+    13500,
+    13501
+  ],
+  "all_development_seeds": [
+    13500,
+    13501,
+    13502,
+    13503,
+    13504,
+    13505,
+    13506,
+    13507
+  ],
+  "decode_scenes": "renderer",
+  "local_radius": 2,
+  "algorithm": "Day11 development follow-up: transport source appearance using JEPA provenance.\n\nPREDECLARED METHODS (no optimizer; the original final CNN remains frozen).\nLet j_s/j_e be source/edited JEPA, z_s the normalized source Wan latent,\nand f_s=F(j_s), f_e=F(j_e). First identify unchanged cells by exact equality\nat the same coordinate. For every other cell q, require a UNIQUE exact\n1024-vector match j_e[q]=j_s[p], or classify q as unmatched. Multiple source\nmatches are an error, never an arbitrary nearest-neighbor choice. Hash keys\nonly accelerate lookup; full-vector equality verifies every match.\n\nEach JEPA cell corresponds to a 2x2 tile in the 48x48 Wan latent:\n  provenance_copy:     unchanged=z_s[q]; moved=z_s[p]; unmatched=f_e[q].\n  provenance_local:    unchanged=z_s[q]; moved=z_s[p]; unmatched=local(z_s).\n  provenance_residual: unchanged=z_s[q]; moved=f_e[q]+(z_s[p]-f_s[p]);\n                       unmatched=f_e[q].\nThe local comparator averages immutable source tiles in a radius-2 square,\nexcluding all changed destination cells AND inferred moved source cells.\nNo eligible local donor -> eligible global mean. No eligible global donor\n-> entire immutable source mean, explicitly counted (not claimed background).\nNo-F comparator values are independent of both F predictions.\n\nWHY: the previous z_s+F(j_e)-F(j_s) retains reconstruction residual/detail at\nthe old coordinates. These methods test moving that residual or the entire\nsource latent tile. Exact source values at unchanged cells prevent the\nprojector's spatial GroupNorm from changing unrelated conditioning latents.\n\nSCOPE: exact provenance is an editor-specific input channel, not learned\nsemantic correspondence or evidence of a uniquely JEPA advantage. Ordinary\ngenuine-target encodings can have no exact matches and then the learned arms\nfall back to F everywhere; this is advertised behavior, not an upper bound.\nContextual VAE tiles may carry background/seams. Exact latent preservation\ndoes not guarantee preserved decoded pixels, and no video rollout is tested.\n\nOPERATOR INPUTS ONLY: source JEPA, edited JEPA, source Wan latent, and the two\nfrozen F predictions. No displacement, selection, target mask/RGB, source RGB,\nor renderer metadata. The development CLI separately creates feature edits\nusing the existing Day10 API, then scores against privileged references.\n\nCLI evaluates all eight EXISTING development scenes and all five feature\nconditions. Initial CNN results are retained as comparators. Full follow-up\nlatent evidence is saved for every scene; combined renderer bundles are saved\nfor the fixed first two scenes. Optional decoding is explicitly scoped.\nOriginal training, evaluation, and rendering files are never modified.\n",
+  "training": "none; original fixed epoch150 CNN",
+  "runtime": {
+    "device": "cpu",
+    "threads": 4,
+    "python": "3.12.14",
+    "torch": "2.9.0+cpu",
+    "numpy": "2.3.5"
+  },
+  "aggregation": "Equal-scene means; per-metric valid scene counts; decoding subset explicit; no holdout claim",
+  "scenes": [
+    {
+      "scene": "dev_13500",
+      "seed": 13500,
+      "shift_px": 16,
+      "path": "analysis/dev_13500.npz",
+      "sha256": "9c66f5806b38301ff3d4c03ee439b22e635cce06c16f653e3d1ed9110473b16c",
+      "renderer_bundle": true,
+      "decoded": true,
+      "renderer_path": "scenes/dev_13500.npz",
+      "renderer_sha256": "91ad72b3a5d6390b89cd5d95ec3e94226ba298cea585db0e4b8739d3729992cf"
+    },
+    {
+      "scene": "dev_13501",
+      "seed": 13501,
+      "shift_px": -16,
+      "path": "analysis/dev_13501.npz",
+      "sha256": "c4dd68e6c5dd1721d168c6a165e9d8c9648a05938e04195a9cd1943016ba81f2",
+      "renderer_bundle": true,
+      "decoded": true,
+      "renderer_path": "scenes/dev_13501.npz",
+      "renderer_sha256": "60599d67224562ad15a044fd64b44c3cc02308d28af592c859c63741aed5b946"
+    },
+    {
+      "scene": "dev_13502",
+      "seed": 13502,
+      "shift_px": 32,
+      "path": "analysis/dev_13502.npz",
+      "sha256": "ae94ed37494921777c2ef7db7dba26a10416325dff0d4b1cd7892e478ff1c0d0",
+      "renderer_bundle": false,
+      "decoded": false
+    },
+    {
+      "scene": "dev_13503",
+      "seed": 13503,
+      "shift_px": -32,
+      "path": "analysis/dev_13503.npz",
+      "sha256": "420c814a22c39f4647870417d26b310ffc735d7edcbaa56fb1765d975ea35730",
+      "renderer_bundle": false,
+      "decoded": false
+    },
+    {
+      "scene": "dev_13504",
+      "seed": 13504,
+      "shift_px": 48,
+      "path": "analysis/dev_13504.npz",
+      "sha256": "0ac795098acd5b032c36c685d21f172e0102b1274437044f82df821150280b1b",
+      "renderer_bundle": false,
+      "decoded": false
+    },
+    {
+      "scene": "dev_13505",
+      "seed": 13505,
+      "shift_px": -48,
+      "path": "analysis/dev_13505.npz",
+      "sha256": "57ad6dd1fac4cccb9a231964b10e5a814a461e0e040064b194635e6f0c9bb336",
+      "renderer_bundle": false,
+      "decoded": false
+    },
+    {
+      "scene": "dev_13506",
+      "seed": 13506,
+      "shift_px": 80,
+      "path": "analysis/dev_13506.npz",
+      "sha256": "a9fefd17ca3d47b8426f2df409a3d3fca251033e56db42a6553a4886279c5e10",
+      "renderer_bundle": false,
+      "decoded": false
+    },
+    {
+      "scene": "dev_13507",
+      "seed": 13507,
+      "shift_px": -80,
+      "path": "analysis/dev_13507.npz",
+      "sha256": "a40a9725782b8ee0f3ee72806c04c8833ed48a664b8a043503dd011b30be7731",
+      "renderer_bundle": false,
+      "decoded": false
+    }
+  ],
+  "metrics_sha256": "a885bfd942a152a62e1053ac01c2a6748cfe4726ba0cd94708a1b82caaa45230",
+  "summary_sha256": "49831bbeddd297066e97ad95f38425cd855ef7bd90be169deafcd8510965ef75",
+  "provenance_counts_sha256": "a2385fa616ba3196880e15ac76eaf28dd0a435b243adbfb62109bedbe9dc1bef",
+  "renderer_scene_paths": [
+    "scenes/dev_13500.npz",
+    "scenes/dev_13501.npz"
+  ]
+}

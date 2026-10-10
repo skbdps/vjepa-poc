@@ -1,0 +1,172 @@
+{
+  "status": "passed",
+  "data_sha256": "845353a84577e3f30aa5c4ca6adf4cf7d9c742c413e5566d2b6bcad22ab5c7f3",
+  "manifest": {
+    "data_version": "day7_supervised_prompt_parts_v1",
+    "split_seeds": {
+      "train": {
+        "long_occlusion": [
+          7100,
+          7101,
+          7102,
+          7103,
+          7104,
+          7105,
+          7106,
+          7107,
+          7108,
+          7109,
+          7110,
+          7111
+        ],
+        "crossing": [
+          7200,
+          7201,
+          7202,
+          7203,
+          7204,
+          7205,
+          7206,
+          7207,
+          7208,
+          7209,
+          7210,
+          7211
+        ],
+        "scale_camera": [
+          7300,
+          7301,
+          7302,
+          7303,
+          7304,
+          7305,
+          7306,
+          7307,
+          7308,
+          7309,
+          7310,
+          7311
+        ]
+      },
+      "dev": {
+        "long_occlusion": [
+          9100,
+          9101,
+          9102
+        ],
+        "crossing": [
+          9200,
+          9201,
+          9202
+        ],
+        "scale_camera": [
+          9300,
+          9301,
+          9302
+        ]
+      },
+      "test": {
+        "long_occlusion": [
+          10100,
+          10101,
+          10102,
+          10103,
+          10104,
+          10105
+        ],
+        "crossing": [
+          10200,
+          10201,
+          10202,
+          10203,
+          10204,
+          10205
+        ],
+        "scale_camera": [
+          10300,
+          10301,
+          10302,
+          10303,
+          10304,
+          10305
+        ]
+      }
+    },
+    "n_clips": {
+      "train": 36,
+      "dev": 9,
+      "test": 18
+    },
+    "frames": 64,
+    "resolution": 384,
+    "tubelet": 2,
+    "grid": 24,
+    "transform_salt": "vjepa-poc/day7/spatial-and-parent-permutation/v1",
+    "transforms": "SHA256 bits independently select horizontal flip, vertical flip, and coherent A/B part-group permutation",
+    "sibling_groups_zero_based": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "inference_inputs": "Frozen RGB-derived features; normalized part prompts from frame zero; sibling-group relation",
+    "forbidden_inference_inputs": "Later masks; owner masks; seed; condition; motion parameters; transform metadata",
+    "learning": "Supervised learned head over frozen JEPA features; not self-supervised training",
+    "visibility": "Day4 >=70% pair coverage and >=65% each frame; absent iff zero target pixels in both frames",
+    "exclusions": "Tubelet zero and ambiguous visible slivers",
+    "scope": "Held-out seeds in the same three 2-D procedural trajectory families; no real-video/OOD claim"
+  },
+  "rendered_split": "train only",
+  "held_out_test_rendered": false,
+  "clips": [
+    {
+      "name": "train_long_occlusion_7100",
+      "transform": {
+        "horizontal_flip": true,
+        "vertical_flip": true,
+        "swap_parent_labels": true,
+        "sha256": "d911a3db1c5b7e80444eb2e1c93edf52faf67d8b96805f6be14a4d60a1dfc300"
+      },
+      "rgb_sha256": "6e145b3f989a7b6c5190dea9b11a8247c6f74d005047a61b034ce1dfd4758299",
+      "mask_sha256": "1ba142525171c3fb52c13c0fb1f5ebd663f3e6c55142135956dda9ea6fc74c51",
+      "visible": 78,
+      "absent": 42,
+      "ambiguous": 4,
+      "checks": "determinism; transform invertibility; exact Day4 scoring equivalence; valid frame-zero prompts; label separation"
+    },
+    {
+      "name": "train_crossing_7200",
+      "transform": {
+        "horizontal_flip": false,
+        "vertical_flip": true,
+        "swap_parent_labels": false,
+        "sha256": "72af6064f6f7c0b8293173d6ddc61abc34d174ed56437ae5540e3c25d521164d"
+      },
+      "rgb_sha256": "a7f87e1c5ac68ed3c84f4d74fc1f21a58fb973742f1812c35ff8aec8f4c49eb2",
+      "mask_sha256": "5090985770de14d0aae35eea45e77e9fea6e1c677dc93c3eb227b914da287f6e",
+      "visible": 117,
+      "absent": 3,
+      "ambiguous": 4,
+      "checks": "determinism; transform invertibility; exact Day4 scoring equivalence; valid frame-zero prompts; label separation"
+    },
+    {
+      "name": "train_scale_camera_7300",
+      "transform": {
+        "horizontal_flip": false,
+        "vertical_flip": true,
+        "swap_parent_labels": true,
+        "sha256": "ac1b9debba9c6a49c1dfdd3d681db5c2998884565173b0c1ca9b63d8fdb33d79"
+      },
+      "rgb_sha256": "1dd96a287f2201cba893e07fc46dc320ccc397ae593f0fa6d626372475ef4bf3",
+      "mask_sha256": "ccea2a0cd155f60e8b09de6d59aef099309d625177bcecaaf14f6cd48d5b6cbb",
+      "visible": 124,
+      "absent": 0,
+      "ambiguous": 0,
+      "checks": "determinism; transform invertibility; exact Day4 scoring equivalence; valid frame-zero prompts; label separation"
+    }
+  ]
+}

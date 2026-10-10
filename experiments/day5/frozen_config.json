@@ -1,0 +1,96 @@
+{
+  "source_digest": "fea39b4e91e3e02177503b1f3c0444c54f62966e8cf4a9844ae76833cbfc6314",
+  "source_hashes": {
+    "day5/run_parent_experiment.py": "2c1f7e3149bafe67d34ae1a00ca0b9af61478dc15c97651311a526d8fe4f9cfe",
+    "day5/parent_benchmark.py": "278fafc6f72a6e30ba574f7a214d12eca90e05bd2853dc0bf7d08eb94722bcb3",
+    "day4/benchmark.py": "292c7c26dfb2c2772fbc4f16e61abbb20a1b9df2c5132a8b1bc737d6ca8d9281",
+    "day4/real_video.py": "e6f6c0cfd12d62c8242d08f9cdb9308c6e7ed298a56f5e309d0c3f5ace98c251",
+    "day4/sam2_benchmark.py": "92f09331c303348c783b79169826f2dafcfb2db11c82772a57a2301fce5d8983",
+    "day4/part_editor.py": "7986672ff5cf0a9d2599f49cbbfc1f5e431f8ae651eed93692446e92781baebd"
+  },
+  "policy": {
+    "version": "day5_parent_intersection_v1",
+    "raw_mask": "M_i",
+    "parent_mask": "M_i AND P_own(i)",
+    "effective_raw": "M_i AND NOT union(other RAW child masks)",
+    "effective_parent": "effective_raw_i AND P_own(i)",
+    "parent_mapping": {
+      "1": 101,
+      "2": 101,
+      "3": 102,
+      "4": 102
+    },
+    "parent_ids": [
+      101,
+      102
+    ],
+    "child_ids": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sam2_states": "four children jointly; two parents jointly; states independent",
+    "prompt_frames": [
+      0
+    ],
+    "logit_threshold": 0.0,
+    "dilation": 0,
+    "parameter_search": "none",
+    "patch_presence_gates_edits": false,
+    "secondary_patch_threshold": 0.9404296875,
+    "primary_improvement": "strictly lower absolute wrong-other-car effective paint pixels",
+    "guardrails": "raw AND effective visible mean IoU and pooled recall losses each <=0.01 absolute",
+    "max_allowed_absolute_loss": 0.01,
+    "bootstrap": {
+      "unit": "paired clip",
+      "resamples": 2000,
+      "seed": 9514,
+      "interpretation": "descriptive; pooled ratios recomputed; no tuning"
+    }
+  },
+  "smoke_seeds": {
+    "long_occlusion": [
+      5100
+    ],
+    "crossing": [
+      5200
+    ],
+    "scale_camera": [
+      5300
+    ]
+  },
+  "test_seeds": {
+    "long_occlusion": [
+      6100,
+      6101,
+      6102,
+      6103
+    ],
+    "crossing": [
+      6200,
+      6201,
+      6202,
+      6203
+    ],
+    "scale_camera": [
+      6300,
+      6301,
+      6302,
+      6303
+    ]
+  },
+  "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+  "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+  "model_config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+  "checkpoint_url": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+  "precision": "float32",
+  "postprocessing": false,
+  "jpeg": {
+    "format": "JPEG",
+    "quality": 100,
+    "subsampling": 0
+  },
+  "renderer_protocol": "day5_visible_parent_v1",
+  "freeze_status": "fixed policy; no smoke or test parameter selection"
+}

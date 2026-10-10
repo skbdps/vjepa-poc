@@ -1,0 +1,35 @@
+/tmp/vjepa-day9-deps/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Error importing huggingface_hub.hf_api: No module named 'requests'
+TARGET_ENCODED image_13600 0 3.02
+TARGET_ENCODED image_13600 16 5.23
+TARGET_ENCODED image_13600 32 7.36
+TARGET_ENCODED image_13600 48 9.23
+TARGET_ENCODED image_13600 64 11.56
+TARGET_ENCODED image_13600 80 13.7
+IMAGE_COMPLETE image_13600 16.06
+TARGET_ENCODED image_13601 0 2.13
+TARGET_ENCODED image_13601 16 4.04
+TARGET_ENCODED image_13601 32 5.92
+TARGET_ENCODED image_13601 48 7.74
+TARGET_ENCODED image_13601 64 9.56
+TARGET_ENCODED image_13601 80 11.53
+IMAGE_COMPLETE image_13601 13.89
+TARGET_ENCODED image_13602 0 2.17
+TARGET_ENCODED image_13602 -16 4.66
+TARGET_ENCODED image_13602 -32 6.65
+TARGET_ENCODED image_13602 -48 8.53
+TARGET_ENCODED image_13602 -64 10.47
+TARGET_ENCODED image_13602 -80 12.73
+IMAGE_COMPLETE image_13602 14.86
+TARGET_ENCODED image_13603 0 2.21
+TARGET_ENCODED image_13603 -16 4.27
+TARGET_ENCODED image_13603 -32 6.74
+TARGET_ENCODED image_13603 -48 8.7
+TARGET_ENCODED image_13603 -64 10.76
+TARGET_ENCODED image_13603 -80 12.59
+IMAGE_COMPLETE image_13603 14.82
+BENCHMARK_COMPLETE True
+NATIVE_READOUT_FRESH_TEST_COMPLETE True

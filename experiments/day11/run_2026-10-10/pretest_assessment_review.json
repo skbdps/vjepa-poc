@@ -1,0 +1,20 @@
+{
+  "version": "day11_pretest_assessment_review_v1",
+  "source_commit": "2faa66cff4defcf159fab29ac236dc6646620f97",
+  "fresh_data_accessed": false,
+  "source_hashes": {
+    "experiments/day11/prepare_fresh.py": "8dd153da31daf9f5f6a3c63b0068e7d04201596cc15f84ccf1ab75cc8f550b8f",
+    "experiments/day11/evaluate_fresh.py": "220df2143b445060e67eb0c6ddbfc52c996fd23f6739e3d055569389ea0540eb",
+    "experiments/day11/render_fresh.py": "31c4b35584d5236747cb1555487b0839ba1dfd3acc575862acb934a5b85f7411",
+    "experiments/day11/assess_fresh.py": "a6d5e82ed580574603799475d32642f753dd075f4a855a3f8c0b04c3668f6490",
+    "experiments/day11/qualify_development.py": "dca51ecb8d307c00d05c20a737561d61a056a550c95af32784b46d5418a1ebc8"
+  },
+  "review": [
+    "All eight scenes must independently pass the fixed criteria",
+    "Missing evidence stays failed or indeterminate",
+    "Matched-scene comparator results retained separately",
+    "Exact assessment equality enforced before extraction, evaluation and rendering",
+    "Pure imports and synthetic invalid-configuration tests passed"
+  ],
+  "note": "No actual fresh test or model inference has occurred in this review."
+}

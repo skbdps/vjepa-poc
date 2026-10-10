@@ -1,0 +1,2281 @@
+{
+  "version": "day11_independent_fresh_latent_recount_v1",
+  "pass": true,
+  "evaluation_manifest_sha256": "4035bafcee499f1428b8f055beb2a8fdfcb29c584b678311d2ab387d318637ba",
+  "metrics_sha256": "2b2805d27e8b1c1d4219874eb9528a7e2fa53b480d16f90e1335f45b2ace219a",
+  "feature_manifest_sha256": "1d982deeae11422ec43f8d2c629aebd14f33841a458be2b752f12ccccba6443e",
+  "rows_recounted": 432,
+  "numeric_or_flag_values_compared": 13392,
+  "maximum_absolute_difference": 0.0,
+  "bundles_checked": 16,
+  "zero_edit_identity_checks": 64,
+  "no_F_cross_architecture_exact_checks": 40,
+  "all_scene_primary_latent_criteria_pass": true,
+  "primary_CNN_cases": [
+    {
+      "scene": "test_14000_dx+32",
+      "hole_ratio": 0.08286277777647372,
+      "destination_ratio": 0.02790660474118313,
+      "pass_both_latent_criteria": true
+    },
+    {
+      "scene": "test_14001_dx-32",
+      "hole_ratio": 0.1985237212257767,
+      "destination_ratio": 0.048293843494329886,
+      "pass_both_latent_criteria": true
+    },
+    {
+      "scene": "test_14002_dx+48",
+      "hole_ratio": 0.040868058203341516,
+      "destination_ratio": 0.01748359000778071,
+      "pass_both_latent_criteria": true
+    },
+    {
+      "scene": "test_14003_dx-48",
+      "hole_ratio": 0.03095267137335273,
+      "destination_ratio": 0.014208031440756816,
+      "pass_both_latent_criteria": true
+    },
+    {
+      "scene": "test_14004_dx+64",
+      "hole_ratio": 0.0346083031183642,
+      "destination_ratio": 0.03446610654803143,
+      "pass_both_latent_criteria": true
+    },
+    {
+      "scene": "test_14005_dx-64",
+      "hole_ratio": 0.047553191707292455,
+      "destination_ratio": 0.0724396431993784,
+      "pass_both_latent_criteria": true
+    },
+    {
+      "scene": "test_14006_dx+80",
+      "hole_ratio": 0.28508757962707615,
+      "destination_ratio": 0.13489626400122792,
+      "pass_both_latent_criteria": true
+    },
+    {
+      "scene": "test_14007_dx-80",
+      "hole_ratio": 0.18780934162903412,
+      "destination_ratio": 0.036312666365382724,
+      "pass_both_latent_criteria": true
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "scene": "test_14000_dx+32",
+      "translator": "cnn",
+      "primary": {
+        "source_hole": {
+          "mse": 0.03998594984742625,
+          "ratio": 0.08286277777647372
+        },
+        "destination": {
+          "mse": 0.011266707367659425,
+          "ratio": 0.02790660474118313
+        },
+        "distractor": {
+          "mse": 6.155457086000056e-07,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 1.7882882830957116e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.001233018954333314,
+          "ratio": 0.07593656881999285
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.05583399769485123,
+          "ratio": 0.11570464528200768
+        },
+        "destination": {
+          "mse": 0.014085046192321444,
+          "ratio": 0.03488737250589278
+        },
+        "distractor": {
+          "mse": 6.155457086000056e-07,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 1.7882882830957116e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0015167390715208247,
+          "ratio": 0.09340972454781776
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": -0.01584804784742498,
+        "destination": -0.0028183388246620193,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": -0.00028372011718751067
+      },
+      "primary_minus_no_F_balanced_ratio": -0.019911317635121807,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14000_dx+32",
+      "translator": "linear",
+      "primary": {
+        "source_hole": {
+          "mse": 0.04640852154083798,
+          "ratio": 0.09617225605610254
+        },
+        "destination": {
+          "mse": 0.014086756123065553,
+          "ratio": 0.0348916078481142
+        },
+        "distractor": {
+          "mse": 6.155457086000056e-07,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 1.7882882830957116e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0013858682726797958,
+          "ratio": 0.0853499300184688
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.05583399769485123,
+          "ratio": 0.11570464528200768
+        },
+        "destination": {
+          "mse": 0.014085046192321444,
+          "ratio": 0.03488737250589278
+        },
+        "distractor": {
+          "mse": 6.155457086000056e-07,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 1.7882882830957116e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0015167390715208247,
+          "ratio": 0.09340972454781776
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": -0.009425476154013249,
+        "destination": 1.7099307441093003e-06,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": -0.00013087079884102886
+      },
+      "primary_minus_no_F_balanced_ratio": -0.009764076941841865,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14001_dx-32",
+      "translator": "cnn",
+      "primary": {
+        "source_hole": {
+          "mse": 0.050271320872434154,
+          "ratio": 0.1985237212257767
+        },
+        "destination": {
+          "mse": 0.014364792230482913,
+          "ratio": 0.048293843494329886
+        },
+        "distractor": {
+          "mse": 1.7896337326740033e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 6.240520703886445e-07,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0011398447441039203,
+          "ratio": 0.11015511399103736
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.04377034075346564,
+          "ratio": 0.17285105652481575
+        },
+        "destination": {
+          "mse": 0.014304402825151776,
+          "ratio": 0.04809081678548625
+        },
+        "distractor": {
+          "mse": 1.7896337326740033e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 6.240520703886445e-07,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0010481903982340367,
+          "ratio": 0.1012975963604165
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": 0.006500980118968512,
+        "destination": 6.038940533113768e-05,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": 9.165434586988356e-05
+      },
+      "primary_minus_no_F_balanced_ratio": 0.012937845704902293,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14001_dx-32",
+      "translator": "linear",
+      "primary": {
+        "source_hole": {
+          "mse": 0.04732417070325208,
+          "ratio": 0.18688529183018016
+        },
+        "destination": {
+          "mse": 0.014169238155319473,
+          "ratio": 0.047636398698116214
+        },
+        "distractor": {
+          "mse": 1.7896337326740033e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 6.240520703886445e-07,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0010944985560299944,
+          "ratio": 0.10577283777124465
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.04377034075346564,
+          "ratio": 0.17285105652481575
+        },
+        "destination": {
+          "mse": 0.014304402825151776,
+          "ratio": 0.04809081678548625
+        },
+        "distractor": {
+          "mse": 1.7896337326740033e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 6.240520703886445e-07,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0010481903982340367,
+          "ratio": 0.1012975963604165
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": 0.0035538299497864384,
+        "destination": -0.0001351646698323026,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": 4.630815779595762e-05
+      },
+      "primary_minus_no_F_balanced_ratio": 0.006789908608997183,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14002_dx+48",
+      "translator": "cnn",
+      "primary": {
+        "source_hole": {
+          "mse": 0.024052306409006356,
+          "ratio": 0.040868058203341516
+        },
+        "destination": {
+          "mse": 0.008650513781354181,
+          "ratio": 0.01748359000778071
+        },
+        "distractor": {
+          "mse": 9.740145249131075e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 5.0070719477843846e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0012501174351027256,
+          "ratio": 0.041447162572282835
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.03362949943137251,
+          "ratio": 0.05714097919507379
+        },
+        "destination": {
+          "mse": 0.005173977734275983,
+          "ratio": 0.010457148292214682
+        },
+        "distractor": {
+          "mse": 9.740145249131075e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 5.0070719477843846e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0013742546807029312,
+          "ratio": 0.04556288518777002
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": -0.009577193022366152,
+        "destination": 0.0034765360470781987,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": -0.0001241372456002056
+      },
+      "primary_minus_no_F_balanced_ratio": -0.004623239638083122,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14002_dx+48",
+      "translator": "linear",
+      "primary": {
+        "source_hole": {
+          "mse": 0.04709002207171926,
+          "ratio": 0.08001219218224499
+        },
+        "destination": {
+          "mse": 0.005137936671633531,
+          "ratio": 0.010384305548001781
+        },
+        "distractor": {
+          "mse": 9.740145249131075e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 5.0070719477843846e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0017002938783371158,
+          "ratio": 0.05637258934022052
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.03362949943137251,
+          "ratio": 0.05714097919507379
+        },
+        "destination": {
+          "mse": 0.005173977734275983,
+          "ratio": 0.010457148292214682
+        },
+        "distractor": {
+          "mse": 9.740145249131075e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 5.0070719477843846e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0013742546807029312,
+          "ratio": 0.04556288518777002
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": 0.01346052264034675,
+        "destination": -3.604106264245167e-05,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": 0.0003260391976341846
+      },
+      "primary_minus_no_F_balanced_ratio": 0.011399185121479152,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14003_dx-48",
+      "translator": "cnn",
+      "primary": {
+        "source_hole": {
+          "mse": 0.01552278877260634,
+          "ratio": 0.03095267137335273
+        },
+        "destination": {
+          "mse": 0.008607287218189806,
+          "ratio": 0.014208031440756816
+        },
+        "distractor": {
+          "mse": 7.548447113400427e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 4.711696648754569e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0009095771464419622,
+          "ratio": 0.02734381009209258
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.021877059730682005,
+          "ratio": 0.0436231820440672
+        },
+        "destination": {
+          "mse": 0.011473082879452779,
+          "ratio": 0.01893859448877045
+        },
+        "distractor": {
+          "mse": 7.548447113400427e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 4.711696648754569e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.00116958440674601,
+          "ratio": 0.035160177484490344
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": -0.006354270958075666,
+        "destination": -0.0028657956612629723,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": -0.00026000726030404766
+      },
+      "primary_minus_no_F_balanced_ratio": -0.00870053685936405,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14003_dx-48",
+      "translator": "linear",
+      "primary": {
+        "source_hole": {
+          "mse": 0.019810390461218227,
+          "ratio": 0.03950221282441205
+        },
+        "destination": {
+          "mse": 0.011594286375255086,
+          "ratio": 0.019138664851875053
+        },
+        "distractor": {
+          "mse": 7.548447113400427e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 4.711696648754569e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0011197629264999807,
+          "ratio": 0.03366243856296689
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.021877059730682005,
+          "ratio": 0.0436231820440672
+        },
+        "destination": {
+          "mse": 0.011473082879452779,
+          "ratio": 0.01893859448877045
+        },
+        "distractor": {
+          "mse": 7.548447113400427e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 4.711696648754569e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.00116958440674601,
+          "ratio": 0.035160177484490344
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": -0.002066669269463778,
+        "destination": 0.00012120349580230748,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": -4.9821480246029165e-05
+      },
+      "primary_minus_no_F_balanced_ratio": -0.0019604494282752724,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14004_dx+64",
+      "translator": "cnn",
+      "primary": {
+        "source_hole": {
+          "mse": 0.019633762389482168,
+          "ratio": 0.0346083031183642
+        },
+        "destination": {
+          "mse": 0.013578330750947323,
+          "ratio": 0.03446610654803143
+        },
+        "distractor": {
+          "mse": 3.636563162645749e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 4.246815641536619e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0012101942661969802,
+          "ratio": 0.05890499933899081
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.015417028592271953,
+          "ratio": 0.027175494340894273
+        },
+        "destination": {
+          "mse": 0.016209772079234443,
+          "ratio": 0.04114553856800263
+        },
+        "distractor": {
+          "mse": 3.636563162645749e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 4.246815641536619e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0011771673397610826,
+          "ratio": 0.05729744662269096
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": 0.004216733797210215,
+        "destination": -0.0026314413282871197,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": 3.3026926435897634e-05
+      },
+      "primary_minus_no_F_balanced_ratio": 0.0003766883787493652,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14004_dx+64",
+      "translator": "linear",
+      "primary": {
+        "source_hole": {
+          "mse": 0.01897254009518733,
+          "ratio": 0.033442770953126484
+        },
+        "destination": {
+          "mse": 0.016262972463666564,
+          "ratio": 0.04128057800339905
+        },
+        "distractor": {
+          "mse": 3.636563162645749e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 4.246815641536619e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0012523488374141555,
+          "ratio": 0.06095683106472382
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.015417028592271953,
+          "ratio": 0.027175494340894273
+        },
+        "destination": {
+          "mse": 0.016209772079234443,
+          "ratio": 0.04114553856800263
+        },
+        "distractor": {
+          "mse": 3.636563162645749e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 4.246815641536619e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0011771673397610826,
+          "ratio": 0.05729744662269096
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": 0.003555511502915377,
+        "destination": 5.320038443212133e-05,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": 7.518149765307295e-05
+      },
+      "primary_minus_no_F_balanced_ratio": 0.003201158023814314,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14005_dx-64",
+      "translator": "cnn",
+      "primary": {
+        "source_hole": {
+          "mse": 0.013715689527575804,
+          "ratio": 0.047553191707292455
+        },
+        "destination": {
+          "mse": 0.01890054566740277,
+          "ratio": 0.0724396431993784
+        },
+        "distractor": {
+          "mse": 3.2738474140844755e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.849372785093255e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0010554148352252101,
+          "ratio": 0.07752001293057836
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.016937679997474704,
+          "ratio": 0.058724043175323024
+        },
+        "destination": {
+          "mse": 0.042736564917797266,
+          "ratio": 0.16379535113378135
+        },
+        "distractor": {
+          "mse": 3.2738474140844755e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.849372785093255e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0017130747937045632,
+          "ratio": 0.125825008069636
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": -0.0032219904698989003,
+        "destination": -0.023836019250394497,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": -0.0006576599584793531
+      },
+      "primary_minus_no_F_balanced_ratio": -0.05126327970121677,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14005_dx-64",
+      "translator": "linear",
+      "primary": {
+        "source_hole": {
+          "mse": 0.0191077265025968,
+          "ratio": 0.06624773618866654
+        },
+        "destination": {
+          "mse": 0.042696249510473724,
+          "ratio": 0.16364083529210427
+        },
+        "distractor": {
+          "mse": 3.2738474140844755e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.849372785093255e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0017648390912205006,
+          "ratio": 0.1296270855834711
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.016937679997474704,
+          "ratio": 0.058724043175323024
+        },
+        "destination": {
+          "mse": 0.042736564917797266,
+          "ratio": 0.16379535113378135
+        },
+        "distractor": {
+          "mse": 3.2738474140844755e-08,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.849372785093255e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0017130747937045632,
+          "ratio": 0.125825008069636
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": 0.0021700465051220953,
+        "destination": -4.031540732354205e-05,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": 5.1764297515937384e-05
+      },
+      "primary_minus_no_F_balanced_ratio": 0.003684588585833204,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14006_dx+80",
+      "translator": "cnn",
+      "primary": {
+        "source_hole": {
+          "mse": 0.061316872452534255,
+          "ratio": 0.28508757962707615
+        },
+        "destination": {
+          "mse": 0.027746411678215593,
+          "ratio": 0.13489626400122792
+        },
+        "distractor": {
+          "mse": 2.61534394456974e-07,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 2.0762862545130727e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0021057683839064935,
+          "ratio": 0.23355178815322275
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.07213207017300592,
+          "ratio": 0.335371920918363
+        },
+        "destination": {
+          "mse": 0.02375778927502144,
+          "ratio": 0.11550455789730216
+        },
+        "distractor": {
+          "mse": 2.61534394456974e-07,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 2.0762862545130727e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0022479887030164417,
+          "ratio": 0.2493255124116478
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": -0.010815197720471667,
+        "destination": 0.003988622403194152,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": -0.0001422203191099483
+      },
+      "primary_minus_no_F_balanced_ratio": -0.015446317593680536,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14006_dx+80",
+      "translator": "linear",
+      "primary": {
+        "source_hole": {
+          "mse": 0.05151224545111655,
+          "ratio": 0.23950180088168735
+        },
+        "destination": {
+          "mse": 0.023695374386812258,
+          "ratio": 0.1152011119838227
+        },
+        "distractor": {
+          "mse": 2.61534394456974e-07,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 2.0762862545130727e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0018171087111393887,
+          "ratio": 0.20153640447773344
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.07213207017300592,
+          "ratio": 0.335371920918363
+        },
+        "destination": {
+          "mse": 0.02375778927502144,
+          "ratio": 0.11550455789730216
+        },
+        "distractor": {
+          "mse": 2.61534394456974e-07,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 2.0762862545130727e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0022479887030164417,
+          "ratio": 0.2493255124116478
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": -0.02061982472188937,
+        "destination": -6.24148882091835e-05,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": -0.00043087999187705305
+      },
+      "primary_minus_no_F_balanced_ratio": -0.04808678297507757,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14007_dx-80",
+      "translator": "cnn",
+      "primary": {
+        "source_hole": {
+          "mse": 0.05570827192054127,
+          "ratio": 0.18780934162903412
+        },
+        "destination": {
+          "mse": 0.011722210419667277,
+          "ratio": 0.036312666365382724
+        },
+        "distractor": {
+          "mse": 1.6016571893637755e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 2.3131210132493286e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0020388877613560646,
+          "ratio": 0.11736404203413457
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.019196837995879505,
+          "ratio": 0.0647183152711646
+        },
+        "destination": {
+          "mse": 0.013424895863735027,
+          "ratio": 0.041587187658046976
+        },
+        "distractor": {
+          "mse": 1.6016571893637755e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 2.3131210132493286e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0010719780813395645,
+          "ratio": 0.06170603550748189
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": 0.03651143392466177,
+        "destination": -0.0017026854440677502,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": 0.0009669096800165001
+      },
+      "primary_minus_no_F_balanced_ratio": 0.05890825253260263,
+      "primary_both_edit_region_ratios_le_half": true
+    },
+    {
+      "scene": "test_14007_dx-80",
+      "translator": "linear",
+      "primary": {
+        "source_hole": {
+          "mse": 0.06377909433820816,
+          "ratio": 0.21501851169320116
+        },
+        "destination": {
+          "mse": 0.01368320481904993,
+          "ratio": 0.04238736838998497
+        },
+        "distractor": {
+          "mse": 1.6016571893637755e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 2.3131210132493286e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0023175493396074406,
+          "ratio": 0.1334045763897093
+        }
+      },
+      "no_F": {
+        "source_hole": {
+          "mse": 0.019196837995879505,
+          "ratio": 0.0647183152711646
+        },
+        "destination": {
+          "mse": 0.013424895863735027,
+          "ratio": 0.041587187658046976
+        },
+        "distractor": {
+          "mse": 1.6016571893637755e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 2.3131210132493286e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0010719780813395645,
+          "ratio": 0.06170603550748189
+        }
+      },
+      "primary_minus_no_F_mse": {
+        "source_hole": 0.04458225634232866,
+        "destination": 0.00025830895531490233,
+        "distractor": 0.0,
+        "background": 0.0,
+        "global": 0.001245571258267876
+      },
+      "primary_minus_no_F_balanced_ratio": 0.07555018857698725,
+      "primary_both_edit_region_ratios_le_half": true
+    }
+  ],
+  "equal_scene_method_means": {
+    "cnn": {
+      "true_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 1.0,
+        "source_hole": {
+          "mse": 0.3991578252520667,
+          "ratio": 1.0
+        },
+        "destination": {
+          "mse": 0.3731418241964342,
+          "ratio": 1.0
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.018819937661752127,
+          "ratio": 1.0
+        }
+      },
+      "true_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.0,
+        "source_hole": {
+          "mse": 0.0,
+          "ratio": 0.0
+        },
+        "destination": {
+          "mse": 0.0,
+          "ratio": 0.0
+        },
+        "distractor": {
+          "mse": 0.0,
+          "ratio": 0.0
+        },
+        "background": {
+          "mse": 0.0,
+          "ratio": 0.0
+        },
+        "global": {
+          "mse": 0.0,
+          "ratio": 0.0
+        }
+      },
+      "absolute_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.9431143208375307,
+        "source_hole": {
+          "mse": 0.35255140173767047,
+          "ratio": 0.9086740396087614
+        },
+        "destination": {
+          "mse": 0.36256212193835813,
+          "ratio": 0.9775546020662998
+        },
+        "distractor": {
+          "mse": 0.07740791778789345,
+          "ratio": 1062397.828117501
+        },
+        "background": {
+          "mse": 0.015079891545505037,
+          "ratio": 7082.875232429817
+        },
+        "global": {
+          "mse": 0.03370009483955238,
+          "ratio": 1.9818786267145998
+        }
+      },
+      "absolute_genuine_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.1545881316889552,
+        "source_hole": {
+          "mse": 0.02192028646569345,
+          "ratio": 0.06887866268911136
+        },
+        "destination": {
+          "mse": 0.07911252790790213,
+          "ratio": 0.240297600688799
+        },
+        "distractor": {
+          "mse": 0.07791345492684504,
+          "ratio": 1067658.1097338072
+        },
+        "background": {
+          "mse": 0.015170529449693392,
+          "ratio": 7150.5206570383325
+        },
+        "global": {
+          "mse": 0.018828363362164393,
+          "ratio": 1.2075921180954883
+        }
+      },
+      "absolute_copy_repair": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.18253712186928067,
+        "source_hole": {
+          "mse": 0.03502587027395082,
+          "ratio": 0.11353320558258895
+        },
+        "destination": {
+          "mse": 0.08186810258401768,
+          "ratio": 0.2515410381559724
+        },
+        "distractor": {
+          "mse": 0.0775037688466878,
+          "ratio": 1065267.0121708484
+        },
+        "background": {
+          "mse": 0.015127684611796532,
+          "ratio": 7104.692160848131
+        },
+        "global": {
+          "mse": 0.01911436734040517,
+          "ratio": 1.228771147023455
+        }
+      },
+      "absolute_wrong_direction": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.687896588059485,
+        "source_hole": {
+          "mse": 0.1043174846582825,
+          "ratio": 0.28739561008719977
+        },
+        "destination": {
+          "mse": 0.4087168268525355,
+          "ratio": 1.0883975660317702
+        },
+        "distractor": {
+          "mse": 0.07737501486194685,
+          "ratio": 1061128.285632318
+        },
+        "background": {
+          "mse": 0.02170564480601572,
+          "ratio": 9442.050548911157
+        },
+        "global": {
+          "mse": 0.037111890126926395,
+          "ratio": 2.175985522192256
+        }
+      },
+      "absolute_shuffled": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6199864409620055,
+        "source_hole": {
+          "mse": 0.06689120729739634,
+          "ratio": 0.19458736857760456
+        },
+        "destination": {
+          "mse": 0.3829443139143735,
+          "ratio": 1.0453855133464065
+        },
+        "distractor": {
+          "mse": 0.36978243005399725,
+          "ratio": 5231986.880860631
+        },
+        "background": {
+          "mse": 0.05289820198888879,
+          "ratio": 27935.61315317895
+        },
+        "global": {
+          "mse": 0.07065611305018615,
+          "ratio": 4.516212677524557
+        }
+      },
+      "residual_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 1.0,
+        "source_hole": {
+          "mse": 0.3991578252520667,
+          "ratio": 1.0
+        },
+        "destination": {
+          "mse": 0.3731418241964342,
+          "ratio": 1.0
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.018819937661752127,
+          "ratio": 1.0
+        }
+      },
+      "residual_genuine_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.2682351360479104,
+        "source_hole": {
+          "mse": 0.09216673680819269,
+          "ratio": 0.2671675483506147
+        },
+        "destination": {
+          "mse": 0.09153810381816582,
+          "ratio": 0.2693027237452061
+        },
+        "distractor": {
+          "mse": 0.0006802189232760561,
+          "ratio": 9660.054114776174
+        },
+        "background": {
+          "mse": 0.0002318193897084067,
+          "ratio": 107.91844991957933
+        },
+        "global": {
+          "mse": 0.004959723868940587,
+          "ratio": 0.30879574487388567
+        }
+      },
+      "residual_copy_repair": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.30109837234771103,
+        "source_hole": {
+          "mse": 0.10908453221175897,
+          "ratio": 0.32296002125844875
+        },
+        "destination": {
+          "mse": 0.09365467979858318,
+          "ratio": 0.27923672343697337
+        },
+        "distractor": {
+          "mse": 1.5408666524354405e-05,
+          "ratio": 141.62809875540475
+        },
+        "background": {
+          "mse": 0.00010152236336760117,
+          "ratio": 48.8779082052505
+        },
+        "global": {
+          "mse": 0.005198971093939295,
+          "ratio": 0.3293116135338856
+        }
+      },
+      "residual_wrong_direction": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.8086528062635412,
+        "source_hole": {
+          "mse": 0.17960706296748566,
+          "ratio": 0.5006059752437821
+        },
+        "destination": {
+          "mse": 0.4193157945834475,
+          "ratio": 1.1166996372833002
+        },
+        "distractor": {
+          "mse": 1.5047938183339003e-05,
+          "ratio": 110.40426958781
+        },
+        "background": {
+          "mse": 0.006918785713962929,
+          "ratio": 2496.8755180677617
+        },
+        "global": {
+          "mse": 0.023349012637063207,
+          "ratio": 1.2901561271181166
+        }
+      },
+      "residual_shuffled": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.7538974649822195,
+        "source_hole": {
+          "mse": 0.14462431997798372,
+          "ratio": 0.4175910351544084
+        },
+        "destination": {
+          "mse": 0.39935514479692397,
+          "ratio": 1.0902038948100305
+        },
+        "distractor": {
+          "mse": 0.3516854728841329,
+          "ratio": 4982580.341512888
+        },
+        "background": {
+          "mse": 0.04592062710056818,
+          "ratio": 24710.80119775504
+        },
+        "global": {
+          "mse": 0.06624089362789848,
+          "ratio": 4.225929122661947
+        }
+      },
+      "provenance_copy_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 1.0,
+        "source_hole": {
+          "mse": 0.3991578252520667,
+          "ratio": 1.0
+        },
+        "destination": {
+          "mse": 0.3731418241964342,
+          "ratio": 1.0
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.018819937661752127,
+          "ratio": 1.0
+        }
+      },
+      "provenance_copy_genuine_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.1545881316889552,
+        "source_hole": {
+          "mse": 0.02192028646569345,
+          "ratio": 0.06887866268911136
+        },
+        "destination": {
+          "mse": 0.07911252790790213,
+          "ratio": 0.240297600688799
+        },
+        "distractor": {
+          "mse": 0.07791345492684504,
+          "ratio": 1067658.1097338072
+        },
+        "background": {
+          "mse": 0.015170529449693392,
+          "ratio": 7150.5206570383325
+        },
+        "global": {
+          "mse": 0.018828363362164393,
+          "ratio": 1.2075921180954883
+        }
+      },
+      "provenance_copy_copy_repair": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.08641701324938805,
+        "source_hole": {
+          "mse": 0.03502587027395082,
+          "ratio": 0.11353320558258895
+        },
+        "destination": {
+          "mse": 0.01764569147087377,
+          "ratio": 0.05930082091618716
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0014486660647221386,
+          "ratio": 0.09799708104977489
+        }
+      },
+      "provenance_copy_wrong_direction": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.7006967735501431,
+        "source_hole": {
+          "mse": 0.11663968537995585,
+          "ratio": 0.31605562595475384
+        },
+        "destination": {
+          "mse": 0.40682684792681784,
+          "ratio": 1.0853379211455325
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 0.008136619452611871,
+          "ratio": 2801.0563054604204
+        },
+        "global": {
+          "mse": 0.022842753910410487,
+          "ratio": 1.238518559789328
+        }
+      },
+      "provenance_copy_shuffled": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6885471646555787,
+        "source_hole": {
+          "mse": 0.10013283170838742,
+          "ratio": 0.2774231852567081
+        },
+        "destination": {
+          "mse": 0.4030814436265145,
+          "ratio": 1.0996711440544493
+        },
+        "distractor": {
+          "mse": 0.3934319717501568,
+          "ratio": 5575792.856823311
+        },
+        "background": {
+          "mse": 0.07678852999914569,
+          "ratio": 40367.187956027534
+        },
+        "global": {
+          "mse": 0.0944794105538661,
+          "ratio": 6.0105975076048095
+        }
+      },
+      "provenance_local_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 1.0,
+        "source_hole": {
+          "mse": 0.3991578252520667,
+          "ratio": 1.0
+        },
+        "destination": {
+          "mse": 0.3731418241964342,
+          "ratio": 1.0
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.018819937661752127,
+          "ratio": 1.0
+        }
+      },
+      "provenance_local_genuine_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.5679699451948625,
+        "source_hole": {
+          "mse": 0.04039841661724007,
+          "ratio": 0.12265832087634881
+        },
+        "destination": {
+          "mse": 0.37378213321065795,
+          "ratio": 1.0132815695133763
+        },
+        "distractor": {
+          "mse": 0.3537597005652803,
+          "ratio": 4953657.151908973
+        },
+        "background": {
+          "mse": 0.029489601241472492,
+          "ratio": 16062.367372279954
+        },
+        "global": {
+          "mse": 0.04775258604759558,
+          "ratio": 3.0528971446236204
+        }
+      },
+      "provenance_local_copy_repair": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.08435726275507541,
+        "source_hole": {
+          "mse": 0.034849314296125436,
+          "ratio": 0.10941370459396366
+        },
+        "destination": {
+          "mse": 0.01764569147087377,
+          "ratio": 0.05930082091618716
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0014148721843781817,
+          "ratio": 0.0961980482739939
+        }
+      },
+      "provenance_local_wrong_direction": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6885930361534783,
+        "source_hole": {
+          "mse": 0.11230139986704742,
+          "ratio": 0.30207077103388735
+        },
+        "destination": {
+          "mse": 0.4033087286761947,
+          "ratio": 1.0751153012730694
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 0.008136619452611871,
+          "ratio": 2801.0563054604204
+        },
+        "global": {
+          "mse": 0.02264795627759751,
+          "ratio": 1.2259206997351135
+        }
+      },
+      "provenance_local_shuffled": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6911630799153609,
+        "source_hole": {
+          "mse": 0.10184287837074871,
+          "ratio": 0.28228770270427883
+        },
+        "destination": {
+          "mse": 0.4033431069814406,
+          "ratio": 1.1000384571264428
+        },
+        "distractor": {
+          "mse": 0.3942653593513594,
+          "ratio": 5569517.700951831
+        },
+        "background": {
+          "mse": 0.07748540653459268,
+          "ratio": 40727.71502181174
+        },
+        "global": {
+          "mse": 0.09513029079111492,
+          "ratio": 6.082304493834355
+        }
+      },
+      "provenance_residual_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 1.0,
+        "source_hole": {
+          "mse": 0.3991578252520667,
+          "ratio": 1.0
+        },
+        "destination": {
+          "mse": 0.3731418241964342,
+          "ratio": 1.0
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.018819937661752127,
+          "ratio": 1.0
+        }
+      },
+      "provenance_residual_genuine_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.1545881316889552,
+        "source_hole": {
+          "mse": 0.02192028646569345,
+          "ratio": 0.06887866268911136
+        },
+        "destination": {
+          "mse": 0.07911252790790213,
+          "ratio": 0.240297600688799
+        },
+        "distractor": {
+          "mse": 0.07791345492684504,
+          "ratio": 1067658.1097338072
+        },
+        "background": {
+          "mse": 0.015170529449693392,
+          "ratio": 7150.5206570383325
+        },
+        "global": {
+          "mse": 0.018828363362164393,
+          "ratio": 1.2075921180954883
+        }
+      },
+      "provenance_residual_copy_repair": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.08089202465367391,
+        "source_hole": {
+          "mse": 0.03502587027395082,
+          "ratio": 0.11353320558258895
+        },
+        "destination": {
+          "mse": 0.014354599889239912,
+          "ratio": 0.04825084372475888
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.001367852940833334,
+          "ratio": 0.09277793724154151
+        }
+      },
+      "provenance_residual_wrong_direction": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.7067004628483906,
+        "source_hole": {
+          "mse": 0.12183251223921172,
+          "ratio": 0.3280630045512486
+        },
+        "destination": {
+          "mse": 0.40682684792681784,
+          "ratio": 1.0853379211455325
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 0.007829738964760165,
+          "ratio": 2667.498244874047
+        },
+        "global": {
+          "mse": 0.022677495270479835,
+          "ratio": 1.2243100241400795
+        }
+      },
+      "provenance_residual_shuffled": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6674950979086299,
+        "source_hole": {
+          "mse": 0.08084847038957917,
+          "ratio": 0.22868405128163055
+        },
+        "destination": {
+          "mse": 0.40605275403003216,
+          "ratio": 1.1063061445356293
+        },
+        "distractor": {
+          "mse": 0.3900395031142853,
+          "ratio": 5622307.916830244
+        },
+        "background": {
+          "mse": 0.060824201170423114,
+          "ratio": 32115.452222180153
+        },
+        "global": {
+          "mse": 0.07956034276965418,
+          "ratio": 5.074757371051411
+        }
+      }
+    },
+    "linear": {
+      "true_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 1.0,
+        "source_hole": {
+          "mse": 0.3991578252520667,
+          "ratio": 1.0
+        },
+        "destination": {
+          "mse": 0.3731418241964342,
+          "ratio": 1.0
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.018819937661752127,
+          "ratio": 1.0
+        }
+      },
+      "true_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.0,
+        "source_hole": {
+          "mse": 0.0,
+          "ratio": 0.0
+        },
+        "destination": {
+          "mse": 0.0,
+          "ratio": 0.0
+        },
+        "distractor": {
+          "mse": 0.0,
+          "ratio": 0.0
+        },
+        "background": {
+          "mse": 0.0,
+          "ratio": 0.0
+        },
+        "global": {
+          "mse": 0.0,
+          "ratio": 0.0
+        }
+      },
+      "absolute_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.8767876686444739,
+        "source_hole": {
+          "mse": 0.3062965364389157,
+          "ratio": 0.7919126486275241
+        },
+        "destination": {
+          "mse": 0.3585622289042403,
+          "ratio": 0.9616626886614237
+        },
+        "distractor": {
+          "mse": 0.0990313163888579,
+          "ratio": 1284837.649741606
+        },
+        "background": {
+          "mse": 0.019896054933458005,
+          "ratio": 9329.234956239841
+        },
+        "global": {
+          "mse": 0.03751776018741064,
+          "ratio": 2.223277223174921
+        }
+      },
+      "absolute_genuine_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.19557562213350227,
+        "source_hole": {
+          "mse": 0.02728690783300301,
+          "ratio": 0.08413132817422603
+        },
+        "destination": {
+          "mse": 0.1061120237703961,
+          "ratio": 0.3070199160927785
+        },
+        "distractor": {
+          "mse": 0.09951442324097375,
+          "ratio": 1282277.8736480016
+        },
+        "background": {
+          "mse": 0.0200460506313937,
+          "ratio": 9404.709165395236
+        },
+        "global": {
+          "mse": 0.024672143830906455,
+          "ratio": 1.5598574678732262
+        }
+      },
+      "absolute_copy_repair": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.216298484041053,
+        "source_hole": {
+          "mse": 0.03925058889551705,
+          "ratio": 0.11959784657620266
+        },
+        "destination": {
+          "mse": 0.10731548268344825,
+          "ratio": 0.31299912150590337
+        },
+        "distractor": {
+          "mse": 0.0990313163888579,
+          "ratio": 1284837.649741606
+        },
+        "background": {
+          "mse": 0.019896054933458005,
+          "ratio": 9329.234956239841
+        },
+        "global": {
+          "mse": 0.024914518039724977,
+          "ratio": 1.5726362475302211
+        }
+      },
+      "absolute_wrong_direction": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6524788662639409,
+        "source_hole": {
+          "mse": 0.0915950362645907,
+          "ratio": 0.2456579223502341
+        },
+        "destination": {
+          "mse": 0.39915066037374136,
+          "ratio": 1.0592998101776478
+        },
+        "distractor": {
+          "mse": 0.0990313163888579,
+          "ratio": 1284837.649741606
+        },
+        "background": {
+          "mse": 0.025627333300819385,
+          "ratio": 11320.677219249807
+        },
+        "global": {
+          "mse": 0.04061150352341279,
+          "ratio": 2.400153671261307
+        }
+      },
+      "absolute_shuffled": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6508645281034152,
+        "source_hole": {
+          "mse": 0.08795341011811637,
+          "ratio": 0.24975351457942077
+        },
+        "destination": {
+          "mse": 0.3846707463518607,
+          "ratio": 1.0519755416274097
+        },
+        "distractor": {
+          "mse": 0.3776380372135206,
+          "ratio": 5114881.84944831
+        },
+        "background": {
+          "mse": 0.07327811673851078,
+          "ratio": 37752.373042965926
+        },
+        "global": {
+          "mse": 0.09016467197258059,
+          "ratio": 5.730676459475713
+        }
+      },
+      "residual_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 1.0,
+        "source_hole": {
+          "mse": 0.3991578252520667,
+          "ratio": 1.0
+        },
+        "destination": {
+          "mse": 0.3731418241964342,
+          "ratio": 1.0
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.018819937661752127,
+          "ratio": 1.0
+        }
+      },
+      "residual_genuine_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.31927462190983924,
+        "source_hole": {
+          "mse": 0.11169682978392384,
+          "ratio": 0.3083861077873038
+        },
+        "destination": {
+          "mse": 0.11736045096446497,
+          "ratio": 0.3301631360323746
+        },
+        "distractor": {
+          "mse": 0.0007710596832409861,
+          "ratio": 12653.180674705178
+        },
+        "background": {
+          "mse": 0.00021170265600256238,
+          "ratio": 93.13393585476682
+        },
+        "global": {
+          "mse": 0.005985008579567878,
+          "ratio": 0.3473043281879758
+        }
+      },
+      "residual_copy_repair": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.33888508980486043,
+        "source_hole": {
+          "mse": 0.12201051816564319,
+          "ratio": 0.342863788985018
+        },
+        "destination": {
+          "mse": 0.11814464412011434,
+          "ratio": 0.33490639062470284
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.005994421562402727,
+          "ratio": 0.35036419070632274
+        }
+      },
+      "residual_wrong_direction": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.7906361328129944,
+        "source_hole": {
+          "mse": 0.18360492724780075,
+          "ratio": 0.4912057200672168
+        },
+        "destination": {
+          "mse": 0.4099510079800692,
+          "ratio": 1.090066545558772
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 0.005457800524734327,
+          "ratio": 1870.2843348301726
+        },
+        "global": {
+          "mse": 0.021656122196515033,
+          "ratio": 1.1835789184985455
+        }
+      },
+      "residual_shuffled": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.7911804984505337,
+        "source_hole": {
+          "mse": 0.17052239817354053,
+          "ratio": 0.46856021724893504
+        },
+        "destination": {
+          "mse": 0.40521324971267403,
+          "ratio": 1.1138007796521325
+        },
+        "distractor": {
+          "mse": 0.28063633242161773,
+          "ratio": 3569914.3258515117
+        },
+        "background": {
+          "mse": 0.06355169442459195,
+          "ratio": 32484.573914907138
+        },
+        "global": {
+          "mse": 0.08120286467904783,
+          "ratio": 5.111431114232599
+        }
+      },
+      "provenance_copy_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 1.0,
+        "source_hole": {
+          "mse": 0.3991578252520667,
+          "ratio": 1.0
+        },
+        "destination": {
+          "mse": 0.3731418241964342,
+          "ratio": 1.0
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.018819937661752127,
+          "ratio": 1.0
+        }
+      },
+      "provenance_copy_genuine_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.19557562213350227,
+        "source_hole": {
+          "mse": 0.02728690783300301,
+          "ratio": 0.08413132817422603
+        },
+        "destination": {
+          "mse": 0.1061120237703961,
+          "ratio": 0.3070199160927785
+        },
+        "distractor": {
+          "mse": 0.09951442324097375,
+          "ratio": 1282277.8736480016
+        },
+        "background": {
+          "mse": 0.0200460506313937,
+          "ratio": 9404.709165395236
+        },
+        "global": {
+          "mse": 0.024672143830906455,
+          "ratio": 1.5598574678732262
+        }
+      },
+      "provenance_copy_copy_repair": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.0894493337461949,
+        "source_hole": {
+          "mse": 0.03925058889551705,
+          "ratio": 0.11959784657620266
+        },
+        "destination": {
+          "mse": 0.01764569147087377,
+          "ratio": 0.05930082091618716
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.001555800808989806,
+          "ratio": 0.10083018690086124
+        }
+      },
+      "provenance_copy_wrong_direction": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6896472920324117,
+        "source_hole": {
+          "mse": 0.11535857125964386,
+          "ratio": 0.3086427789753817
+        },
+        "destination": {
+          "mse": 0.40139150718828337,
+          "ratio": 1.0706518050894416
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 0.008136619452611871,
+          "ratio": 2801.0563054604204
+        },
+        "global": {
+          "mse": 0.022709603558037646,
+          "ratio": 1.2266336554126323
+        }
+      },
+      "provenance_copy_shuffled": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.687276372656886,
+        "source_hole": {
+          "mse": 0.0995594237828961,
+          "ratio": 0.276193225600891
+        },
+        "destination": {
+          "mse": 0.40254702443552215,
+          "ratio": 1.098359519712881
+        },
+        "distractor": {
+          "mse": 0.39318697879808084,
+          "ratio": 5563406.11293059
+        },
+        "background": {
+          "mse": 0.07680518244148841,
+          "ratio": 40359.47682023384
+        },
+        "global": {
+          "mse": 0.09447476662911071,
+          "ratio": 6.009490267631707
+        }
+      },
+      "provenance_local_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 1.0,
+        "source_hole": {
+          "mse": 0.3991578252520667,
+          "ratio": 1.0
+        },
+        "destination": {
+          "mse": 0.3731418241964342,
+          "ratio": 1.0
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.018819937661752127,
+          "ratio": 1.0
+        }
+      },
+      "provenance_local_genuine_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.5679699451948625,
+        "source_hole": {
+          "mse": 0.04039841661724007,
+          "ratio": 0.12265832087634881
+        },
+        "destination": {
+          "mse": 0.37378213321065795,
+          "ratio": 1.0132815695133763
+        },
+        "distractor": {
+          "mse": 0.3537597005652803,
+          "ratio": 4953657.151908973
+        },
+        "background": {
+          "mse": 0.029489601241472492,
+          "ratio": 16062.367372279954
+        },
+        "global": {
+          "mse": 0.04775258604759558,
+          "ratio": 3.0528971446236204
+        }
+      },
+      "provenance_local_copy_repair": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.08435726275507541,
+        "source_hole": {
+          "mse": 0.034849314296125436,
+          "ratio": 0.10941370459396366
+        },
+        "destination": {
+          "mse": 0.01764569147087377,
+          "ratio": 0.05930082091618716
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0014148721843781817,
+          "ratio": 0.0961980482739939
+        }
+      },
+      "provenance_local_wrong_direction": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6885930361534783,
+        "source_hole": {
+          "mse": 0.11230139986704742,
+          "ratio": 0.30207077103388735
+        },
+        "destination": {
+          "mse": 0.4033087286761947,
+          "ratio": 1.0751153012730694
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 0.008136619452611871,
+          "ratio": 2801.0563054604204
+        },
+        "global": {
+          "mse": 0.02264795627759751,
+          "ratio": 1.2259206997351135
+        }
+      },
+      "provenance_local_shuffled": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6911630799153609,
+        "source_hole": {
+          "mse": 0.10184287837074871,
+          "ratio": 0.28228770270427883
+        },
+        "destination": {
+          "mse": 0.4033431069814406,
+          "ratio": 1.1000384571264428
+        },
+        "distractor": {
+          "mse": 0.3942653593513594,
+          "ratio": 5569517.700951831
+        },
+        "background": {
+          "mse": 0.07748540653459268,
+          "ratio": 40727.71502181174
+        },
+        "global": {
+          "mse": 0.09513029079111492,
+          "ratio": 6.082304493834355
+        }
+      },
+      "provenance_residual_source": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 1.0,
+        "source_hole": {
+          "mse": 0.3991578252520667,
+          "ratio": 1.0
+        },
+        "destination": {
+          "mse": 0.3731418241964342,
+          "ratio": 1.0
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.018819937661752127,
+          "ratio": 1.0
+        }
+      },
+      "provenance_residual_genuine_target": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.19557562213350227,
+        "source_hole": {
+          "mse": 0.02728690783300301,
+          "ratio": 0.08413132817422603
+        },
+        "destination": {
+          "mse": 0.1061120237703961,
+          "ratio": 0.3070199160927785
+        },
+        "distractor": {
+          "mse": 0.09951442324097375,
+          "ratio": 1282277.8736480016
+        },
+        "background": {
+          "mse": 0.0200460506313937,
+          "ratio": 9404.709165395236
+        },
+        "global": {
+          "mse": 0.024672143830906455,
+          "ratio": 1.5598574678732262
+        }
+      },
+      "provenance_residual_copy_repair": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.08945897770156497,
+        "source_hole": {
+          "mse": 0.03925058889551705,
+          "ratio": 0.11959784657620266
+        },
+        "destination": {
+          "mse": 0.017665752313159516,
+          "ratio": 0.05932010882692728
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 3.077088080551948e-06,
+          "ratio": 1.0
+        },
+        "global": {
+          "mse": 0.0015565337016160464,
+          "ratio": 0.10083533665106731
+        }
+      },
+      "provenance_residual_wrong_direction": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.6896702114575713,
+        "source_hole": {
+          "mse": 0.11542384493482391,
+          "ratio": 0.308688617825701
+        },
+        "destination": {
+          "mse": 0.40139150718828337,
+          "ratio": 1.0706518050894416
+        },
+        "distractor": {
+          "mse": 1.7264729790532284e-06,
+          "ratio": 1.0
+        },
+        "background": {
+          "mse": 0.008130825713941608,
+          "ratio": 2797.188587106118
+        },
+        "global": {
+          "mse": 0.022708117073939924,
+          "ratio": 1.2266094299572323
+        }
+      },
+      "provenance_residual_shuffled": {
+        "scene_count": 8,
+        "balanced_edit_ratio": 0.686351511262685,
+        "source_hole": {
+          "mse": 0.09929902317067382,
+          "ratio": 0.27465522220310534
+        },
+        "destination": {
+          "mse": 0.4020453754536223,
+          "ratio": 1.0980478003222647
+        },
+        "distractor": {
+          "mse": 0.3942031273625,
+          "ratio": 5579070.49260199
+        },
+        "background": {
+          "mse": 0.07702755571274074,
+          "ratio": 40468.59022879153
+        },
+        "global": {
+          "mse": 0.09469433389691877,
+          "ratio": 6.020304856611533
+        }
+      }
+    }
+  },
+  "scope": "Independent saved-array MSE recount and mask reconstruction; no encoder, translator, VAE, or diffusion execution. Latent criteria alone are not the full frozen engineering gate. All eight cases retained."
+}

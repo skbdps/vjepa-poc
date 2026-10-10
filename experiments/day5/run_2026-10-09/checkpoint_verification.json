@@ -1,0 +1,17 @@
+{
+  "verification": "Completed archive transfer, content inventory and independent dense audit verified; this file records the durable checkpoint.",
+  "date": "2026-10-09",
+  "gpu_run_archive_sha256": "a362dc497793cb45727283acd591fbe07c53fb3006e25f8f58b2591e6d6ffd7e",
+  "gpu_run_archive_bytes": 1294366,
+  "original_outer_download_sha256": "df0852e281aa3d91d88c9640338e908c5d12ff113a5bf07ef2be878ad1f3fd89",
+  "source_freeze_commit": "de419ad916e57e04271c14fd830a8a52022b764e",
+  "editor_source_commit": "c55f436f9abce93b35b511e67f41e1140f271445",
+  "executed_notebook_sha256": "a8648eeded5d8f7f3c565a5ba35e1c943e43f4bdffe9b6ae079f01215d3c45b1",
+  "executed_notebook_cells": 23,
+  "executed_notebook_error_outputs": 0,
+  "notebook_source_path": "experiments/day4/VJEPA_Persistent_Parts_Research.ipynb",
+  "notebook_outputs_policy": "Executed outputs preserved outside git; source notebook has all outputs and execution counts stripped.",
+  "independent_dense_test_audit": "independent_audit.json",
+  "browser_validation": "../EDITOR_VALIDATION.md",
+  "day6_status": "One post-hoc cached alternative failed all four guards; no fresh GPU run."
+}

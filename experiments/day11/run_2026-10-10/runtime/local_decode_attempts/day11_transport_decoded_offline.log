@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day11/transport.py", line 440, in <module>
+    main()
+  File "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day11/transport.py", line 435, in main
+    evaluate(args.checkpoint, args.cache_root, args.target_root, args.baseline_root, args.out,
+  File "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day11/transport.py", line 276, in evaluate
+    raise ValueError("Use an empty new output directory; previous evidence is never overwritten")
+ValueError: Use an empty new output directory; previous evidence is never overwritten

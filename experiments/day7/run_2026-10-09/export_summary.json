@@ -1,0 +1,38 @@
+{
+  "compact_directory": "compact",
+  "compact_manifest_sha256": "27dda6e74696d1275b54cebb10ffa6492b7045cf09ea3f5346bc233f6ed0dad2",
+  "compact_payload_bytes": 10567251,
+  "compact_predictions_array_exact": 216,
+  "counts": {
+    "checkpoint_paths": [
+      "models/coordinate_only/1701/best.pt",
+      "models/coordinate_only/1702/best.pt",
+      "models/coordinate_only/1703/best.pt",
+      "models/predictive/1701/best.pt",
+      "models/predictive/1702/best.pt",
+      "models/predictive/1703/best.pt",
+      "models/retrieval_only/1701/best.pt",
+      "models/retrieval_only/1702/best.pt",
+      "models/retrieval_only/1703/best.pt"
+    ],
+    "completed_epoch_curve_rows": 270,
+    "future_diagnostic_rows": 8700,
+    "held_out_clips": 18,
+    "independent_analysis": [
+      "analysis/independent_analysis.json"
+    ],
+    "mechanism_diagnostic_rows": 216,
+    "methods": 12,
+    "primary_prediction_files": 216,
+    "primary_prediction_rows": 26784,
+    "selected_checkpoints": 9
+  },
+  "format": "day7_artifact_export_v1",
+  "full_archive": "full_run.zip",
+  "full_archive_bytes": 114953121,
+  "full_archive_sha256": "bf00800fb0c767b9500aeff00be901bee063679300d9fd4d429c669b0bbb1404",
+  "full_manifest_sha256": "5b74a28bd0376e3f552dc3c0fbc28748e3d92f78cb4f798a507828b364a542a2",
+  "full_original_payloads_verified": 282,
+  "model_inference_performed": false,
+  "test_scenes_generated": false
+}

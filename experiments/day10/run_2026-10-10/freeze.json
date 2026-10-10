@@ -1,0 +1,133 @@
+{
+  "created_utc": "2026-10-09T23:02:15.358088+00:00",
+  "question": "Native-image JEPA source-only prescribed object animation",
+  "test_accessed": false,
+  "test_specs": [
+    {
+      "name": "image_13200",
+      "seed": 13200,
+      "frame_index": 15,
+      "shifts_px": [
+        0,
+        16,
+        32,
+        48,
+        64,
+        80
+      ],
+      "display_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "image_13201",
+      "seed": 13201,
+      "frame_index": 15,
+      "shifts_px": [
+        0,
+        16,
+        32,
+        48,
+        64,
+        80
+      ],
+      "display_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "image_13202",
+      "seed": 13202,
+      "frame_index": 15,
+      "shifts_px": [
+        0,
+        -16,
+        -32,
+        -48,
+        -64,
+        -80
+      ],
+      "display_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "image_13203",
+      "seed": 13203,
+      "frame_index": 15,
+      "shifts_px": [
+        0,
+        -16,
+        -32,
+        -48,
+        -64,
+        -80
+      ],
+      "display_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    }
+  ],
+  "source_hashes": {
+    "experiments/day10/animate.py": "e2329583f9a6ae4df0f846140e618743883b7e94d4189932dc23a28050c4e451",
+    "experiments/day10/calibrate.py": "92803679924b1dc3dbd3e358244c2d7a3f20b831e51a9c04cbed66405413bc80",
+    "experiments/day10/PROTOCOL.md": "73a5282126d65add1fe1ec25bd1bb44d616ed060cce61ca85c7b512e14ce031c",
+    "experiments/day10/audit_results.py": "a1960fff2b4f98c0e1e20bc6c20bb57a0fef78faf19b97aec2dc7c5ab02c4243",
+    "experiments/day10/visualize.py": "490fc3c9626e2682e3d2fa92d158ae678f54de895c3cbb45a9cd0adeda5b1007",
+    "experiments/day8/data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+    "experiments/day8/extract.py": "de2b366a53cae32f13741570f6dcefd525e45bfe04a2fda5b909d54579f1982f",
+    "experiments/day8/operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+    "experiments/day8/probe.py": "9a736ddd5bb64c19a5205f12d606bcd1f1bc562367effcbba96dd8c0a1b8790d",
+    "experiments/day8/evaluate.py": "fec3a0489c846c96c0b58e8725ab22a20923eed57ac0cce65abfa073b8b0929c"
+  },
+  "probe_sha256": "bf18fc7be331d56d9aafd3462111d3f9dac622e9177a3e3e1bfd91710ab07eab",
+  "native_calibration": {
+    "path": "calibration/native_image_calibration.json",
+    "sha256": "e739e4991ac72ab531c5521dda9276883c0b6af5cee3bfa001e519d535cf4e1c"
+  },
+  "upstream_revision": "204698b45b3712590f06245fbfba32d3be539812",
+  "encoder_weights_sha256": "7ea9b7cb4a75d10644a8a8d42cff9e177b10dca8f02173f0eaf2b0bed82838c6",
+  "precision": "float32",
+  "primary_preview": "image_13200",
+  "posttest_tuning_allowed": false
+}

@@ -1,0 +1,20 @@
+{
+  "version": "day11_unreferenced_staging_artifact_audit_v1",
+  "path": "cnn/scenes/tmpiitpfeus.npz",
+  "bytes": 2415769,
+  "sha256": "d11e32a9d7d20fcca68bc862663fae26175d112c5976e5772abe502d37aebb8c",
+  "exact_prefix_of": "cnn/scenes/test_14006_dx+80.npz",
+  "exact_prefix": true,
+  "complete_npz": false,
+  "independent_local_zip_member_check": {
+    "count": 41,
+    "all_CRC_valid": true,
+    "all_decompressed_contents_match_final": true,
+    "performed_by": "audit_research_claims"
+  },
+  "included_in_archive": true,
+  "included_in_evaluation_manifest_scenes": false,
+  "used_by_renderer": false,
+  "action": "Preserve unchanged; select only exact eight frozen scene paths.",
+  "cause": "Unreferenced partial staging snapshot; exact retention cause not established."
+}

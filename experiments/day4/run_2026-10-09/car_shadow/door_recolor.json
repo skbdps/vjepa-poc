@@ -1,0 +1,294 @@
+{
+  "target_id": 1,
+  "color_rgb": [
+    35,
+    140,
+    240
+  ],
+  "strength": 0.75,
+  "mask_source": "/content/day4_shadow/results/sam2_masks.npz",
+  "operation": "shading-preserving deterministic recolor",
+  "guarantee_scope": "array pixels before lossy encoding; predicted-part protection, not ground-truth accuracy",
+  "frames": [
+    {
+      "frame": 0,
+      "changed_pixels": 6043,
+      "effective_mask_pixels": 6043,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 1,
+      "changed_pixels": 5735,
+      "effective_mask_pixels": 5735,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 2,
+      "changed_pixels": 5512,
+      "effective_mask_pixels": 5512,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 3,
+      "changed_pixels": 5297,
+      "effective_mask_pixels": 5297,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 4,
+      "changed_pixels": 5100,
+      "effective_mask_pixels": 5100,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 5,
+      "changed_pixels": 4921,
+      "effective_mask_pixels": 4921,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 6,
+      "changed_pixels": 4773,
+      "effective_mask_pixels": 4773,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 7,
+      "changed_pixels": 4579,
+      "effective_mask_pixels": 4579,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 8,
+      "changed_pixels": 4425,
+      "effective_mask_pixels": 4425,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 9,
+      "changed_pixels": 4314,
+      "effective_mask_pixels": 4314,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 10,
+      "changed_pixels": 4168,
+      "effective_mask_pixels": 4168,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 11,
+      "changed_pixels": 3927,
+      "effective_mask_pixels": 3927,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 12,
+      "changed_pixels": 3765,
+      "effective_mask_pixels": 3765,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 13,
+      "changed_pixels": 3607,
+      "effective_mask_pixels": 3607,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 14,
+      "changed_pixels": 3508,
+      "effective_mask_pixels": 3508,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 15,
+      "changed_pixels": 3384,
+      "effective_mask_pixels": 3384,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 16,
+      "changed_pixels": 3281,
+      "effective_mask_pixels": 3281,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 17,
+      "changed_pixels": 3154,
+      "effective_mask_pixels": 3154,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 18,
+      "changed_pixels": 3051,
+      "effective_mask_pixels": 3051,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 19,
+      "changed_pixels": 2990,
+      "effective_mask_pixels": 2990,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 20,
+      "changed_pixels": 2723,
+      "effective_mask_pixels": 2723,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 21,
+      "changed_pixels": 2615,
+      "effective_mask_pixels": 2615,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 22,
+      "changed_pixels": 2452,
+      "effective_mask_pixels": 2452,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 23,
+      "changed_pixels": 2399,
+      "effective_mask_pixels": 2399,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 24,
+      "changed_pixels": 2332,
+      "effective_mask_pixels": 2332,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 25,
+      "changed_pixels": 2187,
+      "effective_mask_pixels": 2187,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 26,
+      "changed_pixels": 1886,
+      "effective_mask_pixels": 1886,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 27,
+      "changed_pixels": 1820,
+      "effective_mask_pixels": 1820,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 28,
+      "changed_pixels": 1918,
+      "effective_mask_pixels": 1918,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 29,
+      "changed_pixels": 1739,
+      "effective_mask_pixels": 1739,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 30,
+      "changed_pixels": 1846,
+      "effective_mask_pixels": 1846,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 31,
+      "changed_pixels": 1772,
+      "effective_mask_pixels": 1772,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 32,
+      "changed_pixels": 1648,
+      "effective_mask_pixels": 1648,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 33,
+      "changed_pixels": 1561,
+      "effective_mask_pixels": 1561,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 34,
+      "changed_pixels": 1494,
+      "effective_mask_pixels": 1494,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 35,
+      "changed_pixels": 1416,
+      "effective_mask_pixels": 1416,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 36,
+      "changed_pixels": 1371,
+      "effective_mask_pixels": 1371,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 37,
+      "changed_pixels": 1350,
+      "effective_mask_pixels": 1350,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 38,
+      "changed_pixels": 1279,
+      "effective_mask_pixels": 1279,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    },
+    {
+      "frame": 39,
+      "changed_pixels": 1218,
+      "effective_mask_pixels": 1218,
+      "changes_outside_selected_mask": 0,
+      "changes_inside_protected_predicted_parts": 0
+    }
+  ]
+}

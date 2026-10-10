@@ -1,0 +1,30 @@
+{
+  "scope": "CPU implementation fixtures, not pretrained-model results",
+  "editor": {
+    "fixture": "fabricated 8x8 arrays; no scene seed accessed",
+    "raw_overlap_veto": "passed",
+    "containment_subset": "passed",
+    "outside_mask_preservation": "passed",
+    "disabled_other_part_still_protects_overlap": "passed",
+    "rejected_python_recipes": 10,
+    "javascript_python_mask_parity": "passed",
+    "javascript_python_pixel_parity": "passed",
+    "same_json_numeric_literal_validation": "passed; integral floats canonicalized, 4 fractional/boolean cases rejected",
+    "frozen_report_source_barrier": "passed",
+    "javascript_source_syntax": "passed"
+  },
+  "replay": {
+    "four_stable_ids": true,
+    "recipe_roundtrip": true,
+    "order_independent_controls": true,
+    "original_overlap_protection": true,
+    "frozen_effective_mask_policy_matches": true,
+    "parent_edit_is_subset": true,
+    "disabled_and_outside_pixels_unchanged": true,
+    "zero_strength_unchanged": true,
+    "malformed_recipes_rejected": 14,
+    "incomplete_run_blocks_renderer": true,
+    "held_out_scenes_generated": false,
+    "gpu_used": false
+  }
+}

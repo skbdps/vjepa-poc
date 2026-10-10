@@ -1,0 +1,19 @@
+{
+  "version": "day11_pretest_source_review_v1",
+  "commit": "5847efe36faf26325e3bd9ff0af9d99650ec2ad8",
+  "bytes_equal_to_GitHub": true,
+  "fresh_data_accessed": false,
+  "source_hashes": {
+    "experiments/day11/evaluate_fresh.py": "1b1a1569d9c2d0989f72ce36b2b27af13de5f3ace919c9046144b5556bbc417a",
+    "experiments/day11/render_fresh.py": "b48bca38e79203c22a5f24038e8d08c8f21ec62810ea3843b0b21b9144c62790",
+    "experiments/day11/qualify_development.py": "dca51ecb8d307c00d05c20a737561d61a056a550c95af32784b46d5418a1ebc8"
+  },
+  "review": [
+    "No target inputs in nonoracle translations",
+    "All8 scenes retained;27 arms forCNN andlinear",
+    "Fixed9CNNrendererarms;104calls;no best-scene selection",
+    "Fixedqualifier thresholds andmodel/prompt/noise/precisionbindings",
+    "Existing source andcheckpoint validation beforetestaccess"
+  ],
+  "note": "Source/configuration review only; development GPU qualification and pretest publication are still required."
+}

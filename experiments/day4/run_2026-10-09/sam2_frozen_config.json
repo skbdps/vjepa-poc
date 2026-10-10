@@ -1,0 +1,34 @@
+{
+  "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+  "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+  "method": "sam2_1_tiny",
+  "threshold": 0.9404296875,
+  "calibration": {
+    "balanced_presence_accuracy": 0.9741428368188931,
+    "visible_samples": 639,
+    "absent_samples": 88,
+    "objective": "mean(visible presence recall, absent specificity); highest-threshold tie break"
+  },
+  "calibration_scenes": [
+    "calibration_long_occlusion_1000",
+    "calibration_long_occlusion_1001",
+    "calibration_crossing_1100",
+    "calibration_crossing_1101",
+    "calibration_scale_camera_1200",
+    "calibration_scale_camera_1201"
+  ],
+  "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+  "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+  "checkpoint_url": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+  "model_config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+  "postprocessing": false,
+  "precision": "float32",
+  "jpeg": {
+    "format": "JPEG",
+    "quality": 100,
+    "subsampling": 0
+  },
+  "model_parameter_selection": "none",
+  "threshold_selection": "calibration clips only; same presence objective as V-JEPA",
+  "comparison_status": "added after V-JEPA development results and first real-video demo; fixed before SAM2 test; V-JEPA held-out results not viewed when comparator designed"
+}

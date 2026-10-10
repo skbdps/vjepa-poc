@@ -1,0 +1,417 @@
+{
+  "dataset": "DAVIS",
+  "sequence": "car-shadow",
+  "source_page": "https://davischallenge.org/davis2016/browse.html",
+  "source_index_page": "https://davischallenge.org/json_data/global.js",
+  "frames_dir": "/workspace/scratch/8e9e8b29a938/real-video-research/car-shadow/frames",
+  "frame_count": 40,
+  "start": 0,
+  "stride": 1,
+  "frames": [
+    {
+      "frame_index": 0,
+      "source_index": 0,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00000.jpg",
+      "sha256": "f9121f3fbdabbba4858e9bbd854faa3068d983f2dc89ff2cac45e65ccd304bdc",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 1,
+      "source_index": 1,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00001.jpg",
+      "sha256": "21ccee660d44807afc53a43b4262ffe8180917b159af6d2f5df88a9b67345a65",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 2,
+      "source_index": 2,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00002.jpg",
+      "sha256": "846e9dc46de90b3f330338d54014f8ace253fad15f713d121f4ec97ae584904c",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 3,
+      "source_index": 3,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00003.jpg",
+      "sha256": "490f8c3fc4b6b9adabbd70c7ea011ea9b8ad0b14e4d656feddaaee2c892a43a5",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 4,
+      "source_index": 4,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00004.jpg",
+      "sha256": "db2ab260b7fb651fe8b57f3d4753d271cf4f75c37b045f977b39c1e115cca0fb",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 5,
+      "source_index": 5,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00005.jpg",
+      "sha256": "46d55ef59ed5f8492c46527e2bb7b961782297e0ca62805b31661845284691f8",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 6,
+      "source_index": 6,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00006.jpg",
+      "sha256": "abf7b88ae9c90f2d4df89cebbdad7c4f44a0bd7517d984e1c0f9407aaa14244b",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 7,
+      "source_index": 7,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00007.jpg",
+      "sha256": "6f3fbdf9a4d0140dbeed2d5ef86127e13106248ebf402a981f3fb1efe826f882",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 8,
+      "source_index": 8,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00008.jpg",
+      "sha256": "224ddf67c110d4d49319cc4cefef163ccd48ee82c2165bfec85cdf648349b663",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 9,
+      "source_index": 9,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00009.jpg",
+      "sha256": "4895b248a60a19ae75b1abce02bbb09af11fb3de4d8e6a64371afb2830d4c64c",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 10,
+      "source_index": 10,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00010.jpg",
+      "sha256": "d6aa1bfeb791b32b552a28c2f8359d91c6f1f5773fec2e62f7d6d89a093c4765",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 11,
+      "source_index": 11,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00011.jpg",
+      "sha256": "59a0d8e9cf1d2240c3ed9524588bf38e4ae9161ae14e874bcba83764f438637e",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 12,
+      "source_index": 12,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00012.jpg",
+      "sha256": "dfb314e8307cc6d6fce784a19dfe3fd72becf1a3e22c6e8accc6c9a52a15d258",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 13,
+      "source_index": 13,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00013.jpg",
+      "sha256": "54f96b498a00a673dcafbd4748d006ede4e49eb9708825ef789765debedd44ff",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 14,
+      "source_index": 14,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00014.jpg",
+      "sha256": "244c6993d6574dfa7a945b6d57651f08d1cf8878e9cdd384ec46d109c83a0b17",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 15,
+      "source_index": 15,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00015.jpg",
+      "sha256": "eaa54fe3a9b0cfaf695462845936dd6d778010137ae9ee25fec85d3972a69e8f",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 16,
+      "source_index": 16,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00016.jpg",
+      "sha256": "4abbc4524ace95b106864bef59c1080e0cd47347fde80430bba6b4d8c3f03a7b",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 17,
+      "source_index": 17,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00017.jpg",
+      "sha256": "f2bd5d59e57a4218e3ea8a36e795cf37c1187fe73e3e6f5060ac79ed60c0c7ef",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 18,
+      "source_index": 18,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00018.jpg",
+      "sha256": "d86f24637a991e84bb13c57a6935ce856ca3f78bda632315f89f9c64fa43fec7",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 19,
+      "source_index": 19,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00019.jpg",
+      "sha256": "b9f7357e30704db4a91b629c70c21a92cee841165e29472771f0b569e9a18baa",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 20,
+      "source_index": 20,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00020.jpg",
+      "sha256": "a7ece09dfd002b670feed60b9ab2076c8bad1cd3418e7360246c982457cd1dac",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 21,
+      "source_index": 21,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00021.jpg",
+      "sha256": "03532964b92725ecff84ad17842079a366565b123a2efa0380227f2faf399dc0",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 22,
+      "source_index": 22,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00022.jpg",
+      "sha256": "921fe1767da450d9380f71bbe0b63bdf9beec57649919ded8a1cfbca2bc7dc9d",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 23,
+      "source_index": 23,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00023.jpg",
+      "sha256": "10e3d5c38422f246f55e5b3fe1d398b15b37ed58519e6392d3e8f78ded32abb5",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 24,
+      "source_index": 24,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00024.jpg",
+      "sha256": "204ff1f6901ba7948c87767e2181f2580f950517519c4f3a94850a0f98fdd581",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 25,
+      "source_index": 25,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00025.jpg",
+      "sha256": "f0a7893f325f4046e3fffc732ad95a95893c28e8742d08b17c5a03dd6e1264c6",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 26,
+      "source_index": 26,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00026.jpg",
+      "sha256": "006942bfedf3690e8c93f2ad149e05d6af4a5f4effe0d518cf4edf207dfd59bb",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 27,
+      "source_index": 27,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00027.jpg",
+      "sha256": "5db005ae4d1689970adf4b8e18590ddc2ab584bd01bfebd8a60aa61f7ee2ddfb",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 28,
+      "source_index": 28,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00028.jpg",
+      "sha256": "e576c423856b09c1619e71a7fb0eaabe8522b6565728024b089e90a715303a53",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 29,
+      "source_index": 29,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00029.jpg",
+      "sha256": "93cdd8d81f233685cdc7738ff93044848b259796798c9375e355d64d2b4e7b10",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 30,
+      "source_index": 30,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00030.jpg",
+      "sha256": "1bc565a56982b2e01d77cedaa74b2ebde9d6d95597e53bd8071b4f1a80d95798",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 31,
+      "source_index": 31,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00031.jpg",
+      "sha256": "56ca9628df0d5cef361a18504b8e307ef77fbcb172ca04b402d59e376879682f",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 32,
+      "source_index": 32,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00032.jpg",
+      "sha256": "0a51405a8ff6e677005c147978303e06d5495805b39bf438610d6e3f92facee1",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 33,
+      "source_index": 33,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00033.jpg",
+      "sha256": "93f051daf9523cd2a595b33da6a6fdf0e267b61ce35d1a9ba2a9828731449d61",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 34,
+      "source_index": 34,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00034.jpg",
+      "sha256": "5748a38791dd82a6ae72416a7d106b428ec05f242af4da48807ae20eadfbaf84",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 35,
+      "source_index": 35,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00035.jpg",
+      "sha256": "1dc6a8366f7b4ee12d2175de821e98f2b738d00d66ec903fea061e5ef11b7585",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 36,
+      "source_index": 36,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00036.jpg",
+      "sha256": "3a96c9af2bf72ab7d42efe79d7c7f8bc484fa2e7b4e4094473d46c421cbf8dde",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 37,
+      "source_index": 37,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00037.jpg",
+      "sha256": "b76e25b4084f9e0becfbb1c56935ac428299bed4b7e5417c2e07bdbf95e198e4",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 38,
+      "source_index": 38,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00038.jpg",
+      "sha256": "f7c9d3c1a4cdcd1b3ec5cc5f306790d50e096c1d8de79e155b0aa3925b764793",
+      "size_wh": [
+        854,
+        480
+      ]
+    },
+    {
+      "frame_index": 39,
+      "source_index": 39,
+      "url": "https://graphics.ethz.ch/Downloads/Data/Davis/files/sequences/car-shadow/00039.jpg",
+      "sha256": "eebcbb6a3bd6ec7f6abc7ea095c932549794deda70b8b54060f5042858306836",
+      "size_wh": [
+        854,
+        480
+      ]
+    }
+  ],
+  "licensing_note": "See ATTRIBUTION.md; footage rights are separate from SAM2 code/weights.",
+  "benchmark_note": "Exploratory part labels; these are not official DAVIS object annotations.",
+  "source_total_frames": 40,
+  "source_frame_count_url": "https://davischallenge.org/json_data/global.js",
+  "source_frame_count_key": "seq_nframes.carshadow"
+}

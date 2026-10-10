@@ -1,0 +1,26 @@
+{
+  "version": "day8_direct_latent_intervention_v1",
+  "arms": [
+    "learned_residual",
+    "geometry_only"
+  ],
+  "seeds": [
+    1801,
+    1802,
+    1803
+  ],
+  "epochs": 30,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "batch_scenes": 1,
+  "precision": "float32",
+  "gradient_clip_norm": 5.0,
+  "train_loss": "mean of nonempty source-hole, destination, halo raw MSE means; equal scene weighting",
+  "selection": "lowest dev mean of source-hole and destination no-op-normalized MSE; equal scenes; earliest epoch on ties",
+  "normalization_floor": "per-role max(1e-8,0.01*median training no-op role MSE)",
+  "halo": "trained as separate equally weighted role; reported separately at dev; not included in selection",
+  "probe_seed": 1800,
+  "probe_policy": "fit genuine train videos, select epoch on genuine dev videos; frozen before any test or edited tokens",
+  "test_policy": "never opened in this module; all six predeclared checkpoints retained"
+}

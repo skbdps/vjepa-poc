@@ -1,0 +1,9 @@
+{
+  "published_commit": "598f5bc1770c72b4af437a44f834cef41f0aeb08",
+  "file": "experiments/day8/run_2026-10-09/checkpoint_freeze.json",
+  "sha256": "9b6b16e4122394b7bad17ce46f0bf7ae6ab8fe95c137b6dbf81b9b452b16dba5",
+  "verified_utc": "2026-10-09T10:06:57.643927+00:00",
+  "bytes_equal_to_GitHub": true,
+  "test_encoded_before_verification": false,
+  "source_commit": "9ebd665f1be56535199af13d2f6deb8c27af92b1"
+}

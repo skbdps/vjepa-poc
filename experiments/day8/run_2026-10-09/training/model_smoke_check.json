@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "train_or_test_data_accessed": false,
+  "checks": [
+    "initial output equals residual base",
+    "finite gradients",
+    "outside support exactly preserved after update",
+    "zero request exactly identity after update"
+  ]
+}

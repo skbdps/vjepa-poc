@@ -1,0 +1,47 @@
+{
+  "schema": "day10_visual_audit_v1",
+  "run": "native_image_readout_followup",
+  "display_integrity_passed": true,
+  "experiment_qualified_controlled_result": true,
+  "visualizer_sha256": "490fc3c9626e2682e3d2fa92d158ae678f54de895c3cbb45a9cd0adeda5b1007",
+  "visualizer_unchanged_from_original_failed_readout_run": true,
+  "visualization_manifest_sha256": "e52ca669159e49dd644ea9c3e4168294a014caf1ffd55be73b087044781de175",
+  "summary_sha256": "9b08cc43b553877dbbb187cdfb3089229dcbb7e23f8564ced3938317cd7aa7b1",
+  "scene_names": [
+    "image_13600",
+    "image_13601",
+    "image_13602",
+    "image_13603"
+  ],
+  "primary_preview": "image_13600_preview.mp4",
+  "artifact_count": 24,
+  "mp4_count": 8,
+  "gif_count": 4,
+  "png_count": 12,
+  "all_saved_artifact_sizes_and_hashes_rechecked": true,
+  "every_mp4_and_gif_fully_decoded": true,
+  "inspection": [
+    "All four maximum-displacement preview PNGs inspected.",
+    "Primary image_13600 four-panel evidence PNG inspected.",
+    "Text is legible and fits; the main preview has only two panels.",
+    "Coarse 24x24 readout and prescribed motion are explicitly labeled.",
+    "Evaluation-only target pixels are separate from edited output.",
+    "Warm/cool object colours are visibly consistent in these four primary readouts.",
+    "The moved object location is visible; fine checkerboard/stripe details are not resolved.",
+    "Spatial hole fill is visibly imperfect in image_13600 and is not exact recovery of occluded background."
+  ],
+  "genuine_readout_gate": true,
+  "genuine_coarse_color_accuracy_all_states": 1.0,
+  "genuine_color_eligible_states": 24,
+  "edited_coarse_color_accuracy_all_states": 1.0,
+  "edited_color_eligible_states": 24,
+  "modifications_after_test": [
+    "None to visualizer source or colour outputs."
+  ],
+  "limits": [
+    "Visual integrity pass describes the honesty and completeness of the displays, not a general video-generation result.",
+    "Prescribed path from one supplied mask; coarse readout of four synthetic images only.",
+    "No detailed texture identity, real-photo performance, inferred motion, or full RGB animation claim.",
+    "Original Day8 video-trained probe failure is preserved separately; this followup uses a separately fitted native-image probe."
+  ]
+}

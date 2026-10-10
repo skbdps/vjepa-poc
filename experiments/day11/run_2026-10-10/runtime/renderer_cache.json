@@ -1,0 +1,28 @@
+{
+  "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+  "revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+  "snapshot": "/root/.cache/huggingface/hub/models--Wan-AI--Wan2.1-VACE-1.3B-diffusers/snapshots/ec4d2cb062b548996b179d493fdd05340de702a1",
+  "cache_seconds": 260.356758831,
+  "files": {
+    "model_index.json": 408,
+    "scheduler/scheduler_config.json": 751,
+    "text_encoder/config.json": 850,
+    "text_encoder/model-00001-of-00003.safetensors": 4935812536,
+    "text_encoder/model-00002-of-00003.safetensors": 4983103192,
+    "text_encoder/model-00003-of-00003.safetensors": 1442935480,
+    "text_encoder/model.safetensors.index.json": 22476,
+    "tokenizer/special_tokens_map.json": 7079,
+    "tokenizer/spiece.model": 4548313,
+    "tokenizer/tokenizer.json": 16837459,
+    "tokenizer/tokenizer_config.json": 61786,
+    "transformer/config.json": 662,
+    "transformer/diffusion_pytorch_model-00001-of-00002.safetensors": 4999964504,
+    "transformer/diffusion_pytorch_model-00002-of-00002.safetensors": 2146103400,
+    "transformer/diffusion_pytorch_model.safetensors.index.json": 114130,
+    "vae/config.json": 724,
+    "vae/diffusion_pytorch_model.safetensors": 507591892
+  },
+  "total_bytes": 19037105642,
+  "disk_free_gib": 52.3303337097168,
+  "loaded_models": "VAE only; no T5 or transformer loaded"
+}

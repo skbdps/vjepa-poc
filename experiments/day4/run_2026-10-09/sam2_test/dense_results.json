@@ -1,0 +1,844 @@
+{
+  "readout": "raw SAM2 logits>0 masks; no calibrated patch threshold applied",
+  "unit": "part-frame, every frame after frame0; any nonempty GT part is visible",
+  "aggregation": "IoU averaged over visible part-frames; pixel precision/recall pooled over stated pixels",
+  "comparability": "Dense denominators differ from the two-frame patch benchmark, which excludes ambiguous slivers.",
+  "overall": {
+    "mean_iou_given_visible": {
+      "numerator": 3773.955707391062,
+      "denominator": 3997,
+      "rate": 0.9441970746537558
+    },
+    "visible_micro_pixel_precision": {
+      "numerator": 9884807,
+      "denominator": 10491554,
+      "rate": 0.9421680525115727
+    },
+    "visible_micro_pixel_recall": {
+      "numerator": 9884807,
+      "denominator": 10394102,
+      "rate": 0.951001539142102
+    },
+    "all_frame_micro_pixel_precision": {
+      "numerator": 9884807,
+      "denominator": 10566570,
+      "rate": 0.9354792520183939
+    },
+    "false_presence_given_absent": {
+      "numerator": 60,
+      "denominator": 539,
+      "rate": 0.11131725417439703
+    },
+    "absent_predicted_pixels": 75016,
+    "visible_part_frames": 3997,
+    "absent_part_frames": 539,
+    "scored_part_frames": 4536,
+    "clips": 18
+  },
+  "by_condition": {
+    "crossing": {
+      "mean_iou_given_visible": {
+        "numerator": 1349.630483159916,
+        "denominator": 1481,
+        "rate": 0.9112967475759054
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 3401908,
+        "denominator": 3811371,
+        "rate": 0.8925680549072762
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 3401908,
+        "denominator": 3771016,
+        "rate": 0.9021197470389942
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 3401908,
+        "denominator": 3818272,
+        "rate": 0.8909548612566103
+      },
+      "false_presence_given_absent": {
+        "numerator": 6,
+        "denominator": 31,
+        "rate": 0.1935483870967742
+      },
+      "absent_predicted_pixels": 6901,
+      "visible_part_frames": 1481,
+      "absent_part_frames": 31,
+      "scored_part_frames": 1512,
+      "clips": 6
+    },
+    "long_occlusion": {
+      "mean_iou_given_visible": {
+        "numerator": 943.7781392654551,
+        "denominator": 1004,
+        "rate": 0.9400180669974653
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 2426996,
+        "denominator": 2564297,
+        "rate": 0.9464566701906995
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 2426996,
+        "denominator": 2545984,
+        "rate": 0.9532644352831754
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 2426996,
+        "denominator": 2632412,
+        "rate": 0.9219666222460617
+      },
+      "false_presence_given_absent": {
+        "numerator": 54,
+        "denominator": 508,
+        "rate": 0.1062992125984252
+      },
+      "absent_predicted_pixels": 68115,
+      "visible_part_frames": 1004,
+      "absent_part_frames": 508,
+      "scored_part_frames": 1512,
+      "clips": 6
+    },
+    "scale_camera": {
+      "mean_iou_given_visible": {
+        "numerator": 1480.5470849656908,
+        "denominator": 1512,
+        "rate": 0.9791978075169913
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 4055903,
+        "denominator": 4115886,
+        "rate": 0.9854264671081755
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 4055903,
+        "denominator": 4077102,
+        "rate": 0.9948004734735604
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 4055903,
+        "denominator": 4115886,
+        "rate": 0.9854264671081755
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 1512,
+      "absent_part_frames": 0,
+      "scored_part_frames": 1512,
+      "clips": 6
+    }
+  },
+  "by_part": {
+    "car_A.front_door": {
+      "mean_iou_given_visible": {
+        "numerator": 680.0528862435654,
+        "denominator": 848,
+        "rate": 0.8019491583060913
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 2157287,
+        "denominator": 2677855,
+        "rate": 0.8056026185136984
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 2157287,
+        "denominator": 2617786,
+        "rate": 0.8240883708599557
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 2157287,
+        "denominator": 2731852,
+        "rate": 0.7896793091280201
+      },
+      "false_presence_given_absent": {
+        "numerator": 36,
+        "denominator": 286,
+        "rate": 0.1258741258741259
+      },
+      "absent_predicted_pixels": 53997,
+      "visible_part_frames": 848,
+      "absent_part_frames": 286,
+      "scored_part_frames": 1134,
+      "clips": 18
+    },
+    "car_A.window": {
+      "mean_iou_given_visible": {
+        "numerator": 845.187334461214,
+        "denominator": 881,
+        "rate": 0.9593499823623315
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 1654459,
+        "denominator": 1704237,
+        "rate": 0.9707916211184242
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 1654459,
+        "denominator": 1688629,
+        "rate": 0.97976464931018
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 1654459,
+        "denominator": 1725256,
+        "rate": 0.9589643507977946
+      },
+      "false_presence_given_absent": {
+        "numerator": 24,
+        "denominator": 253,
+        "rate": 0.09486166007905138
+      },
+      "absent_predicted_pixels": 21019,
+      "visible_part_frames": 881,
+      "absent_part_frames": 253,
+      "scored_part_frames": 1134,
+      "clips": 18
+    },
+    "car_B.front_door": {
+      "mean_iou_given_visible": {
+        "numerator": 1125.2424726143608,
+        "denominator": 1134,
+        "rate": 0.9922773127110766
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 3749376,
+        "denominator": 3771951,
+        "rate": 0.994015033599323
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 3749376,
+        "denominator": 3755811,
+        "rate": 0.9982866549994129
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 3749376,
+        "denominator": 3771951,
+        "rate": 0.994015033599323
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 1134,
+      "absent_part_frames": 0,
+      "scored_part_frames": 1134,
+      "clips": 18
+    },
+    "car_B.window": {
+      "mean_iou_given_visible": {
+        "numerator": 1123.4730140719219,
+        "denominator": 1134,
+        "rate": 0.9907169436260334
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 2323685,
+        "denominator": 2337511,
+        "rate": 0.9940851615243735
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 2323685,
+        "denominator": 2331876,
+        "rate": 0.9964873775449467
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 2323685,
+        "denominator": 2337511,
+        "rate": 0.9940851615243735
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 1134,
+      "absent_part_frames": 0,
+      "scored_part_frames": 1134,
+      "clips": 18
+    }
+  },
+  "per_clip": {
+    "test_crossing_3100": {
+      "mean_iou_given_visible": {
+        "numerator": 210.5619712513626,
+        "denominator": 246,
+        "rate": 0.8559429725665146
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 524720,
+        "denominator": 633700,
+        "rate": 0.8280258797538267
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 524720,
+        "denominator": 626255,
+        "rate": 0.8378695579276813
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 524720,
+        "denominator": 637103,
+        "rate": 0.8236030908659981
+      },
+      "false_presence_given_absent": {
+        "numerator": 3,
+        "denominator": 6,
+        "rate": 0.5
+      },
+      "absent_predicted_pixels": 3403,
+      "visible_part_frames": 246,
+      "absent_part_frames": 6,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_crossing_3101": {
+      "mean_iou_given_visible": {
+        "numerator": 219.28329487371622,
+        "denominator": 247,
+        "rate": 0.887786618921928
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 549850,
+        "denominator": 637847,
+        "rate": 0.8620405834000944
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 549850,
+        "denominator": 630819,
+        "rate": 0.8716446397461078
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 549850,
+        "denominator": 637847,
+        "rate": 0.8620405834000944
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 5,
+        "rate": 0.0
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 247,
+      "absent_part_frames": 5,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_crossing_3102": {
+      "mean_iou_given_visible": {
+        "numerator": 245.57392385065233,
+        "denominator": 247,
+        "rate": 0.9942264123508192
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 628984,
+        "denominator": 630647,
+        "rate": 0.9973630255911786
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 628984,
+        "denominator": 629702,
+        "rate": 0.9988597781172681
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 628984,
+        "denominator": 630739,
+        "rate": 0.9972175495728027
+      },
+      "false_presence_given_absent": {
+        "numerator": 1,
+        "denominator": 5,
+        "rate": 0.2
+      },
+      "absent_predicted_pixels": 92,
+      "visible_part_frames": 247,
+      "absent_part_frames": 5,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_crossing_3103": {
+      "mean_iou_given_visible": {
+        "numerator": 216.69753279654518,
+        "denominator": 247,
+        "rate": 0.8773179465447173
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 542105,
+        "denominator": 639785,
+        "rate": 0.8473237103089319
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 542105,
+        "denominator": 629577,
+        "rate": 0.8610622687931738
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 542105,
+        "denominator": 643191,
+        "rate": 0.8428367312353562
+      },
+      "false_presence_given_absent": {
+        "numerator": 2,
+        "denominator": 5,
+        "rate": 0.4
+      },
+      "absent_predicted_pixels": 3406,
+      "visible_part_frames": 247,
+      "absent_part_frames": 5,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_crossing_3104": {
+      "mean_iou_given_visible": {
+        "numerator": 214.39698334700108,
+        "denominator": 247,
+        "rate": 0.8680039811619477
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 531798,
+        "denominator": 636434,
+        "rate": 0.835590179028776
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 531798,
+        "denominator": 627242,
+        "rate": 0.847835444692798
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 531798,
+        "denominator": 636434,
+        "rate": 0.835590179028776
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 5,
+        "rate": 0.0
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 247,
+      "absent_part_frames": 5,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_crossing_3105": {
+      "mean_iou_given_visible": {
+        "numerator": 243.11677704063854,
+        "denominator": 247,
+        "rate": 0.9842784495572411
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 624451,
+        "denominator": 632958,
+        "rate": 0.986559929726775
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 624451,
+        "denominator": 627421,
+        "rate": 0.9952663363196322
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 624451,
+        "denominator": 632958,
+        "rate": 0.986559929726775
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 5,
+        "rate": 0.0
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 247,
+      "absent_part_frames": 5,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_long_occlusion_3000": {
+      "mean_iou_given_visible": {
+        "numerator": 157.8561780901723,
+        "denominator": 168,
+        "rate": 0.939620107679597
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 403545,
+        "denominator": 431171,
+        "rate": 0.9359279728924255
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 403545,
+        "denominator": 428348,
+        "rate": 0.9420961461241794
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 403545,
+        "denominator": 442601,
+        "rate": 0.9117579942205282
+      },
+      "false_presence_given_absent": {
+        "numerator": 9,
+        "denominator": 84,
+        "rate": 0.10714285714285714
+      },
+      "absent_predicted_pixels": 11430,
+      "visible_part_frames": 168,
+      "absent_part_frames": 84,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_long_occlusion_3001": {
+      "mean_iou_given_visible": {
+        "numerator": 167.68026883201242,
+        "denominator": 170,
+        "rate": 0.9863545225412496
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 428773,
+        "denominator": 433591,
+        "rate": 0.9888881457410325
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 428773,
+        "denominator": 429432,
+        "rate": 0.9984654147804541
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 428773,
+        "denominator": 444495,
+        "rate": 0.9646295233917141
+      },
+      "false_presence_given_absent": {
+        "numerator": 9,
+        "denominator": 82,
+        "rate": 0.10975609756097561
+      },
+      "absent_predicted_pixels": 10904,
+      "visible_part_frames": 170,
+      "absent_part_frames": 82,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_long_occlusion_3002": {
+      "mean_iou_given_visible": {
+        "numerator": 149.82034844897373,
+        "denominator": 168,
+        "rate": 0.8917877883867484
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 389849,
+        "denominator": 427388,
+        "rate": 0.9121664623246324
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 389849,
+        "denominator": 426100,
+        "rate": 0.914923726824689
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 389849,
+        "denominator": 439267,
+        "rate": 0.8874989471096167
+      },
+      "false_presence_given_absent": {
+        "numerator": 9,
+        "denominator": 84,
+        "rate": 0.10714285714285714
+      },
+      "absent_predicted_pixels": 11879,
+      "visible_part_frames": 168,
+      "absent_part_frames": 84,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_long_occlusion_3003": {
+      "mean_iou_given_visible": {
+        "numerator": 147.58963772385076,
+        "denominator": 166,
+        "rate": 0.8890942031557274
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 386501,
+        "denominator": 424684,
+        "rate": 0.9100907969219467
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 386501,
+        "denominator": 421480,
+        "rate": 0.9170091107525862
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 386501,
+        "denominator": 436288,
+        "rate": 0.8858850117353675
+      },
+      "false_presence_given_absent": {
+        "numerator": 9,
+        "denominator": 86,
+        "rate": 0.10465116279069768
+      },
+      "absent_predicted_pixels": 11604,
+      "visible_part_frames": 166,
+      "absent_part_frames": 86,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_long_occlusion_3004": {
+      "mean_iou_given_visible": {
+        "numerator": 156.82977601849862,
+        "denominator": 166,
+        "rate": 0.9447576868584254
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 399053,
+        "denominator": 423900,
+        "rate": 0.941384760556735
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 399053,
+        "denominator": 420912,
+        "rate": 0.9480675295548713
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 399053,
+        "denominator": 434470,
+        "rate": 0.9184822887656224
+      },
+      "false_presence_given_absent": {
+        "numerator": 9,
+        "denominator": 86,
+        "rate": 0.10465116279069768
+      },
+      "absent_predicted_pixels": 10570,
+      "visible_part_frames": 166,
+      "absent_part_frames": 86,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_long_occlusion_3005": {
+      "mean_iou_given_visible": {
+        "numerator": 164.0019301519473,
+        "denominator": 166,
+        "rate": 0.987963434650285
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 419275,
+        "denominator": 423563,
+        "rate": 0.9898763584165756
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 419275,
+        "denominator": 419712,
+        "rate": 0.9989588098505642
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 419275,
+        "denominator": 435291,
+        "rate": 0.9632062229634888
+      },
+      "false_presence_given_absent": {
+        "numerator": 9,
+        "denominator": 86,
+        "rate": 0.10465116279069768
+      },
+      "absent_predicted_pixels": 11728,
+      "visible_part_frames": 166,
+      "absent_part_frames": 86,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_scale_camera_3200": {
+      "mean_iou_given_visible": {
+        "numerator": 246.5678561018776,
+        "denominator": 252,
+        "rate": 0.9784438734201492
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 677038,
+        "denominator": 687584,
+        "rate": 0.9846622376320566
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 677038,
+        "denominator": 680410,
+        "rate": 0.9950441645478462
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 677038,
+        "denominator": 687584,
+        "rate": 0.9846622376320566
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 252,
+      "absent_part_frames": 0,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_scale_camera_3201": {
+      "mean_iou_given_visible": {
+        "numerator": 247.1226321532979,
+        "denominator": 252,
+        "rate": 0.9806453656876901
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 674863,
+        "denominator": 683868,
+        "rate": 0.9868322541777068
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 674863,
+        "denominator": 678474,
+        "rate": 0.994677762154482
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 674863,
+        "denominator": 683868,
+        "rate": 0.9868322541777068
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 252,
+      "absent_part_frames": 0,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_scale_camera_3202": {
+      "mean_iou_given_visible": {
+        "numerator": 246.42931289876125,
+        "denominator": 252,
+        "rate": 0.9778940988046082
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 676263,
+        "denominator": 686832,
+        "rate": 0.9846119575092599
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 676263,
+        "denominator": 680072,
+        "rate": 0.9943991224458587
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 676263,
+        "denominator": 686832,
+        "rate": 0.9846119575092599
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 252,
+      "absent_part_frames": 0,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_scale_camera_3203": {
+      "mean_iou_given_visible": {
+        "numerator": 247.15068863107075,
+        "denominator": 252,
+        "rate": 0.9807567009169474
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 675007,
+        "denominator": 684244,
+        "rate": 0.9865004296712868
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 675007,
+        "denominator": 678450,
+        "rate": 0.994925197140541
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 675007,
+        "denominator": 684244,
+        "rate": 0.9865004296712868
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 252,
+      "absent_part_frames": 0,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_scale_camera_3204": {
+      "mean_iou_given_visible": {
+        "numerator": 246.73776013047342,
+        "denominator": 252,
+        "rate": 0.9791180957558469
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 675888,
+        "denominator": 686026,
+        "rate": 0.9852221344380534
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 675888,
+        "denominator": 679320,
+        "rate": 0.9949478890655361
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 675888,
+        "denominator": 686026,
+        "rate": 0.9852221344380534
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 252,
+      "absent_part_frames": 0,
+      "scored_part_frames": 252,
+      "clips": 1
+    },
+    "test_scale_camera_3205": {
+      "mean_iou_given_visible": {
+        "numerator": 246.53883505020997,
+        "denominator": 252,
+        "rate": 0.9783287105167062
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 676844,
+        "denominator": 687332,
+        "rate": 0.9847409985276402
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 676844,
+        "denominator": 680376,
+        "rate": 0.9948087528072713
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 676844,
+        "denominator": 687332,
+        "rate": 0.9847409985276402
+      },
+      "false_presence_given_absent": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "absent_predicted_pixels": 0,
+      "visible_part_frames": 252,
+      "absent_part_frames": 0,
+      "scored_part_frames": 252,
+      "clips": 1
+    }
+  }
+}

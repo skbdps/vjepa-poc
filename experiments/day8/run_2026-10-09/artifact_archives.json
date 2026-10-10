@@ -1,0 +1,46 @@
+{
+  "scope": "External raw caches, trained weights and prediction evidence; no public encoder weight duplication. Repository code and compact reports are in GitHub.",
+  "restore": "Extract the five feature archives, trained-operator archive and evidence archive into the same empty working directory; their paths already begin with features/, training/ or test/. Use features/manifest.json from Day8_Test_Evidence.zip as the authoritative 48-pair manifest; subset manifests are informational. Source code is supplied separately by the pinned GitHub commit.",
+  "archives": [
+    {
+      "name": "Day8_CPU_Reference.zip",
+      "bytes": 35096465,
+      "sha256": "35e36e26af935d29374213d12baf0a00b4fe95f3cf008d1db639acede3e1d0fb"
+    },
+    {
+      "name": "Day8_Features_Development.zip",
+      "bytes": 235217668,
+      "sha256": "68f6dda0ba04e3a62e30fcf209ac841bb399c695e6a3a6dc9133b46ceda82698"
+    },
+    {
+      "name": "Day8_Features_Test_Seen.zip",
+      "bytes": 235253613,
+      "sha256": "e86c955e91d7181258ab712974fc0909a0ee54a29b81bfb5da72127024918cb5"
+    },
+    {
+      "name": "Day8_Features_Train_A.zip",
+      "bytes": 352856968,
+      "sha256": "378d266a816a2a40af6b7bbc44a6b75bba1d89227297248263e15a6ff4431204"
+    },
+    {
+      "name": "Day8_Features_Train_B.zip",
+      "bytes": 352801980,
+      "sha256": "6136db592d3dc4395dbd45c5764aa6499887425c1671ead1cdbef2c74c2919fa"
+    },
+    {
+      "name": "Day8_Trained_Operators.zip",
+      "bytes": 5960031,
+      "sha256": "028ed2eb0be42c9c68307c4517697d7e4c8570b56eed17d26ec4f68e7461bf66"
+    },
+    {
+      "name": "Day8_Features_Test_Heldout.zip",
+      "bytes": 235260561,
+      "sha256": "11c57ba88f7d1e46d9061f3cf363362ac5d3b78caca41e9bd449662f49932797"
+    },
+    {
+      "name": "Day8_Test_Evidence.zip",
+      "bytes": 34229697,
+      "sha256": "0962adae17d0c5b9d624b3f41c8c2f3bfbd5f0368c3ced85ec1db77b0578b00d"
+    }
+  ]
+}

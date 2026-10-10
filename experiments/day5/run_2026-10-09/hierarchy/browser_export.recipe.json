@@ -1,0 +1,48 @@
+{
+  "schema": "vjepa.hierarchical-part-edit-recipe",
+  "version": 1,
+  "sequence": "test_crossing_6200",
+  "containment": false,
+  "parts": [
+    {
+      "id": "car_A.front_door",
+      "enabled": true,
+      "color": [
+        42,
+        137,
+        240
+      ],
+      "strength": 0.8
+    },
+    {
+      "id": "car_A.window",
+      "enabled": true,
+      "color": [
+        249,
+        184,
+        53
+      ],
+      "strength": 0.35
+    },
+    {
+      "id": "car_B.front_door",
+      "enabled": true,
+      "color": [
+        80,
+        213,
+        151
+      ],
+      "strength": 0.5
+    },
+    {
+      "id": "car_B.window",
+      "enabled": false,
+      "color": [
+        219,
+        102,
+        218
+      ],
+      "strength": 0.65
+    }
+  ]
+}

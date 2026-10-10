@@ -1,0 +1,171 @@
+{
+  "version": "day9_visual_audit_v1",
+  "created_utc": "2026-10-09T18:54:44.243904+00:00",
+  "status": "pass",
+  "inspection": {
+    "all_eight_pngs": true,
+    "both_mp4s_fully_decoded": true,
+    "decoded_fixed_frame15_each_video": true,
+    "fixed_scenes": [
+      12200,
+      12208
+    ],
+    "no_scene_frame_selection_after_test": true,
+    "legible_titles_and_footnotes": true,
+    "probe_vs_ground_truth_labels_clear": true,
+    "probe_displays_expose_24x24_nearest_neighbor_grid": true,
+    "summary_whiskers_labeled_95_percent_scene_bootstrap": true,
+    "hole_heatmaps_share_unclipped_scale_within_scene": true,
+    "all_fixed_tubelet_hole_cells_included_in_crop": true,
+    "destination_is_identical_by_construction_not_inferred_from_picture": true
+  },
+  "display_only_post_test_change": {
+    "file": "experiments/day9/visualize.py",
+    "reason": "Paired RGB-difference axis had crowded tick labels.",
+    "change": "Added MaxNLocator(nbins=4,min_n_ticks=3) to summary x axes. No values, statistics, scenes, frames, image scales, methods, operators, selection or scoring changed.",
+    "before_sha256": "ee6dc27a2eb70d8a9b4515f2993c89d12ebd51d9a68b1e004f1bfb16327d7908",
+    "after_sha256": "af06f3e32128374d1552c93e8c8ec550e14bdd991a1820bc45d36b3423ccae4f",
+    "evaluation_summary_unchanged_sha256": "0a426c037baba2f493addff70bd1423d4684212048b2e001ec8194583a4d0998"
+  },
+  "artifact_recovery": {
+    "reason": "After the first rerender, final scene12208 MP4 reverted to a 48-byte partial header despite successful encode. No operator/evaluator was rerun.",
+    "resolution": "Rendered all final artifacts into /tmp/day9_visuals_completed; validated all staged hashes and full video decodes; copied each complete artifact through an atomic rename; then verified final hashes and full video decodes again.",
+    "final_artifact_hashes_match_manifest": true
+  },
+  "observations": [
+    "In both predetermined scenes, the source hole has lower displayed feature error with temporal methods than naive spatial filling.",
+    "Dev-selected and aligned outputs coincide because development selected aligned alpha=1.",
+    "Probe RGB preserves coarse patch means, not original striped or checkerboard texture; detailed identity/video reconstruction is not established.",
+    "Common color scales and outside-hole masking support within-scene comparisons."
+  ],
+  "visualization_manifest_sha256": "1ff6aa048c06fc75b912aa9c3ee75736774215c64b6e59dba36b1264a55780e9",
+  "artifacts": [
+    {
+      "path": "test_summary.png",
+      "sha256": "54b8aca5fafd20f668d41b213456f2487fe77411db46b96a318beee993060dcf",
+      "bytes": 68971,
+      "dimensions": [
+        1400,
+        570
+      ],
+      "mode": "RGBA",
+      "visually_inspected": true
+    },
+    {
+      "path": "test_paired_changes.png",
+      "sha256": "605f2c18cb6e04805b4c10e62e47d8a66cee471ba6202bb6f76ba0adde847dd6",
+      "bytes": 60776,
+      "dimensions": [
+        1400,
+        570
+      ],
+      "mode": "RGBA",
+      "visually_inspected": true
+    },
+    {
+      "path": "test_12200_dx+32_comparison.png",
+      "sha256": "1b4a5012c1638ba81628543691e2a0dfc9eb9f8d43c0f31b118ef7da5a857dd5",
+      "bytes": 187919,
+      "dimensions": [
+        1322,
+        930
+      ],
+      "mode": "RGB",
+      "visually_inspected": true
+    },
+    {
+      "path": "test_12200_dx+32_comparison.mp4",
+      "sha256": "e9d1a6de6c1d3c24cfdd07643428e76634a5da415a6cc81948714ccb79c27fcd",
+      "bytes": 628396,
+      "ffprobe": {
+        "codec_name": "h264",
+        "width": 1000,
+        "height": 930,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "8/1",
+        "avg_frame_rate": "8/1",
+        "duration": "4.000000",
+        "nb_frames": "32",
+        "nb_read_frames": "32"
+      },
+      "full_decode_exit": 0,
+      "decode_stderr": "",
+      "decoded_frame15_visually_inspected": true
+    },
+    {
+      "path": "test_12200_dx+32_occupancy.png",
+      "sha256": "d960fbcd3efde864a2e99c3879f9858018e9e378fde20a5a1ba50de1c498f9af",
+      "bytes": 80826,
+      "dimensions": [
+        1320,
+        956
+      ],
+      "mode": "RGBA",
+      "visually_inspected": true
+    },
+    {
+      "path": "test_12200_dx+32_hole_diagnostics.png",
+      "sha256": "0832a51a7d0f58ca69b50da30413e1cfe8c78e9c73332c27086e5a0238b6361e",
+      "bytes": 86218,
+      "dimensions": [
+        1400,
+        780
+      ],
+      "mode": "RGBA",
+      "visually_inspected": true
+    },
+    {
+      "path": "test_12208_dx+48_comparison.png",
+      "sha256": "29fbca251be4608635e77c8aea10dc3d60cee7680ffc444cbfdeeb97e9dcb757",
+      "bytes": 188639,
+      "dimensions": [
+        1322,
+        930
+      ],
+      "mode": "RGB",
+      "visually_inspected": true
+    },
+    {
+      "path": "test_12208_dx+48_comparison.mp4",
+      "sha256": "8f7a7915dd8ae2d00d60b2a7f6494c58881d0ce2514593c41b73d95fdb353b89",
+      "bytes": 594255,
+      "ffprobe": {
+        "codec_name": "h264",
+        "width": 1000,
+        "height": 930,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "8/1",
+        "avg_frame_rate": "8/1",
+        "duration": "4.000000",
+        "nb_frames": "32",
+        "nb_read_frames": "32"
+      },
+      "full_decode_exit": 0,
+      "decode_stderr": "",
+      "decoded_frame15_visually_inspected": true
+    },
+    {
+      "path": "test_12208_dx+48_occupancy.png",
+      "sha256": "2965b428cadd69e872df41a9defba71ad0163b2a2f0bdef8b2e88caf6d7b9b37",
+      "bytes": 84240,
+      "dimensions": [
+        1320,
+        956
+      ],
+      "mode": "RGBA",
+      "visually_inspected": true
+    },
+    {
+      "path": "test_12208_dx+48_hole_diagnostics.png",
+      "sha256": "2109c4dee5d4fff22f62db6db5a52bd2733aa302ca475b878548647a785a19b8",
+      "bytes": 88925,
+      "dimensions": [
+        1400,
+        780
+      ],
+      "mode": "RGBA",
+      "visually_inspected": true
+    }
+  ],
+  "scope": "Visual presentation and media integrity audit; separate independent audit addresses numerical/operator correctness."
+}

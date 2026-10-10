@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "scope": "analytic/synthetic fixtures only; no experiment test access",
+  "torch": "2.9.0+cpu",
+  "python": "3.12.14",
+  "source_hashes": {
+    "train.py": "caa464d453dcd4ccbf3614477b9e01d294862bce47106dc9e056f547ad0f891e",
+    "operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+    "probe.py": "9a736ddd5bb64c19a5205f12d606bcd1f1bc562367effcbba96dd8c0a1b8790d",
+    "data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d"
+  },
+  "model_invariants": "zero-init, finite gradients, exact outside support, exact zero displacement",
+  "probe": {
+    "status": "passed",
+    "fixture": "synthetic independent feature/label fixture",
+    "first_dev_loss": 0.2162773609161377,
+    "selected_dev_loss": 0.017497364431619644,
+    "selected_epoch": 12,
+    "checks": [
+      "held-out readout learning",
+      "train-only normalization",
+      "grid-shaped predictions",
+      "frozen inference parameters",
+      "checkpoint roundtrip exact",
+      "no Day 8 test scenes opened"
+    ]
+  },
+  "evaluation": {
+    "status": "passed",
+    "fixture": "analytic masks and errors only; no experimental scene access",
+    "checks": [
+      "no-op ratio exactly one",
+      "perfect intervention ratio zero",
+      "degenerate denominator recorded",
+      "known 48px centroid displacement",
+      "missing prediction penalty",
+      "fixed-region IoU/RGB/ghost scoring",
+      "correct color identity passes and swapped identity fails",
+      "identity ties fail",
+      "ineligible color/core cases explicitly skipped",
+      "exact outside-support preservation",
+      "seed averaging before scene bootstrap"
+    ]
+  }
+}

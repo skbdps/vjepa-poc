@@ -1,0 +1,971 @@
+{
+  "scope": "Post-test diagnosis only; no fitting, selection, numerical code edits or new encoding.",
+  "independent_full_readout_and_scorer_audit": "passed, exact agreement",
+  "rows": [
+    {
+      "scene": "image_13200",
+      "shift_px": 0,
+      "true_source_selected_rgb": [
+        0.7114566233423021,
+        0.2798525955941942,
+        0.289939069085651
+      ],
+      "true_source_distractor_rgb": [
+        0.24653628799650404,
+        0.4483540952205658,
+        0.66487099064721
+      ],
+      "true_target_selected_rgb": [
+        0.7114566233423021,
+        0.2798525955941942,
+        0.289939069085651
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "source_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "true_target_color_equals_source": true,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.40953265033827496,
+      "genuine_distance_to_distractor": 0.33598547011873997,
+      "source_probe_distance_to_selected": 0.40953265033827496,
+      "source_probe_distance_to_distractor": 0.33598547011873997
+    },
+    {
+      "scene": "image_13200",
+      "shift_px": 16,
+      "true_source_selected_rgb": [
+        0.7114566233423021,
+        0.2798525955941942,
+        0.289939069085651
+      ],
+      "true_source_distractor_rgb": [
+        0.24653628799650404,
+        0.4483540952205658,
+        0.66487099064721
+      ],
+      "true_target_selected_rgb": [
+        0.7112047208680047,
+        0.28134190870655906,
+        0.2892718580034044
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.31022507283422684,
+        0.2412959055768119,
+        0.4364534583356645
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "source_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.42888208370776587,
+      "genuine_distance_to_distractor": 0.3148077576552878,
+      "source_probe_distance_to_selected": 0.40953265033827496,
+      "source_probe_distance_to_distractor": 0.33598547011873997
+    },
+    {
+      "scene": "image_13200",
+      "shift_px": 32,
+      "true_source_selected_rgb": [
+        0.7114566233423021,
+        0.2798525955941942,
+        0.289939069085651
+      ],
+      "true_source_distractor_rgb": [
+        0.24653628799650404,
+        0.4483540952205658,
+        0.66487099064721
+      ],
+      "true_target_selected_rgb": [
+        0.7094669077131484,
+        0.28141680028703475,
+        0.2876395715607537
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.3129645619127486,
+        0.24510320193237728,
+        0.43488642904493546
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "source_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.4254564378892454,
+      "genuine_distance_to_distractor": 0.31403270494222196,
+      "source_probe_distance_to_selected": 0.40953265033827496,
+      "source_probe_distance_to_distractor": 0.33598547011873997
+    },
+    {
+      "scene": "image_13200",
+      "shift_px": 48,
+      "true_source_selected_rgb": [
+        0.7114566233423021,
+        0.2798525955941942,
+        0.289939069085651
+      ],
+      "true_source_distractor_rgb": [
+        0.24653628799650404,
+        0.4483540952205658,
+        0.66487099064721
+      ],
+      "true_target_selected_rgb": [
+        0.711162163151635,
+        0.2829844057559967,
+        0.2864566312895881
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.3243092480632994,
+        0.2398079534371694,
+        0.42897842327753705
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "source_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.4133020754424079,
+      "genuine_distance_to_distractor": 0.32432303327168654,
+      "source_probe_distance_to_selected": 0.40953265033827496,
+      "source_probe_distance_to_distractor": 0.33598547011873997
+    },
+    {
+      "scene": "image_13200",
+      "shift_px": 64,
+      "true_source_selected_rgb": [
+        0.7114566233423021,
+        0.2798525955941942,
+        0.289939069085651
+      ],
+      "true_source_distractor_rgb": [
+        0.24653628799650404,
+        0.4483540952205658,
+        0.66487099064721
+      ],
+      "true_target_selected_rgb": [
+        0.7118787301911248,
+        0.28097255693541634,
+        0.28532305359840393
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.3320706884066264,
+        0.23459716803497738,
+        0.425790462228987
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "source_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.40550874512095236,
+      "genuine_distance_to_distractor": 0.3319151346987372,
+      "source_probe_distance_to_selected": 0.40953265033827496,
+      "source_probe_distance_to_distractor": 0.33598547011873997
+    },
+    {
+      "scene": "image_13200",
+      "shift_px": 80,
+      "true_source_selected_rgb": [
+        0.7114566233423021,
+        0.2798525955941942,
+        0.289939069085651
+      ],
+      "true_source_distractor_rgb": [
+        0.24653628799650404,
+        0.4483540952205658,
+        0.66487099064721
+      ],
+      "true_target_selected_rgb": [
+        0.7120710677570767,
+        0.2801810966597663,
+        0.2853962431351344
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.3338442345460256,
+        0.22943012747499678,
+        0.42215488685501945
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "source_probe_selected_rgb": [
+        0.327266385157903,
+        0.22991745836204952,
+        0.4226844443215264
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.4032549614475742,
+      "genuine_distance_to_distractor": 0.33832157516809136,
+      "source_probe_distance_to_selected": 0.40953265033827496,
+      "source_probe_distance_to_distractor": 0.33598547011873997
+    },
+    {
+      "scene": "image_13201",
+      "shift_px": 0,
+      "true_source_selected_rgb": [
+        0.1674517448991537,
+        0.516027107834816,
+        0.7606636732816696
+      ],
+      "true_source_distractor_rgb": [
+        0.7151552240053812,
+        0.31059027711550397,
+        0.29978298644224805
+      ],
+      "true_target_selected_rgb": [
+        0.1674517448991537,
+        0.516027107834816,
+        0.7606636732816696
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "source_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "true_target_color_equals_source": true,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7375171220815944,
+      "genuine_distance_to_distractor": 0.11450994981055956,
+      "source_probe_distance_to_selected": 0.7375171220815944,
+      "source_probe_distance_to_distractor": 0.11450994981055956
+    },
+    {
+      "scene": "image_13201",
+      "shift_px": 16,
+      "true_source_selected_rgb": [
+        0.1674517448991537,
+        0.516027107834816,
+        0.7606636732816696
+      ],
+      "true_source_distractor_rgb": [
+        0.7151552240053812,
+        0.31059027711550397,
+        0.29978298644224805
+      ],
+      "true_target_selected_rgb": [
+        0.16662262380123138,
+        0.5162243396043777,
+        0.7593826502561569
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6310327276587486,
+        0.23918390460312366,
+        0.2548923809081316
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "source_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7398338238693436,
+      "genuine_distance_to_distractor": 0.11912443448841922,
+      "source_probe_distance_to_selected": 0.7375171220815944,
+      "source_probe_distance_to_distractor": 0.11450994981055956
+    },
+    {
+      "scene": "image_13201",
+      "shift_px": 32,
+      "true_source_selected_rgb": [
+        0.1674517448991537,
+        0.516027107834816,
+        0.7606636732816696
+      ],
+      "true_source_distractor_rgb": [
+        0.7151552240053812,
+        0.31059027711550397,
+        0.29978298644224805
+      ],
+      "true_target_selected_rgb": [
+        0.16573797352612019,
+        0.5159811526536942,
+        0.7585707679390907
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6266601458191872,
+        0.23888354934751987,
+        0.2560024932026863
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "source_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7364535383615504,
+      "genuine_distance_to_distractor": 0.12202444533236645,
+      "source_probe_distance_to_selected": 0.7375171220815944,
+      "source_probe_distance_to_distractor": 0.11450994981055956
+    },
+    {
+      "scene": "image_13201",
+      "shift_px": 48,
+      "true_source_selected_rgb": [
+        0.1674517448991537,
+        0.516027107834816,
+        0.7606636732816696
+      ],
+      "true_source_distractor_rgb": [
+        0.7151552240053812,
+        0.31059027711550397,
+        0.29978298644224805
+      ],
+      "true_target_selected_rgb": [
+        0.16557712852954865,
+        0.5157188214361668,
+        0.7592524439096451
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6234508529305458,
+        0.24612894468009472,
+        0.2567688412964344
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "source_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7312251409115705,
+      "genuine_distance_to_distractor": 0.12006319892541835,
+      "source_probe_distance_to_selected": 0.7375171220815944,
+      "source_probe_distance_to_distractor": 0.11450994981055956
+    },
+    {
+      "scene": "image_13201",
+      "shift_px": 64,
+      "true_source_selected_rgb": [
+        0.1674517448991537,
+        0.516027107834816,
+        0.7606636732816696
+      ],
+      "true_source_distractor_rgb": [
+        0.7151552240053812,
+        0.31059027711550397,
+        0.29978298644224805
+      ],
+      "true_target_selected_rgb": [
+        0.16724494472146034,
+        0.5166034772992134,
+        0.76099494099617
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6221469566226006,
+        0.251027325168252,
+        0.25877886824309826
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "source_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7272282845889323,
+      "genuine_distance_to_distractor": 0.11781180227594908,
+      "source_probe_distance_to_selected": 0.7375171220815944,
+      "source_probe_distance_to_distractor": 0.11450994981055956
+    },
+    {
+      "scene": "image_13201",
+      "shift_px": 80,
+      "true_source_selected_rgb": [
+        0.1674517448991537,
+        0.516027107834816,
+        0.7606636732816696
+      ],
+      "true_source_distractor_rgb": [
+        0.7151552240053812,
+        0.31059027711550397,
+        0.29978298644224805
+      ],
+      "true_target_selected_rgb": [
+        0.16758195497095585,
+        0.5183249078691006,
+        0.7596909403800964
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6226959526538849,
+        0.25025131739676,
+        0.25477455742657185
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "source_probe_selected_rgb": [
+        0.6331257224082947,
+        0.24211345054209232,
+        0.2586173005402088
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7306215552650078,
+      "genuine_distance_to_distractor": 0.11922778871240128,
+      "source_probe_distance_to_selected": 0.7375171220815944,
+      "source_probe_distance_to_distractor": 0.11450994981055956
+    },
+    {
+      "scene": "image_13202",
+      "shift_px": 0,
+      "true_source_selected_rgb": [
+        0.21390420943498611,
+        0.5416028499603271,
+        0.7694112459818522
+      ],
+      "true_source_distractor_rgb": [
+        0.7075903862714767,
+        0.34136029332876205,
+        0.35537301003932953
+      ],
+      "true_target_selected_rgb": [
+        0.21390420943498611,
+        0.5416028499603271,
+        0.7694112459818522
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "source_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "true_target_color_equals_source": true,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7447646537628759,
+      "genuine_distance_to_distractor": 0.1955045408927937,
+      "source_probe_distance_to_selected": 0.7447646537628759,
+      "source_probe_distance_to_distractor": 0.1955045408927937
+    },
+    {
+      "scene": "image_13202",
+      "shift_px": -16,
+      "true_source_selected_rgb": [
+        0.21390420943498611,
+        0.5416028499603271,
+        0.7694112459818522
+      ],
+      "true_source_distractor_rgb": [
+        0.7075903862714767,
+        0.34136029332876205,
+        0.35537301003932953
+      ],
+      "true_target_selected_rgb": [
+        0.21377145002285639,
+        0.5410284002621969,
+        0.7690589129924774
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6104747305313746,
+        0.22532778978347778,
+        0.2189979131023089
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "source_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7485004535096139,
+      "genuine_distance_to_distractor": 0.20369869791777812,
+      "source_probe_distance_to_selected": 0.7447646537628759,
+      "source_probe_distance_to_distractor": 0.1955045408927937
+    },
+    {
+      "scene": "image_13202",
+      "shift_px": -32,
+      "true_source_selected_rgb": [
+        0.21390420943498611,
+        0.5416028499603271,
+        0.7694112459818522
+      ],
+      "true_source_distractor_rgb": [
+        0.7075903862714767,
+        0.34136029332876205,
+        0.35537301003932953
+      ],
+      "true_target_selected_rgb": [
+        0.21409824738899866,
+        0.5405688385168711,
+        0.7683925529321035
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.610982358455658,
+        0.22276868174473444,
+        0.21705611298481622
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "source_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7512805575812441,
+      "genuine_distance_to_distractor": 0.2062247448473333,
+      "source_probe_distance_to_selected": 0.7447646537628759,
+      "source_probe_distance_to_distractor": 0.1955045408927937
+    },
+    {
+      "scene": "image_13202",
+      "shift_px": -48,
+      "true_source_selected_rgb": [
+        0.21390420943498611,
+        0.5416028499603271,
+        0.7694112459818522
+      ],
+      "true_source_distractor_rgb": [
+        0.7075903862714767,
+        0.34136029332876205,
+        0.35537301003932953
+      ],
+      "true_target_selected_rgb": [
+        0.21467269708712897,
+        0.5403875708580017,
+        0.7677108744780222
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6117056459188461,
+        0.22236868490775427,
+        0.21864095826943716
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "source_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7506692646114214,
+      "genuine_distance_to_distractor": 0.2050574072993082,
+      "source_probe_distance_to_selected": 0.7447646537628759,
+      "source_probe_distance_to_distractor": 0.1955045408927937
+    },
+    {
+      "scene": "image_13202",
+      "shift_px": -64,
+      "true_source_selected_rgb": [
+        0.21390420943498611,
+        0.5416028499603271,
+        0.7694112459818522
+      ],
+      "true_source_distractor_rgb": [
+        0.7075903862714767,
+        0.34136029332876205,
+        0.35537301003932953
+      ],
+      "true_target_selected_rgb": [
+        0.2151245971520742,
+        0.5404743750890096,
+        0.7672743002573649
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6100776394208273,
+        0.22133949647347131,
+        0.222406176229318
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "source_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.747486821655317,
+      "genuine_distance_to_distractor": 0.20394584175608252,
+      "source_probe_distance_to_selected": 0.7447646537628759,
+      "source_probe_distance_to_distractor": 0.1955045408927937
+    },
+    {
+      "scene": "image_13202",
+      "shift_px": -80,
+      "true_source_selected_rgb": [
+        0.21390420943498611,
+        0.5416028499603271,
+        0.7694112459818522
+      ],
+      "true_source_distractor_rgb": [
+        0.7075903862714767,
+        0.34136029332876205,
+        0.35537301003932953
+      ],
+      "true_target_selected_rgb": [
+        0.21504289656877518,
+        0.5407092571258545,
+        0.7671823898951212
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.6080956707398096,
+        0.21969449520111084,
+        0.22515573849280676
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "source_probe_selected_rgb": [
+        0.6143825401862463,
+        0.23081492632627487,
+        0.22379016627868017
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7451348565605933,
+      "genuine_distance_to_distractor": 0.20410365665951843,
+      "source_probe_distance_to_selected": 0.7447646537628759,
+      "source_probe_distance_to_distractor": 0.1955045408927937
+    },
+    {
+      "scene": "image_13203",
+      "shift_px": 0,
+      "true_source_selected_rgb": [
+        0.23818934336304665,
+        0.5144837573170662,
+        0.7861787527799606
+      ],
+      "true_source_distractor_rgb": [
+        0.7052874763806661,
+        0.3124438325564067,
+        0.3827793002128601
+      ],
+      "true_target_selected_rgb": [
+        0.23818934336304665,
+        0.5144837573170662,
+        0.7861787527799606
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "source_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "true_target_color_equals_source": true,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.711059781337573,
+      "genuine_distance_to_distractor": 0.20777550618327206,
+      "source_probe_distance_to_selected": 0.711059781337573,
+      "source_probe_distance_to_distractor": 0.20777550618327206
+    },
+    {
+      "scene": "image_13203",
+      "shift_px": -16,
+      "true_source_selected_rgb": [
+        0.23818934336304665,
+        0.5144837573170662,
+        0.7861787527799606
+      ],
+      "true_source_distractor_rgb": [
+        0.7052874763806661,
+        0.3124438325564067,
+        0.3827793002128601
+      ],
+      "true_target_selected_rgb": [
+        0.23818551376461983,
+        0.5144607797265053,
+        0.7861940711736679
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.5821575298905373,
+        0.24588372185826302,
+        0.21924084424972534
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "source_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7154569760091226,
+      "genuine_distance_to_distractor": 0.21525812095625407,
+      "source_probe_distance_to_selected": 0.711059781337573,
+      "source_probe_distance_to_distractor": 0.20777550618327206
+    },
+    {
+      "scene": "image_13203",
+      "shift_px": -32,
+      "true_source_selected_rgb": [
+        0.23818934336304665,
+        0.5144837573170662,
+        0.7861787527799606
+      ],
+      "true_source_distractor_rgb": [
+        0.7052874763806661,
+        0.3124438325564067,
+        0.3827793002128601
+      ],
+      "true_target_selected_rgb": [
+        0.23815487697720528,
+        0.5144416317343712,
+        0.7861749231815338
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.5801178216934204,
+        0.24625982344150543,
+        0.21870362758636475
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "source_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7147637236951057,
+      "genuine_distance_to_distractor": 0.21672238431893126,
+      "source_probe_distance_to_selected": 0.711059781337573,
+      "source_probe_distance_to_distractor": 0.20777550618327206
+    },
+    {
+      "scene": "image_13203",
+      "shift_px": -48,
+      "true_source_selected_rgb": [
+        0.23818934336304665,
+        0.5144837573170662,
+        0.7861787527799606
+      ],
+      "true_source_distractor_rgb": [
+        0.7052874763806661,
+        0.3124438325564067,
+        0.3827793002128601
+      ],
+      "true_target_selected_rgb": [
+        0.23810509219765663,
+        0.5144109949469566,
+        0.7861404567956924
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.5850212574005127,
+        0.24489418417215347,
+        0.2161971963942051
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "source_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7196178771843267,
+      "genuine_distance_to_distractor": 0.21627879169550493,
+      "source_probe_distance_to_selected": 0.711059781337573,
+      "source_probe_distance_to_distractor": 0.20777550618327206
+    },
+    {
+      "scene": "image_13203",
+      "shift_px": -64,
+      "true_source_selected_rgb": [
+        0.23818934336304665,
+        0.5144837573170662,
+        0.7861787527799606
+      ],
+      "true_source_distractor_rgb": [
+        0.7052874763806661,
+        0.3124438325564067,
+        0.3827793002128601
+      ],
+      "true_target_selected_rgb": [
+        0.2380782850086689,
+        0.5143995061516762,
+        0.7861442863941193
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.5894500836730003,
+        0.2458452172577381,
+        0.21618254110217094
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "source_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7214197489778995,
+      "genuine_distance_to_distractor": 0.21356066411021254,
+      "source_probe_distance_to_selected": 0.711059781337573,
+      "source_probe_distance_to_distractor": 0.20777550618327206
+    },
+    {
+      "scene": "image_13203",
+      "shift_px": -80,
+      "true_source_selected_rgb": [
+        0.23818934336304665,
+        0.5144837573170662,
+        0.7861787527799606
+      ],
+      "true_source_distractor_rgb": [
+        0.7052874763806661,
+        0.3124438325564067,
+        0.3827793002128601
+      ],
+      "true_target_selected_rgb": [
+        0.23808977380394936,
+        0.5144148245453835,
+        0.7861787527799606
+      ],
+      "genuine_target_probe_selected_rgb": [
+        0.5878356993198395,
+        0.24819180741906166,
+        0.21975261345505714
+      ],
+      "copy_repair_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "source_probe_selected_rgb": [
+        0.5853937938809395,
+        0.2477952465415001,
+        0.22588211670517921
+      ],
+      "true_target_color_equals_source": false,
+      "edited_color_equals_source_probe": true,
+      "genuine_distance_to_selected": 0.7169397102440767,
+      "genuine_distance_to_distractor": 0.21095246683606939,
+      "source_probe_distance_to_selected": 0.711059781337573,
+      "source_probe_distance_to_distractor": 0.20777550618327206
+    }
+  ],
+  "genuine_color_classification_correct": 0,
+  "unmodified_source_color_classification_correct": 0,
+  "all_edited_colors_equal_source_probe": true,
+  "all_true_target_colors_equal_source": false,
+  "interpretation": "Color failure already occurs on original unedited image encodings and genuine targets. It is not caused by latent transport. Exact recomputation rules out observed scorer/inference implementation discrepancy. Results are consistent with the frozen video-trained readout not transferring to native image features, but do not isolate the representational cause or establish detailed image identity."
+}

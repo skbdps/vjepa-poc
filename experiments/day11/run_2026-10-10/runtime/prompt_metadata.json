@@ -1,0 +1,46 @@
+{
+  "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+  "revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+  "positive_prompt": "Two patterned colored balls on a textured background. Static camera, simple geometric scene.",
+  "negative_prompt": "text, watermark, blurry, distorted, extra objects",
+  "max_sequence_length": 128,
+  "shapes": {
+    "prompt_embeds": [
+      1,
+      128,
+      4096
+    ],
+    "negative_prompt_embeds": [
+      1,
+      128,
+      4096
+    ]
+  },
+  "dtypes": {
+    "prompt_embeds": "torch.float16",
+    "negative_prompt_embeds": "torch.float16"
+  },
+  "finite": {
+    "prompt_embeds": true,
+    "negative_prompt_embeds": true
+  },
+  "sha256": "499bd027b2596ef4711de7e8eebfc26b5ed58078c18fa37c6e32448adcd3a7f1",
+  "seconds_including_dependency_recovery": 160.00674861000016,
+  "gpu_peak_allocated_gib": 12.534629821777344,
+  "packages": {
+    "torch": "2.11.0+cu130",
+    "diffusers": "0.35.1",
+    "transformers": "4.57.6",
+    "ftfy": "6.3.1"
+  },
+  "pilot_guidance": 5.0,
+  "pilot_steps": 20,
+  "pilot_seed": 1111,
+  "pilot_frames_height_width": [
+    1,
+    384,
+    384
+  ],
+  "same_prompt_for_all_arms": true,
+  "recovery_note": "Installed missing optional ftfy; reused loaded frozen T5 and upstream method unchanged."
+}

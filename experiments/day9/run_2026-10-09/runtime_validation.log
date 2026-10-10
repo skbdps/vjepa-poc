@@ -1,0 +1,13 @@
+Error importing huggingface_hub.hf_api: No module named 'requests'
+/tmp/vjepa-day9-deps/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+RUNTIME_CHECK source {'bitwise_equal': False, 'max_abs_difference': 0.875, 'sha256': '16e0a9109c97fbd297b8ffb5a2612939ca6a007dded1063683559af8568f3f55', 'shape': [16, 24, 24, 1024]}
+RUNTIME_CHECK target {'bitwise_equal': False, 'max_abs_difference': 1.3125, 'sha256': 'c7cf177dcdb9d0310473cb4e774af5e337c674cd06465a51a0a05d7b8c361b4e', 'shape': [16, 24, 24, 1024]}
+Traceback (most recent call last):
+  File "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day9/validate_runtime.py", line 68, in <module>
+    run(a.features, a.upstream, a.out)
+  File "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day9/validate_runtime.py", line 58, in run
+    raise RuntimeError('Restored runtime does not exactly reproduce the validated fixture')
+RuntimeError: Restored runtime does not exactly reproduce the validated fixture

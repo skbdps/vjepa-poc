@@ -1,0 +1,141 @@
+{
+  "status": "passed",
+  "independent_implementation": true,
+  "imports_experiment_operator_or_scorer": false,
+  "separate_new_test": true,
+  "expected_new_test_seeds": [
+    13600,
+    13601,
+    13602,
+    13603
+  ],
+  "scope_limits": [
+    "Encoder inference and probe training are not repeated.",
+    "Remote publication chronology is attested, not independently queried.",
+    "Readout preservation cannot establish detailed visual identity."
+  ],
+  "full_tensors_reconstructed": 96,
+  "all_latent_hashes_match": true,
+  "readouts_reproduced": 96,
+  "max_readout_abs_difference": 0.0,
+  "position_rows_checked": 96,
+  "image_rows_checked": 16,
+  "display_state_checks": 44,
+  "scenes": [
+    {
+      "scene": "image_13600",
+      "full_tensors_reconstructed": 24,
+      "readouts_reproduced": 24,
+      "display_positions_checked": 11,
+      "background_reference_exact": true,
+      "destination_exact": true,
+      "outside_union_exact": true
+    },
+    {
+      "scene": "image_13601",
+      "full_tensors_reconstructed": 24,
+      "readouts_reproduced": 24,
+      "display_positions_checked": 11,
+      "background_reference_exact": true,
+      "destination_exact": true,
+      "outside_union_exact": true
+    },
+    {
+      "scene": "image_13602",
+      "full_tensors_reconstructed": 24,
+      "readouts_reproduced": 24,
+      "display_positions_checked": 11,
+      "background_reference_exact": true,
+      "destination_exact": true,
+      "outside_union_exact": true
+    },
+    {
+      "scene": "image_13603",
+      "full_tensors_reconstructed": 24,
+      "readouts_reproduced": 24,
+      "display_positions_checked": 11,
+      "background_reference_exact": true,
+      "destination_exact": true,
+      "outside_union_exact": true
+    }
+  ],
+  "qualified_controlled_result": true,
+  "gates": {
+    "genuine_readout_valid": true,
+    "genuine_centroid_mean_px_all_states": 0.7455540283869576,
+    "genuine_coarse_color_accuracy_all_states": 1.0,
+    "genuine_color_eligible_states": 24,
+    "genuine_color_skipped_states": 0,
+    "edited_centroid_below_one_patch_and_all_present": true,
+    "edited_centroid_mean_px_all_states": 1.357627520840851,
+    "region_errors_below_noop_by_image": {
+      "image_13600": true,
+      "image_13601": true,
+      "image_13602": true,
+      "image_13603": true
+    },
+    "no_degenerate_primary_denominators": true,
+    "copy_repair_outside_union_exact": true,
+    "edited_coarse_color_accuracy_all_states": 1.0,
+    "edited_color_eligible_states": 24,
+    "edited_color_skipped_states": 0,
+    "edited_coarse_color_valid": true
+  },
+  "methods": {
+    "noop": {
+      "primary_ratio": 1.0,
+      "source_hole_ratio": 1.0,
+      "destination_ratio": 1.0,
+      "source_hole_rgb_mse": 0.0500646241779323,
+      "source_hole_ghost_mean_occupancy": 0.5053424313664436,
+      "selected_centroid_error_px": 48.30042556898231,
+      "selected_iou": 0.13166704404127005,
+      "appearance_identity_accuracy": 0.75,
+      "distractor_centroid_error_px": 0.45960323531349256,
+      "distractor_rgb_change_mse": 0.0
+    },
+    "copy_repair": {
+      "primary_ratio": 0.13056521492705475,
+      "source_hole_ratio": 0.23022430514597808,
+      "destination_ratio": 0.030906124708131436,
+      "source_hole_rgb_mse": 0.024244484023306347,
+      "source_hole_ghost_mean_occupancy": 0.09707796461880205,
+      "selected_centroid_error_px": 1.4952146987605537,
+      "selected_iou": 0.8853084415584415,
+      "appearance_identity_accuracy": 1.0,
+      "distractor_centroid_error_px": 0.45960323531349256,
+      "distractor_rgb_change_mse": 0.0
+    },
+    "wrong_direction": {
+      "primary_ratio": 0.8324661102493309,
+      "source_hole_ratio": 0.5844247573175695,
+      "destination_ratio": 1.0805074631810925,
+      "source_hole_rgb_mse": 0.04286508471964469,
+      "source_hole_ghost_mean_occupancy": 0.3334236782044172,
+      "selected_centroid_error_px": 94.26065054115813,
+      "selected_iou": 0.03792292266556972,
+      "appearance_identity_accuracy": 0.55,
+      "distractor_centroid_error_px": 0.45960323531349256,
+      "distractor_rgb_change_mse": 0.0
+    },
+    "genuine_target": {
+      "primary_ratio": 0.0,
+      "source_hole_ratio": 0.0,
+      "destination_ratio": 0.0,
+      "source_hole_rgb_mse": 0.001201245990818518,
+      "source_hole_ghost_mean_occupancy": 0.0011271392577327788,
+      "selected_centroid_error_px": 0.7607265078158822,
+      "selected_iou": 0.9200757575757575,
+      "appearance_identity_accuracy": 1.0,
+      "distractor_centroid_error_px": 0.4923987286046838,
+      "distractor_rgb_change_mse": 0.00011480875300549086
+    }
+  },
+  "checks": 20151,
+  "errors": [],
+  "max_metric_abs_difference": 0.0,
+  "auditor_sha256": "478b22765addb68c6d36e50146d155f98fc0b8907ddc4322928f60e7f05a8ceb",
+  "independent_base_auditor_sha256": "a1960fff2b4f98c0e1e20bc6c20bb57a0fef78faf19b97aec2dc7c5ab02c4243",
+  "freeze_sha256": "eb01d90a68f6c0a79f9fad44b81412ae80c49336ad5cc45802e9b34f2a10f91f",
+  "manifest_sha256": "c7d081ec23f8149c027651b4bf3bfde3d76d8ab7499f40227f7cb980e2c23972"
+}

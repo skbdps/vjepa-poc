@@ -1,0 +1,109 @@
+{
+  "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+  "revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+  "subfolder": "vae",
+  "snapshot": "/root/.cache/huggingface/hub/models--Wan-AI--Wan2.1-VACE-1.3B-diffusers/snapshots/ec4d2cb062b548996b179d493fdd05340de702a1",
+  "files": {
+    "config.json": {
+      "bytes": 724,
+      "sha256": "7a3afcf422b9a9d63e0b6ca7e0d3b5193220a61f5b203bb8417900bc090705e8"
+    },
+    "diffusion_pytorch_model.safetensors": {
+      "bytes": 507591892,
+      "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793"
+    }
+  },
+  "dtype": "torch.float32",
+  "device": "cuda:0",
+  "training": false,
+  "trainable_parameters": 0,
+  "parameters": 126892531,
+  "config": {
+    "base_dim": 96,
+    "decoder_base_dim": null,
+    "z_dim": 16,
+    "dim_mult": [
+      1,
+      2,
+      4,
+      4
+    ],
+    "num_res_blocks": 2,
+    "attn_scales": [],
+    "temperal_downsample": [
+      false,
+      true,
+      true
+    ],
+    "dropout": 0.0,
+    "latents_mean": [
+      -0.7571,
+      -0.7089,
+      -0.9113,
+      0.1075,
+      -0.1745,
+      0.9653,
+      -0.1517,
+      1.5508,
+      0.4134,
+      -0.0715,
+      0.5517,
+      -0.3632,
+      -0.1922,
+      -0.9497,
+      0.2503,
+      -0.2921
+    ],
+    "latents_std": [
+      2.8184,
+      1.4541,
+      2.3275,
+      2.6558,
+      1.2196,
+      1.7708,
+      2.6052,
+      2.0743,
+      3.2687,
+      2.1526,
+      2.8652,
+      1.5579,
+      1.6382,
+      1.1253,
+      2.8251,
+      1.916
+    ],
+    "is_residual": false,
+    "in_channels": 3,
+    "out_channels": 3,
+    "patch_size": null,
+    "scale_factor_temporal": 4,
+    "scale_factor_spatial": 8,
+    "_use_default_values": [
+      "patch_size",
+      "scale_factor_spatial",
+      "in_channels",
+      "out_channels",
+      "is_residual",
+      "decoder_base_dim",
+      "scale_factor_temporal"
+    ],
+    "_class_name": "AutoencoderKLWan",
+    "_diffusers_version": "0.34.0.dev0",
+    "_name_or_path": "/root/.cache/huggingface/hub/models--Wan-AI--Wan2.1-VACE-1.3B-diffusers/snapshots/ec4d2cb062b548996b179d493fdd05340de702a1"
+  },
+  "packages": {
+    "torch": "2.11.0+cu130",
+    "diffusers": "0.35.1",
+    "transformers": "4.57.6",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0",
+    "huggingface_hub": "0.36.2"
+  },
+  "load_seconds": 1.0671740739999223,
+  "gpu_allocated_gib": 0.493894100189209,
+  "gpu_peak_allocated_gib": 0.493894100189209,
+  "gpu_free_total_bytes": [
+    14992343040,
+    15637086208
+  ]
+}

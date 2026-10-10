@@ -1,0 +1,1703 @@
+{
+  "version": "day12_image_jepa_rgb_video_guides_v1",
+  "complete": true,
+  "frames": 9,
+  "frame_index": 15,
+  "scene_specs": [
+    {
+      "seed": 14000,
+      "sign": 1,
+      "shifts_px": [
+        0,
+        16,
+        32,
+        48,
+        64,
+        48,
+        32,
+        16,
+        0
+      ]
+    },
+    {
+      "seed": 14001,
+      "sign": -1,
+      "shifts_px": [
+        0,
+        -16,
+        -32,
+        -48,
+        -64,
+        -48,
+        -32,
+        -16,
+        0
+      ]
+    }
+  ],
+  "arms": [
+    "source_static",
+    "jepa",
+    "no_f",
+    "wrong_direction",
+    "oracle"
+  ],
+  "scope": "Previously seen image scenes; development video fixtures; native-image JEPA only; no learned temporal rollout",
+  "feature_manifest_sha256": "1d982deeae11422ec43f8d2c629aebd14f33841a458be2b752f12ccccba6443e",
+  "checkpoint_sha256": "a3abb9b3d224881c8125499ed43c65d7b0dae8975538ce0716ca47e75e3bc365",
+  "binding_sha256": "182bc983279bf776149101e56836d45f3f88a752772ffa1bb1f3f40eba645206",
+  "vae": {
+    "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+    "revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+    "files": {
+      "config.json": {
+        "sha256": "7a3afcf422b9a9d63e0b6ca7e0d3b5193220a61f5b203bb8417900bc090705e8",
+        "bytes": 724
+      },
+      "diffusion_pytorch_model.safetensors": {
+        "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793",
+        "bytes": 507591892
+      }
+    },
+    "class": "AutoencoderKLWan",
+    "precision": "float32",
+    "posterior": "mode",
+    "normalization": "(posterior_mode - latents_mean) / latents_std",
+    "latents_mean": [
+      -0.7571,
+      -0.7089,
+      -0.9113,
+      0.1075,
+      -0.1745,
+      0.9653,
+      -0.1517,
+      1.5508,
+      0.4134,
+      -0.0715,
+      0.5517,
+      -0.3632,
+      -0.1922,
+      -0.9497,
+      0.2503,
+      -0.2921
+    ],
+    "latents_std": [
+      2.8184,
+      1.4541,
+      2.3275,
+      2.6558,
+      1.2196,
+      1.7708,
+      2.6052,
+      2.0743,
+      3.2687,
+      2.1526,
+      2.8652,
+      1.5579,
+      1.6382,
+      1.1253,
+      2.8251,
+      1.916
+    ],
+    "input": "[1,3,1,384,384] RGB in [-1,1]",
+    "output": "[16,48,48]"
+  },
+  "guide_path": "native-image JEPA edits -> frozen CNN/provenance transport -> independent T=1 Wan VAE decodes -> uint8 RGB sequence",
+  "next_required_step": "Encode each RGB guide as an ordinary video condition with the causal Wan video VAE",
+  "oracle_policy": "Target RGB is only guide_oracle/scoring; never supplied to first four arms; target JEPA is never loaded",
+  "source_selection_policy": "Cached oracle source mask enters Day10 editor; source RGB supplies appearance; no semantic tagger",
+  "quantization": "round(clamp((decoded+1)/2,0,1)*255) to uint8 per independently decoded image",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "torch": "2.9.0+cpu",
+    "diffusers": "0.35.1",
+    "device": "cpu",
+    "threads": 4,
+    "precision": "float32"
+  },
+  "source_hashes": {
+    "experiments/day12/prepare.py": "8411a144746ea0ec8ef79447c6844915807e61e3719f5c7e1fb92a080e620502",
+    "experiments/day10/animate.py": "e2329583f9a6ae4df0f846140e618743883b7e94d4189932dc23a28050c4e451",
+    "experiments/day8/data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+    "experiments/day8/operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+    "experiments/day8/extract.py": "de2b366a53cae32f13741570f6dcefd525e45bfe04a2fda5b909d54579f1982f",
+    "experiments/day8/evaluate.py": "fec3a0489c846c96c0b58e8725ab22a20923eed57ac0cce65abfa073b8b0929c",
+    "experiments/day8/probe.py": "9a736ddd5bb64c19a5205f12d606bcd1f1bc562367effcbba96dd8c0a1b8790d",
+    "experiments/day11/evaluate.py": "98412b56a20669125dd18d22971d9a139a4ba0389dedd81c6693f53c554d6119",
+    "experiments/day11/data.py": "9e217690b35fde7a7b91ac36eab5e6bf4584a54fab330783ee63c22f9553edbf",
+    "experiments/day11/model.py": "a34c7348ccaaa4bd65cff51366fe66e69c8eda581585e9bae3034b34b3f5628f",
+    "experiments/day11/transport.py": "407a745c704c4720a3907adfef017786f6a265e3ae52ef8a56c0e6b407b74c51",
+    "experiments/day11/vace_bridge.py": "37ea481d279b0fbe18b001f988c77d84bfc1f4e2bb76d2427a8443115083989b"
+  },
+  "scenes": [
+    {
+      "seed": 14000,
+      "sign": 1,
+      "path": "scenes/development_video_14000.npz",
+      "sha256": "794c22894150ab7b65688b6356f16f46f7b79e22f981306494b55e6c1084d219",
+      "seconds": 109.87150265200034,
+      "invariants": {
+        "operator": [
+          {
+            "shift_px": 0,
+            "zero_shift_identity": true,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "20eeb9c7112bcb9873c72c04fe274c577b7e63900156276e0278341d001a04f4",
+            "wrong_direction_sha256": "20eeb9c7112bcb9873c72c04fe274c577b7e63900156276e0278341d001a04f4"
+          },
+          {
+            "shift_px": 16,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "ead954fdbd16fe3a0a5614717d19fd466f9ea5924cf5e974e4b5827d78524064",
+            "wrong_direction_sha256": "b30e52a2763ad746c926d628966a868ab1322ea8d9d703b16bdc01be9fdd0054"
+          },
+          {
+            "shift_px": 32,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "18fce344e280c5d875ef193a48a7551fe13c5f9a91451f6d06353e3239de04f9",
+            "wrong_direction_sha256": "113d1ecb4aaf54a5ea56796eb0efb1cbd74847eabbe4a6ff8304a073e2546124"
+          },
+          {
+            "shift_px": 48,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "16e948e9dbb8bd7b42868d5b4dc2f5453c66496c0fb47710850d4ff9611d6ae3",
+            "wrong_direction_sha256": "0af1a84bd07199d234ffa6071d533a1fc2f13f6f5075376a49aac777467354cb"
+          },
+          {
+            "shift_px": 64,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "3960b3e44adc95f3650244b2c39c62aab98936b6f962d0a49c8cdb75163d7de1",
+            "wrong_direction_sha256": "75e0494f566d68d9033fb3cb1058de6340c91a8fc40c3f96a8cc048e8e38a23f"
+          },
+          {
+            "shift_px": 48,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "16e948e9dbb8bd7b42868d5b4dc2f5453c66496c0fb47710850d4ff9611d6ae3",
+            "wrong_direction_sha256": "0af1a84bd07199d234ffa6071d533a1fc2f13f6f5075376a49aac777467354cb"
+          },
+          {
+            "shift_px": 32,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "18fce344e280c5d875ef193a48a7551fe13c5f9a91451f6d06353e3239de04f9",
+            "wrong_direction_sha256": "113d1ecb4aaf54a5ea56796eb0efb1cbd74847eabbe4a6ff8304a073e2546124"
+          },
+          {
+            "shift_px": 16,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "ead954fdbd16fe3a0a5614717d19fd466f9ea5924cf5e974e4b5827d78524064",
+            "wrong_direction_sha256": "b30e52a2763ad746c926d628966a868ab1322ea8d9d703b16bdc01be9fdd0054"
+          },
+          {
+            "shift_px": 0,
+            "zero_shift_identity": true,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "20eeb9c7112bcb9873c72c04fe274c577b7e63900156276e0278341d001a04f4",
+            "wrong_direction_sha256": "20eeb9c7112bcb9873c72c04fe274c577b7e63900156276e0278341d001a04f4"
+          }
+        ],
+        "transport": [
+          {
+            "frame": 0,
+            "shift_px": 0,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 576,
+              "matched_cells": 576,
+              "moved_cells": 0,
+              "unmatched_cells": 0,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 1.0,
+              "moved_match_fraction_of_changed": null,
+              "zero_edit": true,
+              "mapping_sha256": "31030311050e2ae72e955668a3ff853104726b9a619553bcdcd450d5e13add25",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 0,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 576,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 576,
+              "matched_cells": 576,
+              "moved_cells": 0,
+              "unmatched_cells": 0,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 1.0,
+              "moved_match_fraction_of_changed": null,
+              "zero_edit": true,
+              "mapping_sha256": "31030311050e2ae72e955668a3ff853104726b9a619553bcdcd450d5e13add25",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 0,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 576,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "20eeb9c7112bcb9873c72c04fe274c577b7e63900156276e0278341d001a04f4",
+            "wrong_feature_sha256": "20eeb9c7112bcb9873c72c04fe274c577b7e63900156276e0278341d001a04f4"
+          },
+          {
+            "frame": 1,
+            "shift_px": 16,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 559,
+              "matched_cells": 572,
+              "moved_cells": 13,
+              "unmatched_cells": 4,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9930555555555556,
+              "moved_match_fraction_of_changed": 0.7647058823529411,
+              "zero_edit": false,
+              "mapping_sha256": "f5b7adb626602ae3186231210a7d6ad10b5190da9e22da76e691394b7fa00249",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 4,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 559,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 559,
+              "matched_cells": 572,
+              "moved_cells": 13,
+              "unmatched_cells": 4,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9930555555555556,
+              "moved_match_fraction_of_changed": 0.7647058823529411,
+              "zero_edit": false,
+              "mapping_sha256": "04203bc640ab0f21d39e7af82798cbce5d64ac5798bc1edf5dfa3dafa90ec0f3",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 4,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 559,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "ead954fdbd16fe3a0a5614717d19fd466f9ea5924cf5e974e4b5827d78524064",
+            "wrong_feature_sha256": "b30e52a2763ad746c926d628966a868ab1322ea8d9d703b16bdc01be9fdd0054"
+          },
+          {
+            "frame": 2,
+            "shift_px": 32,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 555,
+              "matched_cells": 568,
+              "moved_cells": 13,
+              "unmatched_cells": 8,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9861111111111112,
+              "moved_match_fraction_of_changed": 0.6190476190476191,
+              "zero_edit": false,
+              "mapping_sha256": "fe1b20227fa91f68cf7b06719bfcbe4055804f9c2ce9254f283a3857752c1cb9",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 8,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 555,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 555,
+              "matched_cells": 568,
+              "moved_cells": 13,
+              "unmatched_cells": 8,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9861111111111112,
+              "moved_match_fraction_of_changed": 0.6190476190476191,
+              "zero_edit": false,
+              "mapping_sha256": "c3f0ce547125415cb3a3c821ddfe230b1e333079339f90a7b0e644fddc0d2ffd",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 8,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 555,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "18fce344e280c5d875ef193a48a7551fe13c5f9a91451f6d06353e3239de04f9",
+            "wrong_feature_sha256": "113d1ecb4aaf54a5ea56796eb0efb1cbd74847eabbe4a6ff8304a073e2546124"
+          },
+          {
+            "frame": 3,
+            "shift_px": 48,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 551,
+              "matched_cells": 564,
+              "moved_cells": 13,
+              "unmatched_cells": 12,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9791666666666666,
+              "moved_match_fraction_of_changed": 0.52,
+              "zero_edit": false,
+              "mapping_sha256": "ad9362e3261601c8408c48675b1a5c09f10ce95fda7e8328a7075f1fb48669a2",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 12,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 551,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 551,
+              "matched_cells": 564,
+              "moved_cells": 13,
+              "unmatched_cells": 12,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9791666666666666,
+              "moved_match_fraction_of_changed": 0.52,
+              "zero_edit": false,
+              "mapping_sha256": "22c7e908d446c3bf6a26ce8b68f5ed45325452b6af0e5ff9abd762acf24351c2",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 12,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 551,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "16e948e9dbb8bd7b42868d5b4dc2f5453c66496c0fb47710850d4ff9611d6ae3",
+            "wrong_feature_sha256": "0af1a84bd07199d234ffa6071d533a1fc2f13f6f5075376a49aac777467354cb"
+          },
+          {
+            "frame": 4,
+            "shift_px": 64,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 550,
+              "matched_cells": 563,
+              "moved_cells": 13,
+              "unmatched_cells": 13,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9774305555555556,
+              "moved_match_fraction_of_changed": 0.5,
+              "zero_edit": false,
+              "mapping_sha256": "3a9be69a7e280cc2c592985d4599f8126de71dcb4baea79d50bc907a3570639a",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 13,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 550,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 550,
+              "matched_cells": 563,
+              "moved_cells": 13,
+              "unmatched_cells": 13,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9774305555555556,
+              "moved_match_fraction_of_changed": 0.5,
+              "zero_edit": false,
+              "mapping_sha256": "21f62ef3e81e8208b63aa167c35592c7a7a9a818193f1d3da325f2eb0145d79b",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 13,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 550,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "3960b3e44adc95f3650244b2c39c62aab98936b6f962d0a49c8cdb75163d7de1",
+            "wrong_feature_sha256": "75e0494f566d68d9033fb3cb1058de6340c91a8fc40c3f96a8cc048e8e38a23f"
+          },
+          {
+            "frame": 5,
+            "shift_px": 48,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 551,
+              "matched_cells": 564,
+              "moved_cells": 13,
+              "unmatched_cells": 12,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9791666666666666,
+              "moved_match_fraction_of_changed": 0.52,
+              "zero_edit": false,
+              "mapping_sha256": "ad9362e3261601c8408c48675b1a5c09f10ce95fda7e8328a7075f1fb48669a2",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 12,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 551,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 551,
+              "matched_cells": 564,
+              "moved_cells": 13,
+              "unmatched_cells": 12,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9791666666666666,
+              "moved_match_fraction_of_changed": 0.52,
+              "zero_edit": false,
+              "mapping_sha256": "22c7e908d446c3bf6a26ce8b68f5ed45325452b6af0e5ff9abd762acf24351c2",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 12,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 551,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "16e948e9dbb8bd7b42868d5b4dc2f5453c66496c0fb47710850d4ff9611d6ae3",
+            "wrong_feature_sha256": "0af1a84bd07199d234ffa6071d533a1fc2f13f6f5075376a49aac777467354cb"
+          },
+          {
+            "frame": 6,
+            "shift_px": 32,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 555,
+              "matched_cells": 568,
+              "moved_cells": 13,
+              "unmatched_cells": 8,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9861111111111112,
+              "moved_match_fraction_of_changed": 0.6190476190476191,
+              "zero_edit": false,
+              "mapping_sha256": "fe1b20227fa91f68cf7b06719bfcbe4055804f9c2ce9254f283a3857752c1cb9",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 8,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 555,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 555,
+              "matched_cells": 568,
+              "moved_cells": 13,
+              "unmatched_cells": 8,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9861111111111112,
+              "moved_match_fraction_of_changed": 0.6190476190476191,
+              "zero_edit": false,
+              "mapping_sha256": "c3f0ce547125415cb3a3c821ddfe230b1e333079339f90a7b0e644fddc0d2ffd",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 8,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 555,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "18fce344e280c5d875ef193a48a7551fe13c5f9a91451f6d06353e3239de04f9",
+            "wrong_feature_sha256": "113d1ecb4aaf54a5ea56796eb0efb1cbd74847eabbe4a6ff8304a073e2546124"
+          },
+          {
+            "frame": 7,
+            "shift_px": 16,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 559,
+              "matched_cells": 572,
+              "moved_cells": 13,
+              "unmatched_cells": 4,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9930555555555556,
+              "moved_match_fraction_of_changed": 0.7647058823529411,
+              "zero_edit": false,
+              "mapping_sha256": "f5b7adb626602ae3186231210a7d6ad10b5190da9e22da76e691394b7fa00249",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 4,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 559,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 559,
+              "matched_cells": 572,
+              "moved_cells": 13,
+              "unmatched_cells": 4,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9930555555555556,
+              "moved_match_fraction_of_changed": 0.7647058823529411,
+              "zero_edit": false,
+              "mapping_sha256": "04203bc640ab0f21d39e7af82798cbce5d64ac5798bc1edf5dfa3dafa90ec0f3",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 4,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 559,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "ead954fdbd16fe3a0a5614717d19fd466f9ea5924cf5e974e4b5827d78524064",
+            "wrong_feature_sha256": "b30e52a2763ad746c926d628966a868ab1322ea8d9d703b16bdc01be9fdd0054"
+          },
+          {
+            "frame": 8,
+            "shift_px": 0,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 576,
+              "matched_cells": 576,
+              "moved_cells": 0,
+              "unmatched_cells": 0,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 1.0,
+              "moved_match_fraction_of_changed": null,
+              "zero_edit": true,
+              "mapping_sha256": "31030311050e2ae72e955668a3ff853104726b9a619553bcdcd450d5e13add25",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 0,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 576,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 576,
+              "matched_cells": 576,
+              "moved_cells": 0,
+              "unmatched_cells": 0,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 1.0,
+              "moved_match_fraction_of_changed": null,
+              "zero_edit": true,
+              "mapping_sha256": "31030311050e2ae72e955668a3ff853104726b9a619553bcdcd450d5e13add25",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 0,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 576,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "20eeb9c7112bcb9873c72c04fe274c577b7e63900156276e0278341d001a04f4",
+            "wrong_feature_sha256": "20eeb9c7112bcb9873c72c04fe274c577b7e63900156276e0278341d001a04f4"
+          }
+        ],
+        "zero_shift_identity": true,
+        "repeated_shift_identity": true,
+        "no_f_independent_of_F_values": true
+      },
+      "input_record": {
+        "spec": {
+          "name": "test_14000_dx+32",
+          "seed": 14000,
+          "dx": 32,
+          "split": "test",
+          "frame_index": 15,
+          "views": [
+            "source",
+            "genuine_shifted_target"
+          ]
+        },
+        "path": "features/cache/test_14000_dx+32.npz",
+        "sha256": "5420977f9b1f4c388179135af1716a426b1693abd53c5069c391221fc75532db",
+        "pixel_path": "pixels/test_14000_dx+32.npz",
+        "pixel_sha256": "0db67c45df46f95f6c9545f027cddbfaae12643a4696d6ab4232c2dffdc29a9a",
+        "source_rgb_sha256": "a3c077191445c2fd2e4a5fa2d77bb315a1085f60e48542dda729dfb319ee2ee0",
+        "source_tokens_sha256": "20eeb9c7112bcb9873c72c04fe274c577b7e63900156276e0278341d001a04f4"
+      },
+      "array_sha256": {
+        "source_rgb": "a3c077191445c2fd2e4a5fa2d77bb315a1085f60e48542dda729dfb319ee2ee0",
+        "source_mask": "30b14769f1d730f007e53f656b496b30b6f596648047f7433b9862ecb37dc085",
+        "distractor_mask": "9af8ce595930981f25222f904898d3a6b59046d22b7e3d1f22d68ca1685eb9f3",
+        "shifts_px": "0c955b4ab3da7d71ee13a3026d707310d628e8a1b0be7d8202a4709922513764",
+        "latent_source_static": "33b039577bc42c6b4b181d77978851ffb6f2085c8aa3211624d00153ab55c1ea",
+        "latent_jepa": "a5bba7754451d3a6bd88f7a85b8b520712fb8793605d7dbb234236b8d76611cd",
+        "latent_no_f": "67d73707eda871bc31c543e57b8eaa4e92ca5e038eb90a297bed34d02869d827",
+        "latent_wrong_direction": "f52b54c0dd363424572e52240b5d644cef514de7c561f9b97bd7af229e412d6d",
+        "guide_source_static": "420be2accc4a7a587f001f29dcfdbcd64179c2a80108c7f393cdb254a5e11232",
+        "guide_jepa": "b2ebd2b27f1d9ca9a8288da63153a10e14cf5a02472100266a9cef05d2f58769",
+        "guide_no_f": "d499ca33a9f98c09c73fabda603cf63241b5c77df3c21b70ec81ad72a299a70b",
+        "guide_wrong_direction": "b9e582c61b6ae28a8d0ac3305d9c3f92f0be1d20dd97c8192bbb06d41b651ae0",
+        "guide_oracle": "92323bf849314280961e1f542f574b32671ceedf19a44b67568aa510ae48558c",
+        "target_masks": "db3cd263cb38a7d46e9fac49f181fa7b410a50a8a07fe3582a627377cae80582",
+        "target_xy": "0fb90853cba9f84d6d00ac06a54b56b151743af3d37cea0977bd9d995d119a28",
+        "source_xy": "66dd86e125b0da0d83802a7d9e7964f8e8b601a8d2571e2705964aba17fc50f2"
+      },
+      "zero_and_repeated_guide_frames_exact": true,
+      "source_guides_unchanged_after_oracle": true
+    },
+    {
+      "seed": 14001,
+      "sign": -1,
+      "path": "scenes/development_video_14001.npz",
+      "sha256": "9fd176e9c0557c21c2e9c7a9a09ef995b4be5f724e2566fb0b8b77584a367cc2",
+      "seconds": 127.48921233799774,
+      "invariants": {
+        "operator": [
+          {
+            "shift_px": 0,
+            "zero_shift_identity": true,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "c4f77c0878defba0f70f8346250fc21c00ab609d72c45e190989f19bbe78e1da",
+            "wrong_direction_sha256": "c4f77c0878defba0f70f8346250fc21c00ab609d72c45e190989f19bbe78e1da"
+          },
+          {
+            "shift_px": -16,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "d1180f663395da299f52a42c63e97d0b3889013f8b14b10dc8a011b69e79deab",
+            "wrong_direction_sha256": "9aadaa5322726c27445df90d072f1b685d8971ee8315d6bc324f9443061a5af1"
+          },
+          {
+            "shift_px": -32,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "18ec431bd456c007389184144c1863d6ee941e1062e9509bcf73ec86703cac5b",
+            "wrong_direction_sha256": "0413a0cd24f78aa8818622603384639700773e9e42e28c425a7caa4f9a369a7f"
+          },
+          {
+            "shift_px": -48,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "12ca075a8b7107e173de5ba6078b4b53cdfbd5b3f710f41959bfbaf20c48610e",
+            "wrong_direction_sha256": "0875d6fe39c4afaf8c3e9b277e874e9253a669ab65dd8921d897f3332200019b"
+          },
+          {
+            "shift_px": -64,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "68341d0ab98b080d4441e14317ac85b8212831f09d49eab3184989418dcd4669",
+            "wrong_direction_sha256": "19be8ee812ae40c8bb1004d589f1d1aa0323741c6ccf550732016826a4c418e4"
+          },
+          {
+            "shift_px": -48,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "12ca075a8b7107e173de5ba6078b4b53cdfbd5b3f710f41959bfbaf20c48610e",
+            "wrong_direction_sha256": "0875d6fe39c4afaf8c3e9b277e874e9253a669ab65dd8921d897f3332200019b"
+          },
+          {
+            "shift_px": -32,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "18ec431bd456c007389184144c1863d6ee941e1062e9509bcf73ec86703cac5b",
+            "wrong_direction_sha256": "0413a0cd24f78aa8818622603384639700773e9e42e28c425a7caa4f9a369a7f"
+          },
+          {
+            "shift_px": -16,
+            "zero_shift_identity": false,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "d1180f663395da299f52a42c63e97d0b3889013f8b14b10dc8a011b69e79deab",
+            "wrong_direction_sha256": "9aadaa5322726c27445df90d072f1b685d8971ee8315d6bc324f9443061a5af1"
+          },
+          {
+            "shift_px": 0,
+            "zero_shift_identity": true,
+            "outside_union_exact": true,
+            "destination_copy_exact": true,
+            "uncovered_background_fixed": true,
+            "day8_naive_equivalent": true,
+            "copy_repair_sha256": "c4f77c0878defba0f70f8346250fc21c00ab609d72c45e190989f19bbe78e1da",
+            "wrong_direction_sha256": "c4f77c0878defba0f70f8346250fc21c00ab609d72c45e190989f19bbe78e1da"
+          }
+        ],
+        "transport": [
+          {
+            "frame": 0,
+            "shift_px": 0,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 576,
+              "matched_cells": 576,
+              "moved_cells": 0,
+              "unmatched_cells": 0,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 1.0,
+              "moved_match_fraction_of_changed": null,
+              "zero_edit": true,
+              "mapping_sha256": "31030311050e2ae72e955668a3ff853104726b9a619553bcdcd450d5e13add25",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 0,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 576,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 576,
+              "matched_cells": 576,
+              "moved_cells": 0,
+              "unmatched_cells": 0,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 1.0,
+              "moved_match_fraction_of_changed": null,
+              "zero_edit": true,
+              "mapping_sha256": "31030311050e2ae72e955668a3ff853104726b9a619553bcdcd450d5e13add25",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 0,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 576,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "c4f77c0878defba0f70f8346250fc21c00ab609d72c45e190989f19bbe78e1da",
+            "wrong_feature_sha256": "c4f77c0878defba0f70f8346250fc21c00ab609d72c45e190989f19bbe78e1da"
+          },
+          {
+            "frame": 1,
+            "shift_px": -16,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 559,
+              "matched_cells": 572,
+              "moved_cells": 13,
+              "unmatched_cells": 4,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9930555555555556,
+              "moved_match_fraction_of_changed": 0.7647058823529411,
+              "zero_edit": false,
+              "mapping_sha256": "546f0dc92afa3a3dac115b512f04ae766eacfcf79ef3927751979129d3fe64f3",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 4,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 559,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 559,
+              "matched_cells": 572,
+              "moved_cells": 13,
+              "unmatched_cells": 4,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9930555555555556,
+              "moved_match_fraction_of_changed": 0.7647058823529411,
+              "zero_edit": false,
+              "mapping_sha256": "523b86fdf32b86a0d86ec0c5516b561dc79c980d728899190cdc08c31b4bad1d",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 4,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 559,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "d1180f663395da299f52a42c63e97d0b3889013f8b14b10dc8a011b69e79deab",
+            "wrong_feature_sha256": "9aadaa5322726c27445df90d072f1b685d8971ee8315d6bc324f9443061a5af1"
+          },
+          {
+            "frame": 2,
+            "shift_px": -32,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 555,
+              "matched_cells": 568,
+              "moved_cells": 13,
+              "unmatched_cells": 8,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9861111111111112,
+              "moved_match_fraction_of_changed": 0.6190476190476191,
+              "zero_edit": false,
+              "mapping_sha256": "ce5461c3b9214856e5c587d81e1724bf79b82b6124371ec92049af96babbc750",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 8,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 555,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 555,
+              "matched_cells": 568,
+              "moved_cells": 13,
+              "unmatched_cells": 8,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9861111111111112,
+              "moved_match_fraction_of_changed": 0.6190476190476191,
+              "zero_edit": false,
+              "mapping_sha256": "190542e24fa3869304546a0e99d867b0dd9abe83273952c1b324121d12341c65",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 8,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 555,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "18ec431bd456c007389184144c1863d6ee941e1062e9509bcf73ec86703cac5b",
+            "wrong_feature_sha256": "0413a0cd24f78aa8818622603384639700773e9e42e28c425a7caa4f9a369a7f"
+          },
+          {
+            "frame": 3,
+            "shift_px": -48,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 552,
+              "matched_cells": 565,
+              "moved_cells": 13,
+              "unmatched_cells": 11,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9809027777777778,
+              "moved_match_fraction_of_changed": 0.5416666666666666,
+              "zero_edit": false,
+              "mapping_sha256": "b7f8d6abe2bf5c1f9a33924ca864f066641d9bdd945507b60325f985c9deca96",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 11,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 552,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 552,
+              "matched_cells": 565,
+              "moved_cells": 13,
+              "unmatched_cells": 11,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9809027777777778,
+              "moved_match_fraction_of_changed": 0.5416666666666666,
+              "zero_edit": false,
+              "mapping_sha256": "1b1c857df549f3249ceceb86fdada91ef0480f9ad1eed547744910c9270a4406",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 11,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 552,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "12ca075a8b7107e173de5ba6078b4b53cdfbd5b3f710f41959bfbaf20c48610e",
+            "wrong_feature_sha256": "0875d6fe39c4afaf8c3e9b277e874e9253a669ab65dd8921d897f3332200019b"
+          },
+          {
+            "frame": 4,
+            "shift_px": -64,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 550,
+              "matched_cells": 563,
+              "moved_cells": 13,
+              "unmatched_cells": 13,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9774305555555556,
+              "moved_match_fraction_of_changed": 0.5,
+              "zero_edit": false,
+              "mapping_sha256": "6cb8963baba71e5327c79695766e32ccb65eb975e098428494c4d3fd387eb54d",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 13,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 550,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 550,
+              "matched_cells": 563,
+              "moved_cells": 13,
+              "unmatched_cells": 13,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9774305555555556,
+              "moved_match_fraction_of_changed": 0.5,
+              "zero_edit": false,
+              "mapping_sha256": "cc90c90f2efc68b6e9721a882601b33ecbdec31ac29e9f7d58fb320cc39c37c1",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 13,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 550,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "68341d0ab98b080d4441e14317ac85b8212831f09d49eab3184989418dcd4669",
+            "wrong_feature_sha256": "19be8ee812ae40c8bb1004d589f1d1aa0323741c6ccf550732016826a4c418e4"
+          },
+          {
+            "frame": 5,
+            "shift_px": -48,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 552,
+              "matched_cells": 565,
+              "moved_cells": 13,
+              "unmatched_cells": 11,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9809027777777778,
+              "moved_match_fraction_of_changed": 0.5416666666666666,
+              "zero_edit": false,
+              "mapping_sha256": "b7f8d6abe2bf5c1f9a33924ca864f066641d9bdd945507b60325f985c9deca96",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 11,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 552,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 552,
+              "matched_cells": 565,
+              "moved_cells": 13,
+              "unmatched_cells": 11,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9809027777777778,
+              "moved_match_fraction_of_changed": 0.5416666666666666,
+              "zero_edit": false,
+              "mapping_sha256": "1b1c857df549f3249ceceb86fdada91ef0480f9ad1eed547744910c9270a4406",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 11,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 552,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "12ca075a8b7107e173de5ba6078b4b53cdfbd5b3f710f41959bfbaf20c48610e",
+            "wrong_feature_sha256": "0875d6fe39c4afaf8c3e9b277e874e9253a669ab65dd8921d897f3332200019b"
+          },
+          {
+            "frame": 6,
+            "shift_px": -32,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 555,
+              "matched_cells": 568,
+              "moved_cells": 13,
+              "unmatched_cells": 8,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9861111111111112,
+              "moved_match_fraction_of_changed": 0.6190476190476191,
+              "zero_edit": false,
+              "mapping_sha256": "ce5461c3b9214856e5c587d81e1724bf79b82b6124371ec92049af96babbc750",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 8,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 555,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 555,
+              "matched_cells": 568,
+              "moved_cells": 13,
+              "unmatched_cells": 8,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9861111111111112,
+              "moved_match_fraction_of_changed": 0.6190476190476191,
+              "zero_edit": false,
+              "mapping_sha256": "190542e24fa3869304546a0e99d867b0dd9abe83273952c1b324121d12341c65",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 8,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 555,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "18ec431bd456c007389184144c1863d6ee941e1062e9509bcf73ec86703cac5b",
+            "wrong_feature_sha256": "0413a0cd24f78aa8818622603384639700773e9e42e28c425a7caa4f9a369a7f"
+          },
+          {
+            "frame": 7,
+            "shift_px": -16,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 559,
+              "matched_cells": 572,
+              "moved_cells": 13,
+              "unmatched_cells": 4,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9930555555555556,
+              "moved_match_fraction_of_changed": 0.7647058823529411,
+              "zero_edit": false,
+              "mapping_sha256": "546f0dc92afa3a3dac115b512f04ae766eacfcf79ef3927751979129d3fe64f3",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 4,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 559,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 559,
+              "matched_cells": 572,
+              "moved_cells": 13,
+              "unmatched_cells": 4,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 0.9930555555555556,
+              "moved_match_fraction_of_changed": 0.7647058823529411,
+              "zero_edit": false,
+              "mapping_sha256": "523b86fdf32b86a0d86ec0c5516b561dc79c980d728899190cdc08c31b4bad1d",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 4,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 559,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "d1180f663395da299f52a42c63e97d0b3889013f8b14b10dc8a011b69e79deab",
+            "wrong_feature_sha256": "9aadaa5322726c27445df90d072f1b685d8971ee8315d6bc324f9443061a5af1"
+          },
+          {
+            "frame": 8,
+            "shift_px": 0,
+            "correct": {
+              "total_cells": 576,
+              "identity_cells": 576,
+              "matched_cells": 576,
+              "moved_cells": 0,
+              "unmatched_cells": 0,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 1.0,
+              "moved_match_fraction_of_changed": null,
+              "zero_edit": true,
+              "mapping_sha256": "31030311050e2ae72e955668a3ff853104726b9a619553bcdcd450d5e13add25",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 0,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 576,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "wrong_direction": {
+              "total_cells": 576,
+              "identity_cells": 576,
+              "matched_cells": 576,
+              "moved_cells": 0,
+              "unmatched_cells": 0,
+              "ambiguous_moved_cells": 0,
+              "source_duplicate_hash_groups": 0,
+              "matched_fraction": 1.0,
+              "moved_match_fraction_of_changed": null,
+              "zero_edit": true,
+              "mapping_sha256": "31030311050e2ae72e955668a3ff853104726b9a619553bcdcd450d5e13add25",
+              "matching": "exact finite float32 vector equality; hash prefilter; identity precedence",
+              "local_fill": {
+                "local_donor_queries": 0,
+                "eligible_global_fallback_queries": 0,
+                "entire_source_mean_fallback_queries": 0,
+                "eligible_source_cells": 576,
+                "radius": 2
+              },
+              "unchanged_wan_tiles_exact": true,
+              "copy_destination_tiles_exact": true,
+              "copy_and_residual_unmatched_equal_F_edit": true,
+              "copy_and_local_destinations_equal": true,
+              "input_budget": [
+                "source_jepa",
+                "edited_jepa",
+                "source_wan",
+                "source_prediction",
+                "edited_prediction"
+              ]
+            },
+            "no_f_independent_of_F_values": true,
+            "edited_feature_sha256": "c4f77c0878defba0f70f8346250fc21c00ab609d72c45e190989f19bbe78e1da",
+            "wrong_feature_sha256": "c4f77c0878defba0f70f8346250fc21c00ab609d72c45e190989f19bbe78e1da"
+          }
+        ],
+        "zero_shift_identity": true,
+        "repeated_shift_identity": true,
+        "no_f_independent_of_F_values": true
+      },
+      "input_record": {
+        "spec": {
+          "name": "test_14001_dx-32",
+          "seed": 14001,
+          "dx": -32,
+          "split": "test",
+          "frame_index": 15,
+          "views": [
+            "source",
+            "genuine_shifted_target"
+          ]
+        },
+        "path": "features/cache/test_14001_dx-32.npz",
+        "sha256": "6440687b1cbefd218fbf08ececad7303941517860b26c740f6c2f6fa877da655",
+        "pixel_path": "pixels/test_14001_dx-32.npz",
+        "pixel_sha256": "7f7702f6b7df1fead516ee4cf5d5fd33f4e20eae24054ee87f85f51f82fb94ca",
+        "source_rgb_sha256": "a6e5f4228d88a7e2b19135b11cfc9f83aec955db4b5d2083169ed2837023000e",
+        "source_tokens_sha256": "c4f77c0878defba0f70f8346250fc21c00ab609d72c45e190989f19bbe78e1da"
+      },
+      "array_sha256": {
+        "source_rgb": "a6e5f4228d88a7e2b19135b11cfc9f83aec955db4b5d2083169ed2837023000e",
+        "source_mask": "de3c15445a7c4c5a8fead138f1f47445dc5769194efb46cfebc5775aab053c5f",
+        "distractor_mask": "eccf1a9bc0942aca42c4beeaf87d6f942ff597906e40261ca15ce28945465d86",
+        "shifts_px": "d2de7736afa46352ab8b3d9b076882c57002f6a43d23e50504e11794f38b095f",
+        "latent_source_static": "e4bf3b0d6ad47176bceaa9166281013d1c3751018001ebb3fa1e398ceb00e1a7",
+        "latent_jepa": "ecdea45832756c32f7db5df938b0ecb0408a726d69ba241b179dfee2240ac2c3",
+        "latent_no_f": "911903728913d31e4bddff3256fb96003d0e1054e0ca443e169c7efb54f8fb93",
+        "latent_wrong_direction": "236f274282e02fdfdf76220bf78208b499d24102a7944e9e9010fb78b40cf587",
+        "guide_source_static": "d5c8a71ac36adcd40a185198b31f695e47c92825ef82bea293999948b98396a4",
+        "guide_jepa": "eca25add4494b7282ebd480ffe4a796c835ba086e6454b61140ef7d4fbc63d53",
+        "guide_no_f": "049ab1143c41910ab72c027ac44a14e3b794f297019f7ae9d4b143ad1c5cae93",
+        "guide_wrong_direction": "c3272acba5c396f2ae6a639740288bc35c782d47c8d395ca17d6d5852a15b5fe",
+        "guide_oracle": "2f220ffcca7c22d32d5a076e4e010f5bf24ce74526b935ab31fe4217a7748418",
+        "target_masks": "9341dbee6f40ce4b4c3b14bfa5acba8957db6231da0490a066ceabd9d7eae722",
+        "target_xy": "8bd8a343ff9b0bd4106e46eeb6375cb55ff3837f64284c2f6751b293a796c88c",
+        "source_xy": "5ff723ddfe8e1c5a81ce8806933b05ee83123c44fa8295ba6478cdb03f92b815"
+      },
+      "zero_and_repeated_guide_frames_exact": true,
+      "source_guides_unchanged_after_oracle": true
+    }
+  ]
+}

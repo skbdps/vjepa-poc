@@ -1,0 +1,18 @@
+{
+  "observed_at_utc": "2026-10-10T22:47:28.704000+00:00",
+  "notebook_url": "https://www.kaggle.com/code/skbdps/vjepa-day12-gpu-preflight/edit",
+  "authentication": "verified signed-in account and editable notebook",
+  "available_menu_label": "GPU T4 x2",
+  "gpu_option_enabled": false,
+  "internet_enabled": false,
+  "visible_requirement": "Get phone verified",
+  "verification_flow": "phone entry and reCAPTCHA; awaiting user handoff",
+  "gpu_allocation_attempted": false,
+  "runtime_started": false,
+  "day12_generator_calls_started": 0,
+  "migration_checkpoint": "eeaa0f946317f4313c76063dc17034fc0f1132f2",
+  "screenshot": {
+    "path": "kaggle_phone_verification_2026-10-10.jpg",
+    "sha256": "ad9c2f396fde655d32616dea1e762d8b28ebcf7cb515caa0f155de7254332297"
+  }
+}

@@ -1,0 +1,1224 @@
+{
+  "experiment": "frozen video part identity diagnostic",
+  "config": {
+    "resolution": 384,
+    "frames": 32,
+    "tubelet_frames": 2,
+    "patch_size": 16,
+    "independently_encoded_windows": 2,
+    "frames_per_window": 16,
+    "annotation": "first tubelet only (first frame only for LK)",
+    "calibration_seeds": [
+      100,
+      101,
+      102
+    ],
+    "evaluation_seeds": [
+      200,
+      201,
+      202,
+      203,
+      204,
+      205
+    ],
+    "parts": {
+      "1": "car_A.front_door",
+      "2": "car_A.window",
+      "3": "car_B.front_door",
+      "4": "car_B.window"
+    },
+    "matching": "L2-normalized mean initial prototype; global max cosine; row-major ties",
+    "visibility": "patch >=70% target over pair, >=65% in each frame; absent only if zero target pixels in both",
+    "exclusions": "first tubelet; partially visible targets with no unambiguous patch",
+    "wrong_identity_notes": "wrong-car and wrong-part may overlap; background/boundary errors are localization misses",
+    "scope": "Small offline synthetic diagnostic; cars stay in separate lanes; no learned editing, camera change, realistic faces, 3D or product claim",
+    "seed_variation": "start/end positions, peak positions, nonlinear speed, reversal and occlusion timing, occluder positions/widths, vertical jitter and body colour",
+    "scenes": [
+      {
+        "name": "calibration_100",
+        "seed": 100,
+        "condition": "partial_occlusion",
+        "parameters": {
+          "a_start": 1,
+          "a_end": 17,
+          "a_peak": 176,
+          "b_start": 188,
+          "b_end": 13,
+          "peak_time": 0.5852577911191186,
+          "a_gamma": 1.1184122668291099,
+          "b_gamma": 1.2741578986512327,
+          "occluder_left": 166,
+          "partial_left": 218,
+          "partial_width": 22,
+          "vertical_jitter": 4,
+          "body_color_variant": 10
+        }
+      },
+      {
+        "name": "calibration_101",
+        "seed": 101,
+        "condition": "full_occlusion",
+        "parameters": {
+          "a_start": 6,
+          "a_end": 11,
+          "a_peak": 177,
+          "b_start": 202,
+          "b_end": 11,
+          "peak_time": 0.46297914101544707,
+          "a_gamma": 1.2652265588903115,
+          "b_gamma": 1.3215989268071415,
+          "occluder_left": 174,
+          "partial_left": 188,
+          "partial_width": 16,
+          "vertical_jitter": -3,
+          "body_color_variant": 14
+        }
+      },
+      {
+        "name": "calibration_102",
+        "seed": 102,
+        "condition": "motion",
+        "parameters": {
+          "a_start": 4,
+          "a_end": 17,
+          "a_peak": 180,
+          "b_start": 203,
+          "b_end": 9,
+          "peak_time": 0.5332819138783343,
+          "a_gamma": 1.0587478721376924,
+          "b_gamma": 1.3348144579234322,
+          "occluder_left": 170,
+          "partial_left": 213,
+          "partial_width": 18,
+          "vertical_jitter": -1,
+          "body_color_variant": -11
+        }
+      },
+      {
+        "name": "evaluation_200",
+        "seed": 200,
+        "condition": "full_occlusion",
+        "parameters": {
+          "a_start": 2,
+          "a_end": 18,
+          "a_peak": 183,
+          "b_start": 181,
+          "b_end": 15,
+          "peak_time": 0.5132293968648858,
+          "a_gamma": 1.0980238079317348,
+          "b_gamma": 1.1161522649888895,
+          "occluder_left": 168,
+          "partial_left": 201,
+          "partial_width": 16,
+          "vertical_jitter": -7,
+          "body_color_variant": 5
+        }
+      },
+      {
+        "name": "evaluation_201",
+        "seed": 201,
+        "condition": "motion",
+        "parameters": {
+          "a_start": 1,
+          "a_end": 15,
+          "a_peak": 198,
+          "b_start": 194,
+          "b_end": 21,
+          "peak_time": 0.5331332167689743,
+          "a_gamma": 1.0838668816422166,
+          "b_gamma": 0.8908327260399441,
+          "occluder_left": 174,
+          "partial_left": 207,
+          "partial_width": 18,
+          "vertical_jitter": -3,
+          "body_color_variant": 15
+        }
+      },
+      {
+        "name": "evaluation_202",
+        "seed": 202,
+        "condition": "partial_occlusion",
+        "parameters": {
+          "a_start": 3,
+          "a_end": 13,
+          "a_peak": 180,
+          "b_start": 203,
+          "b_end": 7,
+          "peak_time": 0.46407667841797917,
+          "a_gamma": 1.0480637819957488,
+          "b_gamma": 1.138106490945964,
+          "occluder_left": 176,
+          "partial_left": 200,
+          "partial_width": 22,
+          "vertical_jitter": -5,
+          "body_color_variant": -5
+        }
+      },
+      {
+        "name": "evaluation_203",
+        "seed": 203,
+        "condition": "full_occlusion",
+        "parameters": {
+          "a_start": 8,
+          "a_end": 11,
+          "a_peak": 200,
+          "b_start": 183,
+          "b_end": 13,
+          "peak_time": 0.4670612590787099,
+          "a_gamma": 1.2379570791780927,
+          "b_gamma": 1.1709496634789105,
+          "occluder_left": 169,
+          "partial_left": 217,
+          "partial_width": 17,
+          "vertical_jitter": -3,
+          "body_color_variant": 9
+        }
+      },
+      {
+        "name": "evaluation_204",
+        "seed": 204,
+        "condition": "motion",
+        "parameters": {
+          "a_start": 8,
+          "a_end": 22,
+          "a_peak": 179,
+          "b_start": 197,
+          "b_end": 17,
+          "peak_time": 0.4118619758134663,
+          "a_gamma": 0.9407639180957548,
+          "b_gamma": 0.8353057146100002,
+          "occluder_left": 169,
+          "partial_left": 200,
+          "partial_width": 15,
+          "vertical_jitter": 4,
+          "body_color_variant": 1
+        }
+      },
+      {
+        "name": "evaluation_205",
+        "seed": 205,
+        "condition": "partial_occlusion",
+        "parameters": {
+          "a_start": 4,
+          "a_end": 8,
+          "a_peak": 185,
+          "b_start": 203,
+          "b_end": 23,
+          "peak_time": 0.4853851170353791,
+          "a_gamma": 0.9108481297006109,
+          "b_gamma": 1.0775540854724022,
+          "occluder_left": 168,
+          "partial_left": 205,
+          "partial_width": 13,
+          "vertical_jitter": 1,
+          "body_color_variant": 13
+        }
+      }
+    ]
+  },
+  "thresholds": {
+    "vjepa": 0.7891842126846313,
+    "rgb_patch_mean": 1.0,
+    "fixed_initial_position": 0.5,
+    "lucas_kanade_flow": 0.5
+  },
+  "calibration": {
+    "vjepa": {
+      "balanced_presence_accuracy": 0.9418219461697723,
+      "visible_samples": 161,
+      "absent_samples": 15,
+      "objective": "mean(visible presence recall, absent specificity); highest-threshold tie break"
+    },
+    "rgb_patch_mean": {
+      "balanced_presence_accuracy": 0.5420289855072464,
+      "visible_samples": 161,
+      "absent_samples": 15,
+      "objective": "mean(visible presence recall, absent specificity); highest-threshold tie break"
+    },
+    "fixed_initial_position": {
+      "rule": "always emit fixed location"
+    },
+    "lucas_kanade_flow": {
+      "rule": "emit only while LK points survive in both tubelet frames"
+    }
+  },
+  "skipped_methods": {},
+  "methods": {
+    "vjepa": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 276,
+          "denominator": 315,
+          "rate": 0.8761904761904762
+        },
+        "wrong_car_given_visible": {
+          "numerator": 1,
+          "denominator": 315,
+          "rate": 0.0031746031746031746
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 315,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 294,
+          "denominator": 315,
+          "rate": 0.9333333333333333
+        },
+        "false_presence_given_absent": {
+          "numerator": 6,
+          "denominator": 36,
+          "rate": 0.16666666666666666
+        },
+        "recovery_accuracy": {
+          "numerator": 2,
+          "denominator": 4,
+          "rate": 0.5
+        },
+        "ambiguous_samples_skipped": 9,
+        "uniform_patch_chance_given_visible": 0.010146604938271605
+      },
+      "by_condition": {
+        "full_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 67,
+            "denominator": 76,
+            "rate": 0.881578947368421
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 76,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 76,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 71,
+            "denominator": 76,
+            "rate": 0.9342105263157895
+          },
+          "false_presence_given_absent": {
+            "numerator": 6,
+            "denominator": 36,
+            "rate": 0.16666666666666666
+          },
+          "recovery_accuracy": {
+            "numerator": 2,
+            "denominator": 4,
+            "rate": 0.5
+          },
+          "ambiguous_samples_skipped": 8,
+          "uniform_patch_chance_given_visible": 0.009388706140350879
+        },
+        "motion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 101,
+            "denominator": 120,
+            "rate": 0.8416666666666667
+          },
+          "wrong_car_given_visible": {
+            "numerator": 1,
+            "denominator": 120,
+            "rate": 0.008333333333333333
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 120,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 110,
+            "denominator": 120,
+            "rate": 0.9166666666666666
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.010792824074074074
+        },
+        "partial_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 108,
+            "denominator": 119,
+            "rate": 0.907563025210084
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 119,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 119,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 113,
+            "denominator": 119,
+            "rate": 0.9495798319327731
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 1,
+          "uniform_patch_chance_given_visible": 0.00997899159663866
+        }
+      },
+      "by_window": {
+        "within_first_window": {
+          "localization_accuracy_given_visible": {
+            "numerator": 129,
+            "denominator": 148,
+            "rate": 0.8716216216216216
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 148,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 148,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 135,
+            "denominator": 148,
+            "rate": 0.9121621621621622
+          },
+          "false_presence_given_absent": {
+            "numerator": 5,
+            "denominator": 16,
+            "rate": 0.3125
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 4,
+          "uniform_patch_chance_given_visible": 0.010088213213213211
+        },
+        "across_window": {
+          "localization_accuracy_given_visible": {
+            "numerator": 147,
+            "denominator": 167,
+            "rate": 0.8802395209580839
+          },
+          "wrong_car_given_visible": {
+            "numerator": 1,
+            "denominator": 167,
+            "rate": 0.005988023952095809
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 167,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 159,
+            "denominator": 167,
+            "rate": 0.9520958083832335
+          },
+          "false_presence_given_absent": {
+            "numerator": 1,
+            "denominator": 20,
+            "rate": 0.05
+          },
+          "recovery_accuracy": {
+            "numerator": 2,
+            "denominator": 4,
+            "rate": 0.5
+          },
+          "ambiguous_samples_skipped": 5,
+          "uniform_patch_chance_given_visible": 0.01019835329341317
+        }
+      },
+      "window_boundary": {
+        "localization_accuracy_given_visible": {
+          "numerator": 18,
+          "denominator": 19,
+          "rate": 0.9473684210526315
+        },
+        "wrong_car_given_visible": {
+          "numerator": 0,
+          "denominator": 19,
+          "rate": 0.0
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 19,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 19,
+          "denominator": 19,
+          "rate": 1.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "ambiguous_samples_skipped": 1,
+        "uniform_patch_chance_given_visible": 0.009502923976608187
+      }
+    },
+    "rgb_patch_mean": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 11,
+          "denominator": 315,
+          "rate": 0.03492063492063492
+        },
+        "wrong_car_given_visible": {
+          "numerator": 21,
+          "denominator": 315,
+          "rate": 0.06666666666666667
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 315,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 32,
+          "denominator": 315,
+          "rate": 0.10158730158730159
+        },
+        "false_presence_given_absent": {
+          "numerator": 6,
+          "denominator": 36,
+          "rate": 0.16666666666666666
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "ambiguous_samples_skipped": 9,
+        "uniform_patch_chance_given_visible": 0.010146604938271605
+      },
+      "by_condition": {
+        "full_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 3,
+            "denominator": 76,
+            "rate": 0.039473684210526314
+          },
+          "wrong_car_given_visible": {
+            "numerator": 5,
+            "denominator": 76,
+            "rate": 0.06578947368421052
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 76,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 8,
+            "denominator": 76,
+            "rate": 0.10526315789473684
+          },
+          "false_presence_given_absent": {
+            "numerator": 6,
+            "denominator": 36,
+            "rate": 0.16666666666666666
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 4,
+            "rate": 0.0
+          },
+          "ambiguous_samples_skipped": 8,
+          "uniform_patch_chance_given_visible": 0.009388706140350879
+        },
+        "motion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 1,
+            "denominator": 120,
+            "rate": 0.008333333333333333
+          },
+          "wrong_car_given_visible": {
+            "numerator": 8,
+            "denominator": 120,
+            "rate": 0.06666666666666667
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 120,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 9,
+            "denominator": 120,
+            "rate": 0.075
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.010792824074074074
+        },
+        "partial_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 7,
+            "denominator": 119,
+            "rate": 0.058823529411764705
+          },
+          "wrong_car_given_visible": {
+            "numerator": 8,
+            "denominator": 119,
+            "rate": 0.06722689075630252
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 119,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 15,
+            "denominator": 119,
+            "rate": 0.12605042016806722
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 1,
+          "uniform_patch_chance_given_visible": 0.00997899159663866
+        }
+      },
+      "by_window": {
+        "within_first_window": {
+          "localization_accuracy_given_visible": {
+            "numerator": 6,
+            "denominator": 148,
+            "rate": 0.04054054054054054
+          },
+          "wrong_car_given_visible": {
+            "numerator": 7,
+            "denominator": 148,
+            "rate": 0.0472972972972973
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 148,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 13,
+            "denominator": 148,
+            "rate": 0.08783783783783784
+          },
+          "false_presence_given_absent": {
+            "numerator": 4,
+            "denominator": 16,
+            "rate": 0.25
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 4,
+          "uniform_patch_chance_given_visible": 0.010088213213213211
+        },
+        "across_window": {
+          "localization_accuracy_given_visible": {
+            "numerator": 5,
+            "denominator": 167,
+            "rate": 0.029940119760479042
+          },
+          "wrong_car_given_visible": {
+            "numerator": 14,
+            "denominator": 167,
+            "rate": 0.08383233532934131
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 167,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 19,
+            "denominator": 167,
+            "rate": 0.11377245508982035
+          },
+          "false_presence_given_absent": {
+            "numerator": 2,
+            "denominator": 20,
+            "rate": 0.1
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 4,
+            "rate": 0.0
+          },
+          "ambiguous_samples_skipped": 5,
+          "uniform_patch_chance_given_visible": 0.01019835329341317
+        }
+      },
+      "window_boundary": {
+        "localization_accuracy_given_visible": {
+          "numerator": 1,
+          "denominator": 19,
+          "rate": 0.05263157894736842
+        },
+        "wrong_car_given_visible": {
+          "numerator": 1,
+          "denominator": 19,
+          "rate": 0.05263157894736842
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 19,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 2,
+          "denominator": 19,
+          "rate": 0.10526315789473684
+        },
+        "false_presence_given_absent": {
+          "numerator": 1,
+          "denominator": 4,
+          "rate": 0.25
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "ambiguous_samples_skipped": 1,
+        "uniform_patch_chance_given_visible": 0.009502923976608187
+      }
+    },
+    "fixed_initial_position": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 41,
+          "denominator": 315,
+          "rate": 0.13015873015873017
+        },
+        "wrong_car_given_visible": {
+          "numerator": 0,
+          "denominator": 315,
+          "rate": 0.0
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 315,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 315,
+          "denominator": 315,
+          "rate": 1.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 36,
+          "denominator": 36,
+          "rate": 1.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "ambiguous_samples_skipped": 9,
+        "uniform_patch_chance_given_visible": 0.010146604938271605
+      },
+      "by_condition": {
+        "full_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 15,
+            "denominator": 76,
+            "rate": 0.19736842105263158
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 76,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 76,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 76,
+            "denominator": 76,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 36,
+            "denominator": 36,
+            "rate": 1.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 4,
+            "rate": 0.0
+          },
+          "ambiguous_samples_skipped": 8,
+          "uniform_patch_chance_given_visible": 0.009388706140350879
+        },
+        "motion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 12,
+            "denominator": 120,
+            "rate": 0.1
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 120,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 120,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 120,
+            "denominator": 120,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.010792824074074074
+        },
+        "partial_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 14,
+            "denominator": 119,
+            "rate": 0.11764705882352941
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 119,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 119,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 119,
+            "denominator": 119,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 1,
+          "uniform_patch_chance_given_visible": 0.00997899159663866
+        }
+      },
+      "by_window": {
+        "within_first_window": {
+          "localization_accuracy_given_visible": {
+            "numerator": 37,
+            "denominator": 148,
+            "rate": 0.25
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 148,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 148,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 148,
+            "denominator": 148,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 16,
+            "denominator": 16,
+            "rate": 1.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 4,
+          "uniform_patch_chance_given_visible": 0.010088213213213211
+        },
+        "across_window": {
+          "localization_accuracy_given_visible": {
+            "numerator": 4,
+            "denominator": 167,
+            "rate": 0.023952095808383235
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 167,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 167,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 167,
+            "denominator": 167,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 20,
+            "denominator": 20,
+            "rate": 1.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 4,
+            "rate": 0.0
+          },
+          "ambiguous_samples_skipped": 5,
+          "uniform_patch_chance_given_visible": 0.01019835329341317
+        }
+      },
+      "window_boundary": {
+        "localization_accuracy_given_visible": {
+          "numerator": 0,
+          "denominator": 19,
+          "rate": 0.0
+        },
+        "wrong_car_given_visible": {
+          "numerator": 0,
+          "denominator": 19,
+          "rate": 0.0
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 19,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 19,
+          "denominator": 19,
+          "rate": 1.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 4,
+          "denominator": 4,
+          "rate": 1.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "ambiguous_samples_skipped": 1,
+        "uniform_patch_chance_given_visible": 0.009502923976608187
+      }
+    },
+    "lucas_kanade_flow": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 276,
+          "denominator": 315,
+          "rate": 0.8761904761904762
+        },
+        "wrong_car_given_visible": {
+          "numerator": 0,
+          "denominator": 315,
+          "rate": 0.0
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 315,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 315,
+          "denominator": 315,
+          "rate": 1.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 36,
+          "denominator": 36,
+          "rate": 1.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "ambiguous_samples_skipped": 9,
+        "uniform_patch_chance_given_visible": 0.010146604938271605
+      },
+      "by_condition": {
+        "full_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 68,
+            "denominator": 76,
+            "rate": 0.8947368421052632
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 76,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 76,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 76,
+            "denominator": 76,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 36,
+            "denominator": 36,
+            "rate": 1.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 4,
+            "rate": 0.0
+          },
+          "ambiguous_samples_skipped": 8,
+          "uniform_patch_chance_given_visible": 0.009388706140350879
+        },
+        "motion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 120,
+            "denominator": 120,
+            "rate": 1.0
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 120,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 120,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 120,
+            "denominator": 120,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.010792824074074074
+        },
+        "partial_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 88,
+            "denominator": 119,
+            "rate": 0.7394957983193278
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 119,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 119,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 119,
+            "denominator": 119,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 1,
+          "uniform_patch_chance_given_visible": 0.00997899159663866
+        }
+      },
+      "by_window": {
+        "within_first_window": {
+          "localization_accuracy_given_visible": {
+            "numerator": 147,
+            "denominator": 148,
+            "rate": 0.9932432432432432
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 148,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 148,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 148,
+            "denominator": 148,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 16,
+            "denominator": 16,
+            "rate": 1.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "ambiguous_samples_skipped": 4,
+          "uniform_patch_chance_given_visible": 0.010088213213213211
+        },
+        "across_window": {
+          "localization_accuracy_given_visible": {
+            "numerator": 129,
+            "denominator": 167,
+            "rate": 0.7724550898203593
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 167,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 167,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 167,
+            "denominator": 167,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 20,
+            "denominator": 20,
+            "rate": 1.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 4,
+            "rate": 0.0
+          },
+          "ambiguous_samples_skipped": 5,
+          "uniform_patch_chance_given_visible": 0.01019835329341317
+        }
+      },
+      "window_boundary": {
+        "localization_accuracy_given_visible": {
+          "numerator": 17,
+          "denominator": 19,
+          "rate": 0.8947368421052632
+        },
+        "wrong_car_given_visible": {
+          "numerator": 0,
+          "denominator": 19,
+          "rate": 0.0
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 19,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 19,
+          "denominator": 19,
+          "rate": 1.0
+        },
+        "false_presence_given_absent": {
+          "numerator": 4,
+          "denominator": 4,
+          "rate": 1.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "ambiguous_samples_skipped": 1,
+        "uniform_patch_chance_given_visible": 0.009502923976608187
+      }
+    }
+  }
+}

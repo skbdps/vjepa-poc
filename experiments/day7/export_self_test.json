@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "both_feature_cache_directories_excluded": true,
+    "compact_npz_deterministic": true,
+    "diagnostic_csv_matches_json": true,
+    "feature_cohort_and_provenance_bound": true,
+    "full_zip_payload_exact_and_deterministic": true,
+    "incomplete_run_rejected": true,
+    "missing_or_nonfinite_retrieved_rejected": true,
+    "model_inference_performed": false,
+    "original_bytes_unchanged": true,
+    "retained_arrays_exact": true,
+    "stale_audit_and_missing_bindings_rejected": true,
+    "test_scenes_generated": false
+  },
+  "created_at_utc": "2026-10-09T06:24:44.135964+00:00",
+  "fabricated": true,
+  "scope": "Fabricated CPU artifact/export checks only; no rendered scenes, trained checkpoint loading, model inference, or experiment data access.",
+  "source_file": "experiments/day7/export_artifacts.py",
+  "source_sha256": "08590e58689e0f4489b9ea73c8d9d72724d889d2baceaacbfbb5370e768d30f3"
+}

@@ -1,0 +1,5549 @@
+{
+  "checkpoint_freeze_sha256": "d22db32b2fe60d648170ed38970b6dcb274f322cc5630b020db6d996f319dd62",
+  "counts": {
+    "checkpoint_paths": [
+      "models/coordinate_only/1701/best.pt",
+      "models/coordinate_only/1702/best.pt",
+      "models/coordinate_only/1703/best.pt",
+      "models/predictive/1701/best.pt",
+      "models/predictive/1702/best.pt",
+      "models/predictive/1703/best.pt",
+      "models/retrieval_only/1701/best.pt",
+      "models/retrieval_only/1702/best.pt",
+      "models/retrieval_only/1703/best.pt"
+    ],
+    "completed_epoch_curve_rows": 270,
+    "future_diagnostic_rows": 8700,
+    "held_out_clips": 18,
+    "independent_analysis": [
+      "analysis/independent_analysis.json"
+    ],
+    "mechanism_diagnostic_rows": 216,
+    "methods": 12,
+    "primary_prediction_files": 216,
+    "primary_prediction_rows": 26784,
+    "selected_checkpoints": 9
+  },
+  "excluded_reproducible_feature_files": [
+    {
+      "bytes": 8701669,
+      "path": "features/cache/dev_crossing_9200.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8701302,
+      "path": "features/cache/dev_crossing_9201.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703367,
+      "path": "features/cache/dev_crossing_9202.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8707557,
+      "path": "features/cache/dev_long_occlusion_9100.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8704265,
+      "path": "features/cache/dev_long_occlusion_9101.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8705482,
+      "path": "features/cache/dev_long_occlusion_9102.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8702337,
+      "path": "features/cache/dev_scale_camera_9300.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8705614,
+      "path": "features/cache/dev_scale_camera_9301.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703462,
+      "path": "features/cache/dev_scale_camera_9302.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8701285,
+      "path": "features/cache/test_crossing_10200.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8704060,
+      "path": "features/cache/test_crossing_10201.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8701515,
+      "path": "features/cache/test_crossing_10202.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8701355,
+      "path": "features/cache/test_crossing_10203.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8702870,
+      "path": "features/cache/test_crossing_10204.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703805,
+      "path": "features/cache/test_crossing_10205.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8710722,
+      "path": "features/cache/test_long_occlusion_10100.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703591,
+      "path": "features/cache/test_long_occlusion_10101.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8706930,
+      "path": "features/cache/test_long_occlusion_10102.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8706998,
+      "path": "features/cache/test_long_occlusion_10103.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8708761,
+      "path": "features/cache/test_long_occlusion_10104.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8710196,
+      "path": "features/cache/test_long_occlusion_10105.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8705649,
+      "path": "features/cache/test_scale_camera_10300.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703226,
+      "path": "features/cache/test_scale_camera_10301.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8705693,
+      "path": "features/cache/test_scale_camera_10302.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8705317,
+      "path": "features/cache/test_scale_camera_10303.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8702390,
+      "path": "features/cache/test_scale_camera_10304.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8707137,
+      "path": "features/cache/test_scale_camera_10305.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8700935,
+      "path": "features/cache/train_crossing_7200.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703383,
+      "path": "features/cache/train_crossing_7201.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8701461,
+      "path": "features/cache/train_crossing_7202.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8704703,
+      "path": "features/cache/train_crossing_7203.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8704003,
+      "path": "features/cache/train_crossing_7204.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703607,
+      "path": "features/cache/train_crossing_7205.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703636,
+      "path": "features/cache/train_crossing_7206.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8704666,
+      "path": "features/cache/train_crossing_7207.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8704637,
+      "path": "features/cache/train_crossing_7208.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703901,
+      "path": "features/cache/train_crossing_7209.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8704619,
+      "path": "features/cache/train_crossing_7210.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703174,
+      "path": "features/cache/train_crossing_7211.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703997,
+      "path": "features/cache/train_long_occlusion_7100.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8706890,
+      "path": "features/cache/train_long_occlusion_7101.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8710361,
+      "path": "features/cache/train_long_occlusion_7102.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8709678,
+      "path": "features/cache/train_long_occlusion_7103.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8707358,
+      "path": "features/cache/train_long_occlusion_7104.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8707341,
+      "path": "features/cache/train_long_occlusion_7105.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703617,
+      "path": "features/cache/train_long_occlusion_7106.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8704062,
+      "path": "features/cache/train_long_occlusion_7107.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703618,
+      "path": "features/cache/train_long_occlusion_7108.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703905,
+      "path": "features/cache/train_long_occlusion_7109.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703691,
+      "path": "features/cache/train_long_occlusion_7110.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8704206,
+      "path": "features/cache/train_long_occlusion_7111.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8702074,
+      "path": "features/cache/train_scale_camera_7300.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8706193,
+      "path": "features/cache/train_scale_camera_7301.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8707466,
+      "path": "features/cache/train_scale_camera_7302.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703596,
+      "path": "features/cache/train_scale_camera_7303.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8708021,
+      "path": "features/cache/train_scale_camera_7304.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8704145,
+      "path": "features/cache/train_scale_camera_7305.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8706509,
+      "path": "features/cache/train_scale_camera_7306.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8702871,
+      "path": "features/cache/train_scale_camera_7307.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703708,
+      "path": "features/cache/train_scale_camera_7308.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8702548,
+      "path": "features/cache/train_scale_camera_7309.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8703293,
+      "path": "features/cache/train_scale_camera_7310.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 8707702,
+      "path": "features/cache/train_scale_camera_7311.npz",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/dev_crossing_9200_4ea8e1059429773c.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/dev_crossing_9201_e53b99d0f2ad3be2.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/dev_crossing_9202_29eaf8c84ff88bd5.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/dev_long_occlusion_9100_5a2765aca9e83d08.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/dev_long_occlusion_9101_080b5ca7a329d4d1.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/dev_long_occlusion_9102_d5692a5c1afc113b.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/dev_scale_camera_9300_37336b8add3332a2.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/dev_scale_camera_9301_9d4a6b5a5ee8a0ce.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/dev_scale_camera_9302_c93d9a35bdb840ba.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_crossing_10200_57f254f1ed501027.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_crossing_10201_ad22ddf60c293f6f.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_crossing_10202_978744720b1235a8.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_crossing_10203_bc0d3e4972510f7a.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_crossing_10204_ce9c752feea469ae.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_crossing_10205_f5c96b5dcaa2f710.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_long_occlusion_10100_c176804740c06184.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_long_occlusion_10101_c85c782483d99728.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_long_occlusion_10102_34712ae168a83db4.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_long_occlusion_10103_c8bf244797b38e72.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_long_occlusion_10104_ad1fa7292d0fd2c0.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_long_occlusion_10105_112c3922aa241358.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_scale_camera_10300_8a433a87a1234dc9.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_scale_camera_10301_269d84960032c977.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_scale_camera_10302_e9ce048cc64bcc08.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_scale_camera_10303_6bb802f5fd2e8368.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_scale_camera_10304_449fc61ca9bb6f85.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/test_scale_camera_10305_99ca326df2df8003.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7200_b30daf1f27f8d180.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7201_ef33b63a15345ad0.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7202_c47396159e5c4477.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7203_841c81bdb240f771.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7204_1f87923d7564524b.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7205_bc413b867764b29f.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7206_56f38d0343b1544c.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7207_d97172d218b1fbda.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7208_e01c4cb942a4d9b4.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7209_80c61f281be6e23b.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7210_269d127884ff2221.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_crossing_7211_80729e7dde33b261.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7100_9512faf18c061f4c.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7101_a0c0fbbf8677f63e.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7102_69f9f321b97bdc70.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7103_ad532a06d939735b.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7104_4af017bd63882b10.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7105_5f919c3b9b1a6a04.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7106_c29a226a24a49596.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7107_f789c4eec9537b91.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7108_deae1647da7ad115.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7109_8e931246a4c2ce0f.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7110_dbf43f708b068f18.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_long_occlusion_7111_dfbee57a4e1146e1.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7300_18a9bcab37d7723a.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7301_24f5b6e45ac573ca.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7302_94e850125dcc119a.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7303_679bf598dc897c27.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7304_90fa3671303a0269.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7305_6f131b00229bc037.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7306_22c5c4ee94bf0378.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7307_07cc39a4c3a02913.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7308_7a987ef2d3737ab7.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7309_42d54bd1492fdca0.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7310_5b027344700ddcca.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    },
+    {
+      "bytes": 37748864,
+      "path": "features/full_features/train_scale_camera_7311_a0fd2373d884e667.npy",
+      "reason": "reproducible backbone feature arrays excluded by policy"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 3289,
+      "content": "original bytes",
+      "path": "analysis/INDEPENDENT_ANALYSIS.md",
+      "sha256": "9cabbbd5ab0cc506d5ebdb56bccebdf653038447daaa98536e2c6ec969a9249f"
+    },
+    {
+      "bytes": 119566,
+      "content": "original bytes",
+      "path": "analysis/independent_analysis.json",
+      "sha256": "2f8a0ab538d47f3c68566fcccb3bd8f7fc22b1ffb8f3809c1c2b08cb9f3d66e0"
+    },
+    {
+      "bytes": 465847,
+      "content": "original bytes",
+      "path": "analysis/learning_curves.png",
+      "sha256": "c535362d106e0dc0da81ad390eaafc98de5ae280b7935421141f2ae04cf409aa"
+    },
+    {
+      "bytes": 284330,
+      "content": "original bytes",
+      "path": "analysis/test_crossing_10200_fixed_comparison.mp4",
+      "sha256": "550995266ae34e867be98e029e513532298290855cdafacbd1279873893f8c25"
+    },
+    {
+      "bytes": 87132,
+      "content": "original bytes",
+      "path": "analysis/test_summary.png",
+      "sha256": "0ecee037085828fcc54624bb2ad9825cdd0ae8e6c314fb5669892ff0d066e5d2"
+    },
+    {
+      "bytes": 3417,
+      "content": "original bytes",
+      "path": "baseline_development.json",
+      "sha256": "7fb91b860ed16d10ebab002e11136d8ed1bcc8a6d5d9b01b50c80a05a5edb381"
+    },
+    {
+      "bytes": 36138,
+      "content": "original bytes",
+      "path": "checkpoint_freeze.json",
+      "sha256": "d22db32b2fe60d648170ed38970b6dcb274f322cc5630b020db6d996f319dd62"
+    },
+    {
+      "bytes": 76949,
+      "content": "original bytes",
+      "path": "diagnostics/mechanism_reliance_v1/per_clip_reliance.csv",
+      "sha256": "1cafadcb723e07ced43f4da82bc5e4c4a4ad2006d49f0095eddef82a505d1bd2"
+    },
+    {
+      "bytes": 605122,
+      "content": "original bytes",
+      "path": "diagnostics/mechanism_reliance_v1/reliance_results.json",
+      "sha256": "d194640377ac591c09bb222af672eff9c64664c2ab1432b23ddd444fd10ce145"
+    },
+    {
+      "bytes": 7302,
+      "content": "original bytes",
+      "path": "evaluation.log",
+      "sha256": "69e67f2ab8b081fb5e975a629ebf9f8edb4670492e468d3c6558bf03ebbafdfb"
+    },
+    {
+      "bytes": 1332,
+      "content": "original bytes",
+      "path": "extraction_test.log",
+      "sha256": "d969e02b883ec4840ab0b1bc0f3c20cb25ce58de0b35053267e691d5c60f0ef8"
+    },
+    {
+      "bytes": 2427,
+      "content": "original bytes",
+      "path": "extraction_train_dev.log",
+      "sha256": "3a31fe77300ba90d3de51c0b619815a487c1564ab7dd922056cedbf8e6af26b8"
+    },
+    {
+      "bytes": 50861,
+      "content": "original bytes",
+      "path": "features/manifest.json",
+      "sha256": "dbd8c4df8f011b30a9deb9dd8e5430d8d740f2b892a21624dcf7fa40ee4a665d"
+    },
+    {
+      "bytes": 1152,
+      "content": "original bytes",
+      "path": "features/mean.npy",
+      "sha256": "5e4755346ca4f60acc54f7ba9b6bd5bb73b2684af92a095c2f887b2d070176ac"
+    },
+    {
+      "bytes": 1048704,
+      "content": "original bytes",
+      "path": "features/projection.npy",
+      "sha256": "8436fbc5b4f159cdda2e43cfe1afc3d99acbf51a9d8bbfb4372f7e19ad3db844"
+    },
+    {
+      "bytes": 369,
+      "content": "original bytes",
+      "path": "git_freeze_provenance.json",
+      "sha256": "621f694f0dbae909ee845046a198339685c8287901d13be9b29035193b3bc6b0"
+    },
+    {
+      "bytes": 521,
+      "content": "original bytes",
+      "path": "independent_analysis.log",
+      "sha256": "03225f2993c473bca9ee905d4237ab9c43d7ef56429057b503060a8ded636472"
+    },
+    {
+      "bytes": 515,
+      "content": "original bytes",
+      "path": "mechanism_diagnostics.log",
+      "sha256": "232ecf70bb339acb4968f4bfcd120ab56e034d5976cd2e36eb60fed4c30134f4"
+    },
+    {
+      "bytes": 4374,
+      "content": "original bytes",
+      "path": "models/coordinate_only/1701/curves.csv",
+      "sha256": "23a09b7b693f008019398d5bcf2ce0c12de61b32bcf07993d331b0461bdad780"
+    },
+    {
+      "bytes": 38177,
+      "content": "original bytes",
+      "path": "models/coordinate_only/1701/selected.json",
+      "sha256": "15e3abffee451bdb065dff2f1ad244a46741ecae25c0b1d7b19390f41e30d348"
+    },
+    {
+      "bytes": 4384,
+      "content": "original bytes",
+      "path": "models/coordinate_only/1702/curves.csv",
+      "sha256": "39b1cc9f2bf74e8362626067a89b5131c11261fd49aebc31a41378ff388358b3"
+    },
+    {
+      "bytes": 38208,
+      "content": "original bytes",
+      "path": "models/coordinate_only/1702/selected.json",
+      "sha256": "493ef1d456faa691bc785f74eefcee814685f88e0e5ee78db51812b7b4ae1588"
+    },
+    {
+      "bytes": 4370,
+      "content": "original bytes",
+      "path": "models/coordinate_only/1703/curves.csv",
+      "sha256": "2cd80fd5f816a240bc60ebb77a82b0737816904dddda45e609e60b7bd03158ef"
+    },
+    {
+      "bytes": 38085,
+      "content": "original bytes",
+      "path": "models/coordinate_only/1703/selected.json",
+      "sha256": "cb855f46b8e778d57d06afbe9d42db5cfc0bdb293f5717174d3e2147caeba1b8"
+    },
+    {
+      "bytes": 4387,
+      "content": "original bytes",
+      "path": "models/predictive/1701/curves.csv",
+      "sha256": "c156c87e0c775edff6a604ad6cce5b846de90fed24d8375844c62a61f2e6f978"
+    },
+    {
+      "bytes": 38039,
+      "content": "original bytes",
+      "path": "models/predictive/1701/selected.json",
+      "sha256": "022767b575716879271b5db7421f2f736412a1dd09d6990a726d5cdabc2d3c2b"
+    },
+    {
+      "bytes": 4443,
+      "content": "original bytes",
+      "path": "models/predictive/1702/curves.csv",
+      "sha256": "576b502753d551b794774b4f6768b58168e7bbf414def56961d98048e5b975d9"
+    },
+    {
+      "bytes": 38179,
+      "content": "original bytes",
+      "path": "models/predictive/1702/selected.json",
+      "sha256": "1d1d09f99bf275294d4316226f6f8137fd5fba914434071d6e9a4985841f16a9"
+    },
+    {
+      "bytes": 4380,
+      "content": "original bytes",
+      "path": "models/predictive/1703/curves.csv",
+      "sha256": "7b462251d7735e4182a543f9a5ad2ecce671d3e5adf590eb8854663c14377d42"
+    },
+    {
+      "bytes": 38102,
+      "content": "original bytes",
+      "path": "models/predictive/1703/selected.json",
+      "sha256": "d919536bc10be308ddaa08d5bd252cae8c674acb75bccb5fbec8ecfba202d0ca"
+    },
+    {
+      "bytes": 4145,
+      "content": "original bytes",
+      "path": "models/retrieval_only/1701/curves.csv",
+      "sha256": "82da8966ffcd4f514f881da49e72f09597d7a4b230c5a84f525ad6bf7f905ba4"
+    },
+    {
+      "bytes": 38086,
+      "content": "original bytes",
+      "path": "models/retrieval_only/1701/selected.json",
+      "sha256": "eeae462d44d9f91223ebde4d860471055f48b57ee88c408fc8e8123f37035e0c"
+    },
+    {
+      "bytes": 4330,
+      "content": "original bytes",
+      "path": "models/retrieval_only/1702/curves.csv",
+      "sha256": "7003b7d9e6093f05028cbf688c539a027a5101062da9f30697c3c6759977201f"
+    },
+    {
+      "bytes": 38203,
+      "content": "original bytes",
+      "path": "models/retrieval_only/1702/selected.json",
+      "sha256": "dcdb779f9e94ab7845faa40694daa83b63fe6cf64274dd50d06c67ebc84dbb0f"
+    },
+    {
+      "bytes": 4358,
+      "content": "original bytes",
+      "path": "models/retrieval_only/1703/curves.csv",
+      "sha256": "cb357c04e546d43bc0c546bb4ebd908a4c4681774be83b9e03dbc94e79ef936b"
+    },
+    {
+      "bytes": 38172,
+      "content": "original bytes",
+      "path": "models/retrieval_only/1703/selected.json",
+      "sha256": "9b17fcc406d0c1f8c2fea3ad0665ad3edeebb25f22c61a5578a7af9a9dd0437c"
+    },
+    {
+      "bytes": 1992,
+      "content": "original bytes",
+      "path": "test/RESULTS.md",
+      "sha256": "714cecafbb63dc095ac701e50c5385b49674619c2f483a54de24efe07f17320a"
+    },
+    {
+      "bytes": 1233222,
+      "content": "original bytes",
+      "path": "test/future_rows.csv",
+      "sha256": "756314cc1bcaa5f9985c94071650bcdede2f703b0a8b3ce8df0eabf9419438b9"
+    },
+    {
+      "bytes": 4971568,
+      "content": "original bytes",
+      "path": "test/prediction_rows.csv",
+      "sha256": "bc580a9d1c14b7b06b06f4ddf84cf0e7cbea0330f2db51acd842fe6abb34ea6e"
+    },
+    {
+      "bytes": 1106,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10200.npz",
+      "sha256": "28b5170df3c2b9b367452526b9b0caa62e6b7441e09512716e4b8d44911254e1"
+    },
+    {
+      "bytes": 1109,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10201.npz",
+      "sha256": "a9e6e0373d72a34fe5ead125cfa09d4cc81f30d04e310f43de9f3c9ad372488d"
+    },
+    {
+      "bytes": 1111,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10202.npz",
+      "sha256": "101e523d7dce2a4f5a911940c516f6886cf388930bb55a87722c0ee0a60803b5"
+    },
+    {
+      "bytes": 1090,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10203.npz",
+      "sha256": "9433a45803943a47cbb011bc15d19bb38cb4a17f81f8185602d733ab7043f992"
+    },
+    {
+      "bytes": 1129,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10204.npz",
+      "sha256": "9e058e3f2d623cb18abd717a944bce1dbde6c134e6ef904310870158355029d9"
+    },
+    {
+      "bytes": 1133,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10205.npz",
+      "sha256": "791deb36ac20cd87db5dc6525f1190baf0beaa26d25669464ad282373d41b7b8"
+    },
+    {
+      "bytes": 1113,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10100.npz",
+      "sha256": "99f5a54016113fb2e6c9aaf8fa5d20cf06594160433096f76468470d0aab3c10"
+    },
+    {
+      "bytes": 1107,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10101.npz",
+      "sha256": "69c7fecfb742f42c2aba51f3beaba8b02e09a5215e8b135d567192b337e60b91"
+    },
+    {
+      "bytes": 1089,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10102.npz",
+      "sha256": "597e9891c5df479d203699758a84c6121a60d501f51fb84cd9f4cdd7a4b89617"
+    },
+    {
+      "bytes": 1095,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10103.npz",
+      "sha256": "b92dfed2c3a3a109c4d8172311df6286072dd12551eb52baa94b765da77035e0"
+    },
+    {
+      "bytes": 1112,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10104.npz",
+      "sha256": "27a1c22b6869b6ff3455a1d0c63c8cf885759b0ded616a2ab9d3d7f0939bda50"
+    },
+    {
+      "bytes": 1113,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10105.npz",
+      "sha256": "a14d901e9dfd0c64b73f880799172b7ec951e2e8e80679418c38b0bb7d56807a"
+    },
+    {
+      "bytes": 1114,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10300.npz",
+      "sha256": "d27aabb8f243450a2d20dcc0a006ad5844de734a661a6a572ea8ca902ba3de54"
+    },
+    {
+      "bytes": 1111,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10301.npz",
+      "sha256": "d053d62c7271c101abcb5fc415a99ee26bc1efc5239cb252990b0fc45fd3cd19"
+    },
+    {
+      "bytes": 1114,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10302.npz",
+      "sha256": "d27aabb8f243450a2d20dcc0a006ad5844de734a661a6a572ea8ca902ba3de54"
+    },
+    {
+      "bytes": 1109,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10303.npz",
+      "sha256": "6859adea874e6bf1c5b812b50ef72c0b0dac51d9cc073008a726a32312dfd3e4"
+    },
+    {
+      "bytes": 1108,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10304.npz",
+      "sha256": "50b9f47313eaca11542445b5bc2ce374d4c8fc39307e8aa8b0eca7324d40c8c0"
+    },
+    {
+      "bytes": 1123,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10305.npz",
+      "sha256": "00526db394240efd44134096ae71a1146b5fd5c783827b926259abf76c040ebb"
+    },
+    {
+      "bytes": 1121,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10200.npz",
+      "sha256": "fa7a802ef1e4df579bd259d5b84c2c3bb9f641f1a1e85f78ebac9e321ebb3064"
+    },
+    {
+      "bytes": 1144,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10201.npz",
+      "sha256": "3fd91f2e6ab25c57aa70f7651033acaa2c29394c5a7eaac6329fe7d33d3c317d"
+    },
+    {
+      "bytes": 1115,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10202.npz",
+      "sha256": "ca34c52c5139dfc5dc9e50104dc09daf89389ad66d82864d01be4b7720cd5acb"
+    },
+    {
+      "bytes": 1119,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10203.npz",
+      "sha256": "25db710c6ad36ebbb98bc3815c6f7de714934450545af14937f4dfa88a89e7ee"
+    },
+    {
+      "bytes": 1139,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10204.npz",
+      "sha256": "70444d302b3ec4840ba506f30d8da966ccdff0c0f0570e8989d3fb87f7accd59"
+    },
+    {
+      "bytes": 1143,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10205.npz",
+      "sha256": "ddaeac28a27879457ca6180c80c2859ed3adb7bf499adf3e986c759d7e93003a"
+    },
+    {
+      "bytes": 1140,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10100.npz",
+      "sha256": "e9cfc57392dd8e416de76164d854ab8436d7e55d430985a121247b3e2b2e9ee7"
+    },
+    {
+      "bytes": 1115,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10101.npz",
+      "sha256": "86bf0e16cf51df9816002f3e1da46c597b8a103ab08dfc4b933a18b462d98f7d"
+    },
+    {
+      "bytes": 1123,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10102.npz",
+      "sha256": "fe7d12c88ab6ab9bcc24c34ab15ceefdfa6d75923ae6c80d379811ed08a51d38"
+    },
+    {
+      "bytes": 1125,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10103.npz",
+      "sha256": "bb7d44014533e255b3935259ddad8d250a0901fa31cd8a92ebff6dbacdd23c93"
+    },
+    {
+      "bytes": 1146,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10104.npz",
+      "sha256": "5b61c6a1952340e63eabe21bd4b525659c129882397d2187cac5bd8bc0d9f842"
+    },
+    {
+      "bytes": 1144,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10105.npz",
+      "sha256": "e43c1450908e88278de654b510f775f30dbb9fd268baef20f6251cd2b6c27195"
+    },
+    {
+      "bytes": 1145,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10300.npz",
+      "sha256": "34d281d8c92950b15f3236fd4a7e04a2fe2b1efe739431f4bb6c1ac16c9daa24"
+    },
+    {
+      "bytes": 1116,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10301.npz",
+      "sha256": "d94ffedb9c6bb7c02036566859493d88641555c237379ba2453159498227fad0"
+    },
+    {
+      "bytes": 1145,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10302.npz",
+      "sha256": "34d281d8c92950b15f3236fd4a7e04a2fe2b1efe739431f4bb6c1ac16c9daa24"
+    },
+    {
+      "bytes": 1111,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10303.npz",
+      "sha256": "a582ca4879407ca0b80c07b951f67da816eaae2c1cfe6e60d47012bbb135eed2"
+    },
+    {
+      "bytes": 1113,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10304.npz",
+      "sha256": "c19e38a24740e3947ff223d96bb2cad8f8b5279fdeac16093f8df6c07d22a734"
+    },
+    {
+      "bytes": 1132,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10305.npz",
+      "sha256": "f932eed4034aee6a0dd686335d79f827dddc503dac2d047ac387709da876e9d9"
+    },
+    {
+      "bytes": 1107,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10200.npz",
+      "sha256": "b678e40574dfa7a0c387c4e4247441e45938ccec735de0ac346a0fcbd18e49c3"
+    },
+    {
+      "bytes": 1112,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10201.npz",
+      "sha256": "56f14a222f6cdb69f8fec343c1c2dbda6f2cc12a2c11b169d61a45715c7617e1"
+    },
+    {
+      "bytes": 1115,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10202.npz",
+      "sha256": "66f203c02d9cb2f865e852b2e568cc49244e39293e1ec181a6002f6cbda4a21b"
+    },
+    {
+      "bytes": 1098,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10203.npz",
+      "sha256": "3299ada28d71fb54ecc360aa42822a048c6aa6b66d7fa1a012a08be73c68f5df"
+    },
+    {
+      "bytes": 1109,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10204.npz",
+      "sha256": "c90eeb246255b2f0a67141f8d1d65a3f6c88b6390e36a9beb81193f2f9dea274"
+    },
+    {
+      "bytes": 1113,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10205.npz",
+      "sha256": "6e3eba52c7452b9cfc71a20ef7384001055c49dbd48ff4d9d9c20e4814ada1b6"
+    },
+    {
+      "bytes": 1108,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10100.npz",
+      "sha256": "f6e22aba1cd1f310be250b1f48e25d034fa4d514b3d292cace642f5694c3b87c"
+    },
+    {
+      "bytes": 1109,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10101.npz",
+      "sha256": "2abde1d7713f7399da48afd7a232c413922b8407494e7dca6eacbd02e784fdae"
+    },
+    {
+      "bytes": 1093,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10102.npz",
+      "sha256": "9fc7ca4660da51a209d93522596e894639f2249ba8e028c00be59bf2ae4e008f"
+    },
+    {
+      "bytes": 1099,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10103.npz",
+      "sha256": "f59fe1c6de04615c06c9611404e5a1da6258e9b0d357dbacdcfd2f233bb42a39"
+    },
+    {
+      "bytes": 1116,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10104.npz",
+      "sha256": "1e0b7f50165e72562ef1ec4f1274c09af937a8761714377c6c01ffa79353176d"
+    },
+    {
+      "bytes": 1111,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10105.npz",
+      "sha256": "a821dea0b0bc9ab73ec85bbd67593cef09db02faf0c8977f3927d91455db8a29"
+    },
+    {
+      "bytes": 1113,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10300.npz",
+      "sha256": "d6954f4fa8733cc38fbcf312f58e9737aa8d04d176bb746836596db6d2d52b1b"
+    },
+    {
+      "bytes": 1116,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10301.npz",
+      "sha256": "26ea71c156408c287a48e2ce225ac3bfa35517f0830ac6780a31122ee340ea83"
+    },
+    {
+      "bytes": 1113,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10302.npz",
+      "sha256": "d6954f4fa8733cc38fbcf312f58e9737aa8d04d176bb746836596db6d2d52b1b"
+    },
+    {
+      "bytes": 1104,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10303.npz",
+      "sha256": "143080b85f968711ee554e8b385b68481ecefb027dc6027cade51ab61cf7360e"
+    },
+    {
+      "bytes": 1104,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10304.npz",
+      "sha256": "dc8e3e1dce70bab79a9ca08465750db5acb547ed2454489014e9f6d9ec01b36a"
+    },
+    {
+      "bytes": 1110,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10305.npz",
+      "sha256": "f9efa79cd42543599522352bf72373c428d1ab3bb30b55e903b6701a36082999"
+    },
+    {
+      "bytes": 1286,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_crossing_10200.npz",
+      "sha256": "8407e9aa567db154c671c6a8b80048400f8e8136752cd07b5ae9c902e7dfb799"
+    },
+    {
+      "bytes": 1308,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_crossing_10201.npz",
+      "sha256": "9237560260ad94c97ca4188631ace1785a8504624b0c36e74f186d57fe5ffa3d"
+    },
+    {
+      "bytes": 1293,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_crossing_10202.npz",
+      "sha256": "1c9bba766e0ac45850c0eff21a689df633b25532c584e4e9824ab56118f3b2a4"
+    },
+    {
+      "bytes": 1274,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_crossing_10203.npz",
+      "sha256": "4e88903a2472ca22e18d9edd366b3af8fbb54c4bdf5378f9d6add2eae407cc9b"
+    },
+    {
+      "bytes": 1294,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_crossing_10204.npz",
+      "sha256": "e9b9e73e3f90554a7110bfce816e92514d9b0db2cfd4bd35e0112a555a9d1bcd"
+    },
+    {
+      "bytes": 1283,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_crossing_10205.npz",
+      "sha256": "7e3456c62cfa7efaf454cd15f83897d0e68f2c44c06b71216d9dc4844010e7fc"
+    },
+    {
+      "bytes": 1276,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_long_occlusion_10100.npz",
+      "sha256": "b104230e2b3aea28f976dcb6015bb1b26a2664b3388c17877f270030ca629bd7"
+    },
+    {
+      "bytes": 1277,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_long_occlusion_10101.npz",
+      "sha256": "981e8eb004de62bbdc3d4ff9f352e76b126f930781f04fb8d735db58e3a6ede8"
+    },
+    {
+      "bytes": 1296,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_long_occlusion_10102.npz",
+      "sha256": "614d7ab69fdb09c0ae3e35044f06a4f83e15e4858ccae733d17cff9389b7894c"
+    },
+    {
+      "bytes": 1272,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_long_occlusion_10103.npz",
+      "sha256": "1a3563a6d418922151af0f2739f2dd4d23f1ee9a94972aea081443e717e6e411"
+    },
+    {
+      "bytes": 1270,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_long_occlusion_10104.npz",
+      "sha256": "290a86f4977f8af0e497d975780a9f44b9c370bf17bb5be94a9c12c8c4a0dfb6"
+    },
+    {
+      "bytes": 1271,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_long_occlusion_10105.npz",
+      "sha256": "1e6fd24d7e1738fae9c03147c1c9a8a5f8ce1bfc8d753a148df7daa5fe6420d7"
+    },
+    {
+      "bytes": 1274,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_scale_camera_10300.npz",
+      "sha256": "c5d3dca579b8eefad4ab0c64cd9aebbfea6e31a761b7a18a285d1a0d5234470b"
+    },
+    {
+      "bytes": 1299,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_scale_camera_10301.npz",
+      "sha256": "887cba890414f57f2c9fb66d413e91c2dd18fdec70779e489f429f642c0d00e1"
+    },
+    {
+      "bytes": 1290,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_scale_camera_10302.npz",
+      "sha256": "6fb83488bc5a1a5eb6184b99130e76595e9b853cc8e8f5ff3798edd6d4d8135e"
+    },
+    {
+      "bytes": 1279,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_scale_camera_10303.npz",
+      "sha256": "1899a3fa9cb92256b2cc7a0af47d80efdd3455147db961b6e9170860206a7ecd"
+    },
+    {
+      "bytes": 1294,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_scale_camera_10304.npz",
+      "sha256": "86920c78da158463fb39ad7f460894f0179e6c0e34208baa8c84594e23359da3"
+    },
+    {
+      "bytes": 1293,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_full/test_scale_camera_10305.npz",
+      "sha256": "8298edad25ba38fccc599af4714589510a2d93fa5f33286e8c0d48ead866e333"
+    },
+    {
+      "bytes": 1237,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_crossing_10200.npz",
+      "sha256": "84cf868412459fe0f38f732940a9543aef9fb52d4e969538fd0b09c74237fedf"
+    },
+    {
+      "bytes": 1242,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_crossing_10201.npz",
+      "sha256": "01ab53552e597fa697502bf0a8954bd665138ed86d394fb415010eadadf24f06"
+    },
+    {
+      "bytes": 1237,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_crossing_10202.npz",
+      "sha256": "74092b9afd78550bfeb09912b5b8ffdaaad90c6df45a8381c666f3e82654696b"
+    },
+    {
+      "bytes": 1224,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_crossing_10203.npz",
+      "sha256": "eeed88abba433f3904d933ef1e742e5a7eca25f703d3a0adbdd61f408a74ae5c"
+    },
+    {
+      "bytes": 1233,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_crossing_10204.npz",
+      "sha256": "bf24fee9ab8964b2dfd95f0b9227eb956f4fa90b78ae7d2b3fd4bcf3ecdc4d89"
+    },
+    {
+      "bytes": 1241,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_crossing_10205.npz",
+      "sha256": "db25b081fd9a2f231093305abd6fc356d0474bd758ba69132e3b8394ace5ba7c"
+    },
+    {
+      "bytes": 1238,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10100.npz",
+      "sha256": "4e58d57144d97b473903e1255a33e2e834b50f23d3e5725516ba5f5da4fe1709"
+    },
+    {
+      "bytes": 1207,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10101.npz",
+      "sha256": "492852adc6f2eef4e11bd38bb6cdbe6e9b40c703f5137387dd9f07820c03d769"
+    },
+    {
+      "bytes": 1224,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10102.npz",
+      "sha256": "a4c206ae80701255951a7dac7331133b1b2d38b85f2e813cc3a4586b00ab2dc8"
+    },
+    {
+      "bytes": 1219,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10103.npz",
+      "sha256": "c959e15c1cb6efc1b0998bf95fe296e3f7deaf97b3a1de461cc6437f1dea3b1c"
+    },
+    {
+      "bytes": 1217,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10104.npz",
+      "sha256": "771c8f2bbc63b51810c12f540e209c660b88076bfd85307adf74557ea4630fc2"
+    },
+    {
+      "bytes": 1238,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10105.npz",
+      "sha256": "bf0dd5e71704f2c2c4df44e601e4efda9dbcbd7e7bc943dca439e8850a763946"
+    },
+    {
+      "bytes": 1225,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10300.npz",
+      "sha256": "95fc3c0159a0f514f3f71b17c8645f75068983175a830841f3a129e39a95aa61"
+    },
+    {
+      "bytes": 1222,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10301.npz",
+      "sha256": "8d2510357ba615bb1126487e3e65215a5bf2cfa076e6ac1abc04c1ada12f9243"
+    },
+    {
+      "bytes": 1224,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10302.npz",
+      "sha256": "55694ae4fa7f006e1dfef75bf341c7d11fc7b7abe799d3c118b6c4d167fe14f5"
+    },
+    {
+      "bytes": 1228,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10303.npz",
+      "sha256": "5f4be4c3489adf85b43c659d528c7dafcc55442f3db895a5d4a27007a1555026"
+    },
+    {
+      "bytes": 1232,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10304.npz",
+      "sha256": "2191e05cd8f81ebc1fdf82808ddfbc954f5e7d2bf511605b7e5e466ac11255e5"
+    },
+    {
+      "bytes": 1224,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10305.npz",
+      "sha256": "d5acb3fc8a8c1f1b47df99a760e661a155f9ad52428476f06de68b1f7f72f205"
+    },
+    {
+      "bytes": 1260,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10200.npz",
+      "sha256": "d22b5783baa9ff8a8a8a6f6bdc50a07afe3705f7aa16676644a46a46bbe5f4fb"
+    },
+    {
+      "bytes": 1228,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10201.npz",
+      "sha256": "cec2d690c0b77d3f8b0d3499c4dcb2feb05aed48d4269d08135bd5c20866f9ce"
+    },
+    {
+      "bytes": 1275,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10202.npz",
+      "sha256": "97652134f8a6c79b41a230529f4dee73e6271d3eb6b10b4780957d4dc0c3ed45"
+    },
+    {
+      "bytes": 1249,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10203.npz",
+      "sha256": "abf7ab0911ecd8706e0bd24282f7823f5fcebe6ac60564e83a41e8968a081cb0"
+    },
+    {
+      "bytes": 1240,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10204.npz",
+      "sha256": "556760d8cb476030aa14581a91d21dc42a42793166a7f2710652a302cb27e1cd"
+    },
+    {
+      "bytes": 1249,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10205.npz",
+      "sha256": "98b3716ace7a3b66068bfafd4566f38b0f5efb265618b7c548c17b451f313ab5"
+    },
+    {
+      "bytes": 1232,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10100.npz",
+      "sha256": "9f2d3c8c45b81870d29d4f5f98b10c08474c7ab844efb93f50c9101cc791ac16"
+    },
+    {
+      "bytes": 1222,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10101.npz",
+      "sha256": "537ca700c99165b6c80578d0d9009b7f4c8f1ef75275cdb20821679e71c235e2"
+    },
+    {
+      "bytes": 1227,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10102.npz",
+      "sha256": "4d11cc711ac64252853668723df2e1174753caf7120e5223c1ebb80d9b1a228a"
+    },
+    {
+      "bytes": 1256,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10103.npz",
+      "sha256": "67e634bd07b31b57f75fed17385ac44340df7dd93bb3b8db28c7bdd298cdadfb"
+    },
+    {
+      "bytes": 1247,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10104.npz",
+      "sha256": "d9128863d49d5462d76d60864a3117412075b1043e857506ce9f8b445958e8de"
+    },
+    {
+      "bytes": 1236,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10105.npz",
+      "sha256": "f0a41813fbd9fc7b8906c22a66fd0a04ced94f033c721ab5d1b4eb0ac82b5471"
+    },
+    {
+      "bytes": 1203,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10300.npz",
+      "sha256": "ace20f9d2408b1ec6280660c0c593f94c1b0e65adecf109d48a73ef155fc1f5e"
+    },
+    {
+      "bytes": 1236,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10301.npz",
+      "sha256": "9d319acb68b44424bbf01403ea6c901473e1b84db4ce2bdfa9db82620eace37c"
+    },
+    {
+      "bytes": 1214,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10302.npz",
+      "sha256": "b57d81e77d743aa10570b79375d8003116d3f9ddfee953fda86350723e3f146a"
+    },
+    {
+      "bytes": 1246,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10303.npz",
+      "sha256": "5eca9c91c7977ad7bd929f1df3dc6dc61218a5a0ea837efc04b2af3f653c7ea3"
+    },
+    {
+      "bytes": 1241,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10304.npz",
+      "sha256": "405b0ee0ad20288ea66ef0ed2d4c144bad645edc8b7b6a8b294134397cdbd606"
+    },
+    {
+      "bytes": 1228,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10305.npz",
+      "sha256": "87b0fcd21a29f7af910214c168faff8101289338acb5092732d6558e4461301a"
+    },
+    {
+      "bytes": 1252,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10200.npz",
+      "sha256": "f43464cf7fc7db6e09a09ae7bf32c2c9600463d2b4aeaf1e20a7efb59425d35f"
+    },
+    {
+      "bytes": 1246,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10201.npz",
+      "sha256": "e6ee8017ab402a6fb72fd2df3297b054793cae2eb93e2fc4fa0e6d3379c2c6c7"
+    },
+    {
+      "bytes": 1258,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10202.npz",
+      "sha256": "fb2491a3850c608ee9d95f2c44094d8d3fcc1ee4b82b2a42f10fd0935b6573d7"
+    },
+    {
+      "bytes": 1267,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10203.npz",
+      "sha256": "c88dd05d01b3a0f85bbeb1bf9b649307d9444f344f07159e1889dc2a628cd33c"
+    },
+    {
+      "bytes": 1242,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10204.npz",
+      "sha256": "53a3580564241a711eb9322dfa4c56b76f8c943b4274c97b448f6e48e8244c28"
+    },
+    {
+      "bytes": 1246,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10205.npz",
+      "sha256": "227c523cce72fa7868942684dbc029021c5261ab22a1a14a1e800943b11baed0"
+    },
+    {
+      "bytes": 1236,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10100.npz",
+      "sha256": "bba6404135e0d9e876c2376a24d4b41de63fb727ec76f14fffc8c3d884e9ae9c"
+    },
+    {
+      "bytes": 1240,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10101.npz",
+      "sha256": "0a8059698016ba9b4458bf65e8285c5ac259078ae3b9a03a3e4b0346b87e0556"
+    },
+    {
+      "bytes": 1239,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10102.npz",
+      "sha256": "f9a86d11c1f0fe83a148b567cb6725b3d72c2036944a262119fc4398e30c491c"
+    },
+    {
+      "bytes": 1266,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10103.npz",
+      "sha256": "60a19770e389f1d6427b9af2d01cd06594d77c2a418831231b25792e3c4852b2"
+    },
+    {
+      "bytes": 1257,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10104.npz",
+      "sha256": "d950dd55ee3dde04960920853c54b1cc44e9256bd9fccd972737dbaf2c01a3a7"
+    },
+    {
+      "bytes": 1251,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10105.npz",
+      "sha256": "d0ab95c080f87e160478f4c9c484eedc0d967fb449f9a53ee919e02d32dfb42f"
+    },
+    {
+      "bytes": 1223,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10300.npz",
+      "sha256": "7915dc79be3af62d3f394934dd16a21fdb7061de98b9e7c91052fd73bbb7bc4a"
+    },
+    {
+      "bytes": 1222,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10301.npz",
+      "sha256": "cd9b09d012ddfcac3754ad9ebece3fe0473d44dadf7b63e783e1662264114a99"
+    },
+    {
+      "bytes": 1223,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10302.npz",
+      "sha256": "ec7581f5e775917d600d88d77fcf1a6455f538e16d2052605aff5bf923148121"
+    },
+    {
+      "bytes": 1245,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10303.npz",
+      "sha256": "c01fc35484ebccd552aa6b98f8c9241569ac3851e5061079bf68d3cea21fa80b"
+    },
+    {
+      "bytes": 1221,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10304.npz",
+      "sha256": "8ac195055c5cc4cbc2d0d23d42b73276bae986f0f796ceb18254c9ef11176bd3"
+    },
+    {
+      "bytes": 1224,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10305.npz",
+      "sha256": "641b4230d696bb1152fac701a5a5636fcc3e634d7ba6ed3d12e58fb54cca7d40"
+    },
+    {
+      "bytes": 1256,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10200.npz",
+      "sha256": "dc1fab0c2811e269daf26685bb6a709f525d8db2a49f831d850fc9c77b4a82ef"
+    },
+    {
+      "bytes": 1226,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10201.npz",
+      "sha256": "78c778159c68c4ee5e3a213a42c637ede3d9f1d6d7bbc9df37db8d2fa2e77197"
+    },
+    {
+      "bytes": 1248,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10202.npz",
+      "sha256": "7ff485e6fa152866ed93b483d43d21463db676768686d3adcb1abd9482919db0"
+    },
+    {
+      "bytes": 1242,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10203.npz",
+      "sha256": "52d51c2299a3b20111c424fe88371210555b73ea1379e18603dffc64ec587596"
+    },
+    {
+      "bytes": 1246,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10204.npz",
+      "sha256": "a7fd8766577815995f1a84fbd1268ae378f9dc6b595861502e561b4765c1c303"
+    },
+    {
+      "bytes": 1239,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10205.npz",
+      "sha256": "00a578b17a5b24a8148dad3bbd8b5805bc36225e18ca3ac5956749cf05ce8549"
+    },
+    {
+      "bytes": 1245,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10100.npz",
+      "sha256": "b71c2cf32b775b4bc5dc30d4411f0b4dd162a97a185661e201d4d0969864ab72"
+    },
+    {
+      "bytes": 1243,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10101.npz",
+      "sha256": "9deba8cc9df4b7cd4e6ef46c15d4700fae1db4dc652c77b7ba2a1b47059b7d54"
+    },
+    {
+      "bytes": 1237,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10102.npz",
+      "sha256": "bc8268ec0a333b2db269e91372894c7555cf671a7b5b3fde48b438126374e419"
+    },
+    {
+      "bytes": 1251,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10103.npz",
+      "sha256": "b19be7d67f5e3593d52ce050d1cc8bcb1569665f15a8ce71bc9db93271a0ef88"
+    },
+    {
+      "bytes": 1237,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10104.npz",
+      "sha256": "7200c28aa4607ccf0298f2cec45a315f89fd10f986d386e0f29b924fdf2e7bf1"
+    },
+    {
+      "bytes": 1243,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10105.npz",
+      "sha256": "42486de92e66e0c52897ce27852b8eb4f9beb8eb169c44c8652ff8c899f90cc2"
+    },
+    {
+      "bytes": 1197,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10300.npz",
+      "sha256": "997de21a492b3f2523d4d12911467a76ad59380e6f183d153c657fa4e2c5aff7"
+    },
+    {
+      "bytes": 1225,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10301.npz",
+      "sha256": "c3a6ae5d8db3ff4bf97da1c9b0b7d5ffdcba5cd15d3c8ebd64c016e7616fd57c"
+    },
+    {
+      "bytes": 1193,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10302.npz",
+      "sha256": "a17d34b1c0ef32fa36aa5405d0b2090ad4696be2e8220fb2cc20328c140eb49c"
+    },
+    {
+      "bytes": 1231,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10303.npz",
+      "sha256": "3e852543eb552e1c18da3a95155f00b92b82cb3744b1f543bd75fba5612880a0"
+    },
+    {
+      "bytes": 1236,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10304.npz",
+      "sha256": "1c282de1f02ef752bd3e33ee8214719824d721bb7e5e4d999897933784bde5ed"
+    },
+    {
+      "bytes": 1226,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10305.npz",
+      "sha256": "5e3d59a6b5ea0d52dbdb67f672e4d6e996038d1787f8b944343bed9358fa1d3d"
+    },
+    {
+      "bytes": 1260,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10200.npz",
+      "sha256": "a5f5bc6232f92fb13f1b3337c3e914d3128556f201c2f31c5a701cee0c65e1b4"
+    },
+    {
+      "bytes": 1234,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10201.npz",
+      "sha256": "0fd0d4197bddf3c026f9b3609e67658c6efde73eae381f112a7b17385a3a1bda"
+    },
+    {
+      "bytes": 1261,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10202.npz",
+      "sha256": "3288c0ccc948f873de2ab8faaca71f419e23010a750be0da62cbea5e04cbd712"
+    },
+    {
+      "bytes": 1243,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10203.npz",
+      "sha256": "244c6dcbb9eb7e8f67c46549620c2c8f96165ed6c5e69240d8b10764837747a8"
+    },
+    {
+      "bytes": 1238,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10204.npz",
+      "sha256": "aae856fb93fca3972c6e77b1dac31c6651a0aae325304749930115133d38e0b7"
+    },
+    {
+      "bytes": 1252,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10205.npz",
+      "sha256": "f870a636f806cd3eda23239d409e8c3ecff5f1ec8f6c0079c643112d1d923df0"
+    },
+    {
+      "bytes": 1238,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10100.npz",
+      "sha256": "a8d3548ed04b7ab09b02aabe1d0b120ddd7ac56b71341eb4e8817ba4cc027432"
+    },
+    {
+      "bytes": 1238,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10101.npz",
+      "sha256": "b8bc2691000982898a796ef838db4df754dc7b1badb0d2ceee2dd25dcd770579"
+    },
+    {
+      "bytes": 1212,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10102.npz",
+      "sha256": "f91cf10fd0aa2fef5a858cb236a0532a21ca8493f414900c13c73169fd6e1642"
+    },
+    {
+      "bytes": 1239,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10103.npz",
+      "sha256": "b6f9f8e960535b9eece26eaeae27f1961c707e206d47fa260d495441a3118b5a"
+    },
+    {
+      "bytes": 1222,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10104.npz",
+      "sha256": "c6dee8d55b3ff29fd163eb09e80901acdcf1235b7ffbff9c1be5a6a11e3ca27d"
+    },
+    {
+      "bytes": 1234,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10105.npz",
+      "sha256": "52f390aa9b05bf08c5a3e97c046fadf35b41388d4d102e7a213600583d6ddc7a"
+    },
+    {
+      "bytes": 1205,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10300.npz",
+      "sha256": "352a2a1e9c020cd455e18799fd0222eb7c2d2c76515a99435ef95e4cbb48860b"
+    },
+    {
+      "bytes": 1215,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10301.npz",
+      "sha256": "409591b8ed2b42bfd6f807f2ba5d60f039e42e55387af6c880bc8a0e882a7543"
+    },
+    {
+      "bytes": 1197,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10302.npz",
+      "sha256": "253bbb692e406dec5ce4f18b236466c571c78e66e1cf65342263df631eef59eb"
+    },
+    {
+      "bytes": 1229,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10303.npz",
+      "sha256": "913d128e49aaa4fbfb6ecf00c91173f6d633661c6f7fe3e0d60659e22312c777"
+    },
+    {
+      "bytes": 1229,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10304.npz",
+      "sha256": "e9fcc68168f46713fc2dd7ba6d804e2ffe53d2c5ae7620d5c085305b7bc6e78b"
+    },
+    {
+      "bytes": 1238,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10305.npz",
+      "sha256": "36f074d6b0df68f377e02e517bd6c3c754207786d99ffb0deb5d276501b39abf"
+    },
+    {
+      "bytes": 1252,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10200.npz",
+      "sha256": "dbe0f68364d1f82db5a38b87990452772458e06918ca38a86ebdefbe0f4eea3e"
+    },
+    {
+      "bytes": 1252,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10201.npz",
+      "sha256": "affbf9f2ebcb1ce36a7336ebd15bd02c7462804ddb931fdc21283851533e955c"
+    },
+    {
+      "bytes": 1249,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10202.npz",
+      "sha256": "b6abd3a34530ffd80bb75f5117cd3fed800576df5bf01d64b9f9615142140062"
+    },
+    {
+      "bytes": 1240,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10203.npz",
+      "sha256": "c580e68e2755a1df1acfef920aaed967ac88f449df60b9649575d09560d02827"
+    },
+    {
+      "bytes": 1249,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10204.npz",
+      "sha256": "e3658d8b060db110683d2dc60b535786bcca6e9faa98efd1bddc06533c4a3918"
+    },
+    {
+      "bytes": 1248,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10205.npz",
+      "sha256": "ec1b499ae01fd9cfd41560013442736bbe24e8d7cd14dd01779e948d77250e6d"
+    },
+    {
+      "bytes": 1199,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10100.npz",
+      "sha256": "27d0ee07ea8de3f344af045f76e2243dd86791324860272b7852165592473456"
+    },
+    {
+      "bytes": 1232,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10101.npz",
+      "sha256": "d45d9b508e42395c9cf620bc7b6bce375184f51a204fd67b8470a30899c298d7"
+    },
+    {
+      "bytes": 1226,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10102.npz",
+      "sha256": "5accb6a5a92c96f2a48714e32a1d21915e13faf98712e53d44708933a6e6e310"
+    },
+    {
+      "bytes": 1232,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10103.npz",
+      "sha256": "47c78ed209490158283f08326d2bb2d49c9a61e2e9e7cf3a0c73635fb97e238d"
+    },
+    {
+      "bytes": 1212,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10104.npz",
+      "sha256": "f238d7efb7bd1be7999457414cb4535b495ca930226892bfa7f9decc359e9006"
+    },
+    {
+      "bytes": 1225,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10105.npz",
+      "sha256": "f61dec51d1b10e9c5d0119afbdbcc451fba4622b443efc74b4a2b255132ae42b"
+    },
+    {
+      "bytes": 1229,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10300.npz",
+      "sha256": "59876bb09dcbed29a2317c96a66f4a7b1a0f8b137a6aff721e1444833b1c58c7"
+    },
+    {
+      "bytes": 1238,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10301.npz",
+      "sha256": "36f659eb19b22fba168cc6f9f0b002f03e54071b54aea94d5e837c96e602b185"
+    },
+    {
+      "bytes": 1233,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10302.npz",
+      "sha256": "5287a97d0964f84e375434b21b6fc9611a8b54ea053ea8cd93b42af40bbc0d30"
+    },
+    {
+      "bytes": 1229,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10303.npz",
+      "sha256": "6cc498ed87b23f52d021670c7fc7a83502ed4b6f39b3b7e237e5374d2bc71411"
+    },
+    {
+      "bytes": 1224,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10304.npz",
+      "sha256": "4384471b66f682ef3e1d8eb458b4d4f96cc6055b67ef7c0810b32363f140dfbf"
+    },
+    {
+      "bytes": 1229,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10305.npz",
+      "sha256": "4d98ae19060badf093eb213b904d0740644e69c6a43f13c1c0f9b65f3bdf2497"
+    },
+    {
+      "bytes": 1241,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10200.npz",
+      "sha256": "ac1cac5399372702a7305ace10626d4b3c8c1c513dcddc8a66f091240e0695fc"
+    },
+    {
+      "bytes": 1235,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10201.npz",
+      "sha256": "b720c29e8cde1d997bd91a2400dfde0a81a867cdc87295e982411cf7fa32303b"
+    },
+    {
+      "bytes": 1257,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10202.npz",
+      "sha256": "c5c551ef17b639d383e45e4f06c03cbbf1091456d9a1e485a181f5f69333e85d"
+    },
+    {
+      "bytes": 1244,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10203.npz",
+      "sha256": "79e0619ebb3556824fecf9bfffb5b3a7434ac41ea02d2fe75e9a3d29efa8976b"
+    },
+    {
+      "bytes": 1228,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10204.npz",
+      "sha256": "dfed1b29fbae9886edc2606a3030f9317f935d1b4fb874333d9beea68e618cc1"
+    },
+    {
+      "bytes": 1242,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10205.npz",
+      "sha256": "4c225094b8f747295a18202ab3d959f88905e16884ec4d9b916842b5585d8f9d"
+    },
+    {
+      "bytes": 1202,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10100.npz",
+      "sha256": "fc14a0ca72c98a6052007c9aca0f50f82a122dbb62828a1d3ed250e964a644b3"
+    },
+    {
+      "bytes": 1233,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10101.npz",
+      "sha256": "eaf153c1f655d0a2a967527969e14a63c1cb7ec3143661f12a00f3cfd890bc07"
+    },
+    {
+      "bytes": 1215,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10102.npz",
+      "sha256": "36b07aef641d9e147060f2e249ec32f155093ddd0739134adf63a67aff647027"
+    },
+    {
+      "bytes": 1229,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10103.npz",
+      "sha256": "2bda35a32e12fa4dac95d7a21415bf49b504d370ca992816febb7b2ab45aa375"
+    },
+    {
+      "bytes": 1182,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10104.npz",
+      "sha256": "e99ff097ff125afb88d84ae28dab6245c0a38501072246f29128ab898c0ac8b3"
+    },
+    {
+      "bytes": 1214,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10105.npz",
+      "sha256": "69c3a54525aa1c97cdb92b36224a78f5c1ccdf0aad93ddbb5ceb47396aed16fd"
+    },
+    {
+      "bytes": 1217,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10300.npz",
+      "sha256": "40bd16ca5a2f5fbd0b3aa2ed1433da4fbfbbd20595e81f6fbb3279d48624e04a"
+    },
+    {
+      "bytes": 1234,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10301.npz",
+      "sha256": "650fbc354bef1b1d501ce95e1412f9c00db046b1e3a11e18f33ce91bce8d2f17"
+    },
+    {
+      "bytes": 1214,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10302.npz",
+      "sha256": "6b437782f6e3b3ea3db026f1e6be27ac4712002f9907f57c33ce5f0bd72dd680"
+    },
+    {
+      "bytes": 1218,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10303.npz",
+      "sha256": "6dc5be0324dc7d974aada4db4956e884ced250dac10bc1f7c81d6bcc68062d67"
+    },
+    {
+      "bytes": 1226,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10304.npz",
+      "sha256": "a2954ff40d7b2c78ec6727e5f2fabb1c6d5fcc4901af68a8d3e376bb21805a48"
+    },
+    {
+      "bytes": 1221,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10305.npz",
+      "sha256": "98dbc89f39582431610a0027c6a1eefe67ee4f6628ee3864af11eb2705ec0884"
+    },
+    {
+      "bytes": 1231,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_crossing_10200.npz",
+      "sha256": "d173e5a61c5e3285cd46d82dd296b2ddf5836f398c527ff58c9057b31b4064ac"
+    },
+    {
+      "bytes": 1231,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_crossing_10201.npz",
+      "sha256": "909f425e65550ceaf254742749ee46d7e78665dd481d08651b5b16e3a911e97d"
+    },
+    {
+      "bytes": 1220,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_crossing_10202.npz",
+      "sha256": "daab80595b765ed496cb16ded540e6c82ba62253885691f62db43af37b515040"
+    },
+    {
+      "bytes": 1205,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_crossing_10203.npz",
+      "sha256": "1c93c9e8527180c5b8b432a1f02d5b6e754236bd1556b956dbf5256f32e27d3d"
+    },
+    {
+      "bytes": 1207,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_crossing_10204.npz",
+      "sha256": "e48cbb825cc66ba698f2aadf21f21454fe632e882bfa8ee0a0bce4ae99511d45"
+    },
+    {
+      "bytes": 1213,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_crossing_10205.npz",
+      "sha256": "e0f4f40b39409a5c1a0c388e476c088e07b8930f6fa13ad26deffb71f93856e5"
+    },
+    {
+      "bytes": 1200,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10100.npz",
+      "sha256": "9a6ad7dae34f5dddc3fb0812fdd545ae717b35ad8a5adbf56732d10e47deb3df"
+    },
+    {
+      "bytes": 1204,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10101.npz",
+      "sha256": "d525b0d05c102cb15c429a4ce376549d2bb407e2811bd7c66014d91fe39ecf5e"
+    },
+    {
+      "bytes": 1200,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10102.npz",
+      "sha256": "2a1b454b2424bfcf0c0a3d52d082a8b87e1ae18a618bd08a23121414e968003c"
+    },
+    {
+      "bytes": 1167,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10103.npz",
+      "sha256": "0783b42e2de4210588d6d5bb0e573436100c0eb7a7c22201debcfefab5b8514b"
+    },
+    {
+      "bytes": 1191,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10104.npz",
+      "sha256": "5c8d3c199b46f3ef1a09196c8a22948673d46cf80f7d29a6cdf0f745279c11f6"
+    },
+    {
+      "bytes": 1205,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10105.npz",
+      "sha256": "48594304a156150b3c0972e4e48984ea0dd6dceefa500a98d93d23ac962aa83b"
+    },
+    {
+      "bytes": 1177,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_scale_camera_10300.npz",
+      "sha256": "9b931094af3294056fe437def51c1efb4b180f3ad3fa8b40396ffe4ec3e50760"
+    },
+    {
+      "bytes": 1228,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_scale_camera_10301.npz",
+      "sha256": "d2d328861adf9f335b1620888b0aa63268c89e75755a9f958d104b57a00aef7e"
+    },
+    {
+      "bytes": 1198,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_scale_camera_10302.npz",
+      "sha256": "864c9b584d50926c8f3fdb51499a4b36be6c396451cb0b7ee9b1f596c92738c1"
+    },
+    {
+      "bytes": 1213,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_scale_camera_10303.npz",
+      "sha256": "2fffcf56c61739e7c2474ee772f187af8314b03098e1fb660e880f106e22e9c2"
+    },
+    {
+      "bytes": 1217,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_scale_camera_10304.npz",
+      "sha256": "8ff5b46235513357d2909a5509c69adebe86aa176a479f0977ea2be1db453afa"
+    },
+    {
+      "bytes": 1219,
+      "content": "derived scores/cells/eligible only",
+      "path": "test/predictions/selected_day4/test_scale_camera_10305.npz",
+      "sha256": "9144949ea74162c9df0d009a30e33b720bdb7291df19ef59c87ddc4cef043e6a"
+    },
+    {
+      "bytes": 144720,
+      "content": "original bytes",
+      "path": "test/results.json",
+      "sha256": "3cf9bf39dfee609c203a060c4b177e4224471755036b2a5bb071624e4c1d24c4"
+    },
+    {
+      "bytes": 90833,
+      "content": "original bytes",
+      "path": "training.log",
+      "sha256": "513b7262f2e8cf7f70397dd092ca9bd0df2700384ef67ce3e441764c5a341e7e"
+    },
+    {
+      "bytes": 25633,
+      "content": "original bytes",
+      "path": "training_config.json",
+      "sha256": "e4f137817fab91844113bd56e7c848ff3be11e725e950623cdf316cf92b0cd0e"
+    },
+    {
+      "bytes": 386896,
+      "content": "original bytes",
+      "path": "training_summary.json",
+      "sha256": "0c4ed7c72df9c527c128f17b1a4003c4728042b18d1b6968620d1111a0c56c87"
+    },
+    {
+      "bytes": 27388,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day4/benchmark.py",
+      "sha256": "292c7c26dfb2c2772fbc4f16e61abbb20a1b9df2c5132a8b1bc737d6ca8d9281"
+    },
+    {
+      "bytes": 10764,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day4/run_experiment.py",
+      "sha256": "4aa5aaf9747f30e0de79cf0f739c7c72f4a8644c03c4ef6250d6f3a108e55a51"
+    },
+    {
+      "bytes": 18708,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day4/tracking.py",
+      "sha256": "2e86c05fddca804e2c30fa97461cb391900a56634273c9cc66aae09ab41c5200"
+    },
+    {
+      "bytes": 8220,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/PROTOCOL.md",
+      "sha256": "5675db4a816dc8ce390b4a5ae050b120f7e7e5133d09d2239c2c384603f65cf7"
+    },
+    {
+      "bytes": 23008,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/Predictive_Part_JEPA_Colab.ipynb",
+      "sha256": "e1098a9e9e3d928f5598623e581fb8442fef06f2bc0767e62531a5f23af60b29"
+    },
+    {
+      "bytes": 2622,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/README.md",
+      "sha256": "db7d36937e7697acace1cf9d502cce1d90ea668014d5a8635372f245116837ff"
+    },
+    {
+      "bytes": 9436,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/RESEARCH_CONTEXT.md",
+      "sha256": "c5a1138c1ca58016a81704a7c08003cc90ec047e107708a901108b4edf11d0fa"
+    },
+    {
+      "bytes": 38611,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/analyze.py",
+      "sha256": "715f67c8abfec365dcb36645349b6e7fda324d681930efb744b7e281e6fee346"
+    },
+    {
+      "bytes": 12593,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/data.py",
+      "sha256": "845353a84577e3f30aa5c4ca6adf4cf7d9c742c413e5566d2b6bcad22ab5c7f3"
+    },
+    {
+      "bytes": 20464,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/diagnose.py",
+      "sha256": "869c532cd62be5fd8d13d9faea79c57f42f007c8e22510e91b40176f4a40ab82"
+    },
+    {
+      "bytes": 34248,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/export_artifacts.py",
+      "sha256": "08590e58689e0f4489b9ea73c8d9d72724d889d2baceaacbfbb5370e768d30f3"
+    },
+    {
+      "bytes": 16552,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/extract.py",
+      "sha256": "2b8f546c605c5dfc021752a9adf562556074f173ebb45ffe0e133627a71acd24"
+    },
+    {
+      "bytes": 12257,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/model.py",
+      "sha256": "fd90d08a5f0d0a7255f938ecaa059d3cea0cc1bd8409de43e0f089ad06091c30"
+    },
+    {
+      "bytes": 39580,
+      "content": "source snapshot; frozen sources verified separately",
+      "path": "source/experiments/day7/train.py",
+      "sha256": "7322f772c6cd92636c4c3e2425fcf38d7cd58878b029f770ae128e4ad488bdcd"
+    }
+  ],
+  "format": "day7_artifact_export_v1",
+  "full_archive": "../full_run.zip",
+  "full_archive_sha256": "bf00800fb0c767b9500aeff00be901bee063679300d9fd4d429c669b0bbb1404",
+  "kind": "compact_git_evidence_NOT_full_run",
+  "missing_from_learned_predictions": "logits, future, visibility, retrieved and any other non-core arrays; originals remain in full_run.zip",
+  "not_standalone": "Cannot rerun the full analysis/diagnostic pipeline from this tree alone; use full_run.zip, and regenerate or separately retain features when required.",
+  "omitted_files": [
+    {
+      "bytes": 3494779,
+      "original_sha256": "b9210321c5dbef002884d3dca5ccf2bef168c1adb9b26acf05f97f93c8a83d30",
+      "path": "models/coordinate_only/1701/best.pt",
+      "reason": "learned checkpoint weight omitted"
+    },
+    {
+      "bytes": 3494779,
+      "original_sha256": "674cc94f331fd1c41f94b12f00f610b8134ae533ae6925b8e657d4790a3bb243",
+      "path": "models/coordinate_only/1702/best.pt",
+      "reason": "learned checkpoint weight omitted"
+    },
+    {
+      "bytes": 3494779,
+      "original_sha256": "7a20fe1cc7e4c2296f3b537eca741e19023822d1f50512dd2f0ffdd87febe1bd",
+      "path": "models/coordinate_only/1703/best.pt",
+      "reason": "learned checkpoint weight omitted"
+    },
+    {
+      "bytes": 3494779,
+      "original_sha256": "84bc96ca3ddbc043126653dc4165710dd301ce83ae2d4001705c8d44d191c8e2",
+      "path": "models/predictive/1701/best.pt",
+      "reason": "learned checkpoint weight omitted"
+    },
+    {
+      "bytes": 3494779,
+      "original_sha256": "5e6e63dad51270ebbf705f82b71f355fe597a8212db98be90ab4d3e86b051e0e",
+      "path": "models/predictive/1702/best.pt",
+      "reason": "learned checkpoint weight omitted"
+    },
+    {
+      "bytes": 3494779,
+      "original_sha256": "0b928f045ee71785ce27cbab459910baf3edc7141fdf3edcbc0128f0e3b7933b",
+      "path": "models/predictive/1703/best.pt",
+      "reason": "learned checkpoint weight omitted"
+    },
+    {
+      "bytes": 3494779,
+      "original_sha256": "78fe2655dd720d50cf34a2829da700aa9f2fbdb8f8716b097ca9b0729f99c8ba",
+      "path": "models/retrieval_only/1701/best.pt",
+      "reason": "learned checkpoint weight omitted"
+    },
+    {
+      "bytes": 3494779,
+      "original_sha256": "39fd6ae5d7dc177bf43e57d5cba32ae02f1de188fbf20251800d7b126decdeba",
+      "path": "models/retrieval_only/1702/best.pt",
+      "reason": "learned checkpoint weight omitted"
+    },
+    {
+      "bytes": 3494779,
+      "original_sha256": "eff7444439dfaab454512383e5ebab2870c9a69533b54a51e3dfd481a61bdfed",
+      "path": "models/retrieval_only/1703/best.pt",
+      "reason": "learned checkpoint weight omitted"
+    }
+  ],
+  "prediction_derivations": [
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "13074c45b009fc2d9ed23ee193c49fb9fd4ee572c579818b1583889107dfef94",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10200.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d2c21592e561982314431110a777e570ddf56e49a9a4f0b598daf85de2151974",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10201.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "7b3cf03491f3313ef413e2ececef9f1f7a7623f8eeddf829309f6e9d1a49938d",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10202.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "4b1455d6885b623302571a77b8dc19d2217e9671b565bdaea3d4ce54de94c558",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10203.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "f70e5caf96b06c2d640b105f13f2a2ca9e3c7a466c4582552b033c1c424ccdf9",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10204.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "9ecc1dae8f1a124ff99dff7b6daf465d486f321b648adda3cc4b7c3e121ab630",
+      "path": "test/predictions/coordinate_only_seed1701/test_crossing_10205.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d87d81767fd4b33efc4bb4e5a991693d0f9ba19c26b86e317b1a1d6b3ff3d5c6",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10100.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "856f4e3024447c3c831fc5edd016b1016708acdd0b1a084acb0123f9758f73a3",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10101.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "57ee91b55fa7612e6e65d2c90adbe37ce8edd7330ce6a086f3ab2ab62e050129",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10102.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "c2852b38296b523679239ca5908c11bc252f420123c7c1db21b1c164c7bb31e4",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10103.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "01d6fcae4259e068d8af0283d56cd4cae4ffb7502d9f1d247ad45846338ea85d",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10104.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "1a50abefc682ecca9e06701b066e017b8b4585048674bcee9713a7dc6c917537",
+      "path": "test/predictions/coordinate_only_seed1701/test_long_occlusion_10105.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "db2e00d72ac6865348f83a9e0f5270e9958ae18c8b043068570e8851c038f888",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10300.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "158d50d22c4dd035846da1df83eb69ebeb5e8b88dc908398f8d74b4511272e32",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10301.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "db2e00d72ac6865348f83a9e0f5270e9958ae18c8b043068570e8851c038f888",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10302.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "4a3cd7b74c2b501c6901c222332ec254a35e7bf3fd233ed9e403125e82ae0530",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10303.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "0ac217f5a1e1c9a6be27a77e1d6969288bc3a540cc63c69c5c8d23f3d72a7915",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10304.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "e34d9b6bc3b7e053b2e90b97ca9bcc967bce3d799476f9d6945e2ee1cabadde0",
+      "path": "test/predictions/coordinate_only_seed1701/test_scale_camera_10305.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d9aee344793d9f7357edcdf1daa015ee53286077476a9c0f51d87abccc3bad09",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10200.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "98a35dce12a1d9e9c31f640ff69202826547700ab24193b657c204b7a891e30b",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10201.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "bfd425e06c0d44622c1c5b633418757d07052d29a93e6377054c3abdb43f6549",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10202.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "0c4d765c20a6c3812f3570f4ba28b68c0c6db7cab1d1305045f7e0169cb968c9",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10203.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d12e919552a64cbee8ca80f50c9d660118b3d8b4f63862a4b27e43382152dc52",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10204.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "c68188893f5fbc47a05c368887bded1de0566782495b434d1bb961d3ceb6b906",
+      "path": "test/predictions/coordinate_only_seed1702/test_crossing_10205.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ee777af4e77b77640b8cb22a667249656cd591b88a0f776f1ece47022f078fe6",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10100.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "70e1fd7502ea7b58395fc2dd43047050a1045ec3c6c4ef89842ba86917c3ba5b",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10101.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ba303f81c48eb598eb37fa0d26e953f6ddbcdf4644ab62998ae612d2586f4cc0",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10102.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "42d31d43bbe67fec0b8049569c64b54847489b243f79e2053fa61569756711c5",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10103.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "a1694ba04a010e33ea3fef0b85a589344b2e39a8c9fedddb3b3ad84138744a36",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10104.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d16478e376ede191ced318fa0d0bcca75d58028b3d1ddd0209030b6ccdacb87e",
+      "path": "test/predictions/coordinate_only_seed1702/test_long_occlusion_10105.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "91db9856059d26512097e04a1f3ce798a9eef61dde490d02f964b9cc5091dba9",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10300.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "a7fc656bf39ac2bcf516f4fe16e4d0f75ad3d0e021687ddb449fafb3f250e330",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10301.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "91db9856059d26512097e04a1f3ce798a9eef61dde490d02f964b9cc5091dba9",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10302.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "2ec30677d97a536fd91896f4b6be91bc8174aa311b4d1aaa02dfbda756232bf8",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10303.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "96f0541e52f1d455296c0d685781a0d5adc3976e7d897a17e6060a63c0723550",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10304.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "3cd331c66b3eafaf30c6420d9c7375b446fd22e04a681a01f0b1a41074909152",
+      "path": "test/predictions/coordinate_only_seed1702/test_scale_camera_10305.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "0771e1cfffdac5cefc0eb23b80aca912eb8a17de03fb6107f8f2f0440d20e0e3",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10200.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "73213a05ea833dfd3744d60e5d142b6e2343dfa22e82d2f369e0988620f994c3",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10201.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d0abcf0ef24fdaa54e7cbda47da705e33e008388c859f8e90e2e8e63049b8e71",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10202.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "24d1dd960f8c176d0ab6f78be086d9e15460e1daf36a510a134d3019daddf783",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10203.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ad71ddbc9aa60567e331dbe5f6b7559aec5356403fb43fa52608f1b4e1786b86",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10204.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "504457f32b30a2ba81a7daf2705612e167d6566c5378c4fcff7f7815aef6700c",
+      "path": "test/predictions/coordinate_only_seed1703/test_crossing_10205.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "fababc5ace1cfa7f6d1bd42d118105bb738551f9c52b9d8383b4b989c0465722",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10100.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "a0e9004612ed3818e5d82d4083ff323172a393f3e0d69e31658bdbad2311a3c3",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10101.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "9547919279beb223fba8122c368565964a86ab7fd2c39c3a531e03c48efbc5c9",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10102.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "7e13827745998410d3795bb0450ab9c4f7c6733a829f36703e4dbe86dfe604a5",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10103.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "4903b26d8d6726996ac51e919f05ae74f39bfc0f97810938e5e305438d23ecaa",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10104.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "8e552b04dcbfa86fb31f622efaad5be16ecee57566bfe62706eba075755a3fd0",
+      "path": "test/predictions/coordinate_only_seed1703/test_long_occlusion_10105.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "16141d6e90cf935fa44566eb7e8fe744d4aa7673bc695f0fc12d99589425f6e6",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10300.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "36e3d54044426bb84904817603a3ee2240941963bf558c17afe26e7d2dee7255",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10301.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "16141d6e90cf935fa44566eb7e8fe744d4aa7673bc695f0fc12d99589425f6e6",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10302.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "c12d5f4c26859ed127ecf6f94094927f699e64a675271e5cdd1b3dc0520211d5",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10303.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "dde7fce655bd9db26c1e9c072365108e7d01eb4d4fdcce5855d522df1586d5a9",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10304.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "dc7ec01977500f8e242285f5f37c5e6a05fdb91a3505de78568016a33676e4a0",
+      "path": "test/predictions/coordinate_only_seed1703/test_scale_camera_10305.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "e7c8ee17a480f5ed98053188befb7d9981f404f8df45d71328050b78f3cc55ec",
+      "path": "test/predictions/global_full/test_crossing_10200.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b97d7b9cf58b8ec92f1e6000520bfb11773fa4a6e7785cffc70bf9751281f300",
+      "path": "test/predictions/global_full/test_crossing_10201.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b503da95bcdddad1c6014bd3696bc48b160cea732f8f8945e23cb23ae2277055",
+      "path": "test/predictions/global_full/test_crossing_10202.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "29aca8d567f47ea5be9fbb6559ee4920df3da89d0f4c409474a4f83b7917ba37",
+      "path": "test/predictions/global_full/test_crossing_10203.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "5f75aa12c02a234d3838a5ceeb1952325ef3f22a7a7c74a0026681c7f0565832",
+      "path": "test/predictions/global_full/test_crossing_10204.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "c8e5e9e53ef8d04d8237060eaa0d8c0bdccab814947cef7ccdd52f33ac53b28d",
+      "path": "test/predictions/global_full/test_crossing_10205.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "453237523e38bab2dbfd42a664bde17b37ee282a95a279032bd0c9f56474d5da",
+      "path": "test/predictions/global_full/test_long_occlusion_10100.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "0e597019c879f22db74dc54b8b0fceaf7adfd336c836f0639a482ccdcc49efa7",
+      "path": "test/predictions/global_full/test_long_occlusion_10101.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "bc420a37ba4a0853368b0a224ac0174873327763cb33804a7acf87e076aca34d",
+      "path": "test/predictions/global_full/test_long_occlusion_10102.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "a84828741cd307b3dfee634715eda873138768c70e8be937a524ca1ab8d38f93",
+      "path": "test/predictions/global_full/test_long_occlusion_10103.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "2813d9556505b90f763665274d5657b4acf509cea0ee38b85f003bc12780772b",
+      "path": "test/predictions/global_full/test_long_occlusion_10104.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "c2c846e34b2714d3f49e9ed3e6712a7d7f062b95dac7f1ffff0418bf5a4ed82f",
+      "path": "test/predictions/global_full/test_long_occlusion_10105.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "dec43ac7f125e1dbcd711ebe3a3d7a21a6a967e70f1445a7921bfc6b81cea024",
+      "path": "test/predictions/global_full/test_scale_camera_10300.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "88adeaf86958c77c14f7af14af630b1b68b8927775dd46fded1121b5ea904ea8",
+      "path": "test/predictions/global_full/test_scale_camera_10301.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "0072df5a446d77c87e91cad665b60e7ea6dc62e3c170ddfad5475025b0f4db7d",
+      "path": "test/predictions/global_full/test_scale_camera_10302.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "34e616269c18e1d566f12069f0c28f3735a69abfc9839fe8b5571c659a034c86",
+      "path": "test/predictions/global_full/test_scale_camera_10303.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "24f470e7f99e0b38aed76a55b39e2a245fcf20699c2d0d57a94b83511372bfb5",
+      "path": "test/predictions/global_full/test_scale_camera_10304.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "1c72048f9f388a652fa782b6c9cf4f253fe84c75c3ea813bf7de4c16833d47ff",
+      "path": "test/predictions/global_full/test_scale_camera_10305.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ddffd98db59bec205cff9eaa6636da752d2eefe73b3d921584a8536330c5e30e",
+      "path": "test/predictions/global_projected_centered/test_crossing_10200.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b9cc85c94939ef175271ce4c9f0668753074b0f03d2965e03f1225169c46c947",
+      "path": "test/predictions/global_projected_centered/test_crossing_10201.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ddbd95766d746ce6a53eb0aaf2999baf29032f3953e1659eafdd7caa8a847a34",
+      "path": "test/predictions/global_projected_centered/test_crossing_10202.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "0b8d6b9751a97390d7e6437390cdbbab1402c9c5b5f56dad30446f59ef7e4dd9",
+      "path": "test/predictions/global_projected_centered/test_crossing_10203.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "be569adc78b54515883f35362525b625f2f09b654c97a2ae913f932769d7c28c",
+      "path": "test/predictions/global_projected_centered/test_crossing_10204.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d33c5b52e185efe31e96e6e2a4270ec27ab26acb9f7384558379647a8097cdf6",
+      "path": "test/predictions/global_projected_centered/test_crossing_10205.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b1a689dbcc733895c921d53fe816c012e0e69f83e304592992e47c103de0a4f6",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10100.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "5acf80d4f54087c0c087c685de203350899062f385d6f83cc7e3f29bf2b0e47b",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10101.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "f2d2c8a817d1bafc84f7f441cf21a5cd7730cde416aae6fa163e110b1ff2a725",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10102.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "bdbe0c031f34dce49fc5eb898300bbc3e85908a868de65624ee1d6fa572c746f",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10103.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b034c78f25575d5a453ce22f239f4ff8406c50a77e008f0db869284d23e3a30d",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10104.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "5366aef6b3a26a8cd1d637f0c9a1c4c6f744164e94098acd16cac74443815858",
+      "path": "test/predictions/global_projected_centered/test_long_occlusion_10105.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "7b02dcc08f2b3e9b2d00fc4c0423aa91cd1baa7427d8f32b8bd5d0be20b5aeaf",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10300.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "2dc28f5b92f87674c231c082c965d4b9a3b333fd126ca5e1dc01dc424f87b16d",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10301.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "9d0b9404012e9b9e6939ce618bb8c381db3964ceb455efb5a0e994472786f40e",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10302.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "52657ac7a8b9ef8185449e38c34e84c2c4b08fdd127ec241e88c16b00a7cfcbe",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10303.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "4aaa4eb9772d60b34eca308bb8d8054231afb71160ab3a884dcbabaf6bba3ab0",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10304.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ddc377a0ca55ecd32045a07b708e9c4e1e2fdd505bb4d41b6a4c3d54f91ba376",
+      "path": "test/predictions/global_projected_centered/test_scale_camera_10305.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "60e5296dddb7fe675c34e0690930d0fb03497341ec199fae5b8633ff934e542b",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10200.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "1942fd690b9c5cbd4969d286c2a12cb075ed61b70f5a27985ef981cfc92abcee",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10201.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "53947dd7bf351d83b608f85b1c721e1678e7463b19cb8b49505a9e75e86431be",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10202.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ca930d594acec62aad7561761ee9769009250d5135334143c64db24f4d1c4b13",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10203.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "aa1194496577c59b557a358f9d025a89c27d3f803a8ab5989986867184e12bf8",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10204.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "0d7c7ed28ddc80f93510c9e68c8796bca28077d3deabbec7cc6b62cc928e7dc4",
+      "path": "test/predictions/predictive_seed1701/test_crossing_10205.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "0a7b84fb8ab214852cf0ed074bda92128fee49a3cbadd1b24f975a6f68dff464",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10100.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "90bca4791d67343592d3f2cdfdd51c17117aa96584afde84c45463bb965ddd94",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10101.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b9d22c3e0ef737dbbc444722e578d803f2f4b977f91b48e8fe19208f0d67f9e6",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10102.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "7c96ba12dbe9bfafdb55671cf0c09dcf6bf7d78f36bf8f895a45879286aaa2dd",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10103.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d7e96de83de1bab4b5dce827e128fe1feb40a559844cf899e04fb4a2a96ab8a0",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10104.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "be8784bfb3253b1aa7175400cfdd401c5ffa64cac57441452d986f22575ce605",
+      "path": "test/predictions/predictive_seed1701/test_long_occlusion_10105.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "c6db0ccb922d35451996393a24eb5d30af3dc104ddecec5f4523c1ab02288243",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10300.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "a93bdba8e8ba7ea9a821859883707f28fca4228c2f053236be412f5c936136d6",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10301.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "392d46dd5c2842cfd43feeedd75931b9ab1aeff24fe6d5038fac206b60cc7045",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10302.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d25610a0eac20c19db402ba5e2504be092075fdbeec2a58fdeea6f7345fd2ba6",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10303.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "575fb884be8604c6d8d6823b6c5c047c79a1db61f511aa0f2fbf9122699ef986",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10304.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "61283a4ca9a96e39ddba59a0830221d7d2fa402a98297ca4b641b073487fe17c",
+      "path": "test/predictions/predictive_seed1701/test_scale_camera_10305.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "70c5896103514aa299476a997efdbdf7ebbb06f6cc0e2bc08402eca798b8fe6c",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10200.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "eca06c803e8c8eeb2aa9734366adbd5deeac3712055a22bf1d6bc1bfd4d6d06b",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10201.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "5470d4af9d146223d36bce3acc9dc57332086678c46c73fb0a03cf225e320d72",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10202.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d19a65fad4c219f5ab264a2754b8d47da01b1897fe7895c8c08fc384f5583ec0",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10203.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "a0dd2c1044a5c5842025c610f630f77d8db057150798d2e5cdd61df563c61adf",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10204.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d197c53530156fbb12e01c3c61899b05b701e7e1acded84302bec9df9f4b33dd",
+      "path": "test/predictions/predictive_seed1702/test_crossing_10205.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "4e6e6cbd621bd336a1e13e7c55a443b002bcf4367b959c0b13552d5be9a5b777",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10100.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b33d1c7b7d3c8b2cd6aebb1b0db72919003bbfd3b04cb7d7a7219d67706a5dcf",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10101.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ad606b655a4722be371c92241956d64cdc02cc6b332052fa30c79312b27622a7",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10102.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "6d01e0211e623545ec015532d1abf12977e5b96e30a5b137131dc90f1de621bb",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10103.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b7e4adf4155aec13a4e599017b9401de62c79f9ccf321464b61be03c5059c815",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10104.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "397cd1ef86503b887c5b906d579f027eab6754a7e192cfb5f3a1791cff580f3e",
+      "path": "test/predictions/predictive_seed1702/test_long_occlusion_10105.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "f99afec58e9b97753168eb79bcd3ede89c4ce52ff1d79d9f75e2100314790877",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10300.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "2db85adf8776dec5fed46f9ff80ed183623f1c73fa7e148ebdb4822e35af87c0",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10301.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "3f82dbc8cb409823dc55df55502a914b9bcb00fe14f272917da23341ae3eca40",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10302.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "f5bb51d7038f4cc17c58cdf6aac12c42571a32525163a08b512324555bfbc587",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10303.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "a7de64de0470ccbd8576acbf725c3d0b12fe096a3ae163d4c21c42f400444876",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10304.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "7c90a0315a73a13e6281f255477f6cb364ebcd99563346f856fdbca1b384861b",
+      "path": "test/predictions/predictive_seed1702/test_scale_camera_10305.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "3a920572eec258d98494d9ee922449393386ddb1b241c240afb7e850c2dbac8f",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10200.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b4bbefbf5c96ea832fb59ef3e5fe0b83e97d559b14c0bbd67bf67ca28c1a5756",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10201.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "357a2ff2a39d50dfa2fd305ef6a260853303d6135d1999f0728b0e4e254fa936",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10202.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "5ca32ed69c8c3d2cc9174756059c9d261aaa6521c17d94474dca632bb5f91d8f",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10203.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ac3e01355108fc812dd8efd229f32c7254924139c8ee20336d5a76c3eaf7cdea",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10204.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "efc97a5488507408c38178f40b3cfdef39a5a62ecfda33b2d0a90970469356f0",
+      "path": "test/predictions/predictive_seed1703/test_crossing_10205.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "1f800a3fa737e7413162087a862feac1b8e15541f4a56d1795ba7cc66ae70828",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10100.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "93ddb186b61fbb5405bdedc4e7ea1f763fc62bcc5716d06d8772c4f33d7f07f1",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10101.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "e2d2a652b27c5f71bfef8eca22f13daee79ce67648b512dd2cb97088615a368f",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10102.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "603f9eadb748f9fffa3fda51bdbfa38e2f143e97324ccbbe64924cd492c70077",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10103.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "27362e428675b9d4d9cdc5e668a1fd7d9f61a1451848132dd19ef0ed4a9feafe",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10104.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ccb06c41c7e28b140d61954508fc0bc7177fcb1ae7fd695782ee6e6fcb5aef32",
+      "path": "test/predictions/predictive_seed1703/test_long_occlusion_10105.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "34c5ff6e539571d65f68bfd44b9681a997cf9f7df022d93f2b5dd5a8f037c76c",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10300.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "03ca396564708b076f6c7d9391a1a0307c98ab566283141ac04db79a6c53a5b1",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10301.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "5453966614f2d37bf0986b28fcfb173b1d2dc39d06a16c6f937d5f36ede20577",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10302.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "1161bd8772b9932ad8ebf5dd4ef42b38dc2fcf791088a4b1daa90e98c193a66a",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10303.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "3e5e8b2deb80a63898e699141f4ee79b7bbf8547dfc871cc53ebee248b51d650",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10304.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "8bd5aba6842c2e8105b6d105ce577b9be40401608a5c16ec3e08cc39678120ad",
+      "path": "test/predictions/predictive_seed1703/test_scale_camera_10305.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "c8b0f4401739c4954bab760407688e1e1efc9e8fccbaf1eac73a3eb96c0e07c1",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10200.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b0f1fb90059a7124bfd26427c136d5f60afa5cdd3dd2649ee378a0bcc4f093ef",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10201.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ae49d9da508d1d2a5495b81b35eb63174d3dfcfbbf44ba3b15aeaa50b209a4dc",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10202.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "fa212a0173df5cf8bea35626c3c2af08ae0cddd53a19083b5af9d2f74fb70194",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10203.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "36cfcffca9cfc9034851f20c39fd0290d6266489a59ec46f75acee36dde6d8dd",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10204.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "9a74cb7c176961559c4c28e5c75ddb5771b1d587c47089dc7402334426e8818c",
+      "path": "test/predictions/retrieval_only_seed1701/test_crossing_10205.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "dc395558be481c3fad18b2615d7087644b4fac3a78460403b4e261c094fb9de7",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10100.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "1bf2da6d91f597a7e417a6637eddc0ae296a68f6bca535311a31ccb953750722",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10101.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "e031699482ac3e15a76768a6967552ec292d353892bb71d1b9f935cafa07111c",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10102.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "7f395aad878d473f54ed7f13e3f67a4e91730783713dfc0e9cc78f94eb4dfab6",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10103.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "8494f1644806fcc973d7542617b9a1374532d1218b77ab97a4cd0a13ef7415b0",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10104.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "fd3d3323d33eead48c96f7c65206113b6bf36abebc59779c99f8aa98d80bfe03",
+      "path": "test/predictions/retrieval_only_seed1701/test_long_occlusion_10105.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "db7d03d9e13a0a5863be5fa0c422eb2890bc138461ee37e593dbfadd2aa9e912",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10300.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "70fcc65bfb7d9318622ac6ef1ec4736e7f7a54062713568c2b1133b8f4811649",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10301.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "c1813993dcc1defc0a823ab17b8cf0f05501128486add1927d0e1b14cc80912b",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10302.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "2983219df29fea555127314d75a670a0482a40cfd762afb8b1ceb4d1e1961470",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10303.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "60e1b7a5e85420cc79ba267db5575a0a3d5ca16effd7972ae06c6fa8969e6d29",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10304.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "e4dba927329a283dd9a24b6f17edbca799ccaae76a54366d571d4481522f26c8",
+      "path": "test/predictions/retrieval_only_seed1701/test_scale_camera_10305.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "41b4ae9e9d5db7512cbd2c1f415a2444899bfc7f9fe7d70a639de9abd4d93109",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10200.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "17381fedb2ef62156e10d16e72ba3c57bdeb4bb0838303fc09bd8c97bf1fd1e2",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10201.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "3f22147780bbf8207e4ed63840f80b86af5ffbdd3d253953cff8974c0389626a",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10202.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "e6d173563425ac7a63f92f61bc01530b6497f4bf9c71a87c6751365df20a36b5",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10203.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ae9d255dbcfeeb1d4ee4da937d33028f965575dfa69f703b1d4e3c371616aab6",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10204.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "457b7a8fd7517a0e022c2c84f513e9bd4d308c544e88841d1fd69c974b50b0bc",
+      "path": "test/predictions/retrieval_only_seed1702/test_crossing_10205.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b1fc789fbd1d891969762da16084b773cc7794fbb2a75e7c541ed4d3b0e8c75b",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10100.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "56270d7a9c491b1b479a93edbffcc290a934dbd32c6438a0f39c3edaece6a5ae",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10101.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "23ce0d059bbe4dc620f009f4bf2ce8757068cac83c89802aab0f4ec2ab782b08",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10102.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "e4b2b8a9f3cec0303381b5d3ca662bd69994788dce50666e366b6696a630bef9",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10103.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "4564ff4dbfe56c0b248345905da1a998ed79f6ee7f80e6fb97412762635671e0",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10104.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "beaee767fe09bd7b5b07bb9c0db2d515e115f2671dfe08024b7fde919100c5fa",
+      "path": "test/predictions/retrieval_only_seed1702/test_long_occlusion_10105.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "44b90e5535ca0b17028190612014320ea69ad8c70a3130c3d45ba2a73aaa08a8",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10300.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "dda215743e205137bc9924300c6f01e8dcf37ea9aaab1715aed4db73db2c002d",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10301.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "d3f89584b5dca2425db552fd908d32037d588c0c9f852ded89cb00c56e5a445e",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10302.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "84142e4f942da01e08d7d2433fb7c0e23ecb97ad8617af001861a4b2e8ef2840",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10303.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "972ebc2e5b6ba35a4864ef9a901331e7f7022ab8e0f86064c2d6922498f48f5b",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10304.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "5f84d1ab71adcbbef353604e13f24161bce901e7884bc646e723441b495927a7",
+      "path": "test/predictions/retrieval_only_seed1702/test_scale_camera_10305.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "6d335f0000bccad092883656b1366da3b79fcb15103459ed02ed47415f5f374c",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10200.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "1238c4f3b8a3f291dd3a097604b451bf4298015543f786e1ee0ababc80de7050",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10201.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "1dd27b51d493438402e223b98c068ea1b13edb043ee82c52e7c1b6d73d1956b4",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10202.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "7a952bb665d552764110e29c2840474f390c3b872a212c00d3cbe81cc1e45423",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10203.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "947b3c29c8f5c8203f74d889c03410ab99b9a8bc286d1659c7b9f16af8acfac0",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10204.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "8fde55fbd71724c077472a13349b3b74d6bb3885dc6ca93a38aa93269dc8710c",
+      "path": "test/predictions/retrieval_only_seed1703/test_crossing_10205.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "c7e5aaec96ef7380e1f233ceb3eb217c9538e3152a7d8613b164f4e660a45abd",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10100.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "5c16ddb55613552559cb27e525a491300e0697959ddf9d01471900bdb2a9c50d",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10101.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b895428d5a50245e1fd44a0feb5f56ea2db027657a8e8096e6ffd34e07f1ee19",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10102.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "4eb13a177a7aa905eb2050086abb2d52791fb6db1206e61b57bbcead205f3dd8",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10103.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "93987d8d5fe77df0a345b63a7dafba9b1f450be6bc2dffa9aae6cb8779d37c62",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10104.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "ec527c0f670646f78a38ff158c2d27332fd0895132246e3283c371c94471932d",
+      "path": "test/predictions/retrieval_only_seed1703/test_long_occlusion_10105.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "6533eda062a02599bafaa42ec64c83e30506843f3129ccf75251c2997c03165d",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10300.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "4bd66b78fef68e76f39319813bd8c947de4f042d7af807c556cb87587aad8baf",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10301.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "f963c44307332c3a8abbece58d8f7862a93a2d86346392fb0edec6315606756d",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10302.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "a14228e0be492ffaf757fee6d0a3b099d228c8ccd9dbfa9299bf01dd865bf151",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10303.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "329ee0a6630f7c5e8fdc9faab5ab80c63e8c56f8d99fdb60bc4d45b18cad81ab",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10304.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "1a08f1b6aeef122e5d94bfd0aee7cf30b9e3dab554b6b4a04bbb3130991b6e12",
+      "path": "test/predictions/retrieval_only_seed1703/test_scale_camera_10305.npz",
+      "removed_arrays": [
+        "future",
+        "logits",
+        "retrieved",
+        "visibility"
+      ],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "b06ad04c3bba0caecfeac87fa92515c38fed93e8a581f2c38b1798fd744bc9db",
+      "path": "test/predictions/selected_day4/test_crossing_10200.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "2f3507569cccc28837d0048da70cfbce08a6b74682bf1bdd045794ddfe071b6e",
+      "path": "test/predictions/selected_day4/test_crossing_10201.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "89bd7a6c16411d30584d157876171643dd2939a217ae160a272ca26f929af92f",
+      "path": "test/predictions/selected_day4/test_crossing_10202.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "35e203ec664bf2fcce6ba50a425b197e6e5e0da0098a0040cf2adb13be8ab0f4",
+      "path": "test/predictions/selected_day4/test_crossing_10203.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "9f38107c6717071742ee4738511175596cf921b5535479eb457b2424d6b9fd2c",
+      "path": "test/predictions/selected_day4/test_crossing_10204.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "dcfc213af873989e1ce942ac036b83287e3045169602ce623a84bf40045e6200",
+      "path": "test/predictions/selected_day4/test_crossing_10205.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "e46785db6b2afe33810eac7c0f5fe83be1903ca60d73b98a1b49d13c490844b0",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10100.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "e23953a44087fc82858ea9d9f02763733969b35f92e83442c590ca2a3bfc7d12",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10101.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "a85487daa53c43823bc13407bf3cf221a97b677aa7e80210e07bbd9e5735b67a",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10102.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "60cbc59053b22ba32338f08f69b8579703055547e547cb7c53e4e43d83945b2a",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10103.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "1ea70f47a8b76deb5abe7516547b1588a16c3dcc903d526ba2984d12d7aeb14c",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10104.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "eae15aadf652b92ddf44b5d49375f46c8e5ac941ba5bb4fb4e2d81c5bfc232bb",
+      "path": "test/predictions/selected_day4/test_long_occlusion_10105.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "0510d0765997d7102234880fe9024efcacb42e68c1fe23ed2ee31d8312286569",
+      "path": "test/predictions/selected_day4/test_scale_camera_10300.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "f00c0d4d0e7a63e43851ef3613a1007b3be824ae79d45886c3c291c721a2a2e6",
+      "path": "test/predictions/selected_day4/test_scale_camera_10301.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "72a3ed6efd54dc24691ac4b9168222ce54ec9dbed84c8f7c12ad106b0fbd3f56",
+      "path": "test/predictions/selected_day4/test_scale_camera_10302.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "5855b662822219f0e111be532ff80df2d697bfb5ef63d85c8484847c11749357",
+      "path": "test/predictions/selected_day4/test_scale_camera_10303.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "82369ca5da83d99006a386618c3dd4b803177146fd88d19a472551e0c54da42f",
+      "path": "test/predictions/selected_day4/test_scale_camera_10304.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    },
+    {
+      "claim": "retained arrays equal originals, including dtype",
+      "original_sha256": "a3afa31a97fe22ec2282239b04ea4d21e963924aab902e94c72fc185321792c5",
+      "path": "test/predictions/selected_day4/test_scale_camera_10305.npz",
+      "removed_arrays": [],
+      "retained_arrays": [
+        "scores",
+        "cells",
+        "eligible"
+      ]
+    }
+  ]
+}

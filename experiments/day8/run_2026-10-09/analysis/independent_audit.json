@@ -1,0 +1,2214 @@
+{
+  "audit_version": "day8_independent_saved_results_v1",
+  "status": "passed_with_warnings",
+  "audit_source_sha256": "4132231073309be3b48379efa908bbfd164d156d206c9292ae75089c8ce8a86b",
+  "checks": 332228,
+  "max_compared_numeric_abs_difference": 4.440892098500626e-15,
+  "mismatches": [],
+  "warnings": [
+    "Incomplete raw curves.csv for learned_residual/1801: missing epochs [29, 30]. All 30 epochs and the frozen final best epoch are logged. Original CSV retained; missing raw fields are not fabricated.",
+    "Incomplete raw curves.csv for learned_residual/1803: missing epochs [30]. All 30 epochs and the frozen final best epoch are logged. Original CSV retained; missing raw fields are not fabricated."
+  ],
+  "fatal": null,
+  "cpu_limit": 4,
+  "provenance": {
+    "freeze_sha256": "9b6b16e4122394b7bad17ce46f0bf7ae6ab8fe95c137b6dbf81b9b452b16dba5",
+    "publication_commit": "598f5bc1770c72b4af437a44f834cef41f0aeb08",
+    "evaluator_sha256": "fec3a0489c846c96c0b58e8725ab22a20923eed57ac0cce65abfa073b8b0929c",
+    "trained_checkpoints_hashed": 7,
+    "feature_caches_hashed": 48,
+    "prediction_npzs_hashed": 16,
+    "incomplete_training_curve_histories": [
+      {
+        "arm": "learned_residual",
+        "seed": 1801,
+        "saved_epochs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "missing_csv_epochs": [
+          29,
+          30
+        ],
+        "all_30_epochs_present_in_training_log": true,
+        "final_logged_best_epoch": 27,
+        "raw_fields_reconstructed": false
+      },
+      {
+        "arm": "learned_residual",
+        "seed": 1803,
+        "saved_epochs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "missing_csv_epochs": [
+          30
+        ],
+        "all_30_epochs_present_in_training_log": true,
+        "final_logged_best_epoch": 29,
+        "raw_fields_reconstructed": false
+      }
+    ],
+    "training_log_sha256": "a7363b08aca17406de1ba5d56891b31d342965d89729421413f623c1f1f76b8e",
+    "publication_limit": "Checks pinned bytes and local record of prior exact-GitHub verification; does not independently query GitHub or prove chronology.",
+    "encoder_weight_limit": "Checks the recorded official backbone checksum across manifests; does not rehash or rerun the 5GB backbone.",
+    "precision_gate_limit": "Recounts saved six pretest ratios and positive denominators, not new encoder inference."
+  },
+  "counts": {
+    "scenes": 16,
+    "method_seed_scene_rows": 192,
+    "tubelet_rows": 3072,
+    "seed_averaged_rows": 128
+  },
+  "scene_audits": [
+    {
+      "scene": "test_11200_dx+32",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 148,
+        "destination": 288,
+        "halo": 436,
+        "distractor": 278,
+        "background": 8066,
+        "common": 1004
+      }
+    },
+    {
+      "scene": "test_11201_dx-32",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 131,
+        "destination": 235,
+        "halo": 399,
+        "distractor": 366,
+        "background": 8085,
+        "common": 1015
+      }
+    },
+    {
+      "scene": "test_11202_dx+64",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 270,
+        "destination": 294,
+        "halo": 524,
+        "distractor": 337,
+        "background": 7791,
+        "common": 1457
+      }
+    },
+    {
+      "scene": "test_11203_dx-64",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 283,
+        "destination": 319,
+        "halo": 529,
+        "distractor": 276,
+        "background": 7809,
+        "common": 1416
+      }
+    },
+    {
+      "scene": "test_11204_dx+32",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 150,
+        "destination": 307,
+        "halo": 436,
+        "distractor": 359,
+        "background": 7964,
+        "common": 1128
+      }
+    },
+    {
+      "scene": "test_11205_dx-32",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 128,
+        "destination": 229,
+        "halo": 390,
+        "distractor": 294,
+        "background": 8175,
+        "common": 922
+      }
+    },
+    {
+      "scene": "test_11206_dx+64",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 226,
+        "destination": 232,
+        "halo": 493,
+        "distractor": 297,
+        "background": 7968,
+        "common": 1256
+      }
+    },
+    {
+      "scene": "test_11207_dx-64",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 263,
+        "destination": 281,
+        "halo": 534,
+        "distractor": 349,
+        "background": 7789,
+        "common": 1433
+      }
+    },
+    {
+      "scene": "test_11208_dx+48",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 188,
+        "destination": 231,
+        "halo": 439,
+        "distractor": 336,
+        "background": 8022,
+        "common": 1173
+      }
+    },
+    {
+      "scene": "test_11209_dx-48",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 231,
+        "destination": 329,
+        "halo": 492,
+        "distractor": 305,
+        "background": 7859,
+        "common": 1316
+      }
+    },
+    {
+      "scene": "test_11210_dx+80",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 270,
+        "destination": 270,
+        "halo": 587,
+        "distractor": 349,
+        "background": 7740,
+        "common": 1504
+      }
+    },
+    {
+      "scene": "test_11211_dx-80",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 319,
+        "destination": 319,
+        "halo": 599,
+        "distractor": 321,
+        "background": 7658,
+        "common": 1596
+      }
+    },
+    {
+      "scene": "test_11212_dx+48",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 243,
+        "destination": 364,
+        "halo": 510,
+        "distractor": 269,
+        "background": 7830,
+        "common": 1319
+      }
+    },
+    {
+      "scene": "test_11213_dx-48",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 233,
+        "destination": 335,
+        "halo": 487,
+        "distractor": 342,
+        "background": 7819,
+        "common": 1374
+      }
+    },
+    {
+      "scene": "test_11214_dx+80",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 239,
+        "destination": 239,
+        "halo": 579,
+        "distractor": 244,
+        "background": 7915,
+        "common": 1205
+      }
+    },
+    {
+      "scene": "test_11215_dx-80",
+      "method_rows": 12,
+      "tubelet_rows": 192,
+      "region_tokens": {
+        "source_hole": 339,
+        "destination": 340,
+        "halo": 592,
+        "distractor": 267,
+        "background": 7678,
+        "common": 1549
+      }
+    }
+  ],
+  "independent_recount": {
+    "genuine_position_gate": true,
+    "genuine_identity_gate": true,
+    "decision_checks": {
+      "learned_residual": {
+        "latent_rule_pass": true,
+        "semantic_rule_pass": true,
+        "appearance_rule_pass": true,
+        "coarse_identity_within_genuine_accuracy_tolerance": true,
+        "identity_accuracy_tolerance": 0.05,
+        "selected_rgb_mse_improves_on_noop_with_ci": true,
+        "distractor_probe_output_preserved": true,
+        "combined_exploratory_pass": true
+      },
+      "geometry_only": {
+        "latent_rule_pass": true,
+        "semantic_rule_pass": true,
+        "appearance_rule_pass": true,
+        "coarse_identity_within_genuine_accuracy_tolerance": true,
+        "identity_accuracy_tolerance": 0.05,
+        "selected_rgb_mse_improves_on_noop_with_ci": true,
+        "distractor_probe_output_preserved": true,
+        "combined_exploratory_pass": true
+      },
+      "naive": {
+        "latent_rule_pass": true,
+        "semantic_rule_pass": true,
+        "appearance_rule_pass": true,
+        "coarse_identity_within_genuine_accuracy_tolerance": true,
+        "identity_accuracy_tolerance": 0.05,
+        "selected_rgb_mse_improves_on_noop_with_ci": true,
+        "distractor_probe_output_preserved": true,
+        "combined_exploratory_pass": true
+      },
+      "residual": {
+        "latent_rule_pass": true,
+        "semantic_rule_pass": true,
+        "appearance_rule_pass": true,
+        "coarse_identity_within_genuine_accuracy_tolerance": true,
+        "identity_accuracy_tolerance": 0.05,
+        "selected_rgb_mse_improves_on_noop_with_ci": true,
+        "distractor_probe_output_preserved": true,
+        "combined_exploratory_pass": true
+      }
+    },
+    "selected_summary": {
+      "noop": {
+        "primary_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "halo_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "background_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "common_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 56.05889247989292,
+          "ci95": [
+            47.075978067395596,
+            65.01719944293929
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.9999060435410281,
+          "ci95": [
+            0.9123323526991876,
+            1.0997589701653845
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.04361542089984627,
+          "ci95": [
+            0.01619241462747322,
+            0.07564475147742643
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9512786367278554,
+          "ci95": [
+            0.946546690343077,
+            0.9565315527571386
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.08015753215486149,
+          "ci95": [
+            0.06978985201415455,
+            0.09052919689183611
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_core_mse": {
+          "mean": 0.001963460751964933,
+          "ci95": [
+            0.001578234359699748,
+            0.0023498241029377355
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ghost_mean_occupancy": {
+          "mean": 0.471997331478633,
+          "ci95": [
+            0.44835340765712317,
+            0.4943703843367985
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_change_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_source_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.4319584127605856,
+          "ci95": [
+            1.2470013952571253,
+            1.6189510955917037
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.2700339749504546,
+          "ci95": [
+            1.1205129269389311,
+            1.442092526982134
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.6484375,
+          "ci95": [
+            0.44521484375000003,
+            0.8359375
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_true_color_separation": {
+          "mean": 0.6398527599572854,
+          "ci95": [
+            0.62566470485391,
+            0.6555126312176696
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_selected_color": {
+          "mean": 0.461292002147156,
+          "ci95": [
+            0.4236602486177558,
+            0.4965899974568343
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_distractor_color": {
+          "mean": 0.5051751594113174,
+          "ci95": [
+            0.4822641408693816,
+            0.5279697148552281
+          ],
+          "n_scenes": 16
+        }
+      },
+      "naive": {
+        "primary_ratio": {
+          "mean": 0.11869530463014441,
+          "ci95": [
+            0.11232554079271193,
+            0.1243512899273767
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ratio": {
+          "mean": 0.20878849154827506,
+          "ci95": [
+            0.19722554748423418,
+            0.21938847208354983
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.028602117712013764,
+          "ci95": [
+            0.024615519776523008,
+            0.03278629947398711
+          ],
+          "n_scenes": 16
+        },
+        "halo_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "background_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "common_ratio": {
+          "mean": 0.11660044754115194,
+          "ci95": [
+            0.1086785865486925,
+            0.123371656911853
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.3296260544416048,
+          "ci95": [
+            1.0867711361118908,
+            1.6147959673298986
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.9999060435410281,
+          "ci95": [
+            0.9123323526991876,
+            1.0997589701653845
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.9398728550095738,
+          "ci95": [
+            0.9306645240068091,
+            0.9492767898334306
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9512786367278554,
+          "ci95": [
+            0.946546690343077,
+            0.9565315527571386
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.001955737761216957,
+          "ci95": [
+            0.0015348651176419542,
+            0.002402823167826007
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_core_mse": {
+          "mean": 0.001963460751964933,
+          "ci95": [
+            0.001578234359699748,
+            0.0023498241029377355
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ghost_mean_occupancy": {
+          "mean": 0.06551122428300005,
+          "ci95": [
+            0.05391956156290689,
+            0.0770225972870321
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_change_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_source_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.709823442140709,
+          "ci95": [
+            1.4012258546871992,
+            2.0746717335180627
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.2700339749504546,
+          "ci95": [
+            1.1205129269389311,
+            1.442092526982134
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_true_color_separation": {
+          "mean": 0.6398527599572854,
+          "ci95": [
+            0.62566470485391,
+            0.6555126312176696
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_selected_color": {
+          "mean": 0.054205448373620055,
+          "ci95": [
+            0.044121651978518424,
+            0.06459305300351822
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_distractor_color": {
+          "mean": 0.6213244851933416,
+          "ci95": [
+            0.6019603520165092,
+            0.6409540110144046
+          ],
+          "n_scenes": 16
+        }
+      },
+      "residual": {
+        "primary_ratio": {
+          "mean": 0.22453900816474937,
+          "ci95": [
+            0.2083649698609589,
+            0.239756510409922
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ratio": {
+          "mean": 0.20878849154827506,
+          "ci95": [
+            0.19722554748423418,
+            0.21938847208354983
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.24028952478122365,
+          "ci95": [
+            0.2114647377737833,
+            0.2682850386174661
+          ],
+          "n_scenes": 16
+        },
+        "halo_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "background_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "common_ratio": {
+          "mean": 0.22861573764617268,
+          "ci95": [
+            0.21163538324296155,
+            0.24461784912425757
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 3.2307476497809833,
+          "ci95": [
+            2.7315505726635783,
+            3.7826908149357283
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.9999060435410281,
+          "ci95": [
+            0.9123323526991876,
+            1.0997589701653845
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.7561177320942946,
+          "ci95": [
+            0.7180847060925186,
+            0.7935592892892697
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9512786367278554,
+          "ci95": [
+            0.946546690343077,
+            0.9565315527571386
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.015041022949274202,
+          "ci95": [
+            0.012008838434596696,
+            0.018101332612957835
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_core_mse": {
+          "mean": 0.001963460751964933,
+          "ci95": [
+            0.001578234359699748,
+            0.0023498241029377355
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ghost_mean_occupancy": {
+          "mean": 0.06551122428300005,
+          "ci95": [
+            0.05391956156290689,
+            0.0770225972870321
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_change_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_source_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 3.4823687545106656,
+          "ci95": [
+            2.994091584706174,
+            4.0032777192905105
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.2700339749504546,
+          "ci95": [
+            1.1205129269389311,
+            1.442092526982134
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.99609375,
+          "ci95": [
+            0.98828125,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_true_color_separation": {
+          "mean": 0.6398527599572854,
+          "ci95": [
+            0.62566470485391,
+            0.6555126312176696
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_selected_color": {
+          "mean": 0.14495468737378936,
+          "ci95": [
+            0.1258250099467409,
+            0.16343621691743845
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_distractor_color": {
+          "mean": 0.5985092837787214,
+          "ci95": [
+            0.568571720613911,
+            0.628521258304416
+          ],
+          "n_scenes": 16
+        }
+      },
+      "wrong_direction": {
+        "primary_ratio": {
+          "mean": 0.7686741545828094,
+          "ci95": [
+            0.692087124622642,
+            0.8497768333416924
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ratio": {
+          "mean": 0.4816482201821004,
+          "ci95": [
+            0.34902604250569436,
+            0.6201124830853918
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 1.0557000889835184,
+          "ci95": [
+            1.0328774358433217,
+            1.0798013312350558
+          ],
+          "n_scenes": 16
+        },
+        "halo_ratio": {
+          "mean": 6.426881571556482,
+          "ci95": [
+            5.02890191367598,
+            7.794501264074563
+          ],
+          "n_scenes": 16
+        },
+        "distractor_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "background_ratio": {
+          "mean": 16.390710975150917,
+          "ci95": [
+            13.185293837284819,
+            19.545997205948915
+          ],
+          "n_scenes": 16
+        },
+        "common_ratio": {
+          "mean": 1.1607060142969514,
+          "ci95": [
+            1.096257242340336,
+            1.2272774420905639
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 111.80462189039119,
+          "ci95": [
+            93.82886242184075,
+            129.53953353122458
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.9999060435410281,
+          "ci95": [
+            0.9123323526991876,
+            1.0997589701653845
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9512786367278554,
+          "ci95": [
+            0.946546690343077,
+            0.9565315527571386
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.08241067564860208,
+          "ci95": [
+            0.072521434003484,
+            0.09222111557741183
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_core_mse": {
+          "mean": 0.001963460751964933,
+          "ci95": [
+            0.001578234359699748,
+            0.0023498241029377355
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ghost_mean_occupancy": {
+          "mean": 0.20111361312956433,
+          "ci95": [
+            0.1234861824957079,
+            0.28866777358616674
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_change_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_source_mse": {
+          "mean": 0.08771756505849049,
+          "ci95": [
+            0.06458783238898702,
+            0.11082729066995366
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_changed_tokens": {
+          "mean": 158.375,
+          "ci95": [
+            119.5609375,
+            196.25
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 3.4917600790102,
+          "ci95": [
+            3.0874811801053865,
+            3.936450162549909
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.2700339749504546,
+          "ci95": [
+            1.1205129269389311,
+            1.442092526982134
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.57421875,
+          "ci95": [
+            0.375,
+            0.76953125
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_true_color_separation": {
+          "mean": 0.6398527599572854,
+          "ci95": [
+            0.62566470485391,
+            0.6555126312176696
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_selected_color": {
+          "mean": 0.47564181517352777,
+          "ci95": [
+            0.44298752310871636,
+            0.5058641200550799
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_distractor_color": {
+          "mean": 0.4841868995430615,
+          "ci95": [
+            0.4572322626946497,
+            0.5124049168227951
+          ],
+          "n_scenes": 16
+        }
+      },
+      "wrong_object": {
+        "primary_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "halo_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_ratio": {
+          "mean": 520.2036344660517,
+          "ci95": [
+            398.1730979673073,
+            667.6014420715267
+          ],
+          "n_scenes": 16
+        },
+        "background_ratio": {
+          "mean": 25.411331388523585,
+          "ci95": [
+            23.33517787525766,
+            27.46457653862667
+          ],
+          "n_scenes": 16
+        },
+        "common_ratio": {
+          "mean": 1.915323718328062,
+          "ci95": [
+            1.836754641831861,
+            1.996545543264337
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 56.05889247989292,
+          "ci95": [
+            47.075978067395596,
+            65.01719944293929
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 55.76097068466956,
+          "ci95": [
+            46.87862098128969,
+            64.60458777668104
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.04361542089984627,
+          "ci95": [
+            0.01619241462747322,
+            0.07564475147742643
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.05147096883836193,
+          "ci95": [
+            0.017243399968107604,
+            0.09180182148322173
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.08015753215486149,
+          "ci95": [
+            0.06978985201415455,
+            0.09052919689183611
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_core_mse": {
+          "mean": 0.0637892200870876,
+          "ci95": [
+            0.056299507223700085,
+            0.07218668136773443
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ghost_mean_occupancy": {
+          "mean": 0.471997331478633,
+          "ci95": [
+            0.44835340765712317,
+            0.4943703843367985
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.3416370485210791,
+          "ci95": [
+            0.3266246769926511,
+            0.35625119499163704
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.03345914232340874,
+          "ci95": [
+            0.029988245604363327,
+            0.036918981899361825
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_change_px": {
+          "mean": 55.79548499088517,
+          "ci95": [
+            46.891796498893896,
+            64.65373252526294
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_source_mse": {
+          "mean": 0.2928159834833225,
+          "ci95": [
+            0.26915389019952046,
+            0.3173225581974042
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_changed_tokens": {
+          "mean": 545.8125,
+          "ci95": [
+            510.8125,
+            581.940625
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.4319584127605856,
+          "ci95": [
+            1.2470013952571253,
+            1.6189510955917037
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 3.4046746496937113,
+          "ci95": [
+            3.0788564750805585,
+            3.734022288786774
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.6484375,
+          "ci95": [
+            0.44521484375000003,
+            0.8359375
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_true_color_separation": {
+          "mean": 0.6398527599572854,
+          "ci95": [
+            0.62566470485391,
+            0.6555126312176696
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_selected_color": {
+          "mean": 0.461292002147156,
+          "ci95": [
+            0.4236602486177558,
+            0.4965899974568343
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_distractor_color": {
+          "mean": 0.5051751594113174,
+          "ci95": [
+            0.4822641408693816,
+            0.5279697148552281
+          ],
+          "n_scenes": 16
+        }
+      },
+      "learned_residual": {
+        "primary_ratio": {
+          "mean": 0.14992191511140143,
+          "ci95": [
+            0.1429793604205923,
+            0.15733444286744952
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ratio": {
+          "mean": 0.20005484794997988,
+          "ci95": [
+            0.19073228459301853,
+            0.2097318289510129
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.09978898227282301,
+          "ci95": [
+            0.09005455286744424,
+            0.10956420016740513
+          ],
+          "n_scenes": 16
+        },
+        "halo_ratio": {
+          "mean": 0.9403439008447128,
+          "ci95": [
+            0.9253238733303067,
+            0.9576904196933234
+          ],
+          "n_scenes": 16
+        },
+        "distractor_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "background_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "common_ratio": {
+          "mean": 0.14986722413566267,
+          "ci95": [
+            0.14133249044881446,
+            0.15866650819217112
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.8196848735530629,
+          "ci95": [
+            1.552209327635216,
+            2.10621481041366
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.9999060435410281,
+          "ci95": [
+            0.9123323526991876,
+            1.0997589701653845
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.8982674696541884,
+          "ci95": [
+            0.885596263997143,
+            0.910809563248528
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9512786367278554,
+          "ci95": [
+            0.946546690343077,
+            0.9565315527571386
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0050688945562747285,
+          "ci95": [
+            0.0042498955142683086,
+            0.005949428135143541
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_core_mse": {
+          "mean": 0.001963460751964933,
+          "ci95": [
+            0.001578234359699748,
+            0.0023498241029377355
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ghost_mean_occupancy": {
+          "mean": 0.06738673951410115,
+          "ci95": [
+            0.05985560550970301,
+            0.07506878237174229
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_change_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_source_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 2.183501085751323,
+          "ci95": [
+            1.9124219493530283,
+            2.4652173787660034
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.2700339749504546,
+          "ci95": [
+            1.1205129269389311,
+            1.442092526982134
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_true_color_separation": {
+          "mean": 0.6398527599572854,
+          "ci95": [
+            0.62566470485391,
+            0.6555126312176696
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_selected_color": {
+          "mean": 0.07662971658012463,
+          "ci95": [
+            0.06614391707448211,
+            0.08777819646478971
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_distractor_color": {
+          "mean": 0.6050635238309379,
+          "ci95": [
+            0.5845989885007732,
+            0.6264313120480635
+          ],
+          "n_scenes": 16
+        }
+      },
+      "geometry_only": {
+        "primary_ratio": {
+          "mean": 0.22437943250576914,
+          "ci95": [
+            0.2084867824301098,
+            0.23938027241141688
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ratio": {
+          "mean": 0.20867638299901553,
+          "ci95": [
+            0.19722933102885745,
+            0.21910903927197606
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.24008248201252272,
+          "ci95": [
+            0.21158428251893271,
+            0.26795108132586487
+          ],
+          "n_scenes": 16
+        },
+        "halo_ratio": {
+          "mean": 1.0029656276454,
+          "ci95": [
+            1.002087658600379,
+            1.003853735692273
+          ],
+          "n_scenes": 16
+        },
+        "distractor_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "background_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "common_ratio": {
+          "mean": 0.22847676402604866,
+          "ci95": [
+            0.21172850868739024,
+            0.24426844334754494
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 3.161516278740362,
+          "ci95": [
+            2.6663368315238367,
+            3.694675154013632
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.9999060435410281,
+          "ci95": [
+            0.9123323526991876,
+            1.0997589701653845
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.7582866388530451,
+          "ci95": [
+            0.7186425153441756,
+            0.7961411693052317
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9512786367278554,
+          "ci95": [
+            0.946546690343077,
+            0.9565315527571386
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.014608575933587055,
+          "ci95": [
+            0.011757181016712479,
+            0.017579378395107606
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_core_mse": {
+          "mean": 0.001963460751964933,
+          "ci95": [
+            0.001578234359699748,
+            0.0023498241029377355
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ghost_mean_occupancy": {
+          "mean": 0.06689494343542415,
+          "ci95": [
+            0.055354359424685154,
+            0.07829342566313546
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_change_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_source_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 3.4085825942305488,
+          "ci95": [
+            2.927712361189206,
+            3.9327778612688427
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.2700339749504546,
+          "ci95": [
+            1.1205129269389311,
+            1.442092526982134
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.99609375,
+          "ci95": [
+            0.98828125,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_true_color_separation": {
+          "mean": 0.6398527599572854,
+          "ci95": [
+            0.62566470485391,
+            0.6555126312176696
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_selected_color": {
+          "mean": 0.1418228756494216,
+          "ci95": [
+            0.12384587043354177,
+            0.1595654556283756
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_distractor_color": {
+          "mean": 0.5985556485979636,
+          "ci95": [
+            0.5698073200679722,
+            0.6273530775064053
+          ],
+          "n_scenes": 16
+        }
+      },
+      "genuine_target": {
+        "primary_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "halo_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "background_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "common_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.0609025360832909,
+          "ci95": [
+            0.9483407659045615,
+            1.1623307659291873
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.9927696642018776,
+          "ci95": [
+            0.8970100113114712,
+            1.0949231694727561
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.9445071313235376,
+          "ci95": [
+            0.9345713954014735,
+            0.953580534049284
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9488247321255133,
+          "ci95": [
+            0.9421944643355776,
+            0.9561092092586233
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.002007249981978339,
+          "ci95": [
+            0.0015804491306138412,
+            0.00246952021311817
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_core_mse": {
+          "mean": 0.0019540248887324743,
+          "ci95": [
+            0.0015766814730573048,
+            0.0023365092338638155
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_ghost_mean_occupancy": {
+          "mean": 0.002270658703650952,
+          "ci95": [
+            0.0016495065128680152,
+            0.0031544861425544467
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 3.886270257336122e-05,
+          "ci95": [
+            2.9030706636823388e-05,
+            4.9480402410795306e-05
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 3.5639709089707594e-05,
+          "ci95": [
+            2.6238406187673037e-05,
+            4.739705111713732e-05
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_change_px": {
+          "mean": 0.1607820777457104,
+          "ci95": [
+            0.12031122642083,
+            0.20905390754048087
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_source_mse": {
+          "mean": 0.005768606177695286,
+          "ci95": [
+            0.005062225101689186,
+            0.006489104418663772
+          ],
+          "n_scenes": 16
+        },
+        "outside_support_changed_tokens": {
+          "mean": 8197.3125,
+          "ci95": [
+            8126.8109375,
+            8272.6890625
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.433800392882995,
+          "ci95": [
+            1.2628131592847234,
+            1.6080843827329683
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.2559852843199943,
+          "ci95": [
+            1.1048705175683422,
+            1.426570981160927
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_true_color_separation": {
+          "mean": 0.6398527599572854,
+          "ci95": [
+            0.62566470485391,
+            0.6555126312176696
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_selected_color": {
+          "mean": 0.056040971317327215,
+          "ci95": [
+            0.04614050477722724,
+            0.06634029704133469
+          ],
+          "n_scenes": 16
+        },
+        "appearance_distance_to_distractor_color": {
+          "mean": 0.6201548523078169,
+          "ci95": [
+            0.6004130737395024,
+            0.639609851273646
+          ],
+          "n_scenes": 16
+        }
+      }
+    },
+    "paired_primary_ratios": {
+      "learned_residual_minus_noop": {
+        "mean": -0.8500780848885986,
+        "ci95": [
+          -0.8570206395794077,
+          -0.8426655571325504
+        ],
+        "n_scenes": 16
+      },
+      "learned_residual_minus_naive": {
+        "mean": 0.031226610481257022,
+        "ci95": [
+          0.026409284156243558,
+          0.03602573558873861
+        ],
+        "n_scenes": 16
+      },
+      "learned_residual_minus_residual": {
+        "mean": -0.07461709305334792,
+        "ci95": [
+          -0.08482718747542335,
+          -0.06342261760104723
+        ],
+        "n_scenes": 16
+      },
+      "geometry_only_minus_noop": {
+        "mean": -0.7756205674942309,
+        "ci95": [
+          -0.7915132175698902,
+          -0.7606197275885832
+        ],
+        "n_scenes": 16
+      },
+      "geometry_only_minus_naive": {
+        "mean": 0.10568412787562473,
+        "ci95": [
+          0.0926533767105082,
+          0.11794892697475054
+        ],
+        "n_scenes": 16
+      },
+      "geometry_only_minus_residual": {
+        "mean": -0.0001595756589802145,
+        "ci95": [
+          -0.00044768966741989184,
+          0.0001734646422324828
+        ],
+        "n_scenes": 16
+      },
+      "naive_minus_noop": {
+        "mean": -0.8813046953698556,
+        "ci95": [
+          -0.887674459207288,
+          -0.8756487100726233
+        ],
+        "n_scenes": 16
+      },
+      "naive_minus_residual": {
+        "mean": -0.10584370353460494,
+        "ci95": [
+          -0.11830719730704063,
+          -0.09255967197685469
+        ],
+        "n_scenes": 16
+      },
+      "residual_minus_noop": {
+        "mean": -0.7754609918352506,
+        "ci95": [
+          -0.791635030139041,
+          -0.760243489590078
+        ],
+        "n_scenes": 16
+      },
+      "residual_minus_naive": {
+        "mean": 0.10584370353460494,
+        "ci95": [
+          0.09255967197685469,
+          0.11830719730704062
+        ],
+        "n_scenes": 16
+      },
+      "learned_residual_minus_geometry_only": {
+        "mean": -0.0744575173943677,
+        "ci95": [
+          -0.08453350436968751,
+          -0.06349469454075427
+        ],
+        "n_scenes": 16
+      }
+    }
+  },
+  "limitations": [
+    "Edited latent vectors are not saved. Learned/deterministic edit error maps are input evidence; this audit independently verifies their aggregation, bounds and provenance, not their raw model outputs.",
+    "Original source-to-target no-op MSE is independently recomputed in all 1024 channels; genuine-target reference and no-op byte hashes are checked.",
+    "Readout occupancy/RGB arrays are input evidence. All semantic, color-identity, trajectory, seed-averaged, bootstrap and gate values are independently recomputed without evaluator helpers.",
+    "No model or encoder rerun, no test tuning. Local publication attestations are not a fresh remote-GitHub verification."
+  ]
+}

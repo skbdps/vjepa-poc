@@ -1,0 +1,808 @@
+{
+  "recipe": {
+    "schema": "vjepa.part-edit-recipe",
+    "version": 1,
+    "sequence": "car-roundabout",
+    "parts": [
+      {
+        "id": 1,
+        "name": "front_door_panel",
+        "enabled": true,
+        "color": [
+          35,
+          140,
+          240
+        ],
+        "strength": 0.75
+      },
+      {
+        "id": 2,
+        "name": "front_window",
+        "enabled": true,
+        "color": [
+          240,
+          180,
+          35
+        ],
+        "strength": 0.45
+      }
+    ]
+  },
+  "canonical_recipe_sha256": "393f79a996d51cfe2e86198bac90577d8953630b8160106420086032b1d1de4d",
+  "mask_source_sha256": "875e2a9103a57200fc18124236e69c7f4e2a960b6f830c719700ed234eeda539",
+  "fps": 12,
+  "frame_count": 64,
+  "operation": "independent shading-preserving recolors on saved stable part IDs",
+  "guarantee_scope": "RGB arrays before lossy encoding; predicted masks, not anatomical truth",
+  "preview_note": "Browser uses compressed embedded MP4 RGB; native replay uses original input JPEG RGB.",
+  "frames": [
+    {
+      "frame": 0,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 10100,
+      "permitted_pixels": 10100,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 1,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 10437,
+      "permitted_pixels": 10437,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 2,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 10500,
+      "permitted_pixels": 10500,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 3,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 10805,
+      "permitted_pixels": 10805,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 4,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 10999,
+      "permitted_pixels": 10999,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 5,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 11343,
+      "permitted_pixels": 11343,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 6,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 11627,
+      "permitted_pixels": 11627,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 7,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 11880,
+      "permitted_pixels": 11880,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 8,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12037,
+      "permitted_pixels": 12037,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 9,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12212,
+      "permitted_pixels": 12212,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 10,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12442,
+      "permitted_pixels": 12442,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 11,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12381,
+      "permitted_pixels": 12381,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 12,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12826,
+      "permitted_pixels": 12826,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 13,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12929,
+      "permitted_pixels": 12929,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 14,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12996,
+      "permitted_pixels": 12996,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 15,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13072,
+      "permitted_pixels": 13072,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 16,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13401,
+      "permitted_pixels": 13401,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 17,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13456,
+      "permitted_pixels": 13456,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 18,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13586,
+      "permitted_pixels": 13586,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 19,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13591,
+      "permitted_pixels": 13591,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 20,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13660,
+      "permitted_pixels": 13660,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 21,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13690,
+      "permitted_pixels": 13690,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 22,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13699,
+      "permitted_pixels": 13699,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 23,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 14007,
+      "permitted_pixels": 14007,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 24,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13988,
+      "permitted_pixels": 13988,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 25,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13893,
+      "permitted_pixels": 13893,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 26,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13866,
+      "permitted_pixels": 13866,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 27,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13748,
+      "permitted_pixels": 13748,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 28,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13803,
+      "permitted_pixels": 13803,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 29,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13663,
+      "permitted_pixels": 13663,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 30,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13640,
+      "permitted_pixels": 13640,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 31,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13663,
+      "permitted_pixels": 13663,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 32,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13522,
+      "permitted_pixels": 13522,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 33,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13482,
+      "permitted_pixels": 13482,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 34,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13288,
+      "permitted_pixels": 13288,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 35,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13083,
+      "permitted_pixels": 13083,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 36,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 13006,
+      "permitted_pixels": 13006,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 37,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12776,
+      "permitted_pixels": 12776,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 38,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12592,
+      "permitted_pixels": 12592,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 39,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12400,
+      "permitted_pixels": 12400,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 40,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 12177,
+      "permitted_pixels": 12177,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 41,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 11791,
+      "permitted_pixels": 11791,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 42,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 11579,
+      "permitted_pixels": 11579,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 43,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 11361,
+      "permitted_pixels": 11361,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 44,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 11123,
+      "permitted_pixels": 11123,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 45,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 10831,
+      "permitted_pixels": 10831,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 46,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 10516,
+      "permitted_pixels": 10516,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 47,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 10168,
+      "permitted_pixels": 10168,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 48,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 9877,
+      "permitted_pixels": 9877,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 49,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 9720,
+      "permitted_pixels": 9720,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 50,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 9357,
+      "permitted_pixels": 9357,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 51,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 9026,
+      "permitted_pixels": 9026,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 52,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 8792,
+      "permitted_pixels": 8792,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 53,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 8534,
+      "permitted_pixels": 8534,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 54,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 8405,
+      "permitted_pixels": 8405,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 55,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 8191,
+      "permitted_pixels": 8191,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 56,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 7785,
+      "permitted_pixels": 7785,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 57,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 7485,
+      "permitted_pixels": 7485,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 58,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 7167,
+      "permitted_pixels": 7167,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 59,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 6891,
+      "permitted_pixels": 6891,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 60,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 6449,
+      "permitted_pixels": 6449,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 61,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 6247,
+      "permitted_pixels": 6247,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 62,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 5935,
+      "permitted_pixels": 5935,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    },
+    {
+      "frame": 63,
+      "active_part_ids": [
+        1,
+        2
+      ],
+      "changed_pixels": 5833,
+      "permitted_pixels": 5833,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0
+    }
+  ]
+}

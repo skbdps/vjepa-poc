@@ -1,0 +1,31 @@
+{
+  "sequence": "car-roundabout",
+  "parts": [
+    {
+      "id": 1,
+      "name": "front_door_panel",
+      "parent": "car_1"
+    },
+    {
+      "id": 2,
+      "name": "front_window",
+      "parent": "car_1"
+    }
+  ],
+  "initial_annotation_frame": 0,
+  "tracker_correction_frames": [],
+  "editing": {
+    "operation": "non-generative recolor",
+    "selected_id": 1,
+    "unselected_part_ids": [
+      2
+    ],
+    "scope": "same identifier on every predicted mask"
+  },
+  "annotation_provenance": "Assistant visually authored approximate polygons; not human ground truth.",
+  "limitations": [
+    "Sparse assistant-authored polygons are approximate diagnostic labels.",
+    "No learned video synthesis, generative edit, face identity, or generalization claim.",
+    "SAM2 pretraining may include DAVIS; this is a pipeline demonstration."
+  ]
+}

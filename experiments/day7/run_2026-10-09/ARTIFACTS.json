@@ -1,0 +1,25 @@
+{
+  "full_run_archive": {
+    "filename": "Day7_JEPA_Full_Run.zip",
+    "bytes": 114953121,
+    "sha256": "bf00800fb0c767b9500aeff00be901bee063679300d9fd4d429c669b0bbb1404",
+    "preserved_separately": true,
+    "contains_selected_checkpoints": 9,
+    "original_prediction_archives": 216,
+    "feature_caches_excluded": true
+  },
+  "executed_notebook": {
+    "filename": "VJEPA_Persistent_Parts_Executed.ipynb",
+    "bytes": 8114690,
+    "sha256": "d4e95ee971b63418d46e7abba3ead92e304c1e23a4f83dbc2ea8e95406156f1e",
+    "cells": 34,
+    "error_outputs": 0,
+    "preserved_separately": true
+  },
+  "compact_evidence": {
+    "filename": "compact_evidence.zip",
+    "sha256": "9947acc3e220c7c9e9eb9d7ecb51001fdeb073a989a27fc3bbbd2da22d432350",
+    "note": "Extract to recover all compact scores/cells/eligibility files and source. Weights and raw logits/futures are only in the full archive."
+  },
+  "posthoc_supplement": "analysis/recovery_diagnosis.json and ../recovery_diagnosis.py were produced from saved evidence after the original archive; no inference or model selection."
+}
