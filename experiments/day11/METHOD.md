@@ -85,3 +85,24 @@ explicitly. The generator remains probabilistic, and even a deterministic
 sampler with fixed noise does not enforce geometric or identity constraints.
 Single-frame success must be followed by a separate temporal experiment with
 native video features and the video VAE's temporal compression accounted for.
+
+## Next experiment that would distinguish the mechanisms
+
+Before increasing video length, test a fractional-patch movement with a shared,
+explicit transport map P. For example, an 8-pixel movement cannot be achieved
+by unchanged copies of 16-pixel JEPA cells. Supply the same resampling map to
+the learned and no-F arms rather than recovering matches by exact equality.
+This is a proposed follow-up, not part of the current frozen evaluation.
+
+Compare edited JEPA and independently encoded genuine-target JEPA using the
+same appearance term:
+
+    condition(z) = F(z) + P[A(source) - F(J(source))].
+
+Their difference then isolates F(edited JEPA) - F(genuine target JEPA). Retain
+the no-F appearance-transport/local-fill comparator with the same geometry.
+If the oracle succeeds and the edit fails, investigate the edited representation.
+If both fail, investigate the bridge or information retained in its inputs.
+If no-F remains comparable, attribute the useful engineering result primarily
+to source-appearance transport. The current exact-copy test alone cannot resolve
+these questions, and it does not use the JEPA predictor to constrain dynamics.
