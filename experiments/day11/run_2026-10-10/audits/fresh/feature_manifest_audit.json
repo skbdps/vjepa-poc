@@ -1,0 +1,191 @@
+{
+  "version": "day11_independent_fresh_feature_audit_v1",
+  "pass": true,
+  "feature_manifest_sha256": "1d982deeae11422ec43f8d2c629aebd14f33841a458be2b752f12ccccba6443e",
+  "pretest_sha256": "29c1143a32efa105e7a37b2e6d524f9007316e17847dd6df675c3401b3b79be7",
+  "publication_sha256": "05a891885b34094875528eb59fd724754346b76f2cf83db627060b422e31a01e",
+  "publication_receipt": {
+    "version": "day11_pretest_publication_v1",
+    "freeze_sha256": "29c1143a32efa105e7a37b2e6d524f9007316e17847dd6df675c3401b3b79be7",
+    "bytes_equal_to_GitHub": true,
+    "test_encoded_before_verification": false,
+    "commit": "1bd6221bdea2dcce50697603806ab18e648eff36",
+    "repository": "skbdps/vjepa-poc",
+    "path": "experiments/day11/run_2026-10-10/PRETEST.json",
+    "verified_utc": "2026-10-10T01:48:55.445640+00:00"
+  },
+  "source_file_count": 21,
+  "scenes": [
+    {
+      "scene": "test_14000_dx+32",
+      "seed": 14000,
+      "dx": 32,
+      "latent_region_cells": {
+        "source_hole": 32,
+        "destination": 52,
+        "distractor": 56,
+        "background": 2068,
+        "global": 2304
+      },
+      "RGB_region_pixels": {
+        "source_hole": 1406,
+        "destination": 1793,
+        "distractor": 1961,
+        "global": 147456,
+        "background": 132352
+      },
+      "mask_translation_exact": true,
+      "array_and_file_hashes_match": true
+    },
+    {
+      "scene": "test_14001_dx-32",
+      "seed": 14001,
+      "dx": -32,
+      "latent_region_cells": {
+        "source_hole": 32,
+        "destination": 52,
+        "distractor": 68,
+        "background": 2056,
+        "global": 2304
+      },
+      "RGB_region_pixels": {
+        "source_hole": 1338,
+        "destination": 1653,
+        "distractor": 2629,
+        "global": 147456,
+        "background": 131584
+      },
+      "mask_translation_exact": true,
+      "array_and_file_hashes_match": true
+    },
+    {
+      "scene": "test_14002_dx+48",
+      "seed": 14002,
+      "dx": 48,
+      "latent_region_cells": {
+        "source_hole": 56,
+        "destination": 72,
+        "distractor": 72,
+        "background": 1988,
+        "global": 2304
+      },
+      "RGB_region_pixels": {
+        "source_hole": 2532,
+        "destination": 2821,
+        "distractor": 2629,
+        "global": 147456,
+        "background": 127232
+      },
+      "mask_translation_exact": true,
+      "array_and_file_hashes_match": true
+    },
+    {
+      "scene": "test_14003_dx-48",
+      "seed": 14003,
+      "dx": -48,
+      "latent_region_cells": {
+        "source_hole": 60,
+        "destination": 76,
+        "distractor": 60,
+        "background": 1988,
+        "global": 2304
+      },
+      "RGB_region_pixels": {
+        "source_hole": 2414,
+        "destination": 2629,
+        "distractor": 1961,
+        "global": 147456,
+        "background": 127232
+      },
+      "mask_translation_exact": true,
+      "array_and_file_hashes_match": true
+    },
+    {
+      "scene": "test_14004_dx+64",
+      "seed": 14004,
+      "dx": 64,
+      "latent_region_cells": {
+        "source_hole": 48,
+        "destination": 48,
+        "distractor": 68,
+        "background": 2036,
+        "global": 2304
+      },
+      "RGB_region_pixels": {
+        "source_hole": 1653,
+        "destination": 1653,
+        "distractor": 2821,
+        "global": 147456,
+        "background": 130304
+      },
+      "mask_translation_exact": true,
+      "array_and_file_hashes_match": true
+    },
+    {
+      "scene": "test_14005_dx-64",
+      "seed": 14005,
+      "dx": -64,
+      "latent_region_cells": {
+        "source_hole": 56,
+        "destination": 56,
+        "distractor": 72,
+        "background": 2000,
+        "global": 2304
+      },
+      "RGB_region_pixels": {
+        "source_hole": 2121,
+        "destination": 2121,
+        "distractor": 2629,
+        "global": 147456,
+        "background": 128000
+      },
+      "mask_translation_exact": true,
+      "array_and_file_hashes_match": true
+    },
+    {
+      "scene": "test_14006_dx+80",
+      "seed": 14006,
+      "dx": 80,
+      "latent_region_cells": {
+        "source_hole": 48,
+        "destination": 48,
+        "distractor": 72,
+        "background": 2012,
+        "global": 2304
+      },
+      "RGB_region_pixels": {
+        "source_hole": 1653,
+        "destination": 1653,
+        "distractor": 2453,
+        "global": 147456,
+        "background": 128768
+      },
+      "mask_translation_exact": true,
+      "array_and_file_hashes_match": true
+    },
+    {
+      "scene": "test_14007_dx-80",
+      "seed": 14007,
+      "dx": -80,
+      "latent_region_cells": {
+        "source_hole": 64,
+        "destination": 64,
+        "distractor": 52,
+        "background": 1968,
+        "global": 2304
+      },
+      "RGB_region_pixels": {
+        "source_hole": 2121,
+        "destination": 2121,
+        "distractor": 1653,
+        "global": 147456,
+        "background": 125952
+      },
+      "mask_translation_exact": true,
+      "array_and_file_hashes_match": true
+    }
+  ],
+  "artifact_hashes_checked": 16,
+  "raw_RGB_and_token_hashes_checked": 32,
+  "scope": "Checks saved arrays, manifest/source bindings, exact masks and frozen cases; does not independently prove wall-clock publication ordering or rerun encoders."
+}
