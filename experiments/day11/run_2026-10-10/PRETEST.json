@@ -1,0 +1,482 @@
+{
+  "version": "day11_fresh_pretest_v1",
+  "created_utc": "2026-10-10T01:48:31.347950+00:00",
+  "test_accessed": false,
+  "test_specs": [
+    {
+      "name": "test_14000_dx+32",
+      "seed": 14000,
+      "dx": 32,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14001_dx-32",
+      "seed": 14001,
+      "dx": -32,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14002_dx+48",
+      "seed": 14002,
+      "dx": 48,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14003_dx-48",
+      "seed": 14003,
+      "dx": -48,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14004_dx+64",
+      "seed": 14004,
+      "dx": 64,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14005_dx-64",
+      "seed": 14005,
+      "dx": -64,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14006_dx+80",
+      "seed": 14006,
+      "dx": 80,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    },
+    {
+      "name": "test_14007_dx-80",
+      "seed": 14007,
+      "dx": -80,
+      "split": "test",
+      "frame_index": 15,
+      "views": [
+        "source",
+        "genuine_shifted_target"
+      ]
+    }
+  ],
+  "extraction": {
+    "device": "cpu",
+    "precision": "float32",
+    "threads": 4
+  },
+  "evaluation": {
+    "device": "cpu",
+    "threads": 4,
+    "precision": "float32",
+    "decode": false,
+    "translator_arms": [
+      "cnn",
+      "linear"
+    ],
+    "arms": [
+      "true_source",
+      "true_target",
+      "absolute_source",
+      "absolute_genuine_target",
+      "absolute_copy_repair",
+      "absolute_wrong_direction",
+      "absolute_shuffled",
+      "residual_source",
+      "residual_genuine_target",
+      "residual_copy_repair",
+      "residual_wrong_direction",
+      "residual_shuffled",
+      "provenance_copy_source",
+      "provenance_copy_genuine_target",
+      "provenance_copy_copy_repair",
+      "provenance_copy_wrong_direction",
+      "provenance_copy_shuffled",
+      "provenance_local_source",
+      "provenance_local_genuine_target",
+      "provenance_local_copy_repair",
+      "provenance_local_wrong_direction",
+      "provenance_local_shuffled",
+      "provenance_residual_source",
+      "provenance_residual_genuine_target",
+      "provenance_residual_copy_repair",
+      "provenance_residual_wrong_direction",
+      "provenance_residual_shuffled"
+    ],
+    "shuffle_seed": 1111,
+    "local_radius": 2
+  },
+  "rendering": {
+    "version": "day11_fresh_render_configuration_v1",
+    "translator": "cnn",
+    "arms": [
+      "true_source",
+      "true_target",
+      "absolute_copy_repair",
+      "residual_copy_repair",
+      "provenance_copy_copy_repair",
+      "provenance_local_copy_repair",
+      "provenance_residual_copy_repair",
+      "provenance_residual_wrong_direction",
+      "provenance_residual_shuffled"
+    ],
+    "test_specs": [
+      {
+        "name": "test_14000_dx+32",
+        "seed": 14000,
+        "dx": 32,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14001_dx-32",
+        "seed": 14001,
+        "dx": -32,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14002_dx+48",
+        "seed": 14002,
+        "dx": 48,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14003_dx-48",
+        "seed": 14003,
+        "dx": -48,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14004_dx+64",
+        "seed": 14004,
+        "dx": 64,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14005_dx-64",
+        "seed": 14005,
+        "dx": -64,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14006_dx+80",
+        "seed": 14006,
+        "dx": 80,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14007_dx-80",
+        "seed": 14007,
+        "dx": -80,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      }
+    ],
+    "calls_per_scene": 13,
+    "total_calls": 104,
+    "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+    "model_revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+    "diffusers": "0.35.1",
+    "transformer_dtype": "float16",
+    "vae_dtype": "float32",
+    "scheduler_class": "FlowMatchEulerDiscreteScheduler",
+    "attention": "Diffusers native PyTorch SDPA",
+    "settings": {
+      "height": 384,
+      "width": 384,
+      "num_frames": 1,
+      "num_inference_steps": 20,
+      "guidance_scale": 5.0,
+      "conditioning_scale": 1.0,
+      "seed": 1111
+    },
+    "max_sequence_length": 128,
+    "prompt": "Two patterned colored balls on a textured background. Static camera, simple geometric scene.",
+    "negative_prompt": "text, watermark, blurry, distorted, extra objects",
+    "prompt_cache_sha256": "499bd027b2596ef4711de7e8eebfc26b5ed58078c18fa37c6e32448adcd3a7f1",
+    "prompt_metadata_sha256": "38332f17275e4fb8ceaab71f7619af82301cdad0892441ebd0ac73d0397d83a2",
+    "parity_max_abs_tolerance": 0.0001,
+    "threads": 4,
+    "deduplicate_conditions": false,
+    "precision_fallback": false
+  },
+  "assessment": {
+    "version": "day11_fresh_assessment_configuration_v1",
+    "primary_translator": "cnn",
+    "primary_arm": "provenance_residual_copy_repair",
+    "test_specs": [
+      {
+        "name": "test_14000_dx+32",
+        "seed": 14000,
+        "dx": 32,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14001_dx-32",
+        "seed": 14001,
+        "dx": -32,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14002_dx+48",
+        "seed": 14002,
+        "dx": 48,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14003_dx-48",
+        "seed": 14003,
+        "dx": -48,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14004_dx+64",
+        "seed": 14004,
+        "dx": 64,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14005_dx-64",
+        "seed": 14005,
+        "dx": -64,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14006_dx+80",
+        "seed": 14006,
+        "dx": 80,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      },
+      {
+        "name": "test_14007_dx-80",
+        "seed": 14007,
+        "dx": -80,
+        "split": "test",
+        "frame_index": 15,
+        "views": [
+          "source",
+          "genuine_shifted_target"
+        ]
+      }
+    ],
+    "required_scene_count": 8,
+    "required_passing_scene_count": 8,
+    "latent_arms": [
+      "true_source",
+      "true_target",
+      "absolute_source",
+      "absolute_genuine_target",
+      "absolute_copy_repair",
+      "absolute_wrong_direction",
+      "absolute_shuffled",
+      "residual_source",
+      "residual_genuine_target",
+      "residual_copy_repair",
+      "residual_wrong_direction",
+      "residual_shuffled",
+      "provenance_copy_source",
+      "provenance_copy_genuine_target",
+      "provenance_copy_copy_repair",
+      "provenance_copy_wrong_direction",
+      "provenance_copy_shuffled",
+      "provenance_local_source",
+      "provenance_local_genuine_target",
+      "provenance_local_copy_repair",
+      "provenance_local_wrong_direction",
+      "provenance_local_shuffled",
+      "provenance_residual_source",
+      "provenance_residual_genuine_target",
+      "provenance_residual_copy_repair",
+      "provenance_residual_wrong_direction",
+      "provenance_residual_shuffled"
+    ],
+    "latent_translators": [
+      "cnn",
+      "linear"
+    ],
+    "GPU_arms": [
+      "true_source",
+      "true_target",
+      "absolute_copy_repair",
+      "residual_copy_repair",
+      "provenance_copy_copy_repair",
+      "provenance_local_copy_repair",
+      "provenance_residual_copy_repair",
+      "provenance_residual_wrong_direction",
+      "provenance_residual_shuffled"
+    ],
+    "latent_region_ratio_max": 0.5,
+    "GPU_region_excess_max": 0.5,
+    "GPU_centroid_max_px": 4.0,
+    "oracle_centroid_max_px": 2.0,
+    "GPU_negative_balanced_excess_margin_min": 0.1,
+    "RGB_denominator_min_exclusive": 1.5378700499807768e-05,
+    "protected_relative_allowance": 0.25,
+    "protected_absolute_allowance": 1.5378700499807768e-05,
+    "parity_tolerance": 0.0001,
+    "regions": {
+      "edit": [
+        "source_hole",
+        "destination"
+      ],
+      "protected": [
+        "background",
+        "distractor"
+      ]
+    },
+    "excess_formula": "(E_arm_to_target-E_true_target_to_target)/(E_true_source_to_target-E_true_target_to_target)",
+    "protected_formula": "E_primary<=max(E_true_source,E_true_target)+max(.25*max(E_true_source,E_true_target),1/255^2)",
+    "negative_position": "correct finite error strictly less than wrong-direction error; missing control detection is positional failure",
+    "negative_regional": "mean(hole,destination) excess per scene; wrong and shuffled each >= correct+.10",
+    "missing_evidence": "fail or indeterminate; never excluded or counted passing",
+    "aggregation": "all eight individual scenes must pass every criterion; no average substitutes",
+    "learned_vs_no_F_superiority_required": false,
+    "comparator_arms": [
+      "provenance_residual_copy_repair",
+      "provenance_local_copy_repair",
+      "provenance_copy_copy_repair",
+      "residual_copy_repair",
+      "absolute_copy_repair"
+    ],
+    "adaptation_or_selection": false,
+    "scope": "eight procedural still-image pairs; engineering pilot only"
+  },
+  "source_hashes": {
+    "experiments/day10/animate.py": "e2329583f9a6ae4df0f846140e618743883b7e94d4189932dc23a28050c4e451",
+    "experiments/day11/PROTOCOL.md": "3b2d40677cf8d2da3e9de45d9406b48bb061859aeaf01a6195d269540a98fc64",
+    "experiments/day11/assess_fresh.py": "a6d5e82ed580574603799475d32642f753dd075f4a855a3f8c0b04c3668f6490",
+    "experiments/day11/data.py": "9e217690b35fde7a7b91ac36eab5e6bf4584a54fab330783ee63c22f9553edbf",
+    "experiments/day11/evaluate.py": "98412b56a20669125dd18d22971d9a139a4ba0389dedd81c6693f53c554d6119",
+    "experiments/day11/evaluate_fresh.py": "220df2143b445060e67eb0c6ddbfc52c996fd23f6739e3d055569389ea0540eb",
+    "experiments/day11/model.py": "a34c7348ccaaa4bd65cff51366fe66e69c8eda581585e9bae3034b34b3f5628f",
+    "experiments/day11/prepare_fresh.py": "8dd153da31daf9f5f6a3c63b0068e7d04201596cc15f84ccf1ab75cc8f550b8f",
+    "experiments/day11/qualify_development.py": "dca51ecb8d307c00d05c20a737561d61a056a550c95af32784b46d5418a1ebc8",
+    "experiments/day11/render.py": "45c19c41bdc0ee6c84f71ba264a1ddf635c3400f0bee54bf404313b6f6c4575c",
+    "experiments/day11/render_fresh.py": "31c4b35584d5236747cb1555487b0839ba1dfd3acc575862acb934a5b85f7411",
+    "experiments/day11/render_transport.py": "8aacf67c2a94f8c0821e4c826512385439d18cf965543159d68626d85a2b6508",
+    "experiments/day11/train.py": "366fadd762ee7ac25fc90b313bca192b5b71a2a8cb18d34bd46e54e86e528648",
+    "experiments/day11/transport.py": "407a745c704c4720a3907adfef017786f6a265e3ae52ef8a56c0e6b407b74c51",
+    "experiments/day11/vace_bridge.py": "37ea481d279b0fbe18b001f988c77d84bfc1f4e2bb76d2427a8443115083989b",
+    "experiments/day11/vae_targets.py": "65843b11b9b26f9184c6eadf277b647578d8ad664f5f41491d8c3b930d04c8c8",
+    "experiments/day8/data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+    "experiments/day8/evaluate.py": "fec3a0489c846c96c0b58e8725ab22a20923eed57ac0cce65abfa073b8b0929c",
+    "experiments/day8/extract.py": "de2b366a53cae32f13741570f6dcefd525e45bfe04a2fda5b909d54579f1982f",
+    "experiments/day8/operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+    "experiments/day8/probe.py": "9a736ddd5bb64c19a5205f12d606bcd1f1bc562367effcbba96dd8c0a1b8790d"
+  },
+  "trained_checkpoint_freeze": {
+    "path": "training/trained_checkpoint_freeze.json",
+    "sha256": "22dc5a4b749d8ec724ca2a08334cc8c9958fdebad1d24dd0d9c6f25f8459689e"
+  },
+  "development_gate": {
+    "path": "development_gate_threads4.json",
+    "sha256": "22c8ebfe49fc692719690ef48157bd91468986f13ff647db93c0737649f61e94"
+  },
+  "scope": "Eight previously unaccessed procedural still-image pairs; same procedural family, fixed generation seed, no video or natural-scene generalization claim.",
+  "adaptation_after_test_access": false
+}
