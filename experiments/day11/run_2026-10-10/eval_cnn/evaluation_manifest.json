@@ -1,0 +1,251 @@
+{
+  "version": "day11_development_bridge_evaluation_v1",
+  "split": "existing development only",
+  "complete": true,
+  "checkpoint_sha256": "a3abb9b3d224881c8125499ed43c65d7b0dae8975538ce0716ca47e75e3bc365",
+  "translator_arm": "cnn",
+  "selected_epoch": 150,
+  "jepa_manifest_sha256": "07f29f2c5488b8d72a93d08d243abbf0028ec912605f69c51ac6053062ec1ca7",
+  "target_manifest_sha256": "89a07786aa58341557aec5486c0afec32161b2aadb03a39a8f664ed5f2d36382",
+  "vae": {
+    "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+    "revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+    "files": {
+      "config.json": {
+        "sha256": "7a3afcf422b9a9d63e0b6ca7e0d3b5193220a61f5b203bb8417900bc090705e8",
+        "bytes": 724
+      },
+      "diffusion_pytorch_model.safetensors": {
+        "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793",
+        "bytes": 507591892
+      }
+    },
+    "class": "AutoencoderKLWan",
+    "precision": "float32",
+    "posterior": "mode",
+    "normalization": "(posterior_mode - latents_mean) / latents_std",
+    "latents_mean": [
+      -0.7571,
+      -0.7089,
+      -0.9113,
+      0.1075,
+      -0.1745,
+      0.9653,
+      -0.1517,
+      1.5508,
+      0.4134,
+      -0.0715,
+      0.5517,
+      -0.3632,
+      -0.1922,
+      -0.9497,
+      0.2503,
+      -0.2921
+    ],
+    "latents_std": [
+      2.8184,
+      1.4541,
+      2.3275,
+      2.6558,
+      1.2196,
+      1.7708,
+      2.6052,
+      2.0743,
+      3.2687,
+      2.1526,
+      2.8652,
+      1.5579,
+      1.6382,
+      1.1253,
+      2.8251,
+      1.916
+    ],
+    "input": "[1,3,1,384,384] RGB in [-1,1]",
+    "output": "[16,48,48]"
+  },
+  "source_hashes": {
+    "experiments/day11/evaluate.py": "98412b56a20669125dd18d22971d9a139a4ba0389dedd81c6693f53c554d6119",
+    "experiments/day11/data.py": "9e217690b35fde7a7b91ac36eab5e6bf4584a54fab330783ee63c22f9553edbf",
+    "experiments/day11/model.py": "a34c7348ccaaa4bd65cff51366fe66e69c8eda581585e9bae3034b34b3f5628f",
+    "experiments/day11/vace_bridge.py": "37ea481d279b0fbe18b001f988c77d84bfc1f4e2bb76d2427a8443115083989b",
+    "experiments/day10/animate.py": "e2329583f9a6ae4df0f846140e618743883b7e94d4189932dc23a28050c4e451",
+    "experiments/day8/data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+    "experiments/day8/operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+    "experiments/day8/extract.py": "de2b366a53cae32f13741570f6dcefd525e45bfe04a2fda5b909d54579f1982f",
+    "experiments/day8/evaluate.py": "fec3a0489c846c96c0b58e8725ab22a20923eed57ac0cce65abfa073b8b0929c",
+    "experiments/day8/probe.py": "9a736ddd5bb64c19a5205f12d606bcd1f1bc562367effcbba96dd8c0a1b8790d"
+  },
+  "arms": {
+    "true_source": {
+      "oracle": false,
+      "input": "source RGB through frozen Wan VAE",
+      "route": "true source latent; no-edit baseline"
+    },
+    "true_target": {
+      "oracle": true,
+      "input": "genuine target RGB through frozen Wan VAE",
+      "route": "privileged renderer-interface/decoder-ceiling diagnostic"
+    },
+    "absolute_source": {
+      "oracle": false,
+      "input": "unchanged source JEPA",
+      "route": "F(z)"
+    },
+    "absolute_genuine_target": {
+      "oracle": true,
+      "input": "independently encoded genuine target JEPA; privileged diagnostic",
+      "route": "F(z)"
+    },
+    "absolute_copy_repair": {
+      "oracle": false,
+      "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+      "route": "F(z)"
+    },
+    "absolute_wrong_direction": {
+      "oracle": false,
+      "input": "matched source-only JEPA edit with the opposite displacement",
+      "route": "F(z)"
+    },
+    "absolute_shuffled": {
+      "oracle": false,
+      "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+      "route": "F(z)"
+    },
+    "residual_source": {
+      "oracle": false,
+      "input": "unchanged source JEPA",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_genuine_target": {
+      "oracle": true,
+      "input": "independently encoded genuine target JEPA; privileged diagnostic",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_copy_repair": {
+      "oracle": false,
+      "input": "source-only JEPA copy/repair with supplied source selection and requested shift",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_wrong_direction": {
+      "oracle": false,
+      "input": "matched source-only JEPA edit with the opposite displacement",
+      "route": "A(source) + (F(z) - F(source))"
+    },
+    "residual_shuffled": {
+      "oracle": false,
+      "input": "copy/repair JEPA grid permuted spatially using one fixed seed1111 permutation",
+      "route": "A(source) + (F(z) - F(source))"
+    }
+  },
+  "all_development_seeds": [
+    13500,
+    13501,
+    13502,
+    13503,
+    13504,
+    13505,
+    13506,
+    13507
+  ],
+  "renderer_seeds": [
+    13500,
+    13501
+  ],
+  "shuffle_seed": 1111,
+  "shuffle_permutation_sha256": "68473b2612782a7661ecd2dff03fffb1233fbbe08b6760ba445f4739199b4673",
+  "shuffle_policy": "One common permutation of all576 copy/repair feature vectors; channels preserved; coordinates remain destination coordinates",
+  "latent_regions": "Day8 fixed regions from any-coverage24x24 masks, nearest expanded2x; background excludes one-patch dilation of source/destination union and distractor patches",
+  "rgb_regions": "Exact renderer source hole/destination/distractor masks; protected background expands the same conservative coarse background mask16x",
+  "metric_target": "independently rendered target RGB or its true normalized Wan latent",
+  "rgb_metric_space": null,
+  "aggregation": "Equal mean over all eight existing development scenes, one requested signed shift per scene; no confidence interval or held-out claim",
+  "decoded": false,
+  "fresh_test_accessed": false,
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.9.0+cpu",
+    "numpy": "2.3.5",
+    "device": "cpu",
+    "threads": 4
+  },
+  "scenes": [
+    {
+      "scene": "dev_13500",
+      "seed": 13500,
+      "shift_px": 16,
+      "path": "scenes/dev_13500.npz",
+      "sha256": "33e9cf117c9366932f68f7be7108361bb400a5dc671e1d9106712f34b545bbee",
+      "renderer_bundle": true,
+      "residual_zero_exact": true
+    },
+    {
+      "scene": "dev_13501",
+      "seed": 13501,
+      "shift_px": -16,
+      "path": "scenes/dev_13501.npz",
+      "sha256": "8237888770cab4779a11c9bf7cb802c7a030d5ffa16ec719fcf5e4fca5696e6d",
+      "renderer_bundle": true,
+      "residual_zero_exact": true
+    },
+    {
+      "scene": "dev_13502",
+      "seed": 13502,
+      "shift_px": 32,
+      "path": "scenes/dev_13502.npz",
+      "sha256": "23e7df088b6bb10913868985eb2fdeec47dd7be218f2eb0d73123002d2af7246",
+      "renderer_bundle": false,
+      "residual_zero_exact": true
+    },
+    {
+      "scene": "dev_13503",
+      "seed": 13503,
+      "shift_px": -32,
+      "path": "scenes/dev_13503.npz",
+      "sha256": "99990e6a84bae8b652e926f9e481bf546941d32d75288cb05449befc7455f0dd",
+      "renderer_bundle": false,
+      "residual_zero_exact": true
+    },
+    {
+      "scene": "dev_13504",
+      "seed": 13504,
+      "shift_px": 48,
+      "path": "scenes/dev_13504.npz",
+      "sha256": "eeb4378e4674140439f87d35ca8680616fded24b688a809451170d56a7617f17",
+      "renderer_bundle": false,
+      "residual_zero_exact": true
+    },
+    {
+      "scene": "dev_13505",
+      "seed": 13505,
+      "shift_px": -48,
+      "path": "scenes/dev_13505.npz",
+      "sha256": "383f067b6535875365762f7b4825a557e7284956befb56afdcb98773cea760fc",
+      "renderer_bundle": false,
+      "residual_zero_exact": true
+    },
+    {
+      "scene": "dev_13506",
+      "seed": 13506,
+      "shift_px": 80,
+      "path": "scenes/dev_13506.npz",
+      "sha256": "fe9d3b1f91d1fa1c64b46abf996502394d290f82574fcf9fcc25924a172119ea",
+      "renderer_bundle": false,
+      "residual_zero_exact": true
+    },
+    {
+      "scene": "dev_13507",
+      "seed": 13507,
+      "shift_px": -80,
+      "path": "scenes/dev_13507.npz",
+      "sha256": "e2a5ed723c28fb399c80df15e5cff9975273806428648d05b3b7e3cc2cc1a7d6",
+      "renderer_bundle": false,
+      "residual_zero_exact": true
+    }
+  ],
+  "renderer_scene_paths": [
+    "scenes/dev_13500.npz",
+    "scenes/dev_13501.npz"
+  ],
+  "metrics_sha256": "f8489bf6824318bdd7413e6063b0d84d2ba0db880c9bb8ff04a820d4aa8482a1",
+  "summary_sha256": "4c668212a7cf2d1f8408b3ee782ad62e0897698ef935b8d3be50447ae3aee2f3"
+}
