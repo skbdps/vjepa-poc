@@ -5,8 +5,13 @@ notebook successfully allocated two Tesla T4 GPUs and passed the runtime
 preflight: Python 3.13.15, PyTorch 2.11.0+cu128, 31.3 GiB host RAM,
 and sufficient separate temporary storage. Pinned dependencies imported,
 the exact guide hashes passed, and FP32 UMT5 prompt encoding completed.
-The fixed 20-video render cell has been launched; completion and model fit
-are not yet established. Runtime evidence is in `run_kaggle/`. A Kaggle draft
+The fixed 20-video render cell was launched. Four completed clips were
+visible before refreshing the editor at approximately 23:05 UTC. A downloaded
+manifest preserves the first three: 31.59–35.00 seconds per clip and
+7.21–7.23 GiB peak CUDA allocation. This establishes T4 feasibility for these
+clips, not completion or scientific success. The editor refresh resolved the
+save conflict but is still reconnecting; the original compute job was not
+explicitly stopped or restarted. Full completion is currently unverified. Runtime evidence is in `run_kaggle/`. A Kaggle draft
 save-conflict warning occurred; a notebook backup was downloaded and the
 runtime remained active. The access history below records earlier blocks.
 
