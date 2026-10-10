@@ -105,6 +105,14 @@ from explicit source appearance transport. A smaller learned contribution
 remains to be assessed on untouched scenes. Decoded examples show removal of
 most stationary ghosting; actual generator qualification remains pending.
 
+The subsets must be kept separate. On the same two decoded scenes, no-F local
+fill beats the learned transported residual in both latent MSE (0.000407776
+versus 0.000465629) and decoded RGB MSE (0.000209462 versus 0.000217999).
+The learned route wins the eight-scene latent average, not every scene. Mixing
+the eight-scene latent mean with the two-scene RGB mean would incorrectly imply
+a demonstrated reversal between those metrics. The independent attribution
+audit records this correction and complete matched comparisons.
+
 The fixed engineering gate in `qualify_development.py` was published before
 inspecting the transport GPU outputs. It requires per-region editing accuracy,
 centroid accuracy, protected-content tolerance, negative-control separation,
