@@ -1,7 +1,8 @@
 # Direct JEPA → Wan conditioning translator
 
-Implementation in progress; do not interpret the existence of code as a passed
-rendered-edit experiment. See `PROTOCOL.md` for the fixed first attempt.
+The translator has been trained and executed through the real Wan generator
+on a Colab T4. See `RESULTS.md` for measured progress and remaining failures,
+`METHOD.md` for the math, and `PROTOCOL.md` for the fixed first attempt.
 
 This pilot learns a spatial mapping from dense native-image V-JEPA2.1 features
 to the actual normalized VAE latents consumed by Wan2.1-VACE-1.3B. It keeps the
@@ -22,6 +23,16 @@ The residual inference arm additionally uses the legitimate source VAE latent.
 - `train.py`: fixed genuine-image training and complete final-epoch records.
 - `vace_bridge.py`: direct conditioning, official mask preparation, and a narrow
   cached-prompt workaround for Diffusers0.35.1's conflicting public validation.
+- `evaluate.py`, `render.py`: the original twelve-arm latent/VAE and real VACE
+  evaluations. Original implementations remain unchanged by follow-ups.
+- `transport.py`, `render_transport.py`: source-appearance transport and its
+  complete 27-arm development comparison, including a no-F local-fill control.
+- `qualify_development.py`: fixed engineering checks for the declared primary
+  method; a passing gate is required before opening new scenes.
+- `prepare_fresh.py`, `evaluate_fresh.py`, `render_fresh.py`: separately guarded
+  eight-scene evaluation with frozen code, checkpoints, prompt, noise and arms.
+- `run_2026-10-10/`: weights, learning curves, manifests, measured outputs,
+  independent audits, runtime evidence and readable figures.
 
 ## Runtime
 
@@ -46,9 +57,35 @@ python experiments/day11/vace_bridge.py
 ```
 
 The last command runs interface unit checks, not model inference. Real renderer
-tests must first compare ordinary RGB conditioning with equivalent direct true
-VAE latents under identical prompt/noise/settings. Actual results will be stored
-separately with failures retained.
+tests first compare ordinary RGB conditioning with equivalent direct true
+VAE latents under identical prompt/noise/settings. The saved actual runs passed
+those checks exactly; complete output archives retain every declared arm.
+
+## Running the saved development renderer
+
+The small published prompt cache avoids loading the large text encoder again.
+It is bound to the fixed prompt by the saved hashes. After extracting
+`run_2026-10-10/runtime/colab_preflight_and_prompt_cache.zip` into `RUNTIME`, use:
+
+```bash
+python experiments/day11/render.py --bundle-root experiments/day11/run_2026-10-10/eval_cnn --prompt-cache RUNTIME/prompt_embeddings.pt --prompt-metadata RUNTIME/prompt_metadata.json --out RENDER_CNN --transformer-dtype float16
+python experiments/day11/render_transport.py --bundle-root experiments/day11/run_2026-10-10/transport --prompt-cache RUNTIME/prompt_embeddings.pt --prompt-metadata RUNTIME/prompt_metadata.json --out RENDER_TRANSPORT --transformer-dtype float16
+```
+
+These commands resolve the exact model revision automatically. A cached
+`--snapshot-dir` can avoid repeated downloads. Run GPU jobs sequentially. The
+initial renderer performs 32 calls; the transport follow-up performs 62.
+Output directories are separate, and resume requires identical bindings.
+
+For unseen-scene evaluation, first bind the actual development gate and both
+trained checkpoints in a pretest freeze. Its `evaluation` and `rendering`
+objects must exactly match the helper functions in the two fresh runners.
+Publish and byte-verify this freeze before `prepare_fresh.py` generates scenes.
+The fresh evaluator retains 27 arms for each of CNN and linear on all eight
+scenes. The fresh GPU renderer uses the declared nine CNN arms on every scene,
+with 104 calls including all ordinary/direct parity checks. It accepts no arm
+or scene-selection flag. A repeated run after changing the method is development
+work and requires a new untouched holdout for a fresh-test claim.
 
 ## Code review findings addressed before training
 

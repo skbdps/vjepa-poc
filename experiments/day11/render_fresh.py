@@ -93,6 +93,7 @@ REQUIRED_SOURCES = (
     "experiments/day11/render_fresh.py", "experiments/day11/render.py",
     "experiments/day11/vace_bridge.py", "experiments/day11/evaluate_fresh.py",
     "experiments/day11/prepare_fresh.py", "experiments/day11/transport.py",
+    "experiments/day11/assess_fresh.py", "experiments/day11/qualify_development.py",
 )
 
 
@@ -136,6 +137,9 @@ def validate_pretest(args):
     if frozen.get("test_accessed") is not False or frozen.get("test_specs") != test_specs():
         raise ValueError("Expected the published eight-scene pretest specification")
     _verify_source_bindings(frozen)
+    assessment = _source_module("day11_fresh_renderer_assessment", "assess_fresh.py")
+    if frozen.get("assessment") != assessment.assessment_config():
+        raise ValueError("Assessment rules differ from the published pretest freeze")
     freeze_hash, publication_hash = sha256(args.freeze), sha256(args.publication)
     if (receipt.get("freeze_sha256") != freeze_hash or receipt.get("bytes_equal_to_GitHub") is not True
             or receipt.get("test_encoded_before_verification") is not False

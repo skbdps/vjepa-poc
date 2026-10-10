@@ -25,6 +25,7 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 VERSION = 'day11_fresh_jepa_pairs_v1'
 REQUIRED_SOURCES = ('experiments/day11/prepare_fresh.py', 'experiments/day11/PROTOCOL.md',
+                    'experiments/day11/assess_fresh.py', 'experiments/day11/qualify_development.py',
                     'experiments/day10/animate.py', 'experiments/day8/data.py',
                     'experiments/day8/extract.py')
 
@@ -119,6 +120,9 @@ def validate_freeze(freeze, publication, device, threads):
     if not set(REQUIRED_SOURCES) <= set(frozen.get('source_hashes', {})):
         raise ValueError('Fresh-test freeze does not bind extraction dependencies')
     _verify_sources(frozen['source_hashes'])
+    assessment = _load_module('day11_fresh_frozen_assessment_config', HERE / 'assess_fresh.py')
+    if frozen.get('assessment') != assessment.assessment_config():
+        raise ValueError('Fresh assessment criteria differ from the pretest freeze')
     trained_path = _bound_file(freeze, frozen['trained_checkpoint_freeze'])
     trained = json.loads(trained_path.read_text())
     if (trained.get('version') != 'day11_genuine_jepa_to_wan_training_v1'

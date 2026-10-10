@@ -50,7 +50,7 @@ ARMS = ev.ARMS + transport.NEW_ARMS
 REQUIRED_SOURCES = tuple(sorted(set(prepare.REQUIRED_SOURCES) | {
     'experiments/day11/' + name for name in
     ('evaluate_fresh.py', 'evaluate.py', 'transport.py', 'data.py', 'model.py', 'vace_bridge.py',
-     'train.py', 'render_fresh.py', 'render.py')
+     'train.py', 'render_fresh.py', 'render.py', 'assess_fresh.py', 'qualify_development.py')
 } | {'experiments/day8/' + name for name in ('operators.py', 'evaluate.py', 'probe.py')}))
 
 
@@ -72,6 +72,9 @@ def validate_pretest(freeze, publication, device, threads, decode):
         raise ValueError('Published freeze does not bind every fresh evaluation dependency')
     if frozen.get('evaluation') != evaluation_config(device, threads, decode):
         raise ValueError('Evaluation runtime/arms differ from the published pretest freeze')
+    assessment_module = _module('day11_fresh_frozen_assessment_configuration', HERE / 'assess_fresh.py')
+    if frozen.get('assessment') != assessment_module.assessment_config():
+        raise ValueError('Assessment rules differ from the published pretest freeze')
     rendering = frozen.get('rendering', {})
     rendering_module = _module('day11_fresh_frozen_renderer_configuration', HERE / 'render_fresh.py')
     for field in ('prompt_cache_sha256', 'prompt_metadata_sha256'):
