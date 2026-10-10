@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "owner_protocol": "day5_visible_parent_v1",
+  "day4_renderer_sha256": "292c7c26dfb2c2772fbc4f16e61abbb20a1b9df2c5132a8b1bc737d6ca8d9281",
+  "day5_renderer_sha256": "278fafc6f72a6e30ba574f7a214d12eca90e05bd2853dc0bf7d08eb94722bcb3",
+  "n_smoke_clips": 3,
+  "held_out_test_seeds_rendered": false,
+  "owner_definition": "Visible transformed sprite alpha >=128; foreground car B and solid occluders overwrite earlier owners.",
+  "tracking_annotation_boundary": "Only frame-zero parent/part masks allowed for initialization; all later labels are scoring-only.",
+  "scope": "2-D synthetic sprites; does not establish performance on real video, faces, or 3-D objects.",
+  "clips": [
+    {
+      "name": "smoke_long_occlusion_5100",
+      "seed": 5100,
+      "condition": "long_occlusion",
+      "rgb_equal": true,
+      "part_masks_equal": true,
+      "metadata_equal": true,
+      "part_subset_parent": true,
+      "first_frame_parents_available": true,
+      "unlabelled_body_and_wheels_included": true,
+      "owner_ids": [
+        0,
+        1,
+        2
+      ],
+      "fully_absent_frames": {
+        "car_A": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ],
+        "car_B": []
+      },
+      "rgb_sha256": "0f03b6046436f892ce7ae7554917104de63c287190cd978bc418d8ef6cc3bcbf",
+      "parts_sha256": "9a00c1dda0cddfa87a8ae887947ca54811ffc68ae2b89b0d8020a75f639fe3a2",
+      "owners_sha256": "02f2e77b3d47ee4edb59a0c04ff34b9864fb65e64f08f6ca73172e11ce711b1c"
+    },
+    {
+      "name": "smoke_crossing_5200",
+      "seed": 5200,
+      "condition": "crossing",
+      "rgb_equal": true,
+      "part_masks_equal": true,
+      "metadata_equal": true,
+      "part_subset_parent": true,
+      "first_frame_parents_available": true,
+      "unlabelled_body_and_wheels_included": true,
+      "owner_ids": [
+        0,
+        1,
+        2
+      ],
+      "fully_absent_frames": {
+        "car_A": [],
+        "car_B": []
+      },
+      "rgb_sha256": "a5190cfe19fa69261abe1fdfccb60ba9fee436c5487621b7b18999d65d9bf4f3",
+      "parts_sha256": "cb9712559a178481a3f21a5e70ac83c7652d423f4258d522fb1f77b88ca9dfd6",
+      "owners_sha256": "24466515a7adbe2100e55cad22be2e0bcbe10c696dc9fe11e98370e7532e8da8"
+    },
+    {
+      "name": "smoke_scale_camera_5300",
+      "seed": 5300,
+      "condition": "scale_camera",
+      "rgb_equal": true,
+      "part_masks_equal": true,
+      "metadata_equal": true,
+      "part_subset_parent": true,
+      "first_frame_parents_available": true,
+      "unlabelled_body_and_wheels_included": true,
+      "owner_ids": [
+        0,
+        1,
+        2
+      ],
+      "fully_absent_frames": {
+        "car_A": [],
+        "car_B": []
+      },
+      "rgb_sha256": "e76e28448c14811ff0622ac016b298c8ed61653a6a9b5d7ce08cecd65b9ea601",
+      "parts_sha256": "c09d5dd1fe78d477981701506f4bf39e342940e2ce52cfb77f0f13b458868cad",
+      "owners_sha256": "120cb134182aa33f9b2c42fdb61ee9a46cd5fd8ce5ac0175ae0d59a81b228c15"
+    }
+  ]
+}

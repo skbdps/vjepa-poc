@@ -1,0 +1,34 @@
+{
+  "policy_id": "sam2_frozen_patch_presence_to_dense_masks_v1",
+  "source_digest": "85b672af1eb00da80a78ffccff8bbdd8a9d6dd8c7fad7770c88379d7d3d447e4",
+  "script_sha256": "fee4f74d7b1dd4c86e4b4df7ce88b18215b7e5d6354b1f6f0eedbe038262af94",
+  "sam2_source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+  "sam2_frozen_config_sha256": "27a38d624a5d067617331c8e9ce4af8660e15d85f40891415f997edc9f757a54",
+  "sam2_checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+  "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+  "threshold": 0.9404296875,
+  "decision": "masks_to_predictions(raw_masks).eligible AND scores >= frozen_threshold",
+  "expansion": "Repeat each part decision onto both source frames of its two-frame pair.",
+  "initialization": "Preserve every raw mask in frame 0 regardless of its pair decision.",
+  "new_parameter_selection": "none; no new threshold or alternative gate",
+  "primary_test_status": "supplementary postprocessing comparison; primary raw-mask and patch results remain unchanged",
+  "probability_note": "Score is maximum predicted patch coverage, not a calibrated probability.",
+  "temporal_note": "Two-frame readout; not claimed to be causal streaming.",
+  "calibration_evidence": {
+    "raw_hidden_mask_reports": {
+      "numerator": 22,
+      "denominator": 180,
+      "rate": 0.12222222222222222
+    },
+    "patch_hidden_presence_reports": {
+      "numerator": 4,
+      "denominator": 88,
+      "rate": 0.045454545454545456
+    },
+    "denominator_note": "Raw metrics count part-frames; patch metrics count unambiguous part-pairs. Their counts are not directly comparable.",
+    "results_sha256": "a84df800bdda478d5f2daa78379d81a9f3a87fdbf1b42a39ec872db9aed18f6e"
+  },
+  "created_at_utc": "2026-10-09T00:26:08.840157+00:00",
+  "proposal_provenance": "Proposed during the SAM2 test execution, before the controller viewed its held-out masks or scores; prompted by the calibration raw-mask versus patch-presence discrepancy.",
+  "provenance_basis": "Controller's contemporaneous task statement plus recorded calibration result hashes."
+}

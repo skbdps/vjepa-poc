@@ -1,0 +1,46 @@
+/tmp/vjepa-day9-deps/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Error importing huggingface_hub.hf_api: No module named 'requests'
+READOUT_FEATURE_DONE train_13400 4.16
+READOUT_FEATURE_DONE train_13401 4.69
+READOUT_FEATURE_DONE train_13402 3.93
+READOUT_FEATURE_DONE train_13403 4.29
+READOUT_FEATURE_DONE train_13404 3.99
+READOUT_FEATURE_DONE train_13405 3.89
+READOUT_FEATURE_DONE train_13406 4.06
+READOUT_FEATURE_DONE train_13407 4.41
+READOUT_FEATURE_DONE train_13408 3.66
+READOUT_FEATURE_DONE train_13409 4.06
+READOUT_FEATURE_DONE train_13410 3.99
+READOUT_FEATURE_DONE train_13411 4.42
+READOUT_FEATURE_DONE train_13412 4.3
+READOUT_FEATURE_DONE train_13413 4.29
+READOUT_FEATURE_DONE train_13414 4.37
+READOUT_FEATURE_DONE train_13415 4.14
+READOUT_FEATURE_DONE train_13416 4.35
+READOUT_FEATURE_DONE train_13417 3.86
+READOUT_FEATURE_DONE train_13418 3.9
+READOUT_FEATURE_DONE train_13419 4.22
+READOUT_FEATURE_DONE train_13420 3.9
+READOUT_FEATURE_DONE train_13421 3.96
+READOUT_FEATURE_DONE train_13422 4.01
+READOUT_FEATURE_DONE train_13423 4.83
+READOUT_FEATURE_DONE train_13424 4.26
+READOUT_FEATURE_DONE train_13425 4.24
+READOUT_FEATURE_DONE train_13426 3.89
+READOUT_FEATURE_DONE train_13427 3.93
+READOUT_FEATURE_DONE train_13428 3.92
+READOUT_FEATURE_DONE train_13429 3.99
+READOUT_FEATURE_DONE train_13430 3.9
+READOUT_FEATURE_DONE train_13431 4.29
+READOUT_FEATURE_DONE dev_13500 4.32
+READOUT_FEATURE_DONE dev_13501 4.75
+READOUT_FEATURE_DONE dev_13502 4.08
+READOUT_FEATURE_DONE dev_13503 4.13
+READOUT_FEATURE_DONE dev_13504 4.24
+READOUT_FEATURE_DONE dev_13505 3.97
+READOUT_FEATURE_DONE dev_13506 3.84
+READOUT_FEATURE_DONE dev_13507 3.94
+READOUT_FEATURES_COMPLETE 40

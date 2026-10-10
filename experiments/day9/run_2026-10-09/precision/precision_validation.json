@@ -1,0 +1,136 @@
+{
+  "version": "day8_cpu_precision_fidelity_v1",
+  "scope": "runtime extraction fidelity; not an editing result",
+  "scene": {
+    "name": "train_11000_dx+32",
+    "seed": 11000,
+    "dx": 32,
+    "split": "train",
+    "shift_regime": "seen_magnitude"
+  },
+  "reference": {
+    "path": "/workspace/scratch/8e9e8b29a938/day9_compute/colab_reference/features/cache/train_11000_dx+32.npz",
+    "sha256": "92806392a95ecdcc98a36750ec0c533aa78dafb05351054cac95a20217ea6d14",
+    "bytes": 35075342,
+    "feature_dtypes": {
+      "source": "float16",
+      "target": "float16"
+    },
+    "verified_training_fixture": {
+      "name": "train_11000_dx+32",
+      "seed": 11000,
+      "dx": 32,
+      "split": "train",
+      "shift_regime": "seen_magnitude"
+    },
+    "source_rgb_sha256": "7b65bd873d5f5f4039b326348b341f91428955120f238e9e092e6bf59538704a",
+    "target_rgb_sha256": "5943c485b52d4111a7eb89c05d42b76dcb9340d259c9794d34fb3538066f2f49",
+    "manifest": {
+      "path": "/workspace/scratch/8e9e8b29a938/day9_compute/colab_reference/features/manifest.json",
+      "sha256": "3a2ced8a31ee5ddb2b8259466ff3f8e34a1d4e322d6d7965ff491953e2fb6a09",
+      "source_hashes": {
+        "data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+        "extract.py": "ee953d061e503d77d7ace024e7b90464fe8db07ecb8b84b633cdd372be3bd405"
+      },
+      "runtime": {
+        "python": "3.13.16",
+        "torch": "2.11.0+cpu",
+        "numpy": "2.1.3",
+        "device": "cpu",
+        "gpu": null,
+        "peak_gpu_gib": null
+      },
+      "inference_precision": null,
+      "cache_precision": null,
+      "encoder_context": "two disjoint16frame blocks; offline within block",
+      "weights": [
+        {
+          "name": "vjepa2_1_vitl_dist_vitG_384.pt",
+          "bytes": 5151198524,
+          "sha256": "7ea9b7cb4a75d10644a8a8d42cff9e177b10dca8f02173f0eaf2b0bed82838c6"
+        }
+      ],
+      "record": {
+        "spec": {
+          "name": "train_11000_dx+32",
+          "seed": 11000,
+          "dx": 32,
+          "split": "train",
+          "shift_regime": "seen_magnitude"
+        },
+        "path": "cache/train_11000_dx+32.npz",
+        "sha256": "92806392a95ecdcc98a36750ec0c533aa78dafb05351054cac95a20217ea6d14",
+        "bytes": 35075342,
+        "source_rgb_sha256": "7b65bd873d5f5f4039b326348b341f91428955120f238e9e092e6bf59538704a",
+        "target_rgb_sha256": "5943c485b52d4111a7eb89c05d42b76dcb9340d259c9794d34fb3538066f2f49",
+        "seconds": 502.19379625100004
+      }
+    },
+    "record_seconds": 502.19379625100004,
+    "record_timing_scope": "rendering, pair encoding, compression and cache write; excludes encoder load"
+  },
+  "local_torch": "2.9.0+cpu",
+  "local_python": "3.12.14",
+  "local_numpy": "2.3.5",
+  "device": "cpu",
+  "threads": 8,
+  "torch_hub_cache": "/tmp/vjepa-day9-model/hub",
+  "checkpoint_sha256": "7ea9b7cb4a75d10644a8a8d42cff9e177b10dca8f02173f0eaf2b0bed82838c6",
+  "upstream": "204698b45b3712590f06245fbfba32d3be539812",
+  "source_hashes": {
+    "data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+    "extract.py": "de2b366a53cae32f13741570f6dcefd525e45bfe04a2fda5b909d54579f1982f",
+    "operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+    "validate_precision.py": "7f04b944fae5f4fa32001d4bfff9960d94aadd7f1e702ca94ae22399526c0b4b"
+  },
+  "test_data_opened": false,
+  "precisions": {
+    "bfloat16": {
+      "seconds": 40.88910532299997,
+      "metrics": {
+        "global": {
+          "source_precision_mse": 0.0019230917096138,
+          "target_precision_mse": 0.001931111211888492,
+          "true_edit_mse": 0.23961922526359558,
+          "source_ratio": 0.00802561525477884,
+          "target_ratio": 0.00805908294613737,
+          "tokens": 9216,
+          "denominator_floored": false
+        },
+        "source_hole": {
+          "source_precision_mse": 0.0009271502494812012,
+          "target_precision_mse": 0.001871971064247191,
+          "true_edit_mse": 5.707324504852295,
+          "source_ratio": 0.000162449191156548,
+          "target_ratio": 0.0003279945029681885,
+          "tokens": 149,
+          "denominator_floored": false
+        },
+        "destination": {
+          "source_precision_mse": 0.0014589735073968768,
+          "target_precision_mse": 0.0008962088613770902,
+          "true_edit_mse": 4.454372882843018,
+          "source_ratio": 0.00032753735391494263,
+          "target_ratio": 0.00020119753890138675,
+          "tokens": 290,
+          "denominator_floored": false
+        }
+      },
+      "passed_checks": 6,
+      "total_checks": 6,
+      "passes_1pct_signal_tolerance": true,
+      "tolerance": 0.01,
+      "ratio_floor": 1e-12,
+      "cache": {
+        "path": "local_reference_bfloat16.npz",
+        "sha256": "559d25f928cd1d1e13c0bb55407f85fb8a5e165124fcd879c86d19fbf86a68eb",
+        "bytes": 29359134
+      }
+    }
+  },
+  "chosen_precision": "bfloat16",
+  "rule": "All six source/target errors, normalized by reference edit signal, strictly below .01",
+  "local_timing_scope": "source and target pair encoding only; excludes load, rendering and cache write",
+  "timing_comparison_limit": "Reference record and local encoding timers cover different work",
+  "encoder_load_seconds": 7.682092472000022
+}

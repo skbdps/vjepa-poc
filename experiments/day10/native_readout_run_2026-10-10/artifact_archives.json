@@ -1,0 +1,30 @@
+{
+  "version": "day10_native_readout_archive_index_v1",
+  "archives": [
+    {
+      "name": "Day10_Native_Readout_Training.zip",
+      "bytes": 176693441,
+      "sha256": "388bf6c44c8d9ea4a27428b9c4384699de80c55f6b6fe357abf3b655fcb86d1d",
+      "raw_files": 42,
+      "contents": "Native-image training/development FP32caches, fixed finalepoch40 readout checkpoint and development predictions.",
+      "library_file_id": "libfile_e86a2e97294c819195372d922529ce14",
+      "library_version": 0
+    },
+    {
+      "name": "Day10_Native_Image_Fresh_Test.zip",
+      "bytes": 175887087,
+      "sha256": "2392459203cc63aab3b023ea485f4eed92b07310e20309655caa527a7da5f60b",
+      "npz_files": 12,
+      "contents": "Four new still-image tests: allsource/targetFP32caches, editedstate tensors and diagnosticreadout predictions.",
+      "library_file_id": "libfile_2c078b613ee48191a1f93b92b468744a",
+      "library_version": 0
+    }
+  ],
+  "restore": "Copy this Git directory into a native run directory, then extract both native training and fresh-test archives there, preserving relative paths.",
+  "dependencies": {
+    "probe_sha256": "38d6224ae94d5b9edc0a888854ab214bd20d999eebd4970bef48ff8442d160e9",
+    "upstream_revision": "204698b45b3712590f06245fbfba32d3be539812",
+    "encoder_weights_sha256": "7ea9b7cb4a75d10644a8a8d42cff9e177b10dca8f02173f0eaf2b0bed82838c6"
+  },
+  "scope": "Source, reports, manifests, loss history, freezes and audits are Git-backed; raw feature caches and trained probe are separately archived. Public encoder weights are not duplicated."
+}

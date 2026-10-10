@@ -1,0 +1,1832 @@
+{
+  "version": "day11_development_engineering_gate_v1",
+  "created_utc": "2026-10-10T01:48:24.355568+00:00",
+  "pass": true,
+  "primary_arm": "provenance_residual_copy_repair",
+  "scope": "Fixed engineering development pilot; not production success or held-out generalization",
+  "fresh_test_accessed": false,
+  "threshold_selection": "predeclared; no fitted thresholds or arm selection",
+  "checkpoint_freeze_sha256": "22dc5a4b749d8ec724ca2a08334cc8c9958fdebad1d24dd0d9c6f25f8459689e",
+  "input_sha256": {
+    "transport_metrics": "6fa8004836741bb901c0f1784ca74612d0d255dd4775d4d0664d4f037076517c",
+    "transport_summary": "3f04f0224a84de88cc06066a3c2456103055a5a8e3593e46c404c86281dc8414",
+    "transport_manifest": "362765b2faa18b10d6428eb588f7bfda6c75555b02faee30be75cce6f29a657b",
+    "render_metrics": "cd211b17b5ea33a042ac82006ad404f181f2e7542194470e56f6bf673d0704ec",
+    "checkpoint_freeze": "22dc5a4b749d8ec724ca2a08334cc8c9958fdebad1d24dd0d9c6f25f8459689e",
+    "qualification_source": "dca51ecb8d307c00d05c20a737561d61a056a550c95af32784b46d5418a1ebc8",
+    "source:render_transport.py": "8aacf67c2a94f8c0821e4c826512385439d18cf965543159d68626d85a2b6508",
+    "source:render.py": "45c19c41bdc0ee6c84f71ba264a1ddf635c3400f0bee54bf404313b6f6c4575c",
+    "source:vace_bridge.py": "37ea481d279b0fbe18b001f988c77d84bfc1f4e2bb76d2427a8443115083989b",
+    "source:transport.py": "407a745c704c4720a3907adfef017786f6a265e3ae52ef8a56c0e6b407b74c51"
+  },
+  "criteria": {
+    "latent_region_ratio_max": 0.5,
+    "GPU_region_excess_max": 0.5,
+    "GPU_centroid_max_px": 4.0,
+    "oracle_centroid_max_px": 2.0,
+    "GPU_negative_balanced_excess_margin_min": 0.1,
+    "RGB_denominator_min_exclusive": 1.5378700499807768e-05,
+    "protected_relative_allowance": 0.25,
+    "protected_absolute_allowance": 1.5378700499807768e-05
+  },
+  "check_count": 47,
+  "passed_check_count": 47,
+  "failed_check_ids": [],
+  "checks": [
+    {
+      "id": "binding.trained_checkpoint",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "version": "day11_genuine_jepa_to_wan_training_v1",
+        "cnn_checkpoint_sha256": "a3abb9b3d224881c8125499ed43c65d7b0dae8975538ce0716ca47e75e3bc365",
+        "fresh_test_accessed": false,
+        "test_accessed": false
+      },
+      "required": "one frozen CNN at fixed epoch150; no fresh test accessed"
+    },
+    {
+      "id": "binding.transport",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "version": "day11_development_provenance_transport_v1",
+        "complete": true,
+        "fresh_test_accessed": false,
+        "checkpoint_sha256": "a3abb9b3d224881c8125499ed43c65d7b0dae8975538ce0716ca47e75e3bc365",
+        "metrics_sha256": "6fa8004836741bb901c0f1784ca74612d0d255dd4775d4d0664d4f037076517c",
+        "summary_sha256": "3f04f0224a84de88cc06066a3c2456103055a5a8e3593e46c404c86281dc8414",
+        "all_development_seeds": [
+          13500,
+          13501,
+          13502,
+          13503,
+          13504,
+          13505,
+          13506,
+          13507
+        ],
+        "renderer_seeds": [
+          13500,
+          13501
+        ]
+      },
+      "required": "completed eight-scene/27-arm development evidence bound to original checkpoint and supplied files"
+    },
+    {
+      "id": "binding.summary",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "version": "day11_development_provenance_transport_v1",
+        "scene_count": 8,
+        "primary_scene_count": 8
+      },
+      "required": "same completed development summary; primary has all eight scenes"
+    },
+    {
+      "id": "binding.latent_rows",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "row_count": 216,
+        "unique_count": 216,
+        "duplicates": [],
+        "missing": [],
+        "unexpected": []
+      },
+      "required": "exactly eight scenes x 27 arms, without missing or repeated rows"
+    },
+    {
+      "id": "binding.gpu_render",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "version": "day11_vace_transport_render_v1",
+        "complete": true,
+        "evaluation_manifest_sha256": "362765b2faa18b10d6428eb588f7bfda6c75555b02faee30be75cce6f29a657b",
+        "render_count": 62,
+        "missing": [],
+        "unexpected": []
+      },
+      "required": "completed actual two-scene transport GPU render, all27 arms plus all8 parity runs"
+    },
+    {
+      "id": "binding.gpu_configuration",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+        "model_revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+        "settings": {
+          "height": 384,
+          "width": 384,
+          "num_frames": 1,
+          "num_inference_steps": 20,
+          "guidance_scale": 5.0,
+          "conditioning_scale": 1.0,
+          "seed": 1111
+        },
+        "scheduler_class": "FlowMatchEulerDiscreteScheduler",
+        "transformer_dtype": "float16",
+        "vae_dtype": "float32",
+        "attention": "Diffusers native PyTorch SDPA",
+        "parity_max_abs_tolerance": 0.0001,
+        "prompt": "Two patterned colored balls on a textured background. Static camera, simple geometric scene.",
+        "negative_prompt": "text, watermark, blurry, distorted, extra objects",
+        "max_sequence_length": 128,
+        "deduplicate_conditions": false,
+        "diffusers": "0.35.1",
+        "threads": 4
+      },
+      "required": {
+        "model_id": "Wan-AI/Wan2.1-VACE-1.3B-diffusers",
+        "model_revision": "ec4d2cb062b548996b179d493fdd05340de702a1",
+        "settings": {
+          "height": 384,
+          "width": 384,
+          "num_frames": 1,
+          "num_inference_steps": 20,
+          "guidance_scale": 5.0,
+          "conditioning_scale": 1.0,
+          "seed": 1111
+        },
+        "scheduler_class": "FlowMatchEulerDiscreteScheduler",
+        "transformer_dtype": "float16",
+        "vae_dtype": "float32",
+        "attention": "Diffusers native PyTorch SDPA",
+        "parity_max_abs_tolerance": 0.0001,
+        "prompt": "Two patterned colored balls on a textured background. Static camera, simple geometric scene.",
+        "negative_prompt": "text, watermark, blurry, distorted, extra objects",
+        "max_sequence_length": 128,
+        "deduplicate_conditions": false,
+        "diffusers": "0.35.1",
+        "threads": 4
+      }
+    },
+    {
+      "id": "binding.gpu_sources",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "render_source_files": {
+          "render_transport.py": "8aacf67c2a94f8c0821e4c826512385439d18cf965543159d68626d85a2b6508",
+          "render.py": "45c19c41bdc0ee6c84f71ba264a1ddf635c3400f0bee54bf404313b6f6c4575c",
+          "vace_bridge.py": "37ea481d279b0fbe18b001f988c77d84bfc1f4e2bb76d2427a8443115083989b",
+          "transport.py": "407a745c704c4720a3907adfef017786f6a265e3ae52ef8a56c0e6b407b74c51"
+        },
+        "transport_manifest_source": "407a745c704c4720a3907adfef017786f6a265e3ae52ef8a56c0e6b407b74c51"
+      },
+      "required": "GPU and transport manifest bind the exact current, separately published source files"
+    },
+    {
+      "id": "binding.gpu_bundle.13500",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "render_bundle_sha256": "b325c1fb266dfbd14b15babbc8179572d5937af13fab52f2fde5fc811f14f20d",
+        "transport_bundle_sha256": "b325c1fb266dfbd14b15babbc8179572d5937af13fab52f2fde5fc811f14f20d",
+        "render_checkpoint_sha256": "a3abb9b3d224881c8125499ed43c65d7b0dae8975538ce0716ca47e75e3bc365"
+      },
+      "required": "GPU uses exact transport bundle and same frozen CNN checkpoint"
+    },
+    {
+      "id": "binding.parity.13500.source",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "cached_vs_live_teacher_max_abs": 3.635883331298828e-06,
+        "tolerance": 0.0001,
+        "passed": true,
+        "denoised_latent_max_abs": 0.0,
+        "denoised_latent_mean_abs": 0.0
+      },
+      "required": "both cached/live and official/direct parity passed at fixed 1e-4 tolerance"
+    },
+    {
+      "id": "binding.parity.13500.target",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "cached_vs_live_teacher_max_abs": 4.604458808898926e-06,
+        "tolerance": 0.0001,
+        "passed": true,
+        "denoised_latent_max_abs": 0.0,
+        "denoised_latent_mean_abs": 0.0
+      },
+      "required": "both cached/live and official/direct parity passed at fixed 1e-4 tolerance"
+    },
+    {
+      "id": "binding.gpu_bundle.13501",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "render_bundle_sha256": "71fc645a0dd9f25370a885b705bde794d1ae15b745fa2161d401fa6985fa9542",
+        "transport_bundle_sha256": "71fc645a0dd9f25370a885b705bde794d1ae15b745fa2161d401fa6985fa9542",
+        "render_checkpoint_sha256": "a3abb9b3d224881c8125499ed43c65d7b0dae8975538ce0716ca47e75e3bc365"
+      },
+      "required": "GPU uses exact transport bundle and same frozen CNN checkpoint"
+    },
+    {
+      "id": "binding.parity.13501.source",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "cached_vs_live_teacher_max_abs": 3.635883331298828e-06,
+        "tolerance": 0.0001,
+        "passed": true,
+        "denoised_latent_max_abs": 0.0,
+        "denoised_latent_mean_abs": 0.0
+      },
+      "required": "both cached/live and official/direct parity passed at fixed 1e-4 tolerance"
+    },
+    {
+      "id": "binding.parity.13501.target",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "cached_vs_live_teacher_max_abs": 3.635883331298828e-06,
+        "tolerance": 0.0001,
+        "passed": true,
+        "denoised_latent_max_abs": 0.0,
+        "denoised_latent_mean_abs": 0.0
+      },
+      "required": "both cached/live and official/direct parity passed at fixed 1e-4 tolerance"
+    },
+    {
+      "id": "latent.13500.source_hole",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.08884685001517124,
+        "ratio_degenerate": false,
+        "count": 16.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13500.destination",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.03875796757632835,
+        "ratio_degenerate": false,
+        "count": 56.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13501.source_hole",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.06272447462113949,
+        "ratio_degenerate": false,
+        "count": 20.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13501.destination",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.010400287476866672,
+        "ratio_degenerate": false,
+        "count": 84.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13502.source_hole",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.07594298456557425,
+        "ratio_degenerate": false,
+        "count": 36.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13502.destination",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.028682717252144687,
+        "ratio_degenerate": false,
+        "count": 76.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13503.source_hole",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.24785675809203955,
+        "ratio_degenerate": false,
+        "count": 36.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13503.destination",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.08247083152325559,
+        "ratio_degenerate": false,
+        "count": 60.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13504.source_hole",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.06160916104968204,
+        "ratio_degenerate": false,
+        "count": 44.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13504.destination",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.06657012830827073,
+        "ratio_degenerate": false,
+        "count": 56.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13505.source_hole",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.04913673596980798,
+        "ratio_degenerate": false,
+        "count": 44.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13505.destination",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.02316316630624975,
+        "ratio_degenerate": false,
+        "count": 56.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13506.source_hole",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.06699387581885238,
+        "ratio_degenerate": false,
+        "count": 60.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13506.destination",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.04944329094272536,
+        "ratio_degenerate": false,
+        "count": 60.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13507.source_hole",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.055908479619248726,
+        "ratio_degenerate": false,
+        "count": 56.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "latent.13507.destination",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "ratio": 0.07313295595377348,
+        "ratio_degenerate": false,
+        "count": 56.0
+      },
+      "required": {
+        "maximum_ratio": 0.5,
+        "nondegenerate": true
+      }
+    },
+    {
+      "id": "gpu.13500.oracle_detection",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "present": true,
+        "pixels": 1796.0,
+        "centroid_xy": [
+          218.58184855233853,
+          286.8596881959911
+        ],
+        "centroid_error_to_target_px": 0.5985274765645009,
+        "positional_failure": false,
+        "general_detector": false,
+        "missing_detection_ordering": null
+      },
+      "required": {
+        "present": true,
+        "maximum_target_error_px": 2.0
+      }
+    },
+    {
+      "id": "gpu.13500.primary_detection",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "present": true,
+        "pixels": 1750.0,
+        "centroid_xy": [
+          219.00857142857143,
+          287.1577142857143
+        ],
+        "centroid_error_to_target_px": 1.0208281551999738,
+        "positional_failure": false,
+        "general_detector": false,
+        "missing_detection_ordering": null
+      },
+      "required": {
+        "present": true,
+        "maximum_target_error_px": 4.0,
+        "oracle_calibrated": true
+      }
+    },
+    {
+      "id": "gpu.13500.source_hole.excess",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "edit_mse_to_target": 0.0018097991471354659,
+        "true_source_render_mse_to_target": 0.11430972376134871,
+        "true_target_render_mse_to_target": 0.0003834372400760894,
+        "denominator": 0.11392628652127262,
+        "denominator_min_exclusive": 1.5378700499807768e-05,
+        "determinate": true,
+        "excess_ratio": 0.012520042130865402
+      },
+      "required": {
+        "maximum_excess_ratio": 0.5,
+        "denominator_min_exclusive": 1.5378700499807768e-05
+      }
+    },
+    {
+      "id": "gpu.13500.destination.excess",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "edit_mse_to_target": 0.004961471376445053,
+        "true_source_render_mse_to_target": 0.06452313974188653,
+        "true_target_render_mse_to_target": 0.0038735062609353155,
+        "denominator": 0.06064963348095122,
+        "denominator_min_exclusive": 1.5378700499807768e-05,
+        "determinate": true,
+        "excess_ratio": 0.01793852745790203
+      },
+      "required": {
+        "maximum_excess_ratio": 0.5,
+        "denominator_min_exclusive": 1.5378700499807768e-05
+      }
+    },
+    {
+      "id": "gpu.13500.background.preservation",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "edit_mse_to_target": 0.00019600480337937084,
+        "source_render_mse_to_target": 0.00019713810455051803,
+        "target_render_mse_to_target": 0.00019574448683445226,
+        "reference_mse": 0.00019713810455051803,
+        "maximum_mse": 0.00024642263068814753
+      },
+      "required": "edit <= max(source,target) + max(.25*max(source,target),1/255^2)"
+    },
+    {
+      "id": "gpu.13500.distractor.preservation",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "edit_mse_to_target": 0.0037716873241671394,
+        "source_render_mse_to_target": 0.003749995450999652,
+        "target_render_mse_to_target": 0.003764758286836951,
+        "reference_mse": 0.003764758286836951,
+        "maximum_mse": 0.004705947858546188
+      },
+      "required": "edit <= max(source,target) + max(.25*max(source,target),1/255^2)"
+    },
+    {
+      "id": "gpu.13500.negative_direction_position",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "correct": {
+          "present": true,
+          "pixels": 1750.0,
+          "centroid_xy": [
+            219.00857142857143,
+            287.1577142857143
+          ],
+          "centroid_error_to_target_px": 1.0208281551999738,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        },
+        "wrong_direction": {
+          "present": true,
+          "pixels": 1765.0,
+          "centroid_xy": [
+            186.73031161473088,
+            286.9257790368272
+          ],
+          "centroid_error_to_target_px": 31.2697764696713,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        }
+      },
+      "required": "correct finite target-centroid error strictly below wrong direction; missing control is positional failure"
+    },
+    {
+      "id": "gpu.13500.negative_regional.provenance_residual_wrong_direction",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "correct_balanced_excess": 0.015229284794383718,
+        "control_balanced_excess": 1.3236174309541078,
+        "control_minus_correct": 1.308388146159724,
+        "control_detection": {
+          "present": true,
+          "pixels": 1765.0,
+          "centroid_xy": [
+            186.73031161473088,
+            286.9257790368272
+          ],
+          "centroid_error_to_target_px": 31.2697764696713,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        }
+      },
+      "required": {
+        "minimum_control_minus_correct": 0.1,
+        "both_hole_and_destination_required": true
+      }
+    },
+    {
+      "id": "gpu.13500.negative_regional.provenance_residual_shuffled",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "correct_balanced_excess": 0.015229284794383718,
+        "control_balanced_excess": 0.9347869469635929,
+        "control_minus_correct": 0.9195576621692092,
+        "control_detection": {
+          "present": true,
+          "pixels": 636.0,
+          "centroid_xy": [
+            219.27672955974842,
+            186.0754716981132
+          ],
+          "centroid_error_to_target_px": 100.93260351010017,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        }
+      },
+      "required": {
+        "minimum_control_minus_correct": 0.1,
+        "both_hole_and_destination_required": true
+      }
+    },
+    {
+      "id": "gpu.13501.oracle_detection",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "present": true,
+        "pixels": 2792.0,
+        "centroid_xy": [
+          138.512893982808,
+          289.57521489971344
+        ],
+        "centroid_error_to_target_px": 0.6659599229879541,
+        "positional_failure": false,
+        "general_detector": false,
+        "missing_detection_ordering": null
+      },
+      "required": {
+        "present": true,
+        "maximum_target_error_px": 2.0
+      }
+    },
+    {
+      "id": "gpu.13501.primary_detection",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "present": true,
+        "pixels": 2756.0,
+        "centroid_xy": [
+          138.52285921625545,
+          289.52721335268507
+        ],
+        "centroid_error_to_target_px": 0.7049177071847207,
+        "positional_failure": false,
+        "general_detector": false,
+        "missing_detection_ordering": null
+      },
+      "required": {
+        "present": true,
+        "maximum_target_error_px": 4.0,
+        "oracle_calibrated": true
+      }
+    },
+    {
+      "id": "gpu.13501.source_hole.excess",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "edit_mse_to_target": 0.0013747392238798444,
+        "true_source_render_mse_to_target": 0.10743500293077693,
+        "true_target_render_mse_to_target": 0.0006678284728656275,
+        "denominator": 0.1067671744579113,
+        "denominator_min_exclusive": 1.5378700499807768e-05,
+        "determinate": true,
+        "excess_ratio": 0.006621049537026835
+      },
+      "required": {
+        "maximum_excess_ratio": 0.5,
+        "denominator_min_exclusive": 1.5378700499807768e-05
+      }
+    },
+    {
+      "id": "gpu.13501.destination.excess",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "edit_mse_to_target": 0.005742273187334752,
+        "true_source_render_mse_to_target": 0.09781450012625549,
+        "true_target_render_mse_to_target": 0.0050693683505814175,
+        "denominator": 0.09274513177567408,
+        "denominator_min_exclusive": 1.5378700499807768e-05,
+        "determinate": true,
+        "excess_ratio": 0.007255419490706133
+      },
+      "required": {
+        "maximum_excess_ratio": 0.5,
+        "denominator_min_exclusive": 1.5378700499807768e-05
+      }
+    },
+    {
+      "id": "gpu.13501.background.preservation",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "edit_mse_to_target": 0.00025443009565773714,
+        "source_render_mse_to_target": 0.00025313860394397065,
+        "target_render_mse_to_target": 0.00025153263533811453,
+        "reference_mse": 0.00025313860394397065,
+        "maximum_mse": 0.00031642325492996335
+      },
+      "required": "edit <= max(source,target) + max(.25*max(source,target),1/255^2)"
+    },
+    {
+      "id": "gpu.13501.distractor.preservation",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "edit_mse_to_target": 0.0052028853129724465,
+        "source_render_mse_to_target": 0.005163122562599534,
+        "target_render_mse_to_target": 0.0051921422163636695,
+        "reference_mse": 0.0051921422163636695,
+        "maximum_mse": 0.006490177770454587
+      },
+      "required": "edit <= max(source,target) + max(.25*max(source,target),1/255^2)"
+    },
+    {
+      "id": "gpu.13501.negative_direction_position",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "correct": {
+          "present": true,
+          "pixels": 2756.0,
+          "centroid_xy": [
+            138.52285921625545,
+            289.52721335268507
+          ],
+          "centroid_error_to_target_px": 0.7049177071847207,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        },
+        "wrong_direction": {
+          "present": true,
+          "pixels": 2756.0,
+          "centroid_xy": [
+            170.33381712626996,
+            289.33381712626993
+          ],
+          "centroid_error_to_target_px": 32.34067917617563,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        }
+      },
+      "required": "correct finite target-centroid error strictly below wrong direction; missing control is positional failure"
+    },
+    {
+      "id": "gpu.13501.negative_regional.provenance_residual_wrong_direction",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "correct_balanced_excess": 0.006938234513866484,
+        "control_balanced_excess": 1.1308770464183655,
+        "control_minus_correct": 1.123938811904499,
+        "control_detection": {
+          "present": true,
+          "pixels": 2756.0,
+          "centroid_xy": [
+            170.33381712626996,
+            289.33381712626993
+          ],
+          "centroid_error_to_target_px": 32.34067917617563,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        }
+      },
+      "required": {
+        "minimum_control_minus_correct": 0.1,
+        "both_hole_and_destination_required": true
+      }
+    },
+    {
+      "id": "gpu.13501.negative_regional.provenance_residual_shuffled",
+      "pass": true,
+      "status": "pass",
+      "observed": {
+        "correct_balanced_excess": 0.006938234513866484,
+        "control_balanced_excess": 0.6326813815812105,
+        "control_minus_correct": 0.625743147067344,
+        "control_detection": {
+          "present": true,
+          "pixels": 132.0,
+          "centroid_xy": [
+            144.3560606060606,
+            90.35606060606061
+          ],
+          "centroid_error_to_target_px": 199.74509266352166,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        }
+      },
+      "required": {
+        "minimum_control_minus_correct": 0.1,
+        "both_hole_and_destination_required": true
+      }
+    }
+  ],
+  "latent_scenes": {
+    "13500": {
+      "source_hole": {
+        "ratio": 0.08884685001517124,
+        "ratio_degenerate": false,
+        "count": 16.0
+      },
+      "destination": {
+        "ratio": 0.03875796757632835,
+        "ratio_degenerate": false,
+        "count": 56.0
+      }
+    },
+    "13501": {
+      "source_hole": {
+        "ratio": 0.06272447462113949,
+        "ratio_degenerate": false,
+        "count": 20.0
+      },
+      "destination": {
+        "ratio": 0.010400287476866672,
+        "ratio_degenerate": false,
+        "count": 84.0
+      }
+    },
+    "13502": {
+      "source_hole": {
+        "ratio": 0.07594298456557425,
+        "ratio_degenerate": false,
+        "count": 36.0
+      },
+      "destination": {
+        "ratio": 0.028682717252144687,
+        "ratio_degenerate": false,
+        "count": 76.0
+      }
+    },
+    "13503": {
+      "source_hole": {
+        "ratio": 0.24785675809203955,
+        "ratio_degenerate": false,
+        "count": 36.0
+      },
+      "destination": {
+        "ratio": 0.08247083152325559,
+        "ratio_degenerate": false,
+        "count": 60.0
+      }
+    },
+    "13504": {
+      "source_hole": {
+        "ratio": 0.06160916104968204,
+        "ratio_degenerate": false,
+        "count": 44.0
+      },
+      "destination": {
+        "ratio": 0.06657012830827073,
+        "ratio_degenerate": false,
+        "count": 56.0
+      }
+    },
+    "13505": {
+      "source_hole": {
+        "ratio": 0.04913673596980798,
+        "ratio_degenerate": false,
+        "count": 44.0
+      },
+      "destination": {
+        "ratio": 0.02316316630624975,
+        "ratio_degenerate": false,
+        "count": 56.0
+      }
+    },
+    "13506": {
+      "source_hole": {
+        "ratio": 0.06699387581885238,
+        "ratio_degenerate": false,
+        "count": 60.0
+      },
+      "destination": {
+        "ratio": 0.04944329094272536,
+        "ratio_degenerate": false,
+        "count": 60.0
+      }
+    },
+    "13507": {
+      "source_hole": {
+        "ratio": 0.055908479619248726,
+        "ratio_degenerate": false,
+        "count": 56.0
+      },
+      "destination": {
+        "ratio": 0.07313295595377348,
+        "ratio_degenerate": false,
+        "count": 56.0
+      }
+    }
+  },
+  "gpu_scenes": {
+    "13500": {
+      "detections": {
+        "true_target": {
+          "present": true,
+          "pixels": 1796.0,
+          "centroid_xy": [
+            218.58184855233853,
+            286.8596881959911
+          ],
+          "centroid_error_to_target_px": 0.5985274765645009,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        },
+        "provenance_residual_copy_repair": {
+          "present": true,
+          "pixels": 1750.0,
+          "centroid_xy": [
+            219.00857142857143,
+            287.1577142857143
+          ],
+          "centroid_error_to_target_px": 1.0208281551999738,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        },
+        "provenance_residual_wrong_direction": {
+          "present": true,
+          "pixels": 1765.0,
+          "centroid_xy": [
+            186.73031161473088,
+            286.9257790368272
+          ],
+          "centroid_error_to_target_px": 31.2697764696713,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        },
+        "provenance_residual_shuffled": {
+          "present": true,
+          "pixels": 636.0,
+          "centroid_xy": [
+            219.27672955974842,
+            186.0754716981132
+          ],
+          "centroid_error_to_target_px": 100.93260351010017,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        }
+      },
+      "region_excess": {
+        "provenance_residual_copy_repair": {
+          "source_hole": {
+            "edit_mse_to_target": 0.0018097991471354659,
+            "true_source_render_mse_to_target": 0.11430972376134871,
+            "true_target_render_mse_to_target": 0.0003834372400760894,
+            "denominator": 0.11392628652127262,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 0.012520042130865402
+          },
+          "destination": {
+            "edit_mse_to_target": 0.004961471376445053,
+            "true_source_render_mse_to_target": 0.06452313974188653,
+            "true_target_render_mse_to_target": 0.0038735062609353155,
+            "denominator": 0.06064963348095122,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 0.01793852745790203
+          }
+        },
+        "provenance_residual_wrong_direction": {
+          "source_hole": {
+            "edit_mse_to_target": 0.1398893148185841,
+            "true_source_render_mse_to_target": 0.11430972376134871,
+            "true_target_render_mse_to_target": 0.0003834372400760894,
+            "denominator": 0.11392628652127262,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 1.224527559339513
+          },
+          "destination": {
+            "edit_mse_to_target": 0.09016018271239988,
+            "true_source_render_mse_to_target": 0.06452313974188653,
+            "true_target_render_mse_to_target": 0.0038735062609353155,
+            "denominator": 0.06064963348095122,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 1.4227073025687025
+          }
+        },
+        "provenance_residual_shuffled": {
+          "source_hole": {
+            "edit_mse_to_target": 0.00284619666141479,
+            "true_source_render_mse_to_target": 0.11430972376134871,
+            "true_target_render_mse_to_target": 0.0003834372400760894,
+            "denominator": 0.11392628652127262,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 0.021617130659997836
+          },
+          "destination": {
+            "edit_mse_to_target": 0.11595140664173519,
+            "true_source_render_mse_to_target": 0.06452313974188653,
+            "true_target_render_mse_to_target": 0.0038735062609353155,
+            "denominator": 0.06064963348095122,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 1.8479567632671878
+          }
+        }
+      },
+      "balanced_excess": {
+        "provenance_residual_copy_repair": 0.015229284794383718,
+        "provenance_residual_wrong_direction": 1.3236174309541078,
+        "provenance_residual_shuffled": 0.9347869469635929
+      },
+      "protected_regions": {
+        "background": {
+          "edit_mse_to_target": 0.00019600480337937084,
+          "source_render_mse_to_target": 0.00019713810455051803,
+          "target_render_mse_to_target": 0.00019574448683445226,
+          "reference_mse": 0.00019713810455051803,
+          "maximum_mse": 0.00024642263068814753
+        },
+        "distractor": {
+          "edit_mse_to_target": 0.0037716873241671394,
+          "source_render_mse_to_target": 0.003749995450999652,
+          "target_render_mse_to_target": 0.003764758286836951,
+          "reference_mse": 0.003764758286836951,
+          "maximum_mse": 0.004705947858546188
+        }
+      }
+    },
+    "13501": {
+      "detections": {
+        "true_target": {
+          "present": true,
+          "pixels": 2792.0,
+          "centroid_xy": [
+            138.512893982808,
+            289.57521489971344
+          ],
+          "centroid_error_to_target_px": 0.6659599229879541,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        },
+        "provenance_residual_copy_repair": {
+          "present": true,
+          "pixels": 2756.0,
+          "centroid_xy": [
+            138.52285921625545,
+            289.52721335268507
+          ],
+          "centroid_error_to_target_px": 0.7049177071847207,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        },
+        "provenance_residual_wrong_direction": {
+          "present": true,
+          "pixels": 2756.0,
+          "centroid_xy": [
+            170.33381712626996,
+            289.33381712626993
+          ],
+          "centroid_error_to_target_px": 32.34067917617563,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        },
+        "provenance_residual_shuffled": {
+          "present": true,
+          "pixels": 132.0,
+          "centroid_xy": [
+            144.3560606060606,
+            90.35606060606061
+          ],
+          "centroid_error_to_target_px": 199.74509266352166,
+          "positional_failure": false,
+          "general_detector": false,
+          "missing_detection_ordering": null
+        }
+      },
+      "region_excess": {
+        "provenance_residual_copy_repair": {
+          "source_hole": {
+            "edit_mse_to_target": 0.0013747392238798444,
+            "true_source_render_mse_to_target": 0.10743500293077693,
+            "true_target_render_mse_to_target": 0.0006678284728656275,
+            "denominator": 0.1067671744579113,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 0.006621049537026835
+          },
+          "destination": {
+            "edit_mse_to_target": 0.005742273187334752,
+            "true_source_render_mse_to_target": 0.09781450012625549,
+            "true_target_render_mse_to_target": 0.0050693683505814175,
+            "denominator": 0.09274513177567408,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 0.007255419490706133
+          }
+        },
+        "provenance_residual_wrong_direction": {
+          "source_hole": {
+            "edit_mse_to_target": 0.12728480323877114,
+            "true_source_render_mse_to_target": 0.10743500293077693,
+            "true_target_render_mse_to_target": 0.0006678284728656275,
+            "denominator": 0.1067671744579113,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 1.1859166959206102
+          },
+          "destination": {
+            "edit_mse_to_target": 0.1048480494967652,
+            "true_source_render_mse_to_target": 0.09781450012625549,
+            "true_target_render_mse_to_target": 0.0050693683505814175,
+            "denominator": 0.09274513177567408,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 1.0758373969161206
+          }
+        },
+        "provenance_residual_shuffled": {
+          "source_hole": {
+            "edit_mse_to_target": 0.002572728437780341,
+            "true_source_render_mse_to_target": 0.10743500293077693,
+            "true_target_render_mse_to_target": 0.0006678284728656275,
+            "denominator": 0.1067671744579113,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 0.01784162571114631
+          },
+          "destination": {
+            "edit_mse_to_target": 0.1207708806364387,
+            "true_source_render_mse_to_target": 0.09781450012625549,
+            "true_target_render_mse_to_target": 0.0050693683505814175,
+            "denominator": 0.09274513177567408,
+            "denominator_min_exclusive": 1.5378700499807768e-05,
+            "determinate": true,
+            "excess_ratio": 1.2475211374512747
+          }
+        }
+      },
+      "balanced_excess": {
+        "provenance_residual_copy_repair": 0.006938234513866484,
+        "provenance_residual_wrong_direction": 1.1308770464183655,
+        "provenance_residual_shuffled": 0.6326813815812105
+      },
+      "protected_regions": {
+        "background": {
+          "edit_mse_to_target": 0.00025443009565773714,
+          "source_render_mse_to_target": 0.00025313860394397065,
+          "target_render_mse_to_target": 0.00025153263533811453,
+          "reference_mse": 0.00025313860394397065,
+          "maximum_mse": 0.00031642325492996335
+        },
+        "distractor": {
+          "edit_mse_to_target": 0.0052028853129724465,
+          "source_render_mse_to_target": 0.005163122562599534,
+          "target_render_mse_to_target": 0.0051921422163636695,
+          "reference_mse": 0.0051921422163636695,
+          "maximum_mse": 0.006490177770454587
+        }
+      }
+    }
+  },
+  "comparator_report": {
+    "is_gate": false,
+    "arm_selection": "none",
+    "arms": {
+      "provenance_residual_copy_repair": {
+        "gpu_scenes": {
+          "13500": {
+            "detection": {
+              "present": true,
+              "pixels": 1750.0,
+              "centroid_xy": [
+                219.00857142857143,
+                287.1577142857143
+              ],
+              "centroid_error_to_target_px": 1.0208281551999738,
+              "positional_failure": false,
+              "general_detector": false,
+              "missing_detection_ordering": null
+            },
+            "region_excess": {
+              "source_hole": {
+                "edit_mse_to_target": 0.0018097991471354659,
+                "true_source_render_mse_to_target": 0.11430972376134871,
+                "true_target_render_mse_to_target": 0.0003834372400760894,
+                "denominator": 0.11392628652127262,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.012520042130865402
+              },
+              "destination": {
+                "edit_mse_to_target": 0.004961471376445053,
+                "true_source_render_mse_to_target": 0.06452313974188653,
+                "true_target_render_mse_to_target": 0.0038735062609353155,
+                "denominator": 0.06064963348095122,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.01793852745790203
+              }
+            },
+            "balanced_excess": 0.015229284794383718,
+            "protected_mse_to_target": {
+              "background": 0.00019600480337937084,
+              "distractor": 0.0037716873241671394
+            }
+          },
+          "13501": {
+            "detection": {
+              "present": true,
+              "pixels": 2756.0,
+              "centroid_xy": [
+                138.52285921625545,
+                289.52721335268507
+              ],
+              "centroid_error_to_target_px": 0.7049177071847207,
+              "positional_failure": false,
+              "general_detector": false,
+              "missing_detection_ordering": null
+            },
+            "region_excess": {
+              "source_hole": {
+                "edit_mse_to_target": 0.0013747392238798444,
+                "true_source_render_mse_to_target": 0.10743500293077693,
+                "true_target_render_mse_to_target": 0.0006678284728656275,
+                "denominator": 0.1067671744579113,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.006621049537026835
+              },
+              "destination": {
+                "edit_mse_to_target": 0.005742273187334752,
+                "true_source_render_mse_to_target": 0.09781450012625549,
+                "true_target_render_mse_to_target": 0.0050693683505814175,
+                "denominator": 0.09274513177567408,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.007255419490706133
+              }
+            },
+            "balanced_excess": 0.006938234513866484,
+            "protected_mse_to_target": {
+              "background": 0.00025443009565773714,
+              "distractor": 0.0052028853129724465
+            }
+          }
+        },
+        "latent_scenes": {
+          "13500": {
+            "source_hole": 0.08884685001517124,
+            "destination": 0.03875796757632835
+          },
+          "13501": {
+            "source_hole": 0.06272447462113949,
+            "destination": 0.010400287476866672
+          },
+          "13502": {
+            "source_hole": 0.07594298456557425,
+            "destination": 0.028682717252144687
+          },
+          "13503": {
+            "source_hole": 0.24785675809203955,
+            "destination": 0.08247083152325559
+          },
+          "13504": {
+            "source_hole": 0.06160916104968204,
+            "destination": 0.06657012830827073
+          },
+          "13505": {
+            "source_hole": 0.04913673596980798,
+            "destination": 0.02316316630624975
+          },
+          "13506": {
+            "source_hole": 0.06699387581885238,
+            "destination": 0.04944329094272536
+          },
+          "13507": {
+            "source_hole": 0.055908479619248726,
+            "destination": 0.07313295595377348
+          }
+        }
+      },
+      "provenance_local_copy_repair": {
+        "gpu_scenes": {
+          "13500": {
+            "detection": {
+              "present": true,
+              "pixels": 1750.0,
+              "centroid_xy": [
+                218.91885714285715,
+                286.8862857142857
+              ],
+              "centroid_error_to_target_px": 0.9258668304648996,
+              "positional_failure": false,
+              "general_detector": false,
+              "missing_detection_ordering": null
+            },
+            "region_excess": {
+              "source_hole": {
+                "edit_mse_to_target": 0.001180051413106573,
+                "true_source_render_mse_to_target": 0.11430972376134871,
+                "true_target_render_mse_to_target": 0.0003834372400760894,
+                "denominator": 0.11392628652127262,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.00699236495241805
+              },
+              "destination": {
+                "edit_mse_to_target": 0.004304588420065711,
+                "true_source_render_mse_to_target": 0.06452313974188653,
+                "true_target_render_mse_to_target": 0.0038735062609353155,
+                "denominator": 0.06064963348095122,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.007107745494715802
+              }
+            },
+            "balanced_excess": 0.007050055223566926,
+            "protected_mse_to_target": {
+              "background": 0.0001963965489727817,
+              "distractor": 0.003784168101491361
+            }
+          },
+          "13501": {
+            "detection": {
+              "present": true,
+              "pixels": 2775.0,
+              "centroid_xy": [
+                138.59963963963963,
+                289.5210810810811
+              ],
+              "centroid_error_to_target_px": 0.7674184180260495,
+              "positional_failure": false,
+              "general_detector": false,
+              "missing_detection_ordering": null
+            },
+            "region_excess": {
+              "source_hole": {
+                "edit_mse_to_target": 0.0013487771622095748,
+                "true_source_render_mse_to_target": 0.10743500293077693,
+                "true_target_render_mse_to_target": 0.0006678284728656275,
+                "denominator": 0.1067671744579113,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.006377884333844426
+              },
+              "destination": {
+                "edit_mse_to_target": 0.005283397567123062,
+                "true_source_render_mse_to_target": 0.09781450012625549,
+                "true_target_render_mse_to_target": 0.0050693683505814175,
+                "denominator": 0.09274513177567408,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.0023077137575190916
+              }
+            },
+            "balanced_excess": 0.004342799045681759,
+            "protected_mse_to_target": {
+              "background": 0.00025305456474443005,
+              "distractor": 0.005195842482034769
+            }
+          }
+        },
+        "latent_scenes": {
+          "13500": {
+            "source_hole": 0.07618856552757788,
+            "destination": 0.021327675395709726
+          },
+          "13501": {
+            "source_hole": 0.05545888513843444,
+            "destination": 0.009112299903397745
+          },
+          "13502": {
+            "source_hole": 0.06465860225719083,
+            "destination": 0.036764889383610715
+          },
+          "13503": {
+            "source_hole": 0.40933336431346595,
+            "destination": 0.07418609334384006
+          },
+          "13504": {
+            "source_hole": 0.07657453866638671,
+            "destination": 0.06210152288433275
+          },
+          "13505": {
+            "source_hole": 0.07155202630232445,
+            "destination": 0.015923993726920552
+          },
+          "13506": {
+            "source_hole": 0.08356761505128273,
+            "destination": 0.13243200359923235
+          },
+          "13507": {
+            "source_hole": 0.07394284184599767,
+            "destination": 0.12315708151153182
+          }
+        }
+      },
+      "provenance_copy_copy_repair": {
+        "gpu_scenes": {
+          "13500": {
+            "detection": {
+              "present": true,
+              "pixels": 1756.0,
+              "centroid_xy": [
+                218.7989749430524,
+                286.8576309794989
+              ],
+              "centroid_error_to_target_px": 0.8115601626645029,
+              "positional_failure": false,
+              "general_detector": false,
+              "missing_detection_ordering": null
+            },
+            "region_excess": {
+              "source_hole": {
+                "edit_mse_to_target": 0.001992735323015532,
+                "true_source_render_mse_to_target": 0.11430972376134871,
+                "true_target_render_mse_to_target": 0.0003834372400760894,
+                "denominator": 0.11392628652127262,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.014125783715762124
+              },
+              "destination": {
+                "edit_mse_to_target": 0.004214153056981976,
+                "true_source_render_mse_to_target": 0.06452313974188653,
+                "true_target_render_mse_to_target": 0.0038735062609353155,
+                "denominator": 0.06064963348095122,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.005616634042044969
+              }
+            },
+            "balanced_excess": 0.009871208878903547,
+            "protected_mse_to_target": {
+              "background": 0.0001967575648912154,
+              "distractor": 0.003778761929508467
+            }
+          },
+          "13501": {
+            "detection": {
+              "present": true,
+              "pixels": 2774.0,
+              "centroid_xy": [
+                138.59264599855803,
+                289.50432588320115
+              ],
+              "centroid_error_to_target_px": 0.7726073450797389,
+              "positional_failure": false,
+              "general_detector": false,
+              "missing_detection_ordering": null
+            },
+            "region_excess": {
+              "source_hole": {
+                "edit_mse_to_target": 0.0013555316051203508,
+                "true_source_render_mse_to_target": 0.10743500293077693,
+                "true_target_render_mse_to_target": 0.0006678284728656275,
+                "denominator": 0.1067671744579113,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.006441147625629288
+              },
+              "destination": {
+                "edit_mse_to_target": 0.00526474258676558,
+                "true_source_render_mse_to_target": 0.09781450012625549,
+                "true_target_render_mse_to_target": 0.0050693683505814175,
+                "denominator": 0.09274513177567408,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.002106571336344866
+              }
+            },
+            "balanced_excess": 0.004273859480987077,
+            "protected_mse_to_target": {
+              "background": 0.00025347491841417745,
+              "distractor": 0.005209062895634321
+            }
+          }
+        },
+        "latent_scenes": {
+          "13500": {
+            "source_hole": 0.08884685001517124,
+            "destination": 0.021327675395709726
+          },
+          "13501": {
+            "source_hole": 0.06272447462113949,
+            "destination": 0.009112299903397745
+          },
+          "13502": {
+            "source_hole": 0.07594298456557425,
+            "destination": 0.036764889383610715
+          },
+          "13503": {
+            "source_hole": 0.24785675809203955,
+            "destination": 0.07418609334384006
+          },
+          "13504": {
+            "source_hole": 0.06160916104968204,
+            "destination": 0.06210152288433275
+          },
+          "13505": {
+            "source_hole": 0.04913673596980798,
+            "destination": 0.015923993726920552
+          },
+          "13506": {
+            "source_hole": 0.06699387581885238,
+            "destination": 0.13243200359923235
+          },
+          "13507": {
+            "source_hole": 0.055908479619248726,
+            "destination": 0.12315708151153182
+          }
+        }
+      },
+      "residual_copy_repair": {
+        "gpu_scenes": {
+          "13500": {
+            "detection": {
+              "present": true,
+              "pixels": 1133.0,
+              "centroid_xy": [
+                213.81112091791704,
+                286.22506619594
+              ],
+              "centroid_error_to_target_px": 4.259956615387902,
+              "positional_failure": false,
+              "general_detector": false,
+              "missing_detection_ordering": null
+            },
+            "region_excess": {
+              "source_hole": {
+                "edit_mse_to_target": 0.01889670388211673,
+                "true_source_render_mse_to_target": 0.11430972376134871,
+                "true_target_render_mse_to_target": 0.0003834372400760894,
+                "denominator": 0.11392628652127262,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.16250215123604328
+              },
+              "destination": {
+                "edit_mse_to_target": 0.03673690947938096,
+                "true_source_render_mse_to_target": 0.06452313974188653,
+                "true_target_render_mse_to_target": 0.0038735062609353155,
+                "denominator": 0.06064963348095122,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.5418565839934936
+              }
+            },
+            "balanced_excess": 0.3521793676147684,
+            "protected_mse_to_target": {
+              "background": 0.00019915059019459972,
+              "distractor": 0.003803300217170676
+            }
+          },
+          "13501": {
+            "detection": {
+              "present": true,
+              "pixels": 2152.0,
+              "centroid_xy": [
+                140.96189591078067,
+                289.38011152416357
+              ],
+              "centroid_error_to_target_px": 3.026068259106867,
+              "positional_failure": false,
+              "general_detector": false,
+              "missing_detection_ordering": null
+            },
+            "region_excess": {
+              "source_hole": {
+                "edit_mse_to_target": 0.015479087488418704,
+                "true_source_render_mse_to_target": 0.10743500293077693,
+                "true_target_render_mse_to_target": 0.0006678284728656275,
+                "denominator": 0.1067671744579113,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.13872483832932964
+              },
+              "destination": {
+                "edit_mse_to_target": 0.062289310799599755,
+                "true_source_render_mse_to_target": 0.09781450012625549,
+                "true_target_render_mse_to_target": 0.0050693683505814175,
+                "denominator": 0.09274513177567408,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.616958985916568
+              }
+            },
+            "balanced_excess": 0.3778419121229488,
+            "protected_mse_to_target": {
+              "background": 0.00026288935849930526,
+              "distractor": 0.005267580748298371
+            }
+          }
+        },
+        "latent_scenes": {
+          "13500": {
+            "source_hole": 0.47233801392287134,
+            "destination": 0.7300793428939886
+          },
+          "13501": {
+            "source_hole": 0.34711832944387566,
+            "destination": 0.6117307575106424
+          },
+          "13502": {
+            "source_hole": 0.22254087003505768,
+            "destination": 0.31264731855692024
+          },
+          "13503": {
+            "source_hole": 0.4610706829722942,
+            "destination": 0.46367429539212296
+          },
+          "13504": {
+            "source_hole": 0.30814050617688715,
+            "destination": 0.34627578155718525
+          },
+          "13505": {
+            "source_hole": 0.25070452180599434,
+            "destination": 0.21918191130786388
+          },
+          "13506": {
+            "source_hole": 0.2596962482068655,
+            "destination": 0.3043407009715862
+          },
+          "13507": {
+            "source_hole": 0.2953523353633401,
+            "destination": 0.42169831814769837
+          }
+        }
+      },
+      "absolute_copy_repair": {
+        "gpu_scenes": {
+          "13500": {
+            "detection": {
+              "present": true,
+              "pixels": 1576.0,
+              "centroid_xy": [
+                219.86928934010152,
+                286.5672588832487
+              ],
+              "centroid_error_to_target_px": 1.9187254913468774,
+              "positional_failure": false,
+              "general_detector": false,
+              "missing_detection_ordering": null
+            },
+            "region_excess": {
+              "source_hole": {
+                "edit_mse_to_target": 0.0044266157058748135,
+                "true_source_render_mse_to_target": 0.11430972376134871,
+                "true_target_render_mse_to_target": 0.0003834372400760894,
+                "denominator": 0.11392628652127262,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.035489425568556304
+              },
+              "destination": {
+                "edit_mse_to_target": 0.03488134588160854,
+                "true_source_render_mse_to_target": 0.06452313974188653,
+                "true_target_render_mse_to_target": 0.0038735062609353155,
+                "denominator": 0.06064963348095122,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.5112617808384965
+              }
+            },
+            "balanced_excess": 0.2733756032035264,
+            "protected_mse_to_target": {
+              "background": 0.0027960478788360494,
+              "distractor": 0.03166058780250922
+            }
+          },
+          "13501": {
+            "detection": {
+              "present": true,
+              "pixels": 2157.0,
+              "centroid_xy": [
+                138.71256374594344,
+                291.65785813630043
+              ],
+              "centroid_error_to_target_px": 1.8045056642001696,
+              "positional_failure": false,
+              "general_detector": false,
+              "missing_detection_ordering": null
+            },
+            "region_excess": {
+              "source_hole": {
+                "edit_mse_to_target": 0.0029810045736927576,
+                "true_source_render_mse_to_target": 0.10743500293077693,
+                "true_target_render_mse_to_target": 0.0006678284728656275,
+                "denominator": 0.1067671744579113,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.021665611294593243
+              },
+              "destination": {
+                "edit_mse_to_target": 0.03543094930593215,
+                "true_source_render_mse_to_target": 0.09781450012625549,
+                "true_target_render_mse_to_target": 0.0050693683505814175,
+                "denominator": 0.09274513177567408,
+                "denominator_min_exclusive": 1.5378700499807768e-05,
+                "determinate": true,
+                "excess_ratio": 0.3273657643701166
+              }
+            },
+            "balanced_excess": 0.17451568783235494,
+            "protected_mse_to_target": {
+              "background": 0.0006376470323346258,
+              "distractor": 0.02996121548772662
+            }
+          }
+        },
+        "latent_scenes": {
+          "13500": {
+            "source_hole": 0.08884685001517124,
+            "destination": 0.7046330748525982
+          },
+          "13501": {
+            "source_hole": 0.06272447462113949,
+            "destination": 0.277490119826638
+          },
+          "13502": {
+            "source_hole": 0.07594298456557425,
+            "destination": 0.254678491968519
+          },
+          "13503": {
+            "source_hole": 0.24785675809203955,
+            "destination": 0.34809790501335225
+          },
+          "13504": {
+            "source_hole": 0.06160916104968204,
+            "destination": 0.3164067038293307
+          },
+          "13505": {
+            "source_hole": 0.04913673596980798,
+            "destination": 0.19205006194637583
+          },
+          "13506": {
+            "source_hole": 0.06699387581885238,
+            "destination": 0.29504726815559107
+          },
+          "13507": {
+            "source_hole": 0.055908479619248726,
+            "destination": 0.39305918390710193
+          }
+        }
+      }
+    },
+    "primary_minus_no_F_balanced_gpu_excess": {
+      "13500": 0.008179229570816793,
+      "13501": 0.0025954354681847246
+    }
+  },
+  "predeclared_protocol": "Fixed engineering qualification for the Day11 DEVELOPMENT transport pilot.\n\nDeclared before reading the follow-up GPU results. No optimization, arm\nselection, threshold fitting, fresh-scene access, or experiment execution.\nThe sole primary arm is provenance_residual_copy_repair. All checks must pass:\n\n1. Each of eight development scenes: latent source-hole AND destination\n   source-relative MSE ratios <= 0.5 (not an average over scenes/regions).\n2. Each of two GPU scenes: primary detection exists and target-centroid error\n   <= 4 pixels. True-target detection must exist with error <= 2 pixels before\n   interpreting this fixed synthetic-color diagnostic.\n3. GPU source-hole AND destination: (E_primary - E_true_target) /\n   (E_true_source - E_true_target) <= 0.5. E is rendered RGB MSE to target.\n   Denominator must exceed 1/255^2; otherwise this check is indeterminate/fail.\n4. GPU background AND distractor: E_primary <= E_ref + max(.25 E_ref,1/255^2),\n   where E_ref=max(E_true_source,E_true_target), using the same regional MSE.\n5. Correct centroid error is strictly less than wrong-direction error. Both\n   wrong-direction and shuffled mean(hole excess,destination excess) scores\n   must be >= correct + 0.10. A missing negative-control detection is recorded\n   as positional failure, treated as +infinity only for position ordering;\n   it never waives either required regional comparison. Infinity is not\n   serialized as a numeric measurement.\n\nNo learned-versus-no-F superiority criterion is imposed; fixed comparator\nresults are reported separately. A pass is an engineering-pilot gate only,\nnot production success, general object detection, or held-out generalization.\nAll inputs and this source are hash-bound. Missing/incomplete/mismatched\nevidence makes the gate fail; no result is silently dropped from aggregation.\nThis module uses only JSON/math/filesystem helpers and never loads JEPA,\ngenerator weights, RGB images, latent arrays, or fresh data.\n",
+  "input_paths": {
+    "transport_metrics": "/workspace/scratch/8e9e8b29a938/day11_compute/transport/metrics.json",
+    "transport_summary": "/workspace/scratch/8e9e8b29a938/day11_compute/transport/summary.json",
+    "transport_manifest": "/workspace/scratch/8e9e8b29a938/day11_compute/transport/evaluation_manifest.json",
+    "render_metrics": "/workspace/scratch/8e9e8b29a938/day11_compute/colab_transport_threads4/render/metrics.json",
+    "checkpoint_freeze": "/workspace/scratch/8e9e8b29a938/day11_compute/training/trained_checkpoint_freeze.json",
+    "qualification_source": "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day11/qualify_development.py",
+    "source:render_transport.py": "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day11/render_transport.py",
+    "source:render.py": "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day11/render.py",
+    "source:vace_bridge.py": "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day11/vace_bridge.py",
+    "source:transport.py": "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day11/transport.py"
+  }
+}

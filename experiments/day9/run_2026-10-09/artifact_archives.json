@@ -1,0 +1,52 @@
+{
+  "version": "day9_archive_index_v1",
+  "archives": [
+    {
+      "name": "Day9_Runtime_Validation.zip",
+      "bytes": 29374159,
+      "sha256": "06f99d2b904f1ff3f5af446afa26cfa6df0ca8d179e7c588e18dac68f35b9ddc",
+      "library_file_id": "libfile_1194e1f743088191abc0e109d75bd0bb",
+      "contents": "Current BF16 training fixture and precision diagnostics."
+    },
+    {
+      "name": "Day9_Features_Test_Seen.zip",
+      "bytes": 235169623,
+      "sha256": "c2a3bae260c1af5c68fc32c6e65d01dda39ee61e3fa5cd2fd40f1e6e0424ab0d",
+      "library_file_id": "libfile_dc0b6efd67c88191bf01046608a2c904",
+      "contents": "Eight fresh source/target feature caches; seen shift magnitudes."
+    },
+    {
+      "name": "Day9_Features_Test_Heldout.zip",
+      "bytes": 235223474,
+      "sha256": "b6853ac5cdf2c62b10b95135844351bb4b7ef6358f09e912ee48df2d33b61bc1",
+      "library_file_id": "libfile_b832dac439d88191bc1fe34e54bb8645",
+      "contents": "Eight fresh source/target feature caches; held-out shift magnitudes."
+    },
+    {
+      "name": "Day9_Test_Evidence.zip",
+      "bytes": 41184089,
+      "sha256": "dc0d6d9ab6e86b00eeca0748d806d110e87d22bfe4abfa7e144f09f7e53eba1f",
+      "library_file_id": "libfile_842af8f0333c81918233bbe53becd7c0",
+      "contents": "All raw prediction NPZs, scores, full authoritative feature manifest, metadata, freeze and audits."
+    }
+  ],
+  "restore_order": [
+    "Extract both feature archives into one day9 directory.",
+    "Extract Day9_Test_Evidence.zip last: features/manifest.json is the complete 16-scene authoritative manifest.",
+    "Extract Day9_Runtime_Validation.zip for raw precision evidence.",
+    "Restore the prior Day8 development caches, train_11000_dx+32 cache, frozen probe, and original Colab FP32 fixture for full selection/runtime reproduction."
+  ],
+  "dependencies": {
+    "probe_sha256": "bf18fc7be331d56d9aafd3462111d3f9dac622e9177a3e3e1bfd91710ab07eab",
+    "day8_reference_manifest_sha256": "d594cdb602242ef2d3bebbae1d42baca67bbded531cb39b962db92c39de84cbe",
+    "original_colab_fp32_fixture_sha256": "92806392a95ecdcc98a36750ec0c533aa78dafb05351054cac95a20217ea6d14",
+    "prior_archives": [
+      "Day8_Features_Development.zip",
+      "Day8_Features_Train_A.zip",
+      "Day8_Trained_Operators.zip",
+      "Day8_CPU_Reference.zip"
+    ]
+  },
+  "scope": "Code, reports and visual artifacts are Git-backed. Raw predictions and large feature caches are retained in the named archives; public model weights are not duplicated.",
+  "raw_archive_newline_note": "Raw dev_candidates.csv preserves the computation CRLF bytes; the pretest Git copy used LF with identical rows and values."
+}

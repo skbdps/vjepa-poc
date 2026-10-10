@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "artifacts": [
+    {
+      "path": "test_summary.png",
+      "sha256": "636e5538bd80948d7b184a8ae3dc6e4325bd053500f225073409aa5d272dc9f3",
+      "bytes": 69500
+    },
+    {
+      "path": "test_paired_changes.png",
+      "sha256": "eb37ebefb7db8a8dc07bab4e890591a6a7e6f1f208f468d73d9ffbd8d9870ead",
+      "bytes": 62081
+    },
+    {
+      "path": "test_12200_dx+32_comparison.png",
+      "sha256": "1b4a5012c1638ba81628543691e2a0dfc9eb9f8d43c0f31b118ef7da5a857dd5",
+      "bytes": 187919
+    },
+    {
+      "path": "test_12200_dx+32_comparison.mp4",
+      "sha256": "e9d1a6de6c1d3c24cfdd07643428e76634a5da415a6cc81948714ccb79c27fcd",
+      "bytes": 628396
+    },
+    {
+      "path": "test_12200_dx+32_occupancy.png",
+      "sha256": "d960fbcd3efde864a2e99c3879f9858018e9e378fde20a5a1ba50de1c498f9af",
+      "bytes": 80826
+    },
+    {
+      "path": "test_12200_dx+32_hole_diagnostics.png",
+      "sha256": "0832a51a7d0f58ca69b50da30413e1cfe8c78e9c73332c27086e5a0238b6361e",
+      "bytes": 86218
+    },
+    {
+      "path": "test_12208_dx+48_comparison.png",
+      "sha256": "29fbca251be4608635e77c8aea10dc3d60cee7680ffc444cbfdeeb97e9dcb757",
+      "bytes": 188639
+    },
+    {
+      "path": "test_12208_dx+48_comparison.mp4",
+      "sha256": "8f7a7915dd8ae2d00d60b2a7f6494c58881d0ce2514593c41b73d95fdb353b89",
+      "bytes": 594255
+    },
+    {
+      "path": "test_12208_dx+48_occupancy.png",
+      "sha256": "2965b428cadd69e872df41a9defba71ad0163b2a2f0bdef8b2e88caf6d7b9b37",
+      "bytes": 84240
+    },
+    {
+      "path": "test_12208_dx+48_hole_diagnostics.png",
+      "sha256": "2109c4dee5d4fff22f62db6db5a52bd2733aa302ca475b878548647a785a19b8",
+      "bytes": 88925
+    }
+  ]
+}

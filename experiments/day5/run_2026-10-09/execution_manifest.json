@@ -1,0 +1,13 @@
+{
+  "experiment_commit": "de419ad916e57e04271c14fd830a8a52022b764e",
+  "completed_utc": "2026-10-09T05:25:47.575017+00:00",
+  "test_clips": 12,
+  "smoke_clips": 3,
+  "runtime": {
+    "torch": "2.11.0+cu130",
+    "gpu": "Tesla T4",
+    "sam2_repository_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "sam2_repository": "/content/sam2"
+  },
+  "no_parameter_selection": true
+}

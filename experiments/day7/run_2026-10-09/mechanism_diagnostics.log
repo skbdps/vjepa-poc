@@ -1,0 +1,17 @@
+DAY7_DIAGNOSTIC_COMPLETE retrieval_only_seed1701
+DAY7_DIAGNOSTIC_COMPLETE predictive_seed1701
+DAY7_DIAGNOSTIC_COMPLETE retrieval_only_seed1702
+DAY7_DIAGNOSTIC_COMPLETE predictive_seed1702
+DAY7_DIAGNOSTIC_COMPLETE retrieval_only_seed1703
+DAY7_DIAGNOSTIC_COMPLETE predictive_seed1703
+{
+  "checkpoints": [
+    "retrieval_only_seed1701",
+    "predictive_seed1701",
+    "retrieval_only_seed1702",
+    "predictive_seed1702",
+    "retrieval_only_seed1703",
+    "predictive_seed1703"
+  ],
+  "seconds": 36.086443697000504
+}

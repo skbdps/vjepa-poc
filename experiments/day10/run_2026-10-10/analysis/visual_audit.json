@@ -1,0 +1,41 @@
+{
+  "schema": "day10_visual_audit_v1",
+  "display_integrity_passed": true,
+  "experiment_qualified_controlled_result": false,
+  "visualizer_sha256": "490fc3c9626e2682e3d2fa92d158ae678f54de895c3cbb45a9cd0adeda5b1007",
+  "visualization_manifest_sha256": "a5659bdae197763a620572cf3f4ccc84cd84494f5c983efb4c938ca4f91e3eaf",
+  "summary_sha256": "71fc54e8c9cb19d33ba6f28673eb39fd05def9acb10cec3a8c421530cee047a6",
+  "scene_names": [
+    "image_13200",
+    "image_13201",
+    "image_13202",
+    "image_13203"
+  ],
+  "primary_preview": "image_13200_preview.mp4",
+  "artifact_count": 24,
+  "mp4_count": 8,
+  "gif_count": 4,
+  "png_count": 12,
+  "all_saved_artifact_sizes_and_hashes_rechecked": true,
+  "every_mp4_and_gif_fully_decoded": true,
+  "inspection": [
+    "All four maximum-displacement preview PNGs inspected.",
+    "Primary image_13200 four-panel evidence PNG inspected.",
+    "Primary image_13200 supplied-mask PNG inspected.",
+    "Text is legible and fits; the main preview has only two panels.",
+    "Coarse 24x24 readout and prescribed motion are explicitly labeled.",
+    "The evaluation-only target pixels are separate from edited output.",
+    "Warm/cool object colours are visibly incorrect in edited readouts.",
+    "Incorrect colours are already visible in the unedited and genuine-target readouts; this is not evidence of faithful appearance animation."
+  ],
+  "genuine_readout_gate": false,
+  "genuine_coarse_color_accuracy_all_states": 0.0,
+  "genuine_color_eligible_states": 24,
+  "modifications_after_test": [
+    "None to visualizer source or colour outputs."
+  ],
+  "limits": [
+    "Visual integrity pass describes the honesty and completeness of the displays, not experiment success.",
+    "Coarse readout colour fidelity failed; no detailed identity or full RGB animation claim is supported."
+  ]
+}

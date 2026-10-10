@@ -1,0 +1,150 @@
+{
+  "version": "day9_source_hole_repair_freeze_v1",
+  "created_utc": "2026-10-09T18:36:29.774520+00:00",
+  "test_accessed": false,
+  "source_hashes": {
+    "experiments/day8/data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+    "experiments/day8/evaluate.py": "fec3a0489c846c96c0b58e8725ab22a20923eed57ac0cce65abfa073b8b0929c",
+    "experiments/day8/extract.py": "de2b366a53cae32f13741570f6dcefd525e45bfe04a2fda5b909d54579f1982f",
+    "experiments/day8/operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+    "experiments/day8/probe.py": "9a736ddd5bb64c19a5205f12d606bcd1f1bc562367effcbba96dd8c0a1b8790d",
+    "experiments/day8/validate_precision.py": "7f04b944fae5f4fa32001d4bfff9960d94aadd7f1e702ca94ae22399526c0b4b",
+    "experiments/day9/PROTOCOL.md": "ff8c2e13110a3eedca0987f0b36353095ec2b9b1f257c19db0f1a0d21f086464",
+    "experiments/day9/evaluate.py": "b66ad105793b0c6eef803b051ac52940ff4a09002fbe0716b946733cda1726d6",
+    "experiments/day9/extract.py": "e1331a8096506ef0674351b454dc8564e64ebcd15fc02be8662fa2c5a063e3c2",
+    "experiments/day9/runtime_gate.py": "b57459c84b9de2dca288acdad12b01a031328fc8c6c9aeb6e42641e0f164a39e",
+    "experiments/day9/temporal.py": "f54f57208a7bba9863c507ba45269db34cf7b3c4a5dc493d395b790a6a3feb23",
+    "experiments/day9/validate_runtime.py": "13bea5c1fd5feb1a5116fd2aca6eea58b1edf92bc6c2a00f1593f9f50d223c17"
+  },
+  "dev_selection": {
+    "path": "dev/dev_selection.json",
+    "sha256": "4b71b028af0a3f70c55668e51e9515a59bb0cbb98ebb247e264eaa5b18d22666"
+  },
+  "runtime_validation": {
+    "path": "runtime_gate.json",
+    "sha256": "79f2310524d76f82c1d937361327cc614b8fe160f45d1269166029bd8877a714"
+  },
+  "probe_sha256": "bf18fc7be331d56d9aafd3462111d3f9dac622e9177a3e3e1bfd91710ab07eab",
+  "reference_manifest_sha256": "d594cdb602242ef2d3bebbae1d42baca67bbded531cb39b962db92c39de84cbe",
+  "test_specs": [
+    {
+      "name": "test_12200_dx+32",
+      "seed": 12200,
+      "dx": 32,
+      "split": "test",
+      "shift_regime": "seen_magnitude"
+    },
+    {
+      "name": "test_12201_dx-32",
+      "seed": 12201,
+      "dx": -32,
+      "split": "test",
+      "shift_regime": "seen_magnitude"
+    },
+    {
+      "name": "test_12202_dx+64",
+      "seed": 12202,
+      "dx": 64,
+      "split": "test",
+      "shift_regime": "seen_magnitude"
+    },
+    {
+      "name": "test_12203_dx-64",
+      "seed": 12203,
+      "dx": -64,
+      "split": "test",
+      "shift_regime": "seen_magnitude"
+    },
+    {
+      "name": "test_12204_dx+32",
+      "seed": 12204,
+      "dx": 32,
+      "split": "test",
+      "shift_regime": "seen_magnitude"
+    },
+    {
+      "name": "test_12205_dx-32",
+      "seed": 12205,
+      "dx": -32,
+      "split": "test",
+      "shift_regime": "seen_magnitude"
+    },
+    {
+      "name": "test_12206_dx+64",
+      "seed": 12206,
+      "dx": 64,
+      "split": "test",
+      "shift_regime": "seen_magnitude"
+    },
+    {
+      "name": "test_12207_dx-64",
+      "seed": 12207,
+      "dx": -64,
+      "split": "test",
+      "shift_regime": "seen_magnitude"
+    },
+    {
+      "name": "test_12208_dx+48",
+      "seed": 12208,
+      "dx": 48,
+      "split": "test",
+      "shift_regime": "heldout_magnitude"
+    },
+    {
+      "name": "test_12209_dx-48",
+      "seed": 12209,
+      "dx": -48,
+      "split": "test",
+      "shift_regime": "heldout_magnitude"
+    },
+    {
+      "name": "test_12210_dx+80",
+      "seed": 12210,
+      "dx": 80,
+      "split": "test",
+      "shift_regime": "heldout_magnitude"
+    },
+    {
+      "name": "test_12211_dx-80",
+      "seed": 12211,
+      "dx": -80,
+      "split": "test",
+      "shift_regime": "heldout_magnitude"
+    },
+    {
+      "name": "test_12212_dx+48",
+      "seed": 12212,
+      "dx": 48,
+      "split": "test",
+      "shift_regime": "heldout_magnitude"
+    },
+    {
+      "name": "test_12213_dx-48",
+      "seed": 12213,
+      "dx": -48,
+      "split": "test",
+      "shift_regime": "heldout_magnitude"
+    },
+    {
+      "name": "test_12214_dx+80",
+      "seed": 12214,
+      "dx": 80,
+      "split": "test",
+      "shift_regime": "heldout_magnitude"
+    },
+    {
+      "name": "test_12215_dx-80",
+      "seed": 12215,
+      "dx": -80,
+      "split": "test",
+      "shift_regime": "heldout_magnitude"
+    }
+  ],
+  "selected": {
+    "kind": "aligned_temporal_mean",
+    "alpha": 1.0,
+    "mean_source_hole_ratio": 0.04084390177549935
+  },
+  "purpose": "Fresh test of source-only temporal source-hole completion; Day8 destination fixed exactly",
+  "old_day8_test_used_for_selection": false
+}

@@ -1,0 +1,9 @@
+LOAD_START 2.9.0+cpu 8
+Error importing huggingface_hub.hf_api: No module named 'requests'
+/tmp/vjepa-day9-deps/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+LOAD_DONE 7.682092472000022
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+PRECISION_DONE bfloat16 40.88910532299997 {"global": {"source_precision_mse": 0.0019230917096138, "target_precision_mse": 0.001931111211888492, "true_edit_mse": 0.23961922526359558, "source_ratio": 0.00802561525477884, "target_ratio": 0.00805908294613737, "tokens": 9216, "denominator_floored": false}, "source_hole": {"source_precision_mse": 0.0009271502494812012, "target_precision_mse": 0.001871971064247191, "true_edit_mse": 5.707324504852295, "source_ratio": 0.000162449191156548, "target_ratio": 0.0003279945029681885, "tokens": 149, "denominator_floored": false}, "destination": {"source_precision_mse": 0.0014589735073968768, "target_precision_mse": 0.0008962088613770902, "true_edit_mse": 4.454372882843018, "source_ratio": 0.00032753735391494263, "target_ratio": 0.00020119753890138675, "tokens": 290, "denominator_floored": false}}
+PRECISION_VALIDATED bfloat16

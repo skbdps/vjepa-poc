@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "data_version": "day8_paired_latent_translation_v1",
+  "fixtures": [
+    {
+      "name": "train_11000_dx+32",
+      "source_sha256": "7b65bd873d5f5f4039b326348b341f91428955120f238e9e092e6bf59538704a",
+      "target_sha256": "5943c485b52d4111a7eb89c05d42b76dcb9340d259c9794d34fb3538066f2f49",
+      "selected_pixels_per_frame": 2289,
+      "source_xy_range": [
+        133,
+        82
+      ]
+    },
+    {
+      "name": "train_11001_dx-32",
+      "source_sha256": "5fb75f4945bf4dbfb6f3ac99e13465affa26bb7914836ab0bf307235987a9c73",
+      "target_sha256": "e642adb549430243f039129b8966d3d6be1999a96a50af9271b57b5181f38767",
+      "selected_pixels_per_frame": 1793,
+      "source_xy_range": [
+        95,
+        60
+      ]
+    },
+    {
+      "name": "train_11002_dx+64",
+      "source_sha256": "ed82fc6a8a2db43ed33e8a1cfa54d9fda658b756a7792b3fbdd89e5a183ad8c1",
+      "target_sha256": "c7ce6797ada94d2a3345ba308af40e7983114c9fbe9d7589a6250c6902ec60eb",
+      "selected_pixels_per_frame": 1961,
+      "source_xy_range": [
+        143,
+        92
+      ]
+    },
+    {
+      "name": "train_11003_dx-64",
+      "source_sha256": "d18ec0b66e51384aca43fbdb595636c308c334d9a1d8d20aafc3b8005bc43c89",
+      "target_sha256": "7ca6e9743fcdc230776537d021d35985d8898e3f1a35ed29919ff1b78d241c85",
+      "selected_pixels_per_frame": 2821,
+      "source_xy_range": [
+        114,
+        94
+      ]
+    }
+  ],
+  "checks": [
+    "disjoint split seeds",
+    "balanced displacement manifest",
+    "integer translation geometry",
+    "exact transported object texture",
+    "unchanged outside intervention union",
+    "exact optional empty-object control",
+    "no object/distractor overlap",
+    "moving source trajectory",
+    "source independent of requested displacement",
+    "deterministic regeneration",
+    "tubelet coverage accounting"
+  ],
+  "test_pixels_rendered": false
+}

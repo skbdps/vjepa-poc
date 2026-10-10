@@ -1,0 +1,9 @@
+{
+  "freeze_sha256": "b0fc8b2e0579432feb5bb4e6517cbdd289cbed8ab5f9e22acf4525ac1fe4ecfd",
+  "bytes_equal_to_GitHub": true,
+  "test_encoded_before_verification": false,
+  "commit": "5b2f68a84badb047411b2d4197a6c5261aeb7176",
+  "verified_utc": "2026-10-09T23:02:44.792Z",
+  "repository_path": "experiments/day10/run_2026-10-10/freeze.json",
+  "source_and_calibration_git_blobs_verified": 14
+}

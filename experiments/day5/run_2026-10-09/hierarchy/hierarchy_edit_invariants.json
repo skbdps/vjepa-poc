@@ -1,0 +1,41 @@
+{
+  "sequence": "test_crossing_6200",
+  "provenance": {
+    "clip_manifest_sha256": "86f75c55066d86ef7df6dc5aa5426fe6e877ee6a3ce8f4e8b73a4b905d57aeaf",
+    "report_sha256": "176e4033511061d0f628cdd3fd1109bbdde30205e3c33190f8eb8538d73c8e04",
+    "prediction_archives": {
+      "children": {
+        "path": "clips/test_crossing_6200/children/sam2_masks.npz",
+        "sha256": "3e3fc3552cad5dd0335b1b90e459365f2d35b88963b882e5911557f89449cb96"
+      },
+      "parents": {
+        "path": "clips/test_crossing_6200/parents/sam2_masks.npz",
+        "sha256": "13c6d25959844587687175185e5bcd3cf4fe43d86305cd28228f089d5a0e17d9"
+      }
+    },
+    "rgb_sha256": "8c00c1e4be0fbca7bb0cf659b4c6971dc7a9220c8d2b3f6d0941e3319925b48f",
+    "source_digest": "fea39b4e91e3e02177503b1f3c0444c54f62966e8cf4a9844ae76833cbfc6314",
+    "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+    "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "builder_sha256": "c4de97c9210923f65d1e3d7843445a86c0cf6fd8612e822a3e2456e79c9b64c0",
+    "embedded_video_sha256": "c1a84a2dc13aeb199b40e3bbd9e82147459d442357610abd27d563a8f97bc267"
+  },
+  "frames_checked": 64,
+  "rle_exact_roundtrips": 384,
+  "unit": "RGB pixels before lossy encoding; includes annotation frame0",
+  "modes": {
+    "raw": {
+      "changed_outside_permitted_pixels": 0,
+      "changed_raw_overlap_pixels": 0,
+      "changed_outside_own_predicted_parent_pixels": null,
+      "enabled_part_frames": 256
+    },
+    "contained": {
+      "changed_outside_permitted_pixels": 0,
+      "changed_raw_overlap_pixels": 0,
+      "changed_outside_own_predicted_parent_pixels": 0,
+      "enabled_part_frames": 256
+    }
+  },
+  "contained_is_subset_of_raw_for_every_part_frame": true
+}

@@ -1,0 +1,50 @@
+/usr/local/lib/python3.13/dist-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/usr/lib/python3.13/contextlib.py:109: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+FEATURE_DONE train_long_occlusion_7100 10.68
+FEATURE_DONE train_long_occlusion_7101 7.15
+FEATURE_DONE train_long_occlusion_7102 7.62
+FEATURE_DONE train_long_occlusion_7103 7.65
+FEATURE_DONE train_long_occlusion_7104 7.26
+FEATURE_DONE train_long_occlusion_7105 7.6
+FEATURE_DONE train_long_occlusion_7106 7.27
+FEATURE_DONE train_long_occlusion_7107 7.64
+FEATURE_DONE train_long_occlusion_7108 7.77
+FEATURE_DONE train_long_occlusion_7109 7.15
+FEATURE_DONE train_long_occlusion_7110 7.59
+FEATURE_DONE train_long_occlusion_7111 7.22
+FEATURE_DONE train_crossing_7200 7.35
+FEATURE_DONE train_crossing_7201 7.73
+FEATURE_DONE train_crossing_7202 7.21
+FEATURE_DONE train_crossing_7203 7.87
+FEATURE_DONE train_crossing_7204 7.69
+FEATURE_DONE train_crossing_7205 7.41
+FEATURE_DONE train_crossing_7206 7.91
+FEATURE_DONE train_crossing_7207 7.1
+FEATURE_DONE train_crossing_7208 7.41
+FEATURE_DONE train_crossing_7209 7.55
+FEATURE_DONE train_crossing_7210 7.23
+FEATURE_DONE train_crossing_7211 7.61
+FEATURE_DONE train_scale_camera_7300 7.46
+FEATURE_DONE train_scale_camera_7301 7.97
+FEATURE_DONE train_scale_camera_7302 7.93
+FEATURE_DONE train_scale_camera_7303 7.45
+FEATURE_DONE train_scale_camera_7304 7.82
+FEATURE_DONE train_scale_camera_7305 8.15
+FEATURE_DONE train_scale_camera_7306 7.52
+FEATURE_DONE train_scale_camera_7307 8.02
+FEATURE_DONE train_scale_camera_7308 8.25
+FEATURE_DONE train_scale_camera_7309 7.47
+FEATURE_DONE train_scale_camera_7310 8.14
+FEATURE_DONE train_scale_camera_7311 7.93
+FEATURE_DONE dev_long_occlusion_9100 7.34
+FEATURE_DONE dev_long_occlusion_9101 7.63
+FEATURE_DONE dev_long_occlusion_9102 7.06
+FEATURE_DONE dev_crossing_9200 7.51
+FEATURE_DONE dev_crossing_9201 7.78
+FEATURE_DONE dev_crossing_9202 7.11
+FEATURE_DONE dev_scale_camera_9300 8.09
+FEATURE_DONE dev_scale_camera_9301 7.8
+FEATURE_DONE dev_scale_camera_9302 7.94
+EXTRACTION_COMPLETE 45

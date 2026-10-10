@@ -1,0 +1,6896 @@
+{
+  "version": "day9_source_hole_repair_v1",
+  "n_independent_scenes": 16,
+  "methods": {
+    "all": {
+      "noop": {
+        "source_hole_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_mse": {
+          "mean": 5.414181555651897,
+          "ci95": [
+            5.318788321137004,
+            5.52914681249505
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.414181555651897,
+          "ci95": [
+            5.318788321137004,
+            5.52914681249505
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_mse": {
+          "mean": 4.923560214945807,
+          "ci95": [
+            4.6754948127823575,
+            5.153005210721854
+          ],
+          "n_scenes": 16
+        },
+        "balanced_region_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "hole_rgb_mse": {
+          "mean": 0.035158898177400685,
+          "ci95": [
+            0.030353255081301874,
+            0.040267303106767856
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.47335843258858606,
+          "ci95": [
+            0.4515474449161861,
+            0.49453925105703517
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.45068557458408665,
+          "ci95": [
+            0.42357452388194233,
+            0.4773119869704044
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 56.03312208656182,
+          "ci95": [
+            47.07516076612146,
+            64.99627949596758
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.043871964321878454,
+          "ci95": [
+            0.011354757247450262,
+            0.08334835292594427
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0722081940367368,
+          "ci95": [
+            0.06302637613028814,
+            0.0805435424579429
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.5400523718047991,
+          "ci95": [
+            1.408583830975048,
+            1.6791151454642443
+          ],
+          "n_scenes": 16
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.65625,
+          "ci95": [
+            0.46484375,
+            0.8359375
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_correct": {
+          "mean": 10.5,
+          "ci95": [
+            7.4375,
+            13.375
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1873527025354442,
+          "ci95": [
+            1.097410904014076,
+            1.2789050193456504
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9395570792055168,
+          "ci95": [
+            0.9238183769897638,
+            0.9532273453000992
+          ],
+          "n_scenes": 16
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.644848456486277,
+          "ci95": [
+            1.4499680208502699,
+            1.8418590736283051
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 31.4205322265625,
+          "ci95": [
+            30.1111572265625,
+            32.61392517089844
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 286.0,
+          "ci95": [
+            272.4375,
+            299.6875
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 31.4205322265625,
+          "ci95": [
+            30.1111572265625,
+            32.61392517089844
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 286.0,
+          "ci95": [
+            272.4375,
+            299.6875
+          ],
+          "n_scenes": 16
+        }
+      },
+      "naive": {
+        "source_hole_ratio": {
+          "mean": 0.22493605883117476,
+          "ci95": [
+            0.20808672918162588,
+            0.24029567720788755
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_mse": {
+          "mean": 1.2134182415064254,
+          "ci95": [
+            1.1326300396680689,
+            1.2877451814428853
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.414181555651897,
+          "ci95": [
+            5.318788321137004,
+            5.52914681249505
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.02806564585907298,
+          "ci95": [
+            0.024467655402726784,
+            0.03197919637493425
+          ],
+          "n_scenes": 16
+        },
+        "destination_mse": {
+          "mean": 0.13872223860959418,
+          "ci95": [
+            0.11858579863524546,
+            0.16180045732807424
+          ],
+          "n_scenes": 16
+        },
+        "balanced_region_ratio": {
+          "mean": 0.12650085234512387,
+          "ci95": [
+            0.11765068733873969,
+            0.13449334130554016
+          ],
+          "n_scenes": 16
+        },
+        "hole_rgb_mse": {
+          "mean": 0.015193527993268452,
+          "ci95": [
+            0.0120461137806559,
+            0.018257827741000498
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.07367852721394183,
+          "ci95": [
+            0.06111657504641023,
+            0.08632021645825058
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 2.471623637000058,
+          "ci95": [
+            1.6316008644891764,
+            3.4371003897371377
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.9316232053536742,
+          "ci95": [
+            0.9146422688097494,
+            0.946592668399309
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0018830198483381832,
+          "ci95": [
+            0.0016414562301287823,
+            0.0021367054346126536
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 2.2373637376863913,
+          "ci95": [
+            1.7721343971267314,
+            2.731863794827987
+          ],
+          "n_scenes": 16
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1873527025354442,
+          "ci95": [
+            1.097410904014076,
+            1.2789050193456504
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9395570792055168,
+          "ci95": [
+            0.9238183769897638,
+            0.9532273453000992
+          ],
+          "n_scenes": 16
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.644848456486277,
+          "ci95": [
+            1.4499680208502699,
+            1.8418590736283051
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        }
+      },
+      "temporal_mean": {
+        "source_hole_ratio": {
+          "mean": 0.05005526726363109,
+          "ci95": [
+            0.04199914926581951,
+            0.06025937487975507
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_mse": {
+          "mean": 0.26887425227298933,
+          "ci95": [
+            0.2284173620807619,
+            0.3204689551149254
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.414181555651897,
+          "ci95": [
+            5.318788321137004,
+            5.52914681249505
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.02806564585907298,
+          "ci95": [
+            0.024467655402726784,
+            0.03197919637493425
+          ],
+          "n_scenes": 16
+        },
+        "destination_mse": {
+          "mean": 0.13872223860959418,
+          "ci95": [
+            0.11858579863524546,
+            0.16180045732807424
+          ],
+          "n_scenes": 16
+        },
+        "balanced_region_ratio": {
+          "mean": 0.03906045656135204,
+          "ci95": [
+            0.03401302207219514,
+            0.0455245256140152
+          ],
+          "n_scenes": 16
+        },
+        "hole_rgb_mse": {
+          "mean": 0.0023208518956913345,
+          "ci95": [
+            0.0016350211458225448,
+            0.0031062120140330396
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.004750194215797998,
+          "ci95": [
+            0.00305876074061346,
+            0.007045333015287853
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1810667476735732,
+          "ci95": [
+            1.1127699257926762,
+            1.2620000680401637
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.9316232053536742,
+          "ci95": [
+            0.9146422688097494,
+            0.946592668399309
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0018830198483381832,
+          "ci95": [
+            0.0016414562301287823,
+            0.0021367054346126536
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.5577397930879595,
+          "ci95": [
+            1.4280346281644307,
+            1.6924495884816286
+          ],
+          "n_scenes": 16
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1873527025354442,
+          "ci95": [
+            1.097410904014076,
+            1.2789050193456504
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9395570792055168,
+          "ci95": [
+            0.9238183769897638,
+            0.9532273453000992
+          ],
+          "n_scenes": 16
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.644848456486277,
+          "ci95": [
+            1.4499680208502699,
+            1.8418590736283051
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        }
+      },
+      "aligned_temporal_mean": {
+        "source_hole_ratio": {
+          "mean": 0.03946585879297204,
+          "ci95": [
+            0.03174532298533033,
+            0.04919415659940479
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_mse": {
+          "mean": 0.21167711158015098,
+          "ci95": [
+            0.172274613045435,
+            0.26113211504196804
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.414181555651897,
+          "ci95": [
+            5.318788321137004,
+            5.52914681249505
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.02806564585907298,
+          "ci95": [
+            0.024467655402726784,
+            0.03197919637493425
+          ],
+          "n_scenes": 16
+        },
+        "destination_mse": {
+          "mean": 0.13872223860959418,
+          "ci95": [
+            0.11858579863524546,
+            0.16180045732807424
+          ],
+          "n_scenes": 16
+        },
+        "balanced_region_ratio": {
+          "mean": 0.03376575232602251,
+          "ci95": [
+            0.028796201589668436,
+            0.03992545678266504
+          ],
+          "n_scenes": 16
+        },
+        "hole_rgb_mse": {
+          "mean": 0.0025894696649973116,
+          "ci95": [
+            0.0019307466305098888,
+            0.00332020534099395
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.004684904248529177,
+          "ci95": [
+            0.0031590352787304117,
+            0.006709332701840108
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1717899094048458,
+          "ci95": [
+            1.1112997178535788,
+            1.2395616139154075
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.9316232053536742,
+          "ci95": [
+            0.9146422688097494,
+            0.946592668399309
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0018830198483381832,
+          "ci95": [
+            0.0016414562301287823,
+            0.0021367054346126536
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.5400523718047991,
+          "ci95": [
+            1.408583830975049,
+            1.6791151454642446
+          ],
+          "n_scenes": 16
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1873527025354442,
+          "ci95": [
+            1.097410904014076,
+            1.2789050193456504
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9395570792055168,
+          "ci95": [
+            0.9238183769897638,
+            0.9532273453000992
+          ],
+          "n_scenes": 16
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.644848456486277,
+          "ci95": [
+            1.4499680208502699,
+            1.8418590736283051
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        }
+      },
+      "dev_selected": {
+        "source_hole_ratio": {
+          "mean": 0.03946585879297204,
+          "ci95": [
+            0.03174532298533033,
+            0.04919415659940479
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_mse": {
+          "mean": 0.21167711158015098,
+          "ci95": [
+            0.172274613045435,
+            0.26113211504196804
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.414181555651897,
+          "ci95": [
+            5.318788321137004,
+            5.52914681249505
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.02806564585907298,
+          "ci95": [
+            0.024467655402726784,
+            0.03197919637493425
+          ],
+          "n_scenes": 16
+        },
+        "destination_mse": {
+          "mean": 0.13872223860959418,
+          "ci95": [
+            0.11858579863524546,
+            0.16180045732807424
+          ],
+          "n_scenes": 16
+        },
+        "balanced_region_ratio": {
+          "mean": 0.03376575232602251,
+          "ci95": [
+            0.028796201589668436,
+            0.03992545678266504
+          ],
+          "n_scenes": 16
+        },
+        "hole_rgb_mse": {
+          "mean": 0.0025894696649973116,
+          "ci95": [
+            0.0019307466305098888,
+            0.00332020534099395
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.004684904248529177,
+          "ci95": [
+            0.0031590352787304117,
+            0.006709332701840108
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1717899094048458,
+          "ci95": [
+            1.1112997178535788,
+            1.2395616139154075
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.9316232053536742,
+          "ci95": [
+            0.9146422688097494,
+            0.946592668399309
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0018830198483381832,
+          "ci95": [
+            0.0016414562301287823,
+            0.0021367054346126536
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.5400523718047991,
+          "ci95": [
+            1.408583830975049,
+            1.6791151454642446
+          ],
+          "n_scenes": 16
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1873527025354442,
+          "ci95": [
+            1.097410904014076,
+            1.2789050193456504
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9395570792055168,
+          "ci95": [
+            0.9238183769897638,
+            0.9532273453000992
+          ],
+          "n_scenes": 16
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.644848456486277,
+          "ci95": [
+            1.4499680208502699,
+            1.8418590736283051
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        }
+      },
+      "genuine_target": {
+        "source_hole_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.414181555651897,
+          "ci95": [
+            5.318788321137004,
+            5.52914681249505
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "balanced_region_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "hole_rgb_mse": {
+          "mean": 0.002002964048538672,
+          "ci95": [
+            0.001424270360478258,
+            0.002684333691595894
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.0029151483423875794,
+          "ci95": [
+            0.002075017550863238,
+            0.004023912538473239
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.15805290386156,
+          "ci95": [
+            1.085172346644086,
+            1.241273575055577
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.9389130834443336,
+          "ci95": [
+            0.9259660253483495,
+            0.950155942419126
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0018587402062328461,
+          "ci95": [
+            0.0016370282291470956,
+            0.0020871203844215346
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.4552313183473862,
+          "ci95": [
+            1.3182935658940684,
+            1.5847722199873995
+          ],
+          "n_scenes": 16
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.173199185687849,
+          "ci95": [
+            1.0841958409263417,
+            1.263825194036965
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 3.7308283982184776e-05,
+          "ci95": [
+            2.905640297363732e-05,
+            4.631910675039208e-05
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 3.786227134838782e-05,
+          "ci95": [
+            3.1693216894179696e-05,
+            4.333537073764049e-05
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.9384190245518371,
+          "ci95": [
+            0.9252443156886516,
+            0.9503327241877048
+          ],
+          "n_scenes": 16
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.626466622247232,
+          "ci95": [
+            1.4479383794223084,
+            1.804663241630781
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 13.152587890625,
+          "ci95": [
+            11.851898193359375,
+            14.6389404296875
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 8989.125,
+          "ci95": [
+            8961.9984375,
+            9018.1890625
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 12.429931640625,
+          "ci95": [
+            10.940655517578126,
+            14.09425048828125
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 286.0,
+          "ci95": [
+            272.4375,
+            299.6875
+          ],
+          "n_scenes": 16
+        }
+      }
+    },
+    "seen_magnitude": {
+      "noop": {
+        "source_hole_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 5.401753939473947,
+          "ci95": [
+            5.300108034481846,
+            5.495536681350747
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.401753939473947,
+          "ci95": [
+            5.300108034481846,
+            5.495536681350747
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 4.676773159693318,
+          "ci95": [
+            4.356296071514043,
+            4.999209576150628
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.031061359392617015,
+          "ci95": [
+            0.02328707592600129,
+            0.03983228193004194
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.46387697349347945,
+          "ci95": [
+            0.42565972993404716,
+            0.5035023356336813
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.4415127756181353,
+          "ci95": [
+            0.3948802391616988,
+            0.48899058574299903
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 48.12919316971761,
+          "ci95": [
+            36.18362805086974,
+            60.060408617188635
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.08291055799581826,
+          "ci95": [
+            0.021508807059007814,
+            0.14286275269919338
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0666963126378314,
+          "ci95": [
+            0.05135671133775917,
+            0.08217143415690964
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.5093646303366572,
+          "ci95": [
+            1.34749785710559,
+            1.6928388726125705
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.6953125,
+          "ci95": [
+            0.3984375,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 11.125,
+          "ci95": [
+            6.375,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.2239723966700176,
+          "ci95": [
+            1.0938870721949039,
+            1.359361886585624
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.9449747734903985,
+          "ci95": [
+            0.9208156670803156,
+            0.9627517014235765
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.7522260598765835,
+          "ci95": [
+            1.520670522212981,
+            1.9879379710790865
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 31.41796875,
+          "ci95": [
+            29.26552734375,
+            33.26171875
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 293.875,
+          "ci95": [
+            275.5,
+            312.375
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 31.41796875,
+          "ci95": [
+            29.26552734375,
+            33.26171875
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 293.875,
+          "ci95": [
+            275.5,
+            312.375
+          ],
+          "n_scenes": 8
+        }
+      },
+      "naive": {
+        "source_hole_ratio": {
+          "mean": 0.21810995832979885,
+          "ci95": [
+            0.2016972187746765,
+            0.23511520187805454
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 1.1768373623773227,
+          "ci95": [
+            1.0954698200348159,
+            1.267538642747001
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.401753939473947,
+          "ci95": [
+            5.300108034481846,
+            5.495536681350747
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.029995878394447624,
+          "ci95": [
+            0.025677558915805355,
+            0.03465525769257603
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.14173430462024095,
+          "ci95": [
+            0.1166522996922206,
+            0.17081141453044596
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.12405291836212323,
+          "ci95": [
+            0.11581633738921722,
+            0.13242612424106145
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.01343941679929566,
+          "ci95": [
+            0.008928252579863212,
+            0.018626288210764674
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.07025361917025362,
+          "ci95": [
+            0.05538827421024988,
+            0.08750086102546972
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.9321418022696215,
+          "ci95": [
+            1.230067911321136,
+            2.9497575712716455
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.9304370109057609,
+          "ci95": [
+            0.8984978834099927,
+            0.9571300292589355
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0019958289894028655,
+          "ci95": [
+            0.0017030430171993225,
+            0.002309331034721351
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 2.111895523217417,
+          "ci95": [
+            1.4794526205238858,
+            2.874585088020851
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.2239723966700176,
+          "ci95": [
+            1.0938870721949039,
+            1.359361886585624
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.9449747734903985,
+          "ci95": [
+            0.9208156670803156,
+            0.9627517014235765
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.7522260598765835,
+          "ci95": [
+            1.520670522212981,
+            1.9879379710790865
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "temporal_mean": {
+        "source_hole_ratio": {
+          "mean": 0.05024506098799487,
+          "ci95": [
+            0.04186210668749938,
+            0.06035111940657044
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 0.2700911852741434,
+          "ci95": [
+            0.22776519815817284,
+            0.3190444998798877
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.401753939473947,
+          "ci95": [
+            5.300108034481846,
+            5.495536681350747
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.029995878394447624,
+          "ci95": [
+            0.025677558915805355,
+            0.03465525769257603
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.14173430462024095,
+          "ci95": [
+            0.1166522996922206,
+            0.17081141453044596
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.040120469691221246,
+          "ci95": [
+            0.03477550147484452,
+            0.046087728786529725
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.0027225871437793767,
+          "ci95": [
+            0.0016134076296366452,
+            0.0039782831856657735
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.005579338006767317,
+          "ci95": [
+            0.00249704474279739,
+            0.009613216549990899
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1927887711557266,
+          "ci95": [
+            1.0982538346469417,
+            1.3159260454926582
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.9304370109057609,
+          "ci95": [
+            0.8984978834099927,
+            0.9571300292589355
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0019958289894028655,
+          "ci95": [
+            0.0017030430171993225,
+            0.002309331034721351
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.544739472902978,
+          "ci95": [
+            1.3830861813101203,
+            1.7160241563176792
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.2239723966700176,
+          "ci95": [
+            1.0938870721949039,
+            1.359361886585624
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.9449747734903985,
+          "ci95": [
+            0.9208156670803156,
+            0.9627517014235765
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.7522260598765835,
+          "ci95": [
+            1.520670522212981,
+            1.9879379710790865
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "aligned_temporal_mean": {
+        "source_hole_ratio": {
+          "mean": 0.04062911727780355,
+          "ci95": [
+            0.032538236361121735,
+            0.0502974495250595
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 0.21823140573671002,
+          "ci95": [
+            0.1768491060334849,
+            0.2656172669941637
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.401753939473947,
+          "ci95": [
+            5.300108034481846,
+            5.495536681350747
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.029995878394447624,
+          "ci95": [
+            0.025677558915805355,
+            0.03465525769257603
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.14173430462024095,
+          "ci95": [
+            0.1166522996922206,
+            0.17081141453044596
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.03531249783612559,
+          "ci95": [
+            0.03007065775318561,
+            0.041044154638899634
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.003228919300648462,
+          "ci95": [
+            0.0022317971216071816,
+            0.004273644717204294
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.005561212263705642,
+          "ci95": [
+            0.0027976839846332244,
+            0.009146993399129874
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1742350946182718,
+          "ci95": [
+            1.0974859771755,
+            1.2600056811869935
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.9304370109057609,
+          "ci95": [
+            0.8984978834099927,
+            0.9571300292589355
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0019958289894028655,
+          "ci95": [
+            0.0017030430171993225,
+            0.002309331034721351
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.509364630336657,
+          "ci95": [
+            1.347497857105591,
+            1.6928388726125707
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.2239723966700176,
+          "ci95": [
+            1.0938870721949039,
+            1.359361886585624
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.9449747734903985,
+          "ci95": [
+            0.9208156670803156,
+            0.9627517014235765
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.7522260598765835,
+          "ci95": [
+            1.520670522212981,
+            1.9879379710790865
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "dev_selected": {
+        "source_hole_ratio": {
+          "mean": 0.04062911727780355,
+          "ci95": [
+            0.032538236361121735,
+            0.0502974495250595
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 0.21823140573671002,
+          "ci95": [
+            0.1768491060334849,
+            0.2656172669941637
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.401753939473947,
+          "ci95": [
+            5.300108034481846,
+            5.495536681350747
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.029995878394447624,
+          "ci95": [
+            0.025677558915805355,
+            0.03465525769257603
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.14173430462024095,
+          "ci95": [
+            0.1166522996922206,
+            0.17081141453044596
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.03531249783612559,
+          "ci95": [
+            0.03007065775318561,
+            0.041044154638899634
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.003228919300648462,
+          "ci95": [
+            0.0022317971216071816,
+            0.004273644717204294
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.005561212263705642,
+          "ci95": [
+            0.0027976839846332244,
+            0.009146993399129874
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1742350946182718,
+          "ci95": [
+            1.0974859771755,
+            1.2600056811869935
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.9304370109057609,
+          "ci95": [
+            0.8984978834099927,
+            0.9571300292589355
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0019958289894028655,
+          "ci95": [
+            0.0017030430171993225,
+            0.002309331034721351
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.509364630336657,
+          "ci95": [
+            1.347497857105591,
+            1.6928388726125707
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.2239723966700176,
+          "ci95": [
+            1.0938870721949039,
+            1.359361886585624
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.9449747734903985,
+          "ci95": [
+            0.9208156670803156,
+            0.9627517014235765
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.7522260598765835,
+          "ci95": [
+            1.520670522212981,
+            1.9879379710790865
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "genuine_target": {
+        "source_hole_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.401753939473947,
+          "ci95": [
+            5.300108034481846,
+            5.495536681350747
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.0023098875191577394,
+          "ci95": [
+            0.0014082999641504253,
+            0.0033879098031717094
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.002845998856667087,
+          "ci95": [
+            0.0016243901751070604,
+            0.00479769364612116
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1390394935735362,
+          "ci95": [
+            1.0546276350357782,
+            1.2328844867241084
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.9373133377039627,
+          "ci95": [
+            0.9127271437330031,
+            0.9585676476301477
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0019708121305934767,
+          "ci95": [
+            0.0017207735740524014,
+            0.0022381002843109335
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.4632817268750036,
+          "ci95": [
+            1.2690158163722678,
+            1.6721731385883898
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.203372104989859,
+          "ci95": [
+            1.0652119711757333,
+            1.349724849742902
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 3.5769253763362485e-05,
+          "ci95": [
+            2.4053503307008838e-05,
+            4.9019520064419446e-05
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 3.440736669091393e-05,
+          "ci95": [
+            2.503832160485331e-05,
+            4.271546204659414e-05
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.9437160929348429,
+          "ci95": [
+            0.9251204427083334,
+            0.9596980059870686
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.7086881877293343,
+          "ci95": [
+            1.5017450682752387,
+            1.9173799271342622
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 13.8984375,
+          "ci95": [
+            12.058544921875,
+            16.357421875
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 9008.125,
+          "ci95": [
+            8963.86875,
+            9053.25
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 13.1953125,
+          "ci95": [
+            10.681640625,
+            15.982666015624996
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 293.875,
+          "ci95": [
+            275.5,
+            312.375
+          ],
+          "n_scenes": 8
+        }
+      }
+    },
+    "heldout_magnitude": {
+      "noop": {
+        "source_hole_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 5.426609171829849,
+          "ci95": [
+            5.26993530543732,
+            5.639980829725067
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.426609171829849,
+          "ci95": [
+            5.26993530543732,
+            5.639980829725067
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 5.170347270198297,
+          "ci95": [
+            4.91778179546436,
+            5.396301704984719
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.03925643696218436,
+          "ci95": [
+            0.03591856792221548,
+            0.04252133550775012
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.48283989168369273,
+          "ci95": [
+            0.4702199363741462,
+            0.4966065568360653
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.459858373550038,
+          "ci95": [
+            0.44030892490143936,
+            0.4820118981484894
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 63.93705100340604,
+          "ci95": [
+            51.892136191733,
+            75.98523810978223
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.004833370647938663,
+          "ci95": [
+            0.0,
+            0.010904358738687782
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.07772007543564219,
+          "ci95": [
+            0.07159398347600289,
+            0.08365017021886216
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.5707401132729413,
+          "ci95": [
+            1.3662417774816231,
+            1.7947922009570645
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.6171875,
+          "ci95": [
+            0.3515625,
+            0.8515625
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 9.875,
+          "ci95": [
+            5.625,
+            13.625
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1507330084008711,
+          "ci95": [
+            1.0350933136080043,
+            1.2732260514633382
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.934139384920635,
+          "ci95": [
+            0.9135577876984127,
+            0.952467757936508
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.5374708530959706,
+          "ci95": [
+            1.2562165377892682,
+            1.8538495706825033
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 31.423095703125,
+          "ci95": [
+            29.6662353515625,
+            32.8515625
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 278.125,
+          "ci95": [
+            259.5,
+            296.5
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 31.423095703125,
+          "ci95": [
+            29.6662353515625,
+            32.8515625
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 278.125,
+          "ci95": [
+            259.5,
+            296.5
+          ],
+          "n_scenes": 8
+        }
+      },
+      "naive": {
+        "source_hole_ratio": {
+          "mean": 0.23176215933255068,
+          "ci95": [
+            0.20232423994120732,
+            0.25437096877237353
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 1.249999120635528,
+          "ci95": [
+            1.113336380197404,
+            1.3576640126638158
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.426609171829849,
+          "ci95": [
+            5.26993530543732,
+            5.639980829725067
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.026135413323698342,
+          "ci95": [
+            0.020934757437732952,
+            0.03197387149779248
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.1357101725989474,
+          "ci95": [
+            0.10635940121651027,
+            0.16901548254879392
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.1289487863281245,
+          "ci95": [
+            0.11315674686209684,
+            0.14156978901566067
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.01694763918724124,
+          "ci95": [
+            0.012985442301747214,
+            0.019941553155785448
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.07710343525763003,
+          "ci95": [
+            0.0586913946735626,
+            0.09606257853350747
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 3.0111054717304953,
+          "ci95": [
+            1.6485625665989885,
+            4.572180829152044
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.9328093998015873,
+          "ci95": [
+            0.9185019841269841,
+            0.9459511408730159
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.001770210707273501,
+          "ci95": [
+            0.0014147200792670059,
+            0.0021568658298933194
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 2.3628319521553656,
+          "ci95": [
+            1.7705756326645348,
+            2.9830721311415154
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1507330084008711,
+          "ci95": [
+            1.0350933136080043,
+            1.2732260514633382
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.934139384920635,
+          "ci95": [
+            0.9135577876984127,
+            0.952467757936508
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.5374708530959706,
+          "ci95": [
+            1.2562165377892682,
+            1.8538495706825033
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "temporal_mean": {
+        "source_hole_ratio": {
+          "mean": 0.04986547353926732,
+          "ci95": [
+            0.036869801778268554,
+            0.06745513424480329
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 0.26765731927183534,
+          "ci95": [
+            0.2034308089582275,
+            0.357202258831807
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.426609171829849,
+          "ci95": [
+            5.26993530543732,
+            5.639980829725067
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.026135413323698342,
+          "ci95": [
+            0.020934757437732952,
+            0.03197387149779248
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.1357101725989474,
+          "ci95": [
+            0.10635940121651027,
+            0.16901548254879392
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.03800044343148283,
+          "ci95": [
+            0.029898024393760568,
+            0.04915147363061642
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.0019191166476032924,
+          "ci95": [
+            0.001146203397140386,
+            0.0028052174401355127
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.003921050424828679,
+          "ci95": [
+            0.0026704876880927443,
+            0.005329127837632744
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1693447241914197,
+          "ci95": [
+            1.0768172508261995,
+            1.2805156420278487
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.9328093998015873,
+          "ci95": [
+            0.9185019841269841,
+            0.9459511408730159
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.001770210707273501,
+          "ci95": [
+            0.0014147200792670059,
+            0.0021568658298933194
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.570740113272941,
+          "ci95": [
+            1.3662417774816231,
+            1.7947922009570638
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1507330084008711,
+          "ci95": [
+            1.0350933136080043,
+            1.2732260514633382
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.934139384920635,
+          "ci95": [
+            0.9135577876984127,
+            0.952467757936508
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.5374708530959706,
+          "ci95": [
+            1.2562165377892682,
+            1.8538495706825033
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "aligned_temporal_mean": {
+        "source_hole_ratio": {
+          "mean": 0.038302600308140526,
+          "ci95": [
+            0.02614120294965091,
+            0.054928503144838235
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 0.20512281742359192,
+          "ci95": [
+            0.14381475822218287,
+            0.29029875709713615
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.426609171829849,
+          "ci95": [
+            5.26993530543732,
+            5.639980829725067
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.026135413323698342,
+          "ci95": [
+            0.020934757437732952,
+            0.03197387149779248
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.1357101725989474,
+          "ci95": [
+            0.10635940121651027,
+            0.16901548254879392
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.03221900681591944,
+          "ci95": [
+            0.024408132161665253,
+            0.04304884125249361
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.001950020029346161,
+          "ci95": [
+            0.0012451302177186017,
+            0.002735578359404616
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.003808596233352713,
+          "ci95": [
+            0.0026461629139448778,
+            0.005125256410066826
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1693447241914197,
+          "ci95": [
+            1.0768172508261995,
+            1.2805156420278487
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.9328093998015873,
+          "ci95": [
+            0.9185019841269841,
+            0.9459511408730159
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.001770210707273501,
+          "ci95": [
+            0.0014147200792670059,
+            0.0021568658298933194
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.570740113272941,
+          "ci95": [
+            1.3662417774816231,
+            1.7947922009570638
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1507330084008711,
+          "ci95": [
+            1.0350933136080043,
+            1.2732260514633382
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.934139384920635,
+          "ci95": [
+            0.9135577876984127,
+            0.952467757936508
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.5374708530959706,
+          "ci95": [
+            1.2562165377892682,
+            1.8538495706825033
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "dev_selected": {
+        "source_hole_ratio": {
+          "mean": 0.038302600308140526,
+          "ci95": [
+            0.02614120294965091,
+            0.054928503144838235
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 0.20512281742359192,
+          "ci95": [
+            0.14381475822218287,
+            0.29029875709713615
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.426609171829849,
+          "ci95": [
+            5.26993530543732,
+            5.639980829725067
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.026135413323698342,
+          "ci95": [
+            0.020934757437732952,
+            0.03197387149779248
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.1357101725989474,
+          "ci95": [
+            0.10635940121651027,
+            0.16901548254879392
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.03221900681591944,
+          "ci95": [
+            0.024408132161665253,
+            0.04304884125249361
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.001950020029346161,
+          "ci95": [
+            0.0012451302177186017,
+            0.002735578359404616
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.003808596233352713,
+          "ci95": [
+            0.0026461629139448778,
+            0.005125256410066826
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1693447241914197,
+          "ci95": [
+            1.0768172508261995,
+            1.2805156420278487
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.9328093998015873,
+          "ci95": [
+            0.9185019841269841,
+            0.9459511408730159
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.001770210707273501,
+          "ci95": [
+            0.0014147200792670059,
+            0.0021568658298933194
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.570740113272941,
+          "ci95": [
+            1.3662417774816231,
+            1.7947922009570638
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1507330084008711,
+          "ci95": [
+            1.0350933136080043,
+            1.2732260514633382
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.934139384920635,
+          "ci95": [
+            0.9135577876984127,
+            0.952467757936508
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.5374708530959706,
+          "ci95": [
+            1.2562165377892682,
+            1.8538495706825033
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "genuine_target": {
+        "source_hole_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 5.426609171829849,
+          "ci95": [
+            5.26993530543732,
+            5.639980829725067
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.0016960405779196045,
+          "ci95": [
+            0.001030335619788737,
+            0.0024901631735981247
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.002984297828108072,
+          "ci95": [
+            0.002067632248324605,
+            0.0040857959765733375
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 1.1770663141495836,
+          "ci95": [
+            1.0569762676744199,
+            1.3070142970804768
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.9405128291847042,
+          "ci95": [
+            0.9323567708333333,
+            0.9480804135101011
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.001746668281872216,
+          "ci95": [
+            0.0014002951984976536,
+            0.002105922401451998
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": 1.4471809098197688,
+          "ci95": [
+            1.252902133778432,
+            1.6278940162717934
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 16.0,
+          "ci95": [
+            16.0,
+            16.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 1.1430262663858395,
+          "ci95": [
+            1.0373393639260151,
+            1.2478912332128613
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 3.8847314201007066e-05,
+          "ci95": [
+            2.7746592370370138e-05,
+            5.135814136618676e-05
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 4.131717600586171e-05,
+          "ci95": [
+            3.415790179150946e-05,
+            4.7863021680605295e-05
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.9331219561688312,
+          "ci95": [
+            0.9152463812229437,
+            0.9508545274170275
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 1.5442450567651298,
+          "ci95": [
+            1.2776264720797958,
+            1.8316113055747547
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 12.40673828125,
+          "ci95": [
+            10.65771484375,
+            13.841796875
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 8970.125,
+          "ci95": [
+            8939.496875,
+            9000.875
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 11.66455078125,
+          "ci95": [
+            10.06201171875,
+            13.1640625
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 278.125,
+          "ci95": [
+            259.5,
+            296.5
+          ],
+          "n_scenes": 8
+        }
+      }
+    }
+  },
+  "paired_differences": {
+    "all": {
+      "noop_minus_naive": {
+        "source_hole_ratio": {
+          "mean": 0.7750639411688253,
+          "ci95": [
+            0.7597043227921124,
+            0.7919132708183741
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_mse": {
+          "mean": 4.2007633141454725,
+          "ci95": [
+            4.058341207274497,
+            4.370960064806556
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.9719343541409271,
+          "ci95": [
+            0.9680208036250658,
+            0.9755323445972732
+          ],
+          "n_scenes": 16
+        },
+        "destination_mse": {
+          "mean": 4.784837976336213,
+          "ci95": [
+            4.545730699238074,
+            5.005652353732701
+          ],
+          "n_scenes": 16
+        },
+        "balanced_region_ratio": {
+          "mean": 0.8734991476548761,
+          "ci95": [
+            0.8655066586944598,
+            0.8823493126612604
+          ],
+          "n_scenes": 16
+        },
+        "hole_rgb_mse": {
+          "mean": 0.019965370184132237,
+          "ci95": [
+            0.014779671591113023,
+            0.02498344127238787
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.39967990537464426,
+          "ci95": [
+            0.3732285693078845,
+            0.4269805190756808
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.45068557458408665,
+          "ci95": [
+            0.42357452388194233,
+            0.4773119869704044
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": 53.56149844956177,
+          "ci95": [
+            45.085256182862,
+            62.19470388038164
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": -0.8877512410317956,
+          "ci95": [
+            -0.9281376811356146,
+            -0.840580255448325
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.07032517418839862,
+          "ci95": [
+            0.06102760783435182,
+            0.07867557552005745
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.697311365881592,
+          "ci95": [
+            -1.1475272438587094,
+            -0.2906331471461766
+          ],
+          "n_scenes": 16
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": -0.34375,
+          "ci95": [
+            -0.53515625,
+            -0.1640625
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_correct": {
+          "mean": -5.5,
+          "ci95": [
+            -8.5625,
+            -2.625
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 31.4205322265625,
+          "ci95": [
+            30.1111572265625,
+            32.61392517089844
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 286.0,
+          "ci95": [
+            272.4375,
+            299.6875
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 31.4205322265625,
+          "ci95": [
+            30.1111572265625,
+            32.61392517089844
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 286.0,
+          "ci95": [
+            272.4375,
+            299.6875
+          ],
+          "n_scenes": 16
+        }
+      },
+      "temporal_mean_minus_naive": {
+        "source_hole_ratio": {
+          "mean": -0.17488079156754366,
+          "ci95": [
+            -0.18809035827534037,
+            -0.16149084633554717
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_mse": {
+          "mean": -0.944543989233436,
+          "ci95": [
+            -1.0130069939777364,
+            -0.8763466866539958
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "balanced_region_ratio": {
+          "mean": -0.08744039578377183,
+          "ci95": [
+            -0.09404517913767019,
+            -0.08074542316777358
+          ],
+          "n_scenes": 16
+        },
+        "hole_rgb_mse": {
+          "mean": -0.012872676097577116,
+          "ci95": [
+            -0.015588042705031403,
+            -0.010026645750104686
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": -0.06892833299814383,
+          "ci95": [
+            -0.08150161787865234,
+            -0.056529099119490195
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": -1.2905568893264854,
+          "ci95": [
+            -2.2764368764773266,
+            -0.44408231533740644
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.6796239445984318,
+          "ci95": [
+            -1.1379859224149838,
+            -0.2630889748906678
+          ],
+          "n_scenes": 16
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_correct": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        }
+      },
+      "aligned_temporal_mean_minus_naive": {
+        "source_hole_ratio": {
+          "mean": -0.1854702000382027,
+          "ci95": [
+            -0.19916626941512827,
+            -0.1716684781301273
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_mse": {
+          "mean": -1.0017411299262744,
+          "ci95": [
+            -1.073167298623036,
+            -0.9318805369553613
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "balanced_region_ratio": {
+          "mean": -0.09273510001910135,
+          "ci95": [
+            -0.09958313470756412,
+            -0.08583423906506366
+          ],
+          "n_scenes": 16
+        },
+        "hole_rgb_mse": {
+          "mean": -0.012604058328271137,
+          "ci95": [
+            -0.015420452759010697,
+            -0.009555804683221543
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": -0.06899362296541264,
+          "ci95": [
+            -0.08151332316653168,
+            -0.056606599989450196
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": -1.2998337275952125,
+          "ci95": [
+            -2.2835981083235386,
+            -0.46003572754161265
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.6973113658815923,
+          "ci95": [
+            -1.1475272438587099,
+            -0.2906331471461763
+          ],
+          "n_scenes": 16
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_correct": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        }
+      },
+      "dev_selected_minus_naive": {
+        "source_hole_ratio": {
+          "mean": -0.1854702000382027,
+          "ci95": [
+            -0.19916626941512827,
+            -0.1716684781301273
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_mse": {
+          "mean": -1.0017411299262744,
+          "ci95": [
+            -1.073167298623036,
+            -0.9318805369553613
+          ],
+          "n_scenes": 16
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "balanced_region_ratio": {
+          "mean": -0.09273510001910135,
+          "ci95": [
+            -0.09958313470756412,
+            -0.08583423906506366
+          ],
+          "n_scenes": 16
+        },
+        "hole_rgb_mse": {
+          "mean": -0.012604058328271137,
+          "ci95": [
+            -0.015420452759010697,
+            -0.009555804683221543
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": -0.06899362296541264,
+          "ci95": [
+            -0.08151332316653168,
+            -0.056606599989450196
+          ],
+          "n_scenes": 16
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_centroid_error_px": {
+          "mean": -1.2998337275952125,
+          "ci95": [
+            -2.2835981083235386,
+            -0.46003572754161265
+          ],
+          "n_scenes": 16
+        },
+        "selected_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.6973113658815923,
+          "ci95": [
+            -1.1475272438587099,
+            -0.2906331471461763
+          ],
+          "n_scenes": 16
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "appearance_identity_correct": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 16
+        }
+      }
+    },
+    "seen_magnitude": {
+      "noop_minus_naive": {
+        "source_hole_ratio": {
+          "mean": 0.7818900416702012,
+          "ci95": [
+            0.7648847981219454,
+            0.7983027812253235
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 4.224916577096624,
+          "ci95": [
+            4.0906910288572895,
+            4.364508478453875
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.9700041216055524,
+          "ci95": [
+            0.965344742307424,
+            0.9743224410841946
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 4.535038855073077,
+          "ci95": [
+            4.229782253947222,
+            4.84033817061268
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.8759470816378767,
+          "ci95": [
+            0.8675738757589384,
+            0.8841836626107829
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.017621942593321355,
+          "ci95": [
+            0.007821109119643482,
+            0.02694499811286783
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.3936233543232258,
+          "ci95": [
+            0.3467035033392346,
+            0.43946890594382504
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.4415127756181353,
+          "ci95": [
+            0.3948802391616988,
+            0.48899058574299903
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 46.19705136744798,
+          "ci95": [
+            34.69249893141251,
+            57.630068588109616
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": -0.8475264529099427,
+          "ci95": [
+            -0.9262901627452408,
+            -0.7701697367994171
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.06470048364842854,
+          "ci95": [
+            0.04933849868820852,
+            0.08020167521160475
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.6025308928807599,
+          "ci95": [
+            -1.2840527521664682,
+            -0.08170870415408402
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": -0.3046875,
+          "ci95": [
+            -0.6015625,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": -4.875,
+          "ci95": [
+            -9.625,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 31.41796875,
+          "ci95": [
+            29.26552734375,
+            33.26171875
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 293.875,
+          "ci95": [
+            275.5,
+            312.375
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 31.41796875,
+          "ci95": [
+            29.26552734375,
+            33.26171875
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 293.875,
+          "ci95": [
+            275.5,
+            312.375
+          ],
+          "n_scenes": 8
+        }
+      },
+      "temporal_mean_minus_naive": {
+        "source_hole_ratio": {
+          "mean": -0.167864897341804,
+          "ci95": [
+            -0.18167843431885955,
+            -0.15608012192006573
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": -0.9067461771031793,
+          "ci95": [
+            -0.9837254101766365,
+            -0.8407169382700727
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": -0.083932448670902,
+          "ci95": [
+            -0.09083921715942977,
+            -0.07804006096003287
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": -0.010716829655516284,
+          "ci95": [
+            -0.015035770956408736,
+            -0.006887822861871356
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": -0.06467428116348631,
+          "ci95": [
+            -0.08225844300883288,
+            -0.05040932381109539
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": -0.739353031113895,
+          "ci95": [
+            -1.7488276159663068,
+            -0.05365983010020209
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.5671560503144389,
+          "ci95": [
+            -1.2636650159100196,
+            0.0044142403648783635
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "aligned_temporal_mean_minus_naive": {
+        "source_hole_ratio": {
+          "mean": -0.1774808410519953,
+          "ci95": [
+            -0.19128783914126316,
+            -0.16563376795794482
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": -0.9586059566406127,
+          "ci95": [
+            -1.0364159597377878,
+            -0.8930061722344685
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": -0.08874042052599765,
+          "ci95": [
+            -0.09564391957063158,
+            -0.08281688397897241
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": -0.010210497498647199,
+          "ci95": [
+            -0.014789634329454971,
+            -0.006126749775077372
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": -0.06469240690654798,
+          "ci95": [
+            -0.0823082100878889,
+            -0.050366508998957324
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": -0.7579067076513497,
+          "ci95": [
+            -1.7496458932999959,
+            -0.10932085971256605
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.60253089288076,
+          "ci95": [
+            -1.2840527521664704,
+            -0.08170870415408282
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "dev_selected_minus_naive": {
+        "source_hole_ratio": {
+          "mean": -0.1774808410519953,
+          "ci95": [
+            -0.19128783914126316,
+            -0.16563376795794482
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": -0.9586059566406127,
+          "ci95": [
+            -1.0364159597377878,
+            -0.8930061722344685
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": -0.08874042052599765,
+          "ci95": [
+            -0.09564391957063158,
+            -0.08281688397897241
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": -0.010210497498647199,
+          "ci95": [
+            -0.014789634329454971,
+            -0.006126749775077372
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": -0.06469240690654798,
+          "ci95": [
+            -0.0823082100878889,
+            -0.050366508998957324
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": -0.7579067076513497,
+          "ci95": [
+            -1.7496458932999959,
+            -0.10932085971256605
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.60253089288076,
+          "ci95": [
+            -1.2840527521664704,
+            -0.08170870415408282
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      }
+    },
+    "heldout_magnitude": {
+      "noop_minus_naive": {
+        "source_hole_ratio": {
+          "mean": 0.7682378406674493,
+          "ci95": [
+            0.7456290312276264,
+            0.7976757600587927
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": 4.17661005119432,
+          "ci95": [
+            3.9547259543251623,
+            4.486211024416523
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.9738645866763016,
+          "ci95": [
+            0.9680261285022076,
+            0.979065242562267
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 5.034637097599351,
+          "ci95": [
+            4.790796788600956,
+            5.24948426420671
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": 0.8710512136718754,
+          "ci95": [
+            0.8584302109843392,
+            0.8868432531379031
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": 0.02230879777494312,
+          "ci95": [
+            0.019624478488819607,
+            0.025184007332454173
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": 0.40573645642606265,
+          "ci95": [
+            0.38092616243398986,
+            0.4337952852218266
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.459858373550038,
+          "ci95": [
+            0.44030892490143936,
+            0.4820118981484894
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": 60.92594553167554,
+          "ci95": [
+            49.237195595200205,
+            72.80359901304209
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": -0.9279760291536486,
+          "ci95": [
+            -0.9408980340182949,
+            -0.91464441513284
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0759498647283687,
+          "ci95": [
+            0.06983599194138831,
+            0.08185599142978314
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.7920918388824243,
+          "ci95": [
+            -1.3812436883007921,
+            -0.25500927189895206
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": -0.3828125,
+          "ci95": [
+            -0.6484375,
+            -0.1484375
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": -6.125,
+          "ci95": [
+            -10.375,
+            -2.375
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 31.423095703125,
+          "ci95": [
+            29.6662353515625,
+            32.8515625
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 278.125,
+          "ci95": [
+            259.5,
+            296.5
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 31.423095703125,
+          "ci95": [
+            29.6662353515625,
+            32.8515625
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 278.125,
+          "ci95": [
+            259.5,
+            296.5
+          ],
+          "n_scenes": 8
+        }
+      },
+      "temporal_mean_minus_naive": {
+        "source_hole_ratio": {
+          "mean": -0.18189668579328333,
+          "ci95": [
+            -0.20251035153658176,
+            -0.15818187921164253
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": -0.9823418013636926,
+          "ci95": [
+            -1.088148328870435,
+            -0.8666191398612587
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": -0.09094834289664167,
+          "ci95": [
+            -0.10125517576829088,
+            -0.07909093960582127
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": -0.015028522539637948,
+          "ci95": [
+            -0.017749845869849106,
+            -0.011590470309498741
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": -0.07318238483280136,
+          "ci95": [
+            -0.09151162118871389,
+            -0.055162943872452984
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": -1.8417607475390754,
+          "ci95": [
+            -3.4582335990837363,
+            -0.421157849566494
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.7920918388824245,
+          "ci95": [
+            -1.3812436883007915,
+            -0.2550092718989526
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "aligned_temporal_mean_minus_naive": {
+        "source_hole_ratio": {
+          "mean": -0.19345955902441014,
+          "ci95": [
+            -0.2146870513433804,
+            -0.16827953561685025
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": -1.044876303211936,
+          "ci95": [
+            -1.1538359595828376,
+            -0.9255802117029845
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": -0.09672977951220507,
+          "ci95": [
+            -0.10734352567169017,
+            -0.08413976780842512
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": -0.01499761915789508,
+          "ci95": [
+            -0.017690159712779478,
+            -0.011521029190657641
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": -0.07329483902427733,
+          "ci95": [
+            -0.09167798411917824,
+            -0.055175935083136673
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": -1.8417607475390754,
+          "ci95": [
+            -3.4582335990837363,
+            -0.421157849566494
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.7920918388824245,
+          "ci95": [
+            -1.3812436883007915,
+            -0.2550092718989526
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      },
+      "dev_selected_minus_naive": {
+        "source_hole_ratio": {
+          "mean": -0.19345955902441014,
+          "ci95": [
+            -0.2146870513433804,
+            -0.16827953561685025
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_mse": {
+          "mean": -1.044876303211936,
+          "ci95": [
+            -1.1538359595828376,
+            -0.9255802117029845
+          ],
+          "n_scenes": 8
+        },
+        "source_hole_noop_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_ratio": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "balanced_region_ratio": {
+          "mean": -0.09672977951220507,
+          "ci95": [
+            -0.10734352567169017,
+            -0.08413976780842512
+          ],
+          "n_scenes": 8
+        },
+        "hole_rgb_mse": {
+          "mean": -0.01499761915789508,
+          "ci95": [
+            -0.017690159712779478,
+            -0.011521029190657641
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_mean_occupancy": {
+          "mean": -0.07329483902427733,
+          "ci95": [
+            -0.09167798411917824,
+            -0.055175935083136673
+          ],
+          "n_scenes": 8
+        },
+        "hole_ghost_fraction_above_half": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_centroid_error_px": {
+          "mean": -1.8417607475390754,
+          "ci95": [
+            -3.4582335990837363,
+            -0.421157849566494
+          ],
+          "n_scenes": 8
+        },
+        "selected_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_rgb_core_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "selected_temporal_velocity_error_px": {
+          "mean": -0.7920918388824245,
+          "ci95": [
+            -1.3812436883007915,
+            -0.2550092718989526
+          ],
+          "n_scenes": 8
+        },
+        "selected_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_accuracy": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_eligible": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_skipped": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "appearance_identity_correct": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_centroid_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_rgb_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_occupancy_change_mse": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_iou": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_missing_tubelets": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "distractor_temporal_velocity_error_px": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "outside_hole_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_max_abs_delta": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        },
+        "destination_vs_naive_changed_tokens": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_scenes": 8
+        }
+      }
+    }
+  },
+  "decision_checks": {
+    "temporal_mean": {
+      "hole_latent_improves_paired_ci": true,
+      "mean_hole_rgb_not_worse": true,
+      "mean_hole_ghost_not_worse": true,
+      "outside_hole_exactly_preserved": true,
+      "destination_exactly_preserved": true,
+      "combined_exploratory_pass": true
+    },
+    "aligned_temporal_mean": {
+      "hole_latent_improves_paired_ci": true,
+      "mean_hole_rgb_not_worse": true,
+      "mean_hole_ghost_not_worse": true,
+      "outside_hole_exactly_preserved": true,
+      "destination_exactly_preserved": true,
+      "combined_exploratory_pass": true
+    },
+    "dev_selected": {
+      "hole_latent_improves_paired_ci": true,
+      "mean_hole_rgb_not_worse": true,
+      "mean_hole_ghost_not_worse": true,
+      "outside_hole_exactly_preserved": true,
+      "destination_exactly_preserved": true,
+      "combined_exploratory_pass": true
+    }
+  },
+  "genuine_readout_gate": {
+    "pass": true,
+    "centroid_threshold_px": 16,
+    "identity_threshold": 0.9,
+    "centroid": {
+      "mean": 1.15805290386156,
+      "ci95": [
+        1.085172346644086,
+        1.241273575055577
+      ],
+      "n_scenes": 16
+    },
+    "identity_accuracy": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_scenes": 16
+    },
+    "eligible_tubelets": 256,
+    "skipped_tubelets": 0
+  },
+  "degenerate_scene_arm_counts": {
+    "source_hole": 0,
+    "destination": 0,
+    "halo": 0,
+    "distractor": 0,
+    "background": 0,
+    "common": 0
+  },
+  "primary": "Dev-selected blend minus naive, per-scene source-hole MSE/no-op MSE; all sixteen scenes including fallback",
+  "bootstrap": {
+    "draws": 5000,
+    "seed": 1909,
+    "unit": "independent scene",
+    "interval": "percentile 95%; exploratory"
+  },
+  "rgb_ghost_aggregation": "Mean over all source-hole tokens within each scene, then equal scene mean",
+  "interpretation_limits": [
+    "Oracle full-trajectory masks and a static-camera synthetic scene",
+    "Temporal donor availability is measured and fallback scenes remain in primary analysis",
+    "Pointwise occupancy/RGB readout is not a video decoder or independent proof of identity",
+    "Exact destination/outside preservation is enforced by construction",
+    "A source-only temporal repair is not a learned JEPA predictor or causal single-edit propagation"
+  ],
+  "chosen": {
+    "kind": "aligned_temporal_mean",
+    "alpha": 1.0,
+    "mean_source_hole_ratio": 0.04084390177549935
+  },
+  "qualified_adoption": true,
+  "binding": {
+    "freeze_sha256": "9ba4dd83b2f718b0dfaad518d9d6a9e5ad81422b27f47d99f0b1fa0dc21f4dcc",
+    "dev_selection_sha256": "4b71b028af0a3f70c55668e51e9515a59bb0cbb98ebb247e264eaa5b18d22666",
+    "probe_sha256": "bf18fc7be331d56d9aafd3462111d3f9dac622e9177a3e3e1bfd91710ab07eab",
+    "feature_manifest_sha256": "5f81a655ae81ceb6a55b1b79ed2c0218727c2c4f6b29b2beb30243c8d5c64f4f",
+    "source_hashes": {
+      "experiments/day9/evaluate.py": "b66ad105793b0c6eef803b051ac52940ff4a09002fbe0716b946733cda1726d6",
+      "experiments/day9/temporal.py": "f54f57208a7bba9863c507ba45269db34cf7b3c4a5dc493d395b790a6a3feb23",
+      "experiments/day8/data.py": "7e53421c17bc7b5c2a483660f07741a616400348340bf7ed8d0ad5bd56318d8d",
+      "experiments/day8/operators.py": "b69de100be2419f53cb9e5c23cb608e397feeef6842a0a8fd8638ab7c0451df7",
+      "experiments/day8/evaluate.py": "fec3a0489c846c96c0b58e8725ab22a20923eed57ac0cce65abfa073b8b0929c",
+      "experiments/day8/probe.py": "9a736ddd5bb64c19a5205f12d606bcd1f1bc562367effcbba96dd8c0a1b8790d"
+    },
+    "device": "cpu",
+    "operator_readout_precision": "float32",
+    "numpy": "2.3.5",
+    "torch": "2.9.0+cpu"
+  }
+}

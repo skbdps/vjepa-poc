@@ -1,0 +1,7 @@
+{
+  "freeze_commit": "b603bd76ee97673beff91a79f08292d19276d85c",
+  "freeze_repository_path": "experiments/day7/run_2026-10-09/checkpoint_freeze.json",
+  "freeze_sha256": "d22db32b2fe60d648170ed38970b6dcb274f322cc5630b020db6d996f319dd62",
+  "exact_git_bytes_verified_before_test_extraction": true,
+  "recorded_after_extraction_utc": "2026-10-09T06:38:42.684123+00:00"
+}

@@ -1,0 +1,2428 @@
+{
+  "experiment": "Supplementary frozen presence gate before mask editing",
+  "split": "test",
+  "policy": {
+    "policy_id": "sam2_frozen_patch_presence_to_dense_masks_v1",
+    "source_digest": "85b672af1eb00da80a78ffccff8bbdd8a9d6dd8c7fad7770c88379d7d3d447e4",
+    "script_sha256": "fee4f74d7b1dd4c86e4b4df7ce88b18215b7e5d6354b1f6f0eedbe038262af94",
+    "sam2_source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+    "sam2_frozen_config_sha256": "27a38d624a5d067617331c8e9ce4af8660e15d85f40891415f997edc9f757a54",
+    "sam2_checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+    "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+    "threshold": 0.9404296875,
+    "decision": "masks_to_predictions(raw_masks).eligible AND scores >= frozen_threshold",
+    "expansion": "Repeat each part decision onto both source frames of its two-frame pair.",
+    "initialization": "Preserve every raw mask in frame 0 regardless of its pair decision.",
+    "new_parameter_selection": "none; no new threshold or alternative gate",
+    "primary_test_status": "supplementary postprocessing comparison; primary raw-mask and patch results remain unchanged",
+    "probability_note": "Score is maximum predicted patch coverage, not a calibrated probability.",
+    "temporal_note": "Two-frame readout; not claimed to be causal streaming.",
+    "calibration_evidence": {
+      "raw_hidden_mask_reports": {
+        "numerator": 22,
+        "denominator": 180,
+        "rate": 0.12222222222222222
+      },
+      "patch_hidden_presence_reports": {
+        "numerator": 4,
+        "denominator": 88,
+        "rate": 0.045454545454545456
+      },
+      "denominator_note": "Raw metrics count part-frames; patch metrics count unambiguous part-pairs. Their counts are not directly comparable.",
+      "results_sha256": "a84df800bdda478d5f2daa78379d81a9f3a87fdbf1b42a39ec872db9aed18f6e"
+    },
+    "created_at_utc": "2026-10-09T00:26:08.840157+00:00",
+    "proposal_provenance": "Proposed during the SAM2 test execution, before the controller viewed its held-out masks or scores; prompted by the calibration raw-mask versus patch-presence discrepancy.",
+    "provenance_basis": "Controller's contemporaneous task statement plus recorded calibration result hashes."
+  },
+  "policy_sha256": "1e688e777a34221b687bcb0a980e21829bd51c6d6af48b30a935667a1158834e",
+  "scoring": "Dense masks on every frame after frame0; same ground truth for raw and gated outputs.",
+  "evaluation_status": "Postprocessing comparison, not a replacement for primary results; no threshold tuning.",
+  "overall": {
+    "raw": {
+      "mean_iou_given_visible": {
+        "numerator": 3773.955707391062,
+        "denominator": 3997,
+        "rate": 0.9441970746537558
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 9884807,
+        "denominator": 10491554,
+        "rate": 0.9421680525115727
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 9884807,
+        "denominator": 10394102,
+        "rate": 0.951001539142102
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 9884807,
+        "denominator": 10566570,
+        "rate": 0.9354792520183939
+      },
+      "false_presence_given_absent": {
+        "numerator": 60,
+        "denominator": 539,
+        "rate": 0.11131725417439703
+      },
+      "absent_predicted_pixels": 75016,
+      "visible_part_frames": 3997,
+      "absent_part_frames": 539,
+      "scored_part_frames": 4536,
+      "clips": 18
+    },
+    "gated": {
+      "mean_iou_given_visible": {
+        "numerator": 3685.171754549588,
+        "denominator": 3997,
+        "rate": 0.9219844269576152
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 9815213,
+        "denominator": 10406710,
+        "rate": 0.9431619599277774
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 9815213,
+        "denominator": 10394102,
+        "rate": 0.9443060112359875
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 9815213,
+        "denominator": 10463495,
+        "rate": 0.9380434548876834
+      },
+      "false_presence_given_absent": {
+        "numerator": 30,
+        "denominator": 539,
+        "rate": 0.055658627087198514
+      },
+      "absent_predicted_pixels": 56785,
+      "visible_part_frames": 3997,
+      "absent_part_frames": 539,
+      "scored_part_frames": 4536,
+      "clips": 18
+    },
+    "gated_minus_raw": {
+      "mean_iou_given_visible": -0.02221264769614062,
+      "visible_micro_pixel_precision": 0.0009939074162047534,
+      "visible_micro_pixel_recall": -0.006695527906114496,
+      "all_frame_micro_pixel_precision": 0.002564202869289489,
+      "false_presence_given_absent": -0.055658627087198514
+    },
+    "removed": {
+      "nonempty_part_frame_masks": 128,
+      "visible_part_frame_masks": 98,
+      "hidden_part_frame_masks": 30,
+      "pixels": 103075,
+      "true_positive_pixels": 69594,
+      "false_positive_pixels": 33481
+    },
+    "visible_without_eligible_gt_patch_in_pair": {
+      "part_frames": 81,
+      "nonempty_predicted_masks_removed": 65,
+      "raw_mean_iou": 0.7390657641977265,
+      "gated_mean_iou": 0.0001134023678433748,
+      "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+    }
+  },
+  "by_condition": {
+    "long_occlusion": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 943.7781392654551,
+          "denominator": 1004,
+          "rate": 0.9400180669974653
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 2426996,
+          "denominator": 2564297,
+          "rate": 0.9464566701906995
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 2426996,
+          "denominator": 2545984,
+          "rate": 0.9532644352831754
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 2426996,
+          "denominator": 2632412,
+          "rate": 0.9219666222460617
+        },
+        "false_presence_given_absent": {
+          "numerator": 54,
+          "denominator": 508,
+          "rate": 0.1062992125984252
+        },
+        "absent_predicted_pixels": 68115,
+        "visible_part_frames": 1004,
+        "absent_part_frames": 508,
+        "scored_part_frames": 1512,
+        "clips": 6
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 910.6923591683511,
+          "denominator": 1004,
+          "rate": 0.9070641027573219
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 2400275,
+          "denominator": 2530614,
+          "rate": 0.9484951083017797
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 2400275,
+          "denominator": 2545984,
+          "rate": 0.9427690826022473
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 2400275,
+          "denominator": 2580766,
+          "rate": 0.9300630122994491
+        },
+        "false_presence_given_absent": {
+          "numerator": 28,
+          "denominator": 508,
+          "rate": 0.05511811023622047
+        },
+        "absent_predicted_pixels": 50152,
+        "visible_part_frames": 1004,
+        "absent_part_frames": 508,
+        "scored_part_frames": 1512,
+        "clips": 6
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.03295396424014341,
+        "visible_micro_pixel_precision": 0.0020384381110802874,
+        "visible_micro_pixel_recall": -0.01049535268092805,
+        "all_frame_micro_pixel_precision": 0.008096390053387359,
+        "false_presence_given_absent": -0.05118110236220473
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 62,
+        "visible_part_frame_masks": 36,
+        "hidden_part_frame_masks": 26,
+        "pixels": 51646,
+        "true_positive_pixels": 26721,
+        "false_positive_pixels": 24925
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 28,
+        "nonempty_predicted_masks_removed": 20,
+        "raw_mean_iou": 0.6414567128711547,
+        "gated_mean_iou": 0.0,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "crossing": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 1349.630483159916,
+          "denominator": 1481,
+          "rate": 0.9112967475759054
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 3401908,
+          "denominator": 3811371,
+          "rate": 0.8925680549072762
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 3401908,
+          "denominator": 3771016,
+          "rate": 0.9021197470389942
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 3401908,
+          "denominator": 3818272,
+          "rate": 0.8909548612566103
+        },
+        "false_presence_given_absent": {
+          "numerator": 6,
+          "denominator": 31,
+          "rate": 0.1935483870967742
+        },
+        "absent_predicted_pixels": 6901,
+        "visible_part_frames": 1481,
+        "absent_part_frames": 31,
+        "scored_part_frames": 1512,
+        "clips": 6
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 1293.9323104155462,
+          "denominator": 1481,
+          "rate": 0.8736882582144134
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 3359035,
+          "denominator": 3760210,
+          "rate": 0.8933104799997873
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 3359035,
+          "denominator": 3771016,
+          "rate": 0.8907506624209497
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 3359035,
+          "denominator": 3766843,
+          "rate": 0.8917374576004362
+        },
+        "false_presence_given_absent": {
+          "numerator": 2,
+          "denominator": 31,
+          "rate": 0.06451612903225806
+        },
+        "absent_predicted_pixels": 6633,
+        "visible_part_frames": 1481,
+        "absent_part_frames": 31,
+        "scored_part_frames": 1512,
+        "clips": 6
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.03760848936149197,
+        "visible_micro_pixel_precision": 0.0007424250925111009,
+        "visible_micro_pixel_recall": -0.011369084618044534,
+        "all_frame_micro_pixel_precision": 0.0007825963438259365,
+        "false_presence_given_absent": -0.12903225806451613
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 66,
+        "visible_part_frame_masks": 62,
+        "hidden_part_frame_masks": 4,
+        "pixels": 51429,
+        "true_positive_pixels": 42873,
+        "false_positive_pixels": 8556
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 53,
+        "nonempty_predicted_masks_removed": 45,
+        "raw_mean_iou": 0.7906328101815759,
+        "gated_mean_iou": 0.00017331305274176145,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "scale_camera": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 1480.5470849656908,
+          "denominator": 1512,
+          "rate": 0.9791978075169913
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 4055903,
+          "denominator": 4115886,
+          "rate": 0.9854264671081755
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 4055903,
+          "denominator": 4077102,
+          "rate": 0.9948004734735604
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 4055903,
+          "denominator": 4115886,
+          "rate": 0.9854264671081755
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 1512,
+        "absent_part_frames": 0,
+        "scored_part_frames": 1512,
+        "clips": 6
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 1480.5470849656908,
+          "denominator": 1512,
+          "rate": 0.9791978075169913
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 4055903,
+          "denominator": 4115886,
+          "rate": 0.9854264671081755
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 4055903,
+          "denominator": 4077102,
+          "rate": 0.9948004734735604
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 4055903,
+          "denominator": 4115886,
+          "rate": 0.9854264671081755
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 1512,
+        "absent_part_frames": 0,
+        "scored_part_frames": 1512,
+        "clips": 6
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": 0.0,
+        "visible_micro_pixel_precision": 0.0,
+        "visible_micro_pixel_recall": 0.0,
+        "all_frame_micro_pixel_precision": 0.0,
+        "false_presence_given_absent": null
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 0,
+        "visible_part_frame_masks": 0,
+        "hidden_part_frame_masks": 0,
+        "pixels": 0,
+        "true_positive_pixels": 0,
+        "false_positive_pixels": 0
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 0,
+        "nonempty_predicted_masks_removed": 0,
+        "raw_mean_iou": null,
+        "gated_mean_iou": null,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    }
+  },
+  "per_clip": {
+    "test_long_occlusion_3000": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 157.8561780901723,
+          "denominator": 168,
+          "rate": 0.939620107679597
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 403545,
+          "denominator": 431171,
+          "rate": 0.9359279728924255
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 403545,
+          "denominator": 428348,
+          "rate": 0.9420961461241794
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 403545,
+          "denominator": 442601,
+          "rate": 0.9117579942205282
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 84,
+          "rate": 0.10714285714285714
+        },
+        "absent_predicted_pixels": 11430,
+        "visible_part_frames": 168,
+        "absent_part_frames": 84,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 151.88235663851472,
+          "denominator": 168,
+          "rate": 0.9040616466578257
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 398699,
+          "denominator": 426322,
+          "rate": 0.9352062525508887
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 398699,
+          "denominator": 428348,
+          "rate": 0.9307829148262627
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 398699,
+          "denominator": 433875,
+          "rate": 0.9189259579371939
+        },
+        "false_presence_given_absent": {
+          "numerator": 4,
+          "denominator": 84,
+          "rate": 0.047619047619047616
+        },
+        "absent_predicted_pixels": 7553,
+        "visible_part_frames": 168,
+        "absent_part_frames": 84,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.03555846102177129,
+        "visible_micro_pixel_precision": -0.0007217203415367246,
+        "visible_micro_pixel_recall": -0.011313231297916615,
+        "all_frame_micro_pixel_precision": 0.007167963716665726,
+        "false_presence_given_absent": -0.05952380952380952
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 11,
+        "visible_part_frame_masks": 6,
+        "hidden_part_frame_masks": 5,
+        "pixels": 8726,
+        "true_positive_pixels": 4846,
+        "false_positive_pixels": 3880
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 8,
+        "nonempty_predicted_masks_removed": 6,
+        "raw_mean_iou": 0.7467276814571983,
+        "gated_mean_iou": 0.0,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_long_occlusion_3001": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 167.68026883201242,
+          "denominator": 170,
+          "rate": 0.9863545225412496
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 428773,
+          "denominator": 433591,
+          "rate": 0.9888881457410325
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 428773,
+          "denominator": 429432,
+          "rate": 0.9984654147804541
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 428773,
+          "denominator": 444495,
+          "rate": 0.9646295233917141
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 82,
+          "rate": 0.10975609756097561
+        },
+        "absent_predicted_pixels": 10904,
+        "visible_part_frames": 170,
+        "absent_part_frames": 82,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 159.6679947099531,
+          "denominator": 170,
+          "rate": 0.9392234982938417
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 421733,
+          "denominator": 422392,
+          "rate": 0.9984398378757173
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 421733,
+          "denominator": 429432,
+          "rate": 0.982071666759813
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 421733,
+          "denominator": 429782,
+          "rate": 0.9812719006379979
+        },
+        "false_presence_given_absent": {
+          "numerator": 4,
+          "denominator": 82,
+          "rate": 0.04878048780487805
+        },
+        "absent_predicted_pixels": 7390,
+        "visible_part_frames": 170,
+        "absent_part_frames": 82,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.04713102424740789,
+        "visible_micro_pixel_precision": 0.009551692134684875,
+        "visible_micro_pixel_recall": -0.016393748020641197,
+        "all_frame_micro_pixel_precision": 0.0166423772462837,
+        "false_presence_given_absent": -0.06097560975609756
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 15,
+        "visible_part_frame_masks": 10,
+        "hidden_part_frame_masks": 5,
+        "pixels": 14713,
+        "true_positive_pixels": 7040,
+        "false_positive_pixels": 7673
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 6,
+        "nonempty_predicted_masks_removed": 6,
+        "raw_mean_iou": 0.6687123536765541,
+        "gated_mean_iou": 0.0,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_long_occlusion_3002": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 149.82034844897373,
+          "denominator": 168,
+          "rate": 0.8917877883867484
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 389849,
+          "denominator": 427388,
+          "rate": 0.9121664623246324
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 389849,
+          "denominator": 426100,
+          "rate": 0.914923726824689
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 389849,
+          "denominator": 439267,
+          "rate": 0.8874989471096167
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 84,
+          "rate": 0.10714285714285714
+        },
+        "absent_predicted_pixels": 11879,
+        "visible_part_frames": 168,
+        "absent_part_frames": 84,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 147.83254357092494,
+          "denominator": 168,
+          "rate": 0.8799556164936009
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 389133,
+          "denominator": 426668,
+          "rate": 0.9120276186636916
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 389133,
+          "denominator": 426100,
+          "rate": 0.9132433701009153
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 389133,
+          "denominator": 436900,
+          "rate": 0.8906683451590753
+        },
+        "false_presence_given_absent": {
+          "numerator": 6,
+          "denominator": 84,
+          "rate": 0.07142857142857142
+        },
+        "absent_predicted_pixels": 10232,
+        "visible_part_frames": 168,
+        "absent_part_frames": 84,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.011832171893147558,
+        "visible_micro_pixel_precision": -0.00013884366094074618,
+        "visible_micro_pixel_recall": -0.0016803567237737571,
+        "all_frame_micro_pixel_precision": 0.003169398049458594,
+        "false_presence_given_absent": -0.03571428571428571
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 5,
+        "visible_part_frame_masks": 2,
+        "hidden_part_frame_masks": 3,
+        "pixels": 2367,
+        "true_positive_pixels": 716,
+        "false_positive_pixels": 1651
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 4,
+        "nonempty_predicted_masks_removed": 2,
+        "raw_mean_iou": 0.4969512195121951,
+        "gated_mean_iou": 0.0,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_long_occlusion_3003": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 147.58963772385076,
+          "denominator": 166,
+          "rate": 0.8890942031557274
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 386501,
+          "denominator": 424684,
+          "rate": 0.9100907969219467
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 386501,
+          "denominator": 421480,
+          "rate": 0.9170091107525862
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 386501,
+          "denominator": 436288,
+          "rate": 0.8858850117353675
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 86,
+          "rate": 0.10465116279069768
+        },
+        "absent_predicted_pixels": 11604,
+        "visible_part_frames": 166,
+        "absent_part_frames": 86,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 143.65947066379815,
+          "denominator": 166,
+          "rate": 0.8654184979746876
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 382862,
+          "denominator": 420999,
+          "rate": 0.9094130864918919
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 382862,
+          "denominator": 421480,
+          "rate": 0.9083752491221411
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 382862,
+          "denominator": 431081,
+          "rate": 0.8881439915004373
+        },
+        "false_presence_given_absent": {
+          "numerator": 6,
+          "denominator": 86,
+          "rate": 0.06976744186046512
+        },
+        "absent_predicted_pixels": 10082,
+        "visible_part_frames": 166,
+        "absent_part_frames": 86,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.023675705181039786,
+        "visible_micro_pixel_precision": -0.0006777104300548231,
+        "visible_micro_pixel_recall": -0.008633861630445105,
+        "all_frame_micro_pixel_precision": 0.002258979765069835,
+        "false_presence_given_absent": -0.034883720930232565
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 7,
+        "visible_part_frame_masks": 4,
+        "hidden_part_frame_masks": 3,
+        "pixels": 5207,
+        "true_positive_pixels": 3639,
+        "false_positive_pixels": 1568
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 2,
+        "nonempty_predicted_masks_removed": 0,
+        "raw_mean_iou": 0.0,
+        "gated_mean_iou": 0.0,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_long_occlusion_3004": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 156.82977601849862,
+          "denominator": 166,
+          "rate": 0.9447576868584254
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 399053,
+          "denominator": 423900,
+          "rate": 0.941384760556735
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 399053,
+          "denominator": 420912,
+          "rate": 0.9480675295548713
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 399053,
+          "denominator": 434470,
+          "rate": 0.9184822887656224
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 86,
+          "rate": 0.10465116279069768
+        },
+        "absent_predicted_pixels": 10570,
+        "visible_part_frames": 166,
+        "absent_part_frames": 86,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 151.84288850987198,
+          "denominator": 166,
+          "rate": 0.9147161958426023
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 396177,
+          "denominator": 421024,
+          "rate": 0.9409843619366117
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 396177,
+          "denominator": 420912,
+          "rate": 0.9412347474056335
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 396177,
+          "denominator": 429156,
+          "rate": 0.9231538181919862
+        },
+        "false_presence_given_absent": {
+          "numerator": 5,
+          "denominator": 86,
+          "rate": 0.05813953488372093
+        },
+        "absent_predicted_pixels": 8132,
+        "visible_part_frames": 166,
+        "absent_part_frames": 86,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.030041491015823096,
+        "visible_micro_pixel_precision": -0.00040039862012331007,
+        "visible_micro_pixel_recall": -0.0068327821492377705,
+        "all_frame_micro_pixel_precision": 0.00467152942636373,
+        "false_presence_given_absent": -0.04651162790697675
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 9,
+        "visible_part_frame_masks": 5,
+        "hidden_part_frame_masks": 4,
+        "pixels": 5314,
+        "true_positive_pixels": 2876,
+        "false_positive_pixels": 2438
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 6,
+        "nonempty_predicted_masks_removed": 5,
+        "raw_mean_iou": 0.8311479181044398,
+        "gated_mean_iou": 0.0,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_long_occlusion_3005": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 164.0019301519473,
+          "denominator": 166,
+          "rate": 0.987963434650285
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 419275,
+          "denominator": 423563,
+          "rate": 0.9898763584165756
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 419275,
+          "denominator": 419712,
+          "rate": 0.9989588098505642
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 419275,
+          "denominator": 435291,
+          "rate": 0.9632062229634888
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 86,
+          "rate": 0.10465116279069768
+        },
+        "absent_predicted_pixels": 11728,
+        "visible_part_frames": 166,
+        "absent_part_frames": 86,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 155.8071050752883,
+          "denominator": 166,
+          "rate": 0.9385970185258331
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 411671,
+          "denominator": 413209,
+          "rate": 0.9962779126301702
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 411671,
+          "denominator": 419712,
+          "rate": 0.9808416247331504
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 411671,
+          "denominator": 419972,
+          "rate": 0.9802343965788195
+        },
+        "false_presence_given_absent": {
+          "numerator": 3,
+          "denominator": 86,
+          "rate": 0.03488372093023256
+        },
+        "absent_predicted_pixels": 6763,
+        "visible_part_frames": 166,
+        "absent_part_frames": 86,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.04936641612445192,
+        "visible_micro_pixel_precision": 0.0064015542135945624,
+        "visible_micro_pixel_recall": -0.01811718511741378,
+        "all_frame_micro_pixel_precision": 0.01702817361533071,
+        "false_presence_given_absent": -0.06976744186046513
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 15,
+        "visible_part_frame_masks": 9,
+        "hidden_part_frame_masks": 6,
+        "pixels": 15319,
+        "true_positive_pixels": 7604,
+        "false_positive_pixels": 7715
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 2,
+        "nonempty_predicted_masks_removed": 1,
+        "raw_mean_iou": 0.5,
+        "gated_mean_iou": 0.0,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_crossing_3100": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 210.5619712513626,
+          "denominator": 246,
+          "rate": 0.8559429725665146
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 524720,
+          "denominator": 633700,
+          "rate": 0.8280258797538267
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 524720,
+          "denominator": 626255,
+          "rate": 0.8378695579276813
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 524720,
+          "denominator": 637103,
+          "rate": 0.8236030908659981
+        },
+        "false_presence_given_absent": {
+          "numerator": 3,
+          "denominator": 6,
+          "rate": 0.5
+        },
+        "absent_predicted_pixels": 3403,
+        "visible_part_frames": 246,
+        "absent_part_frames": 6,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 202.90033807079035,
+          "denominator": 246,
+          "rate": 0.8247981222389852
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 518791,
+          "denominator": 623365,
+          "rate": 0.8322427470262206
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 518791,
+          "denominator": 626255,
+          "rate": 0.8284021684457609
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 518791,
+          "denominator": 626661,
+          "rate": 0.8278654647409046
+        },
+        "false_presence_given_absent": {
+          "numerator": 1,
+          "denominator": 6,
+          "rate": 0.16666666666666666
+        },
+        "absent_predicted_pixels": 3296,
+        "visible_part_frames": 246,
+        "absent_part_frames": 6,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.03114485032752945,
+        "visible_micro_pixel_precision": 0.004216867272393898,
+        "visible_micro_pixel_recall": -0.009467389481920385,
+        "all_frame_micro_pixel_precision": 0.004262373874906467,
+        "false_presence_given_absent": -0.33333333333333337
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 12,
+        "visible_part_frame_masks": 10,
+        "hidden_part_frame_masks": 2,
+        "pixels": 10442,
+        "true_positive_pixels": 5929,
+        "false_positive_pixels": 4513
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 6,
+        "nonempty_predicted_masks_removed": 5,
+        "raw_mean_iou": 0.7834141275647108,
+        "gated_mean_iou": 9.418856550814731e-05,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_crossing_3101": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 219.28329487371622,
+          "denominator": 247,
+          "rate": 0.887786618921928
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 549850,
+          "denominator": 637847,
+          "rate": 0.8620405834000944
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 549850,
+          "denominator": 630819,
+          "rate": 0.8716446397461078
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 549850,
+          "denominator": 637847,
+          "rate": 0.8620405834000944
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 210.94758984525004,
+          "denominator": 247,
+          "rate": 0.8540388252844131
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 544616,
+          "denominator": 632545,
+          "rate": 0.860991708099819
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 544616,
+          "denominator": 630819,
+          "rate": 0.8633474895334478
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 544616,
+          "denominator": 632545,
+          "rate": 0.860991708099819
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.0337477936375149,
+        "visible_micro_pixel_precision": -0.0010488753002754203,
+        "visible_micro_pixel_recall": -0.008297150212660087,
+        "all_frame_micro_pixel_precision": -0.0010488753002754203,
+        "false_presence_given_absent": 0.0
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 9,
+        "visible_part_frame_masks": 9,
+        "hidden_part_frame_masks": 0,
+        "pixels": 5302,
+        "true_positive_pixels": 5234,
+        "false_positive_pixels": 68
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 11,
+        "nonempty_predicted_masks_removed": 9,
+        "raw_mean_iou": 0.7577913662241978,
+        "gated_mean_iou": 0.0,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_crossing_3102": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 245.57392385065233,
+          "denominator": 247,
+          "rate": 0.9942264123508192
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 628984,
+          "denominator": 630647,
+          "rate": 0.9973630255911786
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 628984,
+          "denominator": 629702,
+          "rate": 0.9988597781172681
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 628984,
+          "denominator": 630739,
+          "rate": 0.9972175495728027
+        },
+        "false_presence_given_absent": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "absent_predicted_pixels": 92,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 235.10064515661767,
+          "denominator": 247,
+          "rate": 0.9518244743182902
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 621142,
+          "denominator": 622659,
+          "rate": 0.9975636744992042
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 621142,
+          "denominator": 629702,
+          "rate": 0.9864062683618601
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 621142,
+          "denominator": 622659,
+          "rate": 0.9975636744992042
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.04240193803252901,
+        "visible_micro_pixel_precision": 0.00020064890802562463,
+        "visible_micro_pixel_recall": -0.012453509755408043,
+        "all_frame_micro_pixel_precision": 0.00034612492640151427,
+        "false_presence_given_absent": -0.2
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 12,
+        "visible_part_frame_masks": 11,
+        "hidden_part_frame_masks": 1,
+        "pixels": 8080,
+        "true_positive_pixels": 7842,
+        "false_positive_pixels": 238
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 9,
+        "nonempty_predicted_masks_removed": 9,
+        "raw_mean_iou": 0.9423025870873407,
+        "gated_mean_iou": 0.0,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_crossing_3103": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 216.69753279654518,
+          "denominator": 247,
+          "rate": 0.8773179465447173
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 542105,
+          "denominator": 639785,
+          "rate": 0.8473237103089319
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 542105,
+          "denominator": 629577,
+          "rate": 0.8610622687931738
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 542105,
+          "denominator": 643191,
+          "rate": 0.8428367312353562
+        },
+        "false_presence_given_absent": {
+          "numerator": 2,
+          "denominator": 5,
+          "rate": 0.4
+        },
+        "absent_predicted_pixels": 3406,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 207.00195077635684,
+          "denominator": 247,
+          "rate": 0.8380645780419305
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 533299,
+          "denominator": 630870,
+          "rate": 0.8453389763342686
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 533299,
+          "denominator": 629577,
+          "rate": 0.8470750996303867
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 533299,
+          "denominator": 634207,
+          "rate": 0.8408910655353852
+        },
+        "false_presence_given_absent": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "absent_predicted_pixels": 3337,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.03925336850278682,
+        "visible_micro_pixel_precision": -0.0019847339746633663,
+        "visible_micro_pixel_recall": -0.013987169162787083,
+        "all_frame_micro_pixel_precision": -0.001945665699971011,
+        "false_presence_given_absent": -0.2
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 11,
+        "visible_part_frame_masks": 10,
+        "hidden_part_frame_masks": 1,
+        "pixels": 8984,
+        "true_positive_pixels": 8806,
+        "false_positive_pixels": 178
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 9,
+        "nonempty_predicted_masks_removed": 8,
+        "raw_mean_iou": 0.8556730941705627,
+        "gated_mean_iou": 0.00023335666900023335,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_crossing_3104": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 214.39698334700108,
+          "denominator": 247,
+          "rate": 0.8680039811619477
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 531798,
+          "denominator": 636434,
+          "rate": 0.835590179028776
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 531798,
+          "denominator": 627242,
+          "rate": 0.847835444692798
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 531798,
+          "denominator": 636434,
+          "rate": 0.835590179028776
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 204.94079602524732,
+          "denominator": 247,
+          "rate": 0.8297198219645641
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 524035,
+          "denominator": 625245,
+          "rate": 0.8381274540380171
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 524035,
+          "denominator": 627242,
+          "rate": 0.8354590413269519
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 524035,
+          "denominator": 625245,
+          "rate": 0.8381274540380171
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.038284159197383594,
+        "visible_micro_pixel_precision": 0.002537275009241169,
+        "visible_micro_pixel_recall": -0.012376403365846111,
+        "all_frame_micro_pixel_precision": 0.002537275009241169,
+        "false_presence_given_absent": 0.0
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 11,
+        "visible_part_frame_masks": 11,
+        "hidden_part_frame_masks": 0,
+        "pixels": 11189,
+        "true_positive_pixels": 7763,
+        "false_positive_pixels": 3426
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 9,
+        "nonempty_predicted_masks_removed": 7,
+        "raw_mean_iou": 0.722979382833659,
+        "gated_mean_iou": 3.2853669754911625e-05,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_crossing_3105": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 243.11677704063854,
+          "denominator": 247,
+          "rate": 0.9842784495572411
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 624451,
+          "denominator": 632958,
+          "rate": 0.986559929726775
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 624451,
+          "denominator": 627421,
+          "rate": 0.9952663363196322
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 624451,
+          "denominator": 632958,
+          "rate": 0.986559929726775
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 233.04099054128392,
+          "denominator": 247,
+          "rate": 0.943485791665117
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 617152,
+          "denominator": 625526,
+          "rate": 0.9866128666114597
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 617152,
+          "denominator": 627421,
+          "rate": 0.9836329992142437
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 617152,
+          "denominator": 625526,
+          "rate": 0.9866128666114597
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.04079265789212405,
+        "visible_micro_pixel_precision": 5.293688468477331e-05,
+        "visible_micro_pixel_recall": -0.011633337105388497,
+        "all_frame_micro_pixel_precision": 5.293688468477331e-05,
+        "false_presence_given_absent": 0.0
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 11,
+        "visible_part_frame_masks": 11,
+        "hidden_part_frame_masks": 0,
+        "pixels": 7432,
+        "true_positive_pixels": 7299,
+        "false_positive_pixels": 133
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 9,
+        "nonempty_predicted_masks_removed": 7,
+        "raw_mean_iou": 0.6865281743272245,
+        "gated_mean_iou": 0.0006916185948297966,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_scale_camera_3200": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 246.5678561018776,
+          "denominator": 252,
+          "rate": 0.9784438734201492
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 677038,
+          "denominator": 687584,
+          "rate": 0.9846622376320566
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 677038,
+          "denominator": 680410,
+          "rate": 0.9950441645478462
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 677038,
+          "denominator": 687584,
+          "rate": 0.9846622376320566
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 246.5678561018776,
+          "denominator": 252,
+          "rate": 0.9784438734201492
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 677038,
+          "denominator": 687584,
+          "rate": 0.9846622376320566
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 677038,
+          "denominator": 680410,
+          "rate": 0.9950441645478462
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 677038,
+          "denominator": 687584,
+          "rate": 0.9846622376320566
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": 0.0,
+        "visible_micro_pixel_precision": 0.0,
+        "visible_micro_pixel_recall": 0.0,
+        "all_frame_micro_pixel_precision": 0.0,
+        "false_presence_given_absent": null
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 0,
+        "visible_part_frame_masks": 0,
+        "hidden_part_frame_masks": 0,
+        "pixels": 0,
+        "true_positive_pixels": 0,
+        "false_positive_pixels": 0
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 0,
+        "nonempty_predicted_masks_removed": 0,
+        "raw_mean_iou": null,
+        "gated_mean_iou": null,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_scale_camera_3201": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 247.1226321532979,
+          "denominator": 252,
+          "rate": 0.9806453656876901
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 674863,
+          "denominator": 683868,
+          "rate": 0.9868322541777068
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 674863,
+          "denominator": 678474,
+          "rate": 0.994677762154482
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 674863,
+          "denominator": 683868,
+          "rate": 0.9868322541777068
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 247.1226321532979,
+          "denominator": 252,
+          "rate": 0.9806453656876901
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 674863,
+          "denominator": 683868,
+          "rate": 0.9868322541777068
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 674863,
+          "denominator": 678474,
+          "rate": 0.994677762154482
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 674863,
+          "denominator": 683868,
+          "rate": 0.9868322541777068
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": 0.0,
+        "visible_micro_pixel_precision": 0.0,
+        "visible_micro_pixel_recall": 0.0,
+        "all_frame_micro_pixel_precision": 0.0,
+        "false_presence_given_absent": null
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 0,
+        "visible_part_frame_masks": 0,
+        "hidden_part_frame_masks": 0,
+        "pixels": 0,
+        "true_positive_pixels": 0,
+        "false_positive_pixels": 0
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 0,
+        "nonempty_predicted_masks_removed": 0,
+        "raw_mean_iou": null,
+        "gated_mean_iou": null,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_scale_camera_3202": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 246.42931289876125,
+          "denominator": 252,
+          "rate": 0.9778940988046082
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 676263,
+          "denominator": 686832,
+          "rate": 0.9846119575092599
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 676263,
+          "denominator": 680072,
+          "rate": 0.9943991224458587
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 676263,
+          "denominator": 686832,
+          "rate": 0.9846119575092599
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 246.42931289876125,
+          "denominator": 252,
+          "rate": 0.9778940988046082
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 676263,
+          "denominator": 686832,
+          "rate": 0.9846119575092599
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 676263,
+          "denominator": 680072,
+          "rate": 0.9943991224458587
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 676263,
+          "denominator": 686832,
+          "rate": 0.9846119575092599
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": 0.0,
+        "visible_micro_pixel_precision": 0.0,
+        "visible_micro_pixel_recall": 0.0,
+        "all_frame_micro_pixel_precision": 0.0,
+        "false_presence_given_absent": null
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 0,
+        "visible_part_frame_masks": 0,
+        "hidden_part_frame_masks": 0,
+        "pixels": 0,
+        "true_positive_pixels": 0,
+        "false_positive_pixels": 0
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 0,
+        "nonempty_predicted_masks_removed": 0,
+        "raw_mean_iou": null,
+        "gated_mean_iou": null,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_scale_camera_3203": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 247.15068863107075,
+          "denominator": 252,
+          "rate": 0.9807567009169474
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 675007,
+          "denominator": 684244,
+          "rate": 0.9865004296712868
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 675007,
+          "denominator": 678450,
+          "rate": 0.994925197140541
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 675007,
+          "denominator": 684244,
+          "rate": 0.9865004296712868
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 247.15068863107075,
+          "denominator": 252,
+          "rate": 0.9807567009169474
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 675007,
+          "denominator": 684244,
+          "rate": 0.9865004296712868
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 675007,
+          "denominator": 678450,
+          "rate": 0.994925197140541
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 675007,
+          "denominator": 684244,
+          "rate": 0.9865004296712868
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": 0.0,
+        "visible_micro_pixel_precision": 0.0,
+        "visible_micro_pixel_recall": 0.0,
+        "all_frame_micro_pixel_precision": 0.0,
+        "false_presence_given_absent": null
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 0,
+        "visible_part_frame_masks": 0,
+        "hidden_part_frame_masks": 0,
+        "pixels": 0,
+        "true_positive_pixels": 0,
+        "false_positive_pixels": 0
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 0,
+        "nonempty_predicted_masks_removed": 0,
+        "raw_mean_iou": null,
+        "gated_mean_iou": null,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_scale_camera_3204": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 246.73776013047342,
+          "denominator": 252,
+          "rate": 0.9791180957558469
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 675888,
+          "denominator": 686026,
+          "rate": 0.9852221344380534
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 675888,
+          "denominator": 679320,
+          "rate": 0.9949478890655361
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 675888,
+          "denominator": 686026,
+          "rate": 0.9852221344380534
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 246.73776013047342,
+          "denominator": 252,
+          "rate": 0.9791180957558469
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 675888,
+          "denominator": 686026,
+          "rate": 0.9852221344380534
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 675888,
+          "denominator": 679320,
+          "rate": 0.9949478890655361
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 675888,
+          "denominator": 686026,
+          "rate": 0.9852221344380534
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": 0.0,
+        "visible_micro_pixel_precision": 0.0,
+        "visible_micro_pixel_recall": 0.0,
+        "all_frame_micro_pixel_precision": 0.0,
+        "false_presence_given_absent": null
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 0,
+        "visible_part_frame_masks": 0,
+        "hidden_part_frame_masks": 0,
+        "pixels": 0,
+        "true_positive_pixels": 0,
+        "false_positive_pixels": 0
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 0,
+        "nonempty_predicted_masks_removed": 0,
+        "raw_mean_iou": null,
+        "gated_mean_iou": null,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "test_scale_camera_3205": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 246.53883505020997,
+          "denominator": 252,
+          "rate": 0.9783287105167062
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 676844,
+          "denominator": 687332,
+          "rate": 0.9847409985276402
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 676844,
+          "denominator": 680376,
+          "rate": 0.9948087528072713
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 676844,
+          "denominator": 687332,
+          "rate": 0.9847409985276402
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 246.53883505020997,
+          "denominator": 252,
+          "rate": 0.9783287105167062
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 676844,
+          "denominator": 687332,
+          "rate": 0.9847409985276402
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 676844,
+          "denominator": 680376,
+          "rate": 0.9948087528072713
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 676844,
+          "denominator": 687332,
+          "rate": 0.9847409985276402
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": 0.0,
+        "visible_micro_pixel_precision": 0.0,
+        "visible_micro_pixel_recall": 0.0,
+        "all_frame_micro_pixel_precision": 0.0,
+        "false_presence_given_absent": null
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 0,
+        "visible_part_frame_masks": 0,
+        "hidden_part_frame_masks": 0,
+        "pixels": 0,
+        "true_positive_pixels": 0,
+        "false_positive_pixels": 0
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 0,
+        "nonempty_predicted_masks_removed": 0,
+        "raw_mean_iou": null,
+        "gated_mean_iou": null,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    }
+  },
+  "by_part": {
+    "car_A.front_door": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 680.0528862435654,
+          "denominator": 848,
+          "rate": 0.8019491583060913
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 2157287,
+          "denominator": 2677855,
+          "rate": 0.8056026185136984
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 2157287,
+          "denominator": 2617786,
+          "rate": 0.8240883708599557
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 2157287,
+          "denominator": 2731852,
+          "rate": 0.7896793091280201
+        },
+        "false_presence_given_absent": {
+          "numerator": 36,
+          "denominator": 286,
+          "rate": 0.1258741258741259
+        },
+        "absent_predicted_pixels": 53997,
+        "visible_part_frames": 848,
+        "absent_part_frames": 286,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 643.6467376511189,
+          "denominator": 848,
+          "rate": 0.7590173793055647
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 2120560,
+          "denominator": 2627607,
+          "rate": 0.8070308839944482
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 2120560,
+          "denominator": 2617786,
+          "rate": 0.8100585762166961
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 2120560,
+          "denominator": 2669454,
+          "rate": 0.7943796746450772
+        },
+        "false_presence_given_absent": {
+          "numerator": 17,
+          "denominator": 286,
+          "rate": 0.05944055944055944
+        },
+        "absent_predicted_pixels": 41847,
+        "visible_part_frames": 848,
+        "absent_part_frames": 286,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.04293177900052658,
+        "visible_micro_pixel_precision": 0.001428265480749813,
+        "visible_micro_pixel_recall": -0.014029794643259597,
+        "all_frame_micro_pixel_precision": 0.0047003655170571035,
+        "false_presence_given_absent": -0.06643356643356645
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 62,
+        "visible_part_frame_masks": 43,
+        "hidden_part_frame_masks": 19,
+        "pixels": 62398,
+        "true_positive_pixels": 36727,
+        "false_positive_pixels": 25671
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 38,
+        "nonempty_predicted_masks_removed": 25,
+        "raw_mean_iou": 0.5875737339087582,
+        "gated_mean_iou": 0.0002417260998766673,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "car_A.window": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 845.187334461214,
+          "denominator": 881,
+          "rate": 0.9593499823623315
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 1654459,
+          "denominator": 1704237,
+          "rate": 0.9707916211184242
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 1654459,
+          "denominator": 1688629,
+          "rate": 0.97976464931018
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 1654459,
+          "denominator": 1725256,
+          "rate": 0.9589643507977946
+        },
+        "false_presence_given_absent": {
+          "numerator": 24,
+          "denominator": 253,
+          "rate": 0.09486166007905138
+        },
+        "absent_predicted_pixels": 21019,
+        "visible_part_frames": 881,
+        "absent_part_frames": 253,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 792.8095302121867,
+          "denominator": 881,
+          "rate": 0.8998973101159894
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 1621592,
+          "denominator": 1669641,
+          "rate": 0.9712219572950114
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 1621592,
+          "denominator": 1688629,
+          "rate": 0.9603009305181897
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 1621592,
+          "denominator": 1684579,
+          "rate": 0.9626096490577171
+        },
+        "false_presence_given_absent": {
+          "numerator": 13,
+          "denominator": 253,
+          "rate": 0.05138339920948617
+        },
+        "absent_predicted_pixels": 14938,
+        "visible_part_frames": 881,
+        "absent_part_frames": 253,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": -0.0594526722463421,
+        "visible_micro_pixel_precision": 0.00043033617658716494,
+        "visible_micro_pixel_recall": -0.01946371879199038,
+        "all_frame_micro_pixel_precision": 0.003645298259922436,
+        "false_presence_given_absent": -0.04347826086956521
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 66,
+        "visible_part_frame_masks": 55,
+        "hidden_part_frame_masks": 11,
+        "pixels": 40677,
+        "true_positive_pixels": 32867,
+        "false_positive_pixels": 7810
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 43,
+        "nonempty_predicted_masks_removed": 40,
+        "raw_mean_iou": 0.8729424421275123,
+        "gated_mean_iou": 0.0,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "car_B.front_door": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 1125.2424726143608,
+          "denominator": 1134,
+          "rate": 0.9922773127110766
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 3749376,
+          "denominator": 3771951,
+          "rate": 0.994015033599323
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 3749376,
+          "denominator": 3755811,
+          "rate": 0.9982866549994129
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 3749376,
+          "denominator": 3771951,
+          "rate": 0.994015033599323
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 1134,
+        "absent_part_frames": 0,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 1125.2424726143608,
+          "denominator": 1134,
+          "rate": 0.9922773127110766
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 3749376,
+          "denominator": 3771951,
+          "rate": 0.994015033599323
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 3749376,
+          "denominator": 3755811,
+          "rate": 0.9982866549994129
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 3749376,
+          "denominator": 3771951,
+          "rate": 0.994015033599323
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 1134,
+        "absent_part_frames": 0,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": 0.0,
+        "visible_micro_pixel_precision": 0.0,
+        "visible_micro_pixel_recall": 0.0,
+        "all_frame_micro_pixel_precision": 0.0,
+        "false_presence_given_absent": null
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 0,
+        "visible_part_frame_masks": 0,
+        "hidden_part_frame_masks": 0,
+        "pixels": 0,
+        "true_positive_pixels": 0,
+        "false_positive_pixels": 0
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 0,
+        "nonempty_predicted_masks_removed": 0,
+        "raw_mean_iou": null,
+        "gated_mean_iou": null,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    },
+    "car_B.window": {
+      "raw": {
+        "mean_iou_given_visible": {
+          "numerator": 1123.4730140719219,
+          "denominator": 1134,
+          "rate": 0.9907169436260334
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 2323685,
+          "denominator": 2337511,
+          "rate": 0.9940851615243735
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 2323685,
+          "denominator": 2331876,
+          "rate": 0.9964873775449467
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 2323685,
+          "denominator": 2337511,
+          "rate": 0.9940851615243735
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 1134,
+        "absent_part_frames": 0,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "gated": {
+        "mean_iou_given_visible": {
+          "numerator": 1123.4730140719219,
+          "denominator": 1134,
+          "rate": 0.9907169436260334
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 2323685,
+          "denominator": 2337511,
+          "rate": 0.9940851615243735
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 2323685,
+          "denominator": 2331876,
+          "rate": 0.9964873775449467
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 2323685,
+          "denominator": 2337511,
+          "rate": 0.9940851615243735
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 1134,
+        "absent_part_frames": 0,
+        "scored_part_frames": 1134,
+        "clips": 18
+      },
+      "gated_minus_raw": {
+        "mean_iou_given_visible": 0.0,
+        "visible_micro_pixel_precision": 0.0,
+        "visible_micro_pixel_recall": 0.0,
+        "all_frame_micro_pixel_precision": 0.0,
+        "false_presence_given_absent": null
+      },
+      "removed": {
+        "nonempty_part_frame_masks": 0,
+        "visible_part_frame_masks": 0,
+        "hidden_part_frame_masks": 0,
+        "pixels": 0,
+        "true_positive_pixels": 0,
+        "false_positive_pixels": 0
+      },
+      "visible_without_eligible_gt_patch_in_pair": {
+        "part_frames": 0,
+        "nonempty_predicted_masks_removed": 0,
+        "raw_mean_iou": null,
+        "gated_mean_iou": null,
+        "interpretation": "Includes thin/sliver or moving visible parts without a qualifying 16x16 patch across the pair; not only small physical parts."
+      }
+    }
+  },
+  "sources": [
+    {
+      "scene": "test_long_occlusion_3000",
+      "raw_masks_sha256": "fe7a2fa65c70237218697bdccb3bbc2254a38f021e5f33a51a04f4e1a26a6a21",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_long_occlusion_3001",
+      "raw_masks_sha256": "7bacc698639ead9302d26def5e06d0a4f4a5372222aca4d1bd72cb8d1efd65b6",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_long_occlusion_3002",
+      "raw_masks_sha256": "f3a03f38d93b9692f0044dd6a73270cc49b1ba6aaca9bdc90f9c284aabb14b0a",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_long_occlusion_3003",
+      "raw_masks_sha256": "a2f59fef65e096925c9d12ab465c2cbc0552316acf62d57f5e4f5f7781b57a54",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_long_occlusion_3004",
+      "raw_masks_sha256": "691fd1c753f83aca154ab9d1f00c4965dacf87864ad38113bce8485699f9b016",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_long_occlusion_3005",
+      "raw_masks_sha256": "e8ec8105156ed3385530576b18e2cad1a1d6c61b4b3498a1dbe435b5c4197afb",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_crossing_3100",
+      "raw_masks_sha256": "425c98a62a8b59d590743d90b501f66b3b28fa6a77130b2f94d128a8bd1c32c2",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_crossing_3101",
+      "raw_masks_sha256": "29cd97021ee8d5f837d5f963148646fcaf7d3f51146f0649a7cb6db7f43a2076",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_crossing_3102",
+      "raw_masks_sha256": "cf26858ea0f28b0aedd978b978a51d549f1317462ee922180f0ab79bb9020685",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_crossing_3103",
+      "raw_masks_sha256": "c60a55b68d14926b4458004cbd1984d0945358bd181e69f875f876cf63bddd77",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_crossing_3104",
+      "raw_masks_sha256": "db2964dff2f763bf6de7debc4faae1a41e85359626991c19470e91e7a0e0c235",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_crossing_3105",
+      "raw_masks_sha256": "ce8b6b1123d6e138057c3a41268e22c50a8f4b165419919ed16650c5ce52ef74",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_scale_camera_3200",
+      "raw_masks_sha256": "a26fe36ea09d8d1bb800a081d9469197471568505a83f5471453e6836e572f59",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_scale_camera_3201",
+      "raw_masks_sha256": "731684cd1b691fe123d2a6c285ce72528a395e3b297d86a700ca8057a9398784",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_scale_camera_3202",
+      "raw_masks_sha256": "5af616d129466fa7e271fa1fb7c96a6b41f3d127c1af9c1213003822d65bea5b",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_scale_camera_3203",
+      "raw_masks_sha256": "0996c05b46e4cddee1508a8a0054444396e973e0b5a276a2b21a839af1213df9",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_scale_camera_3204",
+      "raw_masks_sha256": "20a201e3aa07e822e3565c1224ca05b1ff8f8c39f21106eea09a172ee5943b03",
+      "frame0_preserved": true
+    },
+    {
+      "scene": "test_scale_camera_3205",
+      "raw_masks_sha256": "5d6cf37bc0e3f8dea539886574d5562a53ef010f1c32cc184f3cf4bc560715d2",
+      "frame0_preserved": true
+    }
+  ],
+  "storage": "Raw masks are unchanged. Saved boolean decisions reconstruct gated masks with raw_mask AND frame_gate; frame0 gate is forced true."
+}

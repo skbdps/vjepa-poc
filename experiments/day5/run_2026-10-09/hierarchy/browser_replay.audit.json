@@ -1,0 +1,3018 @@
+{
+  "recipe": {
+    "schema": "vjepa.hierarchical-part-edit-recipe",
+    "version": 1,
+    "sequence": "test_crossing_6200",
+    "containment": false,
+    "parts": [
+      {
+        "id": "car_A.front_door",
+        "enabled": true,
+        "color": [
+          42,
+          137,
+          240
+        ],
+        "strength": 0.8
+      },
+      {
+        "id": "car_A.window",
+        "enabled": true,
+        "color": [
+          249,
+          184,
+          53
+        ],
+        "strength": 0.35
+      },
+      {
+        "id": "car_B.front_door",
+        "enabled": true,
+        "color": [
+          80,
+          213,
+          151
+        ],
+        "strength": 0.5
+      },
+      {
+        "id": "car_B.window",
+        "enabled": false,
+        "color": [
+          219,
+          102,
+          218
+        ],
+        "strength": 0.65
+      }
+    ]
+  },
+  "canonical_recipe_sha256": "7171e82044465738a2fb1fd0858fda43b05167402d2a648fa57770dfb9aa172c",
+  "provenance": {
+    "scene": "test_crossing_6200",
+    "source_digest": "fea39b4e91e3e02177503b1f3c0444c54f62966e8cf4a9844ae76833cbfc6314",
+    "rgb_sha256": "8c00c1e4be0fbca7bb0cf659b4c6971dc7a9220c8d2b3f6d0941e3319925b48f",
+    "cache_sha256": {
+      "children": "3e3fc3552cad5dd0335b1b90e459365f2d35b88963b882e5911557f89449cb96",
+      "parents": "13c6d25959844587687175185e5bcd3cf4fe43d86305cd28228f089d5a0e17d9"
+    },
+    "complete_test_results_sha256": "176e4033511061d0f628cdd3fd1109bbdde30205e3c33190f8eb8538d73c8e04",
+    "clip_manifest_sha256": "86f75c55066d86ef7df6dc5aa5426fe6e877ee6a3ce8f4e8b73a4b905d57aeaf",
+    "renderer_input": "original rendered lossless RGB; tracker input was quality100 JPEG"
+  },
+  "fps": 12,
+  "frame_count": 64,
+  "operation": "deterministic independent alpha recolor; no model inference",
+  "guarantee_scope": "RGB arrays before lossy video encoding; predicted mask protection, not anatomical truth",
+  "containment_policy": "effective_raw_i AND P_own(i)",
+  "all_frames_passed": true,
+  "frames": [
+    {
+      "frame": 0,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8654,
+      "permitted_pixels": 8654,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2049,
+          "effective_mask_pixels": 2049,
+          "permitted_pixels": 2049
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2052,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8654,
+      "permitted_pixels": 8654,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8655,
+      "permitted_pixels": 8655,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8655,
+      "permitted_pixels": 8655,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8656,
+      "permitted_pixels": 8656,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8656,
+      "permitted_pixels": 8656,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2049,
+          "effective_mask_pixels": 2049,
+          "permitted_pixels": 2049
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8657,
+      "permitted_pixels": 8657,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8657,
+      "permitted_pixels": 8657,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8662,
+      "permitted_pixels": 8662,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3307,
+          "effective_mask_pixels": 3307,
+          "permitted_pixels": 3307
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2049,
+          "effective_mask_pixels": 2049,
+          "permitted_pixels": 2049
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3306,
+          "effective_mask_pixels": 3306,
+          "permitted_pixels": 3306
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8674,
+      "permitted_pixels": 8674,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2053,
+          "effective_mask_pixels": 2053,
+          "permitted_pixels": 2053
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3319,
+          "effective_mask_pixels": 3319,
+          "permitted_pixels": 3319
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8669,
+      "permitted_pixels": 8669,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3316,
+          "effective_mask_pixels": 3316,
+          "permitted_pixels": 3316
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8700,
+      "permitted_pixels": 8700,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2085,
+          "effective_mask_pixels": 2085,
+          "permitted_pixels": 2085
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3312,
+          "effective_mask_pixels": 3312,
+          "permitted_pixels": 3312
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8655,
+      "permitted_pixels": 8655,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8678,
+      "permitted_pixels": 8678,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 2051
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3326,
+          "effective_mask_pixels": 3326,
+          "permitted_pixels": 3326
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8656,
+      "permitted_pixels": 8656,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8656,
+      "permitted_pixels": 8656,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8669,
+      "permitted_pixels": 8669,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 2051
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3317,
+          "effective_mask_pixels": 3317,
+          "permitted_pixels": 3317
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8661,
+      "permitted_pixels": 8661,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3305,
+          "effective_mask_pixels": 3305,
+          "permitted_pixels": 3305
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 2051
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3305,
+          "effective_mask_pixels": 3305,
+          "permitted_pixels": 3305
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2052,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8658,
+      "permitted_pixels": 8658,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3307,
+          "effective_mask_pixels": 3307,
+          "permitted_pixels": 3307
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8655,
+      "permitted_pixels": 8655,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8683,
+      "permitted_pixels": 8683,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2078,
+          "effective_mask_pixels": 2078,
+          "permitted_pixels": 2078
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8655,
+      "permitted_pixels": 8655,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8661,
+      "permitted_pixels": 8661,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3305,
+          "effective_mask_pixels": 3305,
+          "permitted_pixels": 3305
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2049,
+          "effective_mask_pixels": 2049,
+          "permitted_pixels": 2049
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3307,
+          "effective_mask_pixels": 3307,
+          "permitted_pixels": 3307
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 23,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8665,
+      "permitted_pixels": 8665,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3306,
+          "effective_mask_pixels": 3306,
+          "permitted_pixels": 3306
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3309,
+          "effective_mask_pixels": 3309,
+          "permitted_pixels": 3309
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2055,
+          "effective_mask_pixels": 2055,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 24,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8681,
+      "permitted_pixels": 8681,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3329,
+          "effective_mask_pixels": 3329,
+          "permitted_pixels": 3329
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 25,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8702,
+      "permitted_pixels": 8702,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2098,
+          "effective_mask_pixels": 2098,
+          "permitted_pixels": 2098
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 26,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8659,
+      "permitted_pixels": 8659,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3301,
+          "effective_mask_pixels": 3301,
+          "permitted_pixels": 3301
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2053,
+          "effective_mask_pixels": 2053,
+          "permitted_pixels": 2053
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3305,
+          "effective_mask_pixels": 3305,
+          "permitted_pixels": 3305
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8531,
+      "permitted_pixels": 8531,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3166,
+          "effective_mask_pixels": 3166,
+          "permitted_pixels": 3166
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2052,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 2052
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3313,
+          "effective_mask_pixels": 3313,
+          "permitted_pixels": 3313
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 28,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8204,
+      "permitted_pixels": 8204,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 2801,
+          "effective_mask_pixels": 2801,
+          "permitted_pixels": 2801
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2100,
+          "effective_mask_pixels": 2100,
+          "permitted_pixels": 2100
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 29,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 7518,
+      "permitted_pixels": 7518,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 2120,
+          "effective_mask_pixels": 2120,
+          "permitted_pixels": 2120
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2092,
+          "effective_mask_pixels": 2092,
+          "permitted_pixels": 2092
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3306,
+          "effective_mask_pixels": 3306,
+          "permitted_pixels": 3306
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 30,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 6886,
+      "permitted_pixels": 6886,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 1483,
+          "effective_mask_pixels": 1483,
+          "permitted_pixels": 1483
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2090,
+          "effective_mask_pixels": 2090,
+          "permitted_pixels": 2090
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3313,
+          "effective_mask_pixels": 3313,
+          "permitted_pixels": 3313
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 31,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 6197,
+      "permitted_pixels": 6197,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 829,
+          "effective_mask_pixels": 829,
+          "permitted_pixels": 829
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2056,
+          "effective_mask_pixels": 2056,
+          "permitted_pixels": 2056
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3312,
+          "effective_mask_pixels": 3312,
+          "permitted_pixels": 3312
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 32,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 5656,
+      "permitted_pixels": 5656,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 249,
+          "effective_mask_pixels": 249,
+          "permitted_pixels": 249
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2088,
+          "effective_mask_pixels": 2088,
+          "permitted_pixels": 2088
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3319,
+          "effective_mask_pixels": 3319,
+          "permitted_pixels": 3319
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 33,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 5299,
+      "permitted_pixels": 5299,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 0,
+          "effective_mask_pixels": 0,
+          "permitted_pixels": 0
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 1993,
+          "effective_mask_pixels": 1993,
+          "permitted_pixels": 1993
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3306,
+          "effective_mask_pixels": 3306,
+          "permitted_pixels": 3306
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2048,
+          "effective_mask_pixels": 2048,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 34,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 4729,
+      "permitted_pixels": 4729,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 0,
+          "effective_mask_pixels": 0,
+          "permitted_pixels": 0
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 1423,
+          "effective_mask_pixels": 1423,
+          "permitted_pixels": 1423
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3306,
+          "effective_mask_pixels": 3306,
+          "permitted_pixels": 3306
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 35,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 4179,
+      "permitted_pixels": 4179,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 0,
+          "effective_mask_pixels": 0,
+          "permitted_pixels": 0
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 871,
+          "effective_mask_pixels": 871,
+          "permitted_pixels": 871
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3308,
+          "effective_mask_pixels": 3308,
+          "permitted_pixels": 3308
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 36,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 3618,
+      "permitted_pixels": 3618,
+      "ambiguous_overlap_pixels": 86,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 0,
+          "effective_mask_pixels": 0,
+          "permitted_pixels": 0
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 401,
+          "effective_mask_pixels": 315,
+          "permitted_pixels": 315
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2138,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 37,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 3677,
+      "permitted_pixels": 3677,
+      "ambiguous_overlap_pixels": 7,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 0,
+          "effective_mask_pixels": 0,
+          "permitted_pixels": 0
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 370,
+          "effective_mask_pixels": 363,
+          "permitted_pixels": 363
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3314,
+          "effective_mask_pixels": 3314,
+          "permitted_pixels": 3314
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2037,
+          "effective_mask_pixels": 2030,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 38,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 3751,
+      "permitted_pixels": 3751,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 14,
+          "effective_mask_pixels": 14,
+          "permitted_pixels": 14
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 410,
+          "effective_mask_pixels": 410,
+          "permitted_pixels": 410
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3327,
+          "effective_mask_pixels": 3327,
+          "permitted_pixels": 3327
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 39,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 5028,
+      "permitted_pixels": 5028,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 1206,
+          "effective_mask_pixels": 1206,
+          "permitted_pixels": 1206
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 510,
+          "effective_mask_pixels": 510,
+          "permitted_pixels": 510
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3312,
+          "effective_mask_pixels": 3312,
+          "permitted_pixels": 3312
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 6147,
+      "permitted_pixels": 6147,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 2035,
+          "effective_mask_pixels": 2035,
+          "permitted_pixels": 2035
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 809,
+          "effective_mask_pixels": 809,
+          "permitted_pixels": 809
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 41,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 7261,
+      "permitted_pixels": 7261,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 2748,
+          "effective_mask_pixels": 2748,
+          "permitted_pixels": 2748
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 1207,
+          "effective_mask_pixels": 1207,
+          "permitted_pixels": 1207
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3306,
+          "effective_mask_pixels": 3306,
+          "permitted_pixels": 3306
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 42,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8017,
+      "permitted_pixels": 8017,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3200,
+          "effective_mask_pixels": 3200,
+          "permitted_pixels": 3200
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 1515,
+          "effective_mask_pixels": 1515,
+          "permitted_pixels": 1515
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2053,
+          "effective_mask_pixels": 2053,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 43,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8475,
+      "permitted_pixels": 8475,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3297,
+          "effective_mask_pixels": 3297,
+          "permitted_pixels": 3297
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 1876,
+          "effective_mask_pixels": 1876,
+          "permitted_pixels": 1876
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2099,
+          "effective_mask_pixels": 2099,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 44,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8653,
+      "permitted_pixels": 8653,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3300,
+          "effective_mask_pixels": 3300,
+          "permitted_pixels": 3300
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 2051
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2052,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 45,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8657,
+      "permitted_pixels": 8657,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3293,
+          "effective_mask_pixels": 3293,
+          "permitted_pixels": 3293
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 2051
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3313,
+          "effective_mask_pixels": 3313,
+          "permitted_pixels": 3313
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 46,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8654,
+      "permitted_pixels": 8654,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 47,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8698,
+      "permitted_pixels": 8698,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3300,
+          "effective_mask_pixels": 3300,
+          "permitted_pixels": 3300
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2093,
+          "effective_mask_pixels": 2093,
+          "permitted_pixels": 2093
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3305,
+          "effective_mask_pixels": 3305,
+          "permitted_pixels": 3305
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 48,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8656,
+      "permitted_pixels": 8656,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3305,
+          "effective_mask_pixels": 3305,
+          "permitted_pixels": 3305
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2048,
+          "effective_mask_pixels": 2048,
+          "permitted_pixels": 2048
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3303,
+          "effective_mask_pixels": 3303,
+          "permitted_pixels": 3303
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2052,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 49,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8681,
+      "permitted_pixels": 8681,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3307,
+          "effective_mask_pixels": 3307,
+          "permitted_pixels": 3307
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2052,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 2052
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3322,
+          "effective_mask_pixels": 3322,
+          "permitted_pixels": 3322
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 50,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8676,
+      "permitted_pixels": 8676,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2068,
+          "effective_mask_pixels": 2068,
+          "permitted_pixels": 2068
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3306,
+          "effective_mask_pixels": 3306,
+          "permitted_pixels": 3306
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 51,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8732,
+      "permitted_pixels": 8732,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3305,
+          "effective_mask_pixels": 3305,
+          "permitted_pixels": 3305
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2083,
+          "effective_mask_pixels": 2083,
+          "permitted_pixels": 2083
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3344,
+          "effective_mask_pixels": 3344,
+          "permitted_pixels": 3344
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 52,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8707,
+      "permitted_pixels": 8707,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2084,
+          "effective_mask_pixels": 2084,
+          "permitted_pixels": 2084
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3321,
+          "effective_mask_pixels": 3321,
+          "permitted_pixels": 3321
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2052,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 53,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8695,
+      "permitted_pixels": 8695,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3300,
+          "effective_mask_pixels": 3300,
+          "permitted_pixels": 3300
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2076,
+          "effective_mask_pixels": 2076,
+          "permitted_pixels": 2076
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3319,
+          "effective_mask_pixels": 3319,
+          "permitted_pixels": 3319
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 54,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8664,
+      "permitted_pixels": 8664,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3306,
+          "effective_mask_pixels": 3306,
+          "permitted_pixels": 3306
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3308,
+          "effective_mask_pixels": 3308,
+          "permitted_pixels": 3308
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2052,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 55,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8682,
+      "permitted_pixels": 8682,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 2051
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3329,
+          "effective_mask_pixels": 3329,
+          "permitted_pixels": 3329
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 56,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8667,
+      "permitted_pixels": 8667,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3307,
+          "effective_mask_pixels": 3307,
+          "permitted_pixels": 3307
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 2051
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3309,
+          "effective_mask_pixels": 3309,
+          "permitted_pixels": 3309
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2052,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 57,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8664,
+      "permitted_pixels": 8664,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3302,
+          "effective_mask_pixels": 3302,
+          "permitted_pixels": 3302
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3312,
+          "effective_mask_pixels": 3312,
+          "permitted_pixels": 3312
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 58,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8701,
+      "permitted_pixels": 8701,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3325,
+          "effective_mask_pixels": 3325,
+          "permitted_pixels": 3325
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3326,
+          "effective_mask_pixels": 3326,
+          "permitted_pixels": 3326
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 59,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8667,
+      "permitted_pixels": 8667,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 2051
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3312,
+          "effective_mask_pixels": 3312,
+          "permitted_pixels": 3312
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2052,
+          "effective_mask_pixels": 2052,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 60,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8662,
+      "permitted_pixels": 8662,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3305,
+          "effective_mask_pixels": 3305,
+          "permitted_pixels": 3305
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3307,
+          "effective_mask_pixels": 3307,
+          "permitted_pixels": 3307
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 61,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8688,
+      "permitted_pixels": 8688,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3314,
+          "effective_mask_pixels": 3314,
+          "permitted_pixels": 3314
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2050,
+          "effective_mask_pixels": 2050,
+          "permitted_pixels": 2050
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3324,
+          "effective_mask_pixels": 3324,
+          "permitted_pixels": 3324
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 62,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8702,
+      "permitted_pixels": 8702,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3308,
+          "effective_mask_pixels": 3308,
+          "permitted_pixels": 3308
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2058,
+          "effective_mask_pixels": 2058,
+          "permitted_pixels": 2058
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3336,
+          "effective_mask_pixels": 3336,
+          "permitted_pixels": 3336
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    },
+    {
+      "frame": 63,
+      "active_part_ids": [
+        "car_A.front_door",
+        "car_A.window",
+        "car_B.front_door"
+      ],
+      "containment": false,
+      "changed_pixels": 8692,
+      "permitted_pixels": 8692,
+      "ambiguous_overlap_pixels": 0,
+      "changes_outside_enabled_permitted_masks": 0,
+      "changes_in_ambiguous_overlaps": 0,
+      "changes_in_disabled_predicted_parts": 0,
+      "changes_outside_original_unique_child_regions": 0,
+      "parts": [
+        {
+          "part_id": "car_A.front_door",
+          "active": true,
+          "raw_mask_pixels": 3307,
+          "effective_mask_pixels": 3307,
+          "permitted_pixels": 3307
+        },
+        {
+          "part_id": "car_A.window",
+          "active": true,
+          "raw_mask_pixels": 2081,
+          "effective_mask_pixels": 2081,
+          "permitted_pixels": 2081
+        },
+        {
+          "part_id": "car_B.front_door",
+          "active": true,
+          "raw_mask_pixels": 3304,
+          "effective_mask_pixels": 3304,
+          "permitted_pixels": 3304
+        },
+        {
+          "part_id": "car_B.window",
+          "active": false,
+          "raw_mask_pixels": 2051,
+          "effective_mask_pixels": 2051,
+          "permitted_pixels": 0
+        }
+      ]
+    }
+  ],
+  "replay_source_sha256": "a6f5892158292cdbdf55684b4abd5635007c9133247814b8d652752218b00733",
+  "compositor_source_sha256": "c4de97c9210923f65d1e3d7843445a86c0cf6fd8612e822a3e2456e79c9b64c0",
+  "output_video_sha256": "4a1451e7f6cf42b22021aea058cca655178a2aa2cb44984c3d4346061128921e"
+}

@@ -1,0 +1,21 @@
+{
+  "version": "day11_local_decode_attempt_log_v1",
+  "attempts": [
+    {
+      "log": "local_decode_attempts/day11_transport_decoded.log",
+      "outcome": "interrupted while repeated optional HuggingFace index HEAD requests timed out; no completed decoded scenes",
+      "change": "Use already verified local model cache in HF_HUB_OFFLINE mode."
+    },
+    {
+      "log": "local_decode_attempts/day11_transport_decoded_offline.log",
+      "outcome": "rejected nonempty output directory rather than overwriting incomplete evidence",
+      "change": "Use a new separate output directory."
+    },
+    {
+      "log": "local_decode_attempts/day11_transport_decoded_offline_retry.log",
+      "outcome": "complete: all8 latent cases; all27 VAE decoded arms on fixed2 renderer scenes",
+      "source_and_weights_changed": false
+    }
+  ],
+  "note": "Infrastructure retries only; no model, operator, thresholds or selection changed."
+}

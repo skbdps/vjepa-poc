@@ -1,0 +1,114 @@
+{
+  "purpose": "Post-test diagnostic selection; not a new metric, test, or tuning stage.",
+  "development_selected_method": "no_memory",
+  "frozen_config": "/workspace/scratch/8e9e8b29a938/vjepa-run/experiments/day4/run_2026-10-09/frozen_config.json",
+  "predictions": "Colored masks and patch boxes come only from saved model predictions.",
+  "raw_mask_caveat": "SAM2 dense masks are ungated; scored patch boxes use the calibrated presence decision.",
+  "reference": "GT frame visibility and pair-score text are explicitly labeled references; GT masks are never drawn as predicted masks or edits.",
+  "selection_bias": "These clips are intentionally selected failures and are not representative performance estimates.",
+  "inputs": {
+    "vjepa_csv_sha256": "04963ac7740b698691a0cfb1b94f9402bc3a4d189cc16da820678e15de966896",
+    "sam2_csv_sha256": "7cc269534fe3c2357f8d227686a09b1b3898ee6795ac2394bc1592b335fc9a99"
+  },
+  "diagnostics": [
+    {
+      "slug": "sam2_lowest_visible_localization",
+      "scene": "test_crossing_3100",
+      "selection": "Lowest SAM2 visible-localization rate across all test clips; lexicographic scene tie break.",
+      "focus_method": "sam2_1_tiny",
+      "selection_summary": {
+        "localization_accuracy_given_visible": {
+          "numerator": 100,
+          "denominator": 118,
+          "rate": 0.847457627118644
+        },
+        "wrong_car_given_visible": {
+          "numerator": 15,
+          "denominator": 118,
+          "rate": 0.1271186440677966
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 118,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 115,
+          "denominator": 118,
+          "rate": 0.9745762711864406
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "identity_switches": 1,
+        "balanced_localization_and_absence": 0.923728813559322,
+        "clips": 1,
+        "ambiguous_samples_skipped": 4,
+        "uniform_patch_chance_given_visible": 0.012226341807909607
+      },
+      "title": "Post-test diagnostic: lowest SAM2 visible localization",
+      "video": "sam2_lowest_visible_localization.mp4",
+      "poster": "sam2_lowest_visible_localization.png",
+      "poster_frame": 30,
+      "video_bytes": 140472,
+      "sam2_mask_sha256": "425c98a62a8b59d590743d90b501f66b3b28fa6a77130b2f94d128a8bd1c32c2"
+    },
+    {
+      "slug": "vjepa_crossing_wrong_car",
+      "scene": "test_crossing_3104",
+      "selection": "Most wrong-car outputs among crossing clips for the development-selected V-JEPA variant; lexicographic scene tie break.",
+      "focus_method": "no_memory",
+      "selection_summary": {
+        "localization_accuracy_given_visible": {
+          "numerator": 51,
+          "denominator": 117,
+          "rate": 0.4358974358974359
+        },
+        "wrong_car_given_visible": {
+          "numerator": 33,
+          "denominator": 117,
+          "rate": 0.28205128205128205
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 117,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 88,
+          "denominator": 117,
+          "rate": 0.7521367521367521
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "identity_switches": 10,
+        "balanced_localization_and_absence": 0.717948717948718,
+        "clips": 1,
+        "ambiguous_samples_skipped": 5,
+        "uniform_patch_chance_given_visible": 0.01252374169040836
+      },
+      "title": "Post-test diagnostic: most V-JEPA crossing identity errors",
+      "video": "vjepa_crossing_wrong_car.mp4",
+      "poster": "vjepa_crossing_wrong_car.png",
+      "poster_frame": 58,
+      "video_bytes": 143637,
+      "sam2_mask_sha256": "db2964dff2f763bf6de7debc4faae1a41e85359626991c19470e91e7a0e0c235"
+    }
+  ],
+  "total_video_bytes": 284109
+}

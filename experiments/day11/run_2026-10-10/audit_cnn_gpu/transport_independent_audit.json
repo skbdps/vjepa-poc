@@ -1,0 +1,8 @@
+{
+  "scenes": 8,
+  "independent_mapping_cases": 40,
+  "independent_full_transport_tensors": 120,
+  "full_tensor_errors": [],
+  "max_metric_absolute_difference": 0.0,
+  "method": "Independent exact-byte dictionary lookup, explicit 2x2 slicing, and local donor reconstruction; no transport.py functions called"
+}

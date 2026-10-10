@@ -1,0 +1,1549 @@
+{
+  "method": "shared_plane_lk_sift_homography",
+  "config": {
+    "max_corners": 400,
+    "quality_level": 0.005,
+    "min_distance": 3.0,
+    "context_fraction": 0.15,
+    "context_max_pixels": 32,
+    "lk_window": 21,
+    "lk_levels": 3,
+    "fb_max_pixels": 1.5,
+    "ransac_pixels": 3.0,
+    "min_homography_inliers": 6,
+    "min_affine_inliers": 3,
+    "min_inlier_fraction": 0.5,
+    "sift_ratio": 0.75,
+    "reacquire_below": 8,
+    "max_normalized_condition": 10000.0,
+    "min_area_ratio": 0.05,
+    "max_area_ratio": 20.0,
+    "min_masked_zncc": 0.1
+  },
+  "prompt_frames": [
+    0
+  ],
+  "shared_transform": true,
+  "future_labels_used": false,
+  "opencv": "4.14.0",
+  "initial_lk_points": 151,
+  "initial_sift_points": 103,
+  "failure_policy": "empty masks; no stale hold",
+  "frames": [
+    {
+      "frame": 0,
+      "status": "initial_prompt",
+      "points": 151,
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 1,
+      "status": "tracked",
+      "lk_points": 139,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 133,
+          "correspondences": 139,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.9276307848415806,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 133,
+      "matrix": [
+        [
+          1.6530492932648568,
+          0.1853304402086299,
+          -162.49650945952393
+        ],
+        [
+          0.12601064080439106,
+          1.44995887281297,
+          -65.9222831553391
+        ],
+        [
+          0.000700627966157831,
+          0.00046125834181857175,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 2,
+      "status": "tracked",
+      "lk_points": 129,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 126,
+          "correspondences": 129,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.8946716786121582,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 126,
+      "matrix": [
+        [
+          1.7184299205523133,
+          0.24454102729487529,
+          -189.6729800301455
+        ],
+        [
+          0.15341217803676854,
+          1.5387797925773812,
+          -80.68659405020239
+        ],
+        [
+          0.0007722447220459077,
+          0.0006368736031484475,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 3,
+      "status": "tracked",
+      "lk_points": 125,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 103,
+          "correspondences": 125,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.8608994054630631,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 103,
+      "matrix": [
+        [
+          1.019647252734829,
+          0.051186684307406125,
+          -42.18483890624457
+        ],
+        [
+          0.005088904690305527,
+          0.9981470956302442,
+          2.272957650160905
+        ],
+        [
+          -1.2622571795076047e-05,
+          8.323852485373779e-05,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 4,
+      "status": "tracked",
+      "lk_points": 103,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 98,
+          "correspondences": 103,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.8200412324076832,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 98,
+      "matrix": [
+        [
+          1.7853332052636077,
+          0.3109187198535452,
+          -240.34831176791624
+        ],
+        [
+          0.1435439076073973,
+          1.5397689700867547,
+          -67.47992095796975
+        ],
+        [
+          0.0007969173722192914,
+          0.0007812273975056834,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 5,
+      "status": "tracked",
+      "lk_points": 97,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 82,
+          "correspondences": 97,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.6769813083951463,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 82,
+      "matrix": [
+        [
+          0.5589817383776625,
+          0.0018601939301989632,
+          46.17866420572388
+        ],
+        [
+          -0.08164559634388337,
+          0.7109592368542264,
+          44.025429603703465
+        ],
+        [
+          -0.0005762034151829599,
+          -5.464286780008468e-05,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 6,
+      "status": "tracked",
+      "lk_points": 82,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 77,
+          "correspondences": 82,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.6823400072323397,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 77,
+      "matrix": [
+        [
+          0.5122935383798881,
+          0.009604326967407819,
+          52.24535863350067
+        ],
+        [
+          -0.10246548108074403,
+          0.6909097794826091,
+          53.812125942582306
+        ],
+        [
+          -0.0006326219441827986,
+          -2.2054181501163294e-05,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 7,
+      "status": "tracked",
+      "lk_points": 77,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 74,
+          "correspondences": 77,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.723855614657257,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 74,
+      "matrix": [
+        [
+          0.6539960026148229,
+          0.008656746365818329,
+          16.074104582614293
+        ],
+        [
+          -0.06812163430265118,
+          0.7402962201839765,
+          46.113827842904755
+        ],
+        [
+          -0.0004402555677309715,
+          -4.7122284227381554e-05,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 8,
+      "status": "tracked",
+      "lk_points": 74,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 70,
+          "correspondences": 74,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.7157655229284381,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 70,
+      "matrix": [
+        [
+          0.4234458880887323,
+          -0.12511113138542157,
+          74.55935427715141
+        ],
+        [
+          -0.1212167265241993,
+          0.48985080417435783,
+          83.47190109447416
+        ],
+        [
+          -0.0006526153124454434,
+          -0.0004584011826193093,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 9,
+      "status": "tracked",
+      "lk_points": 69,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 66,
+          "correspondences": 69,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.7272753907822903,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 66,
+      "matrix": [
+        [
+          0.621620294876369,
+          -0.05486366838190541,
+          23.56936631539237
+        ],
+        [
+          -0.07196273762644687,
+          0.6453751177998992,
+          61.55730804778949
+        ],
+        [
+          -0.0004137595941397405,
+          -0.00025475909070134755,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 10,
+      "status": "tracked",
+      "lk_points": 66,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 63,
+          "correspondences": 66,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.7133652352301,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 63,
+      "matrix": [
+        [
+          0.6357168609356905,
+          0.07081476574756759,
+          8.241771744442627
+        ],
+        [
+          -0.08266294091910971,
+          0.7457401473344994,
+          58.37883166336928
+        ],
+        [
+          -0.00046425643739363365,
+          0.00013161948252357738,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 11,
+      "status": "tracked",
+      "lk_points": 63,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 62,
+          "correspondences": 63,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.659794372339381,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 62,
+      "matrix": [
+        [
+          0.4541267062081821,
+          -0.07983254462857556,
+          57.52548748810265
+        ],
+        [
+          -0.11625382315377655,
+          0.5129980660697803,
+          86.09935961007714
+        ],
+        [
+          -0.0006146085566092374,
+          -0.0003535626852268428,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 12,
+      "status": "tracked",
+      "lk_points": 62,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 61,
+          "correspondences": 62,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.6894742165290041,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 61,
+      "matrix": [
+        [
+          0.7159513232224263,
+          -0.08512905475900578,
+          -1.8166950608252939
+        ],
+        [
+          -0.0503487454411873,
+          0.6082937688173866,
+          69.85657965580539
+        ],
+        [
+          -0.00023515104800895446,
+          -0.0004084557334498299,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 13,
+      "status": "tracked",
+      "lk_points": 61,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 57,
+          "correspondences": 61,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.5177304936173056,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 57,
+      "matrix": [
+        [
+          0.16165933195699822,
+          -0.23033035812641595,
+          132.81719341721572
+        ],
+        [
+          -0.1726719879079551,
+          0.2263108774972767,
+          121.16760558946409
+        ],
+        [
+          -0.0009076492434089877,
+          -0.000842419443519565,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 14,
+      "status": "tracked",
+      "lk_points": 57,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 52,
+          "correspondences": 57,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.540979045671855,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 52,
+      "matrix": [
+        [
+          0.5619242394984758,
+          -0.00880964817425189,
+          26.004454757058316
+        ],
+        [
+          -0.09796686080270361,
+          0.5598425531296737,
+          87.6268110779981
+        ],
+        [
+          -0.0004667442105949734,
+          -0.00019158542138705657,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 15,
+      "status": "tracked",
+      "lk_points": 52,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 48,
+          "correspondences": 52,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.45717331759460966,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 48,
+      "matrix": [
+        [
+          0.123709972052914,
+          -0.230893003292073,
+          139.3451779019567
+        ],
+        [
+          -0.17933008510818263,
+          0.19100097382250306,
+          126.19920687837521
+        ],
+        [
+          -0.0009570090440735269,
+          -0.0008615092147713694,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 16,
+      "status": "tracked",
+      "lk_points": 48,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 46,
+          "correspondences": 48,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.6130508200292423,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 46,
+      "matrix": [
+        [
+          0.2991843978164424,
+          -0.19068487667783643,
+          101.1508216708811
+        ],
+        [
+          -0.13834868803163478,
+          0.29819116591729566,
+          114.93977703227259
+        ],
+        [
+          -0.0006961673420350714,
+          -0.0007497743004309716,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 17,
+      "status": "tracked",
+      "lk_points": 46,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 45,
+          "correspondences": 46,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.6769605765961574,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 45,
+      "matrix": [
+        [
+          0.5255829425763481,
+          -0.15150574505922593,
+          49.42300794050957
+        ],
+        [
+          -0.07470353477107484,
+          0.4217287681811946,
+          95.88148358791157
+        ],
+        [
+          -0.00037561683973480047,
+          -0.0006569760809052236,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 18,
+      "status": "tracked",
+      "lk_points": 44,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 43,
+          "correspondences": 44,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.4381387657419627,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 43,
+      "matrix": [
+        [
+          1.7770648730680398,
+          0.3103650914406523,
+          -258.6813189901983
+        ],
+        [
+          0.2221956667226509,
+          1.3047964081823613,
+          -12.615608776045605
+        ],
+        [
+          0.0011976508781694028,
+          0.0006708022824957941,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 19,
+      "status": "tracked",
+      "lk_points": 43,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 34,
+          "correspondences": 43,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.5622614423831723,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 34,
+      "matrix": [
+        [
+          1.5038682830365382,
+          -1.0904213944523433,
+          -66.9079239806285
+        ],
+        [
+          0.32974369042248747,
+          0.11619778240055961,
+          54.46552810353612
+        ],
+        [
+          0.001778409120368317,
+          -0.0035749287276184366,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 20,
+      "status": "tracked",
+      "lk_points": 34,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 34,
+          "correspondences": 34,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.5872236779660068,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 34,
+      "matrix": [
+        [
+          1.8063656385596976,
+          -1.0778823502659787,
+          -127.2229249239662
+        ],
+        [
+          0.41932957537314364,
+          0.2600269424835163,
+          32.96097276720008
+        ],
+        [
+          0.0022079803032644613,
+          -0.0034115945603647286,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 21,
+      "status": "tracked",
+      "lk_points": 34,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 34,
+          "correspondences": 34,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.5056998788844013,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 34,
+      "matrix": [
+        [
+          1.4904503405336431,
+          -1.576193964522974,
+          -11.627637461332023
+        ],
+        [
+          0.39590489366686976,
+          -0.2652891026887354,
+          75.82794091394483
+        ],
+        [
+          0.0020967416608283903,
+          -0.004945480292335371,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 22,
+      "status": "tracked",
+      "lk_points": 34,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 34,
+          "correspondences": 34,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.501413325552039,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 34,
+      "matrix": [
+        [
+          2.28233076167,
+          -1.9935315087688779,
+          -132.07456570451657
+        ],
+        [
+          0.6870723418294693,
+          -0.25988340022885587,
+          33.73624733599283
+        ],
+        [
+          0.0036088241095013065,
+          -0.006213349126186831,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 23,
+      "status": "tracked",
+      "lk_points": 34,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 33,
+          "correspondences": 34,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.4034875105365319,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 33,
+      "matrix": [
+        [
+          0.2621156155092731,
+          -0.9785616084970966,
+          184.44918694978045
+        ],
+        [
+          -0.04450682190711983,
+          -0.34683799244677466,
+          150.38597455219156
+        ],
+        [
+          -0.00020746226257075472,
+          -0.0031319535345828383,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 24,
+      "status": "tracked",
+      "lk_points": 33,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 33,
+          "correspondences": 33,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.5141896346197835,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 33,
+      "matrix": [
+        [
+          2.2184937789082584,
+          -1.3397538343019546,
+          -178.28396840338192
+        ],
+        [
+          0.6031930867921548,
+          0.15505160161936482,
+          21.767168106827086
+        ],
+        [
+          0.0031107011285316133,
+          -0.004371376923569859,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 25,
+      "status": "tracked",
+      "lk_points": 33,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 32,
+          "correspondences": 33,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.5503357034101913,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 32,
+      "matrix": [
+        [
+          1.1709010812224148,
+          -0.7471631347549491,
+          -12.653522272311083
+        ],
+        [
+          0.21966442301346845,
+          0.1784639569564873,
+          80.27303144777
+        ],
+        [
+          0.0011245634288705728,
+          -0.0025149434364612664,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 26,
+      "status": "tracked",
+      "lk_points": 32,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 32,
+          "correspondences": 32,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.4206913998891188,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 32,
+      "matrix": [
+        [
+          1.1488800911397903,
+          -1.1539938604196582,
+          31.999994831948012
+        ],
+        [
+          0.2768688973142022,
+          -0.1441247715783964,
+          92.05131456609686
+        ],
+        [
+          0.001363077448203606,
+          -0.0037089978320660574,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 27,
+      "status": "tracked",
+      "lk_points": 32,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 32,
+          "correspondences": 32,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.40879007266097656,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 32,
+      "matrix": [
+        [
+          3.3350735934112694,
+          -1.4693915598574012,
+          -362.2542445898271
+        ],
+        [
+          1.018019015586842,
+          0.41220059050447183,
+          -42.36209957183701
+        ],
+        [
+          0.00507063033242125,
+          -0.0047497567704046515,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 28,
+      "status": "tracked",
+      "lk_points": 32,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 32,
+          "correspondences": 32,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.3521737054386836,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 32,
+      "matrix": [
+        [
+          2.809287527584423,
+          -2.083222017146228,
+          -202.3926343058653
+        ],
+        [
+          0.927624171335255,
+          -0.2566282814534585,
+          11.668713515757318
+        ],
+        [
+          0.004610075575347833,
+          -0.006543933619101593,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 29,
+      "status": "tracked",
+      "lk_points": 32,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 32,
+          "correspondences": 32,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.3383383798143214,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 32,
+      "matrix": [
+        [
+          5.30666060579976,
+          -3.4458817558410737,
+          -564.3680922540641
+        ],
+        [
+          1.8934966419220953,
+          -0.37746977954093586,
+          -115.28739313286589
+        ],
+        [
+          0.009445527124434888,
+          -0.010772557096547026,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 30,
+      "status": "tracked",
+      "lk_points": 32,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 32,
+          "correspondences": 32,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.3193352917158778,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 32,
+      "matrix": [
+        [
+          5.672519417519566,
+          -3.910784338610088,
+          -584.6644630204953
+        ],
+        [
+          2.0874888759727668,
+          -0.5880684082094423,
+          -130.36627437787772
+        ],
+        [
+          0.010313108316486352,
+          -0.012100745117532227,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 31,
+      "status": "tracked",
+      "lk_points": 32,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 32,
+          "correspondences": 32,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.29993284730047043,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 32,
+      "matrix": [
+        [
+          21.25466669237138,
+          -12.978983802333415,
+          -2776.405422415999
+        ],
+        [
+          8.298176837422915,
+          -1.7694042709247704,
+          -937.7070677714894
+        ],
+        [
+          0.04071585771074271,
+          -0.03980889625498568,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 32,
+      "status": "tracked",
+      "lk_points": 32,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 32,
+          "correspondences": 32,
+          "geometry_ok": false
+        },
+        {
+          "source": "lk",
+          "model": "full_affine",
+          "inliers": 31,
+          "correspondences": 32,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.2503589793954722,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "full_affine",
+      "points": 31,
+      "matrix": [
+        [
+          0.6828893930486797,
+          0.028470000584114252,
+          58.182175312131406
+        ],
+        [
+          0.024874405092337567,
+          0.5623286404046756,
+          92.83980052930248
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 33,
+      "status": "tracked",
+      "lk_points": 31,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": false
+        },
+        {
+          "source": "lk",
+          "model": "full_affine",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.23174669893815272,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "full_affine",
+      "points": 31,
+      "matrix": [
+        [
+          0.6729404008731457,
+          0.02736074656194183,
+          64.21282662367572
+        ],
+        [
+          0.02615021646537017,
+          0.557622121304154,
+          93.5467703482533
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 34,
+      "status": "tracked",
+      "lk_points": 31,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.25816730630472556,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "homography",
+      "points": 31,
+      "matrix": [
+        [
+          89.33453420377182,
+          -62.979540845947874,
+          -11155.384007980885
+        ],
+        [
+          36.90947795718158,
+          -14.26134429140547,
+          -4248.850247900431
+        ],
+        [
+          0.17916365937463474,
+          -0.18788683826320943,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 35,
+      "status": "tracked",
+      "lk_points": 31,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": false
+        },
+        {
+          "source": "lk",
+          "model": "full_affine",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.2754581412271965,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "full_affine",
+      "points": 31,
+      "matrix": [
+        [
+          0.6501946234098359,
+          0.026506697057809222,
+          78.07594619867335
+        ],
+        [
+          0.032974459466254116,
+          0.5487554799223667,
+          92.4293086645045
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 36,
+      "status": "tracked",
+      "lk_points": 31,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": false
+        },
+        {
+          "source": "lk",
+          "model": "full_affine",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.3210851250003095,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "full_affine",
+      "points": 31,
+      "matrix": [
+        [
+          0.6397430343333225,
+          0.023899190939887075,
+          85.49233373490891
+        ],
+        [
+          0.03513600737927706,
+          0.5426335540244882,
+          92.45569237145052
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 37,
+      "status": "tracked",
+      "lk_points": 31,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": false
+        },
+        {
+          "source": "lk",
+          "model": "full_affine",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.32560000520979243,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "full_affine",
+      "points": 31,
+      "matrix": [
+        [
+          0.6271856977134131,
+          0.020490986197897812,
+          93.15797807589958
+        ],
+        [
+          0.033796425798231826,
+          0.5385509723979436,
+          94.33051629935889
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 38,
+      "status": "tracked",
+      "lk_points": 31,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": false
+        },
+        {
+          "source": "lk",
+          "model": "full_affine",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.3286158805886302,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "full_affine",
+      "points": 31,
+      "matrix": [
+        [
+          0.6179598554867517,
+          0.019035790475510565,
+          98.63638237067012
+        ],
+        [
+          0.030466987502135837,
+          0.5339824661356023,
+          97.5379827819393
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "frame": 39,
+      "status": "tracked",
+      "lk_points": 31,
+      "attempts": [
+        {
+          "source": "lk",
+          "model": "homography",
+          "inliers": 31,
+          "correspondences": 31,
+          "geometry_ok": false
+        },
+        {
+          "source": "lk",
+          "model": "full_affine",
+          "inliers": 30,
+          "correspondences": 31,
+          "geometry_ok": true,
+          "photo_ok": true,
+          "masked_zncc": 0.3475610299597142,
+          "photo_reason": "masked_zncc"
+        }
+      ],
+      "source": "lk",
+      "model": "full_affine",
+      "points": 30,
+      "matrix": [
+        [
+          0.610163725702104,
+          0.019424791933597328,
+          103.50861665872155
+        ],
+        [
+          0.02647607771983395,
+          0.5303648788237912,
+          99.93482799637765
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "seconds": 0.8844293789998119
+}

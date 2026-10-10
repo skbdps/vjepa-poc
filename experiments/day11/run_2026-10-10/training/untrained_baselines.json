@@ -1,0 +1,60 @@
+{
+  "train_mean_latent_map": {
+    "fit": "FP64 mean of the64genuine training target tensors, then FP32; development never enters this mean",
+    "mean_map_sha256": "4f9230c15273122ff2574af92d91ccede2a4c31a98f1982e25f02e368558c7a6",
+    "dev_all_views": {
+      "mse": 0.09795445198256378,
+      "images": 16,
+      "selected_mse": 0.38831267190292196,
+      "selected_images": 16,
+      "selected_skipped_images": 0,
+      "distractor_mse": 0.45724510348586567,
+      "distractor_images": 16,
+      "distractor_skipped_images": 0,
+      "background_mse": 0.088721529112331,
+      "background_images": 16,
+      "background_skipped_images": 0
+    },
+    "dev_target_views": {
+      "mse": 0.09808463772200963,
+      "images": 8,
+      "selected_mse": 0.3894276539889562,
+      "selected_images": 8,
+      "selected_skipped_images": 0,
+      "distractor_mse": 0.45722321172980784,
+      "distractor_images": 8,
+      "distractor_skipped_images": 0,
+      "background_mse": 0.08884170362786219,
+      "background_images": 8,
+      "background_skipped_images": 0
+    }
+  },
+  "source_noop_delta": {
+    "definition": "Use actual normalized Wan source latent as prediction for its paired genuine shifted target; MSE equals source-target delta energy",
+    "sample_ids": [
+      "dev_13500__target",
+      "dev_13501__target",
+      "dev_13502__target",
+      "dev_13503__target",
+      "dev_13504__target",
+      "dev_13505__target",
+      "dev_13506__target",
+      "dev_13507__target"
+    ],
+    "dev_target_views": {
+      "mse": 0.013698281866183229,
+      "images": 8,
+      "selected_mse": 0.3837436223409254,
+      "selected_images": 8,
+      "selected_skipped_images": 0,
+      "distractor_mse": 9.699224224351262e-07,
+      "distractor_images": 8,
+      "distractor_skipped_images": 0,
+      "background_mse": 0.008306414700736153,
+      "background_images": 8,
+      "background_skipped_images": 0
+    }
+  },
+  "interpretation": "Compare all-view metrics with model dev_mse; compare source-noop target-only metrics with model dev_target_view_mse. Neither comparator establishes edited-state or rendered success.",
+  "data_binding_sha256": "182bc983279bf776149101e56836d45f3f88a752772ffa1bb1f3f40eba645206"
+}

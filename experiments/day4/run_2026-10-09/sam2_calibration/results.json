@@ -1,0 +1,1267 @@
+{
+  "split": "calibration",
+  "frozen_config": {
+    "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+    "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+    "method": "sam2_1_tiny",
+    "threshold": 0.9404296875,
+    "calibration": {
+      "balanced_presence_accuracy": 0.9741428368188931,
+      "visible_samples": 639,
+      "absent_samples": 88,
+      "objective": "mean(visible presence recall, absent specificity); highest-threshold tie break"
+    },
+    "calibration_scenes": [
+      "calibration_long_occlusion_1000",
+      "calibration_long_occlusion_1001",
+      "calibration_crossing_1100",
+      "calibration_crossing_1101",
+      "calibration_scale_camera_1200",
+      "calibration_scale_camera_1201"
+    ],
+    "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+    "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "checkpoint_url": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+    "model_config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+    "postprocessing": false,
+    "precision": "float32",
+    "jpeg": {
+      "format": "JPEG",
+      "quality": 100,
+      "subsampling": 0
+    },
+    "model_parameter_selection": "none",
+    "threshold_selection": "calibration clips only; same presence objective as V-JEPA",
+    "comparison_status": "added after V-JEPA development results and first real-video demo; fixed before SAM2 test; V-JEPA held-out results not viewed when comparator designed"
+  },
+  "benchmark": {
+    "protocol": "day4_v1",
+    "resolution": 384,
+    "frames": 64,
+    "tubelet_frames": 2,
+    "patch_size": 16,
+    "parts": {
+      "1": "car_A.front_door",
+      "2": "car_A.window",
+      "3": "car_B.front_door",
+      "4": "car_B.window"
+    },
+    "split_seeds": {
+      "calibration": {
+        "long_occlusion": [
+          1000,
+          1001
+        ],
+        "crossing": [
+          1100,
+          1101
+        ],
+        "scale_camera": [
+          1200,
+          1201
+        ]
+      },
+      "development": {
+        "long_occlusion": [
+          2000,
+          2001
+        ],
+        "crossing": [
+          2100,
+          2101
+        ],
+        "scale_camera": [
+          2200,
+          2201
+        ]
+      },
+      "test": {
+        "long_occlusion": [
+          3000,
+          3001,
+          3002,
+          3003,
+          3004,
+          3005
+        ],
+        "crossing": [
+          3100,
+          3101,
+          3102,
+          3103,
+          3104,
+          3105
+        ],
+        "scale_camera": [
+          3200,
+          3201,
+          3202,
+          3203,
+          3204,
+          3205
+        ]
+      }
+    },
+    "annotation": "frame-zero mask only",
+    "test_policy": "Freeze thresholds and algorithm configuration before opening sealed-test metrics",
+    "visibility": "at least one patch >=70% target over pair and >=65% each frame; absence requires zero target pixels both frames",
+    "exclusions": "first tubelet and visible slivers with no eligible patch",
+    "identity_switch": "transition between predicted car IDs on unambiguous visible targets, initialized to true source ID; last ID retained over missing outputs",
+    "conditions": {
+      "long_occlusion": "stationary foreground wall hides A for extended interval; return and reappearance; B moves separately",
+      "crossing": "two distinct-bodied cars exchange diagonal positions; foreground B occludes A; visible context resolves identity",
+      "scale_camera": "up to 15% sprite scale, 8-degree in-plane rotation, global camera translation, moving repeated-colour distractors"
+    },
+    "limitations": "2-D rendered sprites, fixed same-colour target appearance; no 3-D viewpoint change, real faces, generative rendering or causal encoder claim"
+  },
+  "python": "3.13.15",
+  "numpy": "2.1.3",
+  "clips": [
+    {
+      "scene": "calibration_long_occlusion_1000",
+      "original_rgb_sha256": "1c05ef317a4bc69b874c3a10a490b913918e9f8007c6730a19ac2902ac4db684",
+      "initial_mask_sha256": "4b314485eec50114bd04d0ddcc16f5f400bfd2f4db4cbcc74d47f2360e0e1bae",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "99d1c0ad8450d2481b9ced15a9fb193ee0db5ca3c0d969dd354f007c1e2ea2f2",
+        "rgb_mean_absolute_error_0_255": 0.3611809765851056,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.3585593612105758,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 84.09641572400005,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "82573988382500b5c93e6d290665c18c6518ff8587bf22d34e4f562e7cede54d",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "calibration_long_occlusion_1001",
+      "original_rgb_sha256": "2716ee21bb68fe562232e0716aa4fecd93050b33a81b8c5ba6d323cc016a77d0",
+      "initial_mask_sha256": "7a30c9d057fb9823dbe64a03700048d7c7c1291559795d2739b6b082c9835da4",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "e607856184587e314fe9ea5049cecb2c35a925c6622b4a8314e4ed4546bd8c87",
+        "rgb_mean_absolute_error_0_255": 0.3439721354731807,
+        "rgb_max_absolute_error_0_255": 4,
+        "rgb_changed_channel_fraction": 0.34151988559299046,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.85042909599997,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "7b83d8418172d37adb3db7543023ecccd10df3aa169ecdfe3c4689711e728eaa",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "calibration_crossing_1100",
+      "original_rgb_sha256": "f7502255bb3b8fec08e72fe63e55789c26ffb6defab881980abb5ce6574bc46d",
+      "initial_mask_sha256": "ba7991cc588ff1f102783e849ba35a549e6f7bc5921811fefefefaec1a909a2f",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "824cddad5ff10a8b95bc53fc8060106b65b3a5204e00c645de6bd74c796e2f36",
+        "rgb_mean_absolute_error_0_255": 0.3594655284175166,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.3562914177223488,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.222585514,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "a39e28689d80bca008114eeb33deb56dc3fa52afd1452e3f1db8494f1967c355",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "calibration_crossing_1101",
+      "original_rgb_sha256": "0ab794fa9a1d6b3da6b3a1163f0abe404c934b572091e9db16860d857ad00a09",
+      "initial_mask_sha256": "37e7f7d8306d7521f0dfeda37798b23c2d8ee6dd4f260a43f22e672b005b76f8",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "253bf1f6115f109c5f15a46dfbebb82d4e3740fec75c1310dbcb5efbf0966fee",
+        "rgb_mean_absolute_error_0_255": 0.337874624464247,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.3345646681608977,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.31453390700017,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "7c668eaa17c2690604cb35e71dc26e9bd76c001466e4d2b5692666ebd5bf9c8b",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "calibration_scale_camera_1200",
+      "original_rgb_sha256": "68e2a3655f8bd00b020809e669e55df861c2c005f12d477ad13bccae63fd2410",
+      "initial_mask_sha256": "294f96025d0c4dff4a7d58a7054e9694f69cdffe93939360ce95951b42b417c6",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "19ec3e67c8cc6de6a702680c65ac06d51cf8c048f8efc5a2f991907e427b08c2",
+        "rgb_mean_absolute_error_0_255": 0.35370010799831814,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.3470722481056496,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.51249071700022,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "e691c6cac340f887c67ea7a9be842c38dbd556ca2350215dd8748c9450fd5b4d",
+      "prompt_frames": [
+        0
+      ]
+    },
+    {
+      "scene": "calibration_scale_camera_1201",
+      "original_rgb_sha256": "e20df7cd5780f3068bbf2ca1d76830947bcbadebf74b078669319f5f683d2af1",
+      "initial_mask_sha256": "e71bef171594d8ac9c387ddac072528f435a1b4ef078969c48d93180e6d432d4",
+      "source_digest": "491bb936ed608d3ceeb34f1ed316425143ffed669ee35a2a9a4add9cf28c5ee4",
+      "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+      "readout_version": "mean-pair-coverage_centroid-tiebreak_v1",
+      "jpeg": {
+        "format": "JPEG",
+        "quality": 100,
+        "subsampling": 0
+      },
+      "input": {
+        "jpeg": {
+          "format": "JPEG",
+          "quality": 100,
+          "subsampling": 0
+        },
+        "encoded_files_sha256": "2de21fb8575b05d8c366f615cc030edcbc8522e454ef1b463d5b6532cc837290",
+        "rgb_mean_absolute_error_0_255": 0.3619649321944625,
+        "rgb_max_absolute_error_0_255": 5,
+        "rgb_changed_channel_fraction": 0.3548716792353877,
+        "comparison_note": "SAM2 receives quality100,4:4:4 JPEGs; V-JEPA saw original lossless rendered RGB."
+      },
+      "timing": {
+        "seconds": 87.42531717499969,
+        "peak_gpu_gib": 2.0348238945007324,
+        "precision": "float32",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "model_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+        "checkpoint": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        "config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "postprocessing": false,
+        "prompt_frames": [
+          0
+        ],
+        "checkpoint_sha256": "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
+      },
+      "predicted_masks_sha256": "1d9b2bdd8b5e090077e209137650bc52d59d9fcebe800eb3291d58a71e000cd8",
+      "prompt_frames": [
+        0
+      ]
+    }
+  ],
+  "dense_masks": {
+    "readout": "raw SAM2 logits>0 masks; no calibrated patch threshold applied",
+    "unit": "part-frame, every frame after frame0; any nonempty GT part is visible",
+    "aggregation": "IoU averaged over visible part-frames; pixel precision/recall pooled over stated pixels",
+    "comparability": "Dense denominators differ from the two-frame patch benchmark, which excludes ambiguous slivers.",
+    "overall": {
+      "mean_iou_given_visible": {
+        "numerator": 1255.488843017104,
+        "denominator": 1332,
+        "rate": 0.9425591914542824
+      },
+      "visible_micro_pixel_precision": {
+        "numerator": 3307589,
+        "denominator": 3499487,
+        "rate": 0.9451639626036616
+      },
+      "visible_micro_pixel_recall": {
+        "numerator": 3307589,
+        "denominator": 3465648,
+        "rate": 0.9543926561497301
+      },
+      "all_frame_micro_pixel_precision": {
+        "numerator": 3307589,
+        "denominator": 3527779,
+        "rate": 0.9375839586323292
+      },
+      "false_presence_given_absent": {
+        "numerator": 22,
+        "denominator": 180,
+        "rate": 0.12222222222222222
+      },
+      "absent_predicted_pixels": 28292,
+      "visible_part_frames": 1332,
+      "absent_part_frames": 180,
+      "scored_part_frames": 1512,
+      "clips": 6
+    },
+    "by_condition": {
+      "crossing": {
+        "mean_iou_given_visible": {
+          "numerator": 458.3449735895019,
+          "denominator": 494,
+          "rate": 0.9278238331771294
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 1160137,
+          "denominator": 1274271,
+          "rate": 0.9104319253910668
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 1160137,
+          "denominator": 1257790,
+          "rate": 0.9223614434842065
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 1160137,
+          "denominator": 1277681,
+          "rate": 0.9080020756354676
+        },
+        "false_presence_given_absent": {
+          "numerator": 2,
+          "denominator": 10,
+          "rate": 0.2
+        },
+        "absent_predicted_pixels": 3410,
+        "visible_part_frames": 494,
+        "absent_part_frames": 10,
+        "scored_part_frames": 504,
+        "clips": 2
+      },
+      "long_occlusion": {
+        "mean_iou_given_visible": {
+          "numerator": 304.1078597925819,
+          "denominator": 334,
+          "rate": 0.9105025742292872
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 795210,
+          "denominator": 852216,
+          "rate": 0.9331085077022727
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 795210,
+          "denominator": 848080,
+          "rate": 0.9376591830959343
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 795210,
+          "denominator": 877098,
+          "rate": 0.9066375707161571
+        },
+        "false_presence_given_absent": {
+          "numerator": 20,
+          "denominator": 170,
+          "rate": 0.11764705882352941
+        },
+        "absent_predicted_pixels": 24882,
+        "visible_part_frames": 334,
+        "absent_part_frames": 170,
+        "scored_part_frames": 504,
+        "clips": 2
+      },
+      "scale_camera": {
+        "mean_iou_given_visible": {
+          "numerator": 493.0360096350204,
+          "denominator": 504,
+          "rate": 0.9782460508631357
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 1352242,
+          "denominator": 1373000,
+          "rate": 0.9848812818645303
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 1352242,
+          "denominator": 1359778,
+          "rate": 0.9944579188661679
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 1352242,
+          "denominator": 1373000,
+          "rate": 0.9848812818645303
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 504,
+        "absent_part_frames": 0,
+        "scored_part_frames": 504,
+        "clips": 2
+      }
+    },
+    "by_part": {
+      "car_A.front_door": {
+        "mean_iou_given_visible": {
+          "numerator": 236.5601090971897,
+          "denominator": 283,
+          "rate": 0.8359014455731084
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 752269,
+          "denominator": 899218,
+          "rate": 0.8365813406760096
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 752269,
+          "denominator": 873008,
+          "rate": 0.8616977164012243
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 752269,
+          "denominator": 919462,
+          "rate": 0.8181621426442854
+        },
+        "false_presence_given_absent": {
+          "numerator": 13,
+          "denominator": 95,
+          "rate": 0.1368421052631579
+        },
+        "absent_predicted_pixels": 20244,
+        "visible_part_frames": 283,
+        "absent_part_frames": 95,
+        "scored_part_frames": 378,
+        "clips": 6
+      },
+      "car_A.window": {
+        "mean_iou_given_visible": {
+          "numerator": 269.2330880310464,
+          "denominator": 293,
+          "rate": 0.918884259491626
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 530882,
+          "denominator": 564508,
+          "rate": 0.9404330850935682
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 530882,
+          "denominator": 563039,
+          "rate": 0.9428867272071739
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 530882,
+          "denominator": 572556,
+          "rate": 0.9272141065677418
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 85,
+          "rate": 0.10588235294117647
+        },
+        "absent_predicted_pixels": 8048,
+        "visible_part_frames": 293,
+        "absent_part_frames": 85,
+        "scored_part_frames": 378,
+        "clips": 6
+      },
+      "car_B.front_door": {
+        "mean_iou_given_visible": {
+          "numerator": 375.1962926997495,
+          "denominator": 378,
+          "rate": 0.9925827849199722
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 1249824,
+          "denominator": 1256592,
+          "rate": 0.9946140035906643
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 1249824,
+          "denominator": 1252257,
+          "rate": 0.9980571080856405
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 1249824,
+          "denominator": 1256592,
+          "rate": 0.9946140035906643
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 378,
+        "absent_part_frames": 0,
+        "scored_part_frames": 378,
+        "clips": 6
+      },
+      "car_B.window": {
+        "mean_iou_given_visible": {
+          "numerator": 374.4993531891186,
+          "denominator": 378,
+          "rate": 0.9907390296008429
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 774614,
+          "denominator": 779169,
+          "rate": 0.9941540282018407
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 774614,
+          "denominator": 777344,
+          "rate": 0.9964880413304792
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 774614,
+          "denominator": 779169,
+          "rate": 0.9941540282018407
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 378,
+        "absent_part_frames": 0,
+        "scored_part_frames": 378,
+        "clips": 6
+      }
+    },
+    "per_clip": {
+      "calibration_crossing_1100": {
+        "mean_iou_given_visible": {
+          "numerator": 213.7733211558284,
+          "denominator": 247,
+          "rate": 0.8654790330195482
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 530451,
+          "denominator": 638154,
+          "rate": 0.8312272586240939
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 530451,
+          "denominator": 627179,
+          "rate": 0.8457728973706071
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 530451,
+          "denominator": 641564,
+          "rate": 0.8268091725844966
+        },
+        "false_presence_given_absent": {
+          "numerator": 2,
+          "denominator": 5,
+          "rate": 0.4
+        },
+        "absent_predicted_pixels": 3410,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "calibration_crossing_1101": {
+        "mean_iou_given_visible": {
+          "numerator": 244.5716524336735,
+          "denominator": 247,
+          "rate": 0.9901686333347105
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 629686,
+          "denominator": 636117,
+          "rate": 0.9898902245970475
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 629686,
+          "denominator": 630611,
+          "rate": 0.998533168625349
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 629686,
+          "denominator": 636117,
+          "rate": 0.9898902245970475
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 247,
+        "absent_part_frames": 5,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "calibration_long_occlusion_1000": {
+        "mean_iou_given_visible": {
+          "numerator": 156.20287813917088,
+          "denominator": 168,
+          "rate": 0.9297790365426838
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 410663,
+          "denominator": 430281,
+          "rate": 0.9544065389826648
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 410663,
+          "denominator": 426984,
+          "rate": 0.9617760852865681
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 410663,
+          "denominator": 443939,
+          "rate": 0.9250437560115241
+        },
+        "false_presence_given_absent": {
+          "numerator": 11,
+          "denominator": 84,
+          "rate": 0.13095238095238096
+        },
+        "absent_predicted_pixels": 13658,
+        "visible_part_frames": 168,
+        "absent_part_frames": 84,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "calibration_long_occlusion_1001": {
+        "mean_iou_given_visible": {
+          "numerator": 147.90498165341103,
+          "denominator": 166,
+          "rate": 0.8909938653819941
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 384547,
+          "denominator": 421935,
+          "rate": 0.91138919501819
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 384547,
+          "denominator": 421096,
+          "rate": 0.9132050648783175
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 384547,
+          "denominator": 433159,
+          "rate": 0.887773311878548
+        },
+        "false_presence_given_absent": {
+          "numerator": 9,
+          "denominator": 86,
+          "rate": 0.10465116279069768
+        },
+        "absent_predicted_pixels": 11224,
+        "visible_part_frames": 166,
+        "absent_part_frames": 86,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "calibration_scale_camera_1200": {
+        "mean_iou_given_visible": {
+          "numerator": 246.15429799956834,
+          "denominator": 252,
+          "rate": 0.9768027698395569
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 677809,
+          "denominator": 688743,
+          "rate": 0.9841247025378116
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 677809,
+          "denominator": 681836,
+          "rate": 0.9940938876797353
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 677809,
+          "denominator": 688743,
+          "rate": 0.9841247025378116
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      },
+      "calibration_scale_camera_1201": {
+        "mean_iou_given_visible": {
+          "numerator": 246.881711635452,
+          "denominator": 252,
+          "rate": 0.9796893318867144
+        },
+        "visible_micro_pixel_precision": {
+          "numerator": 674433,
+          "denominator": 684257,
+          "rate": 0.9856428213375968
+        },
+        "visible_micro_pixel_recall": {
+          "numerator": 674433,
+          "denominator": 677942,
+          "rate": 0.9948240409946574
+        },
+        "all_frame_micro_pixel_precision": {
+          "numerator": 674433,
+          "denominator": 684257,
+          "rate": 0.9856428213375968
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "absent_predicted_pixels": 0,
+        "visible_part_frames": 252,
+        "absent_part_frames": 0,
+        "scored_part_frames": 252,
+        "clips": 1
+      }
+    }
+  },
+  "comparison_limitations": [
+    "Fixed specialist tracker with dense initial masks; same frame-zero masks are available to V-JEPA.",
+    "SAM2 masks reduced to maximum-coverage patch; V-JEPA directly matches patch features.",
+    "SAM2 is sequential with memory; V-JEPA uses offline attention within independent16-frame windows.",
+    "SAM2 receives quality100 JPEG frames; V-JEPA receives original rendered RGB; per-clip conversion errors recorded.",
+    "Same fixed synthetic benchmark; specialist comparator added after V-JEPA development and a real-video demo, before V-JEPA held-out results were viewed.",
+    "Dense raw-mask metrics use every frame afterframe0, and are independent of the calibrated patch readout."
+  ],
+  "methods": {
+    "sam2_1_tiny": {
+      "overall": {
+        "localization_accuracy_given_visible": {
+          "numerator": 608,
+          "denominator": 639,
+          "rate": 0.9514866979655712
+        },
+        "wrong_car_given_visible": {
+          "numerator": 15,
+          "denominator": 639,
+          "rate": 0.023474178403755867
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 639,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 635,
+          "denominator": 639,
+          "rate": 0.9937402190923318
+        },
+        "false_presence_given_absent": {
+          "numerator": 4,
+          "denominator": 88,
+          "rate": 0.045454545454545456
+        },
+        "recovery_accuracy": {
+          "numerator": 1,
+          "denominator": 6,
+          "rate": 0.16666666666666666
+        },
+        "identity_switches": 1,
+        "balanced_localization_and_absence": 0.9530160762555129,
+        "clips": 6,
+        "ambiguous_samples_skipped": 17,
+        "uniform_patch_chance_given_visible": 0.012696161537123976
+      },
+      "by_condition": {
+        "crossing": {
+          "localization_accuracy_given_visible": {
+            "numerator": 216,
+            "denominator": 235,
+            "rate": 0.9191489361702128
+          },
+          "wrong_car_given_visible": {
+            "numerator": 15,
+            "denominator": 235,
+            "rate": 0.06382978723404255
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 235,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 231,
+            "denominator": 235,
+            "rate": 0.9829787234042553
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 4,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "identity_switches": 1,
+          "balanced_localization_and_absence": 0.9595744680851064,
+          "clips": 2,
+          "ambiguous_samples_skipped": 9,
+          "uniform_patch_chance_given_visible": 0.012138002364066192
+        },
+        "long_occlusion": {
+          "localization_accuracy_given_visible": {
+            "numerator": 144,
+            "denominator": 156,
+            "rate": 0.9230769230769231
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 156,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 156,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 156,
+            "denominator": 156,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 4,
+            "denominator": 84,
+            "rate": 0.047619047619047616
+          },
+          "recovery_accuracy": {
+            "numerator": 1,
+            "denominator": 4,
+            "rate": 0.25
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.9377289377289377,
+          "clips": 2,
+          "ambiguous_samples_skipped": 8,
+          "uniform_patch_chance_given_visible": 0.012909544159544163
+        },
+        "scale_camera": {
+          "localization_accuracy_given_visible": {
+            "numerator": 248,
+            "denominator": 248,
+            "rate": 1.0
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 248,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 248,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 248,
+            "denominator": 248,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": null,
+          "clips": 2,
+          "ambiguous_samples_skipped": 0,
+          "uniform_patch_chance_given_visible": 0.013090837813620072
+        }
+      },
+      "by_window": {
+        "1": {
+          "localization_accuracy_given_visible": {
+            "numerator": 156,
+            "denominator": 156,
+            "rate": 1.0
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 156,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 156,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 156,
+            "denominator": 156,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 8,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 1.0,
+          "clips": 6,
+          "ambiguous_samples_skipped": 4,
+          "uniform_patch_chance_given_visible": 0.013054220085470084
+        },
+        "2": {
+          "localization_accuracy_given_visible": {
+            "numerator": 153,
+            "denominator": 154,
+            "rate": 0.9935064935064936
+          },
+          "wrong_car_given_visible": {
+            "numerator": 0,
+            "denominator": 154,
+            "rate": 0.0
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 154,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 153,
+            "denominator": 154,
+            "rate": 0.9935064935064936
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 34,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.9967532467532467,
+          "clips": 6,
+          "ambiguous_samples_skipped": 4,
+          "uniform_patch_chance_given_visible": 0.012265512265512266
+        },
+        "3": {
+          "localization_accuracy_given_visible": {
+            "numerator": 143,
+            "denominator": 153,
+            "rate": 0.934640522875817
+          },
+          "wrong_car_given_visible": {
+            "numerator": 7,
+            "denominator": 153,
+            "rate": 0.0457516339869281
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 153,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 150,
+            "denominator": 153,
+            "rate": 0.9803921568627451
+          },
+          "false_presence_given_absent": {
+            "numerator": 0,
+            "denominator": 34,
+            "rate": 0.0
+          },
+          "recovery_accuracy": {
+            "numerator": 0,
+            "denominator": 2,
+            "rate": 0.0
+          },
+          "identity_switches": 1,
+          "balanced_localization_and_absence": 0.9673202614379085,
+          "clips": 6,
+          "ambiguous_samples_skipped": 5,
+          "uniform_patch_chance_given_visible": 0.01219816630355846
+        },
+        "4": {
+          "localization_accuracy_given_visible": {
+            "numerator": 156,
+            "denominator": 176,
+            "rate": 0.8863636363636364
+          },
+          "wrong_car_given_visible": {
+            "numerator": 8,
+            "denominator": 176,
+            "rate": 0.045454545454545456
+          },
+          "wrong_part_given_visible": {
+            "numerator": 0,
+            "denominator": 176,
+            "rate": 0.0
+          },
+          "presence_recall_given_visible": {
+            "numerator": 176,
+            "denominator": 176,
+            "rate": 1.0
+          },
+          "false_presence_given_absent": {
+            "numerator": 4,
+            "denominator": 12,
+            "rate": 0.3333333333333333
+          },
+          "recovery_accuracy": {
+            "numerator": 1,
+            "denominator": 4,
+            "rate": 0.25
+          },
+          "identity_switches": 0,
+          "balanced_localization_and_absence": 0.7765151515151515,
+          "clips": 6,
+          "ambiguous_samples_skipped": 4,
+          "uniform_patch_chance_given_visible": 0.013188525883838386
+        }
+      },
+      "window_boundaries": {
+        "localization_accuracy_given_visible": {
+          "numerator": 56,
+          "denominator": 58,
+          "rate": 0.9655172413793104
+        },
+        "wrong_car_given_visible": {
+          "numerator": 1,
+          "denominator": 58,
+          "rate": 0.017241379310344827
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 58,
+          "rate": 0.0
+        },
+        "presence_recall_given_visible": {
+          "numerator": 57,
+          "denominator": 58,
+          "rate": 0.9827586206896551
+        },
+        "false_presence_given_absent": {
+          "numerator": 0,
+          "denominator": 13,
+          "rate": 0.0
+        },
+        "recovery_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "identity_switches": 0,
+        "balanced_localization_and_absence": 0.9827586206896552,
+        "clips": 6,
+        "ambiguous_samples_skipped": 1,
+        "uniform_patch_chance_given_visible": 0.012482040229885057
+      },
+      "uncertainty": {
+        "localization_accuracy_given_visible": {
+          "numerator": 608,
+          "denominator": 639,
+          "rate": 0.9514866979655712,
+          "clip_bootstrap_95ci": [
+            0.9001584786053882,
+            0.9913294797687862
+          ]
+        },
+        "wrong_car_given_visible": {
+          "numerator": 15,
+          "denominator": 639,
+          "rate": 0.023474178403755867,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.07131537242472266
+          ]
+        },
+        "wrong_part_given_visible": {
+          "numerator": 0,
+          "denominator": 639,
+          "rate": 0.0,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "presence_recall_given_visible": {
+          "numerator": 635,
+          "denominator": 639,
+          "rate": 0.9937402190923318,
+          "clip_bootstrap_95ci": [
+            0.9872,
+            1.0
+          ]
+        },
+        "false_presence_given_absent": {
+          "numerator": 4,
+          "denominator": 88,
+          "rate": 0.045454545454545456,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.09302325581395349
+          ]
+        },
+        "recovery_accuracy": {
+          "numerator": 1,
+          "denominator": 6,
+          "rate": 0.16666666666666666,
+          "clip_bootstrap_95ci": [
+            0.0,
+            0.4
+          ]
+        },
+        "identity_switches": 1,
+        "balanced_localization_and_absence": 0.9530160762555129,
+        "clips": 6,
+        "ambiguous_samples_skipped": 17,
+        "uniform_patch_chance_given_visible": 0.012696161537123976,
+        "bootstrap": {
+          "unit": "clip",
+          "resamples": 2000,
+          "seed": 914,
+          "interpretation": "descriptive interval over generated clips, not real-video generalization"
+        }
+      }
+    }
+  }
+}
