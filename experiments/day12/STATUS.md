@@ -1,9 +1,16 @@
-# Day12 status: partial completion; Colab sign-in required
+# Day12 status: partial completion; Colab GPU usage limit
 
-The main 20-clip Wan/VACE generator comparison has **not run**. Google Colab
-was signed out. The secure account-selection handoff did not complete, so no
-GPU or notebook runtime could be inspected. This was an authentication blocker,
-not a failed generated-video experiment.
+The main 20-clip Wan/VACE generator comparison has **not run**. Google sign-in
+succeeded on 2026-10-10 at approximately 22:25 UTC: the target Colab notebook
+opened with a signed-in account control. Connecting its configured T4 then
+showed: "You cannot currently connect to a GPU due to usage limits in Colab."
+This is now a GPU allocation blocker, not an authentication failure or a
+failed generated-video experiment. No compute purchase was made.
+
+The existing notebook still contains the earlier Day11 output showing 43/104
+fresh renders and all 16 parity checks passed. That is saved notebook output,
+not a live runtime result. The runtime filesystem and any later completion
+could not be verified because GPU connection was refused.
 
 The CPU stages completed before the interruption:
 
@@ -60,8 +67,8 @@ checkpoints remain available unchanged in GitHub.
 - `run_recovered/evidence/`: lossless, chunked original NPZ/manifest archives.
 - `archive_evidence.py`: reassemble and verify either archive.
 
-After Google sign-in is restored, inspect the existing Colab runtime and
-recover any earlier outputs first. Then run the fixed small Wan comparison:
+When Colab GPU access becomes available, inspect the runtime and recover any
+earlier outputs first. Then run the fixed small Wan comparison:
 two scenes, noise seeds 1111 and 2222, five conditions, nine 384×384 frames,
 20 steps, CFG 5, conditioning strength 1, FP16 transformer and FP32 VAE.
 No paid video-generation API key is required. T4 feasibility for this exact
