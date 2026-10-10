@@ -1,0 +1,12 @@
+{
+  "version": "day12_recovered_metric_tests_v1",
+  "command": "python3 -m unittest discover -s experiments/day12 -p test_recovered_metrics.py",
+  "tests_run": 3,
+  "duration_seconds": 12.578,
+  "outcome": "OK",
+  "fixture_roots": [
+    "/tmp/day12-guides",
+    "/tmp/day12-video-vae"
+  ],
+  "scope": "Actual saved metric recount and oracle/direction/missing-detection diagnostics; no GPU generation"
+}

@@ -1,0 +1,4789 @@
+{
+  "version": "day12_recovered_pregeneration_report_v1",
+  "complete": true,
+  "stage": "PREGENERATION ONLY: no Wan denoising or generated-video result",
+  "scope": "Two previously seen procedural development scenes; five guide arms per scene; JEPA-only video VAE roundtrips",
+  "guide_manifest_sha256": "01e306cf57cac911bb4d8a7eb415182a60f433eda236fbd431fc174856386829",
+  "video_vae_manifest_sha256": "1b8090287013ef4a8e0de82729b071852941574784c8016a7a24c71d03857e12",
+  "historical_assess_source_sha256": "67f7b1a6ef7663a48df11cb6fb42cf86ff8481215f6c25c7cd64c7d438a6d12c",
+  "reconstructed_assess_source_sha256": "2a0f928fe61e619728494eb152ad095f260309cfb6713c653bcda95848c5aa97",
+  "reconstructed_guide_report_source_sha256": "edcae4778c039f3f1cc464c39d105916dfe7c69cecc0826b89ac85a64ae76b1b",
+  "source_identity_claimed": false,
+  "scenes": [
+    {
+      "scene_seed": 14000,
+      "guide_archive_sha256": "794c22894150ab7b65688b6356f16f46f7b79e22f981306494b55e6c1084d219",
+      "guide_scores": {
+        "source_static": {
+          "method_version": "day12_procedural_rgb_metrics_v1",
+          "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+          "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+          "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+          "detector": {
+            "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+            "general_detector": false,
+            "target_location_crop": false,
+            "source_selected_mean_rgb_01": [
+              0.7461938037903336,
+              0.2850628260227708,
+              0.2814255875244686
+            ],
+            "ambiguous_source_selected_pixels": 0
+          },
+          "metric_definitions": {
+            "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+            "destination": "Entire desired selected-object support, including any overlap with its source",
+            "background": "Outside source selection, current target and distractor",
+            "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+            "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+            "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+            "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+            "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+            "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+            "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+          },
+          "frames": [
+            {
+              "frame": 0,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 0.4658724358530853,
+              "selected_iou": 0.7583518930957683,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 143702,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.010366107562702549,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010611180630895111,
+                "static_background": 0.00010510450866735935,
+                "global": 0.00025521680196452214
+              },
+              "motion_compensated_texture_mse": 0.010366107562702549
+            },
+            {
+              "frame": 1,
+              "command_shift_px": 16,
+              "desired_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 15.781852045191176,
+              "selected_iou": 0.3518835616438356,
+              "region_pixels": {
+                "source_hole": 748,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142954,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.079612592441821,
+                "destination": 0.0725619781428897,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010492247527482274,
+                "static_background": 0.00010510450866735935,
+                "global": 0.0014136506658763723
+              },
+              "motion_compensated_texture_mse": 0.0725619781428897
+            },
+            {
+              "frame": 2,
+              "command_shift_px": 32,
+              "desired_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 31.779186125924024,
+              "selected_iou": 0.10380985669346382,
+              "region_pixels": {
+                "source_hole": 1406,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142296,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.09060394213189696,
+                "destination": 0.0994076941677086,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010514982204192646,
+                "static_background": 0.00010510450866735935,
+                "global": 0.002199896080578428
+              },
+              "motion_compensated_texture_mse": 0.0994076941677086
+            },
+            {
+              "frame": 3,
+              "command_shift_px": 48,
+              "desired_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 47.77830561746554,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1792,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141910,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0909717187528606,
+                "destination": 0.10988932067328058,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010621154122652099,
+                "static_background": 0.00010510450866735935,
+                "global": 0.0025697407422425674
+              },
+              "motion_compensated_texture_mse": 0.10988932067328058
+            },
+            {
+              "frame": 4,
+              "command_shift_px": 64,
+              "desired_centroid_xy": [
+                312.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 63.77786688597978,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1793,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141909,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.09092242826507373,
+                "destination": 0.10426282339246443,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010630180342380283,
+                "static_background": 0.00010510450866735935,
+                "global": 0.0025014287512504095
+              },
+              "motion_compensated_texture_mse": 0.10426282339246443
+            },
+            {
+              "frame": 5,
+              "command_shift_px": 48,
+              "desired_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 47.77830561746554,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1792,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141910,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0909717187528606,
+                "destination": 0.10988932067328058,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010621154122652099,
+                "static_background": 0.00010510450866735935,
+                "global": 0.0025697407422425674
+              },
+              "motion_compensated_texture_mse": 0.10988932067328058
+            },
+            {
+              "frame": 6,
+              "command_shift_px": 32,
+              "desired_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 31.779186125924024,
+              "selected_iou": 0.10380985669346382,
+              "region_pixels": {
+                "source_hole": 1406,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142296,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.09060394213189696,
+                "destination": 0.0994076941677086,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010514982204192646,
+                "static_background": 0.00010510450866735935,
+                "global": 0.002199896080578428
+              },
+              "motion_compensated_texture_mse": 0.0994076941677086
+            },
+            {
+              "frame": 7,
+              "command_shift_px": 16,
+              "desired_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 15.781852045191176,
+              "selected_iou": 0.3518835616438356,
+              "region_pixels": {
+                "source_hole": 748,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142954,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.079612592441821,
+                "destination": 0.0725619781428897,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010492247527482274,
+                "static_background": 0.00010510450866735935,
+                "global": 0.0014136506658763723
+              },
+              "motion_compensated_texture_mse": 0.0725619781428897
+            },
+            {
+              "frame": 8,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 0.4658724358530853,
+              "selected_iou": 0.7583518930957683,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 143702,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.010366107562702549,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010611180630895111,
+                "static_background": 0.00010510450866735935,
+                "global": 0.00025521680196452214
+              },
+              "motion_compensated_texture_mse": 0.010366107562702549
+            }
+          ],
+          "temporal": {
+            "static_background": {
+              "pixels": 140710,
+              "temporal_variance": 8.18332939452446e-34,
+              "successive_frame_error_mse": 0.0,
+              "rgb_mse_to_constant_source": 0.00010510450866735933
+            },
+            "distractor": {
+              "pixels": 1961,
+              "temporal_variance": 4.938244134983726e-33,
+              "successive_frame_error_mse": 0.0,
+              "rgb_mse_to_constant_source": 0.0019369398777899136
+            }
+          },
+          "loop_closure_mse": {
+            "global": 0.0,
+            "selected_source": 0.0,
+            "distractor": 0.0,
+            "static_background": 0.0
+          },
+          "path": {
+            "source_centroid_xy": [
+              248.0,
+              336.0
+            ],
+            "requested_x_amplitude_px": 64.0,
+            "observed_x_amplitude_px": 0.0,
+            "all_frames_detected": true,
+            "missing_detection_frames": [],
+            "direction_counts": {
+              "correct_direction_steps": 0,
+              "reverse_direction_steps": 0,
+              "stationary_steps": 8,
+              "unscorable_steps": 0
+            },
+            "lag_counts": {
+              "lagging_frames": 4,
+              "leading_frames": 3,
+              "within_half_step_frames": 1,
+              "unscorable_frames": 0
+            }
+          },
+          "summary": {
+            "detected_frames": 9,
+            "mean_centroid_error_px": 28.376477703871934,
+            "mean_detected_centroid_error_px": 28.376477703871934,
+            "max_centroid_error_px": 63.77786688597978,
+            "mean_selected_iou": 0.2697878469851262,
+            "mean_motion_compensated_texture_mse": 0.07652366938729191,
+            "observed_x_amplitude_px": 0.0,
+            "x_amplitude_error_px": 64.0,
+            "loop_closure_global_mse": 0.0,
+            "mean_source_hole_rgb_mse": 0.08761413355974727,
+            "mean_destination_rgb_mse": 0.07652366938729191,
+            "mean_distractor_rgb_mse": 0.0019369398777899134,
+            "mean_background_rgb_mse": 0.00010567701034758283,
+            "mean_static_background_rgb_mse": 0.00010510450866735935,
+            "mean_global_rgb_mse": 0.0017087152591749098,
+            "static_background_temporal_variance": 8.18332939452446e-34,
+            "static_background_successive_frame_error_mse": 0.0,
+            "distractor_temporal_variance": 4.938244134983726e-33,
+            "distractor_successive_frame_error_mse": 0.0,
+            "correct_direction_steps": 0,
+            "reverse_direction_steps": 0,
+            "stationary_steps": 8,
+            "unscorable_steps": 0,
+            "lagging_frames": 4,
+            "leading_frames": 3,
+            "within_half_step_frames": 1,
+            "unscorable_frames": 0
+          }
+        },
+        "jepa": {
+          "method_version": "day12_procedural_rgb_metrics_v1",
+          "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+          "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+          "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+          "detector": {
+            "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+            "general_detector": false,
+            "target_location_crop": false,
+            "source_selected_mean_rgb_01": [
+              0.7461938037903336,
+              0.2850628260227708,
+              0.2814255875244686
+            ],
+            "ambiguous_source_selected_pixels": 0
+          },
+          "metric_definitions": {
+            "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+            "destination": "Entire desired selected-object support, including any overlap with its source",
+            "background": "Outside source selection, current target and distractor",
+            "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+            "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+            "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+            "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+            "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+            "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+            "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+          },
+          "frames": [
+            {
+              "frame": 0,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 0.4658724358530853,
+              "selected_iou": 0.7583518930957683,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 143702,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.010366107562702549,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010611180630895111,
+                "static_background": 0.00010510450866735935,
+                "global": 0.00025521680196452214
+              },
+              "motion_compensated_texture_mse": 0.010366107562702549
+            },
+            {
+              "frame": 1,
+              "command_shift_px": 16,
+              "desired_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                263.84626978146196,
+                335.7415222305953
+              ],
+              "detected_selected_pixels": 1327,
+              "centroid_error_px": 0.30073865293337326,
+              "selected_iou": 0.7333333333333333,
+              "region_pixels": {
+                "source_hole": 748,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142954,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.004452126941441007,
+                "destination": 0.012521673024782968,
+                "distractor": 0.001937598628856708,
+                "background": 0.00011724545952000636,
+                "static_background": 0.0001142572636039161,
+                "global": 0.00031427604856394263
+              },
+              "motion_compensated_texture_mse": 0.012521673024782968
+            },
+            {
+              "frame": 2,
+              "command_shift_px": 32,
+              "desired_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                280.25799256505576,
+                335.3925650557621
+              ],
+              "detected_selected_pixels": 1345,
+              "centroid_error_px": 0.6599525551927035,
+              "selected_iou": 0.7452725250278087,
+              "region_pixels": {
+                "source_hole": 1406,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142296,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.003983094367359529,
+                "destination": 0.01276231437863467,
+                "distractor": 0.001938427295873271,
+                "background": 0.00012806307275966796,
+                "static_background": 0.00012179225487905466,
+                "global": 0.00034252373107921454
+              },
+              "motion_compensated_texture_mse": 0.01276231437863467
+            },
+            {
+              "frame": 3,
+              "command_shift_px": 48,
+              "desired_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                296.7192851824274,
+                335.44378257632167
+              ],
+              "detected_selected_pixels": 1343,
+              "centroid_error_px": 0.9092573871368986,
+              "selected_iou": 0.7422222222222222,
+              "region_pixels": {
+                "source_hole": 1792,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141910,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.003537478716976987,
+                "destination": 0.013224521665305413,
+                "distractor": 0.0019385214031685273,
+                "background": 0.0001454391300726482,
+                "static_background": 0.0001293143495110337,
+                "global": 0.00036954370542357275
+              },
+              "motion_compensated_texture_mse": 0.013224521665305413
+            },
+            {
+              "frame": 4,
+              "command_shift_px": 64,
+              "desired_centroid_xy": [
+                312.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                313.781695423856,
+                335.9017254313578
+              ],
+              "detected_selected_pixels": 1333,
+              "centroid_error_px": 1.7844036746855076,
+              "selected_iou": 0.7395659432387313,
+              "region_pixels": {
+                "source_hole": 1793,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141909,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0033221967125633247,
+                "destination": 0.014107394591823657,
+                "distractor": 0.0019390206946516928,
+                "background": 0.000143513333570971,
+                "static_background": 0.0001320503687142082,
+                "global": 0.00037583760881009084
+              },
+              "motion_compensated_texture_mse": 0.014107394591823657
+            },
+            {
+              "frame": 5,
+              "command_shift_px": 48,
+              "desired_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                296.7192851824274,
+                335.44378257632167
+              ],
+              "detected_selected_pixels": 1343,
+              "centroid_error_px": 0.9092573871368986,
+              "selected_iou": 0.7422222222222222,
+              "region_pixels": {
+                "source_hole": 1792,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141910,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.003537478716976987,
+                "destination": 0.013224521665305413,
+                "distractor": 0.0019385214031685273,
+                "background": 0.0001454391300726482,
+                "static_background": 0.0001293143495110337,
+                "global": 0.00036954370542357275
+              },
+              "motion_compensated_texture_mse": 0.013224521665305413
+            },
+            {
+              "frame": 6,
+              "command_shift_px": 32,
+              "desired_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                280.25799256505576,
+                335.3925650557621
+              ],
+              "detected_selected_pixels": 1345,
+              "centroid_error_px": 0.6599525551927035,
+              "selected_iou": 0.7452725250278087,
+              "region_pixels": {
+                "source_hole": 1406,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142296,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.003983094367359529,
+                "destination": 0.01276231437863467,
+                "distractor": 0.001938427295873271,
+                "background": 0.00012806307275966796,
+                "static_background": 0.00012179225487905466,
+                "global": 0.00034252373107921454
+              },
+              "motion_compensated_texture_mse": 0.01276231437863467
+            },
+            {
+              "frame": 7,
+              "command_shift_px": 16,
+              "desired_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                263.84626978146196,
+                335.7415222305953
+              ],
+              "detected_selected_pixels": 1327,
+              "centroid_error_px": 0.30073865293337326,
+              "selected_iou": 0.7333333333333333,
+              "region_pixels": {
+                "source_hole": 748,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142954,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.004452126941441007,
+                "destination": 0.012521673024782968,
+                "distractor": 0.001937598628856708,
+                "background": 0.00011724545952000636,
+                "static_background": 0.0001142572636039161,
+                "global": 0.00031427604856394263
+              },
+              "motion_compensated_texture_mse": 0.012521673024782968
+            },
+            {
+              "frame": 8,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 0.4658724358530853,
+              "selected_iou": 0.7583518930957683,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 143702,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.010366107562702549,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010611180630895111,
+                "static_background": 0.00010510450866735935,
+                "global": 0.00025521680196452214
+              },
+              "motion_compensated_texture_mse": 0.010366107562702549
+            }
+          ],
+          "temporal": {
+            "static_background": {
+              "pixels": 140710,
+              "temporal_variance": 8.386301055877926e-06,
+              "successive_frame_error_mse": 1.4959240824163625e-05,
+              "rgb_mse_to_constant_source": 0.00011922079133743732
+            },
+            "distractor": {
+              "pixels": 1961,
+              "temporal_variance": 8.881456671655101e-08,
+              "successive_frame_error_mse": 1.503102632566629e-07,
+              "rgb_mse_to_constant_source": 0.0019379994562253927
+            }
+          },
+          "loop_closure_mse": {
+            "global": 0.0,
+            "selected_source": 0.0,
+            "distractor": 0.0,
+            "static_background": 0.0
+          },
+          "path": {
+            "source_centroid_xy": [
+              248.0,
+              336.0
+            ],
+            "requested_x_amplitude_px": 64.0,
+            "observed_x_amplitude_px": 65.55825220041277,
+            "all_frames_detected": true,
+            "missing_detection_frames": [],
+            "direction_counts": {
+              "correct_direction_steps": 8,
+              "reverse_direction_steps": 0,
+              "stationary_steps": 0,
+              "unscorable_steps": 0
+            },
+            "lag_counts": {
+              "lagging_frames": 0,
+              "leading_frames": 0,
+              "within_half_step_frames": 8,
+              "unscorable_frames": 0
+            }
+          },
+          "summary": {
+            "detected_frames": 9,
+            "mean_centroid_error_px": 0.71733841521307,
+            "mean_detected_centroid_error_px": 0.71733841521307,
+            "max_centroid_error_px": 1.7844036746855076,
+            "mean_selected_iou": 0.7442139878441106,
+            "mean_motion_compensated_texture_mse": 0.012428514206074985,
+            "observed_x_amplitude_px": 65.55825220041277,
+            "x_amplitude_error_px": 1.5582522004127668,
+            "loop_closure_global_mse": 0.0,
+            "mean_source_hole_rgb_mse": 0.003895370966302624,
+            "mean_destination_rgb_mse": 0.012428514206074985,
+            "mean_distractor_rgb_mse": 0.0019379994562253925,
+            "mean_background_rgb_mse": 0.00012635914121039092,
+            "mean_static_background_rgb_mse": 0.00011922079133743731,
+            "mean_global_rgb_mse": 0.0003265509092080661,
+            "static_background_temporal_variance": 8.386301055877926e-06,
+            "static_background_successive_frame_error_mse": 1.4959240824163625e-05,
+            "distractor_temporal_variance": 8.881456671655101e-08,
+            "distractor_successive_frame_error_mse": 1.503102632566629e-07,
+            "correct_direction_steps": 8,
+            "reverse_direction_steps": 0,
+            "stationary_steps": 0,
+            "unscorable_steps": 0,
+            "lagging_frames": 0,
+            "leading_frames": 0,
+            "within_half_step_frames": 8,
+            "unscorable_frames": 0
+          }
+        },
+        "no_f": {
+          "method_version": "day12_procedural_rgb_metrics_v1",
+          "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+          "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+          "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+          "detector": {
+            "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+            "general_detector": false,
+            "target_location_crop": false,
+            "source_selected_mean_rgb_01": [
+              0.7461938037903336,
+              0.2850628260227708,
+              0.2814255875244686
+            ],
+            "ambiguous_source_selected_pixels": 0
+          },
+          "metric_definitions": {
+            "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+            "destination": "Entire desired selected-object support, including any overlap with its source",
+            "background": "Outside source selection, current target and distractor",
+            "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+            "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+            "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+            "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+            "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+            "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+            "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+          },
+          "frames": [
+            {
+              "frame": 0,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 0.4658724358530853,
+              "selected_iou": 0.7583518930957683,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 143702,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.010366107562702549,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010611180630895111,
+                "static_background": 0.00010510450866735935,
+                "global": 0.00025521680196452214
+              },
+              "motion_compensated_texture_mse": 0.010366107562702549
+            },
+            {
+              "frame": 1,
+              "command_shift_px": 16,
+              "desired_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                264.25395629238886,
+                335.6458176337604
+              ],
+              "detected_selected_pixels": 1327,
+              "centroid_error_px": 0.4358198561320942,
+              "selected_iou": 0.7371937639198218,
+              "region_pixels": {
+                "source_hole": 748,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142954,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0025730471140607515,
+                "destination": 0.012046703046342169,
+                "distractor": 0.0019375724879413588,
+                "background": 0.00011797125219484374,
+                "static_background": 0.0001146390989625461,
+                "global": 0.00029967190103165445
+              },
+              "motion_compensated_texture_mse": 0.012046703046342169
+            },
+            {
+              "frame": 2,
+              "command_shift_px": 32,
+              "desired_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                280.1798941798942,
+                335.63567649281936
+              ],
+              "detected_selected_pixels": 1323,
+              "centroid_error_px": 0.40631703612352077,
+              "selected_iou": 0.7340011129660545,
+              "region_pixels": {
+                "source_hole": 1406,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142296,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0025322900755426706,
+                "destination": 0.012144290178552602,
+                "distractor": 0.0019377633166234066,
+                "background": 0.00013146802501046872,
+                "static_background": 0.0001220761996157365,
+                "global": 0.0003244523117889131
+              },
+              "motion_compensated_texture_mse": 0.012144290178552602
+            },
+            {
+              "frame": 3,
+              "command_shift_px": 48,
+              "desired_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                296.28280542986425,
+                335.62820512820514
+              ],
+              "detected_selected_pixels": 1326,
+              "centroid_error_px": 0.4671298939841713,
+              "selected_iou": 0.7356705620478575,
+              "region_pixels": {
+                "source_hole": 1792,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141910,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.00210905604071694,
+                "destination": 0.012437969322508773,
+                "distractor": 0.0019387226882167147,
+                "background": 0.00014486173794902777,
+                "static_background": 0.0001260673827928524,
+                "global": 0.0003420672732487148
+              },
+              "motion_compensated_texture_mse": 0.012437969322508773
+            },
+            {
+              "frame": 4,
+              "command_shift_px": 64,
+              "desired_centroid_xy": [
+                312.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                312.21774794929155,
+                335.59060402684565
+              ],
+              "detected_selected_pixels": 1341,
+              "centroid_error_px": 0.4637016629856631,
+              "selected_iou": 0.743047830923248,
+              "region_pixels": {
+                "source_hole": 1793,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141909,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0018825513575763007,
+                "destination": 0.012423779976797574,
+                "distractor": 0.0019383044335711307,
+                "background": 0.0001468820921240122,
+                "static_background": 0.00013307791057950345,
+                "global": 0.00034109265060758325
+              },
+              "motion_compensated_texture_mse": 0.012423779976797574
+            },
+            {
+              "frame": 5,
+              "command_shift_px": 48,
+              "desired_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                296.28280542986425,
+                335.62820512820514
+              ],
+              "detected_selected_pixels": 1326,
+              "centroid_error_px": 0.4671298939841713,
+              "selected_iou": 0.7356705620478575,
+              "region_pixels": {
+                "source_hole": 1792,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141910,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.00210905604071694,
+                "destination": 0.012437969322508773,
+                "distractor": 0.0019387226882167147,
+                "background": 0.00014486173794902777,
+                "static_background": 0.0001260673827928524,
+                "global": 0.0003420672732487148
+              },
+              "motion_compensated_texture_mse": 0.012437969322508773
+            },
+            {
+              "frame": 6,
+              "command_shift_px": 32,
+              "desired_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                280.1798941798942,
+                335.63567649281936
+              ],
+              "detected_selected_pixels": 1323,
+              "centroid_error_px": 0.40631703612352077,
+              "selected_iou": 0.7340011129660545,
+              "region_pixels": {
+                "source_hole": 1406,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142296,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0025322900755426706,
+                "destination": 0.012144290178552602,
+                "distractor": 0.0019377633166234066,
+                "background": 0.00013146802501046872,
+                "static_background": 0.0001220761996157365,
+                "global": 0.0003244523117889131
+              },
+              "motion_compensated_texture_mse": 0.012144290178552602
+            },
+            {
+              "frame": 7,
+              "command_shift_px": 16,
+              "desired_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                264.25395629238886,
+                335.6458176337604
+              ],
+              "detected_selected_pixels": 1327,
+              "centroid_error_px": 0.4358198561320942,
+              "selected_iou": 0.7371937639198218,
+              "region_pixels": {
+                "source_hole": 748,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142954,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0025730471140607515,
+                "destination": 0.012046703046342169,
+                "distractor": 0.0019375724879413588,
+                "background": 0.00011797125219484374,
+                "static_background": 0.0001146390989625461,
+                "global": 0.00029967190103165445
+              },
+              "motion_compensated_texture_mse": 0.012046703046342169
+            },
+            {
+              "frame": 8,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 0.4658724358530853,
+              "selected_iou": 0.7583518930957683,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 143702,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.010366107562702549,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010611180630895111,
+                "static_background": 0.00010510450866735935,
+                "global": 0.00025521680196452214
+              },
+              "motion_compensated_texture_mse": 0.010366107562702549
+            }
+          ],
+          "temporal": {
+            "static_background": {
+              "pixels": 140710,
+              "temporal_variance": 8.403198833777889e-06,
+              "successive_frame_error_mse": 1.5419758456985133e-05,
+              "rgb_mse_to_constant_source": 0.00011876136562849911
+            },
+            "distractor": {
+              "pixels": 1961,
+              "temporal_variance": 1.0165911524605201e-07,
+              "successive_frame_error_mse": 1.8037231590799502e-07,
+              "rgb_mse_to_constant_source": 0.0019378112416348799
+            }
+          },
+          "loop_closure_mse": {
+            "global": 0.0,
+            "selected_source": 0.0,
+            "distractor": 0.0,
+            "static_background": 0.0
+          },
+          "path": {
+            "source_centroid_xy": [
+              248.0,
+              336.0
+            ],
+            "requested_x_amplitude_px": 64.0,
+            "observed_x_amplitude_px": 63.99430472584834,
+            "all_frames_detected": true,
+            "missing_detection_frames": [],
+            "direction_counts": {
+              "correct_direction_steps": 8,
+              "reverse_direction_steps": 0,
+              "stationary_steps": 0,
+              "unscorable_steps": 0
+            },
+            "lag_counts": {
+              "lagging_frames": 0,
+              "leading_frames": 0,
+              "within_half_step_frames": 8,
+              "unscorable_frames": 0
+            }
+          },
+          "summary": {
+            "detected_frames": 9,
+            "mean_centroid_error_px": 0.4459977896857118,
+            "mean_detected_centroid_error_px": 0.4459977896857118,
+            "max_centroid_error_px": 0.4671298939841713,
+            "mean_selected_iou": 0.7414980549980281,
+            "mean_motion_compensated_texture_mse": 0.01182376891077886,
+            "observed_x_amplitude_px": 63.99430472584834,
+            "x_amplitude_error_px": 0.005695274151662488,
+            "loop_closure_global_mse": 0.0,
+            "mean_source_hole_rgb_mse": 0.0023301911168881464,
+            "mean_destination_rgb_mse": 0.01182376891077886,
+            "mean_distractor_rgb_mse": 0.0019378112416348799,
+            "mean_background_rgb_mse": 0.0001275230816722883,
+            "mean_static_background_rgb_mse": 0.00011876136562849911,
+            "mean_global_rgb_mse": 0.0003093232474083547,
+            "static_background_temporal_variance": 8.403198833777889e-06,
+            "static_background_successive_frame_error_mse": 1.5419758456985133e-05,
+            "distractor_temporal_variance": 1.0165911524605201e-07,
+            "distractor_successive_frame_error_mse": 1.8037231590799502e-07,
+            "correct_direction_steps": 8,
+            "reverse_direction_steps": 0,
+            "stationary_steps": 0,
+            "unscorable_steps": 0,
+            "lagging_frames": 0,
+            "leading_frames": 0,
+            "within_half_step_frames": 8,
+            "unscorable_frames": 0
+          }
+        },
+        "wrong_direction": {
+          "method_version": "day12_procedural_rgb_metrics_v1",
+          "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+          "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+          "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+          "detector": {
+            "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+            "general_detector": false,
+            "target_location_crop": false,
+            "source_selected_mean_rgb_01": [
+              0.7461938037903336,
+              0.2850628260227708,
+              0.2814255875244686
+            ],
+            "ambiguous_source_selected_pixels": 0
+          },
+          "metric_definitions": {
+            "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+            "destination": "Entire desired selected-object support, including any overlap with its source",
+            "background": "Outside source selection, current target and distractor",
+            "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+            "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+            "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+            "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+            "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+            "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+            "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+          },
+          "frames": [
+            {
+              "frame": 0,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 0.4658724358530853,
+              "selected_iou": 0.7583518930957683,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 143702,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.010366107562702549,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010611180630895111,
+                "static_background": 0.00010510450866735935,
+                "global": 0.00025521680196452214
+              },
+              "motion_compensated_texture_mse": 0.010366107562702549
+            },
+            {
+              "frame": 1,
+              "command_shift_px": 16,
+              "desired_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                233.26569343065694,
+                335.7211678832117
+              ],
+              "detected_selected_pixels": 1370,
+              "centroid_error_px": 30.735571373373176,
+              "selected_iou": 0.11255715793176223,
+              "region_pixels": {
+                "source_hole": 748,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142954,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.08183128523857203,
+                "destination": 0.0981665681374854,
+                "distractor": 0.0019374809947376376,
+                "background": 0.0004882141247462722,
+                "static_background": 0.0004940793250844182,
+                "global": 0.002107842476729481
+              },
+              "motion_compensated_texture_mse": 0.0981665681374854
+            },
+            {
+              "frame": 2,
+              "command_shift_px": 32,
+              "desired_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                217.8983417447729,
+                335.7101658255227
+              ],
+              "detected_selected_pixels": 1387,
+              "centroid_error_px": 62.10233459297414,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1406,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142296,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.024988962738006628,
+                "destination": 0.10994084317963995,
+                "distractor": 0.001938027339868431,
+                "background": 0.0009490075581538905,
+                "static_background": 0.0009576524422612684,
+                "global": 0.002516675242372502
+              },
+              "motion_compensated_texture_mse": 0.10994084317963995
+            },
+            {
+              "frame": 3,
+              "command_shift_px": 48,
+              "desired_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                201.52080344332856,
+                335.4426111908178
+              ],
+              "detected_selected_pixels": 1394,
+              "centroid_error_px": 94.48084072593109,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1792,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141910,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.003093584656084656,
+                "destination": 0.10969998453981726,
+                "distractor": 0.0019376979643350345,
+                "background": 0.0012815089585409677,
+                "static_background": 0.0012868582031298349,
+                "global": 0.002630578192804672
+              },
+              "motion_compensated_texture_mse": 0.10969998453981726
+            },
+            {
+              "frame": 4,
+              "command_shift_px": 64,
+              "desired_centroid_xy": [
+                312.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                185.84915378955114,
+                335.88447387785135
+              ],
+              "detected_selected_pixels": 1359,
+              "centroid_error_px": 126.15089910855657,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1793,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141909,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0033563563544245826,
+                "destination": 0.10421376250743436,
+                "distractor": 0.0019380770076075945,
+                "background": 0.0012954466246018334,
+                "static_background": 0.0012978650144609529,
+                "global": 0.0025804940265696415
+              },
+              "motion_compensated_texture_mse": 0.10421376250743436
+            },
+            {
+              "frame": 5,
+              "command_shift_px": 48,
+              "desired_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                201.52080344332856,
+                335.4426111908178
+              ],
+              "detected_selected_pixels": 1394,
+              "centroid_error_px": 94.48084072593109,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1792,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141910,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.003093584656084656,
+                "destination": 0.10969998453981726,
+                "distractor": 0.0019376979643350345,
+                "background": 0.0012815089585409677,
+                "static_background": 0.0012868582031298349,
+                "global": 0.002630578192804672
+              },
+              "motion_compensated_texture_mse": 0.10969998453981726
+            },
+            {
+              "frame": 6,
+              "command_shift_px": 32,
+              "desired_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                217.8983417447729,
+                335.7101658255227
+              ],
+              "detected_selected_pixels": 1387,
+              "centroid_error_px": 62.10233459297414,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1406,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142296,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.024988962738006628,
+                "destination": 0.10994084317963995,
+                "distractor": 0.001938027339868431,
+                "background": 0.0009490075581538905,
+                "static_background": 0.0009576524422612684,
+                "global": 0.002516675242372502
+              },
+              "motion_compensated_texture_mse": 0.10994084317963995
+            },
+            {
+              "frame": 7,
+              "command_shift_px": 16,
+              "desired_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                233.26569343065694,
+                335.7211678832117
+              ],
+              "detected_selected_pixels": 1370,
+              "centroid_error_px": 30.735571373373176,
+              "selected_iou": 0.11255715793176223,
+              "region_pixels": {
+                "source_hole": 748,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142954,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.08183128523857203,
+                "destination": 0.0981665681374854,
+                "distractor": 0.0019374809947376376,
+                "background": 0.0004882141247462722,
+                "static_background": 0.0004940793250844182,
+                "global": 0.002107842476729481
+              },
+              "motion_compensated_texture_mse": 0.0981665681374854
+            },
+            {
+              "frame": 8,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.2234432234432,
+                335.59120879120877
+              ],
+              "detected_selected_pixels": 1365,
+              "centroid_error_px": 0.4658724358530853,
+              "selected_iou": 0.7583518930957683,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 143702,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.010366107562702549,
+                "distractor": 0.0019369398777899136,
+                "background": 0.00010611180630895111,
+                "static_background": 0.00010510450866735935,
+                "global": 0.00025521680196452214
+              },
+              "motion_compensated_texture_mse": 0.010366107562702549
+            }
+          ],
+          "temporal": {
+            "static_background": {
+              "pixels": 140710,
+              "temporal_variance": 0.0004174605421338123,
+              "successive_frame_error_mse": 0.0008549861733139618,
+              "rgb_mse_to_constant_source": 0.0007761393303051904
+            },
+            "distractor": {
+              "pixels": 1961,
+              "temporal_variance": 8.216638330680915e-08,
+              "successive_frame_error_mse": 1.6011310651253213e-07,
+              "rgb_mse_to_constant_source": 0.0019375965956744032
+            }
+          },
+          "loop_closure_mse": {
+            "global": 0.0,
+            "selected_source": 0.0,
+            "distractor": 0.0,
+            "static_background": 0.0
+          },
+          "path": {
+            "source_centroid_xy": [
+              248.0,
+              336.0
+            ],
+            "requested_x_amplitude_px": 64.0,
+            "observed_x_amplitude_px": 62.37428943389207,
+            "all_frames_detected": true,
+            "missing_detection_frames": [],
+            "direction_counts": {
+              "correct_direction_steps": 0,
+              "reverse_direction_steps": 8,
+              "stationary_steps": 0,
+              "unscorable_steps": 0
+            },
+            "lag_counts": {
+              "lagging_frames": 4,
+              "leading_frames": 3,
+              "within_half_step_frames": 1,
+              "unscorable_frames": 0
+            }
+          },
+          "summary": {
+            "detected_frames": 9,
+            "mean_centroid_error_px": 55.7466819294244,
+            "mean_detected_centroid_error_px": 55.7466819294244,
+            "max_centroid_error_px": 126.15089910855657,
+            "mean_selected_iou": 0.19353534467278458,
+            "mean_motion_compensated_texture_mse": 0.08450675214963606,
+            "observed_x_amplitude_px": 62.37428943389207,
+            "x_amplitude_error_px": 1.6257105661079265,
+            "loop_closure_global_mse": 0.0,
+            "mean_source_hole_rgb_mse": 0.031883431659964455,
+            "mean_destination_rgb_mse": 0.08450675214963606,
+            "mean_distractor_rgb_mse": 0.001937596595674403,
+            "mean_background_rgb_mse": 0.0007716812800113329,
+            "mean_static_background_rgb_mse": 0.0007761393303051904,
+            "mean_global_rgb_mse": 0.0019556799393679993,
+            "static_background_temporal_variance": 0.0004174605421338123,
+            "static_background_successive_frame_error_mse": 0.0008549861733139618,
+            "distractor_temporal_variance": 8.216638330680915e-08,
+            "distractor_successive_frame_error_mse": 1.6011310651253213e-07,
+            "correct_direction_steps": 0,
+            "reverse_direction_steps": 8,
+            "stationary_steps": 0,
+            "unscorable_steps": 0,
+            "lagging_frames": 4,
+            "leading_frames": 3,
+            "within_half_step_frames": 1,
+            "unscorable_frames": 0
+          }
+        },
+        "oracle": {
+          "method_version": "day12_procedural_rgb_metrics_v1",
+          "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+          "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+          "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+          "detector": {
+            "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+            "general_detector": false,
+            "target_location_crop": false,
+            "source_selected_mean_rgb_01": [
+              0.7461938037903336,
+              0.2850628260227708,
+              0.2814255875244686
+            ],
+            "ambiguous_source_selected_pixels": 0
+          },
+          "metric_definitions": {
+            "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+            "destination": "Entire desired selected-object support, including any overlap with its source",
+            "background": "Outside source selection, current target and distractor",
+            "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+            "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+            "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+            "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+            "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+            "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+            "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+          },
+          "frames": [
+            {
+              "frame": 0,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_selected_pixels": 1793,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 143702,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 1,
+              "command_shift_px": 16,
+              "desired_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_selected_pixels": 1793,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 748,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142954,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 2,
+              "command_shift_px": 32,
+              "desired_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_selected_pixels": 1793,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 1406,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142296,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 3,
+              "command_shift_px": 48,
+              "desired_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_selected_pixels": 1793,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 1792,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141910,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 4,
+              "command_shift_px": 64,
+              "desired_centroid_xy": [
+                312.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                312.0,
+                336.0
+              ],
+              "detected_selected_pixels": 1793,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 1793,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141909,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 5,
+              "command_shift_px": 48,
+              "desired_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                296.0,
+                336.0
+              ],
+              "detected_selected_pixels": 1793,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 1792,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 141910,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 6,
+              "command_shift_px": 32,
+              "desired_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                280.0,
+                336.0
+              ],
+              "detected_selected_pixels": 1793,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 1406,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142296,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 7,
+              "command_shift_px": 16,
+              "desired_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                264.0,
+                336.0
+              ],
+              "detected_selected_pixels": 1793,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 748,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 142954,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 8,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_centroid_xy": [
+                248.0,
+                336.0
+              ],
+              "detected_selected_pixels": 1793,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1793,
+                "distractor": 1961,
+                "background": 143702,
+                "static_background": 140710,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            }
+          ],
+          "temporal": {
+            "static_background": {
+              "pixels": 140710,
+              "temporal_variance": 8.401175325836147e-34,
+              "successive_frame_error_mse": 0.0,
+              "rgb_mse_to_constant_source": 0.0
+            },
+            "distractor": {
+              "pixels": 1961,
+              "temporal_variance": 4.392744038717799e-33,
+              "successive_frame_error_mse": 0.0,
+              "rgb_mse_to_constant_source": 0.0
+            }
+          },
+          "loop_closure_mse": {
+            "global": 0.0,
+            "selected_source": 0.0,
+            "distractor": 0.0,
+            "static_background": 0.0
+          },
+          "path": {
+            "source_centroid_xy": [
+              248.0,
+              336.0
+            ],
+            "requested_x_amplitude_px": 64.0,
+            "observed_x_amplitude_px": 64.0,
+            "all_frames_detected": true,
+            "missing_detection_frames": [],
+            "direction_counts": {
+              "correct_direction_steps": 8,
+              "reverse_direction_steps": 0,
+              "stationary_steps": 0,
+              "unscorable_steps": 0
+            },
+            "lag_counts": {
+              "lagging_frames": 0,
+              "leading_frames": 0,
+              "within_half_step_frames": 8,
+              "unscorable_frames": 0
+            }
+          },
+          "summary": {
+            "detected_frames": 9,
+            "mean_centroid_error_px": 0.0,
+            "mean_detected_centroid_error_px": 0.0,
+            "max_centroid_error_px": 0.0,
+            "mean_selected_iou": 1.0,
+            "mean_motion_compensated_texture_mse": 0.0,
+            "observed_x_amplitude_px": 64.0,
+            "x_amplitude_error_px": 0.0,
+            "loop_closure_global_mse": 0.0,
+            "mean_source_hole_rgb_mse": 0.0,
+            "mean_destination_rgb_mse": 0.0,
+            "mean_distractor_rgb_mse": 0.0,
+            "mean_background_rgb_mse": 0.0,
+            "mean_static_background_rgb_mse": 0.0,
+            "mean_global_rgb_mse": 0.0,
+            "static_background_temporal_variance": 8.401175325836147e-34,
+            "static_background_successive_frame_error_mse": 0.0,
+            "distractor_temporal_variance": 4.392744038717799e-33,
+            "distractor_successive_frame_error_mse": 0.0,
+            "correct_direction_steps": 8,
+            "reverse_direction_steps": 0,
+            "stationary_steps": 0,
+            "unscorable_steps": 0,
+            "lagging_frames": 0,
+            "leading_frames": 0,
+            "within_half_step_frames": 8,
+            "unscorable_frames": 0
+          }
+        }
+      },
+      "jepa_video_vae_roundtrip_score": {
+        "method_version": "day12_procedural_rgb_metrics_v1",
+        "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+        "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+        "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+        "detector": {
+          "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+          "general_detector": false,
+          "target_location_crop": false,
+          "source_selected_mean_rgb_01": [
+            0.7461938037903336,
+            0.2850628260227708,
+            0.2814255875244686
+          ],
+          "ambiguous_source_selected_pixels": 0
+        },
+        "metric_definitions": {
+          "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+          "destination": "Entire desired selected-object support, including any overlap with its source",
+          "background": "Outside source selection, current target and distractor",
+          "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+          "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+          "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+          "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+          "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+          "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+          "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+        },
+        "frames": [
+          {
+            "frame": 0,
+            "command_shift_px": 0,
+            "desired_centroid_xy": [
+              248.0,
+              336.0
+            ],
+            "detected_centroid_xy": [
+              248.11173576950105,
+              335.61349262122275
+            ],
+            "detected_selected_pixels": 1423,
+            "centroid_error_px": 0.40233423423225534,
+            "selected_iou": 0.7886540600667408,
+            "region_pixels": {
+              "source_hole": 0,
+              "destination": 1793,
+              "distractor": 1961,
+              "background": 143702,
+              "static_background": 140710,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": null,
+              "destination": 0.012571188494936558,
+              "distractor": 0.0026243832132713764,
+              "background": 0.0001278718474015797,
+              "static_background": 0.00012670445510621592,
+              "global": 0.0003123779070905777
+            },
+            "motion_compensated_texture_mse": 0.012571188494936558
+          },
+          {
+            "frame": 1,
+            "command_shift_px": 16,
+            "desired_centroid_xy": [
+              264.0,
+              336.0
+            ],
+            "detected_centroid_xy": [
+              263.6188373804268,
+              336.15746872700515
+            ],
+            "detected_selected_pixels": 1359,
+            "centroid_error_px": 0.41240919308926727,
+            "selected_iou": 0.7472283813747228,
+            "region_pixels": {
+              "source_hole": 748,
+              "destination": 1793,
+              "distractor": 1961,
+              "background": 142954,
+              "static_background": 140710,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0037192263225236965,
+              "destination": 0.018179688207497238,
+              "distractor": 0.002260143541073227,
+              "background": 0.00013566133700502667,
+              "static_background": 0.00013372212340715867,
+              "global": 0.0004015003424720015
+            },
+            "motion_compensated_texture_mse": 0.018179688207497238
+          },
+          {
+            "frame": 2,
+            "command_shift_px": 32,
+            "desired_centroid_xy": [
+              280.0,
+              336.0
+            ],
+            "detected_centroid_xy": [
+              280.62649800266314,
+              335.5219707057257
+            ],
+            "detected_selected_pixels": 1502,
+            "centroid_error_px": 0.7880429896428682,
+            "selected_iou": 0.8285238623751388,
+            "region_pixels": {
+              "source_hole": 1406,
+              "destination": 1793,
+              "distractor": 1961,
+              "background": 142296,
+              "static_background": 140710,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0037850234135063856,
+              "destination": 0.022448991582241413,
+              "distractor": 0.0022382113130954284,
+              "background": 0.00014929229222433133,
+              "static_background": 0.00014300304328901267,
+              "global": 0.0004828939699007326
+            },
+            "motion_compensated_texture_mse": 0.022448991582241413
+          },
+          {
+            "frame": 3,
+            "command_shift_px": 48,
+            "desired_centroid_xy": [
+              296.0,
+              336.0
+            ],
+            "detected_centroid_xy": [
+              296.8666666666667,
+              335.8544871794872
+            ],
+            "detected_selected_pixels": 1560,
+            "centroid_error_px": 0.8787975261940126,
+            "selected_iou": 0.8524861878453038,
+            "region_pixels": {
+              "source_hole": 1792,
+              "destination": 1793,
+              "distractor": 1961,
+              "background": 141910,
+              "static_background": 140710,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0032660257730543194,
+              "destination": 0.01855275392456703,
+              "distractor": 0.002142002288245025,
+              "background": 0.0001600993776228384,
+              "static_background": 0.00014582223491120755,
+              "global": 0.00044784868121858397
+            },
+            "motion_compensated_texture_mse": 0.01855275392456703
+          },
+          {
+            "frame": 4,
+            "command_shift_px": 64,
+            "desired_centroid_xy": [
+              312.0,
+              336.0
+            ],
+            "detected_centroid_xy": [
+              316.09897070467144,
+              335.5296912114014
+            ],
+            "detected_selected_pixels": 1263,
+            "centroid_error_px": 4.125863690718317,
+            "selected_iou": 0.7025069637883008,
+            "region_pixels": {
+              "source_hole": 1793,
+              "destination": 1793,
+              "distractor": 1961,
+              "background": 141909,
+              "static_background": 140710,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0028182762375132935,
+              "destination": 0.02426071629035095,
+              "distractor": 0.002155966765224453,
+              "background": 0.0001504367054949802,
+              "static_background": 0.0001424648452398722,
+              "global": 0.0005027181455427577
+            },
+            "motion_compensated_texture_mse": 0.02426071629035095
+          },
+          {
+            "frame": 5,
+            "command_shift_px": 48,
+            "desired_centroid_xy": [
+              296.0,
+              336.0
+            ],
+            "detected_centroid_xy": [
+              298.5077149155033,
+              335.9081557678178
+            ],
+            "detected_selected_pixels": 1361,
+            "centroid_error_px": 2.50939623424099,
+            "selected_iou": 0.7512493059411438,
+            "region_pixels": {
+              "source_hole": 1792,
+              "destination": 1793,
+              "distractor": 1961,
+              "background": 141910,
+              "static_background": 140710,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.004166300507130957,
+              "destination": 0.019395874954496812,
+              "distractor": 0.002183900947366378,
+              "background": 0.00015480770018357683,
+              "static_background": 0.00014017401524406902,
+              "global": 0.00046450605464022014
+            },
+            "motion_compensated_texture_mse": 0.019395874954496812
+          },
+          {
+            "frame": 6,
+            "command_shift_px": 32,
+            "desired_centroid_xy": [
+              280.0,
+              336.0
+            ],
+            "detected_centroid_xy": [
+              280.9329829172142,
+              335.3777923784494
+            ],
+            "detected_selected_pixels": 1522,
+            "centroid_error_px": 1.1214274154528117,
+            "selected_iou": 0.8314917127071824,
+            "region_pixels": {
+              "source_hole": 1406,
+              "destination": 1793,
+              "distractor": 1961,
+              "background": 142296,
+              "static_background": 140710,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0036307405566192667,
+              "destination": 0.020724352804086178,
+              "distractor": 0.0022377015652461233,
+              "background": 0.00014614412718039194,
+              "static_background": 0.0001376575304241694,
+              "global": 0.00045740724888130636
+            },
+            "motion_compensated_texture_mse": 0.020724352804086178
+          },
+          {
+            "frame": 7,
+            "command_shift_px": 16,
+            "desired_centroid_xy": [
+              264.0,
+              336.0
+            ],
+            "detected_centroid_xy": [
+              264.46666666666664,
+              335.9876288659794
+            ],
+            "detected_selected_pixels": 1455,
+            "centroid_error_px": 0.4668306146073851,
+            "selected_iou": 0.7994459833795013,
+            "region_pixels": {
+              "source_hole": 748,
+              "destination": 1793,
+              "distractor": 1961,
+              "background": 142954,
+              "static_background": 140710,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.004106784652276205,
+              "destination": 0.016269698778030875,
+              "distractor": 0.0021774911949228068,
+              "background": 0.00013212822559822315,
+              "static_background": 0.00012943704977702602,
+              "global": 0.000375717254125461
+            },
+            "motion_compensated_texture_mse": 0.016269698778030875
+          },
+          {
+            "frame": 8,
+            "command_shift_px": 0,
+            "desired_centroid_xy": [
+              248.0,
+              336.0
+            ],
+            "detected_centroid_xy": [
+              248.35739313244568,
+              335.85494043447795
+            ],
+            "detected_selected_pixels": 1427,
+            "centroid_error_px": 0.3857099022176899,
+            "selected_iou": 0.7809734513274337,
+            "region_pixels": {
+              "source_hole": 0,
+              "destination": 1793,
+              "distractor": 1961,
+              "background": 143702,
+              "static_background": 140710,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": null,
+              "destination": 0.01864224715435788,
+              "distractor": 0.0021373988730520686,
+              "background": 0.00013047213506988515,
+              "static_background": 0.0001273504166312487,
+              "global": 0.00038225704679112024
+            },
+            "motion_compensated_texture_mse": 0.01864224715435788
+          }
+        ],
+        "temporal": {
+          "static_background": {
+            "pixels": 140710,
+            "temporal_variance": 1.610392236315359e-05,
+            "successive_frame_error_mse": 2.959027756317527e-05,
+            "rgb_mse_to_constant_source": 0.00013625952378110888
+          },
+          "distractor": {
+            "pixels": 1961,
+            "temporal_variance": 6.262550044694792e-05,
+            "successive_frame_error_mse": 7.334291267176296e-05,
+            "rgb_mse_to_constant_source": 0.0022396888557218763
+          }
+        },
+        "loop_closure_mse": {
+          "global": 0.00016500425628675577,
+          "selected_source": 0.010433114553521286,
+          "distractor": 0.0003012060830171426,
+          "static_background": 3.189496507491579e-05
+        },
+        "path": {
+          "source_centroid_xy": [
+            248.0,
+            336.0
+          ],
+          "requested_x_amplitude_px": 64.0,
+          "observed_x_amplitude_px": 67.98723493517039,
+          "all_frames_detected": true,
+          "missing_detection_frames": [],
+          "direction_counts": {
+            "correct_direction_steps": 8,
+            "reverse_direction_steps": 0,
+            "stationary_steps": 0,
+            "unscorable_steps": 0
+          },
+          "lag_counts": {
+            "lagging_frames": 0,
+            "leading_frames": 0,
+            "within_half_step_frames": 8,
+            "unscorable_frames": 0
+          }
+        },
+        "summary": {
+          "detected_frames": 9,
+          "mean_centroid_error_px": 1.2323124222661772,
+          "mean_detected_centroid_error_px": 1.2323124222661772,
+          "max_centroid_error_px": 4.125863690718317,
+          "mean_selected_iou": 0.7869511009783854,
+          "mean_motion_compensated_texture_mse": 0.01900505691006277,
+          "observed_x_amplitude_px": 67.98723493517039,
+          "x_amplitude_error_px": 3.9872349351703917,
+          "loop_closure_global_mse": 0.00016500425628675577,
+          "mean_source_hole_rgb_mse": 0.0036417682089463026,
+          "mean_destination_rgb_mse": 0.01900505691006277,
+          "mean_distractor_rgb_mse": 0.0022396888557218767,
+          "mean_background_rgb_mse": 0.0001429904164200926,
+          "mean_static_background_rgb_mse": 0.00013625952378110888,
+          "mean_global_rgb_mse": 0.00042524740562919567,
+          "static_background_temporal_variance": 1.610392236315359e-05,
+          "static_background_successive_frame_error_mse": 2.959027756317527e-05,
+          "distractor_temporal_variance": 6.262550044694792e-05,
+          "distractor_successive_frame_error_mse": 7.334291267176296e-05,
+          "correct_direction_steps": 8,
+          "reverse_direction_steps": 0,
+          "stationary_steps": 0,
+          "unscorable_steps": 0,
+          "lagging_frames": 0,
+          "leading_frames": 0,
+          "within_half_step_frames": 8,
+          "unscorable_frames": 0
+        }
+      },
+      "figure": {
+        "path": "figures/development_video_14000_pregeneration.png",
+        "sha256": "819b78b604a0b12adbfeec8e551aca59db15c2febccbb51886ac34fbeec1917f"
+      }
+    },
+    {
+      "scene_seed": 14001,
+      "guide_archive_sha256": "9fd176e9c0557c21c2e9c7a9a09ef995b4be5f724e2566fb0b8b77584a367cc2",
+      "guide_scores": {
+        "source_static": {
+          "method_version": "day12_procedural_rgb_metrics_v1",
+          "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+          "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+          "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+          "detector": {
+            "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+            "general_detector": false,
+            "target_location_crop": false,
+            "source_selected_mean_rgb_01": [
+              0.21341114788323035,
+              0.4908295078467023,
+              0.6863290748846397
+            ],
+            "ambiguous_source_selected_pixels": 0
+          },
+          "metric_definitions": {
+            "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+            "destination": "Entire desired selected-object support, including any overlap with its source",
+            "background": "Outside source selection, current target and distractor",
+            "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+            "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+            "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+            "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+            "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+            "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+            "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+          },
+          "frames": [
+            {
+              "frame": 0,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 0.48620074571884075,
+              "selected_iou": 0.841596130592503,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 143174,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0031535577510286386,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010715440636968113,
+                "static_background": 0.00010486565361719464,
+                "global": 0.00019369779346129339
+              },
+              "motion_compensated_texture_mse": 0.0031535577510286386
+            },
+            {
+              "frame": 1,
+              "command_shift_px": -16,
+              "desired_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 16.426680031736964,
+              "selected_iou": 0.32897033158813266,
+              "region_pixels": {
+                "source_hole": 716,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 142458,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.08809149467652105,
+                "destination": 0.06784192934930713,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010491221996236209,
+                "static_background": 0.00010486565361719464,
+                "global": 0.0013439205615695352
+              },
+              "motion_compensated_texture_mse": 0.06784192934930713
+            },
+            {
+              "frame": 2,
+              "command_shift_px": -32,
+              "desired_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 32.42584220286336,
+              "selected_iou": 0.09528946422150306,
+              "region_pixels": {
+                "source_hole": 1338,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141836,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.10391781015580416,
+                "destination": 0.10677925773348376,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010554122399656561,
+                "static_background": 0.00010486565361719464,
+                "global": 0.002295769815818257
+              },
+              "motion_compensated_texture_mse": 0.10677925773348376
+            },
+            {
+              "frame": 3,
+              "command_shift_px": -48,
+              "desired_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 48.425558006748076,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.1038030124607324,
+                "destination": 0.12627995235673004,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010702961650244247,
+                "static_background": 0.00010486565361719464,
+                "global": 0.002736283536057624
+              },
+              "motion_compensated_texture_mse": 0.12627995235673004
+            },
+            {
+              "frame": 4,
+              "command_shift_px": -64,
+              "desired_centroid_xy": [
+                115.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 64.42541496928716,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.1038030124607324,
+                "destination": 0.12557298180334414,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010715367830060164,
+                "static_background": 0.00010486565361719464,
+                "global": 0.002728477377101667
+              },
+              "motion_compensated_texture_mse": 0.12557298180334414
+            },
+            {
+              "frame": 5,
+              "command_shift_px": -48,
+              "desired_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 48.425558006748076,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.1038030124607324,
+                "destination": 0.12627995235673004,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010702961650244247,
+                "static_background": 0.00010486565361719464,
+                "global": 0.002736283536057624
+              },
+              "motion_compensated_texture_mse": 0.12627995235673004
+            },
+            {
+              "frame": 6,
+              "command_shift_px": -32,
+              "desired_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 32.42584220286336,
+              "selected_iou": 0.09528946422150306,
+              "region_pixels": {
+                "source_hole": 1338,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141836,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.10391781015580416,
+                "destination": 0.10677925773348376,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010554122399656561,
+                "static_background": 0.00010486565361719464,
+                "global": 0.002295769815818257
+              },
+              "motion_compensated_texture_mse": 0.10677925773348376
+            },
+            {
+              "frame": 7,
+              "command_shift_px": -16,
+              "desired_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 16.426680031736964,
+              "selected_iou": 0.32897033158813266,
+              "region_pixels": {
+                "source_hole": 716,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 142458,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.08809149467652105,
+                "destination": 0.06784192934930713,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010491221996236209,
+                "static_background": 0.00010486565361719464,
+                "global": 0.0013439205615695352
+              },
+              "motion_compensated_texture_mse": 0.06784192934930713
+            },
+            {
+              "frame": 8,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 0.48620074571884075,
+              "selected_iou": 0.841596130592503,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 143174,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0031535577510286386,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010715440636968113,
+                "static_background": 0.00010486565361719464,
+                "global": 0.00019369779346129339
+              },
+              "motion_compensated_texture_mse": 0.0031535577510286386
+            }
+          ],
+          "temporal": {
+            "static_background": {
+              "pixels": 140310,
+              "temporal_variance": 8.09096927913615e-34,
+              "successive_frame_error_mse": 0.0,
+              "rgb_mse_to_constant_source": 0.00010486565361719462
+            },
+            "distractor": {
+              "pixels": 2629,
+              "temporal_variance": 4.122447307485705e-33,
+              "successive_frame_error_mse": 0.0,
+              "rgb_mse_to_constant_source": 0.00304577629996402
+            }
+          },
+          "loop_closure_mse": {
+            "global": 0.0,
+            "selected_source": 0.0,
+            "distractor": 0.0,
+            "static_background": 0.0
+          },
+          "path": {
+            "source_centroid_xy": [
+              179.0,
+              100.0
+            ],
+            "requested_x_amplitude_px": 64.0,
+            "observed_x_amplitude_px": 0.0,
+            "all_frames_detected": true,
+            "missing_detection_frames": [],
+            "direction_counts": {
+              "correct_direction_steps": 0,
+              "reverse_direction_steps": 0,
+              "stationary_steps": 8,
+              "unscorable_steps": 0
+            },
+            "lag_counts": {
+              "lagging_frames": 4,
+              "leading_frames": 3,
+              "within_half_step_frames": 1,
+              "unscorable_frames": 0
+            }
+          },
+          "summary": {
+            "detected_frames": 9,
+            "mean_centroid_error_px": 28.88377521593574,
+            "mean_detected_centroid_error_px": 28.88377521593574,
+            "max_centroid_error_px": 64.42541496928716,
+            "mean_selected_iou": 0.28130131697825306,
+            "mean_motion_compensated_texture_mse": 0.0815202640204937,
+            "observed_x_amplitude_px": 0.0,
+            "x_amplitude_error_px": 64.0,
+            "loop_closure_global_mse": 0.0,
+            "mean_source_hole_rgb_mse": 0.09934680672097825,
+            "mean_destination_rgb_mse": 0.0815202640204937,
+            "mean_distractor_rgb_mse": 0.00304577629996402,
+            "mean_background_rgb_mse": 0.00010626984577363381,
+            "mean_static_background_rgb_mse": 0.00010486565361719464,
+            "mean_global_rgb_mse": 0.001763091198990565,
+            "static_background_temporal_variance": 8.09096927913615e-34,
+            "static_background_successive_frame_error_mse": 0.0,
+            "distractor_temporal_variance": 4.122447307485705e-33,
+            "distractor_successive_frame_error_mse": 0.0,
+            "correct_direction_steps": 0,
+            "reverse_direction_steps": 0,
+            "stationary_steps": 8,
+            "unscorable_steps": 0,
+            "lagging_frames": 4,
+            "leading_frames": 3,
+            "within_half_step_frames": 1,
+            "unscorable_frames": 0
+          }
+        },
+        "jepa": {
+          "method_version": "day12_procedural_rgb_metrics_v1",
+          "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+          "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+          "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+          "detector": {
+            "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+            "general_detector": false,
+            "target_location_crop": false,
+            "source_selected_mean_rgb_01": [
+              0.21341114788323035,
+              0.4908295078467023,
+              0.6863290748846397
+            ],
+            "ambiguous_source_selected_pixels": 0
+          },
+          "metric_definitions": {
+            "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+            "destination": "Entire desired selected-object support, including any overlap with its source",
+            "background": "Outside source selection, current target and distractor",
+            "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+            "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+            "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+            "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+            "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+            "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+            "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+          },
+          "frames": [
+            {
+              "frame": 0,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 0.48620074571884075,
+              "selected_iou": 0.841596130592503,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 143174,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0031535577510286386,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010715440636968113,
+                "static_background": 0.00010486565361719464,
+                "global": 0.00019369779346129339
+              },
+              "motion_compensated_texture_mse": 0.0031535577510286386
+            },
+            {
+              "frame": 1,
+              "command_shift_px": -16,
+              "desired_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                163.29098039215685,
+                100.25725490196078
+              ],
+              "detected_selected_pixels": 1275,
+              "centroid_error_px": 0.3883937090152283,
+              "selected_iou": 0.7702539298669892,
+              "region_pixels": {
+                "source_hole": 716,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 142458,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0016871250636304473,
+                "destination": 0.004435807686853808,
+                "distractor": 0.003046842884111781,
+                "background": 0.00011879754124527196,
+                "static_background": 0.0001118614954621681,
+                "global": 0.00022701132354721116
+              },
+              "motion_compensated_texture_mse": 0.004435807686853808
+            },
+            {
+              "frame": 2,
+              "command_shift_px": -32,
+              "desired_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                147.81917381137959,
+                100.3078721745908
+              ],
+              "detected_selected_pixels": 1283,
+              "centroid_error_px": 0.8751177115893741,
+              "selected_iou": 0.7740181268882175,
+              "region_pixels": {
+                "source_hole": 1338,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141836,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0013464217032006587,
+                "destination": 0.004599630076973358,
+                "distractor": 0.003045019746674566,
+                "background": 0.00013133004280146195,
+                "static_background": 0.0001191552076066568,
+                "global": 0.00024439416246822804
+              },
+              "motion_compensated_texture_mse": 0.004599630076973358
+            },
+            {
+              "frame": 3,
+              "command_shift_px": -48,
+              "desired_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                131.531983805668,
+                100.43724696356276
+              ],
+              "detected_selected_pixels": 1235,
+              "centroid_error_px": 0.6886157685080011,
+              "selected_iou": 0.7439613526570048,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0010456275871992707,
+                "destination": 0.005429788394011982,
+                "distractor": 0.0030441423008491673,
+                "background": 0.00013882852082540688,
+                "static_background": 0.00012239634189843796,
+                "global": 0.0002601051420193622
+              },
+              "motion_compensated_texture_mse": 0.005429788394011982
+            },
+            {
+              "frame": 4,
+              "command_shift_px": -64,
+              "desired_centroid_xy": [
+                115.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                115.42535446205171,
+                100.79399499582986
+              ],
+              "detected_selected_pixels": 1199,
+              "centroid_error_px": 0.9007521700169071,
+              "selected_iou": 0.7191078963230862,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.001064640858577436,
+                "destination": 0.00600677652095123,
+                "distractor": 0.0030431244636917056,
+                "background": 0.00014728105941292074,
+                "static_background": 0.000134003638325137,
+                "global": 0.00027488057422269925
+              },
+              "motion_compensated_texture_mse": 0.00600677652095123
+            },
+            {
+              "frame": 5,
+              "command_shift_px": -48,
+              "desired_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                131.531983805668,
+                100.43724696356276
+              ],
+              "detected_selected_pixels": 1235,
+              "centroid_error_px": 0.6886157685080011,
+              "selected_iou": 0.7439613526570048,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0010456275871992707,
+                "destination": 0.005429788394011982,
+                "distractor": 0.0030441423008491673,
+                "background": 0.00013882852082540688,
+                "static_background": 0.00012239634189843796,
+                "global": 0.0002601051420193622
+              },
+              "motion_compensated_texture_mse": 0.005429788394011982
+            },
+            {
+              "frame": 6,
+              "command_shift_px": -32,
+              "desired_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                147.81917381137959,
+                100.3078721745908
+              ],
+              "detected_selected_pixels": 1283,
+              "centroid_error_px": 0.8751177115893741,
+              "selected_iou": 0.7740181268882175,
+              "region_pixels": {
+                "source_hole": 1338,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141836,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0013464217032006587,
+                "destination": 0.004599630076973358,
+                "distractor": 0.003045019746674566,
+                "background": 0.00013133004280146195,
+                "static_background": 0.0001191552076066568,
+                "global": 0.00024439416246822804
+              },
+              "motion_compensated_texture_mse": 0.004599630076973358
+            },
+            {
+              "frame": 7,
+              "command_shift_px": -16,
+              "desired_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                163.29098039215685,
+                100.25725490196078
+              ],
+              "detected_selected_pixels": 1275,
+              "centroid_error_px": 0.3883937090152283,
+              "selected_iou": 0.7702539298669892,
+              "region_pixels": {
+                "source_hole": 716,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 142458,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0016871250636304473,
+                "destination": 0.004435807686853808,
+                "distractor": 0.003046842884111781,
+                "background": 0.00011879754124527196,
+                "static_background": 0.0001118614954621681,
+                "global": 0.00022701132354721116
+              },
+              "motion_compensated_texture_mse": 0.004435807686853808
+            },
+            {
+              "frame": 8,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 0.48620074571884075,
+              "selected_iou": 0.841596130592503,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 143174,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0031535577510286386,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010715440636968113,
+                "static_background": 0.00010486565361719464,
+                "global": 0.00019369779346129339
+              },
+              "motion_compensated_texture_mse": 0.0031535577510286386
+            }
+          ],
+          "temporal": {
+            "static_background": {
+              "pixels": 140310,
+              "temporal_variance": 8.399564195751797e-06,
+              "successive_frame_error_mse": 1.5442463303711712e-05,
+              "rgb_mse_to_constant_source": 0.00011672900394378356
+            },
+            "distractor": {
+              "pixels": 2629,
+              "temporal_variance": 2.6600209521665727e-07,
+              "successive_frame_error_mse": 5.108684583427961e-07,
+              "rgb_mse_to_constant_source": 0.0030451874363211975
+            }
+          },
+          "loop_closure_mse": {
+            "global": 0.0,
+            "selected_source": 0.0,
+            "distractor": 0.0,
+            "static_background": 0.0
+          },
+          "path": {
+            "source_centroid_xy": [
+              179.0,
+              100.0
+            ],
+            "requested_x_amplitude_px": 64.0,
+            "observed_x_amplitude_px": 63.99962759107105,
+            "all_frames_detected": true,
+            "missing_detection_frames": [],
+            "direction_counts": {
+              "correct_direction_steps": 8,
+              "reverse_direction_steps": 0,
+              "stationary_steps": 0,
+              "unscorable_steps": 0
+            },
+            "lag_counts": {
+              "lagging_frames": 0,
+              "leading_frames": 0,
+              "within_half_step_frames": 8,
+              "unscorable_frames": 0
+            }
+          },
+          "summary": {
+            "detected_frames": 9,
+            "mean_centroid_error_px": 0.6419342266310885,
+            "mean_detected_centroid_error_px": 0.6419342266310885,
+            "max_centroid_error_px": 0.9007521700169071,
+            "mean_selected_iou": 0.7754185529258351,
+            "mean_motion_compensated_texture_mse": 0.004582704926520755,
+            "observed_x_amplitude_px": 63.99962759107105,
+            "x_amplitude_error_px": 0.00037240892895340494,
+            "loop_closure_global_mse": 0.0,
+            "mean_source_hole_rgb_mse": 0.0013175699380911698,
+            "mean_destination_rgb_mse": 0.004582704926520755,
+            "mean_distractor_rgb_mse": 0.003045187436321197,
+            "mean_background_rgb_mse": 0.00012661134243295162,
+            "mean_static_background_rgb_mse": 0.00011672900394378355,
+            "mean_global_rgb_mse": 0.000236144157468321,
+            "static_background_temporal_variance": 8.399564195751797e-06,
+            "static_background_successive_frame_error_mse": 1.5442463303711712e-05,
+            "distractor_temporal_variance": 2.6600209521665727e-07,
+            "distractor_successive_frame_error_mse": 5.108684583427961e-07,
+            "correct_direction_steps": 8,
+            "reverse_direction_steps": 0,
+            "stationary_steps": 0,
+            "unscorable_steps": 0,
+            "lagging_frames": 0,
+            "leading_frames": 0,
+            "within_half_step_frames": 8,
+            "unscorable_frames": 0
+          }
+        },
+        "no_f": {
+          "method_version": "day12_procedural_rgb_metrics_v1",
+          "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+          "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+          "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+          "detector": {
+            "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+            "general_detector": false,
+            "target_location_crop": false,
+            "source_selected_mean_rgb_01": [
+              0.21341114788323035,
+              0.4908295078467023,
+              0.6863290748846397
+            ],
+            "ambiguous_source_selected_pixels": 0
+          },
+          "metric_definitions": {
+            "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+            "destination": "Entire desired selected-object support, including any overlap with its source",
+            "background": "Outside source selection, current target and distractor",
+            "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+            "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+            "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+            "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+            "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+            "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+            "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+          },
+          "frames": [
+            {
+              "frame": 0,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 0.48620074571884075,
+              "selected_iou": 0.841596130592503,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 143174,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0031535577510286386,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010715440636968113,
+                "static_background": 0.00010486565361719464,
+                "global": 0.00019369779346129339
+              },
+              "motion_compensated_texture_mse": 0.0031535577510286386
+            },
+            {
+              "frame": 1,
+              "command_shift_px": -16,
+              "desired_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                163.50365497076024,
+                99.96345029239767
+              ],
+              "detected_selected_pixels": 1368,
+              "centroid_error_px": 0.5049794161124905,
+              "selected_iou": 0.8264812575574365,
+              "region_pixels": {
+                "source_hole": 716,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 142458,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0011901238386324699,
+                "destination": 0.003853435929330235,
+                "distractor": 0.003046302767459259,
+                "background": 0.00011794910638403924,
+                "static_background": 0.00011212210000607118,
+                "global": 0.0002172402752858587
+              },
+              "motion_compensated_texture_mse": 0.003853435929330235
+            },
+            {
+              "frame": 2,
+              "command_shift_px": -32,
+              "desired_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                147.45809248554914,
+                99.90390173410404
+              ],
+              "detected_selected_pixels": 1384,
+              "centroid_error_px": 0.46806367304545654,
+              "selected_iou": 0.837265577737447,
+              "region_pixels": {
+                "source_hole": 1338,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141836,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0013007683411788075,
+                "destination": 0.003830881122164455,
+                "distractor": 0.003045784099482468,
+                "background": 0.00013211486583969702,
+                "static_background": 0.00012149235504440822,
+                "global": 0.00023613067656937502
+              },
+              "motion_compensated_texture_mse": 0.003830881122164455
+            },
+            {
+              "frame": 3,
+              "command_shift_px": -48,
+              "desired_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                131.64259927797835,
+                99.88808664259928
+              ],
+              "detected_selected_pixels": 1385,
+              "centroid_error_px": 0.6522717467612689,
+              "selected_iou": 0.837870538415003,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0009677324068898997,
+                "destination": 0.003923190539199599,
+                "distractor": 0.0030460980300999994,
+                "background": 0.00014887828714717696,
+                "static_background": 0.00012825963358829411,
+                "global": 0.0002520229182018668
+              },
+              "motion_compensated_texture_mse": 0.003923190539199599
+            },
+            {
+              "frame": 4,
+              "command_shift_px": -64,
+              "desired_centroid_xy": [
+                115.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                115.73362445414847,
+                99.80713245997089
+              ],
+              "detected_selected_pixels": 1374,
+              "centroid_error_px": 0.7585530487194158,
+              "selected_iou": 0.8312159709618875,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0009087357546801108,
+                "destination": 0.003886218394138355,
+                "distractor": 0.00304574705176984,
+                "background": 0.00016079941249910642,
+                "static_background": 0.0001389443833532664,
+                "global": 0.00026238214696849144
+              },
+              "motion_compensated_texture_mse": 0.003886218394138355
+            },
+            {
+              "frame": 5,
+              "command_shift_px": -48,
+              "desired_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                131.64259927797835,
+                99.88808664259928
+              ],
+              "detected_selected_pixels": 1385,
+              "centroid_error_px": 0.6522717467612689,
+              "selected_iou": 0.837870538415003,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0009677324068898997,
+                "destination": 0.003923190539199599,
+                "distractor": 0.0030460980300999994,
+                "background": 0.00014887828714717696,
+                "static_background": 0.00012825963358829411,
+                "global": 0.0002520229182018668
+              },
+              "motion_compensated_texture_mse": 0.003923190539199599
+            },
+            {
+              "frame": 6,
+              "command_shift_px": -32,
+              "desired_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                147.45809248554914,
+                99.90390173410404
+              ],
+              "detected_selected_pixels": 1384,
+              "centroid_error_px": 0.46806367304545654,
+              "selected_iou": 0.837265577737447,
+              "region_pixels": {
+                "source_hole": 1338,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141836,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0013007683411788075,
+                "destination": 0.003830881122164455,
+                "distractor": 0.003045784099482468,
+                "background": 0.00013211486583969702,
+                "static_background": 0.00012149235504440822,
+                "global": 0.00023613067656937502
+              },
+              "motion_compensated_texture_mse": 0.003830881122164455
+            },
+            {
+              "frame": 7,
+              "command_shift_px": -16,
+              "desired_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                163.50365497076024,
+                99.96345029239767
+              ],
+              "detected_selected_pixels": 1368,
+              "centroid_error_px": 0.5049794161124905,
+              "selected_iou": 0.8264812575574365,
+              "region_pixels": {
+                "source_hole": 716,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 142458,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0011901238386324699,
+                "destination": 0.003853435929330235,
+                "distractor": 0.003046302767459259,
+                "background": 0.00011794910638403924,
+                "static_background": 0.00011212210000607118,
+                "global": 0.0002172402752858587
+              },
+              "motion_compensated_texture_mse": 0.003853435929330235
+            },
+            {
+              "frame": 8,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 0.48620074571884075,
+              "selected_iou": 0.841596130592503,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 143174,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0031535577510286386,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010715440636968113,
+                "static_background": 0.00010486565361719464,
+                "global": 0.00019369779346129339
+              },
+              "motion_compensated_texture_mse": 0.0031535577510286386
+            }
+          ],
+          "temporal": {
+            "static_background": {
+              "pixels": 140310,
+              "temporal_variance": 9.772898853219248e-06,
+              "successive_frame_error_mse": 1.7801961061066762e-05,
+              "rgb_mse_to_constant_source": 0.00011915820754057807
+            },
+            "distractor": {
+              "pixels": 2629,
+              "temporal_variance": 2.7149064523560726e-07,
+              "successive_frame_error_mse": 5.357294233957377e-07,
+              "rgb_mse_to_constant_source": 0.003045963271753481
+            }
+          },
+          "loop_closure_mse": {
+            "global": 0.0,
+            "selected_source": 0.0,
+            "distractor": 0.0,
+            "static_background": 0.0
+          },
+          "path": {
+            "source_centroid_xy": [
+              179.0,
+              100.0
+            ],
+            "requested_x_amplitude_px": 64.0,
+            "observed_x_amplitude_px": 63.69135759897429,
+            "all_frames_detected": true,
+            "missing_detection_frames": [],
+            "direction_counts": {
+              "correct_direction_steps": 8,
+              "reverse_direction_steps": 0,
+              "stationary_steps": 0,
+              "unscorable_steps": 0
+            },
+            "lag_counts": {
+              "lagging_frames": 0,
+              "leading_frames": 0,
+              "within_half_step_frames": 8,
+              "unscorable_frames": 0
+            }
+          },
+          "summary": {
+            "detected_frames": 9,
+            "mean_centroid_error_px": 0.5535093568883922,
+            "mean_detected_centroid_error_px": 0.5535093568883922,
+            "max_centroid_error_px": 0.7585530487194158,
+            "mean_selected_iou": 0.8352936643962963,
+            "mean_motion_compensated_texture_mse": 0.003712038786398245,
+            "observed_x_amplitude_px": 63.69135759897429,
+            "x_amplitude_error_px": 0.3086424010257076,
+            "loop_closure_global_mse": 0.0,
+            "mean_source_hole_rgb_mse": 0.0011179978468689234,
+            "mean_destination_rgb_mse": 0.003712038786398245,
+            "mean_distractor_rgb_mse": 0.0030459632717534813,
+            "mean_background_rgb_mse": 0.00013033252710892165,
+            "mean_static_background_rgb_mse": 0.00011915820754057808,
+            "mean_global_rgb_mse": 0.00022895171933391987,
+            "static_background_temporal_variance": 9.772898853219248e-06,
+            "static_background_successive_frame_error_mse": 1.7801961061066762e-05,
+            "distractor_temporal_variance": 2.7149064523560726e-07,
+            "distractor_successive_frame_error_mse": 5.357294233957377e-07,
+            "correct_direction_steps": 8,
+            "reverse_direction_steps": 0,
+            "stationary_steps": 0,
+            "unscorable_steps": 0,
+            "lagging_frames": 0,
+            "leading_frames": 0,
+            "within_half_step_frames": 8,
+            "unscorable_frames": 0
+          }
+        },
+        "wrong_direction": {
+          "method_version": "day12_procedural_rgb_metrics_v1",
+          "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+          "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+          "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+          "detector": {
+            "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+            "general_detector": false,
+            "target_location_crop": false,
+            "source_selected_mean_rgb_01": [
+              0.21341114788323035,
+              0.4908295078467023,
+              0.6863290748846397
+            ],
+            "ambiguous_source_selected_pixels": 0
+          },
+          "metric_definitions": {
+            "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+            "destination": "Entire desired selected-object support, including any overlap with its source",
+            "background": "Outside source selection, current target and distractor",
+            "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+            "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+            "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+            "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+            "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+            "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+            "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+          },
+          "frames": [
+            {
+              "frame": 0,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 0.48620074571884075,
+              "selected_iou": 0.841596130592503,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 143174,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0031535577510286386,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010715440636968113,
+                "static_background": 0.00010486565361719464,
+                "global": 0.00019369779346129339
+              },
+              "motion_compensated_texture_mse": 0.0031535577510286386
+            },
+            {
+              "frame": 1,
+              "command_shift_px": -16,
+              "desired_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                195.4918276374443,
+                100.03640416047548
+              ],
+              "detected_selected_pixels": 1346,
+              "centroid_error_px": 32.491848031226056,
+              "selected_iou": 0.09213401310997815,
+              "region_pixels": {
+                "source_hole": 716,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 142458,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.10131554473032503,
+                "destination": 0.10579708938168025,
+                "distractor": 0.0030459634884067712,
+                "background": 0.0005372792744018675,
+                "static_background": 0.000543763711434704,
+                "global": 0.0022513298045423237
+              },
+              "motion_compensated_texture_mse": 0.10579708938168025
+            },
+            {
+              "frame": 2,
+              "command_shift_px": -32,
+              "desired_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                211.76251896813355,
+                99.97723823975721
+              ],
+              "detected_selected_pixels": 1318,
+              "centroid_error_px": 64.76252296811472,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1338,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141836,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.02432784753554792,
+                "destination": 0.1216044893772921,
+                "distractor": 0.003044138401089944,
+                "background": 0.001075869972542976,
+                "static_background": 0.0010857830932263252,
+                "global": 0.0026730890179124476
+              },
+              "motion_compensated_texture_mse": 0.1216044893772921
+            },
+            {
+              "frame": 3,
+              "command_shift_px": -48,
+              "desired_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                227.56613310867735,
+                100.35551811288964
+              ],
+              "detected_selected_pixels": 1187,
+              "centroid_error_px": 96.56678754463867,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0012741155677245453,
+                "destination": 0.12701280527236058,
+                "distractor": 0.003043200508996574,
+                "background": 0.0013659548090338791,
+                "static_background": 0.0013748690869076054,
+                "global": 0.002803345708659508
+              },
+              "motion_compensated_texture_mse": 0.12701280527236058
+            },
+            {
+              "frame": 4,
+              "command_shift_px": -64,
+              "desired_centroid_xy": [
+                115.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                243.72273879966187,
+                99.80980557903635
+              ],
+              "detected_selected_pixels": 1183,
+              "centroid_error_px": 128.72287931057065,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0010764997314774694,
+                "destination": 0.12568336483734094,
+                "distractor": 0.003050303920423073,
+                "background": 0.0014183051569474883,
+                "static_background": 0.001426599910911096,
+                "global": 0.0028365971493558386
+              },
+              "motion_compensated_texture_mse": 0.12568336483734094
+            },
+            {
+              "frame": 5,
+              "command_shift_px": -48,
+              "desired_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                227.56613310867735,
+                100.35551811288964
+              ],
+              "detected_selected_pixels": 1187,
+              "centroid_error_px": 96.56678754463867,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0012741155677245453,
+                "destination": 0.12701280527236058,
+                "distractor": 0.003043200508996574,
+                "background": 0.0013659548090338791,
+                "static_background": 0.0013748690869076054,
+                "global": 0.002803345708659508
+              },
+              "motion_compensated_texture_mse": 0.12701280527236058
+            },
+            {
+              "frame": 6,
+              "command_shift_px": -32,
+              "desired_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                211.76251896813355,
+                99.97723823975721
+              ],
+              "detected_selected_pixels": 1318,
+              "centroid_error_px": 64.76252296811472,
+              "selected_iou": 0.0,
+              "region_pixels": {
+                "source_hole": 1338,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141836,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.02432784753554792,
+                "destination": 0.1216044893772921,
+                "distractor": 0.003044138401089944,
+                "background": 0.001075869972542976,
+                "static_background": 0.0010857830932263252,
+                "global": 0.0026730890179124476
+              },
+              "motion_compensated_texture_mse": 0.1216044893772921
+            },
+            {
+              "frame": 7,
+              "command_shift_px": -16,
+              "desired_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                195.4918276374443,
+                100.03640416047548
+              ],
+              "detected_selected_pixels": 1346,
+              "centroid_error_px": 32.491848031226056,
+              "selected_iou": 0.09213401310997815,
+              "region_pixels": {
+                "source_hole": 716,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 142458,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.10131554473032503,
+                "destination": 0.10579708938168025,
+                "distractor": 0.0030459634884067712,
+                "background": 0.0005372792744018675,
+                "static_background": 0.000543763711434704,
+                "global": 0.0022513298045423237
+              },
+              "motion_compensated_texture_mse": 0.10579708938168025
+            },
+            {
+              "frame": 8,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.42498205312276,
+                99.76381909547739
+              ],
+              "detected_selected_pixels": 1393,
+              "centroid_error_px": 0.48620074571884075,
+              "selected_iou": 0.841596130592503,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 143174,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0031535577510286386,
+                "distractor": 0.00304577629996402,
+                "background": 0.00010715440636968113,
+                "static_background": 0.00010486565361719464,
+                "global": 0.00019369779346129339
+              },
+              "motion_compensated_texture_mse": 0.0031535577510286386
+            }
+          ],
+          "temporal": {
+            "static_background": {
+              "pixels": 140310,
+              "temporal_variance": 0.0004442286057164816,
+              "successive_frame_error_mse": 0.000864506096800924,
+              "rgb_mse_to_constant_source": 0.0008494625556980838
+            },
+            "distractor": {
+              "pixels": 2629,
+              "temporal_variance": 4.673452195960345e-07,
+              "successive_frame_error_mse": 9.593407691017395e-07,
+              "rgb_mse_to_constant_source": 0.003045384590815299
+            }
+          },
+          "loop_closure_mse": {
+            "global": 0.0,
+            "selected_source": 0.0,
+            "distractor": 0.0,
+            "static_background": 0.0
+          },
+          "path": {
+            "source_centroid_xy": [
+              179.0,
+              100.0
+            ],
+            "requested_x_amplitude_px": 64.0,
+            "observed_x_amplitude_px": 64.29775674653911,
+            "all_frames_detected": true,
+            "missing_detection_frames": [],
+            "direction_counts": {
+              "correct_direction_steps": 0,
+              "reverse_direction_steps": 8,
+              "stationary_steps": 0,
+              "unscorable_steps": 0
+            },
+            "lag_counts": {
+              "lagging_frames": 4,
+              "leading_frames": 3,
+              "within_half_step_frames": 1,
+              "unscorable_frames": 0
+            }
+          },
+          "summary": {
+            "detected_frames": 9,
+            "mean_centroid_error_px": 57.48195532110747,
+            "mean_detected_centroid_error_px": 57.48195532110747,
+            "max_centroid_error_px": 128.72287931057065,
+            "mean_selected_iou": 0.20749558748944028,
+            "mean_motion_compensated_texture_mse": 0.09342436093356267,
+            "observed_x_amplitude_px": 64.29775674653911,
+            "x_amplitude_error_px": 0.29775674653910755,
+            "loop_closure_global_mse": 0.0,
+            "mean_source_hole_rgb_mse": 0.03641593077123893,
+            "mean_destination_rgb_mse": 0.09342436093356267,
+            "mean_distractor_rgb_mse": 0.003045384590815299,
+            "mean_background_rgb_mse": 0.0008434246757382551,
+            "mean_static_background_rgb_mse": 0.0008494625556980837,
+            "mean_global_rgb_mse": 0.0020755024220563316,
+            "static_background_temporal_variance": 0.0004442286057164816,
+            "static_background_successive_frame_error_mse": 0.000864506096800924,
+            "distractor_temporal_variance": 4.673452195960345e-07,
+            "distractor_successive_frame_error_mse": 9.593407691017395e-07,
+            "correct_direction_steps": 0,
+            "reverse_direction_steps": 8,
+            "stationary_steps": 0,
+            "unscorable_steps": 0,
+            "lagging_frames": 4,
+            "leading_frames": 3,
+            "within_half_step_frames": 1,
+            "unscorable_frames": 0
+          }
+        },
+        "oracle": {
+          "method_version": "day12_procedural_rgb_metrics_v1",
+          "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+          "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+          "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+          "detector": {
+            "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+            "general_detector": false,
+            "target_location_crop": false,
+            "source_selected_mean_rgb_01": [
+              0.21341114788323035,
+              0.4908295078467023,
+              0.6863290748846397
+            ],
+            "ambiguous_source_selected_pixels": 0
+          },
+          "metric_definitions": {
+            "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+            "destination": "Entire desired selected-object support, including any overlap with its source",
+            "background": "Outside source selection, current target and distractor",
+            "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+            "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+            "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+            "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+            "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+            "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+            "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+          },
+          "frames": [
+            {
+              "frame": 0,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_selected_pixels": 1653,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 143174,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 1,
+              "command_shift_px": -16,
+              "desired_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_selected_pixels": 1653,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 716,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 142458,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 2,
+              "command_shift_px": -32,
+              "desired_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_selected_pixels": 1653,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 1338,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141836,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 3,
+              "command_shift_px": -48,
+              "desired_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_selected_pixels": 1653,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 4,
+              "command_shift_px": -64,
+              "desired_centroid_xy": [
+                115.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                115.0,
+                100.0
+              ],
+              "detected_selected_pixels": 1653,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 5,
+              "command_shift_px": -48,
+              "desired_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                131.0,
+                100.0
+              ],
+              "detected_selected_pixels": 1653,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 1653,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141521,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 6,
+              "command_shift_px": -32,
+              "desired_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                147.0,
+                100.0
+              ],
+              "detected_selected_pixels": 1653,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 1338,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 141836,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 7,
+              "command_shift_px": -16,
+              "desired_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                163.0,
+                100.0
+              ],
+              "detected_selected_pixels": 1653,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 716,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 142458,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": 0.0,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            },
+            {
+              "frame": 8,
+              "command_shift_px": 0,
+              "desired_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_centroid_xy": [
+                179.0,
+                100.0
+              ],
+              "detected_selected_pixels": 1653,
+              "centroid_error_px": 0.0,
+              "selected_iou": 1.0,
+              "region_pixels": {
+                "source_hole": 0,
+                "destination": 1653,
+                "distractor": 2629,
+                "background": 143174,
+                "static_background": 140310,
+                "global": 147456
+              },
+              "rgb_mse": {
+                "source_hole": null,
+                "destination": 0.0,
+                "distractor": 0.0,
+                "background": 0.0,
+                "static_background": 0.0,
+                "global": 0.0
+              },
+              "motion_compensated_texture_mse": 0.0
+            }
+          ],
+          "temporal": {
+            "static_background": {
+              "pixels": 140310,
+              "temporal_variance": 8.158086059489691e-34,
+              "successive_frame_error_mse": 0.0,
+              "rgb_mse_to_constant_source": 0.0
+            },
+            "distractor": {
+              "pixels": 2629,
+              "temporal_variance": 4.070263811972132e-33,
+              "successive_frame_error_mse": 0.0,
+              "rgb_mse_to_constant_source": 0.0
+            }
+          },
+          "loop_closure_mse": {
+            "global": 0.0,
+            "selected_source": 0.0,
+            "distractor": 0.0,
+            "static_background": 0.0
+          },
+          "path": {
+            "source_centroid_xy": [
+              179.0,
+              100.0
+            ],
+            "requested_x_amplitude_px": 64.0,
+            "observed_x_amplitude_px": 64.0,
+            "all_frames_detected": true,
+            "missing_detection_frames": [],
+            "direction_counts": {
+              "correct_direction_steps": 8,
+              "reverse_direction_steps": 0,
+              "stationary_steps": 0,
+              "unscorable_steps": 0
+            },
+            "lag_counts": {
+              "lagging_frames": 0,
+              "leading_frames": 0,
+              "within_half_step_frames": 8,
+              "unscorable_frames": 0
+            }
+          },
+          "summary": {
+            "detected_frames": 9,
+            "mean_centroid_error_px": 0.0,
+            "mean_detected_centroid_error_px": 0.0,
+            "max_centroid_error_px": 0.0,
+            "mean_selected_iou": 1.0,
+            "mean_motion_compensated_texture_mse": 0.0,
+            "observed_x_amplitude_px": 64.0,
+            "x_amplitude_error_px": 0.0,
+            "loop_closure_global_mse": 0.0,
+            "mean_source_hole_rgb_mse": 0.0,
+            "mean_destination_rgb_mse": 0.0,
+            "mean_distractor_rgb_mse": 0.0,
+            "mean_background_rgb_mse": 0.0,
+            "mean_static_background_rgb_mse": 0.0,
+            "mean_global_rgb_mse": 0.0,
+            "static_background_temporal_variance": 8.158086059489691e-34,
+            "static_background_successive_frame_error_mse": 0.0,
+            "distractor_temporal_variance": 4.070263811972132e-33,
+            "distractor_successive_frame_error_mse": 0.0,
+            "correct_direction_steps": 8,
+            "reverse_direction_steps": 0,
+            "stationary_steps": 0,
+            "unscorable_steps": 0,
+            "lagging_frames": 0,
+            "leading_frames": 0,
+            "within_half_step_frames": 8,
+            "unscorable_frames": 0
+          }
+        }
+      },
+      "jepa_video_vae_roundtrip_score": {
+        "method_version": "day12_procedural_rgb_metrics_v1",
+        "scope": "Procedural colored-sprite motion and RGB preservation only; not face identity, physics or general perceptual quality",
+        "rgb_error_scale": "MSE of saved uint8 RGB divided by 255, averaged over channels and the declared region",
+        "ground_truth_use": "Oracle RGB, masks and path are offline scoring inputs only. Motion compensation uses the commanded translation, not a fitted output motion.",
+        "detector": {
+          "method": "Source-exact unambiguous color labels; novel colors use nearest source object mean versus distractor/background means, distance<=0.35 and RGB range>=0.15",
+          "general_detector": false,
+          "target_location_crop": false,
+          "source_selected_mean_rgb_01": [
+            0.21341114788323035,
+            0.4908295078467023,
+            0.6863290748846397
+          ],
+          "ambiguous_source_selected_pixels": 0
+        },
+        "metric_definitions": {
+          "source_hole": "Source selected mask minus this frame's target mask; empty regions report null",
+          "destination": "Entire desired selected-object support, including any overlap with its source",
+          "background": "Outside source selection, current target and distractor",
+          "static_background": "Outside the union of the full commanded path, source selection and distractor; the same pixels in every frame",
+          "motion_compensated_texture_mse": "Generated pixels at source-mask coordinates plus the known integer command, compared to source selected pixels",
+          "temporal_variance": "Population variance across all nine frames at each constant-region pixel, then mean over region and RGB",
+          "successive_frame_error_mse": "Mean square difference between generated and oracle successive-frame RGB differences on the constant region",
+          "path_lag_counts": "Frames 1..8: desired minus observed x projected onto the incoming command direction; >8 px means lagging, <-8 leading, otherwise within half a step. Not an estimated causal delay.",
+          "direction_counts": "Steps 0->1 through 7->8; observed x movement projected onto commanded direction; >2 px correct, <-2 reversed, otherwise stationary",
+          "mean_missing_rule": "Primary centroid and amplitude errors require all nine detections, otherwise null. The separately named mean_detected_centroid_error_px describes only detected frames. Missing detections never count as zero error."
+        },
+        "frames": [
+          {
+            "frame": 0,
+            "command_shift_px": 0,
+            "desired_centroid_xy": [
+              179.0,
+              100.0
+            ],
+            "detected_centroid_xy": [
+              179.26846153846154,
+              100.17846153846153
+            ],
+            "detected_selected_pixels": 1300,
+            "centroid_error_px": 0.32236643488923084,
+            "selected_iou": 0.7853688029020556,
+            "region_pixels": {
+              "source_hole": 0,
+              "destination": 1653,
+              "distractor": 2629,
+              "background": 143174,
+              "static_background": 140310,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": null,
+              "destination": 0.004910364178885082,
+              "distractor": 0.004150819873192504,
+              "background": 0.00013065418441305103,
+              "static_background": 0.00012776016285792832,
+              "global": 0.0002559110489466302
+            },
+            "motion_compensated_texture_mse": 0.004910364178885082
+          },
+          {
+            "frame": 1,
+            "command_shift_px": -16,
+            "desired_centroid_xy": [
+              163.0,
+              100.0
+            ],
+            "detected_centroid_xy": [
+              164.4968619246862,
+              100.0857740585774
+            ],
+            "detected_selected_pixels": 956,
+            "centroid_error_px": 1.499317448274405,
+            "selected_iou": 0.5660264105642256,
+            "region_pixels": {
+              "source_hole": 716,
+              "destination": 1653,
+              "distractor": 2629,
+              "background": 142458,
+              "static_background": 140310,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0015521819784254302,
+              "destination": 0.014203233139967648,
+              "distractor": 0.00390977380567802,
+              "background": 0.00014240146831839853,
+              "static_background": 0.00012964204698128517,
+              "global": 0.00037403924143981297
+            },
+            "motion_compensated_texture_mse": 0.014203233139967648
+          },
+          {
+            "frame": 2,
+            "command_shift_px": -32,
+            "desired_centroid_xy": [
+              147.0,
+              100.0
+            ],
+            "detected_centroid_xy": [
+              148.0151770657673,
+              99.13490725126475
+            ],
+            "detected_selected_pixels": 593,
+            "centroid_error_px": 1.3337803187834927,
+            "selected_iou": 0.3521974714027694,
+            "region_pixels": {
+              "source_hole": 1338,
+              "destination": 1653,
+              "distractor": 2629,
+              "background": 141836,
+              "static_background": 140310,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.001394009854398494,
+              "destination": 0.02177121601282768,
+              "distractor": 0.0038398979199025527,
+              "background": 0.00015217402469076046,
+              "static_background": 0.00013711646150543807,
+              "global": 0.00047154304912551436
+            },
+            "motion_compensated_texture_mse": 0.02177121601282768
+          },
+          {
+            "frame": 3,
+            "command_shift_px": -48,
+            "desired_centroid_xy": [
+              131.0,
+              100.0
+            ],
+            "detected_centroid_xy": [
+              130.66334440753045,
+              100.29235880398672
+            ],
+            "detected_selected_pixels": 903,
+            "centroid_error_px": 0.4458818881829241,
+            "selected_iou": 0.5406871609403255,
+            "region_pixels": {
+              "source_hole": 1653,
+              "destination": 1653,
+              "distractor": 2629,
+              "background": 141521,
+              "static_background": 140310,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0009662996664924586,
+              "destination": 0.01333835412706376,
+              "distractor": 0.0038311468602039173,
+              "background": 0.00014813069256259108,
+              "static_background": 0.000132133299279009,
+              "global": 0.0003708311737628512
+            },
+            "motion_compensated_texture_mse": 0.01333835412706376
+          },
+          {
+            "frame": 4,
+            "command_shift_px": -64,
+            "desired_centroid_xy": [
+              115.0,
+              100.0
+            ],
+            "detected_centroid_xy": [
+              116.27573062261753,
+              100.76620076238882
+            ],
+            "detected_selected_pixels": 787,
+            "centroid_error_px": 1.488137167659393,
+            "selected_iou": 0.4645858343337335,
+            "region_pixels": {
+              "source_hole": 1653,
+              "destination": 1653,
+              "distractor": 2629,
+              "background": 141521,
+              "static_background": 140310,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0009726508620205097,
+              "destination": 0.020119629171431806,
+              "distractor": 0.00382825713861894,
+              "background": 0.0001633323740820766,
+              "static_background": 0.00014165046177157765,
+              "global": 0.0004614596071044612
+            },
+            "motion_compensated_texture_mse": 0.020119629171431806
+          },
+          {
+            "frame": 5,
+            "command_shift_px": -48,
+            "desired_centroid_xy": [
+              131.0,
+              100.0
+            ],
+            "detected_centroid_xy": [
+              131.8886462882096,
+              99.97707423580786
+            ],
+            "detected_selected_pixels": 916,
+            "centroid_error_px": 0.8889419644793988,
+            "selected_iou": 0.5364832535885168,
+            "region_pixels": {
+              "source_hole": 1653,
+              "destination": 1653,
+              "distractor": 2629,
+              "background": 141521,
+              "static_background": 140310,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0010850930726924255,
+              "destination": 0.017844198630228854,
+              "distractor": 0.0036761372806891185,
+              "background": 0.00015786398357618117,
+              "static_background": 0.0001299359349598575,
+              "global": 0.00042925179657352227
+            },
+            "motion_compensated_texture_mse": 0.017844198630228854
+          },
+          {
+            "frame": 6,
+            "command_shift_px": -32,
+            "desired_centroid_xy": [
+              147.0,
+              100.0
+            ],
+            "detected_centroid_xy": [
+              150.45251396648044,
+              101.99860335195531
+            ],
+            "detected_selected_pixels": 716,
+            "centroid_error_px": 3.98926911190377,
+            "selected_iou": 0.416866028708134,
+            "region_pixels": {
+              "source_hole": 1338,
+              "destination": 1653,
+              "distractor": 2629,
+              "background": 141836,
+              "static_background": 140310,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0016287055283439908,
+              "destination": 0.02281023500741451,
+              "distractor": 0.0035256728705498814,
+              "background": 0.0001469089698558091,
+              "static_background": 0.00012900483909537267,
+              "global": 0.0004746534633336359
+            },
+            "motion_compensated_texture_mse": 0.02281023500741451
+          },
+          {
+            "frame": 7,
+            "command_shift_px": -16,
+            "desired_centroid_xy": [
+              163.0,
+              100.0
+            ],
+            "detected_centroid_xy": [
+              163.27263581488933,
+              99.19014084507042
+            ],
+            "detected_selected_pixels": 994,
+            "centroid_error_px": 0.8545186588855892,
+            "selected_iou": 0.5974652987326494,
+            "region_pixels": {
+              "source_hole": 716,
+              "destination": 1653,
+              "distractor": 2629,
+              "background": 142458,
+              "static_background": 140310,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": 0.0014400205622103516,
+              "destination": 0.0123095162725739,
+              "distractor": 0.003391238420700858,
+              "background": 0.00013184094080249424,
+              "static_background": 0.0001216356089931877,
+              "global": 0.00033281824865703363
+            },
+            "motion_compensated_texture_mse": 0.0123095162725739
+          },
+          {
+            "frame": 8,
+            "command_shift_px": 0,
+            "desired_centroid_xy": [
+              179.0,
+              100.0
+            ],
+            "detected_centroid_xy": [
+              178.77822580645162,
+              98.98286290322581
+            ],
+            "detected_selected_pixels": 992,
+            "centroid_error_px": 1.0410339411173244,
+            "selected_iou": 0.5933734939759037,
+            "region_pixels": {
+              "source_hole": 0,
+              "destination": 1653,
+              "distractor": 2629,
+              "background": 143174,
+              "static_background": 140310,
+              "global": 147456
+            },
+            "rgb_mse": {
+              "source_hole": null,
+              "destination": 0.01514650662150123,
+              "distractor": 0.003329070409031608,
+              "background": 0.00013167650232778183,
+              "static_background": 0.00012316993514287987,
+              "global": 0.0003570010924951407
+            },
+            "motion_compensated_texture_mse": 0.01514650662150123
+          }
+        ],
+        "temporal": {
+          "static_background": {
+            "pixels": 140310,
+            "temporal_variance": 1.789104119184155e-05,
+            "successive_frame_error_mse": 3.345930072106588e-05,
+            "rgb_mse_to_constant_source": 0.00013022763895405954
+          },
+          "distractor": {
+            "pixels": 2629,
+            "temporal_variance": 0.00010911468534515564,
+            "successive_frame_error_mse": 0.00011291996568016895,
+            "rgb_mse_to_constant_source": 0.003720223842063045
+          }
+        },
+        "loop_closure_mse": {
+          "global": 0.00018889480024376307,
+          "selected_source": 0.012161218337929654,
+          "distractor": 0.0005082088225520345,
+          "static_background": 3.718483046634083e-05
+        },
+        "path": {
+          "source_centroid_xy": [
+            179.0,
+            100.0
+          ],
+          "requested_x_amplitude_px": 64.0,
+          "observed_x_amplitude_px": 62.99273091584401,
+          "all_frames_detected": true,
+          "missing_detection_frames": [],
+          "direction_counts": {
+            "correct_direction_steps": 8,
+            "reverse_direction_steps": 0,
+            "stationary_steps": 0,
+            "unscorable_steps": 0
+          },
+          "lag_counts": {
+            "lagging_frames": 0,
+            "leading_frames": 0,
+            "within_half_step_frames": 8,
+            "unscorable_frames": 0
+          }
+        },
+        "summary": {
+          "detected_frames": 9,
+          "mean_centroid_error_px": 1.3181385482417254,
+          "mean_detected_centroid_error_px": 1.3181385482417254,
+          "max_centroid_error_px": 3.98926911190377,
+          "mean_selected_iou": 0.5392281950164792,
+          "mean_motion_compensated_texture_mse": 0.0158281392402105,
+          "observed_x_amplitude_px": 62.99273091584401,
+          "x_amplitude_error_px": 1.0072690841559933,
+          "loop_closure_global_mse": 0.00018889480024376307,
+          "mean_source_hole_rgb_mse": 0.0012912802177976659,
+          "mean_destination_rgb_mse": 0.0158281392402105,
+          "mean_distractor_rgb_mse": 0.0037202238420630442,
+          "mean_background_rgb_mse": 0.00014499812673657156,
+          "mean_static_background_rgb_mse": 0.00013022763895405957,
+          "mean_global_rgb_mse": 0.000391945413493178,
+          "static_background_temporal_variance": 1.789104119184155e-05,
+          "static_background_successive_frame_error_mse": 3.345930072106588e-05,
+          "distractor_temporal_variance": 0.00010911468534515564,
+          "distractor_successive_frame_error_mse": 0.00011291996568016895,
+          "correct_direction_steps": 8,
+          "reverse_direction_steps": 0,
+          "stationary_steps": 0,
+          "unscorable_steps": 0,
+          "lagging_frames": 0,
+          "leading_frames": 0,
+          "within_half_step_frames": 8,
+          "unscorable_frames": 0
+        }
+      },
+      "figure": {
+        "path": "figures/development_video_14001_pregeneration.png",
+        "sha256": "e750765783cb3822e8a2a629d2868b7eebb71538e0ef2f27654c9fbbdb696289"
+      }
+    }
+  ],
+  "recounts": [
+    {
+      "scene_seed": 14000,
+      "stage": "guide",
+      "numeric_leaves": 251,
+      "exact_numeric_leaves": 251,
+      "maximum_absolute_difference": 0,
+      "differences": [],
+      "structure_mismatches": [],
+      "numerically_equal_at_1e-15": true
+    },
+    {
+      "scene_seed": 14000,
+      "stage": "roundtrip",
+      "numeric_leaves": 251,
+      "exact_numeric_leaves": 248,
+      "maximum_absolute_difference": 5.421010862427522e-20,
+      "differences": [
+        {
+          "path": "/temporal/static_background/successive_frame_error_mse",
+          "saved": 2.959027756317526e-05,
+          "recounted": 2.959027756317527e-05,
+          "absolute_difference": 1.0164395367051604e-20
+        },
+        {
+          "path": "/temporal/static_background/rgb_mse_to_constant_source",
+          "saved": 0.00013625952378110894,
+          "recounted": 0.00013625952378110888,
+          "absolute_difference": 5.421010862427522e-20
+        },
+        {
+          "path": "/summary/static_background_successive_frame_error_mse",
+          "saved": 2.959027756317526e-05,
+          "recounted": 2.959027756317527e-05,
+          "absolute_difference": 1.0164395367051604e-20
+        }
+      ],
+      "structure_mismatches": [],
+      "numerically_equal_at_1e-15": true
+    },
+    {
+      "scene_seed": 14001,
+      "stage": "guide",
+      "numeric_leaves": 251,
+      "exact_numeric_leaves": 251,
+      "maximum_absolute_difference": 0,
+      "differences": [],
+      "structure_mismatches": [],
+      "numerically_equal_at_1e-15": true
+    },
+    {
+      "scene_seed": 14001,
+      "stage": "roundtrip",
+      "numeric_leaves": 251,
+      "exact_numeric_leaves": 250,
+      "maximum_absolute_difference": 8.673617379884035e-19,
+      "differences": [
+        {
+          "path": "/temporal/distractor/rgb_mse_to_constant_source",
+          "saved": 0.0037202238420630442,
+          "recounted": 0.003720223842063045,
+          "absolute_difference": 8.673617379884035e-19
+        }
+      ],
+      "structure_mismatches": [],
+      "numerically_equal_at_1e-15": true
+    }
+  ],
+  "recount_validation": {
+    "numeric_leaves": 1004,
+    "exact_numeric_leaves": 1000,
+    "maximum_absolute_difference": 8.673617379884035e-19,
+    "all_numeric_leaves_equal_at_1e-15": true,
+    "explanation": "The source is reconstructed. Tiny floating-point reduction differences, if any, are recorded without rounding them to zero."
+  }
+}

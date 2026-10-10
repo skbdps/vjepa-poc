@@ -1,0 +1,38 @@
+{
+  "version": "day12_recovered_evidence_archive_v1",
+  "kind": "video_vae",
+  "complete": true,
+  "archive_bytes": 6533188,
+  "archive_sha256": "1e3f8c2252276d836468746b80994dca76fc5186f2972aadf651fe3fd95d1db4",
+  "files": [
+    {
+      "path": "manifest.json",
+      "bytes": 69594,
+      "sha256": "1b8090287013ef4a8e0de82729b071852941574784c8016a7a24c71d03857e12"
+    },
+    {
+      "path": "scenes/development_video_14000_roundtrip.npz",
+      "bytes": 3241190,
+      "sha256": "c660bd442148bc17a363af0b1b4c253c9013827e80af1c514893c3e85ea2bc73"
+    },
+    {
+      "path": "scenes/development_video_14001_roundtrip.npz",
+      "bytes": 3285310,
+      "sha256": "1c2c1e17297ced7e624d460efb3158c739e62ce755c25e9eaebfa81e44353166"
+    }
+  ],
+  "parts": [
+    {
+      "path": "guides.tar.xz.part0000",
+      "bytes": 6291456,
+      "sha256": "78362fa55cf0f7d4cb1c823d88080b602abf4ce766f340060f110588eaa59ac4",
+      "git_blob_sha1": "2fdaf9a84e3bdecfc9e6de4bbefceb18408e2925"
+    },
+    {
+      "path": "guides.tar.xz.part0001",
+      "bytes": 241732,
+      "sha256": "db80a90163b26e56f574526fcabfdb1f4d52ab0f35eee2c098503b8e078afd99",
+      "git_blob_sha1": "4208bfae2e4ca2a5a0e764be13da621b715c44b3"
+    }
+  ]
+}
