@@ -1,6 +1,16 @@
-# Day12 status: partial completion; GPU access pending
+# Day12 status: Kaggle GPU run in progress
 
-The main 20-clip Wan/VACE generator comparison has **not run**. Google sign-in
+Kaggle phone verification is complete. On 2026-10-10 at 22:55 UTC the private
+notebook successfully allocated two Tesla T4 GPUs and passed the runtime
+preflight: Python 3.13.15, PyTorch 2.11.0+cu128, 31.3 GiB host RAM,
+and sufficient separate temporary storage. Pinned dependencies imported,
+the exact guide hashes passed, and FP32 UMT5 prompt encoding completed.
+The fixed 20-video render cell has been launched; completion and model fit
+are not yet established. Runtime evidence is in `run_kaggle/`. A Kaggle draft
+save-conflict warning occurred; a notebook backup was downloaded and the
+runtime remained active. The access history below records earlier blocks.
+
+Before this Kaggle launch, the main 20-clip comparison had not run. Google sign-in
 succeeded on 2026-10-10 at approximately 22:25 UTC: the target Colab notebook
 opened with a signed-in account control. Connecting its configured T4 then
 showed: "You cannot currently connect to a GPU due to usage limits in Colab."
