@@ -3,7 +3,10 @@
 Status: training, eight-scene development latent evaluation, and the initial
 CNN's full-resolution VAE diagnostics are complete. Both initial translators
 have completed real VACE rendering on the two fixed development scenes.
-The appearance-transport GPU follow-up is running.
+The appearance-transport GPU follow-up completed all 62 calls and passed every
+image/latent accuracy criterion. Its qualification found a CPU-thread mismatch
+(two executed versus four declared), so the full comparison is being repeated
+with explicit four-thread execution before accessing fresh scenes.
 No fresh 140xx scene or temporal-video test has been accessed. This is a progress
 record, not a claim that the broad consistency problem has been solved.
 
@@ -118,6 +121,13 @@ inspecting the transport GPU outputs. It requires per-region editing accuracy,
 centroid accuracy, protected-content tolerance, negative-control separation,
 and exact runtime/interface bindings. Passing it authorizes an untouched test;
 it is not a declaration of production reliability.
+
+The original 62-call transport run passed 46 of 47 checks. The sole failure
+was its two CPU threads versus the declared four. The source, prompts, noise,
+model, precision and all numerical accuracy checks matched. The original
+failed gate is retained as `run_2026-10-10/development_gate.json`; its criteria
+are unchanged. A complete four-thread rerun in a separate output directory
+will resolve the configuration mismatch. No holdout has been opened.
 
 ## Execution and audit
 

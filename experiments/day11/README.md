@@ -68,8 +68,8 @@ It is bound to the fixed prompt by the saved hashes. After extracting
 `run_2026-10-10/runtime/colab_preflight_and_prompt_cache.zip` into `RUNTIME`, use:
 
 ```bash
-python experiments/day11/render.py --bundle-root experiments/day11/run_2026-10-10/eval_cnn --prompt-cache RUNTIME/prompt_embeddings.pt --prompt-metadata RUNTIME/prompt_metadata.json --out RENDER_CNN --transformer-dtype float16
-python experiments/day11/render_transport.py --bundle-root experiments/day11/run_2026-10-10/transport --prompt-cache RUNTIME/prompt_embeddings.pt --prompt-metadata RUNTIME/prompt_metadata.json --out RENDER_TRANSPORT --transformer-dtype float16
+python experiments/day11/render.py --bundle-root experiments/day11/run_2026-10-10/eval_cnn --prompt-cache RUNTIME/prompt_embeddings.pt --prompt-metadata RUNTIME/prompt_metadata.json --out RENDER_CNN --transformer-dtype float16 --threads 2
+python experiments/day11/render_transport.py --bundle-root experiments/day11/run_2026-10-10/transport --prompt-cache RUNTIME/prompt_embeddings.pt --prompt-metadata RUNTIME/prompt_metadata.json --out RENDER_TRANSPORT --transformer-dtype float16 --threads 4
 ```
 
 These commands resolve the exact model revision automatically. A cached
@@ -86,6 +86,15 @@ scenes. The fresh GPU renderer uses the declared nine CNN arms on every scene,
 with 104 calls including all ordinary/direct parity checks. It accepts no arm
 or scene-selection flag. A repeated run after changing the method is development
 work and requires a new untouched holdout for a fresh-test claim.
+
+## Saved evidence archives
+
+Large evidence archives are split into numbered `.part-*` files to fit the
+transfer limit. Their `archive_manifest.json` records each part hash, the full
+archive hash, and the hashes of every original enclosed file. Concatenate the
+parts in the manifest's listed order, verify `archive_sha256`, then extract the
+resulting `.tar.xz`. This is lossless packaging; rendered images and arrays are
+retained byte-for-byte. Smaller runs use ordinary complete ZIP archives.
 
 ## Code review findings addressed before training
 
