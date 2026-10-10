@@ -1,0 +1,10 @@
+{
+  "version": "day11_pretest_publication_v1",
+  "freeze_sha256": "29c1143a32efa105e7a37b2e6d524f9007316e17847dd6df675c3401b3b79be7",
+  "bytes_equal_to_GitHub": true,
+  "test_encoded_before_verification": false,
+  "commit": "1bd6221bdea2dcce50697603806ab18e648eff36",
+  "repository": "skbdps/vjepa-poc",
+  "path": "experiments/day11/run_2026-10-10/PRETEST.json",
+  "verified_utc": "2026-10-10T01:48:55.445640+00:00"
+}
